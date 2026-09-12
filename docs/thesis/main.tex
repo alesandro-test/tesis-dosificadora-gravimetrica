@@ -1,0 +1,170 @@
+%==============================================================================
+% UCB - Template for student projects at the IMT
+% 2021.07
+%==============================================================================
+
+% twoside parameter
+% \documentclass[12pt,twoside, a4paper]{report}
+\documentclass[12pt,a4paper,twoside]{report}
+
+% Add catolica IMT package
+\usepackage{packages/ucbimt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{preambles/imt_preamble}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+	\estudianteA{Alesandro Paredes Zenteno}
+	
+	\title{DOSIFICADORA GRAVIMÉTRICA DE HARINA DE BAJO COSTO PARA PANADERÍAS ARTESANALES}
+	
+	\projectDay{\the\day}		% this day
+	\projectMonth{\the\month} 	% this month
+	\projectYear{\the\year}		% this year
+	
+	% Teachers
+	\jefedeCarrera{Juan Pablo Villazon Ritcher, Dr. Ing.}
+	\supervisor{-----}
+	\relator{Docente Relator, Ms. Ing.}
+	\docenteInv{Erik Osvaldo Pozo Irusta, Ms. Ing.}
+	
+	
+	\maketitle
+
+	\pagestyle{empty}
+	\pagenumbering{arabic}
+	\setcounter{page}{2}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Capitulos Estandares
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	% Set the custon chapter and section styles
+	\pagestyle{plain}
+	\myChapterStyleB
+	\mySectionStyleB
+	
+	
+	\input{chapters/agradecimiento}
+	\cleardoublepage
+	\input{chapters/resumen}
+	\cleardoublepage
+	\input{chapters/abstract}
+	\cleardoublepage
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Table of figures and tables
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Add tof to toc
+    \addcontentsline{toc}{chapter}{ÍNDICE DE FIGURAS}
+	
+	% Create table of figures
+	\listoffigures
+	\cleardoublepage
+
+	% Add tot to toc
+	\addcontentsline{toc}{chapter}{ÍNDICE DE TABLAS}
+	
+	% Create table of tables
+	\listoftables
+	\cleardoublepage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Symbols 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\input{chapters/simbolos}
+	\cleardoublepage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Table on contents
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\tableofcontents
+	\cleardoublepage
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Chapters custom
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	% Set new custom chapter and section styles
+	\pagestyle{fancy}
+	\myChapterStyle
+	\mySectionStyle
+
+
+	% Chapters here
+	\input{chapters/marcoref}
+	\cleardoublepage 	
+	\input{chapters/marcoteorico}
+	\cleardoublepage
+	%\input{chapters/marcopractico/propuesta}
+	\cleardoublepage
+	% \input{chapters/blabla}
+	% \cleardoublepage
+	% \input{}
+	% \cleardoublepage
+	% ...
+	% ...
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Bibliography
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \printbibliography
+	\addcontentsline{toc}{chapter}{Bibliografia}
+	\cleardoublepage
+	
+	\let\origappendix\appendix
+	\renewcommand{\appendix}{%
+	  \clearpage
+	  \origappendix
+	  \renewcommand{\thepage}{}% Remove page numbering
+	}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Apéndice
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% %\appendix
+	% \input{chapters/additional_material/apendices/entrevista_ing_paola.tex}
+	% \cleardoublepage
+	% \input{chapters/additional_material/apendices/prototipos.tex}
+	% \cleardoublepage
+	% \input{chapters/additional_material/apendices/cronograma.tex}
+	% \cleardoublepage
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Apéndices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\appendix
+
+	\input{chapters/additional_material/apendices/registros_campo.tex}
+	\cleardoublepage
+
+	\input{chapters/additional_material/apendices/tablas_dosificacion.tex}
+	\cleardoublepage
+
+	% Pendiente: cronograma actualizado del proyecto
+	% \input{chapters/additional_material/apendices/cronograma.tex}
+	% \cleardoublepage
+
+	% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% % Anexos
+	% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% \renewcommand{\appendixname}{Anexo}
+	% \appendix
+	% \input{chapters/additional_material/anexos/informacion_mteps.tex}
+	% \cleardoublepage
+	% \input{chapters/additional_material/anexos/cocomo_intermedio.tex}
+	% \cleardoublepage
+	% \input{chapters/additional_material/anexos/nts_009.tex}
+	
+\end{document}

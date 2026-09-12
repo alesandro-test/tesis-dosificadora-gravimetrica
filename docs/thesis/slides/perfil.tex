@@ -1,0 +1,318 @@
+\documentclass[spanish]{beamer} %, aspectratio=169
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, mexico]{babel}
+% Paquetes necesarios para incluir imágenes
+\usepackage{graphicx}
+\usepackage[skip=0.25\baselineskip]{caption}
+\setlength{\belowcaptionskip}{0pt}
+\usepackage{subcaption}
+\captionsetup{justification=centering}
+% Bibliography
+\usepackage[style=iso-authoryear, currentlang]{biblatex}
+\addbibresource{../bibliography/referencias.bib}
+\DeclareDelimFormat{nameyeardelim}{\addspace}
+\usepackage{csquotes}
+% Tables
+\usepackage{tabularx}
+\usepackage{makecell}
+% Graphs
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, chains, fit, backgrounds, patterns,
+				positioning, shapes.geometric, shapes.symbols, calc}
+\usepackage{../packages/tikz-uml}
+
+\usepackage{colortbl} % For \rowcolor
+\usepackage{xcolor}   % For defining colors
+
+\usetheme{pittsburgh} 
+%\usecolortheme{owl}
+\setbeamertemplate{caption}[numbered]
+%\setbeamertemplate{sidebar right}{}
+%\setbeamertemplate{footline}{\hfill\usebeamertemplate***{navigation symbols}}
+\setbeamercolor{footline}{fg=blue}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\title{Software para la Automatización de Procesos de Programas de Gestión de Salud y Seguridad 
+en el Trabajo conforme a la Norma Técnica de Seguridad 009}
+\date{\today}
+\author{Leonardo Achá Boiano}
+\institute{Universidad Católica Boliviana ``San Pablo''}
+
+\titlegraphic{\includegraphics[height=.2\textheight]{../images/ucbLogo1.png}}
+
+%----------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+  
+%--------------------------------------------------------------------------------
+\section{Introducción}
+\begin{frame}[allowframebreaks]{Antecedentes}
+
+  \textcite{cervantesdiagnostico} concluye que la mayoría de las leyes y regulaciones existentes en materia de seguridad y salud en el trabajo no se aplican debido a dos razones principales: 
+  \begin{itemize}
+    \item Obstáculos externos (como condiciones materiales, culturales y de acceso).
+    \item Las entidades encargadas no disponen de las estructuras y recursos necesarios para supervisar su cumplimiento y sancionar las infracciones.
+  \end{itemize}
+  
+
+  Mediante la Resolución Ministerial N° 1411/18, el 27 de diciembre de 2018, el Ministerio de Trabajo aprueba la Norma Técnica de Seguridad NTS-009/18.
+
+  \framebreak
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth, height=.7\textheight]{../images/marcoref/tendencia_profesionales_syso_registrados.png}
+        \caption{Registro de profesionales SySO:(a) Mensual (b) Anual.}
+        \label{fig:profesionales_syso_registrados}
+    \end{figure}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=1\textwidth]{../images/marcoref/profesionales_syso_por_categoria.png}
+      \caption{Profesionales SST activos:\\Distribución de categorías (a) porcentual (b) por departamento.}
+      \label{fig:profesionales_syso_por_categoria} 
+    \end{figure}
+
+    \begin{figure}[htb]
+      \centering
+      \includegraphics[width=.8\textwidth]{../images/marcoref/grafico_distribucion.png}
+      \caption{Distribución porcentual de tiempo en la elaboración de las secciones del Contenido Técnico de un PGSST. Elaboración propia a partir de entrevista.}
+      \label{fig:distribucion_tiempo_pgsst} 
+    \end{figure}
+
+    \begin{figure}[b]
+      \centering
+        \resizebox{\textwidth}{!}{
+            {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
+            \fbox{\input{../images/marcoref/analisis_iper.tex}}}}
+      \caption{Distribución de tiempo en el proceso de desarrollo del punto cuatro ``Planificación'' de acuerdo al contenido técnico de un PGSST solicitado por la NTS-009/23.}
+      \label{fig:analisis_iper} 
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Arbol de Problemas}
+  \begin{figure}[hb]
+    \centering
+    \resizebox{\textwidth}{!}{
+      \input{../images/marcoref/diagrama_arbol_problemas.tex}}
+    \caption{Árbol de problemas y objetivos. Fuente: Elaborado por el Autor.}
+    \label{fig:arbol_problemas} 
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Definición del Problema}
+  Los profesionales SySO de categoría A dedican mediante el método manual un 60\% del tiempo total de desarrollo de un PGSST en llenado de formularios y planificación.
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Objetivos}
+  \begin{block}{Objetivo general}
+    Desarrollar un prototipo de software basado en transformadores multimodales para disminución del tiempo que los profesionales SySO de categoría A invierten en la planificación y el llenado de formularios al elaborar un PGSST.
+  \end{block}
+  \begin{block}{Objetivos específicos}
+  \begin{itemize}
+    \small
+    \item Identificar los requisitos funcionales y no funcionales del proceso de desarrollo de los documentos requeridos por la NTS-009/23.
+    \item Diseñar la arquitectura del sistema, incluyendo la estructura general, los componentes principales y las tecnologías a utilizar.
+    \item Implementar sistema de generación de procesamiento de entradas multimodales, matrices IPER, planes de acción y llenado de formularios siguiendo la metodología PXP.
+    \item Verificar la reducción del tiempo de trabajo mediante la implantación del software.
+  \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Justificación}
+  \begin{block}{Justificación legal}
+    Al disminuir el tiempo de desarrollo de los programas se facilita el cumplimiento de la normativa.
+  \end{block}
+  \begin{block}{Justificación tecnológica}
+    El proyecto propone un avance en la implementación de soluciones tecnológicas que optimicen el tiempo y la eficiencia en la elaboración de los PGSST. 
+  \end{block}
+  \begin{block}{Justificación social}
+    Los profesionales SySO de categoría A son los beneficiados directamente por este sistema. Se espera la reducción del tiempo invertido en tareas administrativas les permitirá enfocar sus esfuerzos en actividades que aportan mayor valor a la seguridad y salud de los trabajadores.
+  \end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Delimitación}
+  \begin{block}{Límites}
+  \begin{itemize}
+    \item Los documentos del software se ajustan a los requisitos técnicos de NTS-009/23.
+    \item Contenido del software conforme a ISO 45001:2018 para seguridad y salud laboral.
+    \item ISO 25000:2014 guía la evaluación del producto de software.
+    \item La aplicación requiere conexión a internet para su uso.
+    \item El software no contará con herramientas especializadas en la automatización de los estudios de higiene. Se limitará a plantillas para rellenar y automatizar el análisis de los datos recolectados por profesional habilitado.
+  \end{itemize}
+  \end{block}
+
+  \framebreak
+  Las exclusiones del proyecto son las siguientes:
+  \begin{itemize}
+	\item No se implementarán módulos de audio, inteligencia artificial, interfaz de usuario y entrada desde cero; se utilizarán bibliotecas open-source disponibles.
+	\item No se implementarán módulos dirigidos a capacitar trabajadores en el llenado de registros o plantillas generadas.
+	\item El proyecto no estará dirigido a empresas o sectores que requieran normativa o procedimientos particulares, como es el caso de la industria petrolera.
+  \end{itemize}
+  
+  \framebreak
+  \begin{block}{Alcances}
+  \begin{itemize}
+    \item Desarrollo de un prototipo funcional del software propuesto.
+	  \item Documentación de la investigación de las tecnologías que se utilizarán para el desarrollo del software final.
+	  \item Presentación de los siguientes diagramas: diagrama UML estructural de clases del sistema, diagrama de cadena de procesamiento de datos y diagrama entidad-relación de la base de datos.
+	  \item Documentación del desarrollo del software, que incluirá los detalles del desarrollo de un PGSST y un manual de usuario.
+	  \item Realización de pruebas del prototipo del sistema en colaboración con 5 profesionales.
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Metodología de Desarrollo de Software}
+
+  \begin{figure}
+    \centering
+    \input{../images/marcoteorico/modelo_desarrollo_pxp.tex}
+      \caption{\footnotesize Proceso de desarrollo bajo la metodología PXP.}
+      \scriptsize{{Elaboración propia a partir de ``\textit{\citefield{dzhurov2009personal}{title}}'' (\citeyear{dzhurov2009personal}).}}
+    \label{fig:modelo_desarrollo_pxp} 
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{Transformadores}
+
+  \begin{figure}[h]
+    \centering
+      \resizebox{\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} 
+          \fbox{\includegraphics{../images/marcoteorico/Transformer-apps.jpg}}}}
+    \caption{Transformadores como modelos de base.}
+    \label{fig:transformers} 
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Analisis de Requisitos}
+
+  \begin{table}[htb]
+    \centering
+    \caption{Tabla de Requerimientos Funcionales}
+    \tiny
+    \input{../chapters/marcopractico/tables/requisitos_funcionales.tex}
+    \label{tab:requisitos_funcionales}
+  \end{table}
+
+  \begin{table}[htb]
+    \centering
+    \caption{Tabla de Requerimientos No Funcionales}
+    \scriptsize
+    \input{../chapters/marcopractico/tables/requisitos_no_funcionales.tex}
+    \label{tab:req_no_func}
+  \end{table}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Casos de Uso}
+
+  \begin{figure}[h]
+    \centering
+      \resizebox{0.7\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} 
+          \fbox{\input{../images/marcopractico/planificacion/casos_de_uso_entrada.tex}}}}
+    \caption{Caso de Uso: Entrada de Información.}
+    \label{fig:caso_de_uso_entrada} 
+  \end{figure}
+  
+  \begin{figure}[h]
+    \centering
+      \resizebox{0.8\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} 
+          \fbox{\input{../images/marcopractico/planificacion/casos_de_uso_gestion.tex}}}}
+    \caption{Caso de Uso: Gestión de Proyectos.}
+    \label{fig:caso_de_uso_gestion} 
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Arquitectura Propuesta}
+
+  \begin{figure}[H]
+    \centering
+      \resizebox{\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
+          \fbox{\input{../images/marcopractico/planificacion/arquitectura_sistema.tex}}}}
+    \caption{Propuesta de Arquitectura de Sistema.}
+    \label{fig:arc_sys} 
+  \end{figure}  
+
+  \begin{figure}[h]
+    \centering
+      \resizebox{\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
+          \fbox{\input{../images/marcopractico/planificacion/data_pipeline.tex}}}}
+    \caption{Cadena de Procesamiento de Datos.}
+    \label{fig:basic_data_pipeline} 
+  \end{figure}
+
+  \begin{figure}[h]
+    \centering
+      \resizebox{\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
+          \fbox{\input{../images/marcopractico/planificacion/arquitectura_cliente_servidor.tex}}}}
+    \caption{Propuesta de Arquitectura Cliente-Servidor.}
+    \label{fig:arc_client_server} 
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+      \resizebox{\textwidth}{!}{
+          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
+          \fbox{\input{../images/marcopractico/planificacion/arquitectura_modulos.tex}}}}
+    \caption{Propuesta de Arquitectura a nivel de módulos de la aplicación.}
+    \label{fig:arc_modulos} 
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}{Analisis de Costos}
+
+  \begin{table}[ht]
+    \centering
+    \caption{Inversión Total Inicial}
+    \label{tab:inversion_total}
+    \begin{tabularx}{\textwidth}{|X|r|}
+        \hline
+        \textbf{Concepto} & \textbf{Costo (Bs)} \\
+        \hline
+        Costo de Desarrollo & 52,560.00 \\
+        Costos de Infraestructura & 2,224.06 \\
+        %Gastos Legales & 4,997.00 \\
+        Computadora para desarrollo & - \\
+        \hline
+        \textbf{Total} & \textbf{54,784.06} \\
+        \hline
+    \end{tabularx}
+  \end{table} 
+
+\end{frame}
+
+\begin{frame}{Cronograma del Proyecto}
+
+  {\small \input{../chapters/marcopractico/tables/cronograma_proyecto.tex}}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,102 @@
+\begin{tikzpicture}[
+    >=Latex,
+    proceso/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum width=4.3cm,
+        minimum height=1.1cm,
+        text width=3.9cm,
+        align=center,
+        font=\small
+    },
+    decision/.style={
+        diamond,
+        draw,
+        aspect=2.2,
+        text width=3.0cm,
+        align=center,
+        inner sep=1.2pt,
+        font=\small
+    },
+    iniciofin/.style={
+        rectangle,
+        draw,
+        rounded corners=12pt,
+        minimum width=2.8cm,
+        minimum height=0.8cm,
+        align=center,
+        font=\small
+    },
+    flecha/.style={
+        -{Latex[width=7pt,length=6pt]},
+        thick
+    }
+]
+
+% ================================================================
+% COLUMNA IZQUIERDA
+% ================================================================
+
+\node (inicio) [iniciofin] at (0,0)
+{Inicio};
+
+\node (preparar) [proceso] at (0,-1.7)
+{Preparar recipiente de dosificación};
+
+\node (tara) [proceso] at (0,-3.6)
+{Colocar el balde en la balanza, aplicar TARE y verificar cero};
+
+\node (nuevacarga) [proceso] at (0,-7.1)
+{Agregar harina};
+
+\node (volver) [proceso] at (0,-5.4)
+{Volver a pesar};
+
+% ================================================================
+% COLUMNA DERECHA
+% ================================================================
+
+\node (carga) [proceso] at (6.8,-3.6)
+{Recoger, trasladar y descargar harina en el recipiente receptor};
+
+\node (medir) [proceso] at (6.8,-5.4)
+{Medir masa acumulada};
+
+\node (decision) [decision] at (6.8,-7.6)
+{¿Se requiere otra carga?};
+
+\node (finalizar) [proceso] at (6.8,-10.0)
+{Realizar ajuste final, comprobar la lectura y finalizar la dosificación};
+
+\node (fin) [iniciofin] at (6.8,-11.7)
+{Fin};
+
+% ================================================================
+% FLUJO PRINCIPAL
+% ================================================================
+
+\draw[flecha] (inicio) -- (preparar);
+\draw[flecha] (preparar) -- (tara);
+\draw[flecha] (tara.east) -- (carga.west);
+\draw[flecha] (carga) -- (medir);
+\draw[flecha] (medir) -- (decision);
+
+\draw[flecha]
+    (decision.south) -- node[right,font=\small] {No} (finalizar.north);
+
+\draw[flecha] (finalizar) -- (fin);
+
+% ================================================================
+% BUCLE DE REPETICIÓN
+% ================================================================
+
+\draw[flecha]
+    (decision.west) -- ++(-1.2,0)
+    node[above,font=\small,pos=0.35] {Sí}
+    -- (nuevacarga.east);
+
+\draw[flecha] (nuevacarga.north) -- (volver.south);
+\draw[flecha] (volver.east) -- (medir.west);
+
+\end{tikzpicture}

@@ -1,0 +1,75 @@
+# Papers descargados
+docs/thesis/bibliography/*.pdf
+
+# ==========================================================
+# LaTeX - archivos generados
+# ==========================================================
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ilg
+*.ind
+*.idx
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+
+# Archivos temporales o de recuperación
+*-SAVE-ERROR
+*.bak
+*.tmp
+
+# ==========================================================
+# Salidas generadas
+# ==========================================================
+build/
+tmp/
+
+# PDFs generados por la tesis
+docs/thesis/main.pdf
+docs/thesis/slides/perfil.pdf
+
+# ==========================================================
+# Python / Jupyter
+# ==========================================================
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# ==========================================================
+# VS Code
+# ==========================================================
+.vscode/
+
+# ==========================================================
+# Sistema operativo
+# ==========================================================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ==========================================================
+# Temporales de editores
+# ==========================================================
+*.swp
+*.swo
+*~
