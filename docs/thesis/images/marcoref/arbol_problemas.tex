@@ -1,83 +1,133 @@
-\begin{minipage}{0.98\textwidth}
-\centering
+\begin{tikzpicture}[
+    >=Latex,
+    node distance=0.7cm,
+    font=\small,
+    bloque/.style={
+        rectangle,
+        draw,
+        align=center,
+        minimum height=1.15cm,
+        text width=11.2cm,
+        inner xsep=5pt,
+        inner ysep=4pt
+    },
+    efecto/.style={
+        rectangle,
+        draw,
+        align=center,
+        minimum height=1.55cm,
+        text width=4.8cm,
+        inner xsep=5pt,
+        inner ysep=4pt
+    },
+    problema/.style={
+        bloque,
+        minimum height=1.35cm,
+        line width=0.9pt
+    },
+    causa/.style={
+        rectangle,
+        draw,
+        align=center,
+        minimum height=1.55cm,
+        text width=3.35cm,
+        inner xsep=4pt,
+        inner ysep=4pt
+    },
+    subcausa/.style={
+        rectangle,
+        draw,
+        align=center,
+        minimum height=1.45cm,
+        text width=3.35cm,
+        inner xsep=4pt,
+        inner ysep=4pt
+    },
+    flecha/.style={
+        -{Latex[width=6pt,length=5pt]},
+        semithick
+    }
+]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EFECTOS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\textbf{EFECTOS OBSERVADOS Y PROYECTADOS}\\[0.5em]
-
-\begin{tabular}{p{0.44\textwidth} p{0.44\textwidth}}
-
-\fbox{\parbox{0.42\textwidth}{\centering
-\textbf{E1}\\[0.3em]
-Acumulación del tiempo destinado a la dosificación durante las jornadas
-observadas\\[0.3em]
-{\small
-304,5 s en la jornada ordinaria\\
-107,4 s en la jornada de sábado}
-}}
-&
-\fbox{\parbox{0.42\textwidth}{\centering
-\textbf{E2}\\[0.3em]
-Acumulación mensual proyectada del tiempo destinado a la dosificación\\[0.3em]
-{\small
-7\,128,6 s para septiembre de 2026\\
-1 h 58 min 48,6 s}
-}}
-
-\end{tabular}
-
-\vspace{0.7em}
-
-{\Large $\uparrow\qquad\qquad\qquad\uparrow$}
-
-\vspace{0.7em}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEMA CENTRAL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\node[problema] (problema) {
+    El operario dedica entre 53,2 y 66,6 s por ciclo\\
+    a la dosificación manual de harina.
+};
 
-\fbox{\parbox{0.90\textwidth}{\centering
-\textbf{PROBLEMA CENTRAL}\\[0.4em]
+% EFECTOS
+\node[efecto, above=1.1cm of problema.north west, anchor=south west] (efecto_observado) {
+    Tiempo acumulado\\
+    de dosificación:\\
+    411,9 s en 7\\
+    ciclos observados
+};
 
-El procedimiento manual de dosificación de harina en la Panadería
-San Miguel requiere intervención directa del operario durante
-$53{,}2$--$66{,}6\ \mathrm{s}$ por ciclo.
-}}
+\node[efecto, above=1.1cm of problema.north east, anchor=south east] (efecto_proyectado) {
+    Tiempo mensual proyectado\\
+    de dosificación:\\
+    7\,128,6 s\\
+    (1 h 58 min 48,6 s)
+};
 
-\vspace{0.7em}
+% CAUSAS DIRECTAS
+\node[causa, below=1.15cm of problema] (c1) {
+    Tiempo dedicado a\\
+    cargas y retornos:\\[0.2em]
+    259,7 s (63,0 \%)
+};
 
-{\Large $\uparrow\qquad\uparrow\qquad\uparrow$}
+\node[causa, below=1.15cm of problema.south west, anchor=north west] (c2) {
+    Preparación y tara\\
+    en cada ciclo
+};
 
-\vspace{0.7em}
+\node[causa, below=1.15cm of problema.south east, anchor=north east] (c3) {
+    Ajuste y verificación\\
+    final de la cantidad\\
+    dosificada
+};
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CAUSAS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUBCAUSAS
+\node[subcausa, below=of c2] (sc1) {
+    Separación entre\\
+    almacenamiento y\\
+    pesaje: 3,20 m\\
+    por trayecto
+};
 
-\textbf{CAUSAS OBSERVADAS}\\[0.5em]
+\node[subcausa, below=of c1] (sc2) {
+    Dosificación\\
+    mediante cargas\\
+    sucesivas
+};
 
-\begin{tabular}{p{0.30\textwidth} p{0.30\textwidth} p{0.30\textwidth}}
+\node[subcausa, below=of c3] (sc3) {
+    Retornos para\\
+    realizar cargas\\
+    adicionales
+};
 
-\fbox{\parbox{0.28\textwidth}{\centering
-\textbf{C1}\\[0.3em]
-Preparación del recipiente, aplicación de tara y comprobación de cero
-en cada ciclo
-}}
-&
-\fbox{\parbox{0.28\textwidth}{\centering
-\textbf{C2}\\[0.3em]
-Dosificación mediante cargas principales realizadas manualmente\\[0.3em]
-{\small
-3--4 cargas principales por ciclo}
-}}
-&
-\fbox{\parbox{0.28\textwidth}{\centering
-\textbf{C3}\\[0.3em]
-Ajuste final y comprobación manual de la lectura de la balanza
-}}
+% FLECHAS
+\draw[flecha] (efecto_observado.south |- problema.north)
+    -- (efecto_observado.south);
+\draw[flecha] (efecto_proyectado.south |- problema.north)
+    -- (efecto_proyectado.south);
 
-\end{tabular}
+\draw[flecha] (c2.north) -- (c2.north |- problema.south);
+\draw[flecha] (c1.north) -- (c1.north |- problema.south);
+\draw[flecha] (c3.north) -- (c3.north |- problema.south);
 
-\end{minipage}
+\coordinate (entrada_c1_izq) at ([xshift=-0.85cm]c1.south);
+\coordinate (entrada_c1_der) at ([xshift=0.85cm]c1.south);
+\coordinate (nivel_subcausas) at ([yshift=-0.35cm]c1.south);
+
+\draw (sc1.north) -- (sc1.north |- nivel_subcausas)
+    -- (entrada_c1_izq |- nivel_subcausas);
+\draw[flecha] (entrada_c1_izq |- nivel_subcausas) -- (entrada_c1_izq);
+\draw[flecha] (sc2.north) -- (c1.south);
+\draw (sc3.north) -- (sc3.north |- nivel_subcausas)
+    -- (entrada_c1_der |- nivel_subcausas);
+\draw[flecha] (entrada_c1_der |- nivel_subcausas) -- (entrada_c1_der);
+
+\end{tikzpicture}

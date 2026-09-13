@@ -1,32 +1,33 @@
 \begin{tikzpicture}[
     >=Latex,
+    node distance=0.45cm and 2.0cm,
+    font=\small,
     proceso/.style={
         rectangle,
         draw,
         rounded corners=2pt,
-        minimum width=4.3cm,
-        minimum height=1.1cm,
-        text width=3.9cm,
+        minimum width=4.6cm,
+        minimum height=0.8cm,
+        text width=4.0cm,
         align=center,
-        font=\small
+        inner ysep=3pt
     },
     decision/.style={
         diamond,
         draw,
-        aspect=2.2,
-        text width=3.0cm,
+        aspect=2.5,
+        text width=3.4cm,
         align=center,
-        inner sep=1.2pt,
-        font=\small
+        inner sep=1.2pt
     },
     iniciofin/.style={
         rectangle,
         draw,
         rounded corners=12pt,
-        minimum width=2.8cm,
-        minimum height=0.8cm,
+        minimum width=2.6cm,
+        minimum height=0.65cm,
         align=center,
-        font=\small
+        inner ysep=2pt
     },
     flecha/.style={
         -{Latex[width=7pt,length=6pt]},
@@ -34,69 +35,61 @@
     }
 ]
 
-% ================================================================
-% COLUMNA IZQUIERDA
-% ================================================================
+% Flujo principal
+\node[iniciofin] (inicio) {Inicio};
 
-\node (inicio) [iniciofin] at (0,0)
-{Inicio};
+\node[proceso, below=of inicio] (preparar)
+{Preparar recipiente};
 
-\node (preparar) [proceso] at (0,-1.7)
-{Preparar recipiente de dosificación};
+\node[proceso, below=of preparar] (tara)
+{Tarar balanza};
 
-\node (tara) [proceso] at (0,-3.6)
-{Colocar el balde en la balanza, aplicar TARE y verificar cero};
+\node[proceso, below=of tara] (trasladar)
+{Trasladar harina al recipiente};
 
-\node (nuevacarga) [proceso] at (0,-7.1)
-{Agregar harina};
+\node[proceso, below=of trasladar] (medir)
+{Medir cantidad};
 
-\node (volver) [proceso] at (0,-5.4)
-{Volver a pesar};
+\node[decision, below=0.55cm of medir] (decision)
+{\textbf{¿Cantidad objetivo\\ alcanzada?}};
 
-% ================================================================
-% COLUMNA DERECHA
-% ================================================================
+\node[proceso, below=0.55cm of decision] (finalizar)
+{Finalizar dosificación};
 
-\node (carga) [proceso] at (6.8,-3.6)
-{Recoger, trasladar y descargar harina en el recipiente receptor};
-
-\node (medir) [proceso] at (6.8,-5.4)
-{Medir masa acumulada};
-
-\node (decision) [decision] at (6.8,-7.6)
-{¿Se requiere otra carga?};
-
-\node (finalizar) [proceso] at (6.8,-10.0)
-{Realizar ajuste final, comprobar la lectura y finalizar la dosificación};
-
-\node (fin) [iniciofin] at (6.8,-11.7)
+\node[iniciofin, below=of finalizar] (fin)
 {Fin};
 
-% ================================================================
-% FLUJO PRINCIPAL
-% ================================================================
+% Bucle lateral
+\node[
+    proceso,
+    left=2.2cm of decision,
+    text width=2.2cm,
+    minimum width=2.5cm
+] (agregar)
+{Agregar harina};
 
+% Conexiones
 \draw[flecha] (inicio) -- (preparar);
 \draw[flecha] (preparar) -- (tara);
-\draw[flecha] (tara.east) -- (carga.west);
-\draw[flecha] (carga) -- (medir);
+\draw[flecha] (tara) -- (trasladar);
+\draw[flecha] (trasladar) -- (medir);
 \draw[flecha] (medir) -- (decision);
 
 \draw[flecha]
-    (decision.south) -- node[right,font=\small] {No} (finalizar.north);
+    (decision.south)
+    -- node[right,font=\small] {Sí}
+    (finalizar.north);
 
 \draw[flecha] (finalizar) -- (fin);
 
-% ================================================================
-% BUCLE DE REPETICIÓN
-% ================================================================
+\draw[flecha]
+    (decision.west)
+    -- ++(-1.0,0)
+    node[above,font=\small,pos=0.35] {No}
+    -- (agregar.east);
 
 \draw[flecha]
-    (decision.west) -- ++(-1.2,0)
-    node[above,font=\small,pos=0.35] {Sí}
-    -- (nuevacarga.east);
-
-\draw[flecha] (nuevacarga.north) -- (volver.south);
-\draw[flecha] (volver.east) -- (medir.west);
+    (agregar.north)
+    |- (medir.west);
 
 \end{tikzpicture}

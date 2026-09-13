@@ -78,25 +78,67 @@ procedimiento actual.
 \section{Planteamiento del Problema}
 \label{sec:problema}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANTECEDENTES DEL PROBLEMA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Antecedentes del Problema}
 \label{subsec:antecedentes_problema}
 
 Para caracterizar el procedimiento actual de dosificación de harina se
-realizó un levantamiento de campo en la Panadería San Miguel. El área
-relacionada con esta operación comprende la zona de almacenamiento de
-harina, la mesa donde se encuentra instalada la balanza y la amasadora.
-La disposición de estos elementos se encuentra condicionada por los
-accesos existentes, la ubicación del suministro de agua y la organización
-del área de producción.
+realizó un levantamiento de campo en la Panadería San Miguel. La
+observación se concentró en la operación comprendida entre la preparación
+del recipiente receptor para el pesaje y la finalización de la
+dosificación de la cantidad de harina establecida para cada preparación.
 
-Durante el levantamiento se registró una distancia de
-$3{,}20\ \mathrm{m}$ por trayecto entre la zona de almacenamiento de
-harina y el punto de pesaje. La Figura~\ref{fig:croquis_panaderia}
-presenta la distribución del área vinculada con la dosificación e
-identifica los principales elementos que intervienen en el recorrido
-realizado por el operario.
+El procedimiento observado inicia con la colocación del recipiente
+receptor sobre la balanza, la aplicación de la función de tara y la
+comprobación de la indicación de cero. Posteriormente, el operario se
+desplaza hacia la zona de almacenamiento de harina, recoge una carga
+mediante un recipiente de transporte, retorna al punto de pesaje y
+descarga su contenido en el recipiente receptor.
 
-\begin{figure}[htb]
+Después de cada carga principal, el operario determina si se requiere
+realizar una nueva carga. Cuando corresponde, retorna a la zona de
+almacenamiento, recoge harina y repite las operaciones de traslado y
+descarga. Una vez completadas las cargas principales, el ajuste final se
+realiza utilizando la harina remanente en el recipiente de transporte,
+sin efectuar un nuevo desplazamiento hacia la zona de almacenamiento.
+Finalmente, se comprueba la lectura indicada por la balanza y se devuelve
+el recipiente de transporte a la zona de harina.
+
+Para sistematizar el procedimiento se identificaron las siguientes
+actividades: preparación y tare (P), desplazamiento inicial hacia la zona
+de almacenamiento (I), recogida, traslado y descarga de una carga
+principal (C), retorno para realizar una carga adicional (R), ajuste final
+y comprobación de la lectura (F), y devolución del recipiente de
+transporte (D).
+
+La Figura~\ref{fig:dfd_dosificacion} representa la secuencia de estas
+actividades y la decisión asociada a la realización de cargas principales
+adicionales.
+
+\begin{figure}[htbp]
+    \centering
+    \resizebox{0.8\textwidth}{!}{
+        {\setlength{\fboxsep}{14pt}
+        \fbox{\input{images/marcoref/dfd_dosificacion.tex}}}}
+    \caption{Diagrama de flujo del procedimiento manual de dosificación de harina.}
+    \footnotesize{Fuente: Elaboración propia.}
+    \label{fig:dfd_dosificacion}
+\end{figure}
+
+El área relacionada con la operación comprende la zona de almacenamiento
+de harina, el punto de pesaje donde se encuentra instalada la balanza y
+la amasadora. Durante el levantamiento se registró una distancia de
+$3{,}20\ \mathrm{m}$ por trayecto entre la zona de almacenamiento y el
+punto de pesaje.
+
+La Figura~\ref{fig:croquis_panaderia} presenta la distribución de los
+principales elementos vinculados con la operación y el recorrido realizado
+por el operario entre las zonas de almacenamiento y pesaje.
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{images/marcoref/croquis_panaderia.png}
     \caption{Distribución del área relacionada con la dosificación de harina en la Panadería San Miguel.}
@@ -104,80 +146,55 @@ realizado por el operario.
     \label{fig:croquis_panaderia}
 \end{figure}
 
-El procedimiento observado inicia con la preparación del recipiente
-receptor sobre la balanza, seguida de la aplicación de la función de
-tara y la comprobación de la indicación de cero. Posteriormente, el
-operario se desplaza hacia la zona de almacenamiento de harina, recoge
-una carga mediante un recipiente de transporte, retorna al punto de
-pesaje y descarga el contenido en el recipiente receptor.
+En los siete ciclos registrados se contabilizaron 55 trayectos entre las
+actividades que conforman el procedimiento. Considerando la distancia de
+$3{,}20\ \mathrm{m}$ por trayecto, el desplazamiento acumulado calculado
+para la muestra observada corresponde a:
 
-Cuando la cantidad de harina acumulada permanece por debajo de la cantidad
-establecida para la receta, el operario retorna a la zona de almacenamiento
-para recoger una carga adicional y repite la operación. Después de la última carga
-principal se realiza un ajuste final empleando la harina remanente en el
-recipiente de transporte. Finalmente, se comprueba la lectura indicada por
-la balanza y el recipiente de transporte es devuelto a la zona de harina.
+\[
+55(3{,}20\ \mathrm{m}) = 176{,}0\ \mathrm{m}.
+\]
 
-Para describir de manera sistemática el ciclo de dosificación se
-identificaron las siguientes actividades: preparación y tara (P),
-desplazamiento inicial hacia la zona de harina (I), recogida, traslado y
-descarga de una carga principal (C), retorno para realizar una carga
-adicional (R), ajuste final y comprobación de la lectura (F), y devolución
-del recipiente de transporte (D).
+Este valor es un cálculo derivado de los trayectos registrados y de la
+distancia medida entre las zonas de almacenamiento y pesaje.
 
-La función de tara se realiza una sola vez por ciclo. Asimismo, el ajuste
-final no requiere un trayecto adicional hacia la zona de almacenamiento,
-debido a que se efectúa utilizando la harina remanente de la última carga
-transportada.
+El intervalo utilizado para el análisis inicia con la preparación del
+recipiente receptor y finaliza después de la comprobación de la lectura
+y la devolución del recipiente de transporte. El abastecimiento y la
+apertura de una nueva bolsa de harina, el traslado posterior de la harina
+hacia la amasadora y las operaciones posteriores de elaboración del
+producto no forman parte del intervalo analizado.
 
-La Figura~\ref{fig:dfd_dosificacion} representa la secuencia de
-actividades que conforman el procedimiento manual actual de dosificación
-de harina. En ella se identifican las etapas de preparación, pesaje,
-carga, verificación de la cantidad de harina acumulada, repetición de
-cargas cuando corresponde y finalización del ciclo.
+La evidencia disponible comprende siete ciclos de dosificación
+registrados durante dos jornadas de observación. El 2 de septiembre de
+2026 se registraron cinco ciclos correspondientes a dos dosificaciones de
+pan casero, dos de marraqueta y una de pan francés. El 5 de septiembre
+de 2026 se registraron dos ciclos: uno de pan casero y uno correspondiente
+a una masa común utilizada posteriormente para empanadas y rollos de
+queso.
 
-\begin{figure}[H]
-    \centering
-    \resizebox{0.8\textwidth}{!}{
-        {\setlength{\fboxsep}{14pt}
-        \fbox{\input{images/marcoref/dfd_dosificacion.tex}}}}
-    \caption{Diagrama de flujo del procedimiento manual actual de dosificación de harina.}
-    \footnotesize{Fuente: Elaboración Propia.}
-    \label{fig:dfd_dosificacion}
-\end{figure}
-
-El intervalo utilizado para el análisis comienza con la preparación del
-recipiente receptor y concluye una vez comprobada la lectura final y
-devuelto el recipiente de transporte. El abastecimiento y apertura de
-una nueva bolsa de harina, el traslado posterior hacia la amasadora y
-las operaciones posteriores de elaboración del producto quedan fuera de
-este intervalo.
-
-La evidencia consolidada comprende siete ciclos de dosificación
-correspondientes a dos jornadas de observación. La jornada ordinaria,
-registrada el 2 de septiembre de 2026, comprende cinco ciclos de
-dosificación: dos de pan casero, dos de marraqueta y uno de pan francés.
-La jornada de sábado, registrada el 5 de septiembre de 2026, comprende
-dos ciclos: uno de pan casero y uno correspondiente a una masa común
-utilizada posteriormente para empanadas y rollos de queso.
+En los siete ciclos se realizaron 24 cargas principales. Las cantidades
+objetivo observadas estuvieron comprendidas entre $5{,}000$ y
+$8{,}000\ \mathrm{kg}$ por ciclo.
 
 Las lecturas acumuladas de la balanza y los registros de cantidad de
-harina utilizados para el análisis se presentan en el
-Apéndice~\ref{ap:registros_campo}, mientras que la desagregación de los
-tiempos por actividad se incluye en el
+harina se presentan en el Apéndice~\ref{ap:registros_campo}, mientras que
+la desagregación de los tiempos por actividad se incluye en el
 Apéndice~\ref{ap:tablas_dosificacion}.
 
-La Tabla~\ref{tab:resumen_dosificacion} presenta los resultados
-consolidados de las jornadas registradas. La diferencia de cantidad de
-harina se determina mediante:
+Para comparar la cantidad de harina establecida para cada preparación
+con la cantidad registrada al finalizar el ciclo se utiliza la diferencia:
 
 \[
 \Delta h = h_{\mathrm{final}} - h_{\mathrm{objetivo}},
 \]
 
-donde $h_{\mathrm{final}}$ corresponde a la cantidad final de harina
-registrada y $h_{\mathrm{objetivo}}$ a la cantidad de harina establecida
-para la receta.
+donde $h_{\mathrm{final}}$ corresponde a la cantidad final registrada por
+la balanza y $h_{\mathrm{objetivo}}$ a la cantidad de harina establecida
+para la preparación.
+
+La Tabla~\ref{tab:resumen_dosificacion} presenta los resultados
+consolidados de las dos jornadas observadas.
 
 \begin{table}[H]
     \centering
@@ -189,9 +206,9 @@ para la receta.
         \hline
         \textbf{Jornada} &
         \textbf{Ciclos} &
-		\textbf{\shortstack{Harina de\\receta (kg)}} &
-		\textbf{\shortstack{Harina\\final (kg)}} &
-		\textbf{\shortstack{Diferencia de\\harina (kg)}} &
+        \textbf{\shortstack{Cantidad objetivo\\de harina (kg)}} &
+        \textbf{\shortstack{Cantidad final\\de harina (kg)}} &
+        \textbf{\shortstack{Diferencia de\\harina (kg)}} &
         \textbf{\shortstack{Tiempo\\(s)}} \\
         \hline
 
@@ -209,12 +226,12 @@ para la receta.
         $+0{,}065$ &
         $107{,}4$ \\
 
-		\textbf{Total} &
-		\textbf{7} &
-		$\mathbf{48{,}000}$ &
-		$\mathbf{48{,}143}$ &
-		$\mathbf{+0{,}143}$ &
-		$\mathbf{411{,}9}$ \\
+        \textbf{Total} &
+        \textbf{7} &
+        $\mathbf{48{,}000}$ &
+        $\mathbf{48{,}143}$ &
+        $\mathbf{+0{,}143}$ &
+        $\mathbf{411{,}9}$ \\
 
         \hline
     \end{tabular}
@@ -222,43 +239,41 @@ para la receta.
     \vspace{0.4em}
 
     \parbox{0.94\textwidth}
-	\footnotesize{Fuente: Elaboración Propia.}
+    \footnotesize{Fuente: Elaboración propia.}
 \end{table}
 
+Los tiempos individuales registrados para el procedimiento se encontraron
+entre $53{,}2\ \mathrm{s}$ y $66{,}6\ \mathrm{s}$ por ciclo. Los cinco
+ciclos de la jornada ordinaria acumularon $304{,}5\ \mathrm{s}$ y los
+dos ciclos de la jornada de sábado $107{,}4\ \mathrm{s}$, obteniéndose un
+tiempo acumulado de $411{,}9\ \mathrm{s}$ para los siete ciclos
+observados.
 
-El tiempo acumulado para los cinco ciclos de la jornada ordinaria fue de
-$304{,}5\ \mathrm{s}$, mientras que los dos ciclos de la jornada de
-sábado sumaron $107{,}4\ \mathrm{s}$. En conjunto se registraron
-$411{,}9\ \mathrm{s}$, equivalentes a $6\ \mathrm{min}$ y
-$51{,}9\ \mathrm{s}$.
+Las operaciones de recogida, traslado y descarga de las cargas
+principales, junto con los retornos realizados para efectuar cargas
+adicionales, acumularon $259{,}7\ \mathrm{s}$, equivalentes al
+$63{,}0\%$ del tiempo total registrado. Este valor incluye tanto la
+manipulación de harina como los desplazamientos del operario, por lo que
+no representa exclusivamente tiempo de caminata.
 
-Los tiempos individuales se encontraron entre $53{,}2\ \mathrm{s}$ y
-$66{,}6\ \mathrm{s}$. Estos valores cuantifican el tiempo destinado a la
-operación de dosificación dentro de los límites definidos y no
-constituyen, por sí solos, una medición de tiempo perdido ni del ahorro
-que podría alcanzar una alternativa automatizada.
+Los valores anteriores cuantifican el tiempo durante el cual el operario
+interviene directamente en el procedimiento dentro de los límites
+definidos. No constituyen, por sí mismos, una medición de tiempo perdido
+ni permiten establecer el ahorro que podría alcanzar una alternativa
+automatizada.
 
-Las operaciones de recogida, traslado y descarga de cargas principales,
-junto con los retornos requeridos para realizar cargas adicionales,
-acumularon $259{,}7\ \mathrm{s}$ de los $411{,}9\ \mathrm{s}$
-registrados, equivalentes al $63{,}0\%$ del tiempo total. Este valor
-comprende tanto la manipulación de harina como el desplazamiento del
-operario y, por tanto, no corresponde exclusivamente a tiempo de
-caminata.
-
-Respecto de la cantidad de harina dosificada, las lecturas finales de
-los siete ciclos se encontraron por encima de las cantidades de harina
-establecidas para las respectivas recetas.
-
-Las diferencias individuales registradas variaron entre
+Respecto de la cantidad de harina, en los siete ciclos observados la
+lectura final se encontró por encima de la cantidad objetivo. Las
+diferencias individuales estuvieron comprendidas entre
 $+0{,}011\ \mathrm{kg}$ y $+0{,}038\ \mathrm{kg}$, con una diferencia
-acumulada de $+0{,}143\ \mathrm{kg}$. Estos resultados corresponden a
-las jornadas observadas y no permiten establecer desperdicio,
-incumplimiento de una tolerancia o alteraciones en la calidad del
-producto. La definición de un criterio de aceptación requiere considerar
-las características de las recetas, la resolución y las características
-metrológicas del sistema de pesaje, además de los requerimientos
-establecidos para el prototipo.
+acumulada de $+0{,}143\ \mathrm{kg}$.
+
+Estos resultados describen únicamente la muestra registrada. Con la
+evidencia disponible no es posible establecer que las diferencias
+observadas constituyan desperdicio, incumplimiento de una tolerancia o
+afectación de la calidad del producto. La evaluación de estas diferencias
+requiere disponer de un criterio de aceptación y de las características
+metrológicas del sistema de pesaje utilizado.
 
 % PENDIENTE DE CAMPO:
 % Registrar:
@@ -268,11 +283,11 @@ establecidos para el prototipo.
 % - división/resolución,
 % - información disponible sobre precisión o verificación.
 
-Para estimar la acumulación mensual del tiempo destinado a la
-dosificación se considera el calendario de septiembre de 2026,
-compuesto por 22 días de lunes a viernes y cuatro sábados. Bajo el
-supuesto de repetición de las condiciones registradas para cada tipo de
-jornada, el tiempo mensual proyectado se determina mediante:
+Como escenario de referencia, se realizó una proyección del tiempo
+destinado a la dosificación para septiembre de 2026. El cálculo considera
+22 días de lunes a viernes y cuatro sábados, bajo el supuesto de que las
+condiciones registradas para cada tipo de jornada se repitan durante el
+mes:
 
 \[
 22(304{,}5\ \mathrm{s})
@@ -282,105 +297,19 @@ jornada, el tiempo mensual proyectado se determina mediante:
 7\,128{,}6\ \mathrm{s}.
 \]
 
-El resultado equivale a $1\ \mathrm{h}$, $58\ \mathrm{min}$ y
-$48{,}6\ \mathrm{s}$ de actividad de dosificación durante el mes. Esta
-estimación se obtiene a partir de las jornadas observadas y no
-representa una medición mensual directa. La proyección no incorpora
-cierres, feriados, variaciones de producción ni modificaciones de las
-condiciones registradas.
+El resultado corresponde a $1\ \mathrm{h}$, $58\ \mathrm{min}$ y
+$48{,}6\ \mathrm{s}$. Este valor constituye una proyección obtenida a
+partir de las jornadas observadas y no una medición mensual directa. El
+cálculo no considera cierres, feriados, variaciones de producción ni
+modificaciones de las condiciones registradas.
 
-A partir de los tiempos registrados y de su acumulación en las jornadas
-observadas, el tiempo de intervención directa del operario se establece
-como la variable central del planteamiento.
-
-\newpage
-
-La Figura~\ref{fig:arbol_problemas} presenta la relación entre las
-causas identificadas, la condición central del planteamiento y los
-efectos temporales derivados de los registros y de la proyección
-mensual.
-
-\begin{figure}[H]
-    \centering
-    \resizebox{0.8\textwidth}{!}{
-        \input{images/marcoref/arbol_problemas.tex}
-    }
-    \caption{Árbol de problemas de la dosificación manual de harina en
-    la Panadería San Miguel.}
-    \label{fig:arbol_problemas}
-
-    \vspace{0.2em}
-
-    {\small Fuente: Elaboración propia.}
-\end{figure}
-
-La Tabla~\ref{tab:trazabilidad_arbol} relaciona los elementos
-presentados en el árbol con la evidencia obtenida durante el
-levantamiento de campo y con los valores calculados a partir de las
-jornadas observadas.
-
-\begin{table}[H]
-    \centering
-    \caption{Trazabilidad de los elementos del árbol de problemas}
-    \label{tab:trazabilidad_arbol}
-    \small
-
-    \begin{tabularx}{\textwidth}{|l|X|X|}
-        \hline
-
-        \textbf{ID} &
-        \textbf{Elemento} &
-        \textbf{Evidencia disponible} \\
-        \hline
-
-        C1 &
-        Preparación del recipiente, aplicación de tara y comprobación de cero
-        en cada ciclo. &
-        La actividad P se registró en los siete ciclos observados. \\
-        \hline
-
-        C2 &
-        Dosificación mediante cargas principales realizadas manualmente. &
-        Se registraron tres o cuatro cargas principales por ciclo y
-        24 cargas principales en los siete ciclos observados. \\
-        \hline
-
-        C3 &
-        Ajuste final y comprobación manual de la lectura. &
-        La actividad F se registró en los siete ciclos observados. \\
-        \hline
-
-        E1 &
-        Acumulación del tiempo destinado al procedimiento de dosificación
-        durante las jornadas observadas. &
-        Se registraron $304{,}5\ \mathrm{s}$ en los cinco ciclos de la
-        jornada ordinaria y $107{,}4\ \mathrm{s}$ en los dos ciclos de la
-        jornada de sábado. \\
-        \hline
-
-        E2 &
-        Acumulación mensual proyectada del tiempo destinado a la
-        dosificación. &
-        La proyección para septiembre de 2026 corresponde a
-        $7\,128{,}6\ \mathrm{s}$, equivalentes a
-        $1\ \mathrm{h}$, $58\ \mathrm{min}$ y
-        $48{,}6\ \mathrm{s}$. \\
-        \hline
-
-    \end{tabularx}
-
-    \vspace{0.4em}
-
-    {\footnotesize Fuente: Elaboración propia.}
-
-\end{table}
-
-La trazabilidad muestra que las causas C1, C2 y C3 corresponden a
-actividades registradas durante los siete ciclos observados. El efecto
-E1 reúne los tiempos acumulados de las dos jornadas, mientras que E2
-corresponde a la proyección mensual calculada a partir de dichos
-registros. En conjunto, la evidencia sustenta el tiempo de intervención
-directa del operario como variable central del planteamiento.
+En conjunto, la caracterización muestra que el procedimiento requiere
+intervención directa del operario durante todas las etapas del ciclo.
+Dentro de la muestra observada, la mayor proporción del tiempo registrado
+se concentró en las actividades asociadas con las cargas principales y
+los retornos para cargas adicionales. La diferencia de harina constituye
+una variable adicional de evaluación, pero la evidencia disponible no
+permite establecerla como una condición problemática independiente.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FORMULACIÓN DEL PROBLEMA
@@ -389,11 +318,33 @@ directa del operario como variable central del planteamiento.
 \subsection{Formulación del Problema}
 \label{subsec:formulacion_problema}
 
-Durante las jornadas observadas, el procedimiento manual de dosificación
-de harina en la Panadería San Miguel requirió intervención directa del
-operario durante $53{,}2$--$66{,}6\ \mathrm{s}$ por ciclo, con tiempos
-acumulados de $304{,}5\ \mathrm{s}$ en la jornada ordinaria y
-$107{,}4\ \mathrm{s}$ en la jornada de sábado.
+En la Panadería San Miguel, el operario dedica entre 53,2 y 66,6 s por ciclo al procedimiento manual de dosificación de harina, acumulando 411,9 s en los siete ciclos observados.
+
+% El operario destina entre 53,2 y 66,6 s por ciclo al procedimiento manual de dosificación de harina en la Panadería San Miguel.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ÁRBOL DE PROBLEMAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Árbol de Problemas}
+\label{subsec:arbol_problemas}
+
+A partir de la caracterización del procedimiento y de la formulación
+establecida, la Figura~\ref{fig:arbol_problemas} organiza las condiciones
+que originan la intervención directa del operario y las consecuencias
+temporales que pudieron cuantificarse durante las jornadas observadas.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.84\textwidth}{!}{%
+        \input{images/marcoref/arbol_problemas.tex}%
+    }
+    \caption{Árbol de problemas del procedimiento manual de dosificación de harina.}
+    \label{fig:arbol_problemas}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia.}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OBJETIVOS
