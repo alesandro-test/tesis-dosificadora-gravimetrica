@@ -72,9 +72,8 @@
 
 % CAUSAS DIRECTAS
 \node[causa, below=1.15cm of problema] (c1) {
-    Tiempo dedicado a\\
-    cargas y retornos:\\[0.2em]
-    259,7 s (63,0 \%)
+    Cargas y \\
+    Traslados Sucesivos\\
 };
 
 \node[causa, below=1.15cm of problema.south west, anchor=north west] (c2) {
@@ -92,20 +91,18 @@
 \node[subcausa, below=of c2] (sc1) {
     Separación entre\\
     almacenamiento y\\
-    pesaje: 3,20 m\\
-    por trayecto
+    pesaje
 };
 
 \node[subcausa, below=of c1] (sc2) {
-    Dosificación\\
-    mediante cargas\\
-    sucesivas
+    3--4 cargas\\
+    principales\\
+    por ciclo
 };
 
 \node[subcausa, below=of c3] (sc3) {
     Retornos para\\
-    realizar cargas\\
-    adicionales
+    cargas adicionales
 };
 
 % FLECHAS
