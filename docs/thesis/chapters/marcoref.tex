@@ -2,26 +2,18 @@
 \label{sec:introduction}
 
 La Panadería San Miguel, ubicada en Santa Cruz de la Sierra, constituye
-el caso de estudio del proyecto. Durante el relevamiento de campo se
-documentaron preparaciones de pan casero, marraqueta y pan francés,
-además de una masa común destinada a empanadas y rollos de queso.
-Estas preparaciones sitúan la dosificación de harina dentro de la
-actividad del establecimiento.
+el caso de estudio del proyecto. El relevamiento documentó preparaciones
+de pan casero, marraqueta, pan francés y una masa común. El estudio se
+concentra en la dosificación de harina correspondiente a estas preparaciones.
 
 La elaboración de pan comprende la preparación y dosificación de
 ingredientes, el mezclado y amasado, la división y formado de la masa,
 la fermentación y la cocción, con variaciones según el producto y el
-método empleado \parencite{cauvain2015technology}. En esta secuencia,
-la dosificación establece la cantidad de cada ingrediente destinada a
-una preparación. En el caso de la harina, esta operación precede al
-mezclado y amasado.
+método empleado \parencite{cauvain2015technology}. La dosificación
+establece la cantidad de cada ingrediente destinada a una preparación.
 
-La Figura~\ref{fig:proceso_general_pan} presenta un esquema general del
-proceso de elaboración del pan e identifica la dosificación de harina
-como la operación comprendida en el proyecto. El mezclado y amasado,
-la división y formado, la fermentación y la cocción quedan fuera del
-desarrollo. El esquema sitúa la etapa estudiada dentro del proceso
-productivo del establecimiento.
+La Figura~\ref{fig:proceso_general_pan} ubica la dosificación de harina
+dentro de esta secuencia e identifica la operación comprendida en el proyecto.
 
 \begin{figure}[htb]
     \centering
@@ -41,31 +33,32 @@ productivo del establecimiento.
 
 \end{figure}
 
-La dosificación gravimétrica automatizada utiliza el pesaje como
-referencia para controlar el suministro de un ingrediente respecto de
-una cantidad objetivo. En aplicaciones de panificación, los desarrollos
-reportados integran mecanismos de alimentación, celdas de carga y
-estrategias de control para dosificar harina y otros ingredientes
-\parencite{farihin2021premix,humaira2024optimalisasi}. La literatura
-también presenta desarrollos de dosificación automática de harina
-orientados a pequeñas y medianas panaderías \parencite{rumapea2026flour}.
+\begingroup
+\widowpenalty=10000
+La dosificación gravimétrica utiliza el pesaje para determinar la cantidad
+suministrada respecto de una cantidad objetivo. En panificación se han
+descrito dosificadores automáticos con mecanismos de alimentación,
+celdas de carga y control
+\parencite{farihin2021premix,humaira2024optimalisasi}.
+Otros trabajos estudian dosificadores de harina para pequeñas y
+medianas panaderías \parencite{rumapea2026flour}.
+\par
+\endgroup
 
-Estos antecedentes aportan referencias para el estudio de alternativas
-de dosificación gravimétrica. Para la Panadería San Miguel, el análisis
-de diseño considera las cantidades de harina utilizadas, la secuencia
-de trabajo, las características del material, la distribución del área
-y las condiciones de operación. La caracterización del establecimiento
-y la bibliografía constituyen la base para definir los requerimientos
-del prototipo.
+Estos trabajos aportan antecedentes para estudiar alternativas de
+dosificación. En la Panadería San Miguel, la definición de requerimientos
+considera las cantidades de harina utilizadas, la secuencia de trabajo,
+las características del material, la distribución del área y las
+condiciones de operación. La caracterización del establecimiento vincula
+esas referencias con el caso de estudio.
 
 El proyecto se orienta al desarrollo de un prototipo automatizado de
 dosificación gravimétrica de harina para la Panadería San Miguel. El
-estudio comprende la caracterización del procedimiento manual, el
-establecimiento de requerimientos, el diseño, la construcción e
-integración del prototipo y la evaluación comparativa del desempeño
-frente al procedimiento manual bajo condiciones equivalentes. La
-caracterización de la operación actual establece el punto de partida
-del desarrollo.
+trabajo comprende la caracterización del procedimiento manual, la
+definición de requerimientos, el diseño, la construcción e integración
+del prototipo y la evaluación comparativa frente al procedimiento manual
+bajo condiciones equivalentes. La sección siguiente presenta la evidencia
+del procedimiento actual que fundamenta el desarrollo.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,12 +108,13 @@ objetivo. El gráfico representa la repetición de la incorporación y el
 pesaje, la devolución del recipiente de transporte forma parte del
 intervalo registrado, aunque no aparece desagregada en el diagrama.
 
-\begin{figure}[htbp]
+\begin{figure}[hbt]
     \centering
     \resizebox{0.8\textwidth}{!}{
         {\setlength{\fboxsep}{14pt}
         \fbox{\input{images/marcoref/dfd_dosificacion.tex}}}}
     \caption{Diagrama de flujo del procedimiento manual de dosificación de harina.}
+    \vspace{0.2em}
     \footnotesize{Fuente: Elaboración propia.}
     \label{fig:dfd_dosificacion}
 \end{figure}
@@ -133,13 +127,14 @@ en planta. La correspondencia entre estas cotas y la longitud de cada
 trayecto del operario permanece pendiente de verificación, el croquis se
 utiliza para describir la distribución física.
 
-\begin{figure}[htbp]
+\begin{figure}[hbt]
     \centering
     \resizebox{0.95\textwidth}{!}{%
         \input{images/marcoref/croquis_panaderia.tex}%
     }
     \caption{Distribución del área relacionada con la dosificación de harina en la Panadería San Miguel.}
     \footnotesize{Fuente: Elaboración propia.}
+    \vspace{0.2em}
     \label{fig:croquis_panaderia}
 \end{figure}
 
@@ -185,7 +180,7 @@ La Tabla~\ref{tab:resumen_dosificacion} reúne los resultados consolidados
 de los ciclos registrados en ambas jornadas. Las cantidades y los tiempos
 corresponden a sumas de los registros incluidos en los apéndices.
 
-\begin{table}[H]
+\begin{table}[hbt]
     \centering
     \caption{Resumen de los ciclos de dosificación de harina registrados}
     \label{tab:resumen_dosificacion}

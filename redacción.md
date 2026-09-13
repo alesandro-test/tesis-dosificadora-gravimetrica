@@ -2,7 +2,7 @@
 
 **Aplicación actual:** Marco Referencial / Capítulo 1.  
 **Uso posterior:** adaptar la ficha de revisión a cada capítulo sin imponerle la función del Marco Referencial.  
-**Estado:** guía de trabajo y diagnóstico del borrador; no sustituye decisiones del proyecto ni una aprobación docente.
+**Estado:** guía operativa de redacción; no sustituye decisiones del proyecto ni una aprobación docente.
 
 ## 1. Fuentes y orden de consulta
 
@@ -24,7 +24,12 @@ La guía `$thesis-writing` propone revisar primero el argumento y la estructura,
 5. **Edición de frase.** Corregir sintaxis, léxico, semántica, puntuación, concordancia, referencias ambiguas y repetición. Aplicar las restricciones de estilo de la sección 3 sin perder precisión.
 6. **Verificación final.** Revisar valores y unidades, consistencia entre texto y elementos gráficos, existencia de claves bibliográficas, referencias cruzadas y compilación de LaTeX si se modificó un `.tex`.
 
-En cada ciclo de revisión conviene trabajar **una subsección** y registrar: hallazgo → ubicación → evidencia → propuesta de corrección → estado (`corregido`, `pendiente de fuente` o `pendiente de decisión`). Primero se presenta la propuesta de contenido y, tras verificarla, se incorpora al LaTeX.
+Trabajar una subsección por ciclo. La instrucción actual del estudiante determina el modo:
+
+- **Diagnóstico o propuesta:** presentar una tabla breve con ubicación, fragmento original, hallazgo, propuesta, fundamento y validación pendiente; conservar el archivo fuente.
+- **Edición autorizada:** aplicar las correcciones solicitadas, verificar citas y referencias y compilar. Una aprobación previa de la propuesta basta para incorporarla; no solicitar otra confirmación rutinaria.
+
+Comparar original y propuesta para detectar cambios involuntarios en negaciones, orden de operaciones, condiciones, unidades, muestra y atribución de acciones. Mantener un único nombre para cada variable. Separar ajustes de redacción de cambios que afecten contenido o decisiones.
 
 ## 3. Criterios de redacción aportados por el estudiante
 
@@ -46,34 +51,29 @@ La revisión léxica no consiste en cambiar una palabra prohibida por un sinóni
 
 Para cada párrafo de desarrollo, verificar tres movimientos: **oración principal → oraciones complementarias fundamentales → cierre técnico**. La oración principal enuncia una idea; el desarrollo aporta procedimiento, dato, fuente o relación; el cierre explica la consecuencia limitada por la evidencia o enlaza con la subsección. La conclusión no debe repetir la primera oración.
 
-La indicación de aplicar esa estructura a párrafos de menos de ocho líneas se toma como **criterio de revisión**, no como una licencia para dejar párrafos más largos sin estructura. Las metas de 50–100 palabras con máximo cuatro líneas y de 100–200 palabras con máximo doce líneas dependen del ancho, tipo y espaciado de la plantilla; pueden ser incompatibles entre sí. Comprobar la legibilidad en el PDF compilado y decidir divisiones por unidad de idea, sin rellenar hasta alcanzar una cuota de palabras.
+La indicación de aplicar esa estructura a párrafos de menos de ocho líneas se toma como **criterio de revisión**, no como una licencia para dejar párrafos más largos sin estructura. El conflicto entre límites de líneas y palabras se registra en la sección 6. Verificar la extensión en el PDF, no mediante las líneas del archivo `.tex`; no rellenar párrafos para alcanzar una cuota.
 
 Usar conectores cuando expliciten una relación real. `De acuerdo con` introduce una fuente; `En consecuencia` expresa una inferencia sustentada; `Sin embargo` marca contraste; `A diferencia de` exige dos términos comparables. `Cabe destacar que` y `Esto implica que` pueden resultar redundantes: preferir la afirmación directa cuando el vínculo sea evidente. El ejemplo narrativo del «error» aportado por el estudiante ilustra la progresión idea → desarrollo → cierre, pero su tono personal y sus ejemplos literarios no constituyen modelo de prosa técnica para esta tesis.
 
 ### Modelo de párrafo ajustado al proyecto
 
-> La dosificación de harina exigió intervención directa del operario durante los siete ciclos registrados. Los tiempos observados estuvieron entre 53,2 y 66,6 s por ciclo, de acuerdo con los registros de campo. Este intervalo caracteriza la muestra estudiada y constituye una referencia para la evaluación comparativa del prototipo.
+> El relevamiento documentó siete ciclos del procedimiento manual de dosificación de harina. Los tiempos del procedimiento estuvieron entre 53,2 y 66,6 s por ciclo, de acuerdo con los registros de campo. Este intervalo caracteriza la muestra estudiada dentro de los límites definidos para cada ciclo.
 
 El ejemplo usa mediciones ya documentadas; no afirma que el tiempo sea excesivo ni anticipa una mejora del prototipo. Al incorporarlo al documento, enlazar la afirmación con el registro, tabla o apéndice correspondiente.
 
-## 4. Revisión inicial del Marco Referencial existente
+## 4. Aplicación al Marco Referencial
 
-**Archivo revisado:** `docs/thesis/chapters/marcoref.tex`, junto con `main.tex`, el preámbulo, las tres figuras `.tex` del capítulo, el croquis disponible y las claves de `referencias.bib`. Esta es una revisión del borrador presente, no una certificación de los datos originales ni de aprobación académica.
+Consultar la función, el orden y la profundidad de cada apartado en `context/THESIS_STRUCTURE.md`; no duplicar aquí esa estructura. Leer el capítulo y sus dependencias reales en cada revisión. El diagnóstico del borrador inicial fue retirado de esta guía porque incluía observaciones ya corregidas y referencias a una versión anterior del croquis.
 
-| Apartado | Hallazgo y acción de revisión |
-|---|---|
-| Introducción | Ubica la panadería, el proceso y la dosificación de harina. Revisar la extensión y función de los párrafos de antecedentes tecnológicos: la introducción debe contextualizar sin adelantar una justificación técnica ni repetir los antecedentes. Corregir el futuro `serán incorporadas` y revisar las formulaciones modales `permite` y `deben`. Las tres claves de las fuentes tecnológicas y la de panificación figuran en `referencias.bib`; verificar que cada fuente respalde exactamente la afirmación citada cuando se edite ese contenido. |
-| Antecedentes: procedimiento y flujo | La secuencia manual aparece narrada y se acompaña de un diagrama. Reducir repetición de pasos entre los párrafos y la explicación de la figura. El archivo se llama `dfd_dosificacion.tex`, pero su contenido es un **diagrama de flujo del procedimiento**, como indica la leyenda; `PROFESSOR_NOTES.md` señala que un DFD formal no está confirmado. No presentarlo como flujo de datos sin esa validación. |
-| Antecedentes: distribución | En el párrafo que precede al croquis se repite literalmente «De acuerdo con el croquis levantado» (`marcoref.tex`, alrededor de la línea 129). El texto menciona cotas de 3,20 m y 0,90 m; aclarar qué representa cada una mediante el croquis y el registro original antes de interpretar recorridos. |
-| Antecedentes: mediciones | Se informa muestra de siete ciclos, 24 cargas, objetivos de 5,0–8,0 kg, tiempos, diferencias y anexos. Mantener identificadas las condiciones de cada jornada y la única dosificación de la masa común del sábado. Revisar que cada cifra citada en el cuerpo coincida con la tabla y los registros; no extrapolar los siete ciclos a toda la producción. |
-| Antecedentes: interpretación | La separación entre tiempo observado, tiempo de actividades agrupadas y proyección mensual está explicitada. Conservar la aclaración de que 259,7 s incluye manipulación y desplazamiento, y que 7128,6 s es una proyección condicionada. La diferencia de harina no equivale por sí misma a desperdicio ni incumplimiento de una tolerancia. Revisar `únicamente` como equivalente de `solamente` y las formas modales, sin debilitar estas salvedades. |
-| Formulación | La frase actual se centra en 53,2–66,6 s por ciclo, en línea con D-003 y D-004. La versión académica presentada el 11/09/2026 es la referencia vigente, pero falta la aprobación definitiva del docente. Revisar si la formulación expresa una condición central y no solo un dato descriptivo, sin reescribirla ni desplazarla hacia la diferencia de harina por iniciativa de estilo. |
-| Árbol | El nodo central coincide con la formulación actual. Las dos cajas de «efectos» presentan el mismo tiempo agregado para la muestra y para un escenario mensual; revisar con el docente si son efectos causales o formas de cuantificar la condición central. Comprobar que cada causa y subcausa tenga respaldo en la caracterización, incluida la referencia a 3–4 cargas por ciclo. No incorporar soluciones al árbol. |
-| Objetivos | La secuencia requerimientos → diseño → implementación → verificación → evaluación es comprobable en principio y mantiene el tiempo de intervención como variable comparativa. Precisar en la futura metodología cómo se registrará esa intervención bajo condiciones equivalentes. El objetivo general y los específicos continúan sujetos a la validación de la formulación central; no convertir valores técnicos históricos en requisitos. |
-| Apartados restantes | El archivo actual termina en Objetivos. `THESIS_STRUCTURE.md` contempla Motivación, Justificación, Límites y Alcances; están pendientes de redacción o incorporación. Evitar redactarlos como repetición de antecedentes o como promesa de beneficios todavía no medidos. |
-| Portada | `main.tex` presenta «bajo costo / panaderías artesanales», mientras que el título definitivo permanece `NO DECIDIDO` en `DECISIONS.md`. No ajustar la portada como parte de una corrección de estilo hasta que se resuelva el título. |
+Comprobar en especial:
 
-**Comprobaciones de plantilla:** `main.tex` incorpora `marcoref.tex` y los apéndices de registros y tablas; el preámbulo usa `biblatex` con `referencias.bib`. Las figuras del proceso y del árbol se integran desde archivos TikZ. Mantener los comandos de cita, `\label`, `\ref`, leyendas y fuentes ya utilizados. La revisión del texto no exigió cambios de paquetes ni compilación.
+- Que la Introducción sitúe empresa, proceso y dosificación; concentrar la evidencia detallada en Antecedentes.
+- Que el procedimiento narrado coincida con el diagrama, el croquis, los límites de medición y los registros.
+- Que formulación, árbol y objetivos mantengan la línea vigente de intervención del operario y tiempo asociado; la aprobación académica se consulta en `DECISIONS.md`.
+- Que los antecedentes tecnológicos se presenten con el alcance que respalda cada fuente. Una premezcla de ingredientes no equivale a dosificación de harina; una celda de carga citada no constituye una selección del proyecto.
+- Que tiempo total de ciclo y tiempo de intervención no se traten como equivalentes sin definición y respaldo, en especial al comparar el prototipo con el procedimiento manual.
+
+Registrar resultados de revisiones y verificaciones en las notas pertinentes de `research/notes/`; actualizar `STATUS.md` cuando cambie el trabajo real. Esta guía contiene el método, no un historial de errores ni una certificación del capítulo.
 
 ## 5. Lista de aceptación para cada subsección
 
@@ -91,11 +91,37 @@ El ejemplo usa mediciones ya documentadas; no afirma que el tiempo sea excesivo 
 ## 6. Decisiones de estilo que requieren validación
 
 1. **Uso de «problema».** La prohibición aportada por el estudiante entra en conflicto con la nomenclatura vigente del capítulo y los criterios del docente, que exigen formulación y árbol de problemas. `Cumple/no cumple` o `conforme/no conforme` solo describen una evaluación frente a un criterio explícito. Hasta aclarar el alcance de la prohibición, **conservar los títulos y conceptos estructurales actuales**, y evitar usos redundantes de la palabra en la prosa cuando la precisión no se pierda. Esta pauta de conservación es provisional; no registra una decisión académica nueva.
-2. **Extensión en líneas y palabras.** Las cantidades facilitadas son metas editoriales que se deben contrastar con el PDF institucional. La prioridad de edición es la unidad argumental y la comprensión del lector. Si el docente exige un umbral formal, registrar el criterio exacto antes de aplicarlo a todo el capítulo.
-3. **Neutralidad y voz activa.** La neutralidad se obtiene con afirmaciones verificables, no con la supresión de términos técnicos necesarios. La voz activa con sujeto técnico y la tercera persona son compatibles: «El registro consignó…», «La balanza indicó…».
+2. **Extensión en líneas y palabras.** Se aportaron 50–100 palabras con máximo cuatro líneas para párrafos introductorios/conclusivos y 100–200 palabras con máximo doce líneas para descriptivos, además de una referencia a ocho líneas. No se ha resuelto qué límite prevalece cuando resultan incompatibles en la plantilla. Registrar ambas medidas y señalar el conflicto; no declarar cumplimiento formal ni modificar tipografía o márgenes para forzarlo.
+3. **Aplicación gramatical.** Los infinitivos de los objetivos (`determinar`, `diseñar`, `evaluar`) no son verbos en futuro. Nombrar al operario como sujeto de una acción observada respeta la tercera persona y conserva la trazabilidad. Aplicar las listas de la sección 3 según la función de cada palabra; no eliminarlas dentro de comandos, nombres bibliográficos o términos técnicos.
 
 ## 7. Instrucción reutilizable para próximas revisiones
 
 > Revisa la subsección indicada de la tesis con `redacción.md`, `AGENTS.md`, las decisiones vigentes, las notas docentes, la estructura del capítulo, el LaTeX y sus figuras, tablas, apéndices y bibliografía relacionados. Primero informa los hallazgos de argumento, evidencia y coherencia; después presenta una propuesta de redacción en el formato existente. Conserva cifras, fuentes, decisiones abiertas, alcance, citas y referencias. Distingue medición, cálculo, proyección e hipótesis o requisito. Aplica las restricciones de estilo del estudiante con revisión contextual. Señala cada contradicción que requiera decisión y verifica la compilación si modificas LaTeX.
 
 Para otros capítulos, reemplazar `THESIS_STRUCTURE.md` por la función aprobada del capítulo correspondiente y ajustar la revisión macro: marco teórico por síntesis de ideas y fuentes, metodología por reproducibilidad y justificación de decisiones, resultados por reporte verificable, y discusión por interpretación y límites. La plantilla y las decisiones del proyecto permanecen como referencias comunes.
+
+## 8. Referencias externas de edición y adaptación al proyecto
+
+**Consulta:** 13/09/2026. Estas referencias aportan criterios editoriales; no constituyen fuentes técnicas de la dosificadora ni sustituyen la jerarquía de la sección 1. Esta incorporación resume y adapta ideas; no instala los repositorios ni activa sus instrucciones completas. Para este proyecto se recomienda usar esta guía como punto de entrada, junto con `$thesis-writing`, disponible en el entorno. Instalar `academic-humanizer` es opcional y no aporta por sí mismo otra validación de datos o citas. Si se instala en el futuro, seguir las adaptaciones de esta sección y evitar dos revisiones consecutivas que repitan los mismos criterios.
+
+| Referencia consultada | Aporte seleccionado | Adaptación |
+|---|---|---|
+| [academic-humanizer, AIScientists-Dev, v0.3.3](https://github.com/AIScientists-Dev/academic-humanizer/blob/94b88b2/SKILL.md) | Revisar la fuerza de cada afirmación frente a su evidencia y conservar incertidumbre, cifras y citas. | Base externa preferida para la edición académica. Mantener el estilo impersonal exigido en este proyecto. |
+| [humanizer, blader, v3.0.0](https://github.com/blader/humanizer/blob/9862685/SKILL.md) | Detectar relleno, contrastes artificiales, cierres repetitivos y cambios de significado durante la reescritura. | Aplicar como revisión final de claridad. Mantener el registro técnico y la estructura institucional. |
+| [manuscript-writing, YSLAB-ai](https://github.com/YSLAB-ai/manuscript-writing) | Distinguir revisión con observaciones de edición del texto; identificar evidencia pendiente. | Referencia complementaria para presentar propuestas. Sus ejemplos no validan el desempeño sobre esta tesis. |
+
+`academic-humanizer` reconoce que reutiliza parte del catálogo de `blader/humanizer`; no son dos enfoques completamente independientes. [Procedencia declarada](https://github.com/AIScientists-Dev/academic-humanizer#acknowledgments).
+
+### Reglas externas que no se adoptan literalmente
+
+- La conservación de `we` indicada por `academic-humanizer` contradice el registro solicitado aquí. Además, su descripción de `we` como tercera persona plural contiene un error: corresponde a primera persona plural.
+- La misma guía exige mantener el número de párrafos. En este proyecto se conserva la información sustentada y se justifica cualquier división o unión por la función del párrafo.
+- El modo de propuestas NSF/NIH no determina la estructura de una tesis UCB.
+- Ningún ejemplo externo aporta mediciones, comparaciones o citas al proyecto. Si falta respaldo, registrar la carencia de evidencia en el informe de revisión; una frase atenuada tampoco prueba una afirmación.
+- Los catálogos en inglés requieren revisión contextual en español. No borrar signos de intervalos, términos técnicos o títulos por coincidir con un patrón estilístico.
+
+### Cómo juzgar la utilidad de una guía
+
+Las estrellas indican popularidad, pero no verifican fidelidad científica. Evaluar instrucciones legibles, historial de correcciones, ejemplos pertinentes, respeto por evidencia y formato, y compatibilidad con el español y los criterios docentes. Los repositorios consultados no aportan, en las páginas revisadas, una comparación que establezca cuál produce mejores tesis de ingeniería en español.
+
+La prueba útil para este proyecto consiste en revisar un mismo fragmento con la guía vigente y con la adaptación propuesta. Comparar exactitud, trazabilidad, claridad, coherencia y adecuación al docente. Rechazar cambios que inventen respaldo, borren límites de la muestra, confundan tiempo total con intervención o conviertan proyecciones en resultados medidos. La cantidad de palabras eliminadas y una puntuación de detector de IA no son criterios de aceptación del capítulo.

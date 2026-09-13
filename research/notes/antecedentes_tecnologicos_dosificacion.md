@@ -7,6 +7,18 @@
 
 ## Criterio de uso
 
+### Verificación de Farihin, 13/09/2026
+
+Se leyó el artículo publicado completo, páginas F121–F126, en la [copia del PDF alojada por Semantic Scholar](https://pdfs.semanticscholar.org/a050/25275bf710c395f752afb6fa9f14789cc9e8.pdf). El título, autores, revista, volumen y páginas coinciden con `farihin2021premix`. Copia local: `docs/thesis/bibliography/farihin2021premix.pdf` (los PDF bibliográficos están excluidos de Git).
+
+- **F123, sección III.A:** el control acciona las compuertas de las tolvas y recibe realimentación del sensor de peso.
+- **F124, sección III.C:** cinco tolvas, mecanismo deslizante accionado por motor paso a paso NEMA 23, celda de carga de 1 kg y servomotores para tamizado y descarga.
+- **F124, sección III.B, y F125, conclusiones:** la configuración final utiliza PI; no atribuirle un controlador PID final con término derivativo activo.
+
+La cita respalda mecanismos de alimentación, pesaje y control de ingredientes de panificación. Los ingredientes de la premezcla enumerados en F121/F124 no incluyen harina; no atribuirle ensayo de dosificación de harina ni trasladar resultados a San Miguel. La frase general de la Introducción conserva ese alcance. Verificación de componentes cerrada; no equivale a validar todos los resultados del artículo.
+
+La nota de acceso del 10/09/2026 sobre la exclusión de Rumapea describe aquella versión de la Introducción. La versión aceptada el 13/09/2026 conserva su cita para identificar un antecedente de dosificación de harina, sin adoptar sus parámetros o resultados.
+
 Los trabajos siguientes orientan la identificación de arquitecturas, componentes y variables de evaluación. Sus escalas y condiciones experimentales difieren del procedimiento registrado en la Panadería San Miguel. En consecuencia, sus resultados no constituyen tolerancias, valores esperados ni demostraciones de desempeño para el proyecto.
 
 ## Comparación
