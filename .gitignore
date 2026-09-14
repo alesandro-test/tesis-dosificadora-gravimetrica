@@ -1,6 +1,3 @@
-# Papers descargados
-docs/thesis/bibliography/*.pdf
-
 # ==========================================================
 # LaTeX - archivos generados
 # ==========================================================
@@ -32,6 +29,12 @@ docs/thesis/bibliography/*.pdf
 *.acr
 *.alg
 
+# PDFs bibliográficos descargados
+docs/thesis/bibliography/*.pdf
+
+# PDF generado de las diapositivas
+docs/thesis/slides/perfil.pdf
+
 # Archivos temporales o de recuperación
 *-SAVE-ERROR
 *.bak
@@ -42,10 +45,6 @@ docs/thesis/bibliography/*.pdf
 # ==========================================================
 build/
 tmp/
-
-# PDFs generados por la tesis
-docs/thesis/main.pdf
-docs/thesis/slides/perfil.pdf
 
 # ==========================================================
 # Python / Jupyter
