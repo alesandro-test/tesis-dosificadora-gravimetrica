@@ -3,7 +3,7 @@
 
 La Panadería San Miguel, ubicada en Santa Cruz de la Sierra, constituye
 el caso de estudio del proyecto. El relevamiento documentó preparaciones
-de pan casero, marraqueta, pan francés y una masa común. El estudio se
+de pan casero, marraqueta, pan francés y una masa común destinada a empanadas y rollos de queso. El estudio se
 concentra en la dosificación de harina correspondiente a estas preparaciones.
 
 La elaboración de pan comprende la preparación y dosificación de
@@ -38,12 +38,8 @@ dentro de esta secuencia e identifica la operación comprendida en el proyecto.
 \begingroup
 \widowpenalty=10000
 
-La dosificación gravimétrica utiliza el pesaje para determinar la cantidad
-suministrada respecto de una cantidad objetivo. La recomendación
-OIML R 61-1 describe este principio para instrumentos automáticos de
-llenado gravimétrico \parencite{oiml2017r61}.
-Otros trabajos estudian dosificadores de harina para pequeñas y
-medianas panaderías \parencite{rumapea2026flour}. 
+La dosificación gravimétrica utiliza el pesaje para determinar la cantidad suministrada respecto de una cantidad objetivo. La recomendación OIML R 61-1 describe instrumentos automáticos de llenado gravimétrico que integran alimentación, pesaje, control y descarga \parencite{oiml2017r61}. Como antecedente de desarrollo, \parencite{rumapea2026flour} presentan una dosificadora automática de harina orientada a pequeñas y medianas panaderías.
+
 \par
 \endgroup
 
@@ -104,11 +100,11 @@ operario comprobó la lectura final de la balanza y devolvió el recipiente
 de transporte a la zona de harina. Esta devolución marcó el cierre del
 intervalo analizado.
 
-La Figura~\ref{fig:dfd_dosificacion} sintetiza la incorporación de harina,
-la lectura de la cantidad acumulada y la comparación con la cantidad
-objetivo. El gráfico representa la repetición de la incorporación y el
-pesaje, la devolución del recipiente de transporte forma parte del
-intervalo registrado, aunque no aparece desagregada en el diagrama.
+La Figura 1.2 sintetiza la incorporación de harina, la lectura de la cantidad
+acumulada y la comparación con la cantidad objetivo. El gráfico representa la
+repetición de la incorporación y el pesaje. La devolución del recipiente de
+transporte forma parte del intervalo registrado, aunque no aparece desagregada
+en el diagrama.
 
 \begin{figure}[hbt]
     \centering
@@ -289,9 +285,9 @@ incorporación, ajuste y comprobación. Las cargas principales y los
 retornos concentraron el $63{,}0\%$ del tiempo registrado. La intervención
 del operario y el tiempo asociado al procedimiento constituyen el eje del
 análisis, mientras que la diferencia de harina permanece como variable
-complementaria de evaluación. Los resultados establecen una referencia
-descriptiva para la comparación experimental del prototipo.
-
+complementaria de evaluación. Los registros
+establecen una referencia descriptiva para la evaluación experimental del
+prototipo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FORMULACIÓN DEL PROBLEMA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -367,5 +363,124 @@ Desarrollar un prototipo automatizado de dosificación gravimétrica de harina p
 \item Verificar el cumplimiento de los requerimientos funcionales y técnicos del prototipo mediante pruebas de funcionamiento.
 
 \item Evaluar el desempeño del prototipo frente al procedimiento manual mediante el tiempo de intervención del operario por ciclo de dosificación.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MOTIVACIÓN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivación}
+\label{sec:motivacion}
+
+El proyecto surge del interés por aplicar la formación en Ingeniería
+Mecatrónica al desarrollo de una alternativa automatizada para la
+dosificación de harina en la Panadería San Miguel. La participación del
+operario en las cargas, traslados, ajustes y comprobaciones constituye el
+contexto del estudio. El trabajo se orienta a desarrollar un prototipo y
+evaluar experimentalmente el tiempo de intervención del operario durante
+la dosificación.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JUSTIFICACIÓN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Justificación}
+\label{sec:justificacion}
+
+El proyecto aborda la dosificación de harina en la Panadería San Miguel,
+cuyo procedimiento registrado comprende cargas, traslados, ajustes y
+comprobaciones realizados por el operario. La evaluación de una alternativa
+automatizada aporta evidencia para valorar el desempeño del prototipo frente
+al procedimiento manual en las condiciones del establecimiento. El tiempo de
+intervención del operario durante la operación constituye el eje de esta
+comparación.
+
+El desarrollo integra el dimensionamiento mecánico, la medición gravimétrica
+y el control de la alimentación respecto de una cantidad objetivo. Los
+requerimientos derivados de la caracterización orientan la selección de
+componentes y el diseño del sistema. El trabajo comprende cálculos y pruebas
+para fundamentar las decisiones de diseño y verificar el funcionamiento del
+prototipo respecto de los requerimientos establecidos.
+
+El aporte académico previsto consiste en obtener y analizar evidencia sobre
+el desempeño de la configuración desarrollada para el caso de estudio. La
+comparación contempla el tiempo de intervención del operario como indicador
+principal, junto con el tiempo de dosificación, la diferencia respecto de la
+cantidad objetivo de harina y la repetibilidad. Esta información constituye
+una base para valorar la alternativa en la Panadería San Miguel, sin
+presuponer mejoras ni extender las conclusiones a condiciones no ensayadas.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DELIMITACIÓN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Delimitación}
+\label{sec:delimitacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LÍMITES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Límites}
+\label{subsec:limites}
+
+Los límites del proyecto se establecen de la siguiente manera:
+
+\begin{itemize}
+
+\item El caso de estudio corresponde a la Panadería San Miguel, ubicada en
+Santa Cruz de la Sierra.
+
+\item El desarrollo se concentra en la dosificación gravimétrica automatizada
+de harina previa al mezclado y amasado. La dosificación automatizada de otros
+ingredientes queda fuera del proyecto.
+
+\item El mezclado y amasado, la división y formado, la fermentación, la cocción
+y la automatización integral del proceso de panificación quedan fuera del
+desarrollo.
+
+\item La evaluación se circunscribe a ensayos del prototipo bajo condiciones
+comparables con el procedimiento manual estudiado.
+
+\item Las conclusiones de la evaluación se limitan a las condiciones y ensayos
+realizados. No comprenden la validación del desempeño en otros establecimientos
+o condiciones de producción.
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ALCANCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Alcances}
+\label{subsec:alcances}
+
+El proyecto comprende los siguientes entregables:
+
+\begin{itemize}
+
+\item Requerimientos funcionales y técnicos del prototipo, sustentados en la
+caracterización del procedimiento manual y las condiciones de operación del
+establecimiento.
+
+\item Diseño de los subsistemas mecánico, de medición gravimétrica y de control,
+respaldado por los cálculos de dimensionamiento pertinentes, los planos
+constructivos, los esquemas de conexión y la descripción de la lógica de
+funcionamiento.
+
+\item Un prototipo funcional de dosificación gravimétrica automatizada de
+harina, construido e integrado conforme al diseño.
+
+\item Registros y resultados de las pruebas de funcionamiento para verificar el
+cumplimiento de los requerimientos establecidos.
+
+\item Un análisis comparativo del prototipo y del procedimiento manual bajo
+condiciones equivalentes, con el tiempo de intervención del operario por ciclo
+como indicador principal. El análisis incluye el tiempo de dosificación, la
+diferencia respecto de la cantidad objetivo de harina y la repetibilidad.
 
 \end{itemize}
