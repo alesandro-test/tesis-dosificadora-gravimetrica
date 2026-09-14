@@ -1,6 +1,6 @@
 # STATUS
 
-**Última actualización:** 2026-09-13
+**Última actualización:** 2026-09-14
 
 ## Estado actual
 
@@ -8,6 +8,8 @@ Marco Referencial / Capítulo 1 en consolidación.
 Introducción revisada e incorporada a pedido del estudiante. Trabajo activo: **Antecedentes del problema**. Problema, árbol y objetivos aún no están cerrados definitivamente.
 
 ## Completado
+
+- Fotografías de Antecedentes maquetadas junto a sus explicaciones; diagrama, croquis y tabla ajustados. PDF compilado y páginas afectadas revisadas visualmente el 14/09/2026.
 
 - `PROJECT_CONTEXT.md`, `DECISIONS.md`, `PROFESSOR_NOTES.md` y `THESIS_STRUCTURE.md` consolidados.
 - Relevamiento disponible del 02/09/2026 y 05/09/2026 documentado y centralizado en `research/notes/contexto_tesis_san_miguel.md`.

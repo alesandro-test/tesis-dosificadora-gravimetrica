@@ -31,7 +31,7 @@ dentro de esta secuencia e identifica la operación comprendida en el proyecto.
     \label{fig:proceso_general_pan}
 
     \vspace{0.2em}
-    {\footnotesize Fuente: Elaboración propia.}
+    {\footnotesize Fuente: Adaptado de \textcite{lim2019spc}.}
 
 \end{figure}
 
@@ -100,15 +100,135 @@ operario comprobó la lectura final de la balanza y devolvió el recipiente
 de transporte a la zona de harina. Esta devolución marcó el cierre del
 intervalo analizado.
 
-La Figura 1.2 sintetiza la incorporación de harina, la lectura de la cantidad
+% FOTOGRAFÍAS:
+% (a) Balanza encendida, sin recipiente, con indicación de cero.
+% (b) La misma balanza con el recipiente receptor vacío.
+% No afirmar que (b) está tarada sin comprobar la lectura.
+
+% Identificación de los recipientes utilizados.
+% La colocación sobre la balanza no representa una etapa
+% de pesaje del recipiente de transporte durante el ciclo.
+
+\par\smallskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
+
+La Figura~\ref{fig:balanza_recipiente} identifica el recipiente
+de transporte (a) y el recipiente receptor (b), fotografiados
+sobre la balanza. En el procedimiento registrado, el operario
+utilizó el primero para recoger y trasladar las cargas de harina.
+El segundo permaneció en el punto de pesaje y recibió las cargas
+sucesivas. Las fotografías identifican ambos recipientes;
+no representan una secuencia de aplicación de la tara.
+
+\setlength{\intextsep}{6pt}
+\begin{figure}[H]
+    \setstretch{1}
+    \captionsetup{skip=4pt}
+    \centering
+
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[
+            width=\linewidth,
+            height=5.5cm,
+            keepaspectratio
+        ]{images/marcoref/recipiente_transporte.jpg}
+
+        \smallskip
+        {\small (a) Recipiente de transporte.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[
+            width=\linewidth,
+            height=5.5cm,
+            keepaspectratio
+        ]{images/marcoref/balanza_recipiente_vacio.jpg}
+
+        \smallskip
+        {\small (b) Recipiente receptor.}
+    \end{minipage}
+
+    \caption{Recipientes de transporte y recepción utilizados
+    en la dosificación de harina.}
+    \label{fig:balanza_recipiente}
+
+    \vspace{0.2em}
+    {\footnotesize Fuente: Registro fotográfico propio.}
+\end{figure}
+
+\end{minipage}
+\par\smallskip
+
+
+% FOTOGRAFÍAS:
+% (a) Operario realizando el ajuste final de harina.
+% (b) Recipiente receptor con la harina dosificada sobre la balanza.
+% No atribuir ambas fotografías a un mismo ciclo sin confirmarlo.
+
+\par\smallskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
+La Figura~\ref{fig:ajuste_final_harina} complementa la descripción
+del ajuste y la comprobación final. El panel (a) muestra la
+intervención del operario durante el ajuste de la cantidad de
+harina. El panel (b) presenta el recipiente receptor con la harina
+dosificada sobre la balanza. Este estado precede a la devolución
+del recipiente de transporte, que marca el cierre del intervalo
+temporal analizado.
+
+\setlength{\intextsep}{6pt}
+\begin{figure}[H]
+    \setstretch{1}
+    \captionsetup{skip=4pt}
+    \centering
+
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth,height=5.5cm,keepaspectratio]
+            {images/marcoref/ajuste_final_operario.jpg}
+
+        \smallskip
+        {\small (a) Ajuste final realizado por el operario.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth,height=5.5cm,keepaspectratio]
+            {images/marcoref/harina_dosificada.jpg}
+
+        \smallskip
+        {\small (b) Recipiente receptor con harina dosificada.}
+    \end{minipage}
+
+    \caption{Ajuste final y estado de la harina dosificada
+    sobre la balanza.}
+    \label{fig:ajuste_final_harina}
+
+    \vspace{0.2em}
+    {\footnotesize Fuente: Registro fotográfico propio.}
+\end{figure}
+\end{minipage}
+\par\smallskip
+
+
+\par\smallskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
+La Figura~\ref{fig:dfd_dosificacion} sintetiza la incorporación de harina, la lectura de la cantidad
 acumulada y la comparación con la cantidad objetivo. El gráfico representa la
 repetición de la incorporación y el pesaje. La devolución del recipiente de
-transporte forma parte del intervalo registrado, aunque no aparece desagregada
-en el diagrama.
+transporte forma parte del intervalo registrado en la finalizacion de dosificacion.
 
-\begin{figure}[hbt]
+\begin{figure}[H]
     \centering
-    \resizebox{0.8\textwidth}{!}{
+    \resizebox{0.9\textwidth}{!}{
         {\setlength{\fboxsep}{14pt}
         \fbox{\input{images/marcoref/dfd_dosificacion.tex}}}}
     \caption{Diagrama de flujo del procedimiento manual de dosificación de harina.}
@@ -116,7 +236,12 @@ en el diagrama.
     \footnotesize{Fuente: Elaboración propia.}
     \label{fig:dfd_dosificacion}
 \end{figure}
+\end{minipage}
+\par\medskip
 
+\par\medskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
 El área vinculada con la operación comprende la zona de almacenamiento de
 harina, el punto de pesaje y la amasadora. La
 Figura~\ref{fig:croquis_panaderia} muestra la ubicación relativa de estos
@@ -125,7 +250,7 @@ en planta. La correspondencia entre estas cotas y la longitud de cada
 trayecto del operario permanece pendiente de verificación, el croquis se
 utiliza para describir la distribución física.
 
-\begin{figure}[hbt]
+\begin{figure}[H]
     \centering
     \resizebox{0.95\textwidth}{!}{%
         \input{images/marcoref/croquis_panaderia.tex}%
@@ -135,6 +260,58 @@ utiliza para describir la distribución física.
     \vspace{0.2em}
     \label{fig:croquis_panaderia}
 \end{figure}
+\end{minipage}
+\par\medskip
+
+% FOTOGRAFÍAS:
+% (a) Lugar donde se colocan las bolsas de harina.
+% (b) Vista general de la mesa de ingredientes y la balanza.
+% No identificar (a) como origen de las cargas ni atribuirle
+% distancias del croquis sin verificar esa correspondencia.
+
+\par\medskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
+La Figura~\ref{fig:entorno_pesaje} muestra el lugar de colocación
+de las bolsas de harina (a) y la mesa de ingredientes (b).
+Estas fotografías documentan elementos del área de trabajo
+relacionada con la dosificación y complementan la distribución
+representada en el croquis de la
+Figura~\ref{fig:croquis_panaderia}.
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth,height=4.3cm,keepaspectratio]
+            {images/marcoref/ubicacion_bolsas_harina.jpg}
+
+        \smallskip
+        {\small (a) Lugar de colocación de las bolsas de harina.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.51\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth,height=4.3cm,keepaspectratio]
+            {images/marcoref/mesa_ingredientes_balanza.jpg}
+
+        \smallskip
+        {\small (b) Vista general de la mesa de ingredientes.}
+    \end{minipage}
+
+    \caption{Lugar de colocación de las bolsas de harina
+    y mesa de ingredientes.}
+    \label{fig:entorno_pesaje}
+
+    \vspace{0.2em}
+    {\footnotesize Fuente: Registro fotográfico propio.}
+\end{figure}
+\end{minipage}
+\par\medskip
+
 
 La evidencia disponible comprende siete ciclos registrados durante dos
 jornadas de observación. El 2 de septiembre de 2026 se registraron cinco
@@ -156,12 +333,14 @@ carga adicional (R), ajuste final y comprobación de la lectura (F), y
 devolución del recipiente de transporte (D). Esta clasificación identifica
 las actividades incluidas en el tiempo de cada ciclo.
 
-El Apéndice~\ref{ap:tablas_dosificacion} presenta los tiempos desagregados
-por actividad y ciclo. El Apéndice~\ref{ap:registros_campo} reúne las
-lecturas acumuladas de la balanza y las cantidades de harina utilizadas
-en el análisis. Ambos apéndices contienen el detalle del que proceden los
-resultados consolidados.
-
+El Apéndice~\ref{ap:tablas_dosificacion} presenta los tiempos
+desagregados por actividad y ciclo. El
+Apéndice~\ref{ap:registros_campo} reúne las lecturas acumuladas
+de la balanza y las cantidades de harina utilizadas en el
+análisis. La Figura~\ref{fig:lecturas_fotograficas}, incluida
+en ese apéndice, documenta fotográficamente las indicaciones
+de peso seleccionadas. Las tablas de ambos apéndices contienen
+los registros de los que proceden los resultados consolidados.
 La diferencia entre la cantidad final registrada y la cantidad objetivo
 se expresa mediante:
 
@@ -174,11 +353,14 @@ balanza y $h_{\mathrm{objetivo}}$ a la cantidad establecida para la
 preparación. Una diferencia positiva indica que la lectura final superó
 la cantidad objetivo.
 
+\par\medskip
+\noindent\begin{minipage}{\textwidth}
+\setlength{\parindent}{4em}
 La Tabla~\ref{tab:resumen_dosificacion} reúne los resultados consolidados
 de los ciclos registrados en ambas jornadas. Las cantidades y los tiempos
 corresponden a sumas de los registros incluidos en los apéndices.
 
-\begin{table}[hbt]
+\begin{table}[H]
     \centering
     \caption{Resumen de los ciclos de dosificación de harina registrados}
     \label{tab:resumen_dosificacion}
@@ -223,6 +405,8 @@ corresponden a sumas de los registros incluidos en los apéndices.
     \parbox{0.94\textwidth}
     \footnotesize{Fuente: Elaboración propia.}
 \end{table}
+\end{minipage}
+\par\medskip
 
 Los tiempos individuales del procedimiento estuvieron entre
 $53{,}2$ y $66{,}6\ \mathrm{s}$ por ciclo. Las actividades de recogida,
