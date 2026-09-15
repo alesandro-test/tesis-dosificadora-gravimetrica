@@ -34,6 +34,7 @@ docs/thesis/bibliography/*.pdf
 
 # PDF generado de las diapositivas
 docs/thesis/slides/perfil.pdf
+docs/thesis/main.pdf
 
 # Archivos temporales o de recuperación
 *-SAVE-ERROR
