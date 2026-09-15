@@ -1,47 +1,48 @@
 \begin{tikzpicture}[
     >=Latex,
-    node distance=0.7cm,
     font=\small,
-    bloque/.style={
+    componente/.style={
         rectangle,
         draw,
+        line width=0.8pt,
         align=center,
-        minimum height=1.15cm,
-        text width=11.2cm,
-        inner xsep=5pt,
-        inner ysep=4pt
-    },
-    efecto/.style={
-        rectangle,
-        draw,
-        align=center,
-        minimum height=1.55cm,
-        text width=4.8cm,
-        inner xsep=5pt,
-        inner ysep=4pt
-    },
-    problema/.style={
-        bloque,
-        minimum height=1.35cm,
-        line width=0.9pt
+        text width=5.6cm,
+        minimum height=1.9cm,
+        inner xsep=6pt,
+        inner ysep=6pt
     },
     causa/.style={
         rectangle,
         draw,
         align=center,
+        text width=5.2cm,
         minimum height=1.55cm,
-        text width=3.35cm,
-        inner xsep=4pt,
-        inner ysep=4pt
+        inner xsep=5pt,
+        inner ysep=5pt
     },
     subcausa/.style={
         rectangle,
         draw,
         align=center,
+        text width=3.5cm,
         minimum height=1.45cm,
-        text width=3.35cm,
         inner xsep=4pt,
         inner ysep=4pt
+    },
+    contenedor/.style={
+        rectangle,
+        draw,
+        line width=1pt,
+        rounded corners=3pt,
+        inner sep=12pt
+    },
+    titulo/.style={
+        rectangle,
+        draw=none,
+        fill=white,
+        font=\small\bfseries,
+        inner xsep=6pt,
+        inner ysep=2pt
     },
     flecha/.style={
         -{Latex[width=6pt,length=5pt]},
@@ -49,82 +50,153 @@
     }
 ]
 
-% PROBLEMA CENTRAL
-\node[problema] (problema) {
-    El operario dedica entre 53,2 y 66,6 s por ciclo\\
-    a la dosificación manual de harina.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEMA CENTRAL: COMPONENTE TEMPORAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[componente] (problema_tiempo) {
+    En la Panadería San Miguel, el operario destina,\textbf{$1$ h $59$ min} al procedimiento
+    manual de dosificación de harina.
 };
 
-% EFECTOS
-\node[efecto, above=1.1cm of problema.north west, anchor=south west] (efecto_observado) {
-    Tiempo acumulado\\
-    de dosificación:\\
-    411,9 s en 7\\
-    ciclos observados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEMA CENTRAL: COMPONENTE DE HARINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[
+    componente,
+    right=1.4cm of problema_tiempo
+] (problema_harina) {
+    En el procedimiento manual de dosificación se acumula, una diferencia
+    positiva de \textbf{$1{,}976$ kg} respecto de las
+    cantidades objetivo.
 };
 
-\node[efecto, above=1.1cm of problema.north east, anchor=south east] (efecto_proyectado) {
-    Tiempo mensual proyectado\\
-    de dosificación:\\
-    7\,128,6 s\\
-    (1 h 58 min 48,6 s)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENEDOR DEL PROBLEMA CENTRAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[
+    contenedor,
+    fit=(problema_tiempo)(problema_harina),
+    label={[titulo]above:Problema central}
+] (problema_central) {};
+
+\draw[
+    line width=0.7pt
+]
+    (problema_tiempo.east)
+    --
+    node[
+        above,
+        draw=none,
+        fill=white,
+        font=\bfseries
+    ] {}
+    (problema_harina.west);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAUSAS PRINCIPALES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[
+    causa,
+    below=1.7cm of problema_tiempo
+] (causa_tiempo) {
+    Ejecución manual de la preparación,
+    las cargas, los traslados, el ajuste
+    y la comprobación final
 };
 
-% CAUSAS DIRECTAS
-\node[causa, below=1.15cm of problema] (c1) {
-    Cargas y\\
-    traslados sucesivos
+\node[
+    causa,
+    below=1.7cm of problema_harina
+] (causa_harina) {
+    Incorporación de harina mediante
+    cargas sucesivas y ajuste final
+    según la lectura de la balanza
 };
 
-\node[causa, below=1.15cm of problema.south west, anchor=north west] (c2) {
-    Preparación y tara\\
-    en cada ciclo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUBCAUSAS DE LA DIMENSIÓN TEMPORAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[
+    subcausa,
+    below=1.0cm of causa_tiempo.south west,
+    anchor=north west
+] (tiempo_1) {
+    Separación entre el almacenamiento
+    y el punto de pesaje
 };
 
-\node[causa, below=1.15cm of problema.south east, anchor=north east] (c3) {
-    Ajuste y verificación\\
-    final de la cantidad\\
-    dosificada
+\node[
+    subcausa,
+    below=1.0cm of causa_tiempo.south east,
+    anchor=north east
+] (tiempo_2) {
+    Tres o cuatro cargas principales
+    y retornos adicionales por ciclo
 };
 
-% SUBCAUSAS
-\node[subcausa, below=of c2] (sc1) {
-    Separación entre\\
-    almacenamiento y\\
-    pesaje
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUBCAUSAS DE LA DIMENSIÓN DE HARINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[
+    subcausa,
+    below=1.0cm of causa_harina.south west,
+    anchor=north west
+] (harina_1) {
+    Comparación de la lectura acumulada
+    con la cantidad objetivo
 };
 
-\node[subcausa, below=of c1] (sc2) {
-    3--4 cargas\\
-    principales\\
-    por ciclo
+\node[
+    subcausa,
+    below=1.0cm of causa_harina.south east,
+    anchor=north east
+] (harina_2) {
+    Ajuste final con la harina remanente
+    en el recipiente de transporte
 };
 
-\node[subcausa, below=of c3] (sc3) {
-    Retornos para\\
-    cargas adicionales
-};
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FLECHAS DE LAS CAUSAS AL PROBLEMA CENTRAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% FLECHAS
-\draw[flecha] (efecto_observado.south |- problema.north)
-    -- (efecto_observado.south);
-\draw[flecha] (efecto_proyectado.south |- problema.north)
-    -- (efecto_proyectado.south);
+\draw[flecha]
+    (causa_tiempo.north)
+    --
+    (problema_tiempo.south);
 
-\draw[flecha] (c2.north) -- (c2.north |- problema.south);
-\draw[flecha] (c1.north) -- (c1.north |- problema.south);
-\draw[flecha] (c3.north) -- (c3.north |- problema.south);
+\draw[flecha]
+    (causa_harina.north)
+    --
+    (problema_harina.south);
 
-\coordinate (entrada_c1_izq) at ([xshift=-0.85cm]c1.south);
-\coordinate (entrada_c1_der) at ([xshift=0.85cm]c1.south);
-\coordinate (nivel_subcausas) at ([yshift=-0.35cm]c1.south);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FLECHAS DE LAS SUBCAUSAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\draw (sc1.north) -- (sc1.north |- nivel_subcausas)
-    -- (entrada_c1_izq |- nivel_subcausas);
-\draw[flecha] (entrada_c1_izq |- nivel_subcausas) -- (entrada_c1_izq);
-\draw[flecha] (sc2.north) -- (c1.south);
-\draw (sc3.north) -- (sc3.north |- nivel_subcausas)
-    -- (entrada_c1_der |- nivel_subcausas);
-\draw[flecha] (entrada_c1_der |- nivel_subcausas) -- (entrada_c1_der);
+\draw[flecha]
+    (tiempo_1.north)
+    --
+    (tiempo_1.north |- causa_tiempo.south);
+
+\draw[flecha]
+    (tiempo_2.north)
+    --
+    (tiempo_2.north |- causa_tiempo.south);
+
+\draw[flecha]
+    (harina_1.north)
+    --
+    (harina_1.north |- causa_harina.south);
+
+\draw[flecha]
+    (harina_2.north)
+    --
+    (harina_2.north |- causa_harina.south);
 
 \end{tikzpicture}
