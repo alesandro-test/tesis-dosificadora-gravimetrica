@@ -1,9 +1,12 @@
+% Evitar que los bloques de figuras estiren los espacios entre párrafos.
+\raggedbottom
 \chapter{Introducción}
 \label{sec:introduction}
 
 La Panadería San Miguel, ubicada en Santa Cruz de la Sierra, constituye
 el caso de estudio del proyecto. El relevamiento documentó preparaciones
-de pan casero, marraqueta, pan francés y una masa común destinada a empanadas y rollos de queso. El estudio se
+de pan casero, marraqueta, pan francés y una masa común destinada a
+empanadas y rollos de queso. El estudio se
 concentra en la dosificación de harina correspondiente a estas preparaciones.
 
 La elaboración de pan comprende la preparación y dosificación de
@@ -14,8 +17,9 @@ establece la cantidad de cada ingrediente destinada a una preparación.
 
 
 
-La Figura~\ref{fig:proceso_general_pan} ubica la dosificación de harina
-dentro de esta secuencia e identifica la operación comprendida en el proyecto.
+La Figura~\ref{fig:proceso_general_pan} representa esta secuencia general
+para la elaboración del pan. El recuadro discontinuo destaca la dosificación
+de ingredientes e identifica la harina como alcance del proyecto.
 
 \begin{figure}[htb]
     \centering
@@ -38,25 +42,34 @@ dentro de esta secuencia e identifica la operación comprendida en el proyecto.
 \begingroup
 \widowpenalty=10000
 
-La dosificación gravimétrica utiliza el pesaje para determinar la cantidad suministrada respecto de una cantidad objetivo. La recomendación OIML R 61-1 describe instrumentos automáticos de llenado gravimétrico que integran alimentación, pesaje, control y descarga \parencite{oiml2017r61}. Como antecedente de desarrollo, \parencite{rumapea2026flour} presentan una dosificadora automática de harina orientada a pequeñas y medianas panaderías.
+La dosificación gravimétrica utiliza el pesaje para determinar la cantidad suministrada respecto de una cantidad objetivo. 
+La recomendación OIML R 61-1 describe instrumentos automáticos de llenado gravimétrico que integran alimentación, pesaje, 
+control y descarga \parencite{oiml2017r61}. Como antecedente de desarrollo, \textcite{rumapea2026flour} presentan 
+una dosificadora automática de harina orientada a pequeñas y medianas panaderías.
 
 \par
 \endgroup
 
-Estos trabajos aportan antecedentes para estudiar alternativas de
+Estas referencias aportan antecedentes para estudiar alternativas de
 dosificación. En la Panadería San Miguel, la definición de requerimientos
 considera las cantidades de harina utilizadas, la secuencia de trabajo,
 las características del material, la distribución del área y las
 condiciones de operación. La caracterización del establecimiento vincula
 esas referencias con el caso de estudio.
 
-El proyecto se orienta al desarrollo de un prototipo automatizado de
-dosificación gravimétrica de harina para la Panadería San Miguel. El
-trabajo comprende la caracterización del procedimiento manual, la
-definición de requerimientos, el diseño, la construcción e integración
-del prototipo y la evaluación comparativa frente al procedimiento manual
-bajo condiciones equivalentes. La sección siguiente presenta la evidencia
-del procedimiento actual que fundamenta el desarrollo.
+El proyecto aborda el diseño de una dosificadora gravimétrica automatizada
+para harina, orientada a panaderías artesanales, con la Panadería San Miguel
+como caso de estudio. La orientación de bajo costo incorpora la evaluación
+económica del diseño, cuyo criterio de aceptación permanece pendiente de
+definición. La caracterización y los ensayos se circunscriben a las condiciones
+del establecimiento estudiado.
+
+El trabajo comprende la caracterización del procedimiento manual, la
+definición de requerimientos, el diseño, la construcción e integración de un
+prototipo y la evaluación comparativa frente al procedimiento manual bajo
+condiciones equivalentes. El prototipo constituye el medio de verificación
+experimental del diseño. La sección siguiente presenta la evidencia del
+procedimiento actual que fundamenta el desarrollo.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,8 +114,8 @@ de transporte a la zona de harina. Esta devolución marcó el cierre del
 intervalo analizado.
 
 % FOTOGRAFÍAS:
-% (a) Balanza encendida, sin recipiente, con indicación de cero.
-% (b) La misma balanza con el recipiente receptor vacío.
+% (a) Recipiente de transporte colocado sobre la balanza para la fotografía.
+% (b) Recipiente receptor vacío sobre la balanza.
 % No afirmar que (b) está tarada sin comprobar la lectura.
 
 % Identificación de los recipientes utilizados.
@@ -113,10 +126,10 @@ intervalo analizado.
 \noindent\begin{minipage}{\textwidth}
 \setlength{\parindent}{4em}
 
-La Figura~\ref{fig:balanza_recipiente} presenta la balanza
-sin recipiente (a) y con el recipiente receptor vacío (b).
-Durante el procedimiento registrado, el operario colocó
-el recipiente sobre la plataforma y aplicó la función de tara.
+La Figura~\ref{fig:balanza_recipiente} presenta el recipiente de
+transporte (a) y el recipiente receptor vacío (b). Durante el
+procedimiento registrado, el operario colocó el recipiente receptor
+sobre la plataforma y aplicó la función de tara.
 El recipiente receptor recibió las cargas sucesivas de harina,
 mientras que la balanza indicó la cantidad acumulada.
 
@@ -131,7 +144,7 @@ mientras que la balanza indicó la cantidad acumulada.
         \centering
         \includegraphics[
             width=\linewidth,
-            height=5.5cm,
+            height=4.5cm,
             keepaspectratio
         ]{images/marcoref/recipiente_transporte.jpg}
 
@@ -144,7 +157,7 @@ mientras que la balanza indicó la cantidad acumulada.
         \centering
         \includegraphics[
             width=\linewidth,
-            height=5.5cm,
+            height=4.5cm,
             keepaspectratio
         ]{images/marcoref/balanza_recipiente_vacio.jpg}
 
@@ -152,8 +165,7 @@ mientras que la balanza indicó la cantidad acumulada.
         {\small (b) Recipiente receptor.}
     \end{minipage}
 
-    \caption{Recipientes utilizados en la dosificación manual de harina:
-    (a) transporte y (b) recepción.}
+    \caption{Recipientes utilizados en la dosificación manual de harina.}
     \label{fig:balanza_recipiente}
 
     \vspace{0.2em}
@@ -177,9 +189,7 @@ La Figura~\ref{fig:ajuste_final_harina} muestra la intervención
 del operario durante el ajuste final (a) y el recipiente receptor
 con la harina dosificada sobre la balanza (b). En el procedimiento
 registrado, el ajuste se realizó con la harina remanente en el
-recipiente de transporte. La comprobación de la lectura final
-precedió a la devolución de ese recipiente, actividad que marcó
-el cierre del intervalo analizado.
+recipiente de transporte.
 
 \setlength{\intextsep}{6pt}
 \begin{figure}[H]
@@ -190,7 +200,7 @@ el cierre del intervalo analizado.
     \begin{minipage}[t]{0.48\textwidth}
         \vspace{0pt}
         \centering
-        \includegraphics[width=\linewidth,height=5.5cm,keepaspectratio]
+        \includegraphics[width=\linewidth,height=4.5cm,keepaspectratio]
             {images/marcoref/ajuste_final_operario.jpg}
 
         \smallskip
@@ -200,15 +210,14 @@ el cierre del intervalo analizado.
     \begin{minipage}[t]{0.48\textwidth}
         \vspace{0pt}
         \centering
-        \includegraphics[width=\linewidth,height=5.5cm,keepaspectratio]
+        \includegraphics[width=\linewidth,height=4.5cm,keepaspectratio]
             {images/marcoref/harina_dosificada.jpg}
 
         \smallskip
         {\small (b) Recipiente receptor con harina dosificada.}
     \end{minipage}
 
-    \caption{Dosificación manual de harina: (a) ajuste final y
-    (b) recipiente receptor sobre la balanza.}
+    \caption{Ajuste final y harina dosificada sobre la balanza.}
     \label{fig:ajuste_final_harina}
 
     \vspace{0.2em}
@@ -216,19 +225,17 @@ el cierre del intervalo analizado.
 \end{figure}
 \end{minipage}
 \par\smallskip
-
-
-\par\smallskip
 \noindent\begin{minipage}{\textwidth}
 \setlength{\parindent}{4em}
-La Figura~\ref{fig:dfd_dosificacion} sintetiza la incorporación de harina, la lectura de la cantidad
-acumulada y la comparación con la cantidad objetivo. El gráfico representa la
-repetición de la incorporación y el pesaje. La devolución del recipiente de
-transporte forma parte del intervalo registrado en la finalizacion de dosificacion.
+La Figura~\ref{fig:dfd_dosificacion} sintetiza la incorporación de harina,
+la lectura de la cantidad acumulada y la comparación con la cantidad
+objetivo. El bloque ``Finalizar dosificación'' representa la devolución
+del recipiente de transporte.
 
+\setlength{\intextsep}{10pt}
 \begin{figure}[H]
     \centering
-    \resizebox{0.8\textwidth}{!}{
+    \resizebox{0.55\textwidth}{!}{
         {\setlength{\fboxsep}{14pt}
         \fbox{\input{images/marcoref/dfd_dosificacion.tex}}}}
     \caption{Diagrama de flujo del procedimiento manual de dosificación de harina.}
@@ -238,21 +245,19 @@ transporte forma parte del intervalo registrado en la finalizacion de dosificaci
 \end{figure}
 \end{minipage}
 \par\medskip
-
-\par\medskip
 \noindent\begin{minipage}{\textwidth}
 \setlength{\parindent}{4em}
 El área vinculada con la operación comprende la zona de almacenamiento de
 harina, el punto de pesaje y la amasadora. La
 Figura~\ref{fig:croquis_panaderia} muestra la ubicación relativa de estos
-elementos y presenta cotas de $3{,}20\ \mathrm{m}$ y $0{,}90\ \mathrm{m}$
-en planta. La correspondencia entre estas cotas y la longitud de cada
-trayecto del operario permanece pendiente de verificación, el croquis se
-utiliza para describir la distribución física.
+elementos. Las cotas de $3{,}20\ \mathrm{m}$ y $0{,}90\ \mathrm{m}$
+corresponden a tramos medidos en planta entre el almacenamiento de harina
+y el punto de pesaje. El acceso indicado corresponde a la puerta del área
+de trabajo. El croquis representa la distribución física sin escala gráfica.
 
 \begin{figure}[H]
     \centering
-    \resizebox{0.95\textwidth}{!}{%
+    \resizebox{0.70\textwidth}{!}{%
         \input{images/marcoref/croquis_panaderia.tex}%
     }
     \caption{Distribución del área relacionada con la dosificación de harina en la Panadería San Miguel.}
@@ -303,8 +308,7 @@ Figura~\ref{fig:croquis_panaderia}.
         {\small (b) Vista general de la mesa de ingredientes.}
     \end{minipage}
 
-    \caption{Área de trabajo: (a) lugar de almacenamiento de las bolsas de harina
-    y (b) mesa de ingredientes.}
+    \caption{Área de trabajo relacionada con la dosificación de harina.}
     \label{fig:entorno_pesaje}
 
     \vspace{0.2em}
@@ -342,6 +346,7 @@ análisis. La Figura~\ref{fig:lecturas_fotograficas}, incluida
 en ese apéndice, documenta fotográficamente las indicaciones
 de peso seleccionadas. Las tablas de ambos apéndices contienen
 los registros de los que proceden los resultados consolidados.
+
 La diferencia entre la cantidad final registrada y la cantidad objetivo
 se expresa mediante:
 
@@ -403,8 +408,7 @@ corresponden a sumas de los registros incluidos en los apéndices.
 
     \vspace{0.4em}
 
-    \parbox{0.94\textwidth}
-    \footnotesize{Fuente: Elaboración propia.}
+    \parbox{0.94\textwidth}{\centering\footnotesize Fuente: Elaboración propia.}
 \end{table}
 \end{minipage}
 \par\medskip
@@ -414,7 +418,7 @@ $53{,}2$ y $66{,}6\ \mathrm{s}$ por ciclo. Las actividades de recogida,
 traslado y descarga de las cargas principales, junto con los retornos
 para cargas adicionales, acumularon $259{,}7\ \mathrm{s}$, equivalentes
 al $63{,}0\%$ del tiempo total registrado. Esta agrupación incluye
-manipulación de harina y desplazamientos del operario, el porcentaje no
+manipulación de harina y desplazamientos del operario. El porcentaje no
 representa tiempo exclusivo de caminata.
 
 Los registros temporales caracterizan la duración del procedimiento
@@ -446,8 +450,8 @@ sistema de pesaje. Ambos elementos permanecen pendientes de determinación.
 
 Como escenario de referencia para septiembre de 2026, se calculó la
 repetición de los ciclos registrados durante 22 jornadas de lunes a
-viernes y cuatro sábados. El cálculo supone la reproducción de las
-cantidades de ciclos y de los tiempos registrados para cada tipo de jornada:
+viernes y cuatro sábados. El cálculo supone la reproducción del
+número de ciclos y de los tiempos registrados para cada tipo de jornada:
 
 \[
 22(304{,}5\ \mathrm{s})
@@ -461,7 +465,7 @@ El resultado equivale a $1\ \mathrm{h}$, $58\ \mathrm{min}$ y
 $48{,}6\ \mathrm{s}$. Esta cifra constituye una proyección del conjunto
 de ciclos considerado y no una medición mensual directa. El escenario
 excluye cierres, feriados, variaciones de producción y modificaciones de
-las condiciones registradas, tampoco acredita el tiempo total de
+las condiciones registradas. Tampoco acredita el tiempo total de
 dosificación del establecimiento.
 
 La caracterización documentó un procedimiento de cargas sucesivas en el
@@ -515,11 +519,11 @@ asociadas al abastecimiento manual del recipiente receptor. Los registros
 temporales cuantifican la participación de estas actividades dentro del
 intervalo analizado.
 
-El tiempo acumulado y la proyección mensual expresan agregaciones del
-indicador temporal. Estas magnitudes no demuestran por sí mismas
-consecuencias operativas distintas de la duración del procedimiento. La
-organización definitiva de causas y efectos permanece pendiente de
-validación académica y de respaldo para las relaciones causales propuestas.
+% El tiempo acumulado y la proyección mensual expresan agregaciones del
+% indicador temporal. Estas magnitudes no demuestran por sí mismas
+% consecuencias operativas distintas de la duración del procedimiento. La
+% organización definitiva de causas y efectos permanece pendiente de
+% validación académica y de respaldo para las relaciones causales propuestas.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -547,7 +551,14 @@ Desarrollar un prototipo automatizado de dosificación gravimétrica de harina p
 
 \item Verificar el cumplimiento de los requerimientos funcionales y técnicos del prototipo mediante pruebas de funcionamiento.
 
-\item Evaluar el desempeño del prototipo frente al procedimiento manual mediante el tiempo de intervención del operario por ciclo de dosificación.
+\item Evaluar comparativamente el desempeño del prototipo y del procedimiento
+manual bajo condiciones equivalentes, con el tiempo de intervención del operario
+por ciclo como indicador principal, junto con el tiempo de dosificación, la
+diferencia respecto de la cantidad objetivo de harina y la repetibilidad.
+
+\item Evaluar el costo de construcción e integración del prototipo respecto del
+criterio económico establecido, mediante un desglose documentado de materiales,
+componentes y procesos de fabricación y montaje.
 
 \end{itemize}
 
@@ -574,28 +585,23 @@ la dosificación.
 \section{Justificación}
 \label{sec:justificacion}
 
-El proyecto aborda la dosificación de harina en la Panadería San Miguel,
-cuyo procedimiento registrado comprende cargas, traslados, ajustes y
-comprobaciones realizados por el operario. La evaluación de una alternativa
-automatizada aporta evidencia para valorar el desempeño del prototipo frente
-al procedimiento manual en las condiciones del establecimiento. El tiempo de
-intervención del operario durante la operación constituye el eje de esta
-comparación.
+El proyecto aporta evidencia experimental para valorar una alternativa
+automatizada de dosificación de harina en la Panadería San Miguel. La
+comparación con el procedimiento manual considera el tiempo de intervención
+del operario como indicador principal, junto con el tiempo de dosificación,
+la diferencia respecto de la cantidad objetivo y la repetibilidad. El aporte
+académico consiste en analizar estos resultados para el caso de estudio,
+sin presuponer mejoras ni extender las conclusiones a condiciones no ensayadas.
 
-El desarrollo integra el dimensionamiento mecánico, la medición gravimétrica
-y el control de la alimentación respecto de una cantidad objetivo. Los
-requerimientos derivados de la caracterización orientan la selección de
-componentes y el diseño del sistema. El trabajo comprende cálculos y pruebas
-para fundamentar las decisiones de diseño y verificar el funcionamiento del
-prototipo respecto de los requerimientos establecidos.
+El desarrollo aplica el dimensionamiento mecánico, la medición gravimétrica
+y el control de la alimentación a los requerimientos del establecimiento.
+Los cálculos y las pruebas fundamentan las decisiones de diseño y verifican
+el funcionamiento del prototipo.
 
-El aporte académico previsto consiste en obtener y analizar evidencia sobre
-el desempeño de la configuración desarrollada para el caso de estudio. La
-comparación contempla el tiempo de intervención del operario como indicador
-principal, junto con el tiempo de dosificación, la diferencia respecto de la
-cantidad objetivo de harina y la repetibilidad. Esta información constituye
-una base para valorar la alternativa en la Panadería San Miguel, sin
-presuponer mejoras ni extender las conclusiones a condiciones no ensayadas.
+La orientación de bajo costo incorpora la evaluación del costo de construcción
+e integración junto con los requerimientos técnicos. El desglose de materiales,
+componentes y procesos de fabricación sustenta el contraste con un criterio
+económico de aceptación, pendiente de definición para el caso de estudio.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -616,8 +622,10 @@ Los límites del proyecto se establecen de la siguiente manera:
 
 \begin{itemize}
 
-\item El caso de estudio corresponde a la Panadería San Miguel, ubicada en
-Santa Cruz de la Sierra.
+\item La caracterización y la evaluación experimental corresponden a la
+Panadería San Miguel, ubicada en Santa Cruz de la Sierra. La orientación del
+diseño hacia panaderías artesanales no comprende la validación del desempeño
+en otros establecimientos.
 
 \item El desarrollo se concentra en la dosificación gravimétrica automatizada
 de harina previa al mezclado y amasado. La dosificación automatizada de otros
@@ -629,6 +637,10 @@ desarrollo.
 
 \item La evaluación se circunscribe a ensayos del prototipo bajo condiciones
 comparables con el procedimiento manual estudiado.
+
+\item La evaluación económica se limita al costo de construcción e integración
+del prototipo. Quedan fuera el análisis de rentabilidad del establecimiento,
+la recuperación de la inversión y los costos de producción comercial en serie.
 
 \item Las conclusiones de la evaluación se limitan a las condiciones y ensayos
 realizados. No comprenden la validación del desempeño en otros establecimientos
@@ -668,4 +680,13 @@ condiciones equivalentes, con el tiempo de intervención del operario por ciclo
 como indicador principal. El análisis incluye el tiempo de dosificación, la
 diferencia respecto de la cantidad objetivo de harina y la repetibilidad.
 
+\item Un análisis del costo de construcción e integración del prototipo,
+sustentado en un presupuesto desglosado, cotizaciones y registros de
+implementación, con identificación de los recursos adquiridos y reutilizados
+y contraste con el criterio económico establecido.
+
 \end{itemize}
+
+% Restaurar la composición de los capítulos siguientes.
+\clearpage
+\flushbottom
