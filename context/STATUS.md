@@ -1,11 +1,11 @@
 # STATUS
 
-**Última actualización:** 2026-09-14
+**Última actualización:** 2026-09-15
 
 ## Estado actual
 
-Marco Referencial / Capítulo 1 en consolidación.  
-Introducción revisada e incorporada a pedido del estudiante. Trabajo activo: **Antecedentes del problema**. Problema, árbol y objetivos aún no están cerrados definitivamente.
+Marco Referencial / Capítulo 1 en revisión a partir de las observaciones docentes más recientes.  
+Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el criterio de `bajo costo` no están cerrados. Trabajo activo: **Antecedentes del problema / diagnóstico**.
 
 ## Completado
 
@@ -19,20 +19,30 @@ Introducción revisada e incorporada a pedido del estudiante. Trabajo activo: **
 
 ## En curso
 
-- Organizar **Antecedentes del problema** con la evidencia existente y su análisis.
+- Organizar **Antecedentes del problema / diagnóstico** con la evidencia existente, mejorar la presentación del impacto y calcular proyecciones acumuladas diaria, semanal y mensual, identificándolas expresamente como proyecciones.
+- Auditar el respaldo de las afirmaciones del diagnóstico y mejorar la explicación de la tabla consolidada y su conexión con el DFD.
 
 ## Próximos pasos
 
-1. Consolidar Antecedentes: proceso → diagrama de flujo → distribución/recorridos → cantidades/tiempos/diferencias → resumen → proyecciones → análisis.
-2. Revisar y cerrar una única formulación del problema a partir de esa evidencia.
-3. Ajustar árbol de problemas, objetivo general y objetivos específicos a la formulación cerrada.
+1. **01C — Introducción y antecedentes:** presentar primero la problemática/necesidad y después la solución; trasladar la revisión detallada de dosificadoras al estado del arte; revisar paráfrasis, citas, atribuciones y repeticiones.
+2. **01A — Diagnóstico y problema:** consolidar proceso → DFD → distribución/recorridos → cantidades/tiempos/diferencias → proyecciones → análisis; integrar tiempo/intervención + diferencia/exceso de harina y revisar el árbol con la estructura causas → problema → efectos.
+3. **01B — Objetivos y alcance:** simplificar el objetivo general y el objetivo específico de evaluación; comprobar medibilidad, logro verificable y secuencia; mantener la validación después del desarrollo; volver a revisar el primer OE, cuya aprobación no puede establecerse.
+4. **01B — Alcances y límites:** rehacer los alcances como fronteras funcionales/técnicas y depurar los límites para conservar solo exclusiones reales, sin adoptar `50 kg` ni otro rango sin sustento.
+5. **02 — Investigación:** construir evidencia comercial verificable para definir `bajo costo` mediante funciones/prestaciones, precio y criterio de comparación; fortalecer el estado del arte y verificar las fuentes utilizadas.
+6. **03 — Diagramas y tablas:** conectar la descripción del procedimiento manual con el DFD; asegurar contexto, títulos, unidades, leyendas, atribución e interpretación; mantener la evidencia principal en el cuerpo y remitir el detalle a anexos.
+7. Verificar que el documento use el template oficial de Taller de Grado I.
 
 ## Bloqueos / pendientes de validación
 
 - Problema, árbol y objetivos presentados el 11/09/2026 aún no tienen aprobación definitiva.
+- `D-004` requiere revisión después de reconstruir `01A`; no debe reemplazarse todavía.
 - Falta completar el segundo día ordinario del relevamiento o confirmar formalmente el cambio de cobertura.
-- El título de `main.tex` usa **“bajo costo / panaderías artesanales”**, pero el título definitivo continúa **NO DECIDIDO**.
-- La revisión de Introducción no implica aprobación docente del capítulo. Persisten los conflictos de estilo sobre títulos con «problema» y límites simultáneos de líneas/palabras registrados en `redacción.md`.
+- El título de `main.tex` usa **“bajo costo / panaderías artesanales”**, pero el título definitivo continúa **NO DECIDIDO** y `bajo costo` aún debe demostrarse mediante un criterio comparativo.
+- La revisión de Introducción no implica aprobación docente del capítulo; debe reestructurarse para presentar primero la problemática.
+- Alcances y límites requieren revisión sustancial: los primeros no deben formularse como objetivos/entregables y los segundos deben contener solo exclusiones reales.
+- Tablas y figuras requieren revisión de contexto, unidades, leyendas, explicación e interpretación; la evidencia principal debe permanecer en el cuerpo.
+- Debe verificarse el uso del template oficial de Taller de Grado I.
+- Persisten los conflictos de estilo sobre títulos con «problema» y límites simultáneos de líneas/palabras registrados en `redacción.md`.
 
 ## Archivos activos
 

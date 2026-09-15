@@ -50,6 +50,8 @@
 **Motivo:** Así se encuentra estructurado el planteamiento, árbol y formulación presentados.  
 **Impacto:** No redefinir el problema únicamente alrededor de exceso, error o diferencia de harina sin nueva evidencia o revisión académica.
 
+**Revisión requerida:** La observación docente más reciente exige reconsiderar la formulación y el árbol integrando conjuntamente tiempo/intervención del operario y diferencia/exceso de harina. Esta anotación no reemplaza la decisión vigente: primero debe reconstruirse `01A — Diagnóstico y problema` y verificarse su coherencia con la evidencia; solo después corresponde registrar una decisión actualizada.
+
 ---
 
 ### D-005 — Concepto general de la solución
@@ -112,6 +114,10 @@ Existen actualmente formulaciones diferentes entre `PROJECT_CONTEXT.md` y el PDF
 También permanece abierto si las expresiones `bajo costo` y `panaderías artesanales`
 formarán parte del título o de los requerimientos definitivos.
 
+La revisión docente más reciente no aprueba definitivamente el título. Si se conserva
+`bajo costo`, debe definirse previamente un criterio comparativo defendible frente a
+soluciones comerciales de funcionalidad comparable, considerando prestaciones y precio.
+
 ---
 
 ### A-002 — Aprobación definitiva del problema, árbol y objetivos
@@ -120,6 +126,9 @@ formarán parte del título o de los requerimientos definitivos.
 
 El PDF del 11/09/2026 constituye la versión académica presentada de referencia,
 pero no existe evidencia suficiente para registrarla como aprobación definitiva del docente.
+
+La revisión docente más reciente requiere correcciones sustanciales en problema,
+árbol y objetivos; por tanto, estos apartados deben permanecer abiertos.
 
 ---
 
@@ -158,3 +167,6 @@ Continúan abiertos, entre otros:
 
 Una propuesta, ejemplo bibliográfico, valor observado o valor utilizado en un
 borrador no convierte automáticamente ninguno de estos elementos en requisito.
+
+El ejemplo docente de `50 kg` fue únicamente pedagógico y no constituye un
+requerimiento del prototipo. El rango deberá derivarse de los datos de campo y del diseño.
