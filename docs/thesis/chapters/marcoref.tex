@@ -37,21 +37,20 @@ comprendida en el proyecto.
 
 \end{figure}
 
-En la Panadería San Miguel, la dosificación de harina se realiza mediante
-un procedimiento manual con intervención directa del operario en la
-preparación del pesaje, el transporte e incorporación de harina y la
-comprobación de la cantidad obtenida. Los registros del caso de estudio
-también presentan diferencias entre la cantidad objetivo y la cantidad
-final de harina. Por esta razón, la caracterización considera de manera
-conjunta la intervención y el tiempo asociados al procedimiento, así como
-la diferencia de harina registrada.
+En la Panadería San Miguel, la dosificación de harina se realiza de forma
+manual. El operario prepara el pesaje, transporta e incorpora la harina y
+comprueba la cantidad obtenida en cada ciclo. Los registros del caso de
+estudio muestran, además, diferencias entre la cantidad objetivo y la
+cantidad final de harina. La caracterización presentada a continuación
+considera de manera conjunta la intervención y el tiempo asociados al
+procedimiento, así como esta diferencia registrada.
 
 A partir de esta necesidad, el proyecto adopta como concepto de solución
 la dosificación gravimétrica automatizada. Este principio utiliza el
 pesaje para determinar la cantidad suministrada respecto de una cantidad
-objetivo. La recomendación OIML R 61-1 describe instrumentos automáticos
-de llenado gravimétrico que integran funciones de alimentación, pesaje,
-control y descarga \parencite{oiml2017r61}.
+objetivo, tal como describe la recomendación OIML R 61-1 para
+instrumentos automáticos de llenado gravimétrico que integran funciones
+de alimentación, pesaje, control y descarga \parencite{oiml2017r61}.
 
 El proyecto aborda el diseño y construcción de un prototipo automatizado
 de dosificación gravimétrica de harina para la Panadería San Miguel. El
@@ -108,8 +107,7 @@ final y la devolución del recipiente de transporte.
 \end{figure}
 
 El operario inició el procedimiento con la colocación del recipiente
-receptor sobre la balanza, la aplicación de la función de
-tare\footnote{Tare: corresponde a la función utilizada
+receptor sobre la balanza, la aplicación de la función tare\footnote{Tare: corresponde a la función utilizada
 para compensar la masa del recipiente colocado sobre la balanza y establecer
 la indicación de cero antes de incorporar la harina.} y la comprobación
 de la indicación de cero. Estas operaciones establecieron la referencia
@@ -278,200 +276,42 @@ procedimiento.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% COBERTURA Y REGISTROS DEL LEVANTAMIENTO
+% COBERTURA Y RESULTADOS DEL LEVANTAMIENTO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-La evidencia disponible comprende siete ciclos de dosificación registrados
-durante dos jornadas de observación. El 2 de septiembre de 2026 se
-registraron cinco ciclos: dos de pan casero, dos de marraqueta y uno de
-pan francés. El 5 de septiembre de 2026 se registraron dos ciclos: uno de
-pan casero y otro correspondiente a una masa común destinada a empanadas
-y rollos de queso. Esta última preparación constituye un único ciclo de
-dosificación.
+Se registraron cinco ciclos de dosificación el 2 de septiembre de 2026
+y dos el 5 de septiembre. En cada ciclo se midieron la cantidad objetivo,
+la cantidad final indicada por la balanza y el tiempo desde la preparación
+y tara hasta la devolución del recipiente, incluidas las cargas,
+los desplazamientos y el ajuste final. La diferencia de harina corresponde
+a la cantidad final menos la cantidad objetivo.
 
-Los siete ciclos comprendieron 24 cargas principales, distribuidas en
-tres o cuatro cargas por ciclo. Las cantidades objetivo observadas
-estuvieron comprendidas entre $5{,}0$ y $8{,}0\ \mathrm{kg}$. Estos
-valores caracterizan las preparaciones registradas y no establecen el
-rango definitivo de funcionamiento del prototipo.
-
-Los registros temporales incluyeron la preparación y tara, el
-desplazamiento inicial, la recogida, el traslado y la descarga de las
-cargas, los retornos para cargas adicionales, el ajuste final, la
-comprobación de la lectura y la devolución del recipiente de transporte.
-El Apéndice~\ref{ap:tablas_dosificacion} presenta los tiempos desagregados
-por actividad y ciclo.
-
-El Apéndice~\ref{ap:registros_campo} contiene las lecturas acumuladas
-indicadas por la balanza después de cada carga principal. A partir de
-estos registros, la Tabla~\ref{tab:resultados_por_ciclo} reúne la cantidad
-objetivo, la cantidad final indicada por la balanza, la diferencia de
-harina y el tiempo total de cada ciclo.
-
-La diferencia entre la cantidad final registrada y la cantidad objetivo
-se expresa mediante:
-
-\[
-\Delta h =
-h_{\mathrm{final}}
--
-h_{\mathrm{objetivo}},
-\]
-
-donde $h_{\mathrm{final}}$ corresponde a la cantidad final indicada por la
-balanza y $h_{\mathrm{objetivo}}$ a la cantidad establecida para la
-preparación. Una diferencia positiva indica que la cantidad final
-registrada superó la cantidad objetivo.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS POR CICLO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+La Tabla~\ref{tab:resumen_dosificacion} presenta las sumas de cantidades
+y tiempos de los ciclos registrados en cada jornada, no de toda la
+producción diaria. El detalle de cantidades y tiempos se encuentra en los
+Apéndices~\ref{ap:registros_campo} y~\ref{ap:tablas_dosificacion}.
 
 \begin{table}[H]
     \centering
-    \caption{Resultados por ciclo de dosificación manual de harina.}
-    \label{tab:resultados_por_ciclo}
-    \footnotesize
-
-    \setlength{\tabcolsep}{5pt}
-    \renewcommand{\arraystretch}{1.35}
-
-    \begin{tabular}{|l|c|c|c|c|}
-        \hline
-
-        \rowcolor{lightgray}
-        \textbf{Ciclo} &
-        \textbf{\shortstack{Cantidad objetivo\\de harina (kg)}} &
-        \textbf{\shortstack{Cantidad final\\de harina (kg)}} &
-        \textbf{\shortstack{Diferencia de\\harina (kg)}} &
-        \textbf{\shortstack{Tiempo total\\del ciclo (s)}} \\
-        \hline
-
-        \rowcolor{black!8}
-        \multicolumn{5}{|c|}{
-            \textbf{Jornada ordinaria --- 02/09/2026}
-        } \\
-        \hline
-
-        Pan casero 1 &
-        $6{,}500$ &
-        $6{,}520$ &
-        $+0{,}020$ &
-        $53{,}9$ \\
-        \hline
-
-        Marraqueta 1 &
-        $8{,}000$ &
-        $8{,}018$ &
-        $+0{,}018$ &
-        $64{,}9$ \\
-        \hline
-
-        Pan francés 1 &
-        $7{,}500$ &
-        $7{,}516$ &
-        $+0{,}016$ &
-        $66{,}6$ \\
-        \hline
-
-        Pan casero 2 &
-        $6{,}500$ &
-        $6{,}513$ &
-        $+0{,}013$ &
-        $53{,}2$ \\
-        \hline
-
-        Marraqueta 2 &
-        $8{,}000$ &
-        $8{,}011$ &
-        $+0{,}011$ &
-        $65{,}9$ \\
-        \hline
-
-        \rowcolor{black!5}
-        \textbf{Total jornada ordinaria} &
-        $\mathbf{36{,}500}$ &
-        $\mathbf{36{,}578}$ &
-        $\mathbf{+0{,}078}$ &
-        $\mathbf{304{,}5}$ \\
-        \hline
-
-        \rowcolor{black!8}
-        \multicolumn{5}{|c|}{
-            \textbf{Jornada de sábado --- 05/09/2026}
-        } \\
-        \hline
-
-        Pan casero &
-        $6{,}500$ &
-        $6{,}538$ &
-        $+0{,}038$ &
-        $54{,}2$ \\
-        \hline
-
-        Masa común &
-        $5{,}000$ &
-        $5{,}027$ &
-        $+0{,}027$ &
-        $53{,}2$ \\
-        \hline
-
-        \rowcolor{black!5}
-        \textbf{Total sábado} &
-        $\mathbf{11{,}500}$ &
-        $\mathbf{11{,}565}$ &
-        $\mathbf{+0{,}065}$ &
-        $\mathbf{107{,}4}$ \\
-        \hline
-    \end{tabular}
-
-    \vspace{0.5em}
-
-    {\footnotesize
-    Fuente: Elaboración propia a partir de los registros de campo.}
-\end{table}
-
-En la jornada ordinaria, las cantidades objetivo de los cinco ciclos
-sumaron $36{,}500\ \mathrm{kg}$, mientras que las cantidades finales
-registradas sumaron $36{,}578\ \mathrm{kg}$. La diferencia positiva
-acumulada fue de $+0{,}078\ \mathrm{kg}$ y el tiempo total de los cinco
-ciclos fue de $304{,}5\ \mathrm{s}$.
-
-Durante el sábado, las cantidades objetivo de los dos ciclos sumaron
-$11{,}500\ \mathrm{kg}$ y las cantidades finales registradas sumaron
-$11{,}565\ \mathrm{kg}$. La diferencia positiva acumulada fue de
-$+0{,}065\ \mathrm{kg}$ y el tiempo total registrado fue de
-$107{,}4\ \mathrm{s}$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS CONSOLIDADOS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-La Tabla~\ref{tab:resumen_dosificacion} presenta la consolidación de ambas
-jornadas y el total de los siete ciclos registrados. Los valores
-corresponden a la suma de los resultados por ciclo presentados en la
-Tabla~\ref{tab:resultados_por_ciclo}.
-
-\begin{table}[H]
-    \centering
-    \caption{Resultados consolidados de la dosificación manual de harina.}
+    \caption{Resultados consolidados de los ciclos de dosificación manual
+    registrados en cada jornada observada.}
     \label{tab:resumen_dosificacion}
     \footnotesize
+    \setstretch{1}
 
-    \setlength{\tabcolsep}{4pt}
+    \setlength{\tabcolsep}{3pt}
     \renewcommand{\arraystretch}{1.35}
 
-    \begin{tabular}{|l|c|c|c|c|c|}
-        \hline
+    \begin{tabular}{lccccc}
+        \toprule[1pt]
 
-        \rowcolor{lightgray}
-        \textbf{Jornada} &
-        \textbf{Ciclos} &
-        \textbf{\shortstack{Cantidad objetivo\\de harina (kg)}} &
-        \textbf{\shortstack{Cantidad final\\de harina (kg)}} &
-        \textbf{\shortstack{Diferencia de\\harina (kg)}} &
-        \textbf{\shortstack{Tiempo\\acumulado (s)}} \\
-        \hline
+        \textbf{\shortstack{Jornada\\observada}} &
+        \textbf{\shortstack{Ciclos\\registrados}} &
+        \textbf{\shortstack{Harina objetivo\\(kg)}} &
+        \textbf{\shortstack{Harina final\\(kg)}} &
+        \textbf{\shortstack{Diferencia\\(kg)}} &
+        \textbf{\shortstack{Tiempo total\\(s)}} \\
+        \midrule[1pt]
 
         \shortstack{Ordinaria\\02/09/2026} &
         5 &
@@ -479,7 +319,7 @@ Tabla~\ref{tab:resultados_por_ciclo}.
         $36{,}578$ &
         $+0{,}078$ &
         $304{,}5$ \\
-        \hline
+        \midrule[1pt]
 
         \shortstack{Sábado\\05/09/2026} &
         2 &
@@ -487,16 +327,15 @@ Tabla~\ref{tab:resultados_por_ciclo}.
         $11{,}565$ &
         $+0{,}065$ &
         $107{,}4$ \\
-        \hline
+        \midrule[1pt]
 
-        \rowcolor{black!5}
-        \textbf{Total} &
+        \textbf{Total de la muestra} &
         \textbf{7} &
         $\mathbf{48{,}000}$ &
         $\mathbf{48{,}143}$ &
-        $\mathbf{+ 0{,}143}$ &
+        $\mathbf{+0{,}143}$ &
         $\mathbf{411{,}9}$ \\
-        \hline
+        \bottomrule[1pt]
     \end{tabular}
 
     \vspace{0.5em}
@@ -505,45 +344,59 @@ Tabla~\ref{tab:resultados_por_ciclo}.
     Fuente: Elaboración propia a partir de los registros de campo.}
 \end{table}
 
-En conjunto, los siete ciclos representaron una cantidad objetivo acumulada
-de $48{,}0\ \mathrm{kg}$ y una cantidad final registrada de
-$48{,}143\ \mathrm{kg}$. La diferencia positiva acumulada fue de
-$+0{,}143\ \mathrm{kg}$. El tiempo acumulado de los siete ciclos fue de
-$411{,}9\ \mathrm{s}$, equivalentes aproximadamente a
-$6\ \mathrm{min}\ 52\ \mathrm{s}$.
+Los $36{,}500\ \mathrm{kg}$ de harina objetivo y los
+$304{,}5\ \mathrm{s}$ corresponden a los cinco ciclos de la jornada
+ordinaria, los $107{,}4\ \mathrm{s}$, a los dos ciclos del sábado.
+Los siete ciclos sumaron $411{,}9\ \mathrm{s}$ y una diferencia positiva
+de $143\ \mathrm{g}$. Las cargas y los retornos concentraron el
+$63{,}0\%$ del tiempo registrado, incluida la manipulación y el transporte
+de harina. En todos los ciclos, la cantidad final superó la cantidad
+objetivo, la harina adicional quedó incorporada en las preparaciones,
+por lo que no constituye desperdicio.
 
-Los tiempos individuales estuvieron comprendidos entre
-$53{,}2$ y $66{,}6\ \mathrm{s}$ por ciclo. La recogida, el traslado y la
-descarga de las cargas principales, junto con los retornos para cargas
-adicionales, acumularon $259{,}7\ \mathrm{s}$ y representaron el
-$63{,}0\%$ del tiempo total observado. Esta agrupación comprende la
-manipulación de harina y los desplazamientos del operario. por tanto, no
-corresponde exclusivamente a tiempo de caminata.
+Las proyecciones se obtuvieron mediante la repetición de las condiciones
+registradas en las dos jornadas observadas. Para cada periodo se utilizaron
+el tiempo acumulado y la diferencia positiva de harina correspondientes a
+una jornada ordinaria y a un sábado.
 
-Las cantidades finales de los siete ciclos superaron las cantidades
-objetivo correspondientes. Las diferencias individuales estuvieron
-comprendidas entre $+0{,}011$ y $+0{,}038\ \mathrm{kg}$. Estos resultados
-describen las dos jornadas registradas y no establecen el comportamiento
-de jornadas distintas a las observadas.
+Para una semana compuesta por cinco jornadas ordinarias y un sábado, el
+tiempo proyectado se calculó mediante:
 
-La harina correspondiente a las diferencias positivas permaneció
-incorporada en las preparaciones. Por esta razón, los resultados no se
-clasifican como desperdicio. La evidencia disponible tampoco establece
-un incumplimiento de tolerancia ni una afectación de la calidad, puesto
-que el proyecto no cuenta con un criterio de aceptación validado ni con
-la caracterización metrológica completa del sistema de pesaje.
+\[
+T_{\mathrm{sem}}
+=
+5(304{,}5\ \mathrm{s})
++
+1(107{,}4\ \mathrm{s})
+=
+1\,629{,}9\ \mathrm{s}
+\approx
+27\ \mathrm{min}\ 10\ \mathrm{s}.
+\]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PROYECCIÓN MENSUAL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+En esta expresión, $304{,}5\ \mathrm{s}$ corresponde al tiempo acumulado
+de los cinco ciclos registrados en la jornada ordinaria y
+$107{,}4\ \mathrm{s}$ al tiempo acumulado de los dos ciclos registrados
+el sábado.
 
-Para representar la acumulación de las condiciones observadas se estableció
-un escenario de referencia para septiembre de 2026. La proyección considera
-22 jornadas ordinarias y cuatro sábados. El cálculo supone que, para cada
-tipo de jornada, se reproducen el número de ciclos, el tiempo acumulado y
-la diferencia de harina registrados durante el levantamiento.
+La diferencia positiva semanal de harina se obtuvo mediante:
 
-El tiempo mensual proyectado se calculó mediante:
+\[
+\Delta h_{\mathrm{sem}}
+=
+5(0{,}078\ \mathrm{kg})
++
+1(0{,}065\ \mathrm{kg})
+=
+0{,}455\ \mathrm{kg}.
+\]
+
+Los valores de $0{,}078\ \mathrm{kg}$ y $0{,}065\ \mathrm{kg}$
+corresponden a las diferencias positivas acumuladas de harina registradas
+en la jornada ordinaria y en el sábado, respectivamente.
+
+Para un escenario mensual de 22 jornadas ordinarias y cuatro sábados, el
+tiempo proyectado se calculó mediante:
 
 \[
 T_{\mathrm{mes}}
@@ -557,7 +410,7 @@ T_{\mathrm{mes}}
 1\ \mathrm{h}\ 59\ \mathrm{min}.
 \]
 
-La diferencia positiva acumulada de harina se calculó mediante:
+La diferencia positiva mensual de harina se calculó mediante:
 
 \[
 \Delta h_{\mathrm{mes}}
@@ -569,30 +422,10 @@ La diferencia positiva acumulada de harina se calculó mediante:
 1{,}976\ \mathrm{kg}.
 \]
 
-Bajo estos supuestos, la repetición de las condiciones observadas representa
-una proyección mensual aproximada de $1\ \mathrm{h}\ 59\ \mathrm{min}$ de
-tiempo acumulado del procedimiento y $1{,}976\ \mathrm{kg}$ de diferencia
-positiva de harina respecto de las cantidades objetivo. Estos resultados
-son proyecciones derivadas de las jornadas registradas y no mediciones
-realizadas durante un mes completo. El escenario no incorpora cierres,
-feriados, variaciones en la producción ni modificaciones en las
-condiciones observadas.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CIERRE DE LOS ANTECEDENTES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-En conjunto, la caracterización muestra que el procedimiento requirió la
-participación del operario durante la preparación del pesaje, las cargas,
-los traslados, el ajuste y la comprobación final. Asimismo, los siete
-ciclos registraron cantidades finales superiores a sus cantidades
-objetivo.
-
-Bajo el escenario mensual definido, ambas condiciones representan
-aproximadamente $1\ \mathrm{h}\ 59\ \mathrm{min}$ de tiempo acumulado del
-procedimiento y $1{,}976\ \mathrm{kg}$ de diferencia positiva de harina.
-Estos resultados constituyen las dos variables cuantificadas utilizadas
-para sustentar la formulación del problema.
+Estas proyecciones representan la repetición del patrón registrado en las
+jornadas observadas. Por tanto, los valores semanales y mensuales son
+cálculos derivados y no mediciones realizadas durante una semana o un mes
+completos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FORMULACIÓN DEL PROBLEMA
@@ -601,8 +434,7 @@ para sustentar la formulación del problema.
 \subsection{Formulación del Problema}
 \label{subsec:formulacion_problema}
 
-En la Panadería San Miguel, el operario destina, según el escenario mensual
-calculado, aproximadamente $1\ \mathrm{h}\ 59\ \mathrm{min}$ al
+En la Panadería San Miguel, el operario destina $1\ \mathrm{h}\ 59\ \mathrm{min}$ al
 procedimiento manual de dosificación de harina, en el cual se acumula una
 diferencia positiva de $1{,}976\ \mathrm{kg}$ respecto de las cantidades
 objetivo.
@@ -682,7 +514,7 @@ harina para la Panadería San Miguel.
     \item Verificar el cumplimiento de los requerimientos funcionales y
     técnicos del prototipo mediante pruebas de funcionamiento.
 
-    \item Comparar el desempeño del prototipo con el procedimiento manual mediante el tiempo de dosificación, la intervención del operario, la diferencia de harina y la repetibilidad.
+    \item Comparar el desempeño del prototipo con el procedimiento manual de dosificación de harina bajo condiciones comparables.
 
     \item Determinar el costo de construcción e integración del prototipo
     mediante un desglose documentado de materiales, componentes y procesos
@@ -766,15 +598,21 @@ no se considera demostrada en la etapa actual.
     de harina previa al mezclado y amasado, a partir de una cantidad objetivo
     de dosificación.
 
-    \item La automatización comprende la alimentación de harina, la medición
-    gravimétrica de la cantidad dosificada y el control de la alimentación
-    durante el ciclo de dosificación.
+    \item La cantidad objetivo de dosificación es configurable por el
+    operario antes de iniciar cada ciclo; el rango final de valores
+    admitidos se establece a partir del relevamiento de campo y de las
+    decisiones de diseño posteriores.
 
     \item La evaluación experimental comprende la comparación del prototipo
     con el procedimiento manual de la Panadería San Miguel bajo condiciones
     comparables. La comparación considera el tiempo de dosificación, la
     intervención del operario, la diferencia de harina respecto de la
     cantidad objetivo y la repetibilidad.
+
+    \item La medición de la cantidad dosificada es gravimétrica y se
+    realiza mediante un sistema de pesaje integrado al prototipo; el
+    control de la alimentación opera de forma automática hasta alcanzar
+    la cantidad objetivo establecida.
 
     \item La evaluación económica comprende el costo de construcción e
     integración del prototipo.

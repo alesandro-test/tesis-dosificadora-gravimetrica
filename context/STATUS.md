@@ -1,6 +1,6 @@
 # STATUS
 
-**Última actualización:** 2026-09-15
+**Última actualización:** 2026-09-16
 
 ## Estado actual
 
@@ -8,6 +8,8 @@ Marco Referencial / Capítulo 1 en revisión a partir de las observaciones docen
 Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el criterio de `bajo costo` no están cerrados. Trabajo activo: **Antecedentes del problema / diagnóstico**.
 
 ## Completado
+
+- Resultados del diagnóstico condensados: tabla consolidada, explicación directa de cantidades y tiempos y proyecciones con repetición de ciclos explícita. Por solicitud del estudiante, se retiró la gráfica de barras y se redujo el texto a cuatro párrafos; sin incorporar tabla por ciclos. PDF compilado y páginas afectadas revisadas el 16/09/2026.
 
 - Fotografías de Antecedentes maquetadas junto a sus explicaciones; diagrama, croquis y tabla ajustados. PDF compilado y páginas afectadas revisadas visualmente el 14/09/2026.
 
@@ -20,7 +22,7 @@ Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el c
 ## En curso
 
 - Organizar **Antecedentes del problema / diagnóstico** con la evidencia existente, mejorar la presentación del impacto y calcular proyecciones acumuladas diaria, semanal y mensual, identificándolas expresamente como proyecciones.
-- Auditar el respaldo de las afirmaciones del diagnóstico y mejorar la explicación de la tabla consolidada y su conexión con el DFD.
+- Completar la auditoría del respaldo del diagnóstico; la explicación de la tabla consolidada y la distribución temporal ya fueron revisadas.
 
 ## Próximos pasos
 
@@ -33,6 +35,8 @@ Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el c
 7. Verificar que el documento use el template oficial de Taller de Grado I.
 
 ## Bloqueos / pendientes de validación
+
+- La formulación y el árbol presentan cifras mensuales sin explicitar su carácter proyectado; revisión pendiente fuera de la edición de resultados. Las notas de campo consideran provisional la asociación entre fechas temporales y lecturas de harina: confirmar trazabilidad sin alterar cifras por suposición.
 
 - Problema, árbol y objetivos presentados el 11/09/2026 aún no tienen aprobación definitiva.
 - `D-004` requiere revisión después de reconstruir `01A`; no debe reemplazarse todavía.
