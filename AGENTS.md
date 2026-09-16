@@ -12,6 +12,8 @@ Según la tarea:
 
 - `context/PROFESSOR_NOTES.md` — criterios académicos y del docente.
 - `context/THESIS_STRUCTURE.md` — función, orden y profundidad de capítulos/secciones.
+- `redacción.md` — reglas de estilo y redacción académica del proyecto.
+- `docs/template/Template - Perfil de Proyecto- Final.md` — requisitos institucionales de estructura y formato.
 - `research/` — evidencia, registros, fuentes originales o referencias necesarias.
 
 No leer `research/` completo por defecto.
@@ -26,6 +28,12 @@ No leer `research/` completo por defecto.
 6. referencias estructurales.
 
 Si el conflicto no puede resolverse con estas fuentes, señalarlo. No elegir arbitrariamente.
+
+Para estructura y formato institucional, la plantilla oficial prevalece sobre
+`THESIS_STRUCTURE.md` y las referencias estructurales.
+
+Para redacción, aplicar `redacción.md` siempre que no contradiga decisiones,
+criterios docentes o requisitos institucionales.
 
 ## Uso de `research/`
 
@@ -61,6 +69,8 @@ El documento fuente está en `docs/thesis/`.
 Al modificar `.tex`:
 
 - respetar la plantilla y estructura existentes;
+- consultar `docs/template/Template - Perfil de Proyecto- Final.md` antes de cambiar estructura, organización o formato institucional;
+- aplicar `redacción.md` cuando la tarea implique redacción académica;
 - revisar antes patrones ya utilizados para figuras, tablas, ecuaciones, labels y referencias;
 - usar `docs/thesis/bibliography/referencias.bib` como base bibliográfica;
 - no añadir paquetes ni reorganizar archivos sin necesidad;
@@ -77,6 +87,8 @@ Verificar:
 - cumplimiento exacto de la solicitud;
 - consistencia con `DECISIONS.md`;
 - cumplimiento de criterios docentes aplicables;
+- cumplimiento de requisitos institucionales aplicables;
+- aplicación de `redacción.md` cuando corresponda;
 - ausencia de datos o decisiones inventadas;
 - coherencia de archivos relacionados;
 - compilación LaTeX, si hubo cambios `.tex`;

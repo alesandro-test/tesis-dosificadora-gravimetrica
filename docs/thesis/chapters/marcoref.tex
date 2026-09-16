@@ -682,10 +682,7 @@ harina para la Panadería San Miguel.
     \item Verificar el cumplimiento de los requerimientos funcionales y
     técnicos del prototipo mediante pruebas de funcionamiento.
 
-    \item Comparar el desempeño del prototipo y del procedimiento manual
-    mediante el tiempo de dosificación, la participación del operario, la
-    diferencia respecto de la cantidad objetivo de harina y la
-    repetibilidad.
+    \item Comparar el desempeño del prototipo con el procedimiento manual mediante el tiempo de dosificación, la intervención del operario, la diferencia de harina y la repetibilidad.
 
     \item Determinar el costo de construcción e integración del prototipo
     mediante un desglose documentado de materiales, componentes y procesos
@@ -700,24 +697,27 @@ harina para la Panadería San Miguel.
 \section{Justificación}
 \label{sec:justificacion}
 
-El proyecto aporta evidencia experimental para valorar una alternativa
-automatizada de dosificación de harina en la Panadería San Miguel. La
-comparación con el procedimiento manual considera el tiempo de intervención
-del operario como indicador principal, junto con el tiempo de dosificación,
-la diferencia respecto de la cantidad objetivo y la repetibilidad. El aporte
-académico consiste en analizar estos resultados para el caso de estudio,
-sin presuponer mejoras ni extender las conclusiones a condiciones no ensayadas.
+\subsection{Justificación Técnica y Tecnológica}
+\label{subsec:justificacion_tecnica}
 
-El desarrollo aplica el dimensionamiento mecánico, la medición gravimétrica
-y el control de la alimentación a los requerimientos del establecimiento.
-Los cálculos y las pruebas fundamentan las decisiones de diseño y verifican
-el funcionamiento del prototipo.
+El desarrollo se justifica técnicamente por la correspondencia entre el
+problema identificado y el principio de solución adoptado. El procedimiento
+manual requiere la intervención del operario durante la dosificación y
+presentó diferencias positivas respecto de las cantidades objetivo. El
+prototipo integrará alimentación automatizada, medición gravimétrica y control
+de la cantidad dosificada para evaluar estas variables bajo condiciones
+comparables con el procedimiento manual.
 
-La orientación de bajo costo incorpora la evaluación del costo de construcción
-e integración junto con los requerimientos técnicos. El desglose de materiales,
-componentes y procesos de fabricación sustenta el contraste con un criterio
-económico de aceptación, pendiente de definición para el caso de estudio.
+\subsection{Justificación Económica}
+\label{subsec:justificacion_economica}
 
+La evaluación económica considera el costo de construcción e integración
+del prototipo a partir de los materiales, componentes y procesos de
+fabricación y montaje empleados. La denominación de bajo costo requiere
+contrastar este costo con soluciones comerciales de funcionalidad
+comparable, considerando sus prestaciones y precio. El criterio de
+comparación permanece pendiente de definición, por lo que esta característica
+no se considera demostrada en la etapa actual.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DELIMITACIÓN
@@ -733,36 +733,25 @@ económico de aceptación, pendiente de definición para el caso de estudio.
 \subsection{Límites}
 \label{subsec:limites}
 
-Los límites del proyecto se establecen de la siguiente manera:
-
 \begin{itemize}
 
-\item La caracterización y la evaluación experimental corresponden a la
-Panadería San Miguel, ubicada en Santa Cruz de la Sierra. La orientación del
-diseño hacia panaderías artesanales no comprende la validación del desempeño
-en otros establecimientos.
+    \item La validación experimental se restringe a la Panadería San Miguel
+    y a las condiciones definidas para los ensayos. El proyecto no comprende
+    la validación del desempeño en otros establecimientos ni bajo condiciones
+    de producción distintas de las evaluadas.
 
-\item El desarrollo se concentra en la dosificación gravimétrica automatizada
-de harina previa al mezclado y amasado. La dosificación automatizada de otros
-ingredientes queda fuera del proyecto.
+    \item El proyecto no comprende la dosificación automatizada de
+    ingredientes distintos de la harina.
 
-\item El mezclado y amasado, la división y formado, la fermentación, la cocción
-y la automatización integral del proceso de panificación quedan fuera del
-desarrollo.
+    \item El proyecto no comprende la automatización del mezclado y amasado,
+    la división y formado, la fermentación, la cocción ni la automatización
+    integral del proceso de panificación.
 
-\item La evaluación se circunscribe a ensayos del prototipo bajo condiciones
-comparables con el procedimiento manual estudiado.
-
-\item La evaluación económica se limita al costo de construcción e integración
-del prototipo. Quedan fuera el análisis de rentabilidad del establecimiento,
-la recuperación de la inversión y los costos de producción comercial en serie.
-
-\item Las conclusiones de la evaluación se limitan a las condiciones y ensayos
-realizados. No comprenden la validación del desempeño en otros establecimientos
-o condiciones de producción.
+    \item La evaluación económica no comprende el análisis de rentabilidad
+    del establecimiento, el período de recuperación de la inversión ni los
+    costos asociados con una producción comercial en serie.
 
 \end{itemize}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ALCANCES
@@ -771,34 +760,24 @@ o condiciones de producción.
 \subsection{Alcances}
 \label{subsec:alcances}
 
-El proyecto comprende los siguientes entregables:
-
 \begin{itemize}
 
-\item Requerimientos funcionales y técnicos del prototipo, sustentados en la
-caracterización del procedimiento manual y las condiciones de operación del
-establecimiento.
+    \item El prototipo comprende la dosificación gravimétrica automatizada
+    de harina previa al mezclado y amasado, a partir de una cantidad objetivo
+    de dosificación.
 
-\item Diseño de los subsistemas mecánico, de medición gravimétrica y de control,
-respaldado por los cálculos de dimensionamiento pertinentes, los planos
-constructivos, los esquemas de conexión y la descripción de la lógica de
-funcionamiento.
+    \item La automatización comprende la alimentación de harina, la medición
+    gravimétrica de la cantidad dosificada y el control de la alimentación
+    durante el ciclo de dosificación.
 
-\item Un prototipo funcional de dosificación gravimétrica automatizada de
-harina, construido e integrado conforme al diseño.
+    \item La evaluación experimental comprende la comparación del prototipo
+    con el procedimiento manual de la Panadería San Miguel bajo condiciones
+    comparables. La comparación considera el tiempo de dosificación, la
+    intervención del operario, la diferencia de harina respecto de la
+    cantidad objetivo y la repetibilidad.
 
-\item Registros y resultados de las pruebas de funcionamiento para verificar el
-cumplimiento de los requerimientos establecidos.
-
-\item Un análisis comparativo del prototipo y del procedimiento manual bajo
-condiciones equivalentes, con el tiempo de intervención del operario por ciclo
-como indicador principal. El análisis incluye el tiempo de dosificación, la
-diferencia respecto de la cantidad objetivo de harina y la repetibilidad.
-
-\item Un análisis del costo de construcción e integración del prototipo,
-sustentado en un presupuesto desglosado, cotizaciones y registros de
-implementación, con identificación de los recursos adquiridos y reutilizados
-y contraste con el criterio económico establecido.
+    \item La evaluación económica comprende el costo de construcción e
+    integración del prototipo.
 
 \end{itemize}
 
