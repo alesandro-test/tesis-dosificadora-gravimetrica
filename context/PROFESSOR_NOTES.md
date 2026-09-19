@@ -53,7 +53,7 @@
 - **Proceso:** comprender primero el flujo completo y después detallar únicamente las etapas relevantes para el problema.
 - **Diagramas:** separar el nivel general del detalle operativo cuando combinarlos dificulte la lectura.
 - **Trazabilidad del flujo:** debe identificarse claramente dónde inicia el proceso, qué actividades ocurren y dónde se ubica la etapa estudiada.
-- **Árbol de problemas:** construirlo alrededor de un único problema central, con causas y efectos; no introducir soluciones tecnológicas.
+- **Árbol de problemas:** construirlo alrededor de un único problema central, con causas y efectos; no introducir soluciones tecnológicas. El problema central debe representarse en un único cuadro, integrando las dimensiones sustentadas por el diagnóstico.
 - **Objetivo general:** debe corresponder directamente con el título y expresar el resultado principal; reservar la medición, comprobación y evaluación para los objetivos específicos.
 - **Objetivos específicos:** formular logros medibles y verificables en secuencia lógica; la validación o evaluación debe ubicarse después del desarrollo del elemento que se evaluará.
 - **Objetivo ≠ actividad:** entrevistas, mediciones, revisión bibliográfica o recopilación de datos pueden ser actividades sin constituir objetivos específicos.
@@ -61,10 +61,5 @@
 - **Alcance y límites:** el alcance define hasta dónde llega técnica y funcionalmente el sistema; los límites declaran qué queda fuera. No tratarlos como objetivos o entregables ni incorporar capacidades o rangos todavía no sustentados.
 - **Validación en el alcance:** declarar expresamente las condiciones bajo las cuales se realizará la validación.
 - **Factibilidad:** antes de cerrar una solución técnica considerar construcción, componentes, infraestructura, costo, tiempo y posibilidad real de ensayo.
-- **Bajo costo:** si se mantiene esta expresión en el proyecto, demostrarla mediante comparación con soluciones comerciales de funcionalidad comparable, considerando al menos prestaciones y precio; no basta declararla en el título.
+- **Bajo costo:** si se mantiene esta expresión en el proyecto, demostrarla mediante comparación con soluciones comerciales de funcionalidad comparable. Utilizar precios o cotizaciones verificables y contrastar explícitamente prestaciones y costo, preferentemente mediante una tabla comparativa; no basta declararla en el título.
 
-## Validaciones pendientes con el docente
-
-- **Problema, árbol y objetivos:** la revisión analizada no demuestra todavía su aprobación definitiva.
-- **Primer objetivo específico:** volver a revisarlo; la evidencia disponible no permite establecer si fue aprobado o rechazado.
-- **DFD:** no asumir que la expresión `flujo de datos` constituye una exigencia formal de realizar un DFD; confirmar el tipo de diagrama requerido.

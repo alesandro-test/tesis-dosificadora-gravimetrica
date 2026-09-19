@@ -1,318 +1,1385 @@
-\documentclass[spanish]{beamer} %, aspectratio=169
+\documentclass[aspectratio=169,spanish]{beamer}
+
+% =========================================================
+% PAQUETES
+% =========================================================
+
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, mexico]{babel}
-% Paquetes necesarios para incluir imágenes
-\usepackage{graphicx}
-\usepackage[skip=0.25\baselineskip]{caption}
-\setlength{\belowcaptionskip}{0pt}
-\usepackage{subcaption}
-\captionsetup{justification=centering}
-% Bibliography
-\usepackage[style=iso-authoryear, currentlang]{biblatex}
-\addbibresource{../bibliography/referencias.bib}
-\DeclareDelimFormat{nameyeardelim}{\addspace}
-\usepackage{csquotes}
-% Tables
-\usepackage{tabularx}
-\usepackage{makecell}
-% Graphs
+
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, chains, fit, backgrounds, patterns,
-				positioning, shapes.geometric, shapes.symbols, calc}
-\usepackage{../packages/tikz-uml}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{xcolor}
 
-\usepackage{colortbl} % For \rowcolor
-\usepackage{xcolor}   % For defining colors
-
-\usetheme{pittsburgh} 
-%\usecolortheme{owl}
-\setbeamertemplate{caption}[numbered]
-%\setbeamertemplate{sidebar right}{}
-%\setbeamertemplate{footline}{\hfill\usebeamertemplate***{navigation symbols}}
-\setbeamercolor{footline}{fg=blue}
-
-\addtobeamertemplate{navigation symbols}{}{%
-    \usebeamerfont{footline}%
-    \usebeamercolor[fg]{footline}%
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
+\usetikzlibrary{
+    arrows.meta,
+    positioning,
+    calc,
+    shapes.geometric,
+    fit,
+    backgrounds
 }
 
-\newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
+% =========================================================
+% RUTAS
+% perfil.tex:
+% docs/thesis/slides/perfil.tex
+%
+% imágenes:
+% docs/thesis/images/
+% =========================================================
+
+\newcommand{\marcoimg}{../images/marcoref}
+\newcommand{\imgdir}{../images}
+
+% =========================================================
+% TEMA
+% =========================================================
+
+\usetheme{Pittsburgh}
+
+% =========================================================
+% COLORES
+% =========================================================
+
+\definecolor{UCBBlue}{RGB}{28,73,122}
+\definecolor{LightGray}{RGB}{245,246,248}
+\definecolor{DarkGray}{RGB}{55,55,55}
+\definecolor{SoftBlue}{RGB}{224,233,243}
+
+\setbeamercolor{normal text}{
+    fg=DarkGray,
+    bg=white
 }
 
-\title{Software para la Automatización de Procesos de Programas de Gestión de Salud y Seguridad 
-en el Trabajo conforme a la Norma Técnica de Seguridad 009}
-\date{\today}
-\author{Leonardo Achá Boiano}
-\institute{Universidad Católica Boliviana ``San Pablo''}
+\setbeamercolor{structure}{
+    fg=UCBBlue
+}
 
-\titlegraphic{\includegraphics[height=.2\textheight]{../images/ucbLogo1.png}}
+\setbeamercolor{frametitle}{
+    fg=UCBBlue,
+    bg=white
+}
 
-%----------------------------------------------------------------------------------
-%----------------------------------------------------------------------------------
+\setbeamercolor{section in head/foot}{
+    bg=white,
+    fg=UCBBlue
+}
+
+% =========================================================
+% FUENTES
+% =========================================================
+
+\setbeamerfont{title}{
+    size=\Large,
+    series=\bfseries
+}
+
+\setbeamerfont{subtitle}{
+    size=\normalsize
+}
+
+\setbeamerfont{frametitle}{
+    size=\Large,
+    series=\bfseries
+}
+
+% =========================================================
+% NAVEGACIÓN
+% =========================================================
+
+% Quitar símbolos clásicos de Beamer
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% ENCABEZADO
+% sección izquierda + número derecha
+% =========================================================
+
+\setbeamertemplate{headline}{
+    \leavevmode
+
+    \begin{beamercolorbox}[
+        wd=\paperwidth,
+        ht=0.55cm,
+        dp=0.16cm,
+        leftskip=0.45cm,
+        rightskip=0.45cm
+    ]{section in head/foot}
+
+        \small
+        \bfseries
+        \insertsectionhead
+
+        \hfill
+
+        \normalfont
+        \color{DarkGray}
+        \insertframenumber/\inserttotalframenumber
+
+    \end{beamercolorbox}
+
+    \vspace{-0.06cm}
+
+    {\color{UCBBlue!25}
+    \rule{\paperwidth}{0.4pt}}
+}
+
+% No usar otro pie porque la numeración ya está arriba
+\setbeamertemplate{footline}{}
+
+% =========================================================
+% COMANDOS
+% =========================================================
+
+% Número grande con descripción
+\newcommand{\bigvalue}[2]{%
+    \begin{minipage}{0.22\textwidth}
+        \centering
+
+        {\color{UCBBlue}
+        \fontsize{24}{27}\selectfont
+        \bfseries #1}
+
+        \vspace{0.12cm}
+
+        {\small #2}
+    \end{minipage}
+}
+
+% Caja informativa
+\newcommand{\infobox}[2]{%
+    \begin{tikzpicture}
+        \node[
+            fill=LightGray,
+            rounded corners=3pt,
+            inner sep=7pt,
+            text width=#1,
+            align=center
+        ] {#2};
+    \end{tikzpicture}
+}
+
+% =========================================================
+% PORTADA
+% =========================================================
+
+\title{
+DISEÑO DE UNA DOSIFICADORA GRAVIMÉTRICA AUTOMATIZADA\\
+DE BAJO COSTO PARA HARINA EN PANADERÍAS ARTESANALES
+}
+
+\subtitle{
+Caso de estudio: Panadería San Miguel
+}
+
+\author{
+Alesandro Paredes Zenteno
+}
+
+\institute{
+Universidad Católica Boliviana ``San Pablo''\\
+Ingeniería Mecatrónica
+}
+
+\date{
+Septiembre de 2026
+}
+
+\titlegraphic{
+    \includegraphics[
+        height=0.17\textheight
+    ]{\imgdir/ucbLogo1.png}
+}
+
+% =========================================================
+% DOCUMENTO
+% =========================================================
 
 \begin{document}
-\maketitle
-  
-%--------------------------------------------------------------------------------
+
+% =========================================================
+% PORTADA
+% =========================================================
+
+\begin{frame}[plain]
+    \maketitle
+\end{frame}
+
+% =========================================================
+% INTRODUCCIÓN
+% =========================================================
+
 \section{Introducción}
-\begin{frame}[allowframebreaks]{Antecedentes}
 
-  \textcite{cervantesdiagnostico} concluye que la mayoría de las leyes y regulaciones existentes en materia de seguridad y salud en el trabajo no se aplican debido a dos razones principales: 
-  \begin{itemize}
-    \item Obstáculos externos (como condiciones materiales, culturales y de acceso).
-    \item Las entidades encargadas no disponen de las estructuras y recursos necesarios para supervisar su cumplimiento y sancionar las infracciones.
-  \end{itemize}
-  
+% ---------------------------------------------------------
+% SLIDE 2
+% ---------------------------------------------------------
 
-  Mediante la Resolución Ministerial N° 1411/18, el 27 de diciembre de 2018, el Ministerio de Trabajo aprueba la Norma Técnica de Seguridad NTS-009/18.
+\begin{frame}{¿Dónde interviene el proyecto?}
 
-  \framebreak
-    
-    \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth, height=.7\textheight]{../images/marcoref/tendencia_profesionales_syso_registrados.png}
-        \caption{Registro de profesionales SySO:(a) Mensual (b) Anual.}
-        \label{fig:profesionales_syso_registrados}
-    \end{figure}
-
-    \begin{figure}
-      \centering
-      \includegraphics[width=1\textwidth]{../images/marcoref/profesionales_syso_por_categoria.png}
-      \caption{Profesionales SST activos:\\Distribución de categorías (a) porcentual (b) por departamento.}
-      \label{fig:profesionales_syso_por_categoria} 
-    \end{figure}
-
-    \begin{figure}[htb]
-      \centering
-      \includegraphics[width=.8\textwidth]{../images/marcoref/grafico_distribucion.png}
-      \caption{Distribución porcentual de tiempo en la elaboración de las secciones del Contenido Técnico de un PGSST. Elaboración propia a partir de entrevista.}
-      \label{fig:distribucion_tiempo_pgsst} 
-    \end{figure}
-
-    \begin{figure}[b]
-      \centering
-        \resizebox{\textwidth}{!}{
-            {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
-            \fbox{\input{../images/marcoref/analisis_iper.tex}}}}
-      \caption{Distribución de tiempo en el proceso de desarrollo del punto cuatro ``Planificación'' de acuerdo al contenido técnico de un PGSST solicitado por la NTS-009/23.}
-      \label{fig:analisis_iper} 
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}{Arbol de Problemas}
-  \begin{figure}[hb]
     \centering
-    \resizebox{\textwidth}{!}{
-      \input{../images/marcoref/diagrama_arbol_problemas.tex}}
-    \caption{Árbol de problemas y objetivos. Fuente: Elaborado por el Autor.}
-    \label{fig:arbol_problemas} 
-  \end{figure}
+
+    \resizebox{0.92\textwidth}{!}{%
+        \input{\marcoimg/proceso_general_pan.tex}
+    }
+
+    \vspace{0.25cm}
+
+    {\large
+    El proyecto se concentra en la
+    \textbf{\color{UCBBlue}dosificación de harina}
+    previa al mezclado y amasado.
+    }
+
 \end{frame}
 
-\begin{frame}{Definición del Problema}
-  Los profesionales SySO de categoría A dedican mediante el método manual un 60\% del tiempo total de desarrollo de un PGSST en llenado de formularios y planificación.
+% ---------------------------------------------------------
+% SLIDE 3
+% ---------------------------------------------------------
+
+\begin{frame}{Caso de estudio: Panadería San Miguel}
+
+\begin{columns}[T]
+
+    % -----------------------------------------------------
+    % IZQUIERDA
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \centering
+
+        \includegraphics[
+            width=\linewidth,
+            height=0.52\textheight,
+            keepaspectratio
+        ]{\marcoimg/mesa_ingredientes_balanza.jpg}
+
+        \vspace{0.12cm}
+
+        {\small
+        Punto de pesaje
+        }
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % DERECHA
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \centering
+
+        \includegraphics[
+            width=\linewidth,
+            height=0.52\textheight,
+            keepaspectratio
+        ]{\marcoimg/ubicacion_bolsas_harina.jpg}
+
+        \vspace{0.12cm}
+
+        {\small
+        Almacenamiento de harina
+        }
+
+    \end{column}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+
+    \large
+
+    La dosificación de harina se realiza mediante
+    \textbf{\color{UCBBlue}intervención directa del operario}.
+
+\end{center}
+
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Objetivos}
-  \begin{block}{Objetivo general}
-    Desarrollar un prototipo de software basado en transformadores multimodales para disminución del tiempo que los profesionales SySO de categoría A invierten en la planificación y el llenado de formularios al elaborar un PGSST.
-  \end{block}
-  \begin{block}{Objetivos específicos}
-  \begin{itemize}
+% =========================================================
+% PLANTEAMIENTO DEL PROBLEMA
+% =========================================================
+
+\section{Planteamiento del problema}
+
+% ---------------------------------------------------------
+% SLIDE 4
+% ---------------------------------------------------------
+
+\begin{frame}{Procedimiento actual de dosificación}
+
+\begin{columns}[c]
+
+    % -----------------------------------------------------
+    % DIAGRAMA
+    % -----------------------------------------------------
+
+    \begin{column}{0.58\textwidth}
+
+        \centering
+
+        \resizebox{0.57\linewidth}{!}{%
+            \input{\marcoimg/dfd_dosificacion.tex}
+        }
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % ETAPAS
+    % -----------------------------------------------------
+
+    \begin{column}{0.38\textwidth}
+
+        \large
+
+        \begin{enumerate}
+
+            \item Preparación y tara
+
+            \item Traslado de harina
+
+            \item Incorporación de cargas
+
+            \item Medición acumulada
+
+            \item Ajuste final
+
+            \item Comprobación
+
+        \end{enumerate}
+
+    \end{column}
+
+\end{columns}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 5
+% ---------------------------------------------------------
+
+\begin{frame}{Distribución del área de trabajo}
+
+    \centering
+
+    \resizebox{0.88\textwidth}{!}{%
+        \input{\marcoimg/croquis_panaderia.tex}
+    }
+
+    \vspace{0.20cm}
+
+    {\large
+    La dosificación requiere desplazamientos entre
+    \textbf{almacenamiento} y
+    \textbf{punto de pesaje}.
+    }
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 6
+% ---------------------------------------------------------
+
+\begin{frame}{Operación observada}
+
+\begin{columns}[T]
+
+    % -----------------------------------------------------
+    % FOTO 1
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \centering
+
+        \includegraphics[
+            width=\linewidth,
+            height=0.50\textheight,
+            keepaspectratio
+        ]{\marcoimg/recipiente_transporte.jpg}
+
+        \vspace{0.10cm}
+
+        {\small
+        Recipiente utilizado para el transporte de harina.
+        }
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % FOTO 2
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \centering
+
+        \includegraphics[
+            width=\linewidth,
+            height=0.50\textheight,
+            keepaspectratio
+        ]{\marcoimg/ajuste_final_operario.jpg}
+
+        \vspace{0.10cm}
+
+        {\small
+        Ajuste final realizado por el operario.
+        }
+
+    \end{column}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+
+    \large
+
+    El ciclo combina
+    \textbf{\color{UCBBlue}desplazamiento, pesaje y ajuste manual}.
+
+\end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 7
+% ---------------------------------------------------------
+
+\begin{frame}{Levantamiento de campo}
+
+\vspace{0.30cm}
+
+\begin{columns}[c]
+
+    % -----------------------------------------------------
+    % JORNADA 1
+    % -----------------------------------------------------
+
+    \begin{column}{0.34\textwidth}
+
+        \centering
+
+        \infobox{4cm}{
+            {\Large\bfseries
+            02/09/2026
+            }
+
+            \vspace{0.12cm}
+
+            Jornada ordinaria
+
+            \vspace{0.25cm}
+
+            {\color{UCBBlue}
+            \fontsize{28}{30}\selectfont
+            \bfseries
+            5
+            }
+
+            ciclos
+        }
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % +
+    % -----------------------------------------------------
+
+    \begin{column}{0.10\textwidth}
+
+        \centering
+
+        {\Huge
+        +
+        }
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % JORNADA 2
+    % -----------------------------------------------------
+
+    \begin{column}{0.34\textwidth}
+
+        \centering
+
+        \infobox{4cm}{
+            {\Large\bfseries
+            05/09/2026
+            }
+
+            \vspace{0.12cm}
+
+            Jornada de sábado
+
+            \vspace{0.25cm}
+
+            {\color{UCBBlue}
+            \fontsize{28}{30}\selectfont
+            \bfseries
+            2
+            }
+
+            ciclos
+        }
+
+    \end{column}
+
+\end{columns}
+
+\vspace{0.55cm}
+
+\begin{center}
+
+    {\color{UCBBlue}
+    \fontsize{28}{30}\selectfont
+    \bfseries
+    7 ciclos registrados
+    }
+
+    \vspace{0.25cm}
+
     \small
-    \item Identificar los requisitos funcionales y no funcionales del proceso de desarrollo de los documentos requeridos por la NTS-009/23.
-    \item Diseñar la arquitectura del sistema, incluyendo la estructura general, los componentes principales y las tecnologías a utilizar.
-    \item Implementar sistema de generación de procesamiento de entradas multimodales, matrices IPER, planes de acción y llenado de formularios siguiendo la metodología PXP.
-    \item Verificar la reducción del tiempo de trabajo mediante la implantación del software.
-  \end{itemize}
-  \end{block}
+
+    Se registraron la cantidad objetivo,
+    la cantidad final indicada por la balanza
+    y el tiempo del procedimiento.
+
+\end{center}
 
 \end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 8
+% ---------------------------------------------------------
+
+\begin{frame}{Resultados del procedimiento manual}
+
+\vspace{0.35cm}
+
+\begin{center}
+
+    \bigvalue{411,9 s}
+    {Tiempo acumulado}
+
+    \hfill
+
+    \bigvalue{48,000 kg}
+    {Harina objetivo}
+
+    \hfill
+
+    \bigvalue{48,143 kg}
+    {Harina final}
+
+    \hfill
+
+    \bigvalue{+143 g}
+    {Diferencia acumulada}
+
+\end{center}
+
+\vspace{0.65cm}
+
+\begin{center}
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+
+    % Objetivo
+    \draw[
+        very thick,
+        UCBBlue
+    ]
+    (0,1.15) -- (9.5,1.15);
+
+    % Final
+    \draw[
+        very thick,
+        DarkGray
+    ]
+    (0,0.35) -- (9.53,0.35);
+
+    \node[
+        left
+    ]
+    at (0,1.15)
+    {\textbf{Objetivo}};
+
+    \node[
+        left
+    ]
+    at (0,0.35)
+    {\textbf{Final}};
+
+    \node[
+        right
+    ]
+    at (9.5,1.15)
+    {48,000 kg};
+
+    \node[
+        right
+    ]
+    at (9.53,0.35)
+    {48,143 kg};
+
+\end{tikzpicture}
+
+\end{center}
+
+\vfill
+
+\begin{center}
+
+    \small
+
+    En los siete ciclos registrados, la cantidad final indicada
+    por la balanza fue superior a la cantidad objetivo.
+
+\end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 9
+% ---------------------------------------------------------
+
+\begin{frame}{Impacto acumulado del procedimiento}
+
+\begin{columns}[c]
+
+    % -----------------------------------------------------
+    % SECUENCIA
+    % -----------------------------------------------------
+
+    \begin{column}{0.44\textwidth}
+
+        \centering
+
+        \begin{tikzpicture}[
+            box/.style={
+                rounded corners=3pt,
+                fill=LightGray,
+                minimum width=4.7cm,
+                minimum height=1.12cm,
+                align=center
+            },
+            arr/.style={
+                -{Latex[length=3mm]},
+                thick,
+                UCBBlue
+            }
+        ]
+
+            \node[box]
+            (obs)
+            {
+                \textbf{Jornadas observadas}\\
+                02/09 y 05/09
+            };
+
+            \node[
+                box,
+                below=0.38cm of obs
+            ]
+            (sem)
+            {
+                \textbf{Escenario semanal}\\
+                5 ordinarias + 1 sábado
+            };
+
+            \node[
+                box,
+                below=0.38cm of sem
+            ]
+            (mes)
+            {
+                \textbf{Escenario mensual}\\
+                22 ordinarias + 4 sábados
+            };
+
+            \draw[arr]
+            (obs) -- (sem);
+
+            \draw[arr]
+            (sem) -- (mes);
+
+        \end{tikzpicture}
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % RESULTADOS
+    % -----------------------------------------------------
+
+    \begin{column}{0.50\textwidth}
+
+        \centering
+
+        {\small
+        ESCENARIO SEMANAL
+        }
+
+        \vspace{0.08cm}
+
+        {\color{UCBBlue}
+        \fontsize{23}{26}\selectfont
+        \bfseries
+        27 min 10 s
+        }
+
+        \vspace{0.08cm}
+
+        {\large
+        $+0,455$ kg
+        }
+
+        \vspace{0.55cm}
+
+        {\small
+        ESCENARIO MENSUAL
+        }
+
+        \vspace{0.08cm}
+
+        {\color{UCBBlue}
+        \fontsize{27}{30}\selectfont
+        \bfseries
+        1 h 59 min
+        }
+
+        \vspace{0.08cm}
+
+        {\large
+        $+1,976$ kg
+        }
+
+    \end{column}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+
+    \colorbox{SoftBlue}{
+        \parbox{0.80\textwidth}{
+            \centering
+            \small
+
+            \textbf{Proyecciones derivadas de las jornadas observadas.}
+
+            No corresponden a mediciones realizadas
+            durante una semana o un mes completos.
+        }
+    }
+
+\end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 10
+% ---------------------------------------------------------
+
+\begin{frame}{Formulación del problema}
+
+\vfill
+
+\begin{center}
+
+    \begin{minipage}{0.82\textwidth}
+
+        \centering
+
+        {\fontsize{19}{25}\selectfont
+
+        En la Panadería San Miguel, el operario destina
+
+        \vspace{0.25cm}
+
+        \textbf{
+        \color{UCBBlue}
+        1 h 59 min
+        }
+
+        \vspace{0.25cm}
+
+        al procedimiento manual de dosificación de harina,
+        en el cual se acumula una diferencia positiva de
+
+        \vspace{0.25cm}
+
+        \textbf{
+        \color{UCBBlue}
+        1,976 kg
+        }
+
+        \vspace{0.25cm}
+
+        respecto de las cantidades objetivo.
+
+        }
+
+    \end{minipage}
+
+\end{center}
+
+\vfill
+
+\end{frame}
+
+% ---------------------------------------------------------
+% SLIDE 11
+% ---------------------------------------------------------
+
+\begin{frame}{Árbol de problemas}
+
+    \centering
+
+    \resizebox{0.85\textwidth}{!}{%
+        \input{\marcoimg/arbol_problemas.tex}
+    }
+
+\end{frame}
+
+% =========================================================
+% OBJETIVOS
+% =========================================================
+
+\section{Objetivos}
+
+% ---------------------------------------------------------
+% SLIDE 12
+% ---------------------------------------------------------
+
+\begin{frame}{Objetivo del proyecto}
+
+\begin{center}
+
+    \begin{minipage}{0.88\textwidth}
+
+        \centering
+
+        {\Large
+
+        Desarrollar un
+        \textbf{\color{UCBBlue}
+        prototipo automatizado de dosificación gravimétrica de harina}
+        para la Panadería San Miguel.
+
+        }
+
+    \end{minipage}
+
+\end{center}
+
+\vspace{0.70cm}
+
+\centering
+
+\begin{tikzpicture}[
+    node distance=0.12cm,
+    etapa/.style={
+        rounded corners=3pt,
+        draw=UCBBlue,
+        thick,
+        minimum width=2.15cm,
+        minimum height=1.35cm,
+        align=center,
+        fill=SoftBlue
+    },
+    arr/.style={
+        -{Latex[length=2.4mm]},
+        thick,
+        UCBBlue
+    }
+]
+
+    \node[etapa]
+    (e1)
+    {
+        \textbf{01}\\
+        Requerimientos
+    };
+
+    \node[
+        etapa,
+        right=of e1
+    ]
+    (e2)
+    {
+        \textbf{02}\\
+        Diseño
+    };
+
+    \node[
+        etapa,
+        right=of e2
+    ]
+    (e3)
+    {
+        \textbf{03}\\
+        Implementación
+    };
+
+    \node[
+        etapa,
+        right=of e3
+    ]
+    (e4)
+    {
+        \textbf{04}\\
+        Verificación
+    };
+
+    \node[
+        etapa,
+        right=of e4
+    ]
+    (e5)
+    {
+        \textbf{05}\\
+        Comparación
+    };
+
+    \node[
+        etapa,
+        right=of e5
+    ]
+    (e6)
+    {
+        \textbf{06}\\
+        Costo
+    };
+
+    \draw[arr]
+    (e1) -- (e2);
+
+    \draw[arr]
+    (e2) -- (e3);
+
+    \draw[arr]
+    (e3) -- (e4);
+
+    \draw[arr]
+    (e4) -- (e5);
+
+    \draw[arr]
+    (e5) -- (e6);
+
+\end{tikzpicture}
+
+\end{frame}
+
+% =========================================================
+% JUSTIFICACIÓN
+% =========================================================
+
+\section{Justificación}
+
+% ---------------------------------------------------------
+% SLIDE 13
+% ---------------------------------------------------------
 
 \begin{frame}{Justificación}
-  \begin{block}{Justificación legal}
-    Al disminuir el tiempo de desarrollo de los programas se facilita el cumplimiento de la normativa.
-  \end{block}
-  \begin{block}{Justificación tecnológica}
-    El proyecto propone un avance en la implementación de soluciones tecnológicas que optimicen el tiempo y la eficiencia en la elaboración de los PGSST. 
-  \end{block}
-  \begin{block}{Justificación social}
-    Los profesionales SySO de categoría A son los beneficiados directamente por este sistema. Se espera la reducción del tiempo invertido en tareas administrativas les permitirá enfocar sus esfuerzos en actividades que aportan mayor valor a la seguridad y salud de los trabajadores.
-  \end{block}
-\end{frame}
 
-\begin{frame}[allowframebreaks]{Delimitación}
-  \begin{block}{Límites}
-  \begin{itemize}
-    \item Los documentos del software se ajustan a los requisitos técnicos de NTS-009/23.
-    \item Contenido del software conforme a ISO 45001:2018 para seguridad y salud laboral.
-    \item ISO 25000:2014 guía la evaluación del producto de software.
-    \item La aplicación requiere conexión a internet para su uso.
-    \item El software no contará con herramientas especializadas en la automatización de los estudios de higiene. Se limitará a plantillas para rellenar y automatizar el análisis de los datos recolectados por profesional habilitado.
-  \end{itemize}
-  \end{block}
+\vspace{0.2cm}
 
-  \framebreak
-  Las exclusiones del proyecto son las siguientes:
-  \begin{itemize}
-	\item No se implementarán módulos de audio, inteligencia artificial, interfaz de usuario y entrada desde cero; se utilizarán bibliotecas open-source disponibles.
-	\item No se implementarán módulos dirigidos a capacitar trabajadores en el llenado de registros o plantillas generadas.
-	\item El proyecto no estará dirigido a empresas o sectores que requieran normativa o procedimientos particulares, como es el caso de la industria petrolera.
-  \end{itemize}
-  
-  \framebreak
-  \begin{block}{Alcances}
-  \begin{itemize}
-    \item Desarrollo de un prototipo funcional del software propuesto.
-	  \item Documentación de la investigación de las tecnologías que se utilizarán para el desarrollo del software final.
-	  \item Presentación de los siguientes diagramas: diagrama UML estructural de clases del sistema, diagrama de cadena de procesamiento de datos y diagrama entidad-relación de la base de datos.
-	  \item Documentación del desarrollo del software, que incluirá los detalles del desarrollo de un PGSST y un manual de usuario.
-	  \item Realización de pruebas del prototipo del sistema en colaboración con 5 profesionales.
-  \end{itemize}
-  \end{block}
-\end{frame}
+\begin{columns}[T]
 
-\begin{frame}{Metodología de Desarrollo de Software}
+    % -----------------------------------------------------
+    % TÉCNICA
+    % -----------------------------------------------------
 
-  \begin{figure}
-    \centering
-    \input{../images/marcoteorico/modelo_desarrollo_pxp.tex}
-      \caption{\footnotesize Proceso de desarrollo bajo la metodología PXP.}
-      \scriptsize{{Elaboración propia a partir de ``\textit{\citefield{dzhurov2009personal}{title}}'' (\citeyear{dzhurov2009personal}).}}
-    \label{fig:modelo_desarrollo_pxp} 
-  \end{figure}
+    \begin{column}{0.47\textwidth}
 
-\end{frame}
+        \begin{center}
 
-\begin{frame}{Transformadores}
+            {\Large
+            \bfseries
+            \color{UCBBlue}
+            Técnica
+            }
 
-  \begin{figure}[h]
-    \centering
-      \resizebox{\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} 
-          \fbox{\includegraphics{../images/marcoteorico/Transformer-apps.jpg}}}}
-    \caption{Transformadores como modelos de base.}
-    \label{fig:transformers} 
-  \end{figure}
-  
-\end{frame}
+        \end{center}
 
-\begin{frame}[allowframebreaks]{Analisis de Requisitos}
+        \vspace{0.15cm}
 
-  \begin{table}[htb]
-    \centering
-    \caption{Tabla de Requerimientos Funcionales}
-    \tiny
-    \input{../chapters/marcopractico/tables/requisitos_funcionales.tex}
-    \label{tab:requisitos_funcionales}
-  \end{table}
+        \begin{itemize}
 
-  \begin{table}[htb]
-    \centering
-    \caption{Tabla de Requerimientos No Funcionales}
-    \scriptsize
-    \input{../chapters/marcopractico/tables/requisitos_no_funcionales.tex}
-    \label{tab:req_no_func}
-  \end{table}
+            \item Integración de alimentación automatizada,
+            medición gravimétrica y control.
 
-\end{frame}
+            \item Evaluación de las variables identificadas
+            en el procedimiento manual.
 
-\begin{frame}[allowframebreaks]{Casos de Uso}
+            \item Comparación experimental bajo condiciones
+            equivalentes.
 
-  \begin{figure}[h]
-    \centering
-      \resizebox{0.7\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} 
-          \fbox{\input{../images/marcopractico/planificacion/casos_de_uso_entrada.tex}}}}
-    \caption{Caso de Uso: Entrada de Información.}
-    \label{fig:caso_de_uso_entrada} 
-  \end{figure}
-  
-  \begin{figure}[h]
-    \centering
-      \resizebox{0.8\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} 
-          \fbox{\input{../images/marcopractico/planificacion/casos_de_uso_gestion.tex}}}}
-    \caption{Caso de Uso: Gestión de Proyectos.}
-    \label{fig:caso_de_uso_gestion} 
-  \end{figure}
+        \end{itemize}
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % ECONÓMICA
+    % -----------------------------------------------------
+
+    \begin{column}{0.47\textwidth}
+
+        \begin{center}
+
+            {\Large
+            \bfseries
+            \color{UCBBlue}
+            Económica
+            }
+
+        \end{center}
+
+        \vspace{0.15cm}
+
+        \begin{itemize}
+
+            \item Determinación del costo de construcción
+            e integración del prototipo.
+
+            \item Comparación posterior con soluciones
+            comerciales de funcionalidad comparable.
+
+        \end{itemize}
+
+        \vspace{0.2cm}
+
+        \begin{center}
+
+            \small
+
+            \colorbox{SoftBlue}{
+                \parbox{0.82\linewidth}{
+                    \centering
+
+                    El criterio para demostrar
+                    \textbf{bajo costo}
+                    permanece pendiente de definición.
+                }
+            }
+
+        \end{center}
+
+    \end{column}
+
+\end{columns}
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Arquitectura Propuesta}
+% =========================================================
+% PROPUESTA
+% =========================================================
 
-  \begin{figure}[H]
-    \centering
-      \resizebox{\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
-          \fbox{\input{../images/marcopractico/planificacion/arquitectura_sistema.tex}}}}
-    \caption{Propuesta de Arquitectura de Sistema.}
-    \label{fig:arc_sys} 
-  \end{figure}  
+\section{Propuesta}
 
-  \begin{figure}[h]
-    \centering
-      \resizebox{\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
-          \fbox{\input{../images/marcopractico/planificacion/data_pipeline.tex}}}}
-    \caption{Cadena de Procesamiento de Datos.}
-    \label{fig:basic_data_pipeline} 
-  \end{figure}
+% ---------------------------------------------------------
+% SLIDE 14
+% ---------------------------------------------------------
 
-  \begin{figure}[h]
-    \centering
-      \resizebox{\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
-          \fbox{\input{../images/marcopractico/planificacion/arquitectura_cliente_servidor.tex}}}}
-    \caption{Propuesta de Arquitectura Cliente-Servidor.}
-    \label{fig:arc_client_server} 
-  \end{figure}
+\begin{frame}{Concepto de solución}
 
-  \begin{figure}[H]
-    \centering
-      \resizebox{\textwidth}{!}{
-          {\setlength{\fboxsep}{14pt} % Adjust the padding inside the \fbox
-          \fbox{\input{../images/marcopractico/planificacion/arquitectura_modulos.tex}}}}
-    \caption{Propuesta de Arquitectura a nivel de módulos de la aplicación.}
-    \label{fig:arc_modulos} 
-  \end{figure}
-  
+\begin{columns}[c]
+
+    % -----------------------------------------------------
+    % DIAGRAMA
+    % -----------------------------------------------------
+
+    \begin{column}{0.68\textwidth}
+
+        \centering
+
+        \begin{tikzpicture}[
+            node distance=0.32cm,
+            bloque/.style={
+                draw=UCBBlue,
+                thick,
+                rounded corners=3pt,
+                fill=SoftBlue,
+                minimum width=2.35cm,
+                minimum height=1.05cm,
+                align=center
+            },
+            arr/.style={
+                -{Latex[length=3mm]},
+                thick,
+                UCBBlue
+            }
+        ]
+
+            \node[bloque]
+            (alm)
+            {
+                Almacenamiento
+            };
+
+            \node[
+                bloque,
+                right=of alm
+            ]
+            (dos)
+            {
+                Alimentación\\
+                de harina
+            };
+
+            \node[
+                bloque,
+                right=of dos
+            ]
+            (pes)
+            {
+                Pesaje\\
+                gravimétrico
+            };
+
+            \node[
+                bloque,
+                right=of pes
+            ]
+            (des)
+            {
+                Descarga
+            };
+
+            \node[
+                bloque,
+                below=0.62cm of pes
+            ]
+            (ctrl)
+            {
+                Control
+            };
+
+            \draw[arr]
+            (alm) -- (dos);
+
+            \draw[arr]
+            (dos) -- (pes);
+
+            \draw[arr]
+            (pes) -- (des);
+
+            \draw[arr]
+            (pes) -- (ctrl);
+
+            \draw[arr]
+            (ctrl) -- (dos);
+
+        \end{tikzpicture}
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % LÓGICA
+    % -----------------------------------------------------
+
+    \begin{column}{0.28\textwidth}
+
+        \centering
+
+        \textbf{
+        \color{UCBBlue}
+        Principio de operación
+        }
+
+        \vspace{0.30cm}
+
+        Cantidad objetivo
+
+        \[
+            \downarrow
+        \]
+
+        Medición gravimétrica
+
+        \[
+            \downarrow
+        \]
+
+        Control de alimentación
+
+    \end{column}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+
+    \small
+
+    La figura representa el
+    \textbf{concepto funcional del prototipo}.
+    Los componentes y parámetros definitivos
+    permanecen sujetos al proceso de diseño.
+
+\end{center}
+
 \end{frame}
 
-\begin{frame}{Analisis de Costos}
+% =========================================================
+% DELIMITACIÓN
+% =========================================================
 
-  \begin{table}[ht]
-    \centering
-    \caption{Inversión Total Inicial}
-    \label{tab:inversion_total}
-    \begin{tabularx}{\textwidth}{|X|r|}
-        \hline
-        \textbf{Concepto} & \textbf{Costo (Bs)} \\
-        \hline
-        Costo de Desarrollo & 52,560.00 \\
-        Costos de Infraestructura & 2,224.06 \\
-        %Gastos Legales & 4,997.00 \\
-        Computadora para desarrollo & - \\
-        \hline
-        \textbf{Total} & \textbf{54,784.06} \\
-        \hline
-    \end{tabularx}
-  \end{table} 
+\section{Delimitación}
+
+% ---------------------------------------------------------
+% SLIDE 15
+% ---------------------------------------------------------
+
+\begin{frame}{Fronteras del proyecto}
+
+\begin{columns}[T]
+
+    % -----------------------------------------------------
+    % INCLUYE
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \begin{center}
+
+            {\Large
+            \bfseries
+            \color{UCBBlue}
+            INCLUYE
+            }
+
+        \end{center}
+
+        \vspace{0.20cm}
+
+        \begin{itemize}
+
+            \item Dosificación de harina.
+
+            \item Cantidad objetivo configurable
+            por el operario.
+
+            \item Medición gravimétrica.
+
+            \item Control automatizado de la alimentación.
+
+            \item Construcción e integración
+            del prototipo.
+
+            \item Pruebas experimentales.
+
+            \item Comparación con el
+            procedimiento manual.
+
+        \end{itemize}
+
+    \end{column}
+
+    % -----------------------------------------------------
+    % NO INCLUYE
+    % -----------------------------------------------------
+
+    \begin{column}{0.48\textwidth}
+
+        \begin{center}
+
+            {\Large
+            \bfseries
+            \color{DarkGray}
+            NO INCLUYE
+            }
+
+        \end{center}
+
+        \vspace{0.20cm}
+
+        \begin{itemize}
+
+            \item Dosificación de otros ingredientes.
+
+            \item Mezclado y amasado.
+
+            \item División y formado.
+
+            \item Fermentación.
+
+            \item Cocción.
+
+            \item Automatización integral
+            de la panadería.
+
+            \item Validación en otros
+            establecimientos.
+
+        \end{itemize}
+
+    \end{column}
+
+\end{columns}
 
 \end{frame}
 
-\begin{frame}{Cronograma del Proyecto}
+% =========================================================
+% CIERRE DEL MARCO REFERENCIAL
+% =========================================================
 
-  {\small \input{../chapters/marcopractico/tables/cronograma_proyecto.tex}}
+\begin{frame}[plain]
+
+\vfill
+
+\begin{center}
+
+    {\color{UCBBlue}
+    \fontsize{27}{31}\selectfont
+    \bfseries
+    Marco Referencial
+    }
+
+    \vspace{0.60cm}
+
+    {\Large
+
+    Proceso
+    \quad$\longrightarrow$\quad
+    Evidencia
+    \quad$\longrightarrow$\quad
+    Problema
+
+    \vspace{0.35cm}
+
+    $\longrightarrow$
+
+    \vspace{0.25cm}
+
+    Objetivos
+    \quad$\longrightarrow$\quad
+    Propuesta
+
+    }
+
+\end{center}
+
+\vfill
 
 \end{frame}
+
+% =========================================================
+% FIN
+% =========================================================
 
 \end{document}
