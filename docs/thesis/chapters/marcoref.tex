@@ -528,27 +528,95 @@ harina para la Panadería San Miguel.
 \section{Justificación}
 \label{sec:justificacion}
 
-\subsection{Justificación Técnica}
-\label{subsec:justificacion_tecnica}
+\subsection{Justificación Tecnológica}
+\label{subsec:justificacion_tecnologica}
 
-El proyecto resulta pertinente porque aborda la etapa de
-dosificación de harina mediante la integración de alimentación automatizada,
-medición gravimétrica y control de la cantidad dosificada. Esta integración
-se orienta a las variables identificadas durante la caracterización del
-procedimiento manual: la intervención asociada al procedimiento y la
-diferencia entre la cantidad objetivo y la cantidad final de harina. La
-evaluación experimental establece la comparación del prototipo con el
-procedimiento actual bajo condiciones comparables.
+El aporte tecnológico integra diseño mecánico, medición
+gravimétrica, electrónica y control en un prototipo automatizado para la
+dosificación de harina. El sistema controla la alimentación a partir de una
+cantidad objetivo y de la medición de la harina dosificada. Su desempeño se
+evalúa frente al procedimiento manual mediante el tiempo de dosificación,
+la intervención del operario, la diferencia respecto de la cantidad objetivo
+y la repetibilidad.
 
 \subsection{Justificación Económica}
 \label{subsec:justificacion_economica}
 
-La evaluación económica considera el costo de construcción e integración
-del prototipo a partir de los materiales, componentes y procesos empleados.
-La denominación de bajo costo requiere comparar este valor con soluciones
-comerciales de funcionalidad comparable, considerando sus prestaciones y
-precio. El criterio de comparación permanece pendiente de definición; por
-tanto, esta característica no se considera demostrada en la etapa actual.
+El proyecto considera el costo de construcción e integración del prototipo
+frente a soluciones comerciales de funcionalidad comparable. RUICHUAN se
+seleccionó por su principio gravimétrico y control automático, mientras que
+Trust-Long se incluyó por su operación por lotes de harina. La
+Tabla~\ref{tab:comparativa_economica} presenta las características y los
+precios publicados de ambas referencias.
+
+\begin{table}[H]
+    \centering
+    \caption{Referencias comerciales para la evaluación económica del proyecto.}
+    \label{tab:comparativa_economica}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.35}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.28\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X}
+        \toprule[1pt]
+
+        \textbf{Criterio} &
+        \textbf{RUICHUAN} &
+        \textbf{Trust-Long} \\
+        \midrule[1pt]
+
+        Modelo publicado &
+        Serie SZC-T &
+        TLP-500 / TLP-5000 \\
+        \midrule
+
+        Tipo de operación &
+        Continua / por lotes &
+        Por lotes \\
+        \midrule
+
+        Material declarado &
+        Harina y polvos de baja fluidez &
+        Harina y otros materiales pulverulentos \\
+        \midrule
+
+        Principio de dosificación &
+        Pérdida de peso con celdas de carga &
+        Pesaje digital y alimentación mediante tornillo \\
+        \midrule
+
+        Rango por lote publicado &
+        No especificado &
+        $0{,}5$--$15\ \mathrm{kg}$\textsuperscript{a} \\
+        \midrule
+
+        Nivel de automatización &
+        Control automático mediante PLC &
+        Operación semiautomática \\
+        \midrule
+
+        Precio publicado para una unidad &
+        USD~$2\,000$ &
+        USD~$2\,600$ para TLP-500 y
+        USD~$3\,800$ para TLP-5000 \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{0.5em}
+
+    {\footnotesize
+    Fuente: Elaboración propia con base en las publicaciones comerciales de
+    RUICHUAN~\parencite{UnidadDosificadoraGravimetrica} y
+    Trust-Long~\parencite{MaquinaLlenadoPolvo}.}
+\end{table}
+
+La comparación del costo documentado del prototipo con estas referencias,
+junto con sus diferencias funcionales y técnicas, establece el criterio para
+evaluar la condición de bajo costo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DELIMITACIÓN
