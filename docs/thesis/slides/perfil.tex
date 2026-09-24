@@ -1,10 +1,29 @@
+% !TeX program = latexmk
+% !TeX encoding = UTF-8
+% Compilar con latexmk perfil.tex desde docs/thesis/slides/.
+% La configuración .latexmkrc ejecuta XeLaTeX y Biber cuando corresponda.
 \documentclass[aspectratio=169,spanish]{beamer}
 
 % =========================================================
 % PAQUETES
 % =========================================================
 
-\usepackage[utf8]{inputenc}
+% Compilar con XeLaTeX para usar Gill Sans MT, como en la referencia visual.
+\usepackage{fontspec}
+\setsansfont{Gill Sans MT}[
+    UprightFont = GIL_____.TTF,
+    BoldFont = GILB____.TTF,
+    ItalicFont = GILI____.TTF,
+    BoldItalicFont = GILBI___.TTF,
+    Path = C:/Windows/Fonts/
+]
+\setmainfont{Gill Sans MT}[
+    UprightFont = GIL_____.TTF,
+    BoldFont = GILB____.TTF,
+    ItalicFont = GILI____.TTF,
+    BoldItalicFont = GILBI___.TTF,
+    Path = C:/Windows/Fonts/
+]
 \usepackage[spanish, mexico]{babel}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -49,9 +68,9 @@
 % COLORES
 % =========================================================
 
-\definecolor{UCBBlue}{RGB}{28,73,122}
+\definecolor{UCBBlue}{RGB}{39,56,124} % #27387C, color solicitado para la presentación
 \definecolor{LightGray}{RGB}{245,246,248}
-\definecolor{DarkGray}{RGB}{55,55,55}
+\definecolor{DarkGray}{RGB}{20,20,20}
 \definecolor{SoftBlue}{RGB}{224,233,243}
 
 \setbeamercolor{normal text}{
@@ -74,7 +93,7 @@
 }
 
 \setbeamerfont{frametitle}{
-    size=\Large,
+    size=\fontsize{15}{18}\selectfont,
     series=\bfseries
 }
 
@@ -87,30 +106,11 @@
 
 % =========================================================
 % ENCABEZADO
-% Sección izquierda / página derecha
+% Título de sección y numeración a la derecha
 % =========================================================
 
-\setbeamertemplate{headline}{%
-    \leavevmode
-    \vspace{0.12cm}
-
-    \hbox to \paperwidth{%
-        \hspace{0.40cm}%
-        {\small\bfseries\color{UCBBlue}\insertsectionhead}%
-        \hfill
-        {\small\color{DarkGray}
-        \insertframenumber/\inserttotalframenumber}%
-        \hspace{0.40cm}%
-    }
-
-    \vspace{0.10cm}
-
-    {\color{UCBBlue!25}
-    \rule{\paperwidth}{0.4pt}}
-
-    \vspace{0.05cm}
-}
-
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{\hfill{\scriptsize\color{UCBBlue}\insertframenumber/\inserttotalframenumber}\hspace{0.25cm}\vspace{0.15cm}}
 % =========================================================
 % PORTADA
 % =========================================================
@@ -120,8 +120,8 @@
 % en perfil.tex hasta decisión académica posterior.
 
 \title{
-DISEÑO DE UNA DOSIFICADORA GRAVIMÉTRICA AUTOMATIZADA\\
-DE BAJO COSTO PARA HARINA EN PANADERÍAS ARTESANALES
+Diseño de una dosificadora gravimétrica automatizada
+de bajo costo para harina en panaderías artesanales
 }
 
 \subtitle{
@@ -143,7 +143,7 @@ Septiembre de 2026
 
 \titlegraphic{
     \includegraphics[
-        height=0.17\textheight
+        height=0.12\textheight
     ]{\imgdir/ucbLogo1.png}
 }
 
@@ -151,552 +151,276 @@ Septiembre de 2026
 % DOCUMENTO
 % =========================================================
 
-\begin{document}
 
-% =========================================================
-% PORTADA
-% =========================================================
-
-% BLOQUES 1 Y 2: apertura, contexto y diagnóstico (diapositivas 1--8).
-% Guion de exposición en comentarios; no constituye una decisión académica.
-\begin{frame}[plain]
-    \maketitle
-    % Guion: presentar el caso. El título y el criterio de bajo costo siguen abiertos (A-001).
-\end{frame}
-
-\section{Introducción}
-
-% 2 — RECORRIDO
-\begin{frame}{Recorrido del Marco Referencial}
-\vspace{0.25cm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.46\textwidth}
-{\color{UCBBlue}\Large\bfseries 01\quad Contexto}
-\par\medskip
-Panadería San Miguel y ubicación de la dosificación de harina.
-\par\vspace{0.55cm}
-{\color{UCBBlue}\Large\bfseries 02\quad Procedimiento actual}
-\par\medskip
-Secuencia manual, traslados, pesaje y levantamiento de campo.
-\end{column}
-\begin{column}{0.46\textwidth}
-{\color{UCBBlue}\Large\bfseries 03\quad Evidencia y problema}
-\par\medskip
-Resultados registrados, proyecciones y planteamiento del problema.
-\par\vspace{0.55cm}
-{\color{UCBBlue}\Large\bfseries 04\quad Objetivos y delimitación}
-\par\medskip
-Objetivos, justificación y fronteras del proyecto.
-\end{column}
-\end{columns}
-\vfill
-{\small El diagnóstico sustenta el planteamiento del problema.}
-% Guion: explicar el recorrido en una frase y pasar al proceso general.
-\end{frame}
-
-% 3 — PROCESO GENERAL
-\begin{frame}{La dosificación dentro del proceso de panificación}
-\centering
-\vspace{0.2cm}
-\resizebox{0.97\textwidth}{!}{%
-    \input{\marcoimg/proceso_general_pan.tex}}
-\par\vspace{0.4cm}
-{\large\color{UCBBlue}\bfseries Dosificación de harina previa al mezclado y amasado}
-\par\smallskip
-{\small El recuadro discontinuo identifica la etapa estudiada.}
-\vfill
-\raggedright
-{\footnotesize Fuente: Adaptado de \textcite{lim2019spc}.}
-% Guion: recorrer el flujo y detenerse en harina. Las operaciones posteriores
-% contextualizan el proceso y quedan fuera del desarrollo principal (D-002).
-% Verificación pendiente: contraste de la adaptación con el artículo original.
-\end{frame}
-
-% 4 — CASO DE ESTUDIO
-\begin{frame}{Dosificación de harina en la Panadería San Miguel}
-{\small Santa Cruz de la Sierra. Caso de estudio del proyecto.}
-\par\vspace{0.2cm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering
-\includegraphics[width=\linewidth,height=0.46\textheight,keepaspectratio]
-    {\marcoimg/ubicacion_bolsas_harina.jpg}
-\par\smallskip
-{\small\bfseries Almacenamiento de harina}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\includegraphics[width=\linewidth,height=0.46\textheight,keepaspectratio]
-    {\marcoimg/mesa_ingredientes_balanza.jpg}
-\par\smallskip
-{\small\bfseries Punto de pesaje}
-\end{column}
-\end{columns}
-\vfill
-{\large El operario transporta, incorpora y pesa la harina manualmente.}
-\par\medskip
-{\footnotesize Fuente: Registro fotográfico propio.}
-% Guion: identificar ambas zonas. La condición manual describe el procedimiento;
-% el diagnóstico cuantitativo se presenta en las diapositivas de resultados.
-\end{frame}
-
-\section{Planteamiento del problema}
-
-% 5 — FLUJO GENERAL DEL PROCEDIMIENTO
-
-\begin{frame}{Procedimiento actual de dosificación}
-
-\centering
-
-\begin{tikzpicture}[
-  etapa/.style={
-    draw=UCBBlue,
-    rounded corners=2pt,
-    text width=3.75cm,
-    minimum height=1.6cm,
-    align=center,
-    font=\footnotesize
-  },
-  arr/.style={
-    -{Latex[length=2mm]},
-    thick,
-    UCBBlue
-  }
-]
-
-% Primera fila
-\node[etapa] (a)
-{\textbf{1. Preparación y tara}\\
-Colocar el recipiente receptor\\
-y establecer el cero};
-
-\node[etapa, right=0.75cm of a] (b)
-{\textbf{2. Traslado y carga}\\
-Recoger, transportar\\
-y descargar harina};
-
-\node[etapa, right=0.75cm of b] (c)
-{\textbf{3. Pesaje y comparación}\\
-Leer la cantidad acumulada\\
-y comparar con el objetivo};
-
-% Segunda fila
-\node[etapa, below=0.65cm of c] (d)
-{\textbf{4. Ajuste final}\\
-Agregar harina remanente\\
-sin un nuevo traslado};
-
-\node[etapa, left=0.75cm of d] (e)
-{\textbf{5. Devolución}\\
-Retornar el recipiente\\
-de transporte};
-
-% Flujo principal
-\draw[arr] (a) -- (b);
-\draw[arr] (b) -- (c);
-\draw[arr] (c) -- (d);
-\draw[arr] (d) -- (e);
-
-% Retorno para una nueva carga
-\draw[arr]
-  (c.north) -- ++(0,0.55) -|
-  (b.north);
-\node[anchor=south, align=center, text width=6cm, font=\footnotesize]
-  at ($(c.north)+(-2.3,0.65)$)
-  {Si se requiere otra carga principal};
-
-\end{tikzpicture}
-
-\par\vspace{0.2cm}
-
-{\footnotesize
-\textbf{Tara:} compensación de la masa del recipiente receptor
-para iniciar el pesaje en cero.
+% Ensayo oral: 13 diapositivas; distribución detallada en el guion.
+\definecolor{Measured}{RGB}{25,111,110}
+\definecolor{Projected}{RGB}{151,100,35}
+\setbeamercolor{projection}{fg=DarkGray,bg=SoftBlue!55}
+\setbeamercolor{block title}{fg=UCBBlue,bg=white}
+\setbeamercolor{block body}{fg=DarkGray,bg=white}
+\newcommand{\fuente}[1]{\par\vfill{\scriptsize #1}}
+\newcommand{\figcap}[2]{\refstepcounter{figure}\label{#1}{\scriptsize\textbf{Figura~\thefigure.} #2}}
+\newcommand{\tabcap}[2]{\refstepcounter{table}\label{#1}{\scriptsize\textbf{Tabla~\thetable.} #2}}
+\setbeamertemplate{frametitle}{%
+    \vspace{0.15cm}%
+    \raggedleft%
+    {\usebeamerfont{frametitle}\color{UCBBlue}\insertframetitle\par}%
+    {\raggedright\normalsize\color{UCBBlue}\insertframesubtitle\par}%
+    \vspace{0.08cm}%
 }
-
-\vfill
-
-\raggedright
-{\footnotesize Fuente: Elaboración propia con base en el procedimiento registrado.}
-
+\begin{document}
+% Portada institucional: sin fotografía del establecimiento.
+\begin{frame}
+\titlepage
 \end{frame}
 
-% 6 — TRASLADOS
-\begin{frame}{Traslados entre almacenamiento y punto de pesaje}
-{\small\color{UCBBlue}\textbf{Etapa 2: traslado y cargas}}
-\par\vspace{0.15cm}
+\section{Antecedentes}
+\begin{frame}{Antecedentes I}
+\relax
+{\large\color{UCBBlue}Panadería Artesanal San Miguel}
+\par\medskip
 \begin{columns}[c,onlytextwidth]
-\begin{column}{0.72\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\input{\marcoimg/croquis_panaderia.tex}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centering
-\includegraphics[width=\linewidth,height=0.34\textheight,keepaspectratio]
- {\marcoimg/recipiente_transporte.jpg}
-\par\smallskip
-{\small Recipiente de transporte}
-\par\medskip
-{\small El operario recoge, transporta y descarga harina en el recipiente receptor.}
-\end{column}
-\end{columns}
-\vfill
-{\footnotesize Fuente: Elaboración propia y registro fotográfico propio. Croquis sin escala.}
-% Guion: señalar almacenamiento y balanza. No sumar cotas ni equiparar
-% una cota del croquis a la longitud total recorrida. La distancia por trayecto
-% requiere contraste entre PROJECT_CONTEXT.md y la sección 6 del registro.
-\end{frame}
-
-% 7 — PESAJE Y AJUSTE
-\begin{frame}{Pesaje y ajuste manual de harina}
-{\small\color{UCBBlue}\textbf{Etapas 3--5: pesaje, ajuste y comprobación}}
-\par\vspace{0.15cm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering
-\includegraphics[width=\linewidth,height=0.43\textheight,keepaspectratio]
- {\marcoimg/balanza_recipiente_vacio.jpg}
-\par\smallskip
-{\small\bfseries Recipiente receptor sobre la balanza}
-\par\smallskip
-{\small La lectura se compara con la cantidad objetivo.}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\includegraphics[width=\linewidth,height=0.43\textheight,keepaspectratio]
- {\marcoimg/ajuste_final_operario.jpg}
-\par\smallskip
-{\small\bfseries Ajuste final del operario}
-\par\smallskip
-{\small Se incorpora harina remanente y se comprueba la lectura final.}
-\end{column}
-\end{columns}
-\vfill
-{\footnotesize Fuente: Registro fotográfico propio y descripción del procedimiento observado.}
-% Guion: distinguir el recipiente receptor del recipiente de transporte.
-% La fotografía de la balanza ilustra el montaje, no una lectura final medida.
-\end{frame}
-
-% 8 — LEVANTAMIENTO DE CAMPO
-\begin{frame}{Levantamiento de campo: siete ciclos registrados}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.44\textwidth}
-{\large\color{UCBBlue}\bfseries Jornadas documentadas}
-\par\vspace{0.25cm}
-{\Large\bfseries 02/09/2026}\par
-Jornada ordinaria: \textbf{5 ciclos}
-\par\vspace{0.4cm}
-{\Large\bfseries 05/09/2026}\par
-Sábado: \textbf{2 ciclos}
-\par\vspace{0.35cm}
-{\small Los resultados describen la muestra registrada.}
-\end{column}
-\begin{column}{0.51\textwidth}
-{\large\color{UCBBlue}\bfseries Registro por ciclo}
-\par\medskip
+\begin{column}{0.45\textwidth}
 \begin{itemize}
-\item Cantidad objetivo y cantidad final de harina.
-\item Tiempo del procedimiento y actividades.
+\item Santa Cruz de la Sierra, Bolivia.
+\item Elaboración de pan.
+\item Dosificación manual de harina.
+\item Pan casero, marraqueta y francés.
+\item Masa común para empanadas y rollos.
+\item Especialidades    
 \end{itemize}
-\medskip
-\textbf{Intervalo analizado}\par\smallskip
-{\small Desde la preparación del recipiente receptor hasta la devolución del recipiente de transporte.}
 \end{column}
-\end{columns}
-\vfill
-{\footnotesize Fuente: Registros de campo del 02/09 y 05/09/2026.}
-% Guion: delimitar la unidad de análisis antes de mostrar los resultados.
-% El ciclo sabatino de masa común cuenta una sola vez. A-003 sigue abierto:
-% falta completar la segunda jornada ordinaria o documentar el cambio de plan.
-% Pendiente: contraste con hojas originales e identificación del instrumento
-% y procedimiento de cronometraje. No se atribuye un método no documentado.
-\end{frame}
-
-% BLOQUE 3 — EVIDENCIA Y PROBLEMA (9--12)
-% 9 — RESULTADOS Y EVIDENCIA ASOCIADA
-\begin{frame}{Resultados de los siete ciclos registrados}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Huge\bfseries 411,9 s}\par\smallskip
-\textbf{Tiempo acumulado del procedimiento}
-\par\vspace{0.35cm}
-{\Large\bfseries 259,7 s\quad(63,0\%)}\par\smallskip
-{\small Cargas principales y retornos por otra carga. Incluye recogida, transporte y descarga.}
-\par\medskip
-{\small Tres o cuatro cargas principales por ciclo.}
-\end{column}
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Huge\bfseries +143 g}\par\smallskip
-\textbf{Diferencia acumulada de harina}
-\par\vspace{0.25cm}
-\begin{tabular}{@{}lr@{}}
-Cantidad objetivo & 48,000 kg\\[0.12cm]
-Cantidad final & 48,143 kg
-\end{tabular}
-\par\medskip
-{\Large\bfseries +11 a +38 g}\par\smallskip
-{\small Diferencia final por ciclo. Los siete valores registrados fueron positivos.}
-\end{column}
-\end{columns}
-\vfill
-{\small\textbf{Cálculos derivados de los registros de campo.} La diferencia corresponde a cantidad final menos cantidad objetivo.}
-\par\smallskip
-{\footnotesize Fuente: Registros del 02/09 y 05/09/2026 y consolidación del diagnóstico.}
-% Guion: describir tiempo e intervención, y luego diferencia de harina.
-% El 63,0 % no representa caminata aislada. +143 g no equivale a desperdicio.
-% Se conserva el rango observado; no constituye tolerancia de aceptación.
-\end{frame}
-
-% 10 — PROYECCIONES
-\begin{frame}{Proyecciones a partir de las jornadas observadas}
-{\small\textbf{Base registrada:} ordinaria, 304,5 s y +0,078 kg; sábado, 107,4 s y +0,065 kg.}
-\par\vspace{0.45cm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Large\bfseries Escenario semanal}\par\medskip
-5 jornadas ordinarias + 1 sábado
-\par\vspace{0.3cm}
-{\color{UCBBlue}\LARGE\bfseries $\approx$ 27 min 10 s}\par\medskip
-{\Large\bfseries +0,455 kg de harina}
-\end{column}
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Large\bfseries Escenario mensual}\par\medskip
-22 jornadas ordinarias + 4 sábados
-\par\vspace{0.3cm}
-{\color{UCBBlue}\LARGE\bfseries $\approx$ 1 h 59 min}\par\medskip
-{\Large\bfseries +1,976 kg de harina}
-\end{column}
-\end{columns}
-\vfill
-{\small\textbf{Supuesto:} repetición de los ciclos y valores registrados en cada jornada. Los escenarios corresponden a proyecciones, no a mediciones semanales o mensuales.}
-\par\medskip
-{\footnotesize Fuente: Elaboración propia a partir de las jornadas registradas.}
-% Guion: explicar la base y el supuesto antes del escenario mensual.
-% Cálculos: 5*304,5+107,4=1629,9 s; 22*304,5+4*107,4=7128,6 s.
-% Diferencias: 5*0,078+0,065=0,455 kg; 22*0,078+4*0,065=1,976 kg.
-% La cobertura definitiva del relevamiento permanece abierta (A-003).
-\end{frame}
-
-% 11 — FORMULACIÓN
-\begin{frame}{Formulación del problema}
+\begin{column}{0.50\textwidth}
 \centering
-{\small\color{UCBBlue}\textbf{Escenario mensual proyectado: 22 jornadas ordinarias y 4 sábados}}
-\par\vspace{0.6cm}
-\begin{minipage}{0.88\textwidth}
-\raggedright\Large
-En la Panadería San Miguel, el operario destina
-\textbf{\color{UCBBlue}\mbox{1 h 59 min}}
-al procedimiento manual de dosificación de harina, en el cual se acumula
-una diferencia positiva de \textbf{\color{UCBBlue}1,976 kg}
-respecto de las cantidades objetivo.
-\end{minipage}
-\vfill
-\raggedright
-{\small Valores derivados de las jornadas observadas.}
-% Guion: leer como una única formulación. No afirmar ahorro, pérdida económica
-% ni perjuicio de calidad. Se conserva literalmente la formulación de perfil.tex.
-% D-003/D-004 y A-002: esta presentación no registra aprobación ni sustituye
-% la versión académica de referencia por una nueva decisión.
+% Sustituir esta ruta por la fotografía de la fachada cuando esté disponible.
+\includegraphics[width=\linewidth,height=0.48\textheight,keepaspectratio]{\marcoimg/acceso_principal.jpeg}
+\par\smallskip\figcap{fig:almacenamiento_presentacion}{Acceso principal de la Panadería San Miguel. Fuente: Registro fotográfico propio.}
+\end{column}
+\end{columns}
 \end{frame}
 
-% 12 — ÁRBOL
-% Se reemplaza el diagrama simplificado (una sola caja de "problema central")
-% por la figura real del capítulo (images/marcoref/arbol_problemas.tex),
-% reescalada. Motivo: la simplificación anterior fusionaba en un solo bloque
-% los dos componentes que D-004 exige tratar conjuntamente (tiempo/intervención
-% y diferencia de harina); la figura original los conserva como dos cajas
-% enlazadas, preserva las subcausas y las bandas Efectos/Problema central/Causas,
-% y evita mantener dos versiones del árbol que puedan desalinearse.
+\begin{frame}{Antecedentes II}
+\framesubtitle{La dosificación dentro del proceso de panificación}
+\relax
+\centering
+\resizebox{0.98\textwidth}{!}{\input{\marcoimg/proceso_general_pan.tex}}
+\par\smallskip\figcap{fig:proceso_presentacion}{Proceso general de elaboración del pan. Fuente: Adaptado de \textcite{lim2019spc}.}
+\par\medskip
+\end{frame}
+
+\begin{frame}{Antecedentes III}
+\framesubtitle{Procedimiento actual de dosificación}
+\relax
+\centering
+\begin{tikzpicture}[
+ etapa/.style={draw=UCBBlue!65,fill=SoftBlue!55,rounded corners=3pt,text width=3.75cm,minimum height=1.05cm,align=center,font=\footnotesize},
+ arr/.style={-{Stealth[length=5pt]},thick,UCBBlue}]
+\node[etapa] (a) {\textbf{1. Preparación y tara}\\Recipiente receptor\\en cero};
+\node[etapa,right=0.6cm of a] (b) {\textbf{2. Traslado y carga}\\Recoger, transportar y descargar};
+\node[etapa,right=0.6cm of b] (c) {\textbf{3. Pesaje y comparación}\\Cantidad acumulada / objetivo};
+\node[etapa,below=0.5cm of c] (d) {\textbf{4. Ajuste y comprobación}\\Harina remanente\\sin nuevo traslado};
+\node[etapa,left=0.6cm of d] (e) {\textbf{5. Devolución}\\Recipiente de transporte};
+\draw[arr] (a)--(b);\draw[arr] (b)--(c);\draw[arr] (c)--(d);\draw[arr] (d)--(e);
+\draw[arr] (c.north)--++(0,0.38)-|(b.north);
+\node[font=\scriptsize,anchor=south] at ($(b.north)!0.5!(c.north)+(0,0.38)$) {Otra carga principal, si se requiere};
+\end{tikzpicture}
+\par\smallskip\figcap{fig:procedimiento_presentacion}{Procedimiento manual de dosificación de harina. Fuente: elaboración propia.}
+\par\smallskip\raggedright
+{\small \textbf{Tara:} compensación de la masa del recipiente.}
+\end{frame}
+
+\begin{frame}{Antecedentes IV}
+\framesubtitle{Almacenamiento, recorrido y pesaje}
+\relax
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.70\textwidth}
+\centering\resizebox{!}{0.49\textheight}{\input{\marcoimg/croquis_panaderia.tex}}
+\par{\scriptsize (a) Distribución del área de trabajo}
+\end{column}
+\begin{column}{0.27\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.23\textheight,keepaspectratio]{\marcoimg/recipiente_transporte.jpg}
+\par{\scriptsize (b) Recipiente de transporte}
+\par\smallskip
+\includegraphics[width=\linewidth,height=0.23\textheight,keepaspectratio]{\marcoimg/balanza_recipiente_vacio.jpg}
+\par{\scriptsize (c) Recipiente receptor}
+\end{column}
+\end{columns}
+\par\smallskip{\centering\figcap{fig:recorrido_presentacion}{Área de dosificación y recipientes utilizados. Fuente: elaboración y registro fotográfico propios.}\par}
+\par\smallskip{\small\bfseries\color{UCBBlue}Tres o cuatro cargas principales por ciclo}
+% No sumar cotas como distancia total: discrepancia de registros aún pendiente.
+\end{frame}
+
+% Los siete ciclos se muestran individualmente; los totales están a la derecha.
+\begin{frame}{Antecedentes V}
+\relax
+{\large\color{UCBBlue}Levantamiento de campo: siete ciclos}
+\par\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.63\textwidth}
+{\small\bfseries Tiempo por ciclo (s)}
+\par\smallskip
+\begin{tikzpicture}[x=0.065cm,y=0.43cm,font=\scriptsize]
+\foreach \x in {0,20,40,60} {
+    \draw[gray!20] (\x,-0.4)--(\x,6.5);
+    \node[below] at (\x,-0.4) {\x};
+}
+\foreach \v/\ciclo/\y/\lectura in {
+    53.9/D1-C1/6/{53,9},64.9/D1-M1/5/{64,9},
+    66.6/D1-F1/4/{66,6},53.2/D1-C2/3/{53,2},
+    65.9/D1-M2/2/{65,9}} {
+    \fill[UCBBlue] (0,\y-0.26) rectangle (\v,\y+0.26);
+    \node[left] at (0,\y) {\ciclo};
+    \node[right] at (\v,\y) {\lectura};
+}
+\foreach \v/\ciclo/\y/\lectura in {
+    54.2/S-C1/1/{54,2},53.2/S-E1/0/{53,2}} {
+    \fill[Measured] (0,\y-0.26) rectangle (\v,\y+0.26);
+    \node[left] at (0,\y) {\ciclo};
+    \node[right] at (\v,\y) {\lectura};
+}
+\end{tikzpicture}
+\par\smallskip{\scriptsize\color{UCBBlue}D1: 5 ciclos · jornada ordinaria · 02/09/2026}
+\par{\scriptsize\color{Measured}S: 2 ciclos · sábado · 05/09/2026}
+\end{column}
+\begin{column}{0.09\textwidth}
+\color{UCBBlue!25}\rule{2.0pt}{4.9cm}
+\end{column}
+\begin{column}{0.31\textwidth}
+{\small\bfseries Total de la muestra}
+\par\medskip{\Large\color{UCBBlue}411,9 s}
+\par{\small tiempo acumulado}
+\par\bigskip{\small\bfseries Harina dosificada}
+\par\smallskip{\small Objetivo: 48,000 kg\\Final: 48,143 kg}
+\par\medskip{\Large\color{Measured}+143 g}
+\par{\small sobre el objetivo total}
+\end{column}
+\end{columns}
+\par\medskip{\scriptsize Desde preparación y tara hasta devolución del recipiente.}
+\end{frame}
+
+\begin{frame}{Antecedentes VI}
+\framesubtitle{Proyecciones a partir del registro}
+\relax
+{\small\color{Measured}\bfseries BASE REGISTRADA}
+\par\smallskip
+{\small Jornada ordinaria: 304,5 s / +0,078 kg \quad | \quad Sábado: 107,4 s / +0,065 kg}
+\par\bigskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.47\textwidth}
+\begin{beamercolorbox}[sep=0.25cm]{projection}
+{\color{Projected}\bfseries PROYECCIÓN SEMANAL}
+\par\medskip{\Large\bfseries 27 min 10 s}
+\par\medskip{\Large +0,455 kg}
+\par\medskip{\small 5 jornadas ordinarias + 1 sábado}
+\end{beamercolorbox}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{beamercolorbox}[sep=0.25cm]{projection}
+{\color{Projected}\bfseries PROYECCIÓN MENSUAL}
+\par\medskip{\Large\bfseries 1 h 59 min}
+\par\medskip{\Large +1,976 kg}
+\par\medskip{\small 22 jornadas ordinarias + 4 sábados}
+\end{beamercolorbox}
+\end{column}
+\end{columns}
+\par\bigskip{\small Diferencia positiva de harina respecto de las cantidades objetivo.}
+\end{frame}
+
+\section{Definición del problema}
+\begin{frame}{Definición del problema}
+\relax
+En la Panadería San Miguel, el operario destina 1 h 59 min/mes al
+procedimiento manual de dosificación de harina, en el cual se acumula una
+diferencia positiva de 1,976 kg respecto de las cantidades
+objetivo.
+\par\bigskip
+{\footnotesize\color{Projected}Escenario mensual proyectado: 22 jornadas ordinarias y 4 sábados.}
+\end{frame}
+
+\section{Árbol de problemas}
 \begin{frame}{Árbol de problemas}
+\relax
 \centering
-\resizebox{!}{0.68\textheight}{%
-    \input{\marcoimg/arbol_problemas.tex}}
-\vfill\raggedright
-{\footnotesize Fuente: Elaboración propia.}
-% Guion: leer por bandas, de abajo hacia arriba (causas → problema central → efectos).
-% Señalar el vínculo bidireccional entre los dos componentes del problema central
-% (tiempo/intervención y diferencia de harina) como la revisión conjunta pedida
-% por el docente (PROFESSOR_NOTES.md). No se interpreta la secuencia operativa
-% como causalidad experimental demostrada. Figura idéntica a la de marcoref.tex:
-% cualquier ajuste al árbol debe hacerse en el archivo fuente compartido,
-% no de forma independiente en este slide.
+\resizebox{!}{0.74\textheight}{\input{\marcoimg/arbol_problemas.tex}}
+\par\smallskip\figcap{fig:arbol_presentacion}{Árbol de problemas. Fuente: elaboración propia.}
 \end{frame}
 
-% BLOQUE 4 — RESPUESTA DEL PROYECTO (13--16)
 \section{Objetivos}
-% 13 — OBJETIVOS
-\begin{frame}{Objetivo general y objetivos específicos}
-{\large Desarrollar un \textbf{\color{UCBBlue}prototipo automatizado de dosificación gravimétrica de harina} para la Panadería San Miguel.}
-\par\vspace{0.4cm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-{\small\color{UCBBlue}\textbf{Desarrollo}}
-\begin{enumerate}
-\item \textbf{Determinar} requerimientos funcionales y técnicos a partir del procedimiento manual.
-\item \textbf{Diseñar} los subsistemas mecánico, de medición gravimétrica y de control.
-\item \textbf{Implementar} el prototipo funcional conforme al diseño.
-\end{enumerate}
-\end{column}
-\begin{column}{0.48\textwidth}
-{\small\color{UCBBlue}\textbf{Verificación y evaluación}}
-\begin{enumerate}\setcounter{enumi}{3}
-\item \textbf{Verificar} los requerimientos mediante pruebas de funcionamiento.
-\item \textbf{Comparar} el desempeño con el procedimiento manual bajo condiciones comparables.
-\item \textbf{Determinar} el costo de construcción e integración mediante un desglose documentado.
-\end{enumerate}
-\end{column}
-\end{columns}
-\vfill
-{\footnotesize Síntesis de los objetivos del documento de trabajo.}
-% Guion: mantener implementación antes de verificación y comparación.
-% Síntesis expositiva de marcoref.tex, no nueva formulación aprobada (A-002).
-\end{frame}
-
-% Motivación: no se añade contenido nuevo. La sección institucional permanece
-% pendiente de desarrollo en el documento de trabajo.
-\section{Justificación}
-% 14 — JUSTIFICACIÓN TECNOLÓGICA
-\begin{frame}{Justificación tecnológica}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\large\bfseries Integración del prototipo}
-\par\medskip
-Diseño mecánico, medición gravimétrica, electrónica y control.
-\par\vspace{0.35cm}
-\textbf{Función prevista}\par\smallskip
-Control de la alimentación a partir de la cantidad objetivo y del pesaje de la harina dosificada.
-\end{column}
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\large\bfseries Evaluación experimental}
-\par\medskip
-\begin{itemize}
-\item Tiempo de dosificación.
-\item Intervención del operario.
-\item Diferencia respecto de la cantidad objetivo.
-\item Repetibilidad.
-\end{itemize}
-\end{column}
-\end{columns}
-\vfill
-{\small\textbf{Criterio de evaluación:} comparación con el procedimiento manual bajo condiciones comparables. Las mejoras requieren comprobación experimental.}
-% Guion: vincular la función del sistema con las variables del diagnóstico.
-% Los componentes, la estrategia de control y los umbrales siguen abiertos.
-\end{frame}
-
-% 15 — JUSTIFICACIÓN ECONÓMICA
-\begin{frame}{Justificación económica: referencias comerciales}
-\small
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
-\toprule
-\textbf{Criterio} & \textbf{RUICHUAN} & \textbf{Trust-Long}\\
-\midrule
-Modelo & Serie SZC-T & TLP-500 / TLP-5000\\
-Principio descrito & Dosificación gravimétrica por pérdida de peso & Operación por lotes y alimentación por tornillo\\
-Precio de referencia & \textbf{USD 2\,000} & \textbf{USD 2\,600--3\,800}\\
-\bottomrule
-\end{tabular}
-\par\vspace{0.4cm}
-\textbf{\color{UCBBlue}Criterio para evaluar el bajo costo}\par\smallskip
-Costo documentado de construcción e integración del prototipo frente a soluciones de funcionalidad comparable, considerando prestaciones y precio.
-\vfill
-{\footnotesize Precios conservados del documento de trabajo. Actualización y comparabilidad pendientes de verificación.}
+\begin{frame}{Objetivos}
+\relax
+{\large\color{UCBBlue}Objetivo general}
 \par\smallskip
-{\footnotesize Fuente: \textcite{UnidadDosificadoraGravimetrica} y \textcite{MaquinaLlenadoPolvo}.}
-% Guion: describir estas referencias como base de comparación, no demostrar
-% bajo costo con los precios aislados. El costo del prototipo no está establecido.
-% Las páginas comerciales no fueron accesibles durante esta revisión.
-% A-001 sigue abierto. No se incorporan prestaciones ni cotizaciones nuevas.
+Desarrollar un prototipo automatizado de dosificación gravimétrica de harina para la Panadería San Miguel.
+\par\medskip
+{\large\color{UCBBlue}Objetivos específicos}
+\begin{itemize}\small
+\setlength{\itemsep}{0.10cm}
+\item Determinar requerimientos del prototipo a partir del procedimiento manual.
+\item Diseñar los subsistemas mecánico, de medición gravimétrica y de control.
+\item Implementar el prototipo funcional conforme al diseño.
+\item Verificar los requerimientos mediante pruebas de funcionamiento.
+\item Comparar el desempeño con el procedimiento manual en condiciones comparables.
+\item Determinar el costo de construcción e integración mediante un desglose documentado.
+\end{itemize}
+\end{frame}
+
+\section{Justificación}
+\begin{frame}{Justificación}
+\relax
+{\large\color{UCBBlue}Justificación tecnológica}
+\par\smallskip
+{\small Integración de mecánica, pesaje, electrónica y control para automatizar
+la alimentación de harina según la cantidad objetivo. Desempeño por comprobar mediante pruebas.}
+\par\smallskip
+{\large\color{UCBBlue}Justificación social}
+\par\smallskip
+{\small Beneficiario directo: operario de San Miguel. Se busca reducir su intervención
+en la dosificación.}
+\par\smallskip
+{\large\color{UCBBlue}Justificación económica}
+\par\smallskip
+{\small Costo del prototipo frente a soluciones de funcionalidad comparable.}
+\par\smallskip
+{\centering\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabular}{@{}llr@{}}
+\toprule
+\textbf{Referencia} & \textbf{Principio descrito} & \textbf{Precio publicado}\\
+\midrule
+RUICHUAN SZC-T & Pérdida de peso & USD 2\,000\\
+Trust-Long TLP-500 / TLP-5000 & Lotes, tornillo & USD 2\,600--3\,800\\
+\bottomrule
+\end{tabular}\par}
+\fuente{Referencias: \textcite{UnidadDosificadoraGravimetrica} y \textcite{MaquinaLlenadoPolvo}.}
 \end{frame}
 
 \section{Delimitación}
-% 16 — ALCANCES Y LÍMITES
-\begin{frame}{Alcances y límites del proyecto}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Large\bfseries Alcances}
-\par\medskip
-\small
+% Alcances: lista sencilla y parámetros preliminares del documento.
+\begin{frame}{Delimitación I}
+\relax
+{\large\color{UCBBlue}Alcances}
 \begin{itemize}
-\item Dosificación gravimétrica automatizada de harina con cantidad objetivo configurable por el operario.
-\item Construcción e integración del prototipo y pruebas de funcionamiento.
-\item Comparación experimental con el procedimiento manual en San Miguel, bajo condiciones comparables.
-\item Determinación del costo de construcción e integración.
+\setlength{\itemsep}{0.20cm}
+\item Dosificación de harina: lotes preliminares de 5 a 15 kg.
+\item Cantidad objetivo configurable por el operario.
+\item Resolución propuesta de 5 g o mejor; tolerancia preliminar de $\pm 0{,}5$\%.
+\item Tolva de capacidad útil aproximada de 50 kg; volumen según la densidad aparente de la harina.
+\item Alimentación y pesaje automáticos hasta la cantidad objetivo, reposición manual de harina.
 \end{itemize}
-\end{column}
-\begin{column}{0.47\textwidth}
-{\color{UCBBlue}\Large\bfseries Límites}
-\par\medskip
-\small
-\begin{itemize}
-\item Dosificación de otros ingredientes.
-\item Mezclado y amasado, división y formado, fermentación y cocción.
-\item Validación en otros establecimientos.
-\item Análisis de rentabilidad o recuperación de la inversión.
-\end{itemize}
-\end{column}
-\end{columns}
-\vfill
-{\footnotesize Rangos, capacidad, tolerancia, componentes y estrategia de control permanecen abiertos.}
-% Guion: cerrar con función, caso de validación y exclusiones.
-% Se conserva el alcance de perfil.tex. Los valores preliminares de marcoref.tex
-% no se adoptan como requisitos, conforme a D-009 y A-004.
 \end{frame}
 
-% =========================================================
-% TRANSICIÓN
-% =========================================================
-
-\begin{frame}[plain]
-
-\vfill
-
-\begin{center}
-
-    {\color{UCBBlue}
-    \fontsize{27}{31}\selectfont
-    \bfseries
-    Marco Referencial
-    }
-
-    \vspace{0.55cm}
-
-    {\Large
-
-    Contexto
-    $\longrightarrow$
-    Procedimiento
-    $\longrightarrow$
-    Evidencia
-
-    \vspace{0.25cm}
-
-    $\longrightarrow$
-
-    \vspace{0.20cm}
-
-    Problema
-    $\longrightarrow$
-    Objetivos
-    $\longrightarrow$
-    Delimitación
-
-    }
-
-\end{center}
-
-\vfill
-
+\begin{frame}{Delimitación II}
+\relax
+{\large\color{UCBBlue}Límites}
+\small
+\begin{itemize}
+\setlength{\itemsep}{0.25cm}
+\item No se realizará la validación del prototipo en otros establecimientos.
+\item No se automatizará la dosificación de ingredientes distintos de la harina.
+\item No se automatizarán el mezclado y amasado, la división y formado, la fermentación ni la cocción del producto.
+\item No se realizará un análisis de rentabilidad del establecimiento, período de recuperación de la inversión ni costos de producción comercial en serie.
+\item No se realizará el modelamiento matemático del sistema de dosificación.
+\end{itemize}
+% Cierre oral: propuesta delimitada a dosificar harina y evaluar su desempeño.
 \end{frame}
-
-% =========================================================
-% PROPUESTA
-% =========================================================
-
-% La slide "Concepto de solución" se trasladaría a la
-% sección posterior de Propuesta del perfil.
-%
-% No se incluye aquí para no mezclar la función del
-% Marco Referencial con el Capítulo 3 del template.
-
 \end{document}

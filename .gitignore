@@ -35,6 +35,7 @@ docs/thesis/bibliography/*.pdf
 # PDF generado de las diapositivas
 docs/thesis/slides/perfil.pdf
 docs/thesis/main.pdf
+docs/thesis/slides/guion_presentacion_marco_referencial.md
 
 # Archivos temporales o de recuperación
 *-SAVE-ERROR
