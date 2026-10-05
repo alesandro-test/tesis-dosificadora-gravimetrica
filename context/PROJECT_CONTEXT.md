@@ -31,6 +31,8 @@ otros establecimientos.
 ## 2. Enfoque y alcance
 
 El proyecto estudia específicamente la **dosificación de harina**.
+La harina es el insumo principal; el diseño considera además azúcar, sal
+y levadura (`D-010`, `D-013`). El diagnóstico se basa solo en harina.
 
 Se pretende desarrollar un prototipo automatizado de dosificación gravimétrica
 y posteriormente comparar su desempeño con el procedimiento manual bajo

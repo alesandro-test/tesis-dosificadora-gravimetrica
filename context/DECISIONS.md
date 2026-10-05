@@ -27,7 +27,7 @@
 
 ### D-002 — Alcance técnico del proyecto
 
-**Estado:** Confirmada  
+**Estado:** Reemplazada por `D-010`
 **Decisión:** El desarrollo se delimita a la dosificación de harina previa al mezclado y amasado.  
 **Motivo:** Es la operación específicamente seleccionada para el proyecto.  
 **Impacto:** Mezclado, división, formado, fermentación, cocción y automatización integral de la panadería no forman parte del desarrollo principal. El proceso general de panificación puede utilizarse únicamente como contexto.
@@ -100,6 +100,40 @@
 Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son únicamente antecedentes o propuestas previas y NO constituyen requisitos vigentes.
 
 ---
+### D-010 — Insumos considerados
+
+**Estado:** Confirmada  
+**Decisión:** La harina es el insumo principal de diseño, desarrollo y validación del prototipo. El sistema contemplará la posibilidad de dosificar otros insumos secos de panificación.  
+**Motivo:** Observación del acta de evaluación del perfil; la harina se mantiene como insumo principal por decisión del estudiante.  
+**Impacto:** Problema, árbol y diagnóstico permanecen basados en la evidencia de harina. Qué otros insumos y con qué nivel de demostración permanecen abiertos (`A-005`). Mezclado, división, formado, fermentación, cocción y automatización integral siguen fuera del desarrollo principal.
+
+---
+
+### D-011 — Modelamiento dinámico
+
+**Estado:** Confirmada  
+**Decisión:** Se desarrollará el modelamiento matemático del comportamiento dinámico del sistema de alimentación y pesaje como base para el diseño del control.  
+**Motivo:** Observación del acta de evaluación del perfil. Reemplaza la exclusión del modelamiento registrada en Límites.  
+**Impacto:** El tipo de modelo (físico, identificación experimental o combinado) y la estrategia de control permanecen abiertos (`A-004`).
+
+---
+
+### D-012 — Análisis económico
+
+**Estado:** Confirmada  
+**Decisión:** Se elaborará el análisis económico del costo de fabricación del prototipo respecto del retorno de la inversión.  
+**Motivo:** Observación del acta de evaluación del perfil. Reemplaza la exclusión del análisis de rentabilidad y recuperación de la inversión registrada en Límites.  
+**Impacto:** Indicadores, beneficios considerados, supuestos y moneda permanecen abiertos (`A-006`). Los beneficios no medidos deben declararse como proyección o hipótesis (`D-006`, `D-008`); la diferencia de harina no se valora como desperdicio (`D-007`).
+
+---
+
+### D-013 — Insumos secos adicionales
+
+**Estado:** Confirmada  
+**Decisión:** Además de la harina, el diseño considera la dosificación de azúcar, sal y levadura. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador (no utilizado en la panadería).  
+**Motivo:** Declaración del estudiante del 2026-10-05 sobre los insumos utilizados en San Miguel; cantidades medidas reportadas en `research/notes/insumos_secos_recetas.md`.  
+**Impacto:** Las cantidades por preparación son mediciones reportadas por el estudiante, con trazabilidad pendiente (fecha, instrumento, procedimiento y repeticiones). La levadura utilizada es fresca; su dosificación desde tolva y el nivel de demostración permanecen abiertos (`A-005`).
+
 
 ## Decisiones abiertas
 
@@ -164,9 +198,25 @@ Continúan abiertos, entre otros:
 - arquitectura mecánica;
 - arquitectura electrónica;
 - dimensiones finales.
+- tipo de modelo dinámico;
+- tolerancias por insumo;
 
 Una propuesta, ejemplo bibliográfico, valor observado o valor utilizado en un
 borrador no convierte automáticamente ninguno de estos elementos en requisito.
 
 El ejemplo docente de `50 kg` fue únicamente pedagógico y no constituye un
 requerimiento del prototipo. El rango deberá derivarse de los datos de campo y del diseño.
+
+### A-005 — Insumos adicionales y nivel de demostración
+
+**Estado:** NO DECIDIDO
+
+Los insumos adicionales quedaron definidos en `D-013`. Pendiente definir si se abordarán mediante estudio de tolerancias y compatibilidad, ensayos limitados en el prototipo o validación completa, y cómo se dosificará la levadura, que según el estudiante es fresca (pasta prensada que no fluye como polvo). Lo que se declare en el alcance deberá poder demostrarse.
+
+---
+
+### A-006 — Método del análisis económico
+
+**Estado:** NO DECIDIDO
+
+Pendiente definir indicador (TIR, VAN, período de recuperación u otro), beneficios y supuestos considerados, y moneda (el template indica moneda local).

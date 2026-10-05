@@ -1,6 +1,6 @@
 # STATUS
 
-**Última actualización:** 2026-09-16
+**Última actualización:** 2026-10-05
 
 ## Estado actual
 
@@ -8,6 +8,9 @@ Marco Referencial / Capítulo 1 en revisión a partir de las observaciones docen
 Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el criterio de `bajo costo` no están cerrados. Trabajo activo: **Antecedentes del problema / diagnóstico**.
 
 ## Completado
+
+- `marcoref.tex` ajustado al acta de evaluación del perfil (`D-010` a `D-013`): Introducción, siete objetivos específicos (tolerancias separadas; control con base en el modelo dinámico; evaluación unificada; costo respecto del retorno de la inversión), justificaciones tecnológica y económica, límites depurados y alcances ampliados. Problema y árbol se conservan en harina. Compilación correcta el 05/10/2026.
+- Estimación de insumos secos por receta registrada en `research/notes/insumos_secos_recetas.md` (no son mediciones).
 
 - Resultados del diagnóstico condensados: tabla consolidada, explicación directa de cantidades y tiempos y proyecciones con repetición de ciclos explícita. Por solicitud del estudiante, se retiró la gráfica de barras y se redujo el texto a cuatro párrafos; sin incorporar tabla por ciclos. PDF compilado y páginas afectadas revisadas el 16/09/2026.
 
@@ -35,6 +38,11 @@ Introducción, diagnóstico, problema/árbol, objetivos, alcance/límites y el c
 7. Verificar que el documento use el template oficial de Taller de Grado I.
 
 ## Bloqueos / pendientes de validación
+
+- Acta: actualizar `perfil.tex` (objetivos, límites y alcances anteriores), la etiqueta «Alcance: harina» de `proceso_general_pan.tex` y ampliar la revisión bibliográfica del estado del arte.
+- Cantidades de azúcar, sal, levadura, manteca y agua medidas y reportadas por el estudiante (`research/notes/insumos_secos_recetas.md`); completar fecha, instrumento, procedimiento, repeticiones y respaldo. La levadura es fresca: evaluar su dosificación desde tolva.
+- Alcances conservan 5–15 kg, 5 g, ±0,5 % y 50 kg para la harina; según `D-009` no son requisitos vigentes y deben revisarse con el estudio de tolerancias.
+- Siete objetivos específicos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
 
 - La formulación y el árbol presentan cifras mensuales sin explicitar su carácter proyectado; revisión pendiente fuera de la edición de resultados. Las notas de campo consideran provisional la asociación entre fechas temporales y lecturas de harina: confirmar trazabilidad sin alterar cifras por suposición.
 
