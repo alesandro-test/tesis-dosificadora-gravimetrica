@@ -21,7 +21,7 @@ que ingresa al proceso. Durante el mezclado y amasado, los ingredientes se
 integran para formar la masa. Luego, la masa se divide y se forma según el
 producto elaborado. Posteriormente se realiza la fermentación y, finalmente,
 la cocción. El recuadro de líneas discontinuas delimita la dosificación de
-ingredientes y destaca la harina como la materia prima comprendida en el
+ingredientes y destaca la harina como el insumo principal comprendido en el
 proyecto.
 
 \begin{figure}[htb]
@@ -58,11 +58,16 @@ instrumentos automáticos de llenado gravimétrico que integran funciones
 de alimentación, pesaje, control y descarga \parencite{oiml2017r61}.
 
 El proyecto aborda el diseño y construcción de un prototipo automatizado
-de dosificación gravimétrica de harina para la Panadería San Miguel. El
-desarrollo se delimita a la dosificación previa al mezclado y amasado y
-comprende la definición de requerimientos, el diseño, la construcción e
-integración del prototipo y su evaluación experimental frente al
-procedimiento manual bajo condiciones comparables.
+de dosificación gravimétrica para la Panadería San Miguel. La harina
+constituye el insumo principal del prototipo; el diseño considera, además,
+la dosificación de azúcar, sal y levadura. El desarrollo se delimita a la
+dosificación previa al mezclado y amasado y comprende la definición de
+requerimientos y tolerancias de dosificación, el diseño de los subsistemas
+mecánico, de medición gravimétrica y de control, el modelamiento del
+comportamiento dinámico del sistema de alimentación y pesaje, la
+construcción e integración del prototipo, su evaluación experimental frente
+al procedimiento manual bajo condiciones comparables y el análisis
+económico de su fabricación.
 
 La sección siguiente presenta la caracterización del procedimiento actual
 de dosificación de harina y la evidencia de campo utilizada para sustentar
@@ -504,20 +509,28 @@ harina para la Panadería San Miguel.
     prototipo a partir de las condiciones de operación del procedimiento
     manual de dosificación de harina.
 
-    \item Diseñar los subsistemas mecánico, de medición gravimétrica y de
-    control del prototipo conforme a los requerimientos establecidos.
+    \item Determinar las tolerancias de dosificación de la harina, el
+    azúcar, la sal y la levadura a partir de fuentes técnicas.
+
+    \item Diseñar los subsistemas mecánico y de medición gravimétrica del
+    prototipo conforme a los requerimientos y tolerancias establecidos.
+
+    \item Diseñar el subsistema de control con base en el modelo
+    matemático del comportamiento dinámico del sistema de alimentación y
+    pesaje.
 
     \item Implementar un prototipo funcional de dosificación gravimétrica
     automatizada conforme al diseño del sistema.
 
-    \item Verificar el cumplimiento de los requerimientos funcionales y
-    técnicos del prototipo mediante pruebas de funcionamiento.
+    \item Evaluar el prototipo mediante pruebas de funcionamiento respecto
+    de los requerimientos establecidos y mediante la comparación con el
+    procedimiento manual de dosificación de harina bajo condiciones
+    comparables.
 
-    \item Comparar el desempeño del prototipo con el procedimiento manual de dosificación de harina bajo condiciones comparables.
-
-    \item Determinar el costo de construcción e integración del prototipo
-    mediante un desglose documentado de materiales, componentes y procesos
-    de fabricación y montaje.
+    \item Determinar el costo de fabricación del prototipo y evaluarlo
+    respecto del retorno de la inversión, a partir de un desglose
+    documentado de materiales, componentes y procesos de fabricación y
+    montaje.
 
 \end{itemize}
 
@@ -534,7 +547,9 @@ harina para la Panadería San Miguel.
 El proyecto propone aplicar la dosificación gravimétrica automatizada
 a las condiciones de operación de la Panadería San Miguel. La integración
 del pesaje con el control de alimentación busca reducir la intervención
-requerida para alcanzar la cantidad objetivo de harina.
+requerida para alcanzar la cantidad objetivo de harina. El modelamiento
+del comportamiento dinámico del sistema de alimentación y pesaje
+fundamenta el diseño del control.
 
 El aporte consiste en evaluar esta integración frente al procedimiento
 manual, considerando el tiempo de dosificación, la intervención del
@@ -562,7 +577,7 @@ ocupacional, empleo o calidad de vida.
 \subsection{Justificación Económica}
 \label{subsec:justificacion_economica}
 
-El proyecto considera el costo de construcción e integración del prototipo
+El proyecto considera el costo de fabricación del prototipo
 frente a soluciones comerciales de funcionalidad comparable. RUICHUAN se
 seleccionó por su principio gravimétrico y control automático, mientras que
 Trust-Long se incluyó por su operación por lotes de harina. La
@@ -634,9 +649,13 @@ precios publicados de ambas referencias.
     Trust-Long~\parencite{MaquinaLlenadoPolvo}.}
 \end{table}
 
-La comparación del costo documentado del prototipo con estas referencias,
-junto con sus diferencias funcionales y técnicas, establece el criterio para
-evaluar la condición de bajo costo.
+La comparación del costo documentado de fabricación del prototipo con
+estas referencias, junto con sus diferencias funcionales y técnicas,
+establece el criterio para evaluar la condición de bajo costo. El análisis
+económico comprende, además, la evaluación del costo de fabricación
+respecto del retorno de la inversión. Los beneficios que no provengan de
+mediciones se identifican como proyecciones, y la diferencia positiva de
+harina no se valora como pérdida.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DELIMITACIÓN
@@ -657,18 +676,10 @@ evaluar la condición de bajo costo.
     \item No se realizará la validación del prototipo en otros
     establecimientos.
 
-    \item No se automatizará la dosificación de ingredientes distintos
-    de la harina.
-
     \item No se automatizarán el mezclado y amasado, la división y formado,
     la fermentación ni la cocción del producto.
 
-    \item No se realizará un análisis de rentabilidad del establecimiento,
-    período de recuperación de la inversión ni costos de producción
-    comercial en serie.
-
-    % Exclusión solicitada por el autor; susceptible de revisión posterior.
-    \item No se realizará el modelamiento matemático del sistema de dosificación.
+    \item No se determinarán costos de producción comercial en serie.
 
 \end{itemize}
 
@@ -681,16 +692,22 @@ evaluar la condición de bajo costo.
 
 \begin{itemize}
 
-    \item El prototipo comprende la dosificación gravimétrica automatizada
-    de harina en lotes comprendidos, de manera preliminar, entre
-    $5$ y $15\ \mathrm{kg}$.
+    \item La harina constituye el insumo principal de diseño, desarrollo y
+    validación del prototipo. El diseño considera, además, la dosificación
+    de azúcar, sal y levadura, conforme al estudio de tolerancias por
+    insumo.
+    % A-005: nivel de demostración de los insumos adicionales NO DECIDIDO.
 
-    \item La cantidad objetivo de harina es configurable por el operario
-    antes de iniciar cada ciclo de dosificación.
+    \item Para la harina, el prototipo comprende la dosificación
+    gravimétrica automatizada en lotes comprendidos, de manera preliminar,
+    entre $5$ y $15\ \mathrm{kg}$.
 
-    \item El sistema de pesaje se plantea con una resolución de
-    $5\ \mathrm{g}$ o mejor y una tolerancia preliminar de dosificación
-    de $\pm 0{,}5\%$ respecto de la cantidad objetivo.
+    \item La cantidad objetivo es configurable por el operario antes de
+    iniciar cada ciclo de dosificación.
+
+    \item Para la harina, el sistema de pesaje se plantea con una
+    resolución de $5\ \mathrm{g}$ o mejor y una tolerancia preliminar de
+    dosificación de $\pm 0{,}5\%$ respecto de la cantidad objetivo.
 
     \item La tolva se dimensiona para una capacidad útil aproximada de
     $50\ \mathrm{kg}$ de harina. El volumen geométrico se establece a
@@ -698,7 +715,18 @@ evaluar la condición de bajo costo.
 
     \item El ciclo comprende el control automático de la alimentación y
     el pesaje desde el inicio de la dosificación hasta alcanzar la cantidad
-    objetivo. La reposición de harina en la tolva se realiza de forma manual.
+    objetivo. La reposición del insumo en la tolva se realiza de forma
+    manual.
+
+    \item El diseño del control se fundamenta en el modelo matemático del
+    comportamiento dinámico del sistema de alimentación y pesaje.
+
+    \item La evaluación experimental se realiza en la Panadería San Miguel,
+    frente al procedimiento manual de dosificación de harina y bajo
+    condiciones comparables.
+
+    \item El análisis económico comprende el costo de fabricación del
+    prototipo respecto del retorno de la inversión.
 
 \end{itemize}
 
