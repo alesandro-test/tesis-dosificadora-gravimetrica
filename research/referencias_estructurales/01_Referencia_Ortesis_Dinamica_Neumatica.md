@@ -189,3 +189,134 @@ DELIMITACIÓN
 Límites
 + alcances/entregables
 ```
+
+---
+
+# CAPÍTULO 2 — MARCO TEÓRICO
+
+> Fuente: `01_Referencia_Ortesis_Dinamica_Neumatica - Copy.md` (Desktop), capítulo 2.
+
+## Estructura del capítulo
+
+1. **2.1 Estado del arte**
+   - 2.1.1 Dispositivos de asistencia para la marcha
+   - 2.1.2 Actuadores lineales en dispositivos acoplados al cuerpo
+   - 2.1.3 Ahorro energético
+   - 2.1.4 Asistencia para adultos mayores
+2. **2.2 Fundamentos teóricos**
+   - 2.2.1 Trastornos de la marcha con la edad
+   - 2.2.2 Órtesis para miembro inferior (2.2.2.1 dinámicas; 2.2.2.2 pie y tobillo)
+   - 2.2.3 Antropometría del miembro inferior
+   - 2.2.4 Biomecánica de la marcha humana (ciclo, fase de apoyo, fase de oscilación, movimiento del tobillo, mecanismos de propulsión)
+   - 2.2.5 Variaciones de la marcha con la edad
+3. **2.3 Sistemas neumáticos**
+   - 2.3.1 Presión
+   - 2.3.2 Leyes de los gases (Boyle-Mariotte, Charles Gay-Lussac, Amonton, Avogadro)
+   - 2.3.3 Efectos de la compresibilidad
+   - 2.3.4 Dinámica del actuador neumático
+
+No existen apartados de **productos comerciales**, **comparación de alternativas** ni **conclusión del capítulo**. El capítulo termina con la ecuación del modelo dinámico del actuador.
+
+---
+
+## Cómo construye cada sección
+
+### 2.1 Estado del arte
+
+- **Función:** situar la propuesta dentro de las investigaciones previas y acercarse progresivamente al tipo de dispositivo que se desarrollará.
+- **Orden:** definición de biomecánica → relevancia de caminar → dispositivos robóticos activos → actuadores lineales y brazo de momento → dispositivos pasivos de ahorro energético → músculos neumáticos → aplicación a adultos mayores.
+- **Evidencia:** artículos científicos y tesis (aprox. 10 trabajos: exoesqueletos activos, BLEEX, embrague pasivo, músculos neumáticos, asistencia a adultos mayores).
+- **Recursos:** 3 figuras de trabajos previos (Figuras 2.1–2.3), cada una con descripción de componentes y de su relación mecánica.
+- **Conexión:** cada subsección deja un aspecto pendiente (peso, consumo, accionamiento) que la siguiente aborda; termina en el usuario objetivo.
+- **Profundidad:** **media**; descriptiva, sin tabla comparativa ni valoración explícita de ventajas y desventajas.
+
+Patrón por antecedente:
+
+> trabajo citado → qué construyó → componente o principio clave → limitación o característica → siguiente enfoque
+
+### 2.2 Fundamentos teóricos
+
+- **Función:** explicar el sistema sobre el que actúa el dispositivo (el cuerpo y la marcha) antes de la tecnología.
+- **Orden:** condición del usuario (marcha senil) → tipo de dispositivo (órtesis) → dimensiones del usuario → biomecánica de la marcha → variaciones por edad.
+- **Evidencia:** bibliografía médica y biomecánica; tablas de datos poblacionales y de cargas.
+- **Recursos:** Tablas 2.1–2.3 (antropometría, cargas en el tobillo, características de la marcha) y Figuras 2.4–2.6 (ciclo de marcha, dorsiflexión/flexión plantar, diagrama de cuerpo libre).
+- **Conexión:** los datos numéricos (dimensiones, rangos de movimiento, cargas) quedan como **entradas de diseño** para el capítulo práctico.
+- **Profundidad:** **alta**; es la sección más extensa.
+
+### 2.3 Sistemas neumáticos
+
+- **Función:** fundamentar la tecnología de accionamiento elegida.
+- **Orden:** definición de neumática → presión → leyes de los gases → gas real y compresibilidad → modelo dinámico del actuador.
+- **Evidencia:** libros de neumática y termodinámica; una tesis previa para el modelo del actuador.
+- **Recursos:** Ecuaciones 2.1–2.9, cada una con lista de variables y unidades.
+- **Conexión:** cierra con la Ecuación 2.9 (variación de presión en función de la posición del pistón), que vincula la teoría con el comportamiento del resorte neumático del prototipo.
+- **Profundidad:** **media**; progresión de lo general a la ecuación específica del dispositivo.
+
+---
+
+## Recursos utilizados
+
+| Recurso | Uso estructural |
+|---|---|
+| Figuras de trabajos previos con análisis | Mostrar el principio de cada antecedente |
+| Tablas de datos poblacionales | Fijar parámetros del usuario |
+| Tabla de cargas | Fijar esfuerzos de diseño |
+| Diagramas biomecánicos | Explicar fases y fuerzas |
+| Ecuaciones numeradas con variables y unidades | Construir el modelo del actuador |
+| Citas autor-año | Respaldar cada afirmación técnica |
+
+---
+
+## Patrones estructurales destacables
+
+- Separación explícita **Estado del arte → Fundamentos teóricos → Tecnología**.
+- El estado del arte avanza por **proximidad creciente** a la solución propuesta.
+- Los fundamentos describen primero **el sistema que recibe la acción** (usuario) y luego **la tecnología** que actúa.
+- Los datos de tablas se convierten en **parámetros de diseño**.
+- Las ecuaciones avanzan de leyes generales a un **modelo dinámico específico** del componente.
+- Cada figura incluye título, fuente y explicación de su significado para el documento.
+
+---
+
+## Particularidades de esta tesis
+
+- El estado del arte solo cubre la **perspectiva académica**; no incluye productos de mercado ni precios.
+- No hay **tabla comparativa** de soluciones previas ni criterio explícito para descartar enfoques.
+- No existe **conclusión del capítulo**.
+- El estado del arte es más corto que los fundamentos.
+- El modelo dinámico se toma **adaptado de una tesis previa**, no se deduce completo.
+
+---
+
+## Contraste con la plantilla oficial
+
+La plantilla pide estado del arte con perspectiva académica **y** de mercado, al menos dos enfoques, mínimo 30 referencias (10 académicas), fundamentos de al menos 20 páginas y conclusión del capítulo. Esta tesis cubre solo la perspectiva académica y no incluye la conclusión.
+
+---
+
+## Elementos útiles como referencia estructural
+
+```text
+ESTADO DEL ARTE
+Contexto del fenómeno
+→ soluciones generales (activas)
+→ componente clave (actuador)
+→ alternativa de menor consumo (pasiva)
+→ tecnología cercana (neumática)
+→ usuario objetivo
+
+FUNDAMENTOS TEÓRICOS
+Condición del usuario
+→ tipo de dispositivo
+→ datos dimensionales (tabla)
+→ comportamiento físico (ciclo, fuerzas)
+→ variaciones relevantes
+
+TECNOLOGÍA DE ACCIONAMIENTO
+Conceptos básicos
+→ leyes físicas
+→ comportamiento real
+→ modelo dinámico del componente
+```
+
+**Utilidad para la dosificadora:** la secuencia leyes físicas → modelo dinámico del componente sirve de guía para el modelamiento del sistema de alimentación y pesaje (`D-011`). El estado del arte de esta tesis no cubre el mercado; la dosificadora necesita esa perspectiva para el criterio de bajo costo.

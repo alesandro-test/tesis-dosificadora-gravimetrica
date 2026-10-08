@@ -403,3 +403,190 @@ El capítulo termina definiendo:
 ## Lógica global
 
 > **Contextualizar → dimensionar → demostrar → definir → relacionar causas → plantear objetivos → justificar → delimitar.**
+
+---
+
+# REFERENCIA ESTRUCTURAL — Capítulo 2
+
+> Fuente: `02_Referencia_Syso_Para_PGGST - Copy.md` (Desktop), capítulo 2, convertido desde `marcoteorico.tex` del template SySO.
+
+## Estructura del capítulo
+
+**Título:** Marco teórico y legal
+
+1. **Salud y Seguridad Ocupacional**
+   - Conceptos fundamentales
+   - Accidentes e incidentes; factores (actos y condiciones inseguras)
+   - Ingeniería y práctica de seguridad; investigación de accidentes
+   - Peligro; riesgo y tipos de riesgo
+   - Condiciones de trabajo
+2. **Legislación Aplicable a la SySO**
+   - Contexto histórico
+   - Normativa obligatoria
+   - Normativa voluntaria
+3. **Metodologías de Desarrollo de Software**
+   - Programación Extrema; Programación Extrema Personal (con técnica MoSCoW)
+   - Software como Servicio
+4. **Análisis y Evaluación de Software**
+   - ISO 25000:2014
+   - Método Objetivo-Pregunta-Métrica
+5. **Inteligencia Artificial**
+   - Aprendizaje; redes neuronales; visión computacional; PLN
+   - Modelos multimodales y transformadores
+   - Evaluación de modelos; generación de lenguaje natural; descripción de imágenes
+
+> No existe sección de **Estado del Arte**. Una sección «Trabajos Relacionados» figura en el `.tex` dentro de un bloque comentado, sin contenido.
+
+---
+
+# Cómo construye cada sección
+
+## Salud y Seguridad Ocupacional
+
+**Función:** dar al lector el vocabulario del dominio donde se aplica el software.
+
+**Lógica:**
+
+> definición general → conceptos fundamentales → accidentes y sus factores → peligro y riesgo → condiciones de trabajo
+
+**Evidencia:** ley nacional, OIT, libros de seguridad, normas IBNORCA.
+
+**Recursos:** dos listas a dos columnas (actos y condiciones inseguras), sin numeración.
+
+**Conexión:** los conceptos (IPER, riesgo, estudios de higiene) son los que el software deberá procesar.
+
+**Profundidad:** alta; muchas definiciones breves.
+
+---
+
+## Legislación Aplicable a la SySO
+
+**Función:** demostrar que el producto responde a obligaciones legales concretas.
+
+**Lógica:**
+
+> historia normativa → normas obligatorias por jerarquía (CPE → leyes → reglamentos → resoluciones → NTS) → normas voluntarias
+
+**Evidencia:** normativa oficial y resoluciones ministeriales.
+
+**Recursos:** Tabla 2.1 (actividades para elaborar el PSST) y lista de los trece documentos exigidos.
+
+**Conexión:** la NTS-009/23 define el contenido que el software deberá generar.
+
+**Profundidad:** alta; el componente legal es central por la naturaleza del proyecto.
+
+---
+
+## Metodologías de Desarrollo de Software
+
+**Función:** justificar el método de desarrollo que se usará en el marco práctico.
+
+**Lógica:**
+
+> metodologías ágiles → XP → PXP (versión individual) → técnica de priorización → modelo de distribución
+
+**Evidencia:** libros de ingeniería de software y artículos.
+
+**Recursos:** Figuras 2.1 y 2.2 (ciclos XP y PXP), lista numerada de fases.
+
+**Conexión:** cada subsección cierra con una frase sobre su relevancia para el proyecto.
+
+**Profundidad:** media.
+
+---
+
+## Análisis y Evaluación de Software
+
+**Función:** definir con qué criterios se evaluará el producto.
+
+**Lógica:**
+
+> estándar de calidad → método para derivar métricas
+
+**Evidencia:** norma ISO y metodología GQM, con una tesis previa como ejemplo de aplicación.
+
+**Recursos:** lista de las divisiones de ISO 25000.
+
+**Conexión:** prepara la verificación del objetivo específico de evaluación.
+
+**Profundidad:** baja-media.
+
+---
+
+## Inteligencia Artificial
+
+**Función:** explicar la tecnología habilitadora de la solución.
+
+**Lógica:**
+
+> qué es la IA y su ecosistema → aprendizaje → redes neuronales → visión y lenguaje → modelos multimodales → transformadores → evaluación → generación de texto
+
+**Evidencia:** libros de referencia y artículos de revisión (surveys).
+
+**Recursos:** Figuras 2.3–2.5 (ecosistema IA, pipelines de visión, arquitectura de generación de lenguaje), todas elaboradas a partir de fuentes.
+
+**Conexión:** avanza de lo general a la técnica exacta del prototipo (transformadores multimodales).
+
+**Profundidad:** alta.
+
+---
+
+# Recursos utilizados
+
+| Recurso | Uso estructural |
+|---|---|
+| Definiciones con cita | Vocabulario del dominio |
+| Normativa jerarquizada | Requisitos legales del producto |
+| Tabla de actividades | Contenido que debe generar el software |
+| Diagramas de proceso (TikZ) | Metodologías y arquitecturas |
+| Listas numeradas | Fases y componentes |
+
+No se utilizan ecuaciones, fotografías ni comparación de productos.
+
+---
+
+# Patrones estructurales útiles
+
+## 1. Dominio antes que tecnología
+
+> problema del dominio → marco legal → método de desarrollo → criterios de evaluación → tecnología habilitadora
+
+## 2. Marco legal como sección propia
+
+Cuando la normativa define requisitos, se desarrolla como sección independiente y jerarquizada.
+
+## 3. Método y evaluación dentro del marco teórico
+
+La metodología de desarrollo y los criterios de evaluación se fundamentan antes del marco práctico.
+
+## 4. Embudo dentro de la tecnología
+
+De conceptos generales a la técnica específica usada.
+
+## 5. Figuras propias adaptadas
+
+Todas las figuras son «elaboración propia a partir de» una fuente.
+
+---
+
+# Particularidades importantes
+
+- Título «Marco teórico y legal».
+- No hay estado del arte ni trabajos relacionados en el documento compilado.
+- No hay conclusión del capítulo.
+- Capítulo extenso en definiciones; pocos datos cuantitativos.
+- No contiene ecuaciones.
+
+---
+
+# Contraste con la plantilla oficial
+
+Esta tesis no cumple la estructura de la plantilla en el capítulo 2: falta el estado del arte (académico y de mercado, ≥ 30 referencias) y la conclusión del capítulo. Sirve como guía para organizar fundamentos y marco normativo, no para el estado del arte.
+
+---
+
+# Lógica global
+
+> **Dominio → normativa → método → evaluación → tecnología.**
+
+**Utilidad para la dosificadora:** el tratamiento de la normativa (jerarquía y relación con el producto) sirve para la metrología aplicable (OIML R 61, vocabulario JCGM) y la normativa alimentaria. La inclusión del método de evaluación en el marco teórico es útil para fundamentar la comparación prototipo–procedimiento manual (`D-008`).
