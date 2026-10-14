@@ -40,8 +40,12 @@
 - **Claridad:** priorizar que el documento pueda ser comprendido por un lector que no conoce previamente el proyecto.
 - **Términos técnicos:** introducir y explicar siglas, equipos o conceptos antes de utilizarlos como parte esencial del argumento.
 - **Redacción:** mantener estilo técnico e impersonal y revisar puntuación, concordancia y referencias ambiguas.
-- **Tablas y figuras:** introducir, explicar e interpretar cada elemento en el texto; aclarar variables, unidades, indicadores, leyendas y subfiguras, además de la conclusión que aporta al diagnóstico.
-- **Figuras modificadas:** indicar `adaptada de` cuando se modifique una figura externa, incluso si solo se traducen etiquetas.
+- **Tablas y figuras:** introducir, explicar e interpretar cada elemento en el texto; aclarar variables, unidades, indicadores, leyendas y subfiguras, además de la conclusión que aporta al diagnóstico. Describir qué se observa; no limitarse a «ver Figura X». Las tablas siguen las mismas reglas de numeración y explicación.
+- **Figuras modificadas:** indicar `adaptada de` cuando se modifique una figura externa, incluso si solo se traducen etiquetas. Las figuras en otro idioma se traducen o redibujan en español.
+- **Figuras (formato):** vectorizadas, legibles con zoom de 300 %; numeración capítulo.figura; leyenda de máximo 15 palabras, salvo subfiguras compuestas; `Elaboración propia` cuando corresponda.
+- **Ecuaciones:** seguir la norma ISO de magnitudes y unidades indicada por el docente (transcrita como «ISO 80004»; la plantilla indica ISO 80000-4; número por confirmar). Explicar qué es cada ecuación, para qué sirve, sus variables y unidades.
+- **Citas y bibliografía:** norma ISO 690, con gestor de referencias (el docente mencionó Mendeley o EndNote).
+- **Planos:** los planos completos (SolidWorks) van en apéndices o anexos; en el cuerpo solo figuras representativas con remisión al apéndice.
 - **Terminología espacial:** utilizar referencias coherentes con la instalación; no usar `vertical` para una dirección en planta si puede interpretarse como altura.
 - **Formato:** respetar numeración, títulos, leyendas y referencias cruzadas definidas por la plantilla institucional.
 - **Plantilla institucional:** utilizar el template oficial de Taller de Grado I, no el de Taller II.
@@ -63,3 +67,20 @@
 - **Factibilidad:** antes de cerrar una solución técnica considerar construcción, componentes, infraestructura, costo, tiempo y posibilidad real de ensayo.
 - **Bajo costo:** si se mantiene esta expresión en el proyecto, demostrarla mediante comparación con soluciones comerciales de funcionalidad comparable. Utilizar precios o cotizaciones verificables y contrastar explícitamente prestaciones y costo, preferentemente mediante una tabla comparativa; no basta declararla en el título.
 
+
+## Marco teórico y estado del arte
+
+- **Marco teórico:** incluir solo la teoría, fórmulas, metodologías y conceptos que se aplicarán en el proyecto; toda técnica o ecuación usada en el marco práctico debe tener su teoría respaldada. No incluir conceptos básicos de ciencias exactas. Referenciar cada afirmación.
+- **Gravimetría (indicación directa al proyecto):** incluir la teoría de medición gravimétrica y de sensores de peso o celdas de carga.
+- **Estado del arte:** cubrir los últimos 5 a 10 años; mínimo 30 referencias, de las cuales al menos 10 son trabajos académicos (artículos indexados o tesis revisadas por pares); redactar en estilo narrativo continuo citando a los autores; explorar productos comerciales; identificar el aporte o factor diferencial del proyecto; subdividir por áreas de conocimiento cuando no exista un antecedente idéntico.
+- **Enfoques:** estudiar ventajas, desventajas y factores de interés de los trabajos académicos y comerciales, y justificar técnicamente qué enfoques se adoptan y cuáles se descartan.
+
+## Perfil completo, tutor y evaluación
+
+- **Objetivos 1 y 2 (indicación directa al proyecto):** el perfil debe demostrar el cumplimiento de los dos primeros objetivos específicos; no basta con uno.
+- **Propuesta (capítulo 3):** diseños, circuitos, diagramas y etapas que demuestren de forma explícita el cumplimiento de los objetivos 1 y 2.
+- **Análisis económico del perfil:** costo total para desarrollar el proyecto, en moneda local y desglosado en tablas; incluir pasajes, alimentación durante la recolección de datos, licencias oficiales de software y materiales.
+- **Cronograma:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para un horizonte de 6 a 8 meses; sirve de seguimiento para estudiante, tutor y docente.
+- **Documento final (Taller de Grado II):** capítulos de introducción, marco teórico, marco práctico, marco analítico y marco conclusivo. El marco analítico (pruebas reales, gráficas de respuesta y análisis de resultados) representa cerca de la mitad del valor del trabajo. Conclusiones vinculadas a los objetivos; trabajos futuros derivados de los límites; artículo en formato IEEE.
+- **Tutor (indicación directa al proyecto):** debe tener maestría o doctorado y apoyar también el diseño mecánico; formalizar la designación por carta.
+- **Evaluación:** la nota final la otorga el relator externo. Una defensa aprobada con observaciones exige corregirlas; si el tema se reprueba, se otorgan 20 días para presentar otro proyecto.

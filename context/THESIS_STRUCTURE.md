@@ -163,6 +163,14 @@
 - **Conclusión del capítulo:** prevista en el índice tentativo.
 - **Formato:** figuras y tablas numeradas por capítulo (Figura 2.1, Tabla 2.1); leyenda de figura de hasta 15 palabras; «Adaptado de» cuando se modifique o traduzca una fuente; ecuaciones centradas, numeradas (2.1) y con variables según ISO 80000; citas ISO 690.
 
+## Criterios del docente (clase del 09/10/2026)
+
+- **Estado del arte:** últimos 5 a 10 años; redacción narrativa continua citando a los autores; identificar el aporte o factor diferencial del proyecto; subdividir por áreas de conocimiento cuando no exista un antecedente idéntico.
+- **Marco teórico:** solo lo que se aplicará; cada técnica o ecuación del marco práctico debe tener su teoría aquí; sin conceptos básicos de ciencias exactas.
+- **Indicación directa:** incluir medición gravimétrica y sensores de peso o celdas de carga.
+- **Ajuste al patrón por antecedente:** integrar cada antecedente en la narración; la figura y la ficha por antecedente quedan supeditadas a confirmación docente.
+- Las fuentes anteriores a 10 años (`hopkins2006loss`, `jcgm2012vim`, `cauvain2015technology`) se usan como fundamentos, no como estado del arte.
+
 ## 1. Estado del arte (introducción)
 
 - **Propósito:** explicar cómo se organiza la revisión y qué se busca en ella.
@@ -237,3 +245,38 @@ La plantilla presenta en el texto la secuencia «2.1 Estado del Arte → 2.2 Enf
 - Apoyar la perspectiva de mercado solo en videos o foros cuando existan fichas técnicas.
 - Incluir fundamentos que no se usarán en el diseño.
 - No cerrar en este capítulo selecciones técnicas abiertas (`A-004`) sin el análisis de enfoques que las respalde.
+
+---
+
+# CAPÍTULO 3 — PROPUESTA DEL PROYECTO
+
+> Base: plantilla oficial (capítulo 3) y clase del 09/10/2026. El orden interno difiere entre ambas fuentes y debe confirmarse con el docente.
+
+## 1. Propuesta
+
+- **Propósito:** describir la solución propuesta con base en el marco teórico y demostrar el cumplimiento de los objetivos específicos 1 y 2.
+- **Contenido:** esquema general, diseños, circuitos, diagramas, ecuaciones y etapas del desarrollo.
+- **Evidencia:** resultados de los objetivos 1 y 2; fundamentos del capítulo 2.
+- **Conexión:** cada elemento remite a un objetivo específico.
+- **Profundidad:** alta.
+
+## 2. Índice tentativo
+
+- **Propósito:** definir la estructura del documento final de Taller de Grado II.
+- **Contenido:** capítulos de introducción, marco teórico, marco práctico, marco analítico y marco conclusivo; entre cuatro y ocho capítulos y no más de cuatro niveles por capítulo.
+- **Profundidad:** baja.
+
+## 3. Análisis económico
+
+- **Propósito:** cuantificar el costo de desarrollar el proyecto.
+- **Contenido:** tabla desglosada en moneda local con materiales, licencias oficiales de software, pasajes y alimentación durante la recolección de datos.
+- **Evidencia:** precios y cotizaciones verificables.
+- **Conexión:** distinto del análisis de costo de fabricación respecto del retorno de la inversión (`D-012`, `A-006`).
+- **Profundidad:** media.
+
+## 4. Cronograma de actividades
+
+- **Propósito:** planificar y dar seguimiento al desarrollo.
+- **Contenido:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para 6 a 8 meses y holgura para contratiempos.
+- **Conexión:** las actividades responden a los objetivos específicos.
+- **Profundidad:** media.
