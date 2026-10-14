@@ -70,15 +70,18 @@
 
 ## Marco teórico y estado del arte
 
-- **Marco teórico:** incluir solo la teoría, fórmulas, metodologías y conceptos que se aplicarán en el proyecto; toda técnica o ecuación usada en el marco práctico debe tener su teoría respaldada. No incluir conceptos básicos de ciencias exactas. Referenciar cada afirmación.
-- **Gravimetría (indicación directa al proyecto):** incluir la teoría de medición gravimétrica y de sensores de peso o celdas de carga.
-- **Estado del arte:** cubrir los últimos 5 a 10 años; mínimo 30 referencias, de las cuales al menos 10 son trabajos académicos (artículos indexados o tesis revisadas por pares); redactar en estilo narrativo continuo citando a los autores; explorar productos comerciales; identificar el aporte o factor diferencial del proyecto; subdividir por áreas de conocimiento cuando no exista un antecedente idéntico.
-- **Enfoques:** estudiar ventajas, desventajas y factores de interés de los trabajos académicos y comerciales, y justificar técnicamente qué enfoques se adoptan y cuáles se descartan.
+- **Marco teórico:** incluir solo la teoría, fórmulas, metodologías y conceptos que se aplicarán en el proyecto; toda técnica, ecuación o metodología usada en el marco práctico debe tener su teoría respaldada. No incluir conceptos básicos de ciencias exactas. Referenciar cada afirmación con libros del área o documentos académicos consolidados.
+- **Extensión:** mínimo 20 páginas para el marco teórico (clase del 09/10/2026; el fragmento de la transcripción es imperfecto).
+- **Gravimetría (indicación directa al proyecto):** incluir el principio de medición por peso, la teoría de medición gravimétrica y los sensores de peso o celdas de carga.
+- **Áreas (indicación directa al proyecto):** subdividir el estado del arte en las áreas de mecánica (tolvas, distribuidores) y control gravimétrico.
+- **Estado del arte:** cubrir los últimos 5 a 10 años; se admiten fuentes más antiguas si esa línea tecnológica no ha cambiado. Mínimo 30 referencias, de las cuales al menos 10 son trabajos académicos validados por pares: tesis de licenciatura, maestría o doctorado, proyectos de grado, trabajos dirigidos, artículos de congreso y de revistas indexadas. Se rechazan sitios no validados (Wikipedia, Rincón del Vago). Patentes y fichas de fabricantes no se mencionaron. Redactar en estilo narrativo continuo citando a los autores; identificar el aporte o factor diferencial del proyecto; subdividir por áreas de conocimiento cuando no exista un antecedente idéntico.
+- **Mercado:** describir de forma narrativa las máquinas de distintos proveedores que caracterizan la oferta, sin enumerar todas sus características. Precios e importación se trataron en la parte económica, no en el capítulo 2.
+- **Enfoques:** no son descripciones planas; estudiar ventajas, desventajas y factores de interés de los trabajos académicos y comerciales, y justificar técnicamente qué enfoques se adoptan y cuáles se descartan. Pueden agruparse por área técnica (por ejemplo, lo obtenido del área de control de los artículos revisados).
 
 ## Perfil completo, tutor y evaluación
 
 - **Objetivos 1 y 2 (indicación directa al proyecto):** el perfil debe demostrar el cumplimiento de los dos primeros objetivos específicos; no basta con uno.
-- **Propuesta (capítulo 3):** diseños, circuitos, diagramas y etapas que demuestren de forma explícita el cumplimiento de los objetivos 1 y 2.
+- **Propuesta (capítulo 3):** diseños, circuitos, diagramas y etapas que demuestren de forma explícita el cumplimiento de los objetivos 1 y 2 (con la numeración vigente, objetivos 1 a 3; `D-014`).
 - **Análisis económico del perfil:** costo total para desarrollar el proyecto, en moneda local y desglosado en tablas; incluir pasajes, alimentación durante la recolección de datos, licencias oficiales de software y materiales.
 - **Cronograma:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para un horizonte de 6 a 8 meses; sirve de seguimiento para estudiante, tutor y docente.
 - **Documento final (Taller de Grado II):** capítulos de introducción, marco teórico, marco práctico, marco analítico y marco conclusivo. El marco analítico (pruebas reales, gráficas de respuesta y análisis de resultados) representa cerca de la mitad del valor del trabajo. Conclusiones vinculadas a los objetivos; trabajos futuros derivados de los límites; artículo en formato IEEE.

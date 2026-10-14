@@ -1,6 +1,6 @@
 # STATUS
 
-**Última actualización:** 2026-10-10
+**Última actualización:** 2026-10-14
 
 ## Estado actual
 
@@ -16,6 +16,8 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## Completado
 
+- Estructura del capítulo 2 adoptada a partir de la plantilla, la clase del 09/10/2026 y las referencias estructurales (`THESIS_STRUCTURE.md`); el perfil desarrolla los objetivos 1 a 3 (`D-014`) (14/10/2026).
+- Guía de trabajo con NotebookLM y búsqueda por sección en `research/notes/guia_capitulo2_notebooklm.md` (14/10/2026).
 - Referencias estructurales actualizadas con el capítulo 2 de los tres proyectos; capítulo 1 de la referencia 03 rehecho con la tesis correcta (08/10/2026).
 - `THESIS_STRUCTURE.md` ampliado con la estructura del capítulo 2 (08/10/2026) y con los criterios de la clase del 09/10/2026 y el capítulo 3 (10/10/2026).
 - `PROFESSOR_NOTES.md` actualizado con los criterios de la clase del 09/10/2026.
@@ -30,18 +32,17 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## En curso
 
-- **INV — Estado del arte:** plan de búsqueda definido (fuentes académicas, patentes, mercado y herramientas de IA). Pendiente crear la matriz `research/notes/estado_del_arte_matriz.md` e iniciar la primera ronda académica.
+- **INV — Estado del arte:** búsqueda por sección y análisis en NotebookLM según `research/notes/guia_capitulo2_notebooklm.md`. Primera parte: 2.2 Dosificadoras de ingredientes y mercado. Pendiente el análisis de la clase completa del 09/10/2026.
 
 ## Próximos pasos
 
 1. **INV — Investigación:** reunir al menos 30 referencias de los últimos 5 a 10 años (mínimo 10 académicas) y productos comerciales con ficha técnica y precio; registrar para cada una principio, mecanismo, rango, exactitud, control, precio y limitación frente a San Miguel; identificar el aporte diferencial del proyecto; sustentar el criterio de `bajo costo`.
-2. **INV — Enfoques:** clasificar los antecedentes, comparar ventajas y desventajas en una tabla y justificar qué enfoques se adoptan o descartan, sin cerrar `A-004` antes del análisis.
-3. **02A — Marco teórico:** redactar solo la teoría que se usará: gravimetría y celdas de carga (indicación directa del docente), metrología y tolerancias, propiedades de los insumos, tolvas y alimentadores, modelamiento dinámico y control, evaluación experimental. Sin ciencias básicas.
-4. **01B — Objetivos y alcance:** resolver cuáles son los «objetivos 1 y 2» que el perfil debe demostrar. Tras dividir el primer objetivo, el segundo es el estudio de tolerancias y el diseño mecánico y de medición pasó a ser el tercero.
-5. **GEN — Capítulo 3:** propuesta que demuestre los objetivos 1 y 2, índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses. `cronograma.tex` está vacío y desactivado en `main.tex`.
-6. **GEN — Tutor:** elegir tutor con maestría o doctorado que apoye el diseño mecánico y formalizar la designación; `main.tex` conserva el marcador «(Nombre), Ing.».
-7. **FIG — Diagramas y tablas:** numerar y describir las ecuaciones de proyección de `marcoref.tex` (hoy sin número ni lista de variables); corregir el tamaño de fuente y añadir la leyenda de columnas de la tabla de tiempos del Apéndice B; cambiar «Alcance: harina» en `proceso_general_pan.tex`.
-8. **GEN — Presentación:** actualizar `perfil.tex` con objetivos, límites y alcances vigentes.
+2. **INV — Enfoques:** redactar 2.2 a 2.5 (dosificadoras de ingredientes; áreas mecánica, de medición gravimétrica y de control) con ventajas, desventajas y qué se adopta o descarta, sin cerrar `A-004` antes del análisis.
+3. **02A — Fundamentos (2.6):** metodología de diseño (si se aplica), insumos y tolerancias, metrología y normativa de pesaje, medición gravimétrica y celdas de carga, almacenamiento y alimentación, modelamiento dinámico y control (breve). Sin ciencias básicas ni evaluación experimental.
+4. **GEN — Capítulo 3:** propuesta que demuestre los objetivos 1 a 3 (`D-014`), índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses. `cronograma.tex` está vacío y desactivado en `main.tex`.
+5. **GEN — Tutor:** elegir tutor con maestría o doctorado que apoye el diseño mecánico y formalizar la designación; `main.tex` conserva el marcador «(Nombre), Ing.».
+6. **FIG — Diagramas y tablas:** numerar y describir las ecuaciones de proyección de `marcoref.tex` (hoy sin número ni lista de variables); corregir el tamaño de fuente y añadir la leyenda de columnas de la tabla de tiempos del Apéndice B; cambiar «Alcance: harina» en `proceso_general_pan.tex`.
+7. **GEN — Presentación:** actualizar `perfil.tex` con objetivos, límites y alcances vigentes.
 
 ## Bloqueos / pendientes de validación
 
@@ -50,7 +51,10 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 - Confirmar el número de la norma de ecuaciones (transcrita como «ISO 80004»; la plantilla indica ISO 80000-4).
 - Confirmar el orden del capítulo 3: la clase indicó propuesta → índice tentativo → análisis económico → cronograma; la plantilla indica índice tentativo → análisis económico → cronograma.
 - Aclarar el alcance del análisis económico: el del perfil es el costo de desarrollar el proyecto; el acta pide costo de fabricación respecto del retorno de la inversión (`D-012`, `A-006`).
-- Confirmar si el estilo narrativo del estado del arte admite una figura y una ficha por antecedente.
+- Confirmar si se aceptan patentes y fichas de fabricantes como referencias (la clase no las mencionó).
+- Confirmar dónde va la tabla de precios para «bajo costo»: capítulo 2 o parte económica (la clase ubicó precios e importación en la parte económica).
+- Confirmar si 2.6.6 (modelamiento y control) entra en el perfil, dado que el objetivo 4 corresponde a Taller de Grado II.
+- Confirmar que la evaluación experimental (objetivo 6, `D-008`) se mantiene para Taller de Grado II (`D-014`).
 - Confirmar si Zotero es aceptable como gestor de referencias (se mencionaron Mendeley y EndNote).
 - Los precios comerciales de `marcoref.tex` están en USD; evaluar su equivalente en moneda local.
 
@@ -78,3 +82,4 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 - `context/THESIS_STRUCTURE.md`
 - `context/PROFESSOR_NOTES.md`
 - `research/notes/antecedentes_tecnologicos_dosificacion.md`
+- `research/notes/guia_capitulo2_notebooklm.md`

@@ -134,6 +134,15 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 **Motivo:** Declaración del estudiante del 2026-10-05 sobre los insumos utilizados en San Miguel; cantidades medidas reportadas en `research/notes/insumos_secos_recetas.md`.  
 **Impacto:** Las cantidades por preparación son mediciones reportadas por el estudiante, con trazabilidad pendiente (fecha, instrumento, procedimiento y repeticiones). La levadura utilizada es fresca; su dosificación desde tolva y el nivel de demostración permanecen abiertos (`A-005`).
 
+---
+
+### D-014 — Alcance del perfil (Taller de Grado I)
+
+**Estado:** Confirmada  
+**Decisión:** El perfil desarrolla los objetivos específicos 1 a 3: requerimientos, tolerancias y diseño de los subsistemas mecánico y de medición gravimétrica. La evaluación experimental no se desarrolla en el perfil.  
+**Motivo:** Declaración del estudiante del 2026-10-14. Es coherente con la división del primer objetivo específico: la indicación docente de demostrar «los objetivos 1 y 2» abarca los objetivos 1 a 3 de la numeración vigente.  
+**Impacto:** El capítulo 3 demuestra los objetivos 1 a 3 y el capítulo 2 prioriza sus fundamentos. No modifica `D-008`: falta confirmar que la evaluación experimental (objetivo 6) se mantiene para Taller de Grado II.
+
 
 ## Decisiones abiertas
 

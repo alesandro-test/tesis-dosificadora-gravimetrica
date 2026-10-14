@@ -153,89 +153,99 @@
 
 # CAPÍTULO 2 — MARCO TEÓRICO
 
-> Base: `docs/template/Template - Perfil de Proyecto- Final.md` (capítulo 2 e índice tentativo) y el capítulo 2 de `research/referencias_estructurales/`. La plantilla prevalece sobre las referencias.
+> Base: `docs/template/Template - Perfil de Proyecto- Final.md` (capítulo 2 e índice tentativo), clase del 09/10/2026 (transcripciones TG1_09-10 y TG1_09-10_2) y capítulo 2 de `research/referencias_estructurales/`. La plantilla prevalece sobre las referencias.
+> Estructura adoptada por el estudiante el 14/10/2026. Criterios docentes en `PROFESSOR_NOTES.md`.
 
 ## Requisitos de la plantilla
 
-- **Estado del arte:** perspectiva académica **y** de mercado; al menos dos enfoques; al menos **30 referencias**, de las cuales al menos **10** son trabajos académicos con revisión por pares; productos de distintos proveedores representativos de la oferta.
+- **Estado del arte:** perspectiva académica **y** de mercado; al menos dos enfoques, numerados como secciones (2.2, 2.3…) con subtítulos; al menos **30 referencias**, de las cuales al menos **10** son trabajos académicos con revisión por pares; productos de distintos proveedores representativos de la oferta.
 - **Enfoques:** no describir trabajos de forma plana; identificar ventajas, desventajas y factores de interés, y argumentar qué enfoques resultan adecuados y cuáles se descartan.
-- **Fundamentos teóricos:** principios necesarios para desarrollar la solución, presentados de forma resumida y sustancial; extensión mínima de **20 páginas**; documentos fundamentales del área.
+- **Fundamentos teóricos:** principios necesarios para desarrollar la solución, presentados de forma resumida y sustancial; documentos fundamentales del área.
+- **Extensión:** mínimo **20 páginas** (la plantilla lo ubica en fundamentos; en la clase del 09/10/2026 se expresó para el marco teórico).
 - **Conclusión del capítulo:** prevista en el índice tentativo.
 - **Formato:** figuras y tablas numeradas por capítulo (Figura 2.1, Tabla 2.1); leyenda de figura de hasta 15 palabras; «Adaptado de» cuando se modifique o traduzca una fuente; ecuaciones centradas, numeradas (2.1) y con variables según ISO 80000; citas ISO 690.
 
-## Criterios del docente (clase del 09/10/2026)
+## Alcance en el perfil
 
-- **Estado del arte:** últimos 5 a 10 años; redacción narrativa continua citando a los autores; identificar el aporte o factor diferencial del proyecto; subdividir por áreas de conocimiento cuando no exista un antecedente idéntico.
-- **Marco teórico:** solo lo que se aplicará; cada técnica o ecuación del marco práctico debe tener su teoría aquí; sin conceptos básicos de ciencias exactas.
-- **Indicación directa:** incluir medición gravimétrica y sensores de peso o celdas de carga.
-- **Ajuste al patrón por antecedente:** integrar cada antecedente en la narración; la figura y la ficha por antecedente quedan supeditadas a confirmación docente.
-- Las fuentes anteriores a 10 años (`hopkins2006loss`, `jcgm2012vim`, `cauvain2015technology`) se usan como fundamentos, no como estado del arte.
+El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos priorizan esos objetivos; 2.6.6 sustenta el objetivo 4 (Taller de Grado II) y se mantiene breve. La evaluación experimental no forma parte del capítulo.
 
-## 1. Estado del arte (introducción)
-
-- **Propósito:** explicar cómo se organiza la revisión y qué se busca en ella.
-- **Contenido:** párrafo introductorio con alcance de la revisión, criterios de búsqueda y organización por enfoques.
-- **Evidencia:** no requiere.
-- **Conexión:** presentar los enfoques.
-- **Profundidad:** baja.
-
-## 2. Enfoques
-
-- **Propósito:** comparar soluciones existentes de dosificación y derivar de ellas criterios de diseño.
-- **Contenido:** al menos dos enfoques en subsecciones numeradas. Organización candidata, pendiente de validar con la literatura:
-  - por principio de dosificación (volumétrica; gravimétrica por ganancia de peso o por lotes; gravimétrica por pérdida de peso);
-  - por mecanismo de alimentación (tornillo, vibratorio, compuerta u otros que aparezcan en la revisión).
-
-  En cada enfoque, reunir trabajos académicos (antecedentes de panificación ya verificados: `farihin2021premix`, `humaira2024optimalisasi`, `rumapea2026flour`) y productos de mercado (`UnidadDosificadoraGravimetrica`, `MaquinaLlenadoPolvo` y otros proveedores).
-- **Patrón por antecedente:** figura → descripción de componentes → dato técnico (capacidad, rango, exactitud, precio) → limitación frente a San Miguel → criterio de diseño.
-- **Evidencia:** artículos revisados por pares, patentes, fichas técnicas de fabricantes y precios verificables.
-- **Recursos:** tabla comparativa de enfoques (prestaciones, ventajas, desventajas, costo) que permita descartar alternativas.
-- **Conexión:** cerrar con los enfoques que se conservan y los motivos de descarte.
-- **Profundidad:** alta.
-
-## 3. Fundamentos teóricos
-
-- **Propósito:** explicar los principios que se usarán en el diseño, el modelamiento y la evaluación.
-- **Contenido:** ordenar por subsistema y avanzar de lo general a lo específico:
-  1. **Insumos a dosificar:** propiedades de flujo y densidad aparente de harina, azúcar, sal y levadura (`siliveru2017significance`; levadura fresca como pasta, `A-005`).
-  2. **Dosificación gravimétrica y metrología:** instrumentos automáticos de llenado gravimétrico (`oiml2017r61`), alimentación gravimétrica (`hopkins2006loss`) y conceptos de exactitud, repetibilidad y resolución (`jcgm2012vim`); base para el estudio de tolerancias.
-  3. **Subsistema mecánico:** almacenamiento y descarga del insumo y mecanismos de alimentación, limitado a lo que se calculará.
-  4. **Subsistema de medición:** celdas de carga y acondicionamiento de señal.
-  5. **Modelamiento dinámico y control:** de las leyes físicas al modelo del sistema de alimentación y pesaje (`D-011`) y estrategias de control candidatas.
-  6. **Evaluación experimental:** criterios estadísticos para comparar el prototipo con el procedimiento manual (`D-008`).
-- **Patrón por concepto:** definición con cita → figura explicativa → ecuación numerada → variables con unidades → uso en el diseño.
-- **Evidencia:** libros de referencia, normas y artículos fundamentales.
-- **Conexión:** cada fundamento debe corresponder a un cálculo, decisión o prueba del marco práctico.
-- **Profundidad:** alta.
-
-## 4. Conclusión del capítulo
-
-- **Propósito:** sintetizar qué enfoques se conservan y qué principios sustentan el diseño.
-- **Contenido:** enfoques seleccionados o en evaluación, criterios de diseño derivados y fundamentos que se aplicarán.
-- **Evidencia:** solo lo presentado en el capítulo.
-- **Conexión:** introducir el marco práctico.
-- **Profundidad:** baja.
-
----
-
-## Orden recomendado del capítulo
+## Orden del capítulo
 
 ```text
-2.1 Estado del Arte
-2.2 Enfoque 1
-2.3 Enfoque 2
-2.N Enfoque N
-2.N+1 Fundamentos Teóricos
-2.N+2 Conclusión del capítulo
+2.1 Estado del arte
+2.2 Dosificadoras de ingredientes
+2.3 Área mecánica: almacenamiento y alimentación
+2.4 Área de medición gravimétrica
+2.5 Área de control
+2.6 Fundamentos teóricos
+    2.6.1 Metodología de diseño
+    2.6.2 Insumos y tolerancias de dosificación
+    2.6.3 Metrología y normativa de pesaje
+    2.6.4 Medición gravimétrica y celdas de carga
+    2.6.5 Almacenamiento y alimentación de sólidos
+    2.6.6 Modelamiento dinámico y control
+2.7 Conclusión del capítulo
 ```
 
-La plantilla presenta en el texto la secuencia «2.1 Estado del Arte → 2.2 Enfoques → 2.3 Fundamentos Teóricos» y en el índice tentativo enumera cada enfoque como sección propia. Confirmar con el docente cuál numeración aplicar.
+## 2.1 Estado del arte (introducción)
+
+- **Propósito:** explicar cómo se organiza la revisión.
+- **Contenido:** párrafo con bases consultadas, cadenas, periodo (2016–2026; fuentes anteriores solo si la línea tecnológica no cambió) y organización por enfoques.
+- **Evidencia:** registro de búsquedas.
+- **Profundidad:** baja.
+
+## 2.2 Dosificadoras de ingredientes
+
+- **Propósito:** revisar las soluciones integrales más cercanas al caso, académicas y de mercado, e identificar el aporte diferencial.
+- **Contenido:** narración de lo general a lo más cercano a San Miguel. Cada antecedente: qué construyó → dato técnico (escala, exactitud, costo) → limitación frente a San Miguel → criterio de diseño. Productos de mercado de distintos proveedores, descritos de forma narrativa.
+- **Cierre:** arquitecturas que se adoptan o descartan, con su argumento.
+- **Evidencia:** artículos, tesis, patentes y productos comerciales.
+- **Profundidad:** alta.
+
+## 2.3 Área mecánica: almacenamiento y alimentación
+
+- **Contenido:** 2.3.1 almacenamiento (tolvas); 2.3.2 mecanismos de alimentación (tornillo, vibratorio, compuerta, válvula rotativa u otros que aparezcan). Ventajas y desventajas según insumo, escala y limpieza.
+- **Cierre:** mecanismos adoptados o descartados para el objetivo 3. `A-004` se cierra solo con ese análisis.
+
+## 2.4 Área de medición gravimétrica
+
+- **Contenido:** 2.4.1 principio de medición (volumétrico como contraste; gravimétrico por lotes; pérdida de peso), que sustenta `D-005`; 2.4.2 sensores de peso empleados en dosificadoras.
+- **Cierre:** principio y tipo de sensor adoptados para el objetivo 3.
+
+## 2.5 Área de control
+
+- **Contenido:** 2.5.1 estrategias de corte (una etapa, dos etapas, compensación del material en caída); 2.5.2 control realimentado (PID, aprendizaje iterativo u otros).
+- **Cierre:** estrategias candidatas para el modelamiento del objetivo 4, sin cerrar `A-004`.
+
+**Regla común de 2.2 a 2.5:** un antecedente se describe completo una sola vez (2.2); en cada área se toma solo lo que aporta a ella.
+
+## 2.6 Fundamentos teóricos
+
+| Subsección | Objetivo | Contenido |
+|---|---|---|
+| 2.6.1 Metodología de diseño | 1 | Lista de requerimientos y selección de alternativas; solo si se aplica |
+| 2.6.2 Insumos y tolerancias de dosificación | 2 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente; levadura fresca (`A-005`) |
+| 2.6.3 Metrología y normativa de pesaje | 2 y 3 | VIM; OIML R 61, R 76 y R 60, ordenadas por jerarquía |
+| 2.6.4 Medición gravimétrica y celdas de carga | 3 | Principio, errores, montaje, acondicionamiento de señal (indicación directa del docente) |
+| 2.6.5 Almacenamiento y alimentación de sólidos | 3 | Solo lo que se calculará: tolva, caudal, torque y potencia del alimentador |
+| 2.6.6 Modelamiento dinámico y control | 4 | Modelo del sistema de alimentación y pesaje (`D-011`) y estrategias candidatas; breve |
+
+- **Patrón por concepto:** definición con cita → figura explicativa → ecuación numerada → variables con unidades → uso en el diseño.
+- **Conexión:** cada fundamento corresponde a un cálculo, requisito o decisión del capítulo 3 o del marco práctico.
+- **Evidencia:** libros de referencia, normas y artículos fundamentales; sin límite de año.
+
+## 2.7 Conclusión del capítulo
+
+- **Contenido:** enfoques adoptados y descartados, aporte diferencial y fundamentos que se aplicarán.
+- **Evidencia:** solo lo presentado en el capítulo.
+- **Conexión:** introducir la propuesta del capítulo 3.
 
 ## Patrones tomados de las referencias
 
-- **03 Máquina de panales:** estado del arte con perspectiva académica y de mercado; cada antecedente termina en una limitación que se convierte en criterio; precios con costo de importación; fundamentos ordenados por subsistema.
-- **01 Órtesis:** progresión de leyes físicas a modelo dinámico del componente.
-- **02 SySO:** normativa jerarquizada y criterios de evaluación incluidos en el marco teórico.
+- **01 Órtesis:** estado del arte por proximidad creciente a la solución; primero el sistema que recibe la acción (insumos) y después la tecnología; cierre con el modelo dinámico.
+- **02 SySO:** normativa jerarquizada; método de desarrollo dentro del marco teórico.
+- **03 Máquina de panales:** dos perspectivas; cada antecedente termina en una limitación que se convierte en criterio; fundamentos por subsistema.
+- **No se toma:** el contexto del sector como sección del capítulo 2 (ref. 03, «Apicultura en Bolivia»), porque ya está en la Introducción.
 
 ## Errores de las referencias que conviene evitar
 
@@ -244,7 +254,7 @@ La plantilla presenta en el texto la secuencia «2.1 Estado del Arte → 2.2 Enf
 - Describir antecedentes sin ventajas, desventajas ni criterio de descarte.
 - Apoyar la perspectiva de mercado solo en videos o foros cuando existan fichas técnicas.
 - Incluir fundamentos que no se usarán en el diseño.
-- No cerrar en este capítulo selecciones técnicas abiertas (`A-004`) sin el análisis de enfoques que las respalde.
+- Cerrar selecciones técnicas abiertas (`A-004`) sin el análisis de enfoques que las respalde.
 
 ---
 
@@ -254,9 +264,9 @@ La plantilla presenta en el texto la secuencia «2.1 Estado del Arte → 2.2 Enf
 
 ## 1. Propuesta
 
-- **Propósito:** describir la solución propuesta con base en el marco teórico y demostrar el cumplimiento de los objetivos específicos 1 y 2.
+- **Propósito:** describir la solución propuesta con base en el marco teórico y demostrar el cumplimiento de los objetivos específicos 1 a 3 (`D-014`).
 - **Contenido:** esquema general, diseños, circuitos, diagramas, ecuaciones y etapas del desarrollo.
-- **Evidencia:** resultados de los objetivos 1 y 2; fundamentos del capítulo 2.
+- **Evidencia:** resultados de los objetivos 1 a 3; fundamentos del capítulo 2.
 - **Conexión:** cada elemento remite a un objetivo específico.
 - **Profundidad:** alta.
 
