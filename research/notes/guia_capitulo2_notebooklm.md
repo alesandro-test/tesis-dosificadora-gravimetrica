@@ -1,0 +1,402 @@
+# Guía de trabajo del capítulo 2 con NotebookLM
+
+**Fecha:** 2026-10-14
+**Estado:** plan vigente, ajustado a la estructura adoptada el 14/10/2026 (`context/THESIS_STRUCTURE.md`). El perfil desarrolla los objetivos 1 a 3 (`D-014`).
+
+Método: el capítulo se redacta por secciones. NotebookLM analiza los PDF, el estudiante pega la salida en Claude y Claude redacta en `docs/thesis/chapters/marcoteorico.tex`.
+
+---
+
+## 1. Estructura del capítulo
+
+| Sección | Contenido | Cierre |
+|---|---|---|
+| 2.1 Estado del arte | Bases, cadenas, periodo y organización | — |
+| 2.2 Dosificadoras de ingredientes | Soluciones integrales académicas y de mercado, de lo general a lo más cercano a San Miguel | Arquitecturas adoptadas o descartadas; aporte diferencial |
+| 2.3 Área mecánica | 2.3.1 almacenamiento (tolvas); 2.3.2 mecanismos de alimentación | Mecanismos adoptados o descartados (objetivo 3) |
+| 2.4 Área de medición gravimétrica | 2.4.1 principio de medición (volumétrico como contraste, por lotes, pérdida de peso); 2.4.2 sensores de peso | Principio y sensor adoptados (objetivo 3) |
+| 2.5 Área de control | 2.5.1 estrategias de corte; 2.5.2 control realimentado | Estrategias candidatas para el objetivo 4 |
+| 2.6 Fundamentos teóricos | 2.6.1 a 2.6.6 (sección 4) | — |
+| 2.7 Conclusión | Enfoques adoptados y descartados, aporte diferencial | — |
+
+Un antecedente se describe completo una sola vez (2.2); en 2.3 a 2.5 se toma solo lo que aporta a cada área.
+
+---
+
+## 2. Paso a paso
+
+### Paso 0. Preparación (una sola vez)
+
+1. Crear dos cuadernos en NotebookLM: `Cap2-EstadoDelArte` (2.2 a 2.5) y `Cap2-Fundamentos` (2.6). El plan gratuito admite unas 50 fuentes por cuaderno.
+2. En cada cuaderno, abrir «Configurar chat», elegir personalizado y pegar las **Instrucciones fijas** (sección 3.1). Si ya estaban las anteriores, reemplazarlas.
+3. Subir a ambos cuadernos el texto de la sección 3.2 con el nombre `00_Contexto_San_Miguel`.
+4. Abrir una hoja «Registro de búsquedas» con columnas: fecha, herramienta, cadena, resultados, guardados. Con ella se redacta 2.1.
+
+### Paso 1. Buscar y descargar (se repite en cada sección)
+
+1. Elegir la sección según el orden de la sección 5.
+2. Buscar con las cadenas de la sección 7 y anotar cada búsqueda en el registro.
+3. Filtro rápido con título y resumen. Descargar si cumple las tres condiciones:
+   - es de 2016 a 2026, o es anterior pero esa línea tecnológica no cambió, o sirve como fundamento;
+   - dosifica sólidos secos (polvo o grano);
+   - reporta al menos un dato: exactitud, tiempo, rango o precio.
+4. Renombrar cada PDF con el prefijo de su sección principal y la clave BibTeX (apellido, año, primera palabra del título):
+   - `22_` dosificadoras de ingredientes (artículos, tesis, patentes); `22M_` productos de mercado;
+   - `23_` mecánica; `24_` medición; `25_` control;
+   - `261_` a `266_` fundamentos.
+   - Ejemplos: `22_rumapea2026flour.pdf`, `22M_zonesun2026fm710.pdf`, `264_oiml2021r60.pdf`.
+5. Páginas de fabricantes: imprimir a PDF con la fecha visible y archivar la URL en web.archive.org.
+6. Libros: subir solo los capítulos que se usarán.
+7. Sin PDF: probar Unpaywall o CORE, o pedirlo al autor por ResearchGate.
+
+### Paso 2. Analizar en NotebookLM
+
+1. Subir los PDF al cuaderno que corresponda.
+2. Marcar solo las fuentes nuevas y correr el **Prompt 1, Cribado**. Quitar las que salgan como «descartar».
+3. Marcar de 3 a 5 fuentes y correr el **Prompt 2, Fichas**. Repetir hasta cubrir la sección.
+4. Marcar las fuentes de la sección (más `00_Contexto_San_Miguel`) y correr el **Prompt 3, Síntesis**, con las preguntas de esa sección (sección 4).
+5. Revisar en el PDF toda cifra que provenga de una tabla o figura.
+
+### Paso 3. Pegar en Claude
+
+Pegar la síntesis y las fichas con esta primera línea:
+
+```text
+SECCIÓN: [2.x] | Fuentes marcadas: [lista de archivos] | Fecha: [dd/mm/aaaa]
+```
+
+### Paso 4. Redacción (Claude)
+
+Claude redacta la sección en `marcoteorico.tex`, agrega al `.bib` solo las fuentes con ficha y devuelve el texto plano con las claves entre corchetes.
+
+### Paso 5. Auditoría
+
+1. En NotebookLM, con las mismas fuentes marcadas, correr el **Prompt 4, Auditoría** con el texto plano.
+2. Pegar el resultado en Claude. Claude corrige y compila.
+
+### Paso 6. Siguiente sección
+
+Volver al paso 1. Al terminar 2.2 a 2.6 se redactan 2.1 y 2.7.
+
+---
+
+## 3. Textos para NotebookLM
+
+### 3.1 Instrucciones fijas (Configurar chat)
+
+```text
+Rol: asistente de extracción bibliográfica para el capítulo 2 (estado del arte y fundamentos) de una tesis de Ingeniería Mecatrónica: dosificadora gravimétrica de harina para una panadería pequeña. Otra persona redactará con tu salida; no redactes texto de tesis.
+
+Reglas permanentes:
+1. Responde en español y solo con lo que dicen las fuentes seleccionadas. «00_Contexto_San_Miguel» describe el caso; no es bibliografía y no se cita.
+2. Identifica cada fuente por su nombre de archivo exacto entre corchetes, por ejemplo [22_rumapea2026flour]. Escríbelo junto a cada dato: los marcadores numéricos de cita se pierden al copiar.
+3. Cada dato lleva: valor con sus unidades tal como aparece, cita textual corta en el idioma original (máximo 20 palabras) y ubicación (sección, tabla o figura). Si la fuente no está en español, añade la traducción de la cita.
+4. No des números de página salvo que estén impresos en el texto; en otro caso escribe «pág. por localizar».
+5. Si un dato no aparece, escribe «no reporta». No estimes, no promedies, no conviertas unidades y no completes con conocimiento general.
+6. Marca como INFERENCIA todo lo que no sea literal de la fuente.
+7. Clasifica cada fuente en estos ejes:
+   - Principio de medición: volumétrico (no mide masa) / gravimétrico por lotes (pesa lo que recibe el recipiente hasta la consigna) / pérdida de peso (pesa la tolva que se vacía y regula un caudal) / mixto / no aplica.
+   - Mecanismo de alimentación y almacenamiento: tornillo / vibratorio / compuerta / válvula rotativa / banda / otro; tipo de tolva.
+   - Estrategia de corte o control: una etapa / dos etapas (grueso y fino) / compensación del material en caída / PID / otra / no reporta.
+   - Sección a la que aporta: 2.2 dosificadoras de ingredientes / 2.3 mecánica / 2.4 medición / 2.5 control / 2.6 fundamentos.
+8. Tipo de evidencia: ensayo experimental / simulación / diseño sin ensayo / revisión / norma o libro / afirmación comercial del fabricante.
+9. Vigencia: estado del arte = 2016 a 2026. Una fuente anterior se marca «anterior» y solo se usa si esa línea tecnológica no cambió o como fundamento.
+10. Si dos fuentes se contradicen, muestra ambas; no elijas.
+11. Formato: tablas y listas en Markdown, sin introducción ni cierre. Termina siempre con la lista «VACÍOS»: lo que se preguntó y ninguna fuente responde.
+```
+
+### 3.2 Fuente `00_Contexto_San_Miguel`
+
+```text
+CASO (no es bibliografía): Panadería San Miguel, Santa Cruz de la Sierra, Bolivia. Panadería pequeña con mecanización parcial; la harina se dosifica a mano con balanza digital.
+Medición de campo (7 ciclos, 02/09/2026 y 05/09/2026): 5,000 a 8,000 kg de harina por ciclo; 53,2 a 66,6 s por ciclo; diferencia neta de +143 g sobre 48,000 kg de cantidad objetivo.
+Reportado por el estudiante (trazabilidad pendiente): azúcar de 150 a 600 g, sal de 100 a 150 g y levadura fresca prensada de 70 a 150 g por ciclo.
+Solución adoptada: prototipo de dosificación gravimétrica por consigna (almacenamiento, alimentación, pesaje, control, descarga).
+Sin decidir: mecanismo de alimentación, accionamiento, capacidad de tolva, rango, sensores, controlador, estrategia de control, tolerancias y tiempo objetivo. No propongas cerrarlos.
+Etapa actual: requerimientos, tolerancias por insumo y diseño de los subsistemas mecánico y de medición gravimétrica.
+```
+
+### 3.3 Prompt 1, Cribado
+
+```text
+CRIBADO. Para cada fuente seleccionada, una fila:
+| Archivo | Tipo (artículo / congreso / tesis / patente / norma o libro / ficha de fabricante / web) | Año | Principio de medición | Mecanismo y tolva | Estrategia de corte o control | Sección a la que aporta | Insumo dosificado | Escala (g o kg por lote, o kg/h) | Tipo de evidencia | Datos numéricos que reporta (exactitud, tiempo, costo) | Uso (estado del arte / solo fundamento / descartar) | Motivo en una línea |
+Después lista: a) fuentes que no pudiste leer completas, escaneadas o con tablas ilegibles; b) fuentes que parecen duplicadas.
+```
+
+### 3.4 Prompt 2, Fichas (3 a 5 fuentes marcadas)
+
+```text
+FICHAS. Elabora una ficha por cada fuente seleccionada, separadas por una línea «=== [archivo] ===». Aplica las reglas permanentes en cada campo.
+1. Referencia: autores, año, título, revista o institución, volumen, páginas, DOI o número de patente.
+2. Objetivo y tipo de evidencia.
+3. Principio de medición, mecanismo de alimentación y estrategia de corte o control, y cómo se aplican.
+4. Componentes: almacenamiento (tolva), alimentador, accionamiento, sensor de peso (tipo y capacidad), acondicionamiento de señal, controlador, descarga.
+5. Insumos ensayados y propiedades reportadas (densidad aparente, fluidez, humedad, cohesión, tamaño de partícula).
+6. Rango o capacidad: masa por lote o caudal.
+7. Exactitud, error, repetibilidad o desviación: valor, consigna a la que corresponde, número de ensayos y cómo se midió.
+8. Tiempo por lote o velocidad.
+9. Costo o precio, con moneda y fecha.
+10. Ecuaciones o modelos que presenta: qué calculan y con qué variables y unidades.
+11. Ventajas y limitaciones que declaran los autores.
+12. Aporte por área: qué ofrece a mecánica, a medición y a control.
+13. Figura o tabla más útil (número y título).
+14. INFERENCIA: diferencias de escala, insumo y condiciones frente a 00_Contexto_San_Miguel.
+```
+
+### 3.5 Prompt 3, Síntesis de la sección
+
+```text
+SÍNTESIS DE LA SECCIÓN: [NÚMERO Y NOMBRE].
+Usa solo las fuentes seleccionadas. Entrega, en este orden:
+A. Tabla, una fila por fuente: | Archivo | Qué hicieron | Insumo y escala | Resultado numérico principal | Ventaja declarada | Limitación declarada | INFERENCIA: limitación frente a San Miguel |
+B. Coincidencias: afirmaciones que respaldan dos o más fuentes, con los archivos entre corchetes.
+C. Contradicciones o resultados no comparables entre sí, y por qué (escala, insumo, método de medición).
+D. Respuestas a estas preguntas, cada una con archivo, cita textual y ubicación:
+[PREGUNTAS DE LA SECCIÓN]
+E. Alternativas que aparecen en las fuentes: para cada una, ventajas y desventajas declaradas, y si las fuentes permiten adoptarla o descartarla para el caso (INFERENCIA, con los archivos en que se apoya).
+F. VACÍOS: preguntas sin respuesta y qué tipo de fuente haría falta.
+```
+
+### 3.6 Prompt 4, Auditoría
+
+```text
+AUDITORÍA DE BORRADOR. Abajo va un borrador redactado a partir de tus extracciones. Para cada oración con una afirmación técnica o una cifra, una fila:
+| N.º | Afirmación | Archivo citado | Veredicto (respaldada / respaldada con matiz / no respaldada / la fuente dice otra cosa) | Cita textual que la sustenta o la contradice | Corrección propuesta |
+Revisa en especial: cifras y unidades, a qué consigna o condición corresponde cada exactitud, atribución al autor correcto y generalizaciones que la fuente limita a un insumo o una escala. No evalúes el estilo.
+BORRADOR:
+[PEGAR]
+```
+
+---
+
+## 4. Preguntas del Prompt 3 por sección
+
+| Sección | Fuentes a marcar | Preguntas |
+|---|---|---|
+| 2.2 Dosificadoras de ingredientes | `22_`, `22M_` | ¿Qué arquitectura usan (tolvas, insumos, alimentador, sensor, controlador)? ¿Qué escala, exactitud, tiempo por lote y costo reportan? ¿Qué limitaciones declaran? ¿Alguna dosifica harina entre 5 y 8 kg o insumos menores entre 70 y 600 g? Para productos: fabricante y país, modelo, principio, rango, exactitud declarada y en qué condición, capacidad de tolva, precio con moneda y fecha, y qué no declara. |
+| 2.3 Mecánica | `23_` y las `22_` con datos mecánicos | Tolvas: geometría, capacidad y fallas de flujo (puentes, adherencia, segregación). Alimentadores: con qué insumos se usó cada mecanismo, qué caudal y uniformidad dio, qué fallas presenta y cómo se limpia. |
+| 2.4 Medición gravimétrica | `24_` y las `22_` con datos de pesaje | ¿Qué error atribuyen a la variación de densidad aparente en la dosificación volumétrica? ¿Cuándo conviene el pesaje por lotes frente a la pérdida de peso? ¿Qué celda de carga usan (tipo, capacidad), cómo acondicionan la señal, qué resolución y qué fuentes de error (vibración, impacto, ruido) reportan? |
+| 2.5 Control | `25_` y las `22_` con datos de control | ¿Qué estrategia de corte usan, con qué parámetros y qué error final obtienen? ¿Cómo estiman el material en caída? ¿Qué controlador y algoritmo usan (PID, aprendizaje iterativo u otro) y con qué resultado? |
+| 2.6.1 Metodología de diseño | `261_` | Pasos del método, cómo se elabora la lista de requerimientos, cómo se generan alternativas (matriz morfológica) y cómo se ponderan y evalúan. |
+| 2.6.2 Insumos y tolerancias | `262_` | Porcentaje panadero y rangos típicos de sal, azúcar y levadura; efecto de su variación sobre la masa y el pan; propiedades de flujo y densidad aparente de harina, azúcar y sal; comportamiento de la levadura prensada. |
+| 2.6.3 Metrología y normativa | `263_` | Definiciones (exactitud, repetibilidad, resolución, error máximo permitido); clases de exactitud y errores máximos según OIML R 61 y R 76; clases de celdas según R 60; jerarquía y alcance de cada documento. |
+| 2.6.4 Celdas de carga | `264_` | Principio (galgas extensométricas, puente de Wheatstone), ecuación de salida, especificaciones (capacidad, sensibilidad, error combinado, fluencia), montaje, amplificación y conversión analógico-digital. |
+| 2.6.5 Almacenamiento y alimentación | `265_` | Ecuaciones de diseño de tolvas (flujo másico y de embudo, ángulo, abertura mínima); caudal del tornillo o del alimentador vibratorio; torque y potencia. |
+| 2.6.6 Modelamiento y control | `266_` | Modelo del caudal del alimentador; dinámica del pesaje; retardo y material en caída; estructura de dos etapas y PID. |
+| 2.7 Aporte diferencial | Todas las de 2.2 a 2.5 | ¿Qué combinación de escala (5 a 8 kg), harina, insumos menores (70 a 600 g) y costo no cubre ninguna fuente? |
+
+---
+
+## 5. Orden de las secciones
+
+1. **2.2 Dosificadoras de ingredientes y mercado** (Rumapea, Humaira, Farihin y Venkataramanan ya identificados).
+2. **2.6.2, 2.6.3 y 2.6.4** en paralelo: tolerancias (objetivo 2), metrología y celdas de carga (normas OIML y JCGM gratuitas; indicación directa del docente).
+3. **2.3 Mecánica y 2.6.5** (objetivo 3).
+4. **2.4 Medición gravimétrica** (después del curso de bibliotecas del 15/10/2026, por el acceso a Elsevier).
+5. **2.6.1 Metodología de diseño** (objetivo 1).
+6. **2.5 Control y 2.6.6** (objetivo 4, breve).
+7. **2.1 y 2.7**.
+
+---
+
+## 6. Candidatos ya identificados
+
+Metadatos (autor, año, revista, volumen) comprobados en Crossref el 13/10/2026. **El contenido no está leído**: lo confirman las fichas. Cada fuente figura en su sección principal.
+
+### 2.2 Dosificadoras de ingredientes
+
+| Referencia | DOI o dato |
+|---|---|
+| Rumapea et al. (2026) — en el `.bib` | 10.30656/intech.v12i1.12030 |
+| Humaira et al. (2024) — en el `.bib` | 10.33795/elkolind.v11i1.3298 |
+| Farihin et al. (2021) — en el `.bib` | 10.12962/j23373539.v10i2.68131 |
+| Venkataramanan et al. (2023), e-Prime 6 | 10.1016/j.prime.2023.100322 |
+| Muhammad et al. (2025), JAIEA 5(1) | 10.59934/jaiea.v5i1.1222 |
+| Mariam et al. (2024), JIKTIF 1(1) | 10.71466/jiktif.v1i1.25 |
+| Bulatov et al. (2021), Eng. Rural Development 20 | 10.22616/ERDev.2021.20.TF043 |
+| Challco Capajeiqui (2024), UMSA, dosificadora de pan molido | Verificada; confirmar la grafía en la portada |
+| Moya y Ortiz (2016), UTN, dosificador semiautomático por tornillo sin fin para harina Uchu Jacu (registro 7487, 04 MEC 105; artículo en FICA 1(1)) | Por abrir: confirmar si pesa y si 2016 entra en el periodo |
+| Orozco Villa (2024), UTN, dosificadora para arroz enfocada a microempresas (registro 15716, 04 MEC 539) | Por abrir: confirmar principio, alimentador y exactitud |
+| Tesis de ESPOL (2016), rediseño de una dosificadora de cereal de volumétrica a gravimétrica (D-CD88349) | Por abrir |
+| Klitschko (2023, Ucrania) | No encontrada; retirada |
+| ZONESUN ZS-FM710 y ZS-FM750F | Con precio |
+| Norma-SB, Agro-Simo-Mashbud | Sin precio publicado |
+| Trust-Long y RUICHUAN (Alibaba) — en el `.bib` | Con precio |
+| AZO, CEPI, Agriflex, Daxner, Zeppelin, Matcon | Industriales; pedir ficha y cotización |
+
+### 2.3 Mecánica
+
+| Referencia | DOI |
+|---|---|
+| Xu et al. (2021), tornillo de paso variable para harina de trigo | 10.35633/inmateh-64-42 |
+| Pezo et al. (2025), revisión de transportadores de tornillo | 10.1016/j.powtec.2025.121040 |
+| Shen et al. (2022), electricidad estática en alimentación por tornillo | 10.1111/jfpe.14150 |
+| Gitiaray et al. (2023), llenadora de tornillo (simulación con granos de pimienta) | 10.1080/02726351.2022.2029989 |
+| Fathollahi et al. (2024), diseño de tolva | 10.1007/s12247-024-09858-2 |
+| Hörmann-Kincses et al. (2022), alimentabilidad de polvos | 10.1016/j.ijpharm.2022.122364 |
+
+### 2.4 Medición gravimétrica
+
+| Referencia | DOI o número |
+|---|---|
+| Kruppa et al. (2023), densidad medida en línea en dosificación por tornillo | 10.1002/pts.2703 |
+| Rusin et al. (2022), alimentador volumétrico de alta precisión | 10.1134/S0021894422030178 |
+| Bostijn et al. (2019), comportamiento volumétrico y gravimétrico | 10.1016/j.ijpharm.2018.12.066 |
+| Blackshields y Crean (2018), revisión de alimentación continua | 10.1080/10837450.2017.1339197 |
+| Santamaría Alvarez et al. (2024), efecto de la recarga | 10.1016/j.powtec.2024.119501 |
+| Schneider et al. (2024), selección de configuración gravimétrica | 10.1016/j.ijpharm.2024.124903 |
+| Wang et al. (2017), desempeño según fluidez | 10.1016/j.powtec.2016.12.010 |
+| Yadav et al. (2019); Li et al. (2020); Bekaert et al. (2021); Shier et al. (2022) | 10.1016/j.powtec.2019.01.071; 10.1007/s12247-019-09394-4; 10.1016/j.ijpharm.2021.120603; 10.1016/j.ijpharm.2022.122071 |
+| Choi (2017), ruido de la celda de carga (pesadora de banda) | 10.1155/2017/1524782 |
+| WO 2017/174367 A1 (Robert Bosch), sensor de densidad en el tornillo | Patente |
+| US 10,473,513 B2 (Rockwool), pérdida de peso con tornillo | Patente |
+
+Pérdida de peso: usar 3 o 4 como contraste, no las once.
+
+### 2.5 Control
+
+| Referencia | DOI o número |
+|---|---|
+| Alsayad et al. (2017), alimentación en dos etapas | 10.1063/1.5009882 |
+| You y An (2018), aprendizaje iterativo en pesaje por lotes | 10.23919/ChiCC.2018.8483962 |
+| Hanson (2018), control de alimentadores por pérdida de peso | 10.1016/j.powtec.2018.03.027 |
+| EP 3 242 113 A1 (Tetra Laval, 2017), compensación del material en caída | Patente |
+| US 9,327,850 B2 (3P Innovation, 2016; prioridad 2010), llenado grueso y fino | Patente; fecha en el límite |
+
+### 2.6 Fundamentos
+
+| Subsección | Fuentes |
+|---|---|
+| 2.6.1 Metodología de diseño | Falta: VDI 2221, Pahl y Beitz |
+| 2.6.2 Insumos y tolerancias | Cauvain (2015) y Siliveru et al. (2017), en el `.bib`; Juliano y Barbosa-Cánovas (2010), 10.1146/annurev.food.102308.124155; Bian et al. (2015), 10.1016/j.jcs.2015.03.010; Teunou et al. (1999), 10.1016/S0260-8774(98)00140-X. Falta: efecto de la variación de sal, azúcar y levadura |
+| 2.6.3 Metrología y normativa | JCGM 200:2012 y OIML R 61-1:2017, en el `.bib`; OIML R 76-1:2006; OIML R 60:2021 |
+| 2.6.4 Celdas de carga | OIML R 60:2021; manuales de HBK, Mettler Toledo y Rice Lake; hoja de datos HX711 |
+| 2.6.5 Almacenamiento y alimentación | Schulze (2021), 10.1007/978-3-030-76720-4; Jenike (1964), Bulletin 123; Fitzpatrick et al. (2004), 10.1016/S0260-8774(03)00147-X; Roberts (1999), 10.1016/S0032-5910(99)00039-X; Yu y Arnold (1997), 10.1016/S0032-5910(97)03265-8 |
+| 2.6.6 Modelamiento y control | Hopkins (2006), en el `.bib`; Tahir et al. (2020), 10.1016/j.powtec.2019.09.071; Engisch y Muzzio (2012), 10.1016/j.powtec.2012.05.058; Johnson et al. (2022), 10.1016/j.ijpharm.2022.121776 |
+
+Lim y Antony (2019, en el `.bib`) servía para la evaluación experimental; queda sin uso en el perfil (`D-014`).
+
+---
+
+## 7. Búsqueda paso a paso por sección
+
+Se busca desde cero en cada sección, aunque ya existan candidatos en la sección 6; después se filtra.
+
+### 2.2 Dosificadoras de ingredientes — meta: 10 a 15 académicas y 8 o más fabricantes
+
+- **Qué:** máquinas completas que dosifican ingredientes por peso (panadería, alimentos, piensos y otras industrias); tesis regionales; patentes desde 2016; productos de mercado en tres niveles: industriales de panadería, dosificadoras o llenadoras semiautomáticas y oferta regional.
+- **Dónde:** Google Scholar; Garuda (indonesio); OpenAlex o Semantic Scholar («citado por» de Rumapea, Venkataramanan y Alsayad); LA Referencia, repositorios de la UMSA y la UTN, RENATI, BDTD y OATD; Google Patents, Espacenet y Lens.org; Google, DirectIndustry, sitios de fabricantes, Alibaba, Made-in-China y Mercado Libre. Scopus desde el 15/10.
+
+```text
+"batch weighing" OR "gain-in-weight" OR "weigh hopper" powder "load cell" accuracy
+"automatic dosing" OR "automatic weighing" flour OR bakery "load cell"
+"weighing system" (feed OR concrete OR plastics) batching accuracy "load cell"
+("micro ingredient" OR "minor ingredient") dosing bakery (salt OR sugar)
+penakar tepung otomatis "load cell"
+penakar bahan roti otomatis
+dosificadora automática harina "celda de carga"
+dosificadora harina celda de carga tesis
+dosadora gravimétrica farinha "célula de carga"
+flour dosing system bakery weighing hopper
+"auger filler" "weighing" powder price
+dosificadora de harina panadería
+Google Patents: flour dosing weighing hopper load cell (prioridad desde 2016-01-01)
+Espacenet: cpc=G01G13/24 and pd>=2016
+```
+
+### 2.3 Mecánica — meta: 2 o 3 por mecanismo y 3 o 4 sobre tolvas
+
+- **Qué:** tolvas para harina y polvos alimentarios (geometría, fallas de flujo); mecanismos de alimentación (tornillo, vibratorio, compuerta, válvula rotativa) con insumo, caudal, fallas y limpieza.
+- **Dónde:** Google Scholar y Scopus.
+
+```text
+hopper design flour OR "food powder" flow (arching OR bridging OR "mass flow")
+"screw feeder" flour OR "food powder" flow rate
+"vibratory feeder" powder dosing accuracy
+"rotary valve" OR "rotary feeder" flour dosing
+hopper gate OR "slide gate" dosing powder "load cell"
+```
+
+### 2.4 Medición gravimétrica — meta: 6 a 8 y una revisión de pérdida de peso
+
+- **Qué:** error de la dosificación volumétrica por densidad aparente; comparación entre pesaje por lotes y pérdida de peso; celdas de carga en dosificadoras (selección, ruido, vibración, impacto del material).
+- **Dónde:** Google Scholar y, desde el 15/10, Scopus o ScienceDirect.
+
+```text
+"volumetric dosing" OR "volumetric feeder" powder "bulk density" accuracy
+"screw feeder" OR "auger filler" powder "bulk density" accuracy
+"loss-in-weight feeder" review
+"load cell" dosing OR batching vibration OR "impact force" OR noise
+```
+
+### 2.5 Control — meta: 5 a 8
+
+- **Qué:** dos etapas (grueso y fino), compensación del material en caída, predicción del corte, pesaje dinámico, PID y aprendizaje iterativo.
+- **Dónde:** Google Scholar, IEEE Xplore, Google Patents y notas de aplicación de fabricantes.
+
+```text
+("in-flight" OR "preact" OR "cut-off") compensation batching "load cell"
+"two-stage" OR "coarse and fine" feeding weighing accuracy
+"dynamic weighing" filling "load cell" model
+"batch weighing" control PID OR "iterative learning"
+```
+
+### 2.6 Fundamentos
+
+| Subsección | Qué buscar | Dónde |
+|---|---|---|
+| 2.6.1 Metodología de diseño | VDI 2221, Pahl y Beitz: lista de requerimientos, matriz morfológica, evaluación ponderada | Biblioteca UCB |
+| 2.6.2 Insumos y tolerancias | Porcentaje panadero; efecto de la variación de sal, azúcar y levadura; propiedades de flujo; levadura prensada | Google Scholar, ScienceDirect, libros de panificación (Cauvain) |
+| 2.6.3 Metrología y normativa | OIML R 61, R 76 y R 60; JCGM 200 (VIM) | oiml.org, bipm.org |
+| 2.6.4 Celdas de carga | Principio, errores, montaje, acondicionamiento y conversión analógico-digital | OIML R 60; manuales de HBK, Mettler Toledo y Rice Lake; hoja de datos HX711 |
+| 2.6.5 Almacenamiento y alimentación | Diseño de tolvas, caudal, torque y potencia de alimentadores | Schulze, Jenike, CEMA 350 |
+| 2.6.6 Modelamiento y control | Modelo del caudal del tornillo, pesaje dinámico, PID | Ogata; Åström y Hägglund; Google Scholar |
+
+Cadenas para 2.6.2 (tolerancias):
+
+```text
+"baker's percentage" salt sugar yeast dough
+"salt reduction" OR "salt content" bread dough quality
+"yeast level" OR "yeast concentration" fermentation bread volume
+"sugar level" bread dough fermentation quality
+"compressed yeast" OR "fresh yeast" properties moisture storage
+```
+
+### Cadenas para Scopus (desde el 15/10, si la UCB da acceso)
+
+```text
+TITLE-ABS-KEY(("batch weigh*" OR "gain-in-weight" OR "weigh* fill*" OR "gravimetric fill*") AND ("load cell" OR "in-flight" OR dribble OR "two-stage")) AND PUBYEAR > 2015
+TITLE-ABS-KEY(("screw feeder" OR "auger fill*" OR "volumetric feed*" OR "screw dos*") AND (powder OR flour) AND (accuracy OR "bulk density")) AND PUBYEAR > 2015
+TITLE-ABS-KEY((flour OR bakery OR "food powder") AND (dosing OR weighing) AND ("load cell" OR gravimetric OR automat*)) AND PUBYEAR > 2015
+```
+
+### Al terminar cada sección
+
+1. Opcional: correr el prompt de ChatGPT para cubrir lo que falte.
+2. Pasar a Claude la lista de DOI para comprobarlos en Crossref.
+3. Subir los PDF a NotebookLM y empezar con el Prompt 1 (Cribado).
+
+### Herramientas
+
+| Herramienta | Uso |
+|---|---|
+| Scopus, Google Scholar, OpenAlex, Semantic Scholar | Búsqueda y «citado por» |
+| ResearchRabbit, Connected Papers | Artículos vecinos de Rumapea, Venkataramanan y Kruppa |
+| Google Patents, Espacenet, Lens.org | Patentes desde 2016; clases G01G 13/24 y B65B 1/32 |
+| Garuda, SINTA | Literatura indonesia y rango de sus revistas |
+| LA Referencia, SciELO, Redalyc, BDTD, RENATI, repositorios UMSA y UTN | Tesis y artículos regionales |
+| Unpaywall, CORE | Copia legal en acceso abierto |
+| Scimago (SJR) | Comprobar indexación de las 10 fuentes académicas |
+| OIML, JCGM, EURAMET cg-18, IBNORCA, IBMETRO | Normas y metrología |
+| DirectIndustry, sitios de fabricantes, Alibaba, Mercado Libre | Mercado |
+| Elicit, Consensus, Perplexity, «Descubrir fuentes» de NotebookLM | Solo para descubrir; no son citables |
+
+---
+
+## 8. Preguntas para el docente
+
+- Si acepta patentes y fichas de fabricantes como referencias (la clase del 09/10/2026 no las mencionó).
+- Dónde va la tabla de precios para «bajo costo»: capítulo 2 o parte económica.
+- Si 2.6.6 (modelamiento y control) entra en el perfil, dado que el objetivo 4 corresponde a Taller de Grado II.
+- Qué se entrega el 26/10/2026 y qué el 20/11/2026.
