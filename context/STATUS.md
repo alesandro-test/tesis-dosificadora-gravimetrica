@@ -1,6 +1,6 @@
 # STATUS
 
-**Última actualización:** 2026-10-14
+**Última actualización:** 2026-10-19
 
 ## Estado actual
 
@@ -32,7 +32,8 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## En curso
 
-- **INV — Estado del arte:** búsqueda por sección y análisis en NotebookLM según `research/notes/guia_capitulo2_notebooklm.md`. Primera parte: 2.2 Dosificadoras de ingredientes y mercado. Pendiente el análisis de la clase completa del 09/10/2026.
+- **INV — Estado del arte:** búsqueda por sección y análisis en NotebookLM según `research/notes/guia_capitulo2_notebooklm.md`. Pendiente el análisis de la clase completa del 09/10/2026.
+- **2.2 Dosificadoras de ingredientes:** redactada y auditada (20/10/2026): orden de lo general a lo más cercano a San Miguel, criterio por antecedente, Tabla 2.1 (datos) y Tabla 2.2 (enfoques adoptados y descartados), tres figuras adaptadas en `images/marcoteorico/`; compila. Auditoría de NotebookLM: Gebov y Valendi corregidos; la observación sobre Chalco se rechazó porque el ±0,02 lb corresponde a Orozco. Dargham (alimentador volumétrico) queda para 2.4.1. Ajuste del 20/10/2026: se retiraron Cocchis (2005), Jadhav, Sari y Mariam; se agregaron Bulatov, Hidalgo (TEC), Remache (EPN), Murillo Torres (USFX) y Acuña (UdeC); Tabla 2.1 con métrica del autor, n y caudal equivalente (cálculo propio). Reorganizada según la plantilla (2.2.1 antecedentes académicos, 2.2.2 productos comerciales con Zeppelin, AZO, Daxner e INOXPA verificados en línea, 2.2.3 enfoques); unas 5 páginas, 2 figuras. Moya, Lema, Acuña y Dargham anotados para 2.4.1. Sin citas a registros propios: los datos del caso remiten al Apéndice B. Ajuste posterior: 2.1 redactada (bases, periodo, criterio y orden), 2.2 en cuatro subsecciones (granos y polvos, panadería, productos comerciales, enfoques), diagrama propio de arquitectura funcional (Figura 2.3), prosa sin punto y coma, y subtítulos de 2.3 y 2.4 renombrados para no coincidir con 2.6. Las fichas de fabricantes W&K, Daxner e INOXPA siguen sin analizar. Ajuste del 20/10/2026 (tarde): Figura 2.1 sin rótulos de sección ni de señales (se explican en el texto), figuras y Tabla 2.2 con `[H]`, Tabla 2.2 sin columna «Tratamiento» (lo adoptado y descartado pasa a un párrafo tras la tabla), Bachtiar et al. (2026, mezcladora de brownies con seis compuertas y una celda) agregado a 2.2.2. Chiliguana (ESPOL, 2016) anotado para 2.4.1 y Galindo (UVG, 2025) para 2.3. Depuración: se retiraron Suryo, Asri, Widya y Sansyah (sin dato que cambie una decisión), 2.2 queda con 24 referencias. Nueva Figura 2.3 (secuencia de llenado con flujo grueso, fino y corte anticipado, según Andriani, Hadi y Bulatov) para la escala de kilogramos. Tablas 2.1 y 2.2 explicadas antes de citarse. `\raggedbottom` al inicio de `marcoteorico.tex` por las figuras `[H]`.
 
 ## Próximos pasos
 
