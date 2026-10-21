@@ -1,0 +1,49 @@
+% Lazo de control de la dosificadora de harina de Rumapea et al. (2026).
+% Elaboración propia. Línea continua: harina. Línea discontinua: señales.
+% Flujo fino por reducción del ángulo de la compuerta; cierre a 0° en la consigna (p. 48).
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    bloque/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum height=0.9cm,
+        text width=3.4cm,
+        align=center,
+        inner sep=3pt
+    },
+    material/.style={
+        -{Latex[width=6pt,length=5pt]},
+        thick
+    },
+    senal/.style={
+        -{Latex[width=6pt,length=5pt]},
+        thick,
+        dashed
+    }
+]
+
+% Recorrido de la harina (x = 0)
+\node[bloque] (tolva) at (0, 3.0) {Tolva cónica};
+\node[bloque] (comp)  at (0, 1.5) {Compuerta con servomotor};
+\node[bloque] (plat)  at (0, 0.0) {Plataforma sobre celda de carga de 1~kg};
+
+% Control (x = 7)
+\node[bloque] (cons) at (7.0, 3.0) {Consigna $m_{\mathrm{c}}$};
+\node[bloque, text width=6.2cm, minimum height=2.6cm] (ctrl) at (7.0, 0.75) {%
+    \textbf{Controlador (Arduino Uno)}\par\vspace{3pt}
+    $m < 0{,}9\,m_{\mathrm{c}}$: apertura completa\\
+    $0{,}9\,m_{\mathrm{c}} \le m < m_{\mathrm{c}}$: ángulo reducido\\
+    $m \ge m_{\mathrm{c}}$: cierre a 0°};
+
+% Material (continua) y señales (discontinua)
+\draw[material] (tolva) -- (comp);
+\draw[material] (comp) -- (plat);
+\draw[senal] (plat.east) -- node[below, font=\footnotesize] {masa $m$}
+    (plat.east -| ctrl.west);
+\draw[senal] (comp.east -| ctrl.west) -- node[above, font=\footnotesize]
+    {apertura} (comp.east);
+\draw[senal] (cons) -- (ctrl);
+
+\end{tikzpicture}

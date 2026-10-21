@@ -23,31 +23,28 @@ Sección~\ref{sec:teoria_fundamentos} reúne la teoría que aplica el diseño.
 \section{Dosificadoras de ingredientes secos}
 \label{sec:teoria_dosificadoras}
 
-% Redacción del 20/10/2026, reorganizada según la plantilla (perspectivas
-% académica y de mercado), THESIS_STRUCTURE y las referencias estructurales.
-% Cifras verificadas con cada PDF o página. Moya, Lema, Acuña y Dargham
-% pasan a la Sección 2.4.1 (principio de medición).
+% Reorganización del 21/10/2026: cuatro grupos según las condiciones del caso
+% (harina de trigo, lotes de kilogramos, equipo de pequeña escala) y Tabla de
+% condiciones al cierre. Cifras y citas sin cambios respecto de la versión
+% anterior. Moya, Lema, Acuña, Dargham y Chiliguana pasan a la Sección 2.4.1.
 
 Esta sección revisa máquinas completas que dosifican ingredientes secos de
-alimentos, primero desde la perspectiva académica y después desde la oferta
-comercial. Los trabajos se ordenan desde la escala industrial hasta los equipos
-más próximos a una panadería pequeña, y cada uno se valora por el dato técnico
-que reporta, la limitación frente a la Panadería San Miguel y el criterio que
-aporta al diseño. La revisión incluye dosificadoras de arroz, azúcar y otros
-granos porque los trabajos con harina de trigo se limitan a consignas de
-gramos. Esos equipos aportan la arquitectura, la escala de kilogramos y los
-datos de error ausentes en la literatura de harina.
+alimentos, en trabajos académicos y en la oferta comercial. La
+Sección~\ref{subsec:dosificadoras_industria} trata el pesaje de harina en
+kilogramos en la industria, la Sección~\ref{subsec:dosificadoras_kilogramos}
+los prototipos que dosifican otros materiales en kilogramos, la
+Sección~\ref{subsec:dosificadoras_gramos} los equipos que dosifican insumos en
+gramos y la Sección~\ref{subsec:dosificadoras_panaderia} las dosificadoras de
+harina para panaderías pequeñas. El recorrido va de la escala industrial al
+equipo de panadería.
 
-Las dosificadoras revisadas comparten la arquitectura funcional de la
-Figura~\ref{fig:arquitectura_funcional}. La tolva almacena el ingrediente, el
-alimentador lo entrega al recipiente de pesaje y la celda de carga mide la masa
-acumulada. El controlador compara esa medición con la consigna y detiene el
-alimentador para descargar el lote. En la figura, la línea continua sigue el
-flujo de material y la línea discontinua, la información: la celda de carga
-envía la señal de peso al controlador y este devuelve al alimentador el mando
-de corte. Los antecedentes difieren en la forma de resolver cada bloque. La
-tolva y el alimentador se analizan en la Sección~\ref{sec:teoria_mecanica}, el
-pesaje en la Sección~\ref{sec:teoria_medicion} y el controlador en la
+Todas comparten la arquitectura de la
+Figura~\ref{fig:arquitectura_funcional}. La línea continua sigue el material
+desde la tolva hasta la descarga y la discontinua, la información: la celda de
+carga envía la señal de peso al controlador y este ordena el corte del
+alimentador. La tolva y el alimentador se analizan en la
+Sección~\ref{sec:teoria_mecanica}, el pesaje en la
+Sección~\ref{sec:teoria_medicion} y el controlador en la
 Sección~\ref{sec:teoria_control}.
 
 \begin{figure}[H]
@@ -60,23 +57,61 @@ Sección~\ref{sec:teoria_control}.
     Sección~\ref{sec:teoria_dosificadoras}.}
 \end{figure}
 
-\subsection{Dosificadoras de granos y polvos}
-\label{subsec:dosificadoras_academicos}
+\subsection{Harina en kilogramos en la industria}
+\label{subsec:dosificadoras_industria}
 
 En la escala industrial, \textcite{gebov2023algorithmic} trabajó sobre
-embolsadoras de sacos de 25~kg de harina con dosificador de tornillo y dos
-celdas de carga. El método estima el instante de cierre mediante transformada
-de Fourier y extrapolación de la señal de peso, y redujo el ciclo de 15 a 6~s
-sin cambios en la mecánica. El trabajo confirma el pesaje gravimétrico de
-harina en kilogramos, aunque con accionamiento trifásico y transporte de
-envases ajenos a la carga por lotes de una amasadora.
+embolsadoras de sacos de 25~kg de harina en un molino. En su sistema
+(Figura~\ref{fig:gebov_sistema}), un variador de frecuencia acciona el motor
+trifásico del tornillo, dos celdas de carga pesan el saco y la unidad de
+control estima el instante de cierre a partir de la señal de peso. El método
+redujo el ciclo de 15 a 6~s sin cambios en la mecánica.
 
-En la escala de gramos, los prototipos comparten la arquitectura electrónica de
-la Figura~\ref{fig:arquitectura_electronica}. La celda de carga entrega la
-señal de peso a través del convertidor HX711, el microcontrolador la compara
-con la consigna ingresada por teclado y acciona el motor del alimentador o el
-servomotor de la compuerta, y la pantalla muestra la masa acumulada. Sobre esa
-base común, los resultados varían con el tipo de alimentador.
+\begin{figure}[H]
+    \centering
+    \resizebox{0.75\textwidth}{!}{\input{images/marcoteorico/gebov_sistema.tex}}
+    \caption{Sistema de dosificación de una embolsadora de harina con tornillo.}
+    \label{fig:gebov_sistema}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Adaptado de \textcite{gebov2023algorithmic}.}
+\end{figure}
+
+El trabajo confirma el pesaje de harina en kilogramos, pero el accionamiento
+trifásico y el transporte de sacos exceden la carga por lotes de una
+amasadora.
+
+% La oferta para panificación industrial también dosifica por peso y separa la
+% harina de los insumos menores. En la planta de Harry-Brot, AZO alimenta las
+% amasadoras con básculas de vacío para la harina y pesa los insumos menores al
+% gramo en balanzas propias, con fondos vibratorios y tornillos de dosificación
+% fina~\parencite{azo2026kneader}. El sistema MicDos de Zeppelin dosifica hasta
+% 20 componentes con tornillo y variador de frecuencia, flujo grueso y fino y
+% corrección del sobrepaso, sobre una balanza móvil de
+% 25~kg~\parencite{zeppelin2026micdos}. La industria aplica, por tanto, el corte
+% en dos etapas con compensación del material en caída. En Latinoamérica, INOXPA
+% instaló para un fabricante de pan una báscula sobre celdas de carga de 200~kg
+% con exactitud declarada del 1~\%, controlada por PLC y
+% SCADA~\parencite{inoxpa2026pastry}.
+
+% Para panaderías de menor tamaño, Daxner ofrece dosificación volumétrica o
+% gravimétrica y componentes para panaderías artesanales, sin especificaciones
+% publicadas~\parencite{daxner2026bakery}. El resto de la oferta revisada
+% corresponde a envasado o a dosificación continua. RUICHUAN vende unidades por
+% pérdida de peso~\parencite{UnidadDosificadoraGravimetrica}, y Trust-Long,
+% llenadoras semiautomáticas de polvo con tolvas de 20 y
+% 50~L~\parencite{MaquinaLlenadoPolvo}. La oferta comercial confirma el principio
+% y la estrategia de corte, pero se orienta a plantas industriales o no publica
+% especificaciones para panaderías pequeñas. La comparación de costos
+% corresponde al análisis económico (Sección~\ref{subsec:justificacion_economica}).
+
+\subsection{Otros materiales en kilogramos}
+\label{subsec:dosificadoras_kilogramos}
+
+Los prototipos de pequeña escala, en kilogramos o en gramos, repiten la
+arquitectura de la Figura~\ref{fig:arquitectura_electronica}. La celda de
+carga entrega la señal al convertidor HX711 y el microcontrolador la compara
+con la consigna del teclado para detener el motor del alimentador o el
+servomotor de la compuerta.
 
 \begin{figure}[H]
     \centering
@@ -90,41 +125,39 @@ base común, los resultados varían con el tipo de alimentador.
     \textcite{humaira2024optimalisasi}.}
 \end{figure}
 
-Con bandeja vibratoria,
-\textcite{valendi2025granule} registraron errores promedio de 0,255 a 0,5~\% en
-arroz de 50 a 400~g, con el menor error en la velocidad media del vibrador. Con
-transportador de tornillo, \textcite{david2024granulated} obtuvieron
-exactitudes de 99,677 a 99,795~\% para 120 a 175~g de azúcar, arroz y café,
-mientras que \textcite{zaenurrohman2023merica} registraron un error promedio de
-2,78~\% con pimienta en polvo, el material más fino del grupo. Estos trabajos validan una
-arquitectura de bajo costo con errores de 0,2 a 2,8~\%, aunque
-\textcite{david2024granulated} reconocen una capacidad limitada de adaptación
-ante cambios de densidad o humedad del material.
+En la escala de kilogramos, la más próxima al caso, la electrónica se
+mantiene \parencite{andriani2022rice,hadi2025weighing} y la diferencia está en
+el material que sigue cayendo después del cierre. La
+Figura~\ref{fig:bulatov_instalacion} muestra la instalación de
+\textcite{bulatov2021dosing}, que dosificó harina de madera, el polvo más
+próximo a la harina entre estos trabajos. Un variador reduce la velocidad del
+tornillo al final del lote, el programa descuenta de 0,1 a 0,5~kg de material
+en caída y el error no superó el 5~\% en lotes de 1~kg. Las virutas, en
+cambio, formaron bóvedas y no pudieron dosificarse.
 
-En la escala de kilogramos, la más próxima al caso, predominan los ensayos con
-granos. La electrónica se mantiene, con microcontrolador y convertidor HX711
-\parencite{andriani2022rice,hadi2025weighing}, y la diferencia aparece en el
-material que sigue cayendo después del cierre. \textcite{andriani2022rice}
-dosificaron de 1 a 5~kg de arroz con una exactitud cercana al 95~\% y
-atribuyeron la diferencia al arroz que cae tras el cierre de la válvula.
-\textcite{hadi2025weighing} compensaron ese material con un adelanto de corte
-de 120~g y registraron un sobrepaso promedio de 0,72~\% en cargas de 1 a
-20~kg, con un servomotor en lugar de la válvula neumática industrial.
-\textcite{bulatov2021dosing} trabajaron con harina de madera, el polvo más
-próximo a la harina entre estos trabajos. Un variador de frecuencia reduce la
-velocidad del tornillo en el tramo final del lote, el programa descuenta de
-0,1 a 0,5~kg de material en caída y el error no superó el 5~\% en lotes de
-1~kg, mientras que las virutas formaron bóvedas y no pudieron dosificarse. Con
-alimentos en polvo, \textcite{ekpu2023weighing} reportaron una exactitud
-aproximada del 95~\% y dosificaron 4,82~kg en 300~s.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/marcoteorico/bulatov_instalacion.png}
+    \caption{Instalación de laboratorio para dosificar harina de madera con tornillo.}
+    \label{fig:bulatov_instalacion}
+    \vspace{0.2em}
+    {\footnotesize Fuente: \textcite{bulatov2021dosing}.}
+\end{figure}
 
-La Figura~\ref{fig:secuencia_llenado} resume la secuencia de llenado que
-resulta de estos trabajos. La masa crece rápido durante el flujo grueso y, al
-acercarse a la consigna, el alimentador pasa a flujo fino. El corte se ordena
-antes de la consigna, con un adelanto igual a la masa que aún está en caída,
-y ese material completa el lote. La línea punteada muestra el caso sin
-adelanto, en el que el material en caída produce el exceso que reportaron
-\textcite{andriani2022rice}.
+Con arroz, \textcite{andriani2022rice} dosificaron de 1 a 5~kg con una
+exactitud cercana al 95~\%, limitada por el grano que cae tras cerrar la
+válvula. \textcite{hadi2025weighing} compensaron ese material con un adelanto
+de corte de 120~g y obtuvieron un sobrepaso medio de 0,72~\% entre 1 y 20~kg,
+con un servomotor en lugar de la válvula neumática industrial. Con alimentos
+en polvo, \textcite{ekpu2023weighing} fijaron una consigna de 1~kg y pesaron
+4,82~kg acumulados en 300~s de prueba continua, con una exactitud cercana al
+95~\%.
+
+La Figura~\ref{fig:secuencia_llenado} resume la secuencia que resulta de estos
+trabajos. El alimentador pasa de flujo grueso a flujo fino cerca de la
+consigna y el corte se ordena antes, con un adelanto igual a la masa que aún
+está en caída. La línea punteada muestra el caso sin adelanto, que produce el
+exceso que reportaron \textcite{andriani2022rice}.
 
 \begin{figure}[H]
     \centering
@@ -137,19 +170,16 @@ adelanto, en el que el material en caída produce el exceso que reportaron
     \textcite{bulatov2021dosing}.}
 \end{figure}
 
-Los trabajos de grado latinoamericanos ensayaron dosis de hasta 2~kg.
-\textcite{orozco2024dosificadora} construyó una dosificadora de arroz por
-ganancia de peso con canal vibratorio, compuerta y celda de carga de 10~kg
-(Figura~\ref{fig:orozco_dosificadora}). La exactitud fue de 98,47~\% en 100
+Los trabajos de grado latinoamericanos llegan hasta 2~kg.
+\textcite{orozco2024dosificadora} construyó una dosificadora de arroz con canal
+vibratorio, compuerta y celda de carga de 10~kg
+(Figura~\ref{fig:orozco_dosificadora}). Obtuvo exactitudes de 98,47~\% en 100
 pruebas de 1~lb y de 99,73~\% en 30 pruebas de 1~kg, con 35,86~s por
-kilogramo. \textcite{remache2022dosificador} dosificó cebada con tornillo de
-0,1 a 2~kg, con un error relativo de hasta 10~\% en 0,1~kg y una diferencia
-máxima de 0,013~kg. Ambos coinciden en que el error crece al disminuir la
-dosis.
+kilogramo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{images/marcoteorico/orozco_dosificadora.png}
+    \includegraphics[width=0.42\textwidth]{images/marcoteorico/orozco_dosificadora.png}
     \caption{Dosificadora de arroz para microempresas con canal vibrante.}
     \label{fig:orozco_dosificadora}
     \vspace{0.2em}
@@ -158,31 +188,80 @@ dosis.
     Fuente: Adaptado de \textcite{orozco2024dosificadora}.}
 \end{figure}
 
-\textcite{hidalgo2020llenado} diseñó una llenadora de granola con
-tornillo y celda de carga en lazo cerrado, cuya prueba de concepto redujo el
-tiempo de llenado en más del 40~\%, y recomienda separar el ajuste grueso del
-fino. En Bolivia, \textcite{laime2022dosificacion} construyó un sistema para
-snacks con canales vibratorios y tolvas de pesaje de 2,5~kg, y
-\textcite{challco2024dosificadora} y \textcite{murillo2024papas} diseñaron
-dosificadoras con celda de carga para pan molido y papas fritas. Estos tres
-trabajos muestran que la dosificación por peso se estudia en el país, aunque
-sin ensayos con harina y, en los dos últimos, sin resultados medidos.
+\textcite{remache2022dosificador} dosificó cebada con tornillo de 0,1 a 2~kg,
+con un error de hasta 10~\% en 0,1~kg, y coincide con Orozco Villa en que el
+error crece al reducir la dosis. \textcite{hidalgo2020llenado}, con tornillo y
+celda de carga en lazo cerrado para granola, redujo el tiempo de llenado en
+más del 40~\% y recomienda separar el ajuste grueso del fino.
 
-\subsection{Dosificadoras para panadería}
-\label{subsec:dosificadoras_panaderia}
-
-Los trabajos más próximos al caso dosifican insumos de panadería.
-\textcite{farihin2021premix} dosificaron una premezcla de pan dulce desde cinco
-tolvas hacia una única celda de carga de 1~kg, y el control PI registró un
-error de 0,2~\%, frente a 0,8~\% con control todo o nada.
-\textcite{humaira2024optimalisasi} emplearon, en cambio, tres cámaras para
-harina, leche en polvo y azúcar, cada una con alimentador helicoidal y celda de
-carga propia (Figura~\ref{fig:humaira_dosificadora}), y lograron un error
-promedio de 0,08~\% en harina con 197~s para 350~g.
+En Bolivia, \textcite{laime2022dosificacion} construyó un sistema para snacks
+con canales vibratorios y tolvas de pesaje de 2,5~kg.
+\textcite{challco2024dosificadora} diseñó para pan molido una dosificadora con
+tolva de 40~kg, canal vibratorio, celda de carga de 10~kg y PLC
+(Figura~\ref{fig:challco_dosificadora}), y \textcite{murillo2024papas}, una
+dosificadora de papas fritas con celda de carga. La dosificación por peso se
+estudia en el país, aunque sin ensayos con harina y, en estos dos últimos
+trabajos, sin resultados medidos.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/marcoteorico/humaira_dosificadora.png}
+    \includegraphics[width=0.4\textwidth]{images/marcoteorico/challco_dosificadora.png}
+    \caption{Diseño de una dosificadora de pan molido con canal vibratorio.}
+    \label{fig:challco_dosificadora}
+    \vspace{0.2em}
+    {\footnotesize 1: tolva, 2: canal vibratorio, 3: tablero eléctrico.\\
+    Fuente: Adaptado de \textcite{challco2024dosificadora}.}
+\end{figure}
+
+De este grupo se toma que, en kilogramos, el material en caída es una fuente
+de error \parencite{andriani2022rice} que otros trabajos compensan con un
+adelanto de corte o con flujo fino al final del lote
+\parencite{hadi2025weighing,bulatov2021dosing}.
+
+\subsection{Insumos en gramos}
+\label{subsec:dosificadoras_gramos}
+
+% PENDIENTE: vincular este grupo con la escala de los insumos menores de San
+% Miguel cuando sus cantidades tengan respaldo en la tesis (D-013).
+Un grupo numeroso de prototipos dosifica insumos en gramos, y su resultado
+depende del alimentador. Con bandeja vibratoria, \textcite{valendi2025granule}
+obtuvieron errores de 0,255 a 0,5~\% en arroz de 50 a 400~g. Con tornillo,
+\textcite{david2024granulated} alcanzaron exactitudes de 99,677 a 99,795~\%
+con 120 a 175~g de azúcar, arroz y café, y \textcite{zaenurrohman2023merica}
+registraron 2,78~\% con pimienta en polvo, el material más fino del grupo.
+\textcite{david2024granulated} reconocen, además, poca adaptación a cambios de
+densidad o humedad.
+
+Cuando se dosifican varios insumos, el pesaje se organiza de dos formas
+(Figura~\ref{fig:configuraciones_balanza}). \textcite{farihin2021premix}
+dosificaron una premezcla de pan dulce desde cinco tolvas sobre una única
+celda de carga de 1~kg, con un error de 0,2~\% con control PI frente a
+0,8~\% con control todo o nada. \textcite{humaira2024optimalisasi}, en cambio,
+asignaron a cada uno de sus tres insumos una cámara con alimentador helicoidal
+y celda propia. Ningún trabajo compara ambas configuraciones, por lo que la
+elección entre balanza común y balanza por insumo queda abierta.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.9\textwidth}{!}{\input{images/marcoteorico/configuraciones_balanza.tex}}
+    \caption{Pesaje de varios insumos: (a) balanza común, (b) balanza por insumo.}
+    \label{fig:configuraciones_balanza}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{farihin2021premix} y \textcite{humaira2024optimalisasi}.}
+\end{figure}
+
+\subsection{Harina en gramos para panaderías pequeñas}
+\label{subsec:dosificadoras_panaderia}
+
+Tres trabajos dosifican harina de trigo con equipos para panadería pequeña,
+todos en gramos. El equipo de \textcite{humaira2024optimalisasi}
+(Figura~\ref{fig:humaira_dosificadora}) obtuvo el menor error en harina de la
+revisión, 0,08~\%, pero tardó 197~s en entregar 350~g.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{images/marcoteorico/humaira_dosificadora.png}
     \caption{Dosificadora de insumos para pan con tres cámaras y alimentadores helicoidales.}
     \label{fig:humaira_dosificadora}
     \vspace{0.2em}
@@ -192,54 +271,34 @@ promedio de 0,08~\% en harina con 197~s para 350~g.
 \end{figure}
 
 \textcite{rumapea2026flour} diseñaron una dosificadora de harina de trigo para
-pequeñas panaderías con tolva cónica de acrílico, compuerta accionada por
-servomotor y celda de carga de 1~kg. La compuerta permanece abierta hasta
-el 90~\% de la consigna y pasa a flujo fino hasta el cierre, con un error
-porcentual absoluto medio de 1,32 a 1,83~\% en 30 ensayos por consigna de 10 a
-50~g. El ensayo de mayor error entregó 47,40~g para 50~g, y los autores lo
-atribuyen a una bóveda de harina en el borde de la compuerta.
+pequeñas panaderías con tolva cónica, compuerta con servomotor, celda de carga
+de 1~kg y un Arduino Uno. La Figura~\ref{fig:rumapea_lazo} muestra su lazo de
+control. La celda informa la masa acumulada, y el servomotor mantiene la
+compuerta abierta hasta el 90~\% de la consigna, reduce después el ángulo de
+apertura para el flujo fino y cierra al alcanzar la consigna, sin adelanto de
+corte. El error porcentual absoluto medio fue de 1,32 a 1,83~\% entre 10 y
+50~g. El mayor error, de 2,60~g, ocurrió en un ensayo de 50~g con una lectura
+de 47,40~g y se atribuyó a una bóveda de harina en el borde de la compuerta.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.85\textwidth}{!}{\input{images/marcoteorico/rumapea_lazo.tex}}
+    \caption{Lazo de control de una dosificadora de harina con flujo grueso y fino.}
+    \label{fig:rumapea_lazo}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{rumapea2026flour}.}
+\end{figure}
+
 \textcite{bachtiar2026brownies} integraron la dosificación y el mezclado de
-masa para brownies en un mismo equipo, con seis compuertas accionadas por
-servomotor que vacían por turno los insumos secos sobre una sola celda de
-carga. En la prueba de insumos, la harina de trigo llegó a 95~g frente a una
-consigna de 100~g y el azúcar a 51~g frente a 120~g, y los autores concluyen
-que la apertura por servomotor requiere mejoras para los insumos secos.
+masa para brownies, con seis compuertas por servomotor sobre una sola celda de
+carga. La harina llegó a 95~g frente a una consigna de 100~g y el azúcar a
+51~g frente a 120~g, y los autores concluyen que la apertura por servomotor
+requiere mejoras con insumos secos.
 
-Humaira et al., Rumapea et al. y Bachtiar et al. son los únicos trabajos
-revisados con ensayos en harina de trigo, con una consigna mayor de 350~g. De este grupo se toman
-tres criterios. La bóveda condiciona el diseño de la tolva y del alimentador
-(Sección~\ref{sec:teoria_mecanica}). El error menor del control PID se obtuvo
-con el caudal menor, por lo que el tiempo por lote es una variable de diseño
-junto con la exactitud. Los insumos admiten una balanza común con dosificación
-secuencial \parencite{farihin2021premix,bachtiar2026brownies} o una balanza por insumo
-\parencite{humaira2024optimalisasi}.
-
-\subsection{Productos comerciales}
-\label{subsec:dosificadoras_mercado}
-
-La oferta para panificación industrial dosifica por peso y separa la harina de
-los insumos menores. En la planta de Harry-Brot, AZO alimenta las amasadoras
-con básculas de vacío para la harina y pesa los insumos menores al gramo en
-balanzas propias, con fondos vibratorios y tornillos de dosificación
-fina~\parencite{azo2026kneader}. El sistema MicDos de Zeppelin dosifica hasta
-20 componentes con tornillo y variador de frecuencia, flujo grueso y fino y
-corrección del sobrepaso, sobre una balanza móvil de
-25~kg~\parencite{zeppelin2026micdos}. La industria aplica, por tanto, el corte
-en dos etapas con compensación del material en caída. En Latinoamérica, INOXPA
-instaló para un fabricante de pan una báscula sobre celdas de carga de 200~kg
-con exactitud declarada del 1~\%, controlada por PLC y
-SCADA~\parencite{inoxpa2026pastry}.
-
-Para panaderías de menor tamaño, Daxner ofrece dosificación volumétrica o
-gravimétrica y componentes para panaderías artesanales, sin especificaciones
-publicadas~\parencite{daxner2026bakery}. El resto de la oferta revisada
-corresponde a envasado o a dosificación continua. RUICHUAN vende unidades por
-pérdida de peso~\parencite{UnidadDosificadoraGravimetrica}, y Trust-Long,
-llenadoras semiautomáticas de polvo con tolvas de 20 y
-50~L~\parencite{MaquinaLlenadoPolvo}. La oferta comercial confirma el principio
-y la estrategia de corte, pero se orienta a plantas industriales o no publica
-especificaciones para panaderías pequeñas. La comparación de costos
-corresponde al análisis económico (Sección~\ref{subsec:justificacion_economica}).
+De este grupo se toman dos criterios. La bóveda condiciona la tolva y el
+alimentador (Sección~\ref{sec:teoria_mecanica}), y el tiempo por lote es una
+variable de diseño junto con la exactitud.
 
 \subsection{Enfoques adoptados y descartados}
 \label{subsec:dosificadoras_enfoques}
@@ -287,10 +346,10 @@ de la panadería.
         a paso & Exactitud cercana al 95~\% & 58 \\
         \textcite{bulatov2021dosing} & Harina de madera & 1~kg & Tornillo &
         Hasta 5~\% & --- \\
-        \textcite{orozco2024dosificadora} & Arroz & 0,4~lb--1~kg & Canal
+        \textcite{orozco2024dosificadora} & Arroz & 1~lb--1~kg & Canal
         vibratorio & Exactitud de 99,73~\% con 1~kg (n = 30) & 100 \\
         \textcite{remache2022dosificador} & Cebada & 0,1--2~kg & Tornillo &
-        Hasta 10~\% con 0,1~kg, máximo de 0,013~kg & --- \\
+        Hasta 10~\% con 0,1~kg y máximo absoluto de 0,013~kg con 1~kg & --- \\
         \bottomrule[1pt]
     \end{tabularx}
 
@@ -373,21 +432,32 @@ se descarta la arquitectura de pesaje de sacos y envases, aunque se conserva su
 principio gravimétrico. El tornillo, el canal vibratorio y la compuerta
 presentan ventajas y fallas de flujo que dependen del material, por lo que su
 selección se analiza en la Sección~\ref{sec:teoria_mecanica}, y las
-estrategias de corte se comparan en la Sección~\ref{sec:teoria_control}. La
-elección entre una balanza común y una balanza por insumo queda para el
-diseño, porque ningún trabajo las compara, y los equipos comerciales sirven de
-referencia técnica y económica.
+estrategias de corte se comparan en la Sección~\ref{sec:teoria_control}. 
 
-Sin embargo, los ensayos con harina
-de trigo se limitan a consignas de 10 a 350~g
-\parencite{humaira2024optimalisasi,rumapea2026flour,bachtiar2026brownies}, los trabajos en el rango
-de 5 a 8~kg emplean arroz \parencite{andriani2022rice,hadi2025weighing} y la
-oferta comercial se orienta a plantas industriales o no publica especificaciones
-para panaderías pequeñas. Ninguna de las fuentes
-académicas revisadas reporta la dosificación gravimétrica de harina de trigo en
-lotes de 5 a 8~kg, el intervalo medido en la Panadería San Miguel
-(Apéndice~\ref{ap:tablas_dosificacion}). Ese intervalo, para una panadería
-pequeña, define el aporte diferencial del proyecto.
+La Figura~\ref{fig:brecha_consignas} ubica la masa por dosis de cada trabajo
+frente al intervalo de 5 a 8~kg medido en la Panadería San Miguel
+(Apéndice~\ref{ap:tablas_dosificacion}). Los ensayos con harina de trigo no
+superan los 350~g, los que alcanzan el intervalo emplean arroz
+\parencite{andriani2022rice,hadi2025weighing} y el único trabajo con harina en
+kilogramos corresponde al embolsado industrial \parencite{gebov2023algorithmic}.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.95\textwidth}{!}{\input{images/marcoteorico/brecha_consignas.tex}}
+    \caption{Masa por dosis de los trabajos revisados frente al intervalo de San Miguel.}
+    \label{fig:brecha_consignas}
+    \vspace{0.2em}
+    {\footnotesize Barras: intervalo de masa por dosis reportado por cada
+    fuente. Punto: una sola masa por dosis. En Bachtiar et al., intervalo de
+    todos los insumos.\\
+    Fuente: Elaboración propia con base en las fuentes citadas y el
+    Apéndice~\ref{ap:tablas_dosificacion}.}
+\end{figure}
+
+
+Ninguna fuente académica revisada reporta la dosificación gravimétrica de
+harina de trigo en lotes de 5 a 8~kg para una panadería pequeña. Reunir las
+tres condiciones en un mismo equipo define el aporte diferencial del proyecto.
 
 \section{Área mecánica: almacenamiento y alimentación}
 \label{sec:teoria_mecanica}

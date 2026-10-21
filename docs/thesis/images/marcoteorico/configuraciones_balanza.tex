@@ -1,0 +1,38 @@
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    nota/.style={font=\footnotesize, align=center},
+    flecha/.style={-{Latex[width=5pt,length=4pt]}, thick, gray}
+]
+
+% Tolva genérica: centro inferior en (#1,#2) y rótulo #3
+\newcommand{\tolva}[3]{%
+    \draw[thick] (#1-0.45,#2+1.0) -- (#1+0.45,#2+1.0) -- (#1+0.15,#2) --
+        (#1-0.15,#2) -- cycle;
+    \node[nota, anchor=south] at (#1,#2+1.05) {#3};
+}
+
+% (a) Balanza común: cinco tolvas sobre un recipiente y una celda
+\foreach \x/\n in {0/1, 1.2/2, 2.4/3, 3.6/4, 4.8/5}{
+    \tolva{\x}{2.4}{\n}
+    \draw[flecha] (\x,2.35) -- (2.4,1.25);
+}
+\draw[thick] (1.6,0.6) rectangle (3.2,1.2);
+\node[nota] at (2.4,0.9) {Recipiente};
+\draw[thick, fill=gray!25] (1.8,0.25) rectangle (3.0,0.6);
+\node[nota] at (2.4,-0.05) {Una celda de carga};
+\node at (2.4,-0.65) {(a) Balanza común};
+
+% (b) Balanza por insumo: alimentador y celda propios
+\foreach \x/\n in {7.6/Harina, 9.8/{Leche\\en polvo}, 12.0/Azúcar}{
+    \tolva{\x}{2.4}{\n}
+    \draw[thick] (\x-0.15,2.4) -- (\x-0.15,1.95) -- (\x+0.55,1.95) --
+        (\x+0.55,2.2) -- (\x+0.15,2.2) -- (\x+0.15,2.4);
+    \draw[flecha] (\x+0.4,1.9) -- (\x+0.4,1.25);
+    \draw[thick] (\x-0.05,0.6) rectangle (\x+0.85,1.2);
+    \draw[thick, fill=gray!25] (\x+0.05,0.25) rectangle (\x+0.75,0.6);
+}
+\node[nota] at (10.2,-0.05) {Alimentador helicoidal y celda de carga por insumo};
+\node at (10.2,-0.65) {(b) Balanza por insumo};
+
+\end{tikzpicture}
