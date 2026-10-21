@@ -1,0 +1,66 @@
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    bloque/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum height=0.9cm,
+        minimum width=3.4cm,
+        text width=3.2cm,
+        align=center,
+        inner sep=3pt
+    },
+    grupo/.style={
+        rectangle,
+        draw,
+        dashed,
+        rounded corners=3pt,
+        inner sep=7pt
+    },
+    titulo/.style={
+        font=\footnotesize\bfseries,
+        anchor=south
+    },
+    flecha/.style={
+        -{Latex[width=6pt,length=5pt]},
+        thick
+    }
+]
+
+% Entradas (x = 0)
+\node[bloque] (celda)     at (0, 1.8)  {Celda de carga};
+\node[bloque] (hx)        at (0, 0.6)  {Convertidor HX711};
+\node[bloque] (teclado)   at (0, -0.6) {Teclado o botones};
+\node[bloque] (presencia) at (0, -1.8) {Sensor de presencia del recipiente};
+
+% Procesamiento (x = 5)
+\node[bloque, minimum height=3.3cm] (mcu) at (5, 0) {Microcontrolador\\(Arduino o ESP32)};
+
+% Salidas (x = 10 y 14)
+\node[bloque] (driver) at (10, 1.2)  {Controlador de motor};
+\node[bloque] (alim)   at (14, 1.2)  {Motor del tornillo o del vibrador};
+\node[bloque] (servo)  at (10, 0)    {Servomotor de la compuerta};
+\node[bloque] (lcd)    at (10, -1.2) {Pantalla LCD};
+
+% Conexiones
+\draw[flecha] (celda) -- (hx);
+\draw[flecha] (hx.east) -- (hx.east -| mcu.west);
+\draw[flecha] (teclado.east) -- (teclado.east -| mcu.west);
+\draw[flecha] (presencia.east) -- ++(0.6,0) |- ([yshift=0.35cm]mcu.south west);
+\draw[flecha] (mcu.east |- driver.west) -- (driver.west);
+\draw[flecha] (driver) -- (alim);
+\draw[flecha] (mcu.east |- servo.west) -- (servo.west);
+\draw[flecha] (mcu.east |- lcd.west) -- (lcd.west);
+
+% Agrupaciones
+\begin{scope}[on background layer]
+    \node[grupo, fit=(celda)(presencia)] (gin) {};
+    \node[grupo, fit=(mcu)] (gproc) {};
+    \node[grupo, fit=(driver)(alim)(lcd)] (gout) {};
+\end{scope}
+\node[titulo] at (gin.north) {Entradas};
+\node[titulo] at (gproc.north) {Procesamiento};
+\node[titulo] at (gout.north) {Salidas};
+
+\end{tikzpicture}

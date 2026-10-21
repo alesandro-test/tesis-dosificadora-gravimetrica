@@ -1,0 +1,40 @@
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    bloque/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum height=1.1cm,
+        text width=2.7cm,
+        align=center,
+        inner sep=3pt
+    },
+    flecha/.style={
+        -{Latex[width=6pt,length=5pt]},
+        thick
+    },
+    senal/.style={
+        -{Latex[width=6pt,length=5pt]},
+        thick,
+        dashed
+    }
+]
+
+% Flujo de material
+\node[bloque] (tolva) {Tolva de\\almacenamiento};
+\node[bloque, right=0.9cm of tolva] (alim) {Alimentador};
+\node[bloque, right=0.9cm of alim] (pesaje) {Recipiente de\\pesaje sobre\\celda de carga};
+\node[bloque, right=0.9cm of pesaje] (descarga) {Descarga a la\\amasadora};
+
+\draw[flecha] (tolva) -- (alim);
+\draw[flecha] (alim) -- (pesaje);
+\draw[flecha] (pesaje) -- (descarga);
+
+% Control
+\node[bloque, below=1.6cm of $(alim)!0.5!(pesaje)$] (ctrl) {Controlador};
+
+\draw[senal] (pesaje.south) |- (ctrl.east);
+\draw[senal] (ctrl.west) -| (alim.south);
+
+\end{tikzpicture}

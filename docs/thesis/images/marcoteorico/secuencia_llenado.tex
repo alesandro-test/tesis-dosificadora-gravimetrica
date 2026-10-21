@@ -1,0 +1,41 @@
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    eje/.style={-{Latex[width=5pt,length=5pt]}, thick},
+    curva/.style={very thick},
+    guia/.style={densely dashed, gray},
+    nota/.style={font=\footnotesize, align=center}
+]
+
+% Ejes
+\draw[eje] (0,0) -- (12.2,0) node[below left] {Tiempo};
+\draw[eje] (0,0) -- (0,5.6) node[above right] {Masa en el recipiente};
+
+% Consigna y masa de corte
+\draw[guia] (0,4.0) -- (12,4.0);
+\node[nota, anchor=east] at (0,4.0) {Consigna};
+\draw[guia] (0,3.3) -- (7.5,3.3);
+\node[nota, anchor=east] at (0,3.3) {Corte};
+
+% Cambio de flujo y corte
+\draw[guia] (4.5,0) -- (4.5,2.6);
+\draw[guia] (7.5,0) -- (7.5,3.3);
+\node[nota] at (2.25,0.45) {Flujo grueso};
+\node[nota] at (6.0,0.45) {Flujo fino};
+\node[nota] at (9.4,0.45) {Material en caída};
+
+% Llenado con corte anticipado
+\draw[curva] (0,0) -- (4.5,2.6) -- (7.5,3.3)
+    .. controls (8.0,3.6) and (8.4,4.0) .. (9.0,4.0) -- (12,4.0);
+
+% Llenado sin corte anticipado
+\draw[thick, dotted] (7.5,3.3) -- (10.5,4.0)
+    .. controls (10.9,4.3) and (11.2,4.7) .. (12,4.7);
+\node[nota, anchor=south] at (10.9,4.8) {Sin adelanto: sobrepaso};
+
+% Adelanto de corte
+\draw[{Latex[width=4pt,length=4pt]}-{Latex[width=4pt,length=4pt]}]
+    (7.2,3.3) -- (7.2,4.0);
+\node[nota, anchor=south east] at (7.3,4.05) {Adelanto de corte};
+
+\end{tikzpicture}
