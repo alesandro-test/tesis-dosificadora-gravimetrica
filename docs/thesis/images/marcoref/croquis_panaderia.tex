@@ -1,3 +1,4 @@
+% La harina y el azúcar comparten la zona de almacenamiento; la sal y la levadura están en la mesa.
 % Planta esquemática: las coordenadas gráficas no representan una escala.
 % El acceso y el giro de la puerta corresponden a la disposición indicada por el estudiante.
 \begin{tikzpicture}[
@@ -21,7 +22,8 @@
 \node[equipo, minimum width=4.45cm, minimum height=1.5cm,
     text width=4cm] at (5.05,5.95) {Mesa de laminado\\y formado};
 \node[relevante, minimum width=2.85cm, minimum height=1.6cm,
-    text width=2.5cm] (harina) at (9.35,5.95) {Almacenamiento\\de harina};
+    text width=2.5cm, font=\footnotesize] (harina) at (9.35,5.95)
+    {Almacenamiento\\de harina\\y azúcar};
 \node[relevante, minimum width=2.25cm, minimum height=1.5cm,
     text width=1.85cm] at (12.55,5.95) {Amasadora};
 \node[equipo, minimum width=4.8cm, minimum height=2.25cm,
@@ -31,8 +33,8 @@
 
 % La balanza se identifica dentro de la mesa vinculada a la dosificación.
 \draw[fill=black!5, line width=0.6pt] (11.4,0.2) rectangle (13.7,4.6 );
-\node[align=center, text width=2.05cm, font=\footnotesize] at (12.55,3.0)
-    {Mesa de\\ingredientes y\\dosificación};
+\node[align=center, text width=2.05cm, font=\footnotesize] at (12.55,3.2)
+    {Mesa de\\ingredientes y\\dosificación\\[2pt]\textit{Sal y levadura}};
 \node[equipo, fill=white, text width=1.65cm,
     minimum height=0.95cm, font=\footnotesize] (balanza) at (12.55,1.1)
     {Balanza\\Punto de pesaje};

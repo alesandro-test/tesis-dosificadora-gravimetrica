@@ -1,0 +1,61 @@
+% Procedimiento manual de incorporación de azúcar, sal y levadura
+% (una carga por ingrediente, estimada por el operario, sin lectura).
+\begin{tikzpicture}[
+    >=Latex,
+    node distance=0.45cm and 2.0cm,
+    font=\small,
+    proceso/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum width=4.6cm,
+        minimum height=0.8cm,
+        text width=4.0cm,
+        align=center,
+        inner ysep=3pt
+    },
+    iniciofin/.style={
+        rectangle,
+        draw,
+        rounded corners=12pt,
+        minimum width=2.6cm,
+        minimum height=0.65cm,
+        align=center,
+        inner ysep=2pt
+    },
+    flecha/.style={
+        -{Latex[width=7pt,length=6pt]},
+        thick
+    }
+]
+
+% Flujo principal
+\node[iniciofin] (inicio) {Inicio};
+
+\node[proceso, below=of inicio] (envase)
+{Tomar envase};
+
+\node[proceso, below=of envase] (azucar)
+{Trasladar azúcar\\al recipiente receptor};
+
+\node[proceso, below=of azucar] (sal)
+{Trasladar sal\\al recipiente receptor};
+
+\node[proceso, below=of sal] (levadura)
+{Trasladar levadura\\al recipiente receptor};
+
+\node[proceso, below=of levadura] (finalizar)
+{Finalizar dosificación};
+
+\node[iniciofin, below=of finalizar] (fin)
+{Fin};
+
+% Conexiones
+\draw[flecha] (inicio) -- (envase);
+\draw[flecha] (envase) -- (azucar);
+\draw[flecha] (azucar) -- (sal);
+\draw[flecha] (sal) -- (levadura);
+\draw[flecha] (levadura) -- (finalizar);
+\draw[flecha] (finalizar) -- (fin);
+
+\end{tikzpicture}

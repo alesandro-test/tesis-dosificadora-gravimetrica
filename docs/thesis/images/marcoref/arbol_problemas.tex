@@ -5,62 +5,65 @@
         minimum height=1.2cm, font=\small, inner sep=5pt
     },
     every path/.style={-{Stealth[length=6pt]}, thick},
-    efecto/.style={text width=3.8cm},
-    problema/.style={text width=8.2cm, line width=0.9pt},
-    causa/.style={text width=3.2cm},
-    sub/.style={text width=2.7cm, font=\footnotesize},
+    efecto/.style={text width=4.6cm},
+    problema/.style={text width=11.5cm, line width=0.9pt},
+    causa/.style={text width=3.6cm},
+    sub/.style={text width=2.5cm, font=\footnotesize},
     banda/.style={draw=none, font=\bfseries, anchor=east, align=right}
 ]
 
 % ---------- Problema central ----------
 \node (problema) [problema] {
-El operario destina 1 h 59 min/mes
-al procedimiento manual de dosificación de harina, en el cual
-se acumula una diferencia positiva de
-1,976 kg/mes respecto de las cantidades objetivo
+El operario destina 2~h~43~min/mes al procedimiento manual\\
+de dosificación de ingredientes secos, en el cual se acumula\\
+una diferencia positiva de 1,976~kg de harina, 336~g de azúcar,\\
+236~g de sal y 76~g de levadura respecto de las cantidades objetivo
 };
 
 % ---------- Efectos ----------
 \coordinate (nivelEfectos) at ($(problema.north)+(0,2.1)$);
 
-\node (efecto1) [efecto] at ($(nivelEfectos)+(-3.0,0)$) {
-Menor disponibilidad del operario
-para otras actividades
+\node (efecto1) [efecto] at ($(nivelEfectos)+(-3.4,0)$) {
+Menor disponibilidad\\del operario para\\otras actividades
 };
 
-\node (efecto2) [efecto] at ($(nivelEfectos)+(3.0,0)$) {
-Variación de la cantidad de harina
-establecida para la preparación
+\node (efecto2) [efecto] at ($(nivelEfectos)+(3.4,0)$) {
+Masas con cantidades\\de ingredientes\\distintas de la receta
 };
 
 % ---------- Causas ----------
 \node (causa2) [causa, below=1.8cm of problema] {
-Cargas y traslados sucesivos
+Ajuste final\\de la harina por\\encima del objetivo
 };
 
-\node (causa1) [causa, left=0.8cm of causa2] {
-Preparación y puesta
-a cero de la balanza
+\node (causa1) [causa, left=1.0cm of causa2] {
+Cargas y traslados\\sucesivos desde\\el almacenamiento
 };
 
-\node (causa4) [causa, right=0.8cm of causa2] {
-Ajuste y comprobación final
+\node (causa3) [causa, right=1.0cm of causa2] {
+Azúcar, sal y\\levadura en una\\carga sin lectura
 };
 
-% ---------- Subcausas ----------
-\node (sub2) [sub, below=1.5cm of causa2] {
-Tres o cuatro cargas
-principales por ciclo
+% ---------- Subcausas de la causa 1 ----------
+\node (sub12) [sub, below=1.5cm of causa1] {
+Tres o cuatro\\cargas de harina\\por ciclo
 };
 
-\node (sub1) [sub, left=0.4cm of sub2] {
-Separación entre almacenamiento
-y pesaje
+\node (sub11) [sub, left=0.3cm of sub12] {
+Separación entre\\almacenamiento\\y pesaje
 };
 
-\node (sub3) [sub, right=0.4cm of sub2] {
-Retornos para
-cargas adicionales
+\node (sub13) [sub, right=0.3cm of sub12] {
+Recorrido\\adicional para\\el azúcar
+};
+
+% ---------- Subcausas de la causa 3 ----------
+\node (sub31) [sub, below=1.5cm of causa3, xshift=-1.45cm] {
+Porción estimada\\por experiencia
+};
+
+\node (sub32) [sub, below=1.5cm of causa3, xshift=1.45cm] {
+Envase común\\sin medida
 };
 
 % ---------- Flechas: problema -> efectos ----------
@@ -77,32 +80,43 @@ cargas adicionales
 \coordinate (unionCausas) at ($(causa2.north)+(0,0.45)$);
 \coordinate (unionCausasIzq) at (causa1.north |- unionCausas);
 \coordinate (unionCausasCentro) at (causa2.north |- unionCausas);
-\coordinate (unionCausasDer) at (causa4.north |- unionCausas);
+\coordinate (unionCausasDer) at (causa3.north |- unionCausas);
 
 \draw[-] (causa1.north) -- (unionCausasIzq);
 \draw[-] (causa2.north) -- (unionCausasCentro);
-\draw[-] (causa4.north) -- (unionCausasDer);
+\draw[-] (causa3.north) -- (unionCausasDer);
 \draw[-] (unionCausasIzq) -- (unionCausasDer);
 \draw (unionCausasCentro) -- (problema.south);
 
-% ---------- Flechas: subcausas -> causa2 ----------
-\coordinate (unionSub) at ($(sub2.north)+(0,0.55)$);
-\coordinate (unionSubIzq) at (sub1.north |- unionSub);
-\coordinate (unionSubCentro) at (sub2.north |- unionSub);
-\coordinate (unionSubDer) at (sub3.north |- unionSub);
+% ---------- Flechas: subcausas -> causa 1 ----------
+\coordinate (unionSub1) at ($(sub12.north)+(0,0.55)$);
+\coordinate (unionSub1Izq) at (sub11.north |- unionSub1);
+\coordinate (unionSub1Der) at (sub13.north |- unionSub1);
 
-\draw[-] (sub1.north) -- (unionSubIzq);
-\draw[-] (sub2.north) -- (unionSubCentro);
-\draw[-] (sub3.north) -- (unionSubDer);
-\draw[-] (unionSubIzq) -- (unionSubDer);
-\draw (unionSubCentro) -- (causa2.south);
+\draw[-] (sub11.north) -- (unionSub1Izq);
+\draw[-] (sub12.north) -- (unionSub1);
+\draw[-] (sub13.north) -- (unionSub1Der);
+\draw[-] (unionSub1Izq) -- (unionSub1Der);
+\draw (unionSub1 -| causa1.south) -- (causa1.south);
+
+% ---------- Flechas: subcausas -> causa 3 ----------
+\coordinate (unionSub3) at ($(sub31.north)+(0,0.55)$);
+\coordinate (unionSub3Izq) at (sub31.north |- unionSub3);
+\coordinate (unionSub3Der) at (sub32.north |- unionSub3);
+
+\draw[-] (sub31.north) -- (unionSub3Izq);
+\draw[-] (sub32.north) -- (unionSub3Der);
+\draw[-] (unionSub3Izq) -- (unionSub3Der);
+\draw (unionSub3 -| causa3.south) -- (causa3.south);
 
 % ---------- Coordenadas auxiliares ----------
-\coordinate (leftEdge) at ($(causa1.west)+(-0.35,0)$);
-\coordinate (rightEdge) at ($(efecto2.east)+(0.35,0)$);
+\coordinate (leftEdge) at ($(sub11.west)+(-0.35,0)$);
+\coordinate (rightEdge) at ($(sub32.east)+(0.35,0)$);
 \coordinate (labelX) at ($(leftEdge)+(-0.45,0)$);
-\coordinate (causaMid) at ($(causa2)!0.5!(sub2)$);
-\coordinate (midEfProb) at ($(efecto1.south)!0.5!(problema.north)+(0,0.25)$);\coordinate (midProbCausa) at ($(problema.south)!0.5!(causa2.north)+(0,0.25)$);
+\coordinate (causaMid) at ($(causa1)!0.5!(sub12)$);
+
+\coordinate (midEfProb) at ($(efecto1.south)!0.5!(problema.north)+(0,0.25)$);
+\coordinate (midProbCausa) at ($(problema.south)!0.5!(causa2.north)+(0,0.25)$);
 
 \path let \p1=(leftEdge),  \p2=(midEfProb)    in coordinate (l1L) at (\x1,\y2);
 \path let \p1=(rightEdge), \p2=(midEfProb)    in coordinate (l1R) at (\x1,\y2);
