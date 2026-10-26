@@ -1,5 +1,7 @@
 # Insumos secos adicionales: recetas de referencia y estimación por ciclo
 
+> **Reemplazada (2026-10-26):** las cantidades y el tipo de levadura de esta nota quedaron reemplazados por `research/notes/levantamiento_dosificacion_san_miguel.md` (levadura en polvo; `D-016`). Se conserva como antecedente.
+
 **Fecha:** 2026-10-05  
 **Estado:** mediciones reportadas por el estudiante (sección 1A); las secciones 2–5 conservan la estimación previa por receta como contraste  
 **Uso:** respaldo para el estudio de tolerancias por insumo (acta de evaluación del perfil, `D-010`, `D-013`). Las recetas no se incorporan al documento de tesis.
