@@ -80,6 +80,24 @@ El trabajo confirma el pesaje de harina en kilogramos, pero el accionamiento
 trifásico y el transporte de sacos exceden la carga por lotes de una
 amasadora.
 
+En el envasado de harina, \textcite{budijono2021flour} rediseñaron una
+llenadora comercial de tornillo cuyo control convierte la masa objetivo en
+tiempo de giro. Cambiaron el paso del tornillo para que la harina no gotee por
+la salida y agregaron al agitador un borde de teflón que barre la harina
+adherida a la pared del embudo. La simulación de partículas mostró una harina
+más densa en el tubo de salida y un flujo más constante, sin cifras de error
+de dosificación. La Figura~\ref{fig:budijono_llenadora} muestra la llenadora y
+la disposición del tornillo y del agitador dentro de la tolva cónica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/marcoteorico/budijono_llenadora.png}
+    \caption{Llenadora comercial de harina con tornillo y agitador.}
+    \label{fig:budijono_llenadora}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Adaptado de \textcite{budijono2021flour}.}
+\end{figure}
+
 % La oferta para panificación industrial también dosifica por peso y separa la
 % harina de los insumos menores. En la planta de Harry-Brot, AZO alimenta las
 % amasadoras con básculas de vacío para la harina y pesa los insumos menores al
@@ -120,7 +138,7 @@ servomotor de la compuerta.
     \label{fig:arquitectura_electronica}
     \vspace{0.2em}
     {\footnotesize Fuente: Elaboración propia con base en
-    \textcite{david2024granulated}, \textcite{valendi2025granule},
+    \textcite{david2024granulated}, \textcite{afni2026cake},
     \textcite{orozco2024dosificadora} y
     \textcite{humaira2024optimalisasi}.}
 \end{figure}
@@ -133,7 +151,10 @@ Figura~\ref{fig:bulatov_instalacion} muestra la instalación de
 próximo a la harina entre estos trabajos. Un variador reduce la velocidad del
 tornillo al final del lote, el programa descuenta de 0,1 a 0,5~kg de material
 en caída y el error no superó el 5~\% en lotes de 1~kg. Las virutas, en
-cambio, formaron bóvedas y no pudieron dosificarse.
+cambio, formaron bóvedas y no pudieron dosificarse. En un segundo trabajo con
+la misma instalación, \textcite{bulatov2021weighing} dosificaron sal, tiza,
+cebada y serrín en lotes de 1~kg, y con los parámetros ajustados el error fue
+de 3,6 a 4~\% con serrín y de 6,5 a 7,3~\% con sal.
 
 \begin{figure}[H]
     \centering
@@ -148,10 +169,9 @@ Con arroz, \textcite{andriani2022rice} dosificaron de 1 a 5~kg con una
 exactitud cercana al 95~\%, limitada por el grano que cae tras cerrar la
 válvula. \textcite{hadi2025weighing} compensaron ese material con un adelanto
 de corte de 120~g y obtuvieron un sobrepaso medio de 0,72~\% entre 1 y 20~kg,
-con un servomotor en lugar de la válvula neumática industrial. Con alimentos
-en polvo, \textcite{ekpu2023weighing} fijaron una consigna de 1~kg y pesaron
-4,82~kg acumulados en 300~s de prueba continua, con una exactitud cercana al
-95~\%.
+con un servomotor en lugar de la válvula neumática industrial. Con azúcar, \textcite{muhammad2025sugar} llenaron 500~g y 1~kg con una
+válvula accionada por servomotor y obtuvieron errores medios de 1,77 y
+2,40~\% en cinco ensayos por consigna.
 
 La Figura~\ref{fig:secuencia_llenado} resume la secuencia que resulta de estos
 trabajos. El alimentador pasa de flujo grueso a flujo fino cerca de la
@@ -170,12 +190,12 @@ exceso que reportaron \textcite{andriani2022rice}.
     \textcite{bulatov2021dosing}.}
 \end{figure}
 
-Los trabajos de grado latinoamericanos llegan hasta 2~kg.
+Entre los trabajos de grado latinoamericanos,
 \textcite{orozco2024dosificadora} construyó una dosificadora de arroz con canal
 vibratorio, compuerta y celda de carga de 10~kg
 (Figura~\ref{fig:orozco_dosificadora}). Obtuvo exactitudes de 98,47~\% en 100
 pruebas de 1~lb y de 99,73~\% en 30 pruebas de 1~kg, con 35,86~s por
-kilogramo.
+kilogramo, de modo que la exactitud fue menor en la dosis menor.
 
 \begin{figure}[H]
     \centering
@@ -188,20 +208,13 @@ kilogramo.
     Fuente: Adaptado de \textcite{orozco2024dosificadora}.}
 \end{figure}
 
-\textcite{remache2022dosificador} dosificó cebada con tornillo de 0,1 a 2~kg,
-con un error de hasta 10~\% en 0,1~kg, y coincide con Orozco Villa en que el
-error crece al reducir la dosis. \textcite{hidalgo2020llenado}, con tornillo y
-celda de carga en lazo cerrado para granola, redujo el tiempo de llenado en
-más del 40~\% y recomienda separar el ajuste grueso del fino.
-
 En Bolivia, \textcite{laime2022dosificacion} construyó un sistema para snacks
 con canales vibratorios y tolvas de pesaje de 2,5~kg.
 \textcite{challco2024dosificadora} diseñó para pan molido una dosificadora con
 tolva de 40~kg, canal vibratorio, celda de carga de 10~kg y PLC
-(Figura~\ref{fig:challco_dosificadora}), y \textcite{murillo2024papas}, una
-dosificadora de papas fritas con celda de carga. La dosificación por peso se
-estudia en el país, aunque sin ensayos con harina y, en estos dos últimos
-trabajos, sin resultados medidos.
+(Figura~\ref{fig:challco_dosificadora}). La dosificación por peso se estudia
+en el país, aunque sin ensayos con harina, y el diseño de Challco Capajeiqui no
+reporta resultados medidos.
 
 \begin{figure}[H]
     \centering
@@ -221,16 +234,15 @@ adelanto de corte o con flujo fino al final del lote
 \subsection{Insumos en gramos}
 \label{subsec:dosificadoras_gramos}
 
-% PENDIENTE: vincular este grupo con la escala de los insumos menores de San
-% Miguel cuando sus cantidades tengan respaldo en la tesis (D-013).
-Un grupo numeroso de prototipos dosifica insumos en gramos, y su resultado
-depende del alimentador. Con bandeja vibratoria, \textcite{valendi2025granule}
-obtuvieron errores de 0,255 a 0,5~\% en arroz de 50 a 400~g. Con tornillo,
+Los insumos menores de San Miguel se dosifican en gramos. Por ciclo, la
+receta de referencia indica de 80 a 500~g de azúcar, de 100 a 150~g de sal y
+de 30 a 50~g de levadura en polvo (Tabla~\ref{tab:receta_referencia}). Un
+grupo numeroso de prototipos trabaja en esa escala. Con tornillo,
 \textcite{david2024granulated} alcanzaron exactitudes de 99,677 a 99,795~\%
-con 120 a 175~g de azúcar, arroz y café, y \textcite{zaenurrohman2023merica}
-registraron 2,78~\% con pimienta en polvo, el material más fino del grupo.
-\textcite{david2024granulated} reconocen, además, poca adaptación a cambios de
-densidad o humedad.
+con 120 a 175~g de azúcar, arroz y café, aunque reconocen poca adaptación a
+cambios de densidad o humedad. En dosis menores, \textcite{pan2024powder} pesaron tres
+polvos de distintas propiedades en cargas de unos 6 a 7~g, con errores medios
+de 0,012 a 0,089~g.
 
 Cuando se dosifican varios insumos, el pesaje se organiza de dos formas
 (Figura~\ref{fig:configuraciones_balanza}). \textcite{farihin2021premix}
@@ -238,8 +250,16 @@ dosificaron una premezcla de pan dulce desde cinco tolvas sobre una única
 celda de carga de 1~kg, con un error de 0,2~\% con control PI frente a
 0,8~\% con control todo o nada. \textcite{humaira2024optimalisasi}, en cambio,
 asignaron a cada uno de sus tres insumos una cámara con alimentador helicoidal
-y celda propia. Ningún trabajo compara ambas configuraciones, por lo que la
-elección entre balanza común y balanza por insumo queda abierta.
+y celda propia. Con una celda común, \textcite{joni2022powder} dosificaron
+harina, azúcar y café desde tres contenedores con tornillo agitador, de 10 a
+100~g, y la tasa de éxito fue del 70~\% en 50 ensayos, con diferencias de hasta
+9~g en dosis de 10~g. En la fabricación de alimento balanceado,
+\textcite{bulatov2021weighing} señalan que los ingredientes principales, de
+más del 1~\% del lote, se pesan en una báscula de gran capacidad con un error
+admisible de $\pm$0,1 a 2~\%, y los microcomponentes en básculas pequeñas con
+$\pm$3~\%. Ningún trabajo compara ambas configuraciones en un mismo equipo,
+por lo que la elección entre balanza común y balanza por insumo queda
+abierta.
 
 \begin{figure}[H]
     \centering
@@ -254,8 +274,8 @@ elección entre balanza común y balanza por insumo queda abierta.
 \subsection{Harina en gramos para panaderías pequeñas}
 \label{subsec:dosificadoras_panaderia}
 
-Tres trabajos dosifican harina de trigo con equipos para panadería pequeña,
-todos en gramos. El equipo de \textcite{humaira2024optimalisasi}
+Cuatro trabajos dosifican harina con equipos para panadería pequeña, todos
+en gramos, y tres de ellos con harina de trigo. El equipo de \textcite{humaira2024optimalisasi}
 (Figura~\ref{fig:humaira_dosificadora}) obtuvo el menor error en harina de la
 revisión, 0,08~\%, pero tardó 197~s en entregar 350~g.
 
@@ -290,6 +310,25 @@ de 47,40~g y se atribuyó a una bóveda de harina en el borde de la compuerta.
     \textcite{rumapea2026flour}.}
 \end{figure}
 
+\textcite{afni2026cake} construyeron para una panadería pequeña un
+dosificador de harina de arroz con tornillo accionado por motor paso a paso,
+celda de carga de 5~kg y control todo o nada. Frente al pesaje manual con una
+balanza mecánica, la exactitud subió de 91,5 a 97,9~\% para 263~g, con un
+error absoluto medio de 5,4~g y 24,9~s por dosis en diez repeticiones. Los
+autores advierten que la harina tiende a formar bóvedas y sigue saliendo un
+instante después de detener el tornillo. La Figura~\ref{fig:afni_dosificador}
+muestra el equipo, con la tolva, el tornillo, la plataforma de pesaje y la
+caja de control.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/marcoteorico/afni_dosificador.png}
+    \caption{Dosificador de harina con tornillo para una panadería pequeña.}
+    \label{fig:afni_dosificador}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Adaptado de \textcite{afni2026cake}.}
+\end{figure}
+
 \textcite{bachtiar2026brownies} integraron la dosificación y el mezclado de
 masa para brownies, con seis compuertas por servomotor sobre una sola celda de
 carga. La harina llegó a 95~g frente a una consigna de 100~g y el azúcar a
@@ -305,15 +344,12 @@ variable de diseño junto con la exactitud.
 
 La Tabla~\ref{tab:dosificadoras_resumen} reúne los trabajos que dosificaron
 harina o masas del orden del kilogramo, con el insumo, la consigna, el
-alimentador, el error y el caudal de cada uno. El error se presenta con la
-métrica de cada autor, por lo que las cifras no se comparan directamente entre
-filas. El caudal es un cálculo propio, la masa dosificada dividida entre el
-tiempo reportado, y permite contrastar los prototipos con el ritmo de trabajo
-de la panadería.
+alimentador y el error de cada uno. El error se presenta con la métrica de
+cada autor, por lo que las cifras no se comparan directamente entre filas.
 
 \begin{table}[htbp]
     \centering
-    \caption{Dosificadoras de harina y de escala de kilogramos: error y caudal.}
+    \caption{Dosificadoras de harina y de escala de kilogramos: consigna y error.}
     \label{tab:dosificadoras_resumen}
     \footnotesize
     \setstretch{1}
@@ -321,46 +357,48 @@ de la panadería.
     \renewcommand{\arraystretch}{1.2}
 
     \begin{tabularx}{\textwidth}{
-        >{\raggedright\arraybackslash}p{0.18\textwidth}
+        >{\raggedright\arraybackslash}p{0.19\textwidth}
+        >{\raggedright\arraybackslash}p{0.14\textwidth}
         >{\raggedright\arraybackslash}p{0.12\textwidth}
-        >{\raggedright\arraybackslash}p{0.11\textwidth}
-        >{\raggedright\arraybackslash}p{0.16\textwidth}
-        >{\raggedright\arraybackslash}X
-        >{\raggedright\arraybackslash}p{0.09\textwidth}}
+        >{\raggedright\arraybackslash}p{0.17\textwidth}
+        >{\raggedright\arraybackslash}X}
         \toprule[1pt]
         \textbf{Fuente} & \textbf{Insumo} & \textbf{Consigna} &
-        \textbf{Alimentación} & \textbf{Error según el autor} &
-        \textbf{Caudal (kg/h)} \\
+        \textbf{Alimentación} & \textbf{Error según el autor} \\
         \midrule[1pt]
         \textcite{gebov2023algorithmic} & Harina & 25~kg & Tornillo &
-        No reporta & 6000 a 15\,000 \\
+        No reporta \\
         \textcite{humaira2024optimalisasi} & Harina & 20--350~g & Helicoide &
-        Error medio de 0,08~\% & 6 \\
+        Error medio de 0,08~\% \\
         \textcite{rumapea2026flour} & Harina de trigo & 10--50~g & Compuerta &
-        EPAM de 1,32 a 1,83~\% (n = 30) & --- \\
+        EPAM de 1,32 a 1,83~\% (n = 30) \\
+        \textcite{afni2026cake} & Harina de arroz & 263~g & Tornillo &
+        Exactitud de 97,9~\% (n = 10) \\
         \textcite{andriani2022rice} & Arroz & 1--5~kg & Válvula &
-        Exactitud cercana al 95~\% & --- \\
+        Exactitud cercana al 95~\% \\
         \textcite{hadi2025weighing} & Arroz & 1--20~kg & Válvula &
-        Sobrepaso medio de 0,72~\% & --- \\
-        \textcite{ekpu2023weighing} & Alimentos en polvo & 1~kg & Motor paso
-        a paso & Exactitud cercana al 95~\% & 58 \\
+        Sobrepaso medio de 0,72~\% \\
+        \textcite{muhammad2025sugar} & Azúcar & 0,5--1~kg & Válvula &
+        Error medio de 1,77 a 2,40~\% (n = 5) \\
         \textcite{bulatov2021dosing} & Harina de madera & 1~kg & Tornillo &
-        Hasta 5~\% & --- \\
+        Hasta 5~\% \\
+        \textcite{bulatov2021weighing} & Sal & 1~kg & Tornillo &
+        De 6,5 a 7,3~\% \\
         \textcite{orozco2024dosificadora} & Arroz & 1~lb--1~kg & Canal
-        vibratorio & Exactitud de 99,73~\% con 1~kg (n = 30) & 100 \\
-        \textcite{remache2022dosificador} & Cebada & 0,1--2~kg & Tornillo &
-        Hasta 10~\% con 0,1~kg y máximo absoluto de 0,013~kg con 1~kg & --- \\
+        vibratorio & Exactitud de 99,73~\% con 1~kg (n = 30) \\
         \bottomrule[1pt]
     \end{tabularx}
 
     \vspace{2pt}
-    {\footnotesize EPAM: error porcentual absoluto medio. n: ensayos por
-    consigna. Caudal: cálculo propio a partir de la masa y el tiempo
-    reportados. ---: la fuente no reporta tiempo por dosis.
-    Fuente: Elaboración propia con base en las fuentes citadas.}
+    {\footnotesize 
+    Fuente: Elaboración propia con base en las fuentes citadas.
+    }
 \end{table}
 
-Los prototipos con tiempo reportado alcanzan caudales de 6 a 100~kg/h. Como
+Con el tiempo reportado, el caudal equivalente de los prototipos, calculado
+como masa dosificada entre tiempo, va de unos 6~kg/h
+\parencite{humaira2024optimalisasi} a unos 100~kg/h
+\parencite{orozco2024dosificadora}. Como
 referencia, el procedimiento manual de San Miguel registró de 5 a 8~kg en
 ciclos de 53,2 a 66,6~s (Apéndice~\ref{ap:tablas_dosificacion}), equivalentes
 a un intervalo aproximado de 270 a 540~kg/h. Este cálculo usa el tiempo total
@@ -394,16 +432,19 @@ reporta.
         \textbf{Enfoque} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
         \midrule[1pt]
         Pesaje por lotes: tolva, alimentador, celda de carga y controlador &
-        Errores de 0,2 a 2,8~\% en prototipos de bajo costo & Ensayos con
+        Errores de 0,08 a 2,4~\% en prototipos de bajo costo hasta 1~kg
+        (Humaira, Muhammad) & Ensayos con
         granos y caudales de 6 a 100~kg/h \\
         Dosificación volumétrica & Sin celda de carga & Masa no medida, con
         evidencia en la Sección~\ref{sec:teoria_medicion} \\
         Pesaje industrial de sacos y envases & Ciclo de 6~s en sacos de 25~kg de harina (Gebov) &
         Accionamiento trifásico y transporte de envases \\
-        Tornillo & 0,08~\% en harina (Humaira) y 99,68 a 99,80~\% (David) &
-        6~kg/h en harina y bóvedas con virutas (Bulatov) \\
-        Canal vibratorio & 0,255 a 0,5~\% (Valendi) y 99,73~\% con 1~kg
-        (Orozco) & Ensayos con granos \\
+        Tornillo & 0,08~\% en harina (Humaira), 97,9~\% en harina de arroz
+        (Afni) y paso y agitador contra la adherencia de la harina
+        (Budijono) &
+        6~kg/h en harina y bóvedas con virutas (Bulatov 2021a) \\
+        Canal vibratorio & 99,73~\% con 1~kg (Orozco) & Ensayos con
+        granos \\
         Compuerta & EPAM de 1,32 a 1,83~\% en harina (Rumapea) & Bóveda en el
         borde, material en caída (Andriani) y apertura poco controlable con
         insumos secos (Bachtiar) \\
@@ -412,10 +453,9 @@ reporta.
         (Zeppelin) & 197~s para
         350~g con PID (Humaira) \\
         Balanza común o balanza por insumo & Una celda para cinco tolvas
-        (Farihin) y balanzas separadas para insumos menores (AZO) & Sin
-        comparación en un mismo trabajo \\
-        Equipos comerciales & Principio y corte en dos etapas probados &
-        Escala industrial o envasado \\
+        (Farihin), balanzas separadas para insumos menores (AZO) y básculas
+        según la proporción del insumo (Bulatov 2021b) & Sin comparación en un mismo
+        trabajo y 70~\% de éxito con una celda común (Joni) \\
         \bottomrule[1pt]
     \end{tabularx}
 
@@ -434,68 +474,577 @@ presentan ventajas y fallas de flujo que dependen del material, por lo que su
 selección se analiza en la Sección~\ref{sec:teoria_mecanica}, y las
 estrategias de corte se comparan en la Sección~\ref{sec:teoria_control}. 
 
-La Figura~\ref{fig:brecha_consignas} ubica la masa por dosis de cada trabajo
-frente al intervalo de 5 a 8~kg medido en la Panadería San Miguel
-(Apéndice~\ref{ap:tablas_dosificacion}). Los ensayos con harina de trigo no
-superan los 350~g, los que alcanzan el intervalo emplean arroz
-\parencite{andriani2022rice,hadi2025weighing} y el único trabajo con harina en
-kilogramos corresponde al embolsado industrial \parencite{gebov2023algorithmic}.
-
-\begin{figure}[H]
-    \centering
-    \resizebox{0.95\textwidth}{!}{\input{images/marcoteorico/brecha_consignas.tex}}
-    \caption{Masa por dosis de los trabajos revisados frente al intervalo de San Miguel.}
-    \label{fig:brecha_consignas}
-    \vspace{0.2em}
-    {\footnotesize Barras: intervalo de masa por dosis reportado por cada
-    fuente. Punto: una sola masa por dosis. En Bachtiar et al., intervalo de
-    todos los insumos.\\
-    Fuente: Elaboración propia con base en las fuentes citadas y el
-    Apéndice~\ref{ap:tablas_dosificacion}.}
-\end{figure}
-
-
 Ninguna fuente académica revisada reporta la dosificación gravimétrica de
-harina de trigo en lotes de 5 a 8~kg para una panadería pequeña. Reunir las
-tres condiciones en un mismo equipo define el aporte diferencial del proyecto.
+harina de trigo en lotes de 5 a 8~kg para una panadería pequeña, ni reúne en
+un mismo equipo la harina en kilogramos y los insumos menores en decenas a
+cientos de gramos (Tabla~\ref{tab:receta_referencia}). Reunir esas condiciones
+define el aporte diferencial del proyecto.
 
 \section{Área mecánica: almacenamiento y alimentación}
 \label{sec:teoria_mecanica}
 
+% Redacción del 26/10/2026 con las fichas de NotebookLM verificadas en cada
+% PDF. Pendientes de descarga (UCB): Francisco-Ponce (2025), Díaz-Heras (2026)
+% y Pezo (2025). Galindo (2025) se trata en la Sección 2.4 (volumétrico).
+
+Esta sección analiza los dos primeros bloques de la
+Figura~\ref{fig:arquitectura_funcional}, la tolva y el alimentador, con la
+harina como insumo crítico. Los trabajos de la
+Sección~\ref{sec:teoria_dosificadoras} ya mostraron sus dos fallas de flujo: la
+bóveda en la salida \parencite{rumapea2026flour,afni2026cake} y el material
+que sigue cayendo después del corte \parencite{andriani2022rice}.
+
 \subsection{Tolvas para polvos cohesivos}
-Tolvas para harina y polvos cohesivos: formación de bóvedas, adherencia y
-descarga.
+\label{subsec:mecanica_tolvas}
+
+Según la revisión de \textcite{suhag2024flowability}, la fluidez de un polvo
+alimentario depende del tamaño y la forma de sus partículas, de su humedad y de
+las condiciones de almacenamiento. Los polvos más finos son más cohesivos, y la
+humedad forma puentes líquidos entre partículas que frenan el flujo.
+
+La Figura~\ref{fig:su_boveda} muestra la falla que resulta en la harina de
+trigo. \textcite{su2017arching} llenó con harina una tolva de acrílico de
+170~mm de diámetro y salida de 30~mm, y al abrir la válvula la harina formó
+una bóveda sobre la salida y no descargó.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{images/marcoteorico/su_boveda.png}
+    \caption{Bóveda de harina de trigo sobre la salida abierta de una tolva.}
+    \label{fig:su_boveda}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Adaptado de \textcite{su2017arching}.}
+\end{figure}
+
+La humedad del ambiente agrava esta falla, un dato relevante para el clima de
+Santa Cruz. \textcite{rivera2023flour} acondicionaron harinas de trigo a 25 y
+35~°C y a 50, 60 y 70~\% de humedad relativa, y recomiendan manipularlas al
+50~\% para mejorar su fluidez. Con las propiedades medidas calcularon, para el
+flujo másico por gravedad en una tolva cónica, salidas de hasta 1,94~m con la
+fracción más fina, y \textcite{lopesneto2017flow} obtuvieron salidas de hasta
+1,25~m para harina de trigo con levadura. Esas dimensiones corresponden a
+silos y superan con amplitud una tolva de panadería, por lo que en esa escala
+la harina no descarga de forma confiable solo por gravedad y necesita un
+alimentador o una ayuda de flujo.
+
+Las ayudas de flujo tienen límites. En una tolva pequeña de 4,75~L,
+\textcite{sogaard2017jenike} comprobaron que el método de Jenike predice bien
+el patrón de flujo, pero la bóveda debió romperse con vibración manual y el
+resultado cambió con la humedad del polvo. \textcite{zhu2020pulsated}
+lograron una descarga más alta y uniforme de polvos cohesivos con aire
+pulsado, aunque el mismo aire empeoró la descarga de los polvos no cohesivos y
+exige un compresor. Entre los insumos menores, \textcite{dossantos2017sugar}
+encontraron que el azúcar impalpable fue el de menor fluidez de cuatro azúcares
+comerciales, con un índice de Hausner de 1,33.
 
 \subsection{Alimentadores para dosificación por lotes}
-Tornillo sin fin, alimentador vibratorio y otros: caudal, fallas de flujo y
-limpieza.
+\label{subsec:mecanica_alimentadores}
+
+La Figura~\ref{fig:alimentadores} compara los tres alimentadores que aparecen
+en los antecedentes. El tornillo extrae el material de la tolva y lo empuja,
+el canal vibratorio lo hace avanzar por oscilación y la compuerta solo abre la
+salida y deja caer el material por gravedad.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.9\textwidth}{!}{\input{images/marcoteorico/alimentadores.tex}}
+    \caption{Alimentadores de los antecedentes: tornillo, canal vibratorio y compuerta.}
+    \label{fig:alimentadores}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{budijono2021flour}, \textcite{orozco2024dosificadora} y
+    \textcite{rumapea2026flour}.}
+\end{figure}
+
+El tornillo es el alimentador que más se ha estudiado con harina de trigo.
+\textcite{xu2021screw} diseñaron un tornillo de paso variable de 100~mm para
+harina con 13,5~\% de humedad. Entregó 0,535~kg/s con una fluctuación de
+$\pm$7,85~\%, frente a $\pm$17,5~\% del tornillo de paso constante, porque
+este último deja zonas muertas de harina compactada en la tolva.
+\textcite{shen2022static} midieron que la harina se carga electrostáticamente
+al pasar por el tornillo, con un aumento de 0,0138~nC/g por cada 10~rpm, y que
+el polvo cargado se adhiere a las paredes y empeora la exactitud del llenado.
+Un ventilador iónico en la salida eliminó la carga de forma más estable que la
+aplicación de tensión.
+
+El agitador complementa al tornillo. \textcite{gitiaray2022auger} simularon
+una llenadora de tornillo con agitador y obtuvieron el mayor caudal, 0,3~kg/s,
+con la menor potencia, 434~W, aunque con semillas de pimienta, y advierten que
+la humedad causaría cohesión y atascos. \textcite{naranjo2024agitator}
+mostraron que elegir la relación de velocidades entre tornillo y agitador
+reduce la variabilidad del caudal. Entre los antecedentes de la
+Sección~\ref{sec:teoria_dosificadoras}, la llenadora de
+\textcite{budijono2021flour} combina ambos elementos para la harina, y el
+dosificador de \textcite{afni2026cake} entregó 263~g de harina de arroz en
+24,9~s con un tornillo de motor paso a paso.
+
+El canal vibratorio se estudia sobre todo con granos.
+\textcite{despotovic2017vibratory} modelaron un transportador vibratorio
+electromagnético y lo validaron en vacío, sin considerar el material.
+\textcite{misljen2019vibratory} cerraron el lazo del caudal con un PID y con
+un control predictivo alrededor de 50~g/s, y el control predictivo resultó más
+sensible a los cambios de masa. Con este alimentador, Orozco Villa y Challco
+Capajeiqui dosificaron arroz y pan molido (Sección~\ref{sec:teoria_dosificadoras}).
+Al elegir su mecanismo, \textcite{rumapea2026flour} prefirieron la compuerta:
+señalan que el canal vibratorio tiende a un flujo irregular con polvos finos
+como la harina y que el tornillo, aunque da un flujo más constante, es difícil
+de limpiar en aplicaciones alimentarias.
+
+La compuerta es el mecanismo más simple, pero depende de que el material caiga
+solo. En harina se formó una bóveda en su borde \parencite{rumapea2026flour}, y
+la apertura por servomotor resultó poco controlable con insumos secos
+\parencite{bachtiar2026brownies}. Por último, \textcite{torresserra2021granular}
+caracterizó 174 polvos y granos y encontró una diferencia notable entre la
+clase de alimentador que asigna la práctica industrial y la que predicen las
+propiedades de flujo medidas, lo que justifica elegir el alimentador a partir
+de las propiedades del insumo y no solo por costumbre.
+
+La Tabla~\ref{tab:mecanica_enfoques} reúne los enfoques de esta sección. Cada
+fila presenta el resultado que favorece al enfoque y la limitación observada,
+con el autor que la reporta.
+
+\begin{table}[H]
+    \centering
+    \caption{Factores a favor y limitaciones de las tolvas y los alimentadores.}
+    \label{tab:mecanica_enfoques}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.24\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X}
+        \toprule[1pt]
+        \textbf{Enfoque} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
+        \midrule[1pt]
+        Tolva con descarga por gravedad & Sin partes móviles & Bóveda de harina
+        en la salida (Su) y salidas calculadas de 1,25 a 1,94~m (Lopes Neto,
+        Rivera) \\
+        Aire pulsado en la tolva & Descarga más alta y uniforme de polvos
+        cohesivos (Zhu) & Requiere compresor y empeora los polvos no
+        cohesivos (Zhu) \\
+        Tornillo de paso constante & Extrae la harina de la tolva (Afni,
+        Budijono) & Fluctuación de $\pm$17,5~\% por zonas muertas (Xu), carga
+        electrostática (Shen) y limpieza difícil (Rumapea) \\
+        Tornillo de paso variable o con agitador & Fluctuación de $\pm$7,85~\%
+        (Xu) y menor variabilidad con la relación de velocidades adecuada
+        (Naranjo Gómez) & Sin método de diseño sistemático (Xu) \\
+        Canal vibratorio & Caudal regulable con PID (Mišljen) y dosificación de
+        granos (Orozco Villa) & Flujo irregular con harina (Rumapea) \\
+        Compuerta & Pocas piezas (Rumapea) & Bóveda en el borde (Rumapea) y
+        apertura poco controlable (Bachtiar) \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en las fuentes de la
+    Sección~\ref{sec:teoria_mecanica}.}
+\end{table}
+
+A partir de la tabla, para la harina se descartan la descarga solo por gravedad
+y la compuerta como alimentador principal, porque la bóveda aparece en ambas, y
+el aire pulsado, por requerir un compresor. El tornillo, de paso variable o con
+agitador, queda como el candidato con más evidencia en harina de trigo, y el
+canal vibratorio se mantiene como alternativa para insumos granulares. Para el
+azúcar, la sal y la levadura en polvo, la revisión no permite descartar ningún
+alimentador, por lo que la selección del mecanismo y del accionamiento de cada
+insumo corresponde al diseño, con las propiedades de flujo de los insumos de
+San Miguel.
 
 \section{Área de medición: principio y sensores de peso}
 \label{sec:teoria_medicion}
 
+% Redacción del 26/10/2026 con las fichas de NotebookLM y lectura directa de
+% Choi, Tiboni, Zhuang, Kesilmis y Zengin (sin ficha), verificadas en PDF.
+% Pendiente de descarga: Al Shalji (2021). Lema (2026), Galindo (2025) y
+% Peng (2019) no se citan: no aportan dato propio para el caso.
+
+Esta sección analiza el bloque de pesaje de la
+Figura~\ref{fig:arquitectura_funcional}: primero el principio con que se
+determina la masa dosificada y después el sensor que la mide.
+
 \subsection{Volumétrico frente a gravimétrico}
-% Fuentes trasladadas desde 2.2 (20/10/2026): moya2016dosificador,
-% lema2026dosificadora, acuna2024gravimetrico (sobreconsumo de 0,86 % con
-% volumétricos de 10 g frente a 2 g gravimétrico) y dargham2025volumetric
-% (la masa varía con la humedad porque el alimentador controla volumen).
-% Pendiente: Chiliguana y Villavicencio (ESPOL, 2016, archivo D-CD88349.pdf),
-% rediseño de dosificadora volumétrica a gravimétrica de galletas (sobredosis
-% de 3552,5 kg/mes con el sistema volumétrico, solo diseño).
-Dosificación volumétrica frente a gravimétrica; pesaje por lotes y pérdida de
-peso.
+\label{subsec:medicion_principio}
+
+La Figura~\ref{fig:principios_medicion} resume los tres principios que aparecen
+en los antecedentes. El volumétrico entrega un volumen fijo, por vueltas del
+tornillo o por tiempo de apertura, y la masa depende de la densidad del
+insumo. El pesaje por lotes mide la masa que entra a un recipiente sobre la
+celda de carga, y la pérdida de peso mide la que sale de una tolva apoyada en
+celdas.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.9\textwidth}{!}{\input{images/marcoteorico/principios_medicion.tex}}
+    \caption{Principios de dosificación: volumétrico, pesaje por lotes y pérdida de peso.}
+    \label{fig:principios_medicion}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{bostijn2019multivariate} y
+    \textcite{chiliguana2016rediseno}.}
+\end{figure}
+
+El punto débil del volumétrico es la densidad. \textcite{lanzerstorfer2020density}
+midió en 28 polvos alimentarios, entre ellos harinas de trigo, azúcares y sal,
+que la densidad aparente crece con el esfuerzo de consolidación según una ley
+de potencia, de modo que el mismo volumen contiene más masa cuando el polvo
+está más comprimido. \textcite{kruppa2023dosing} señalan que en el dosificado
+volumétrico de polvos finos el error crece con la compresibilidad del producto
+y que la densidad, variable en el tiempo, influye directamente en la masa
+entregada. Al regular el caudal con la densidad medida en línea, redujeron la
+desviación estándar en 0,58~g en el peor caso, con café molido.
+\textcite{dargham2025volumetric}, con válvulas abiertas por tiempo, advierten
+que la masa entregada cambia con la humedad del ambiente porque el dosificador
+controla el volumen y no el peso.
+
+Con harina, \textcite{moya2016dosificador} construyó un dosificador
+volumétrico de tornillo que entregó en promedio 449,8~g por bolsa, con
+variaciones de 2,5~g y 20,8~s por dosis. \textcite{rusin2022volumetric}
+lograron errores menores al 1~\% con polvos no fluidos, comparables al pesaje,
+pero con una paleta helicoidal de mecanizado preciso cuya geometría depende de
+cada polvo.
+
+La sustitución del volumétrico por el gravimétrico está documentada en la
+industria. \textcite{acuna2024gravimetrico} comparó ambos dosificadores en el
+envasado de azúcar de 1~kg (Figura~\ref{fig:acuna_comparacion}). El volumétrico
+entregó en promedio 1013,07~g con una desviación estándar de 4,5~g, y el
+gravimétrico, 1002,06~g con 0,24~g en 24\,523 envases. En dos meses, la merma
+por sobreconsumo bajó de 15,36 a 2,42~t, con un ahorro de 4527~USD mensuales
+frente a un equipo de 48\,900~USD. \textcite{chiliguana2016rediseno}
+rediseñaron como gravimétrica una dosificadora volumétrica de galletas que
+sobredosificaba 3552,5~kg al mes, con una reducción teórica del desperdicio
+del 98~\%.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.55\textwidth}{!}{\input{images/marcoteorico/acuna_comparacion.tex}}
+    \caption{Masa por envase de azúcar de 1 kg con dosificador volumétrico y gravimétrico.}
+    \label{fig:acuna_comparacion}
+    \vspace{0.2em}
+    {\footnotesize Punto: media. Barras: $\pm$ una desviación estándar.\\
+    Fuente: Elaboración propia con base en \textcite{acuna2024gravimetrico}.}
+\end{figure}
+
+Dentro del gravimétrico, la pérdida de peso está pensada para el flujo
+continuo. \textcite{blackshields2018continuous} y
+\textcite{bostijn2019multivariate} la describen en líneas farmacéuticas, donde
+el control ajusta la velocidad del tornillo para sostener un caudal y deja el
+error relativo cerca de cero, aunque durante la recarga de la tolva el equipo
+pasa a modo volumétrico y queda ciego a los cambios de densidad. Con polvos
+cohesivos, \textcite{kibet2025dosing} registraron subdosificación y
+fluctuaciones mayores aun en modo gravimétrico. Para pesadas discretas,
+\textcite{chiliguana2016rediseno} señalan que el pesaje por lotes es el
+recomendado y que puede alcanzar $\pm$0,1~\% con alimentación gruesa y fina.
 
 \subsection{Celdas de carga en dosificadoras}
-Celdas de carga y errores por vibración, impacto, ruido y temperatura.
+\label{subsec:medicion_celdas}
+
+Todas las dosificadoras gravimétricas revisadas miden con celdas de carga de
+galgas extensométricas, y su lectura no es instantánea. La
+Figura~\ref{fig:respuesta_celda} muestra la respuesta típica cuando cae
+material sobre el recipiente: un pico por el impacto, una oscilación y un
+tiempo de asentamiento antes de que la lectura entre en la tolerancia.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{images/marcoteorico/respuesta_celda.tex}}
+    \caption{Respuesta de una celda de carga al impacto del material.}
+    \label{fig:respuesta_celda}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{richiedei2018shaper} y \textcite{wang2025batching}.}
+\end{figure}
+
+\textcite{richiedei2018shaper} midieron en la balanza de una envasadora de
+alimentos una razón de amortiguamiento de 0,05 en la celda vacía y un pico
+grande por el impacto de la masa, y con filtros basados en el modelo de la
+celda asentaron la señal en mucho menos tiempo que con un filtro pasa bajos
+convencional. \textcite{wang2025batching} atribuyen al impacto del material
+que cae las oscilaciones de la señal en una dosificadora por lotes, y en
+simulación encontraron que el salto de velocidad del tornillo debe limitarse
+para no superar 0,01~g de oscilación. \textcite{kesilmis2016beam} propusieron
+un procesamiento que estima la masa antes de que la celda termine de
+asentarse.
+
+El entorno también perturba la lectura. \textcite{tiboni2020vibrations}
+caracterizaron las vibraciones que perturban la celda en llenadoras por peso y
+propusieron un modelo para predecirlas y compensarlas, y \textcite{choi2017noise} encontraron en una pesadora de
+banda picos de ruido que crecen con la velocidad, atenuados con filtros pasa
+bajos de corte y pendiente ajustables. \textcite{zengin2025fir} combinaron
+filtros FIR y de Kalman para mejorar la exactitud en pesaje dinámico, y
+\textcite{zhuang2024temperature} mostraron que el calor de las galgas y de la
+electrónica crea gradientes de temperatura dentro de la celda que la
+compensación habitual no corrige.
+
+La Tabla~\ref{tab:medicion_enfoques} reúne los enfoques de esta sección, con el
+resultado que los favorece y la limitación observada.
+
+\begin{table}[H]
+    \centering
+    \caption{Factores a favor y limitaciones de los principios y del tratamiento de la señal.}
+    \label{tab:medicion_enfoques}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.24\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X}
+        \toprule[1pt]
+        \textbf{Enfoque} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
+        \midrule[1pt]
+        Volumétrico por vueltas o tiempo & Sin celda de carga y bajo costo
+        (Dargham, Moya) & Masa sujeta a la densidad y la humedad (Lanzerstorfer,
+        Kruppa, Dargham), desviación de 4,5~g en 1~kg (Acuña) \\
+        Volumétrico de precisión & Error menor al 1~\% (Rusin) y menor
+        desviación con densidad medida en línea (Kruppa) & Mecanizado preciso o
+        sensor de microondas ajustados a cada polvo (Rusin, Kruppa) \\
+        Pesaje por lotes & Desviación de 0,24~g en 1~kg (Acuña) y recomendado
+        para pesadas discretas (Chiliguana) & Lectura afectada por impacto y
+        vibración (Richiedei, Tiboni) \\
+        Pérdida de peso & Caudal continuo con error cercano a cero (Bostijn) &
+        Ciego a la densidad durante la recarga (Blackshields) y
+        subdosificación con polvos cohesivos (Kibet) \\
+        Filtrado pasa bajos & Simple y de corte ajustable (Choi) & Alarga el
+        asentamiento (Richiedei) \\
+        Filtrado basado en modelo & Asentamiento más rápido (Richiedei,
+        Kesilmis) y mayor exactitud (Zengin) & Requiere identificar la dinámica
+        de la celda (Richiedei) \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en las fuentes de la
+    Sección~\ref{sec:teoria_medicion}.}
+\end{table}
+
+A partir de la tabla, se adopta el pesaje por lotes, porque mide la masa que
+efectivamente entra al recipiente y no depende de la densidad del insumo,
+variable con la humedad y la compactación de la harina. Se descartan el
+volumétrico, por esa misma dependencia, y la pérdida de peso, que responde al
+flujo continuo y no a las pesadas discretas de cada preparación. Como sensor se
+adopta la celda de carga de galgas extensométricas, la empleada por todos los
+antecedentes gravimétricos. Su capacidad, su montaje y el tratamiento de la
+señal frente al impacto, la vibración y la temperatura corresponden al diseño.
 
 \section{Área de control: corte y control de la dosificación}
 \label{sec:teoria_control}
 
+% Redacción del 26/10/2026 con las fichas de NotebookLM y lectura directa de
+% Bukreev (2014 y 2015), Wu (2022) y la patente de Bühler (sin ficha),
+% verificadas en PDF. No se citan: Alsayad (2017) y Okrepilov (2019), flujo
+% continuo y actuador neumático para gránulos; You y An (2018), versión previa
+% de An et al. (2018); Blagoveshchenskaya (2020), sin dato de dosificación;
+% patente US 8 814 420, mecánica del transporte de recipientes.
+
+Esta sección analiza el controlador de la
+Figura~\ref{fig:arquitectura_funcional}: primero el momento del corte y la
+compensación del material en caída, y después el control que ajusta el
+alimentador durante el lote y de un lote a otro.
+
 \subsection{Estrategias de corte}
-Alimentación en dos etapas, corte con adelanto y compensación del material en
-caída.
+\label{subsec:control_corte}
+
+En el pesaje por lotes, el alimentador entrega material hasta que la celda
+registra la masa deseada. La patente de \textcite{buhler2022dosing} indica que,
+según la exactitud requerida, se trabaja con flujo grueso y flujo fino, y que
+los sistemas actuales alcanzan así una exactitud de lote de hasta
+$\pm$0,5~\%. Es la secuencia de la Figura~\ref{fig:secuencia_llenado}, y su
+punto crítico es el instante del corte. \textcite{wu2022concrete} atribuyen el
+error de pesaje en plantas de hormigón al material que sigue cayendo por
+inercia tras el cierre, al impacto que la celda registra como peso y al polvo
+que queda suspendido en el aire, este último propio de los insumos en polvo.
+
+La compensación más simple es un adelanto fijo. \textcite{hadi2025weighing}
+cortaron 120~g antes de la consigna y \textcite{bulatov2021weighing}
+programaron la masa de la columna en vuelo, de 0,1 a 0,5~kg, como un parámetro
+del equipo (Sección~\ref{subsec:dosificadoras_kilogramos}). En simulación,
+\textcite{jia2025iterative} mostró el límite de este enfoque en el pesaje
+de cemento. Con umbrales fijos, el error final osciló entre $-$0,90 y
+0,88~kg en lotes de 500 a 1000~kg, porque el umbral no se adapta a los cambios
+del material en caída.
+
+\textcite{bukreev2014accuracy} calcularon el adelanto con un modelo de la
+columna en caída, en una planta de alimento balanceado con tornillos. La
+Figura~\ref{fig:columna_caida} muestra la geometría. La columna va desde la
+salida del tornillo hasta la superficie del material pesado, de modo que su
+altura $h_c$ disminuye a medida que el recipiente se llena. Su masa se estima
+con la Ecuación~\eqref{eq:columna_caida} y se suma a la señal de la celda.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.55\textwidth}{!}{\input{images/marcoteorico/columna_caida.tex}}
+    \caption{Columna de material en caída entre el tornillo y el material pesado.}
+    \label{fig:columna_caida}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{bukreev2014accuracy}.}
+\end{figure}
+
+\begin{equation}
+    m_c = S\,\rho_a \left(h_0 + h_b - h_m\right)
+    \label{eq:columna_caida}
+\end{equation}
+
+\noindent donde $S$ es el área de la sección de salida del tornillo,
+$\rho_a$ la densidad aparente del material, $h_0$ la altura entre el tornillo
+y el borde del recipiente, $h_b$ la altura del recipiente y $h_m$ la altura del
+material pesado, que se obtiene de la masa medida y de la densidad. Con 1~kg
+de polipropileno, el error bajó de 8,59~\% sin la corrección a casi cero con
+ella. En un segundo trabajo, \textcite{bukreev2015multicomponent} sumaron una
+corrección estadística de la velocidad del tornillo, porque las propiedades de
+los componentes cambian de un lote a otro. En lotes de 1~kg, esa corrección
+redujo el error de 0,191 a 0,072~kg, y junto con la compensación de la
+columna lo dejó en 2,7~\% en simulación, dentro del 3~\% que exige la
+preparación de alimento balanceado. \textcite{jia2025iterative} advierte, sin
+embargo, que el modelo de caída libre deja un error residual, porque la
+fricción entre partículas y las fluctuaciones de velocidad alteran la caída
+real.
+
+El cambio de flujo grueso a fino también se diseña.
+\textcite{chadha2018optimal} dosificaron gránulos de plástico con una válvula
+rotativa. La etapa gruesa, regulada con una estimación en línea del caudal,
+terminaba unos 70~g antes de la consigna, y la fina abría la última cámara
+hasta un ángulo calculado por una red neuronal entrenada con simulaciones de
+elementos discretos. En lotes de 500~g, el error absoluto medio de la etapa
+gruesa fue de 25,8~g, frente a 72,31~g del método estándar del módulo de
+pesaje industrial, y la etapa fina logró 3,8~g en dosis de 25~g.
+\textcite{wang2025batching} cuantificaron en simulación el costo de la etapa
+fina. Al bajar su velocidad de 5 a 1~rps, el tiempo del lote creció de 52 a
+90~s, de modo que la exactitud del final se paga con tiempo de ciclo.
 
 \subsection{Control realimentado}
-PID, aprendizaje iterativo y pesaje dinámico.
+\label{subsec:control_realimentado}
+
+Dentro del lote, el controlador fija la velocidad o la apertura del
+alimentador a partir de la masa medida. En panadería,
+\textcite{farihin2021premix} pasaron de un control todo o nada a un PI sobre
+la posición de la compuerta y el error bajó de 0,8 a 0,2~\%
+(Sección~\ref{subsec:dosificadoras_gramos}). \textcite{humaira2024optimalisasi}
+regularon con PID la velocidad de los alimentadores helicoidales. La sintonía
+de Ziegler y Nichols dejó errores de 2 a 3~\%, y con un ajuste manual de las
+ganancias, distinto para la harina, el azúcar y la leche, el error bajó a
+menos del 1~\%, aunque la harina tardó 197~s en 350~g. Con polvos de baja
+fluidez, \textcite{herrera2025fuzzy} reemplazaron el control por pasos de un
+tornillo por lógica difusa, que ajusta las revoluciones según el error de
+pesaje y la fluidez del material. Con polvo de tungsteno, el error final bajó
+de 7,8 a 1,25~\% y desapareció el sobrepaso, aunque las reglas exigen
+caracterizar cada material y se escriben a partir de la experiencia.
+
+Como la dosificación por lotes se repite, el controlador también puede
+aprender del lote anterior. La Figura~\ref{fig:ajuste_entre_lotes} muestra los
+dos niveles. El lazo interno maneja las dos velocidades y el corte durante el
+lote, y el externo, con el error final del lote~$k$, corrige el adelanto y el
+punto de cambio de velocidad del lote~$k+1$.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.85\textwidth}{!}{\input{images/marcoteorico/ajuste_entre_lotes.tex}}
+    \caption{Control dentro del lote y ajuste de parámetros entre lotes.}
+    \label{fig:ajuste_entre_lotes}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{an2020twolevel} y \textcite{jia2025iterative}.}
+\end{figure}
+
+\textcite{an2018iterative} aplicaron control por aprendizaje iterativo a un
+alimentador vibratorio no lineal, en simulación y con lotes de 20~kg en
+200~s. Como muestra la Figura~\ref{fig:aprendizaje_lotes}, el error máximo
+respecto de la curva de referencia bajó de 2,34~kg en el primer lote a
+0,98~kg en el noveno, y los autores consideran aceptable el desempeño desde el
+tercer o cuarto lote.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.6\textwidth}{!}{\input{images/marcoteorico/aprendizaje_lotes.tex}}
+    \caption{Error máximo por lote con control por aprendizaje iterativo, en simulación.}
+    \label{fig:aprendizaje_lotes}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{an2018iterative}.}
+\end{figure}
+
+\textcite{jia2025iterative} aplicó la misma idea a los adelantos de cambio
+de velocidad y de parada en el pesaje de cemento. En simulación, el error
+bajó de 3 a 8~kg en el primer lote a $\pm$0,09~kg tras 11 a 16 lotes, frente a
+0,48 a 0,68~kg con PID y compensación anticipada, en 12 a 24,5~s por lote.
+Ambos trabajos son simulaciones y suponen lotes repetibles.
+
+Con datos de planta, \textcite{an2020twolevel} ajustaron el controlador del
+pesaje de aleaciones de un horno cuchara en dos niveles, con el caudal medido
+durante el lote y con la masa en caída estimada a partir de los lotes
+anteriores. En tres meses de operación con lotes de 600~kg, los lotes dentro
+de $\pm$1~kg pasaron del 9,41 al 61,22~\% y los lotes dentro de $\pm$3~kg, del
+34,52 al 99,45~\%, frente al controlador de parámetros fijos. En la industria,
+\textcite{buhler2022dosing} señalan que los parámetros de dosificación se
+ajustan según la experiencia del operador, sin analizar los datos históricos,
+y patentaron un controlador que detecta desviaciones en el historial de
+errores de cada báscula y adapta esos parámetros con aprendizaje automático.
+Del lado de la señal, \textcite{gebov2023algorithmic} estimó el instante de
+cierre extrapolando la curva de peso filtrada con la transformada de Fourier
+(Sección~\ref{subsec:dosificadoras_industria}).
+
+La Tabla~\ref{tab:control_enfoques} reúne los enfoques de esta sección, con el
+resultado que los favorece y la limitación observada.
+
+\begin{table}[H]
+    \centering
+    \caption{Factores a favor y limitaciones de las estrategias de corte y de control.}
+    \label{tab:control_enfoques}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.24\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X}
+        \toprule[1pt]
+        \textbf{Enfoque} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
+        \midrule[1pt]
+        Corte sin adelanto & Lógica mínima (Rumapea) & Exceso por el material
+        en caída (Andriani, Wu) \\
+        Flujo grueso y fino & Exactitud de lote de hasta $\pm$0,5~\% (Bühler)
+        y menor sobrepaso (Rumapea) & Más tiempo cuanto más lento el flujo fino
+        (Wang) \\
+        Adelanto fijo & Un solo parámetro (Hadi, Bulatov 2021b) & No se adapta
+        a los cambios del material, error de $-$0,90 a 0,88~kg (Jia) \\
+        Adelanto calculado con la columna en caída & Error de 8,59~\% a casi
+        cero en 1~kg (Bukreev 2014) & Requiere la densidad aparente y deja un
+        error residual (Jia) \\
+        PI o PID sobre el alimentador & Error de 0,2~\% (Farihin) y menor
+        al 1~\% (Humaira) & Ganancias por insumo y lentitud con harina
+        (Humaira) \\
+        Lógica difusa & Error de 1,25~\% sin sobrepaso con polvos de baja
+        fluidez (Herrera Sanchez) & Reglas empíricas y caracterización de cada
+        material (Herrera Sanchez) \\
+        Ajuste entre lotes con el error anterior & 99,45~\% de lotes dentro de
+        $\pm$3~kg en planta (An 2020) y $\pm$0,09~kg en simulación (Jia) &
+        Varios lotes para converger y lotes repetibles (An 2018, Jia) \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en las fuentes de la
+    Sección~\ref{sec:teoria_control}.}
+\end{table}
+
+A partir de la tabla, se adopta la alimentación en dos etapas, con flujo
+grueso y flujo fino, y el corte con adelanto, porque todos los antecedentes en
+kilogramos compensan el material en caída y la harina sigue saliendo después
+de detener el alimentador \parencite{afni2026cake}. Se descarta el corte sin
+adelanto y, por la variación de la harina con la humedad y la compactación,
+también el adelanto fijo sin corrección. El cálculo del adelanto, el control
+del alimentador durante el lote y la corrección entre lotes quedan como
+candidatos para el diseño, que los elegirá con base en el modelo dinámico del
+sistema. No se retoman las estrategias que dependen de infraestructura
+industrial, como la simulación de elementos discretos con redes neuronales o
+el control distribuido de un horno cuchara.
 
 \section{Fundamentos teóricos}
 \label{sec:teoria_fundamentos}

@@ -1,0 +1,31 @@
+% Respuesta cualitativa de una celda de carga subamortiguada al impacto de
+% una masa: pico, oscilación y asentamiento. Sin escala numérica.
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    eje/.style={-{Latex[width=5pt,length=5pt]}, thick},
+    nota/.style={font=\footnotesize, align=center}
+]
+\draw[eje] (0,0) -- (10.5,0) node[below left] {Tiempo};
+\draw[eje] (0,0) -- (0,4.2) node[above right] {Lectura de la celda};
+
+% Masa real
+\draw[densely dashed, gray] (0,2.2) -- (10.2,2.2);
+\node[nota, anchor=east] at (0,2.2) {Masa real};
+
+% Señal: cero, impacto y oscilación amortiguada
+\draw[very thick] (0,0) -- (1.0,0) -- (1.15,3.7)
+    -- plot[domain=1.15:10, samples=200, smooth]
+    (\x, {2.2 + 1.5*exp(-0.55*(\x-1.15))*cos(deg(4.2*(\x-1.15)))});
+
+% Banda de tolerancia
+\draw[gray] (0,2.05) -- (10.2,2.05);
+\draw[gray] (0,2.35) -- (10.2,2.35);
+\node[nota, anchor=west] at (10.25,2.2) {Tolerancia};
+
+% Rótulos
+\node[nota, anchor=west] at (1.35,3.6) {Impacto del material};
+\node[nota] at (3.3,0.6) {Oscilación};
+\draw[gray] (5.4,0) -- (5.4,2.05);
+\node[nota, anchor=north] at (5.4,-0.05) {Asentamiento};
+\end{tikzpicture}

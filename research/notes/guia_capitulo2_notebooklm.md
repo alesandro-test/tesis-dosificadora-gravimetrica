@@ -95,7 +95,8 @@ Reglas:
 ```text
 CASO (no es bibliografía): Panadería San Miguel, Santa Cruz de la Sierra, Bolivia. Panadería pequeña; la harina se dosifica a mano con balanza digital.
 Medición de campo (7 ciclos, 02/09/2026 y 05/09/2026): 5,000 a 8,000 kg de harina por ciclo; 53,2 a 66,6 s por ciclo; diferencia neta de +143 g sobre 48,000 kg de cantidad objetivo.
-Reportado por el estudiante (trazabilidad pendiente): azúcar de 150 a 600 g, sal de 100 a 150 g y levadura fresca prensada de 70 a 150 g por ciclo.
+Receta de referencia por ciclo (D-016): azúcar de 80 a 500 g, sal de 100 a 150 g y levadura en polvo de 30 a 50 g. Ingredientes dosificados: harina, azúcar, sal y levadura en polvo.
+Clima: Santa Cruz de la Sierra, cálido y húmedo.
 Solución adoptada: dosificación gravimétrica por lotes (almacenamiento, alimentación, pesaje, control, descarga).
 Sin decidir: mecanismo de alimentación, sensores, controlador, estrategia de control, tolerancias y capacidad. No propongas cerrarlos.
 ```
@@ -161,7 +162,7 @@ Revisa valor, unidad, condición de ensayo (consigna, n.º de ensayos, insumo) y
 
 | Sección | Preguntas |
 |---|---|
-| 2.2 Dosificadoras | ¿Qué arquitectura usa cada máquina? ¿Con qué escala, exactitud, tiempo y costo? ¿Alguna dosifica harina entre 5 y 8 kg, o insumos menores entre 70 y 600 g? En productos: fabricante, país, rango, exactitud declarada, capacidad de tolva y precio con fecha. |
+| 2.2 Dosificadoras | ¿Qué arquitectura usa cada máquina? ¿Con qué escala, exactitud, tiempo y costo? ¿Alguna dosifica harina entre 5 y 8 kg, o insumos menores entre 30 y 500 g? En productos: fabricante, país, rango, exactitud declarada, capacidad de tolva y precio con fecha. |
 | 2.3 Mecánica | ¿Qué tolvas y alimentadores se usan con harina o polvos similares? ¿Qué caudal dan, qué fallas de flujo presentan (puentes, adherencia, pulsación) y cómo se limpian? |
 | 2.4 Medición | ¿Cuánto error produce la variación de densidad aparente en la dosificación volumétrica? ¿Cuándo conviene pesar por lotes y cuándo por pérdida de peso? ¿Qué celdas de carga usan y qué errores reportan (vibración, impacto, ruido, temperatura)? |
 | 2.5 Control | ¿Cómo deciden cuándo cortar la alimentación? ¿Cómo compensan el material que sigue cayendo? ¿Qué control usan (dos etapas, PID, aprendizaje iterativo) y qué error final logran? |
