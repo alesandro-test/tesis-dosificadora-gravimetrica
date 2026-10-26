@@ -16,23 +16,24 @@ Proyecto de grado de Ingeniería Mecatrónica.
 
 **Título provisional:**
 
-> Diseño y construcción de una dosificadora gravimétrica automatizada de harina
-> para la Panadería San Miguel.
+> Diseño de una dosificadora gravimétrica automatizada de ingredientes
+> secos para panaderías artesanales.
 
-El título todavía está sujeto a revisión académica.
+El título todavía está sujeto a revisión académica (`D-018`, `A-001`).
 
 La Panadería San Miguel presenta mecanización parcial: dispone de equipos como
-amasadora, divisora/cortadora, horno y balanza digital, pero la dosificación de harina
-continúa realizándose manualmente.
+amasadora, divisora/cortadora, horno y balanza digital, pero la dosificación de
+ingredientes continúa realizándose manualmente.
 
 El docente indicó completar primero el estudio de San Miguel antes de considerar
 otros establecimientos.
 
 ## 2. Enfoque y alcance
 
-El proyecto estudia específicamente la **dosificación de harina**.
-La harina es el insumo principal; el diseño considera además azúcar, sal
-y levadura (`D-010`, `D-013`). El diagnóstico se basa solo en harina.
+El proyecto estudia la **dosificación de ingredientes secos**: harina, azúcar,
+sal y levadura en polvo (`D-015`, `D-016`). La harina es el insumo principal de
+diseño por ser la mayor cantidad por ciclo. Diagnóstico, problema, objetivos y
+evaluación abarcan los cuatro ingredientes; manteca y agua quedan fuera.
 
 Se pretende desarrollar un prototipo automatizado de dosificación gravimétrica
 y posteriormente comparar su desempeño con el procedimiento manual bajo
@@ -42,8 +43,8 @@ Las principales variables de evaluación son:
 
 - tiempo de dosificación;
 - intervención del operario;
-- cantidad objetivo y cantidad dosificada;
-- diferencia o desviación de harina;
+- cantidad objetivo y cantidad dosificada de cada ingrediente;
+- diferencia respecto de la cantidad objetivo;
 - repetibilidad.
 
 Quedan fuera del alcance principal el mezclado, división y formado,
@@ -62,6 +63,15 @@ Durante el proceso, el operario transporta manualmente harina desde la zona de
 almacenamiento hasta la balanza.
 
 El recorrido registrado entre ambas zonas es de aproximadamente **3,20 m por trayecto**.
+
+A continuación de la harina, el operario incorpora azúcar, sal y levadura sobre el
+mismo recipiente receptor con un único envase plástico, una carga por ingrediente,
+estimada por experiencia y sin lectura de la balanza ni ajuste:
+
+`desplazamiento al saco de azúcar → llenado → retorno y vertido → sal desde la mesa → levadura desde la mesa`
+
+El saco de azúcar está en la zona de almacenamiento, junto a la harina; la sal y la
+levadura están sobre la mesa de ingredientes.
 
 La dosificación manual no constituye por sí sola el problema.
 El diagnóstico debe sustentarse en evidencia cuantificada de tiempo,
@@ -86,6 +96,20 @@ Total de la muestra:
 - tiempo acumulado: **411,9 s (6 min 51,9 s)**;
 - tiempos individuales observados: **53,2–66,6 s/ciclo**;
 - cantidades objetivo observadas: **5,000–8,000 kg/ciclo**.
+
+Azúcar, sal y levadura en los mismos 7 ciclos (`research/notes/levantamiento_dosificacion_san_miguel.md`):
+
+- objetivo / incorporado: azúcar **1 940 / 1 970 g**, sal **850 / 864 g**,
+  levadura **330 / 340 g**;
+- diferencias por ciclo: azúcar **−9 a +26 g**, sal **−7 a +9 g**,
+  levadura **−4 a +5 g**;
+- tiempo acumulado: **157,5 s**; total con harina: **569,4 s**;
+- cantidades objetivo observadas: **30–500 g/ciclo**;
+- medición con una balanza propia del investigador, pesando el envase con cada carga.
+
+Proyección mensual (22 jornadas ordinarias + 4 sábados): **2 h 43 min**;
+diferencia positiva de **1,976 kg** de harina, **336 g** de azúcar, **236 g** de sal y
+**76 g** de levadura (balance neto en los tres últimos).
 
 Las preparaciones registradas fueron pan casero, marraqueta, pan francés
 y una masa común del sábado utilizada posteriormente para empanadas y rollos.
@@ -112,6 +136,11 @@ Esto muestra un **sesgo positivo en la muestra observada**, pero no demuestra qu
 - exista una pérdida económica;
 - toda operación manual sea ineficiente.
 
+En el azúcar, la sal y la levadura, la cantidad incorporada quedó por encima de la
+receta en unos ciclos y por debajo en otros; los totales y proyecciones son balances
+netos y no representan la diferencia de cada preparación. No se midió el efecto de
+estas diferencias sobre el producto.
+
 Utilizar según corresponda los términos **diferencia**, **desviación**,
 **exceso** o **déficit**.
 
@@ -127,7 +156,7 @@ Conceptualmente, la solución considera:
 
 `almacenamiento → dosificación → pesaje gravimétrico → control → descarga`
 
-El operario deberá poder establecer una cantidad objetivo de harina.
+El operario deberá poder establecer una cantidad objetivo para cada ingrediente.
 El sistema medirá la cantidad dosificada mediante un sistema gravimétrico y
 controlará automáticamente la alimentación hasta alcanzar el valor programado.
 
@@ -154,7 +183,8 @@ Todavía no se consideran definidos definitivamente:
 - dimensiones finales.
 
 Las referencias conceptuales previas de **5–15 kg por lote**,
-**40–50 kg de almacenamiento** y **+20 g** no constituyen requisitos definitivos.
+**40–50 kg de almacenamiento** y **+20 g** no constituyen requisitos definitivos y
+se retiraron de los Alcances (`D-009`).
 
 Los requerimientos deberán derivarse del relevamiento, la bibliografía,
 las decisiones de diseño y la validación experimental.
@@ -171,14 +201,15 @@ No asumir mejoras del prototipo antes de su construcción y evaluación.
 
 La repetibilidad debe evaluarse mediante mediciones comparables.
 
-Para el ingrediente dosificado utilizar preferentemente **harina**,
-**cantidad objetivo de harina**, **cantidad dosificada** y **diferencia de harina**.
+Para cada ingrediente utilizar preferentemente **cantidad objetivo**,
+**cantidad dosificada** o **incorporada** y **diferencia** (`D-007`).
 
 Reservar **masa** para la masa de panificación cuando corresponda.
 
 ## 9. Fuentes internas
 
 - Datos y cálculos detallados: `research/notes/contexto_tesis_san_miguel.md`
+- Levantamiento con azúcar, sal y levadura: `research/notes/levantamiento_dosificacion_san_miguel.md`
 - Evidencia y observaciones docentes: `research/docente/`
 - Decisiones vigentes: `context/DECISIONS.md`
 - Estado actual del trabajo: `context/STATUS.md`

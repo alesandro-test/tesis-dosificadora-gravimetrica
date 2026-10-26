@@ -45,7 +45,7 @@
 
 ### D-004 — Variable central de la formulación presentada
 
-**Estado:** Confirmada  
+**Estado:** Reemplazada por `D-017` (2026-10-26)  
 **Decisión:** En la versión académica actualmente presentada, la intervención directa del operario y el tiempo asociado al procedimiento manual constituyen la línea central del planteamiento. La diferencia de harina permanece como variable de evaluación, no como sustituto automático del problema central.  
 **Motivo:** Así se encuentra estructurado el planteamiento, árbol y formulación presentados.  
 **Impacto:** No redefinir el problema únicamente alrededor de exceso, error o diferencia de harina sin nueva evidencia o revisión académica.
@@ -57,7 +57,7 @@
 ### D-005 — Concepto general de la solución
 
 **Estado:** Confirmada  
-**Decisión:** La solución propuesta será un prototipo automatizado de dosificación gravimétrica de harina, capaz de trabajar con una cantidad objetivo y medir la cantidad dosificada para controlar el proceso de alimentación.  
+**Decisión:** La solución propuesta será un prototipo automatizado de dosificación gravimétrica de ingredientes secos (harina, azúcar, sal y levadura; `D-015`), capaz de trabajar con una cantidad objetivo y medir la cantidad dosificada para controlar el proceso de alimentación.  
 **Motivo:** Es el principio funcional adoptado para el proyecto.  
 **Impacto:** Esta decisión define el concepto de solución, pero NO define todavía mecanismo de alimentación, accionamiento, sensores, controlador, actuadores ni estrategia de control.
 
@@ -75,7 +75,7 @@
 ### D-007 — Terminología e interpretación
 
 **Estado:** Confirmada  
-**Decisión:** Para el ingrediente utilizar preferentemente `harina`, `cantidad objetivo de harina`, `cantidad dosificada` y `diferencia de harina`. Reservar `masa` para la masa de panificación cuando corresponda.  
+**Decisión:** Para cada ingrediente utilizar preferentemente `cantidad objetivo`, `cantidad dosificada` o `incorporada` y `diferencia` (por ejemplo, `diferencia de harina`). Reservar `masa` para la masa de panificación cuando corresponda.  
 **Motivo:** Evitar ambigüedad entre la harina dosificada y la masa elaborada posteriormente.  
 **Impacto:** No denominar automáticamente `desperdicio` a una diferencia positiva de harina ni `tiempo perdido` al tiempo empleado por el operario sin evidencia que sustente esas interpretaciones.
 
@@ -99,10 +99,12 @@
 
 Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son únicamente antecedentes o propuestas previas y NO constituyen requisitos vigentes.
 
+**Actualización 2026-10-26:** los valores de 5–15 kg, 5 g de resolución, ±0,5 % y 50 kg de tolva se retiraron de los Alcances de `marcoref.tex`. Los Alcances citan como referencia las cantidades registradas por ciclo (5 000–8 000 g de harina; 30–500 g de azúcar, sal y levadura) y remiten el rango final a los requerimientos y la resolución y tolerancias al estudio de tolerancias.
+
 ---
 ### D-010 — Insumos considerados
 
-**Estado:** Confirmada  
+**Estado:** Reemplazada por `D-015` (2026-10-26)  
 **Decisión:** La harina es el insumo principal de diseño, desarrollo y validación del prototipo. El sistema contemplará la posibilidad de dosificar otros insumos secos de panificación.  
 **Motivo:** Observación del acta de evaluación del perfil; la harina se mantiene como insumo principal por decisión del estudiante.  
 **Impacto:** Problema, árbol y diagnóstico permanecen basados en la evidencia de harina. Qué otros insumos y con qué nivel de demostración permanecen abiertos (`A-005`). Mezclado, división, formado, fermentación, cocción y automatización integral siguen fuera del desarrollo principal.
@@ -129,7 +131,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 
 ### D-013 — Insumos secos adicionales
 
-**Estado:** Confirmada  
+**Estado:** Reemplazada por `D-016` (2026-10-26)  
 **Decisión:** Además de la harina, el diseño considera la dosificación de azúcar, sal y levadura. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador (no utilizado en la panadería).  
 **Motivo:** Declaración del estudiante del 2026-10-05 sobre los insumos utilizados en San Miguel; cantidades medidas reportadas en `research/notes/insumos_secos_recetas.md`.  
 **Impacto:** Las cantidades por preparación son mediciones reportadas por el estudiante, con trazabilidad pendiente (fecha, instrumento, procedimiento y repeticiones). La levadura utilizada es fresca; su dosificación desde tolva y el nivel de demostración permanecen abiertos (`A-005`).
@@ -143,6 +145,42 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 **Motivo:** Declaración del estudiante del 2026-10-14. Es coherente con la división del primer objetivo específico: la indicación docente de demostrar «los objetivos 1 y 2» abarca los objetivos 1 a 3 de la numeración vigente.  
 **Impacto:** El capítulo 3 demuestra los objetivos 1 a 3 y el capítulo 2 prioriza sus fundamentos. No modifica `D-008`: falta confirmar que la evaluación experimental (objetivo 6) se mantiene para Taller de Grado II.
 
+---
+
+### D-015 — Alcance: ingredientes secos
+
+**Estado:** Confirmada  
+**Decisión:** El proyecto abarca la dosificación de los ingredientes secos de cada preparación: harina, azúcar, sal y levadura en polvo. El diagnóstico, el problema, el árbol, los objetivos y los alcances se basan en los cuatro ingredientes. El prototipo dosifica los cuatro y se evalúa con ellos; la harina se mantiene como insumo principal de diseño por ser la mayor cantidad por ciclo.  
+**Motivo:** Indicación docente de la clase del 21/10/2026 (ampliar título, objetivo general y problemática a ingredientes secos) e instrucción del estudiante del 2026-10-26.  
+**Impacto:** Reemplaza `D-010` y resuelve `A-005`. Lo declarado en alcances debe demostrarse con los cuatro ingredientes. Mezclado, división, formado, fermentación, cocción y automatización integral siguen fuera del desarrollo principal.
+
+---
+
+### D-016 — Ingredientes secos y fuente de cantidades
+
+**Estado:** Confirmada  
+**Decisión:** Los ingredientes dosificados son harina, azúcar, sal y levadura en polvo. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador. Las cantidades objetivo provienen de la receta de referencia por preparación, y las cantidades incorporadas, del levantamiento del 02/09/2026 y 05/09/2026 (`research/notes/levantamiento_dosificacion_san_miguel.md`).  
+**Motivo:** Levantamiento aportado por el estudiante el 2026-10-25. El azúcar, la sal y la levadura se registraron con una balanza propia del investigador, pesando el envase con cada carga.  
+**Impacto:** Reemplaza `D-013` y las cantidades de `research/notes/insumos_secos_recetas.md` (levadura fresca, 2026-10-05). Trazabilidad pendiente: fecha real del registro de azúcar, sal y levadura, modelo y resolución de la balanza del investigador, origen de la receta y respaldo fotográfico.
+
+---
+
+### D-017 — Formulación del problema
+
+**Estado:** Confirmada  
+**Decisión:** La formulación integra el tiempo del operario y la diferencia positiva respecto de las cantidades objetivo, en proyección mensual (22 jornadas ordinarias y 4 sábados): 2 h 43 min y 1,976 kg de harina, 336 g de azúcar, 236 g de sal y 76 g de levadura.  
+**Motivo:** Revisión requerida en `D-004` y elección del estudiante del 2026-10-26.  
+**Impacto:** Reemplaza `D-004`. Los valores de azúcar, sal y levadura son balances netos de excesos y déficits por ciclo; el texto debe aclararlo y no presentarlos como diferencia de cada preparación. La aprobación docente sigue abierta (`A-002`).
+
+---
+
+### D-018 — Objetivos y título vigentes
+
+**Estado:** Confirmada  
+**Decisión:** Objetivo general: «Desarrollar un prototipo automatizado de dosificación gravimétrica de harina, azúcar, sal y levadura según la cantidad objetivo de cada preparación de la Panadería San Miguel». Se mantienen siete objetivos específicos con la numeración de `D-014`; el objetivo 6 compara tiempo de dosificación, intervención del operario, diferencia respecto de la cantidad objetivo y repetibilidad. Título en `main.tex`: «Diseño de una dosificadora gravimétrica automatizada de ingredientes secos para panaderías artesanales» (elección del estudiante del 2026-10-26; reemplaza «Diseño y construcción … para la Panadería San Miguel»).  
+**Motivo:** Instrucción del estudiante del 2026-10-26; correspondencia entre título, objetivo general y problema.  
+**Impacto:** Se retira «bajo costo» del título y se conserva «panaderías artesanales», aunque el objetivo general nombra a la Panadería San Miguel; verificar con el docente la correspondencia entre título y objetivo general. La aprobación docente del título y de los objetivos sigue abierta (`A-001`, `A-002`). Siete objetivos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
+
 
 ## Decisiones abiertas
 
@@ -152,10 +190,10 @@ Los siguientes asuntos están **NO DECIDIDOS** y ningún agente debe cerrarlos s
 
 **Estado:** NO DECIDIDO
 
-Existen actualmente formulaciones diferentes entre `PROJECT_CONTEXT.md` y el PDF presentado.
+El título vigente en `main.tex` está registrado en `D-018`; falta la aprobación docente.
 
-También permanece abierto si las expresiones `bajo costo` y `panaderías artesanales`
-formarán parte del título o de los requerimientos definitivos.
+La expresión `bajo costo` se retiró del título
+(2026-10-26); sigue abierto si `bajo costo` formará parte de los requerimientos.
 
 La revisión docente más reciente no aprueba definitivamente el título. Si se conserva
 `bajo costo`, debe definirse previamente un criterio comparativo defendible frente a
@@ -218,9 +256,9 @@ requerimiento del prototipo. El rango deberá derivarse de los datos de campo y 
 
 ### A-005 — Insumos adicionales y nivel de demostración
 
-**Estado:** NO DECIDIDO
+**Estado:** Resuelto por `D-015` (2026-10-26)
 
-Los insumos adicionales quedaron definidos en `D-013`. Pendiente definir si se abordarán mediante estudio de tolerancias y compatibilidad, ensayos limitados en el prototipo o validación completa, y cómo se dosificará la levadura, que según el estudiante es fresca (pasta prensada que no fluye como polvo). Lo que se declare en el alcance deberá poder demostrarse.
+El prototipo dosifica y se evalúa con harina, azúcar, sal y levadura en polvo. La duda sobre la levadura fresca quedó sin efecto porque el levantamiento registra levadura en polvo (`D-016`).
 
 ---
 

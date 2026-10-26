@@ -1,11 +1,16 @@
 # STATUS
 
-**Última actualización:** 2026-10-19
+**Última actualización:** 2026-10-26
 
 ## Estado actual
 
-Capítulo 1 defendido y ajustado al acta de evaluación del perfil; queda **cerrado de forma provisional** por decisión del estudiante (admite cambios posteriores, sin aprobación docente definitiva registrada).  
-Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y fundamentos). `marcoteorico.tex` está vacío y activado en `main.tex`.
+Capítulo 1 **reestructurado a ingredientes secos** (harina, azúcar, sal y levadura) según la clase del 21/10/2026 (`D-015` a `D-018`); sin aprobación docente definitiva (`A-001`, `A-002`). Sin commit.  
+Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y fundamentos) y entregables de la clase del 21/10/2026.
+
+## Entregas de la clase del 21/10/2026
+
+- **Viernes posterior a la clase (fecha por confirmar):** cronograma completo por objetivo, índice tentativo, corrección del marco referencial y estado del arte completo del capítulo 2.
+- **Tutor:** obtener la aceptación del Ing. Mario Borda (nombre por confirmar) y enviar el correo al docente con copia a dirección de carrera.
 
 ## Fechas y plazos (clase del 09/10/2026)
 
@@ -15,6 +20,10 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 - La nota final la otorga un relator externo.
 
 ## Completado
+
+- Capítulo 1 a ingredientes secos (25–26/10/2026): Introducción con productos y equipos; Antecedentes con diagrama de flujo de harina y de azúcar, sal y levadura, croquis, receta frente a lo incorporado, tablas por jornada, proyección mensual y cierre directo; formulación con 2 h 43 min/mes y diferencias de los cuatro ingredientes (`D-017`); árbol con tres causas (traslados, ajuste final, carga sin lectura); objetivos y título (`D-018`); justificaciones, límites y alcances sin los valores de 5–15 kg, 5 g, ±0,5 % y 50 kg (`D-009`); Figura 1.1 con «Alcance: ingredientes secos»; Apéndices A y B ampliados (receta, lecturas y tiempos de azúcar, sal y levadura, proyecciones, fotografías trasladadas). Compila sin errores.
+- Levantamiento con azúcar, sal y levadura incorporado a `research/notes/levantamiento_dosificacion_san_miguel.md`; `insumos_secos_recetas.md` marcado como reemplazado.
+- `PROFESSOR_NOTES.md` actualizado con los criterios de la clase del 21/10/2026.
 
 - Estructura del capítulo 2 adoptada a partir de la plantilla, la clase del 09/10/2026 y las referencias estructurales (`THESIS_STRUCTURE.md`); el perfil desarrolla los objetivos 1 a 3 (`D-014`) (14/10/2026).
 - Guía de trabajo con NotebookLM y búsqueda por sección en `research/notes/guia_capitulo2_notebooklm.md` (14/10/2026).
@@ -40,10 +49,10 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 1. **INV — Investigación:** reunir al menos 30 referencias de los últimos 5 a 10 años (mínimo 10 académicas) y productos comerciales con ficha técnica y precio; registrar para cada una principio, mecanismo, rango, exactitud, control, precio y limitación frente a San Miguel; identificar el aporte diferencial del proyecto; sustentar el criterio de `bajo costo`.
 2. **INV — Enfoques:** redactar 2.2 a 2.5 (dosificadoras de ingredientes; áreas mecánica, de medición gravimétrica y de control) con ventajas, desventajas y qué se adopta o descarta, sin cerrar `A-004` antes del análisis.
 3. **02A — Fundamentos (2.6):** metodología de diseño (si se aplica), insumos y tolerancias, metrología y normativa de pesaje, medición gravimétrica y celdas de carga, almacenamiento y alimentación, modelamiento dinámico y control (breve). Sin ciencias básicas ni evaluación experimental.
-4. **GEN — Capítulo 3:** propuesta que demuestre los objetivos 1 a 3 (`D-014`), índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses. `cronograma.tex` está vacío y desactivado en `main.tex`.
-5. **GEN — Tutor:** elegir tutor con maestría o doctorado que apoye el diseño mecánico y formalizar la designación; `main.tex` conserva el marcador «(Nombre), Ing.».
-6. **FIG — Diagramas y tablas:** numerar y describir las ecuaciones de proyección de `marcoref.tex` (hoy sin número ni lista de variables); corregir el tamaño de fuente y añadir la leyenda de columnas de la tabla de tiempos del Apéndice B; cambiar «Alcance: harina» en `proceso_general_pan.tex`.
-7. **GEN — Presentación:** actualizar `perfil.tex` con objetivos, límites y alcances vigentes.
+4. **GEN — Capítulo 3:** propuesta que demuestre los objetivos 1 a 3 (`D-014`) para los cuatro ingredientes, índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses, con días, fecha de inicio y fin por actividad e incluidas las actividades de redacción. `cronograma.tex` está vacío y desactivado en `main.tex`.
+5. **GEN — Tutor:** obtener la aceptación del Ing. Mario Borda (por confirmar), enviar el correo con copia a dirección de carrera y reemplazar el marcador «(Nombre), Ing.» de `main.tex`.
+6. **INV — Capítulo 2:** ampliar el estado del arte y los fundamentos (2.6.2) a azúcar, sal y levadura en polvo; revisar la correspondencia entre citas y bibliografía.
+7. **GEN — Presentación:** actualizar `perfil.tex` con título, objetivos, límites y alcances vigentes (aún dice «bajo costo para harina en panaderías artesanales»).
 
 ## Bloqueos / pendientes de validación
 
@@ -52,7 +61,7 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 - Confirmar el número de la norma de ecuaciones (transcrita como «ISO 80004»; la plantilla indica ISO 80000-4).
 - Confirmar el orden del capítulo 3: la clase indicó propuesta → índice tentativo → análisis económico → cronograma; la plantilla indica índice tentativo → análisis económico → cronograma.
 - Aclarar el alcance del análisis económico: el del perfil es el costo de desarrollar el proyecto; el acta pide costo de fabricación respecto del retorno de la inversión (`D-012`, `A-006`).
-- Confirmar si se aceptan patentes y fichas de fabricantes como referencias (la clase no las mencionó).
+- Patentes: la clase del 21/10/2026 las incluyó en la revisión de literatura; confirmar si se aceptan fichas de fabricantes.
 - Confirmar dónde va la tabla de precios para «bajo costo»: capítulo 2 o parte económica (la clase ubicó precios e importación en la parte económica).
 - Confirmar si 2.6.6 (modelamiento y control) entra en el perfil, dado que el objetivo 4 corresponde a Taller de Grado II.
 - Confirmar que la evaluación experimental (objetivo 6, `D-008`) se mantiene para Taller de Grado II (`D-014`).
@@ -62,12 +71,13 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 ### Capítulo 1 (diferidos; no bloquean el capítulo 2)
 
 - Siete objetivos específicos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
-- Alcances conservan 5–15 kg, 5 g, ±0,5 % y 50 kg para la harina; según `D-009` no son requisitos vigentes y deben revisarse con el estudio de tolerancias.
-- Completar la trazabilidad de las cantidades de insumos reportadas (fecha, instrumento, procedimiento, repeticiones y respaldo). La levadura es fresca: evaluar su dosificación desde tolva (`A-005`).
-- La formulación y el árbol presentan cifras mensuales sin explicitar su carácter proyectado. La asociación entre fechas temporales y lecturas de harina sigue provisional en las notas de campo.
-- Problema, árbol y objetivos no cuentan con aprobación docente definitiva (`A-002`); `D-004` requiere revisión antes de reemplazarse.
-- El título de `main.tex` usa «bajo costo / panaderías artesanales»; el título definitivo continúa **NO DECIDIDO** (`A-001`).
-- La Introducción no presenta primero la problemática, como indicó el docente; falta la sección de Motivación.
+- Trazabilidad de azúcar, sal y levadura (`D-016`): confirmar la fecha real del registro (el 05/10 se reportaron otras cantidades con levadura fresca), modelo y resolución de la balanza del investigador, si el pesaje del envase entró en los tiempos, origen de la receta y uso exclusivo del envase (sin cucharas).
+- Tramo sin cronometrar entre la devolución del recipiente de harina y la salida hacia el saco de azúcar.
+- Fotografías provisionales: envase de azúcar, sal y levadura (Figura 1.4 c) y lecturas de esos ingredientes (Apéndice A, opcional; no sustituir con fotos de otro lote).
+- La formulación menciona «al mes» y Antecedentes declara la proyección; confirmar si el docente exige «proyección» en la propia frase. La asociación entre fechas temporales y lecturas de harina sigue provisional en las notas de campo.
+- Problema, árbol, objetivos y título no cuentan con aprobación docente definitiva (`A-001`, `A-002`).
+- El capítulo 1 ocupa unas 13 páginas; la plantilla fija un máximo de 6.
+- Falta la sección de Motivación.
 - Tablas y figuras requieren revisión de contexto, unidades, leyendas e interpretación.
 - Verificar el uso del template oficial de Taller de Grado I.
 - Persisten los conflictos de estilo de `redacción.md` (títulos con «problema»; límites de líneas y palabras).
@@ -77,6 +87,7 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## Archivos activos
 
+- `docs/thesis/chapters/marcoref.tex`
 - `docs/thesis/chapters/marcoteorico.tex`
 - `docs/thesis/bibliography/referencias.bib`
 - `docs/thesis/main.tex`

@@ -8,7 +8,7 @@
 ## 1. Introducción
 
 - **Propósito:** permitir que un lector externo comprenda el contexto general y ubique claramente la etapa estudiada.
-- **Contenido:** caso de estudio, actividad, productos principales, proceso general de panificación, participación de la harina, ubicación de la dosificación y enfoque del proyecto.
+- **Contenido:** caso de estudio, actividad, productos principales, proceso general de panificación, ingredientes secos que intervienen (harina, azúcar, sal y levadura), ubicación de la dosificación y enfoque del proyecto.
 - **Evidencia:** bibliografía de contexto; esquema general del proceso, figura o fotografía únicamente si facilita la comprensión.
 - **Conexión:** pasar del proceso general a la caracterización detallada de la situación actual.
 - **Profundidad:** media.
@@ -224,7 +224,7 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 | Subsección | Objetivo | Contenido |
 |---|---|---|
 | 2.6.1 Metodología de diseño | 1 | Lista de requerimientos y selección de alternativas; solo si se aplica |
-| 2.6.2 Insumos y tolerancias de dosificación | 2 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente; levadura fresca (`A-005`) |
+| 2.6.2 Insumos y tolerancias de dosificación | 2 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente de harina, azúcar, sal y levadura en polvo (`D-016`) |
 | 2.6.3 Metrología y normativa de pesaje | 2 y 3 | VIM; OIML R 61, R 76 y R 60, ordenadas por jerarquía |
 | 2.6.4 Medición gravimétrica y celdas de carga | 3 | Principio, errores, montaje, acondicionamiento de señal (indicación directa del docente) |
 | 2.6.5 Almacenamiento y alimentación de sólidos | 3 | Solo lo que se calculará: tolva, caudal, torque y potencia del alimentador |
