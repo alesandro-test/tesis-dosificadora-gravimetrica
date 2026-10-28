@@ -1,0 +1,98 @@
+\chapter{Diagrama Gantt del Proyecto}
+\label{sec:cronograma}
+
+\def\mystartdate{2026-06-01}% Fecha de inicio del proyecto
+\def\myenddate{2027-06-30}% Fecha de finalización del proyecto
+
+\newganttchartelement*{equalateralmilestone}{
+equalateralmilestone/.style={
+    shape=diamond,
+    draw,
+    fill=black,
+    inner sep=2pt
+},
+equalateralmilestone label font=\slshape,
+equalateralmilestone left shift=1.0,
+equalateralmilestone right shift=-1.0,
+}
+
+\begin{ganttchart}[
+    hgrid,
+    %vgrid,
+    expand chart=\textwidth,
+    x unit=0.3cm,
+    y unit title=0.7cm,
+    y unit chart=0.7cm,
+    title height=1,
+    title label font=\bfseries\footnotesize,
+    bar/.append style={fill=green},
+    incomplete/.append style={fill=yellow},
+    progress label text={},
+    group label font=\bfseries,
+    milestone label font=\bfseries,
+    milestone left shift=.1,
+    milestone right shift=-.1,
+    milestone height=.1,
+    milestone/.append style={scale=3.0},
+    time slot format=isodate
+]{\mystartdate}{\myenddate}
+
+% Encabezado del calendario
+\gantttitle{Mes}{395} \\
+\gantttitlecalendar{month=letter} \\
+
+% Fase de elaboración del perfil
+\ganttgroup{Fase de Elaboración del Perfil}
+{2026-06-01}{2026-09-29} \\
+\ganttbar{Elaboración y ajuste de la propuesta}
+{2026-06-01}{2026-09-15} \\
+\ganttequalateralmilestone{Primera entrega del perfil}
+{2026-09-16} \\
+\ganttequalateralmilestone{Segunda entrega del perfil}
+{2026-09-23} \\
+\ganttequalateralmilestone{Defensa del perfil}
+{2026-09-29} \\
+
+% Fase de planificación
+\ganttgroup{Fase de Planificación}
+{2026-10-13}{2026-12-14} \\
+\ganttbar{Marco referencial y requerimientos}
+{2026-10-13}{2026-11-13} \\
+\ganttbar{Diseño preliminar y dimensionamiento}
+{2026-11-09}{2026-11-28} \\
+\ganttbar{Diseño gravimétrico, planos y revisión}
+{2026-11-29}{2026-12-06} \\
+\ganttequalateralmilestone{Defensa del proyecto}
+{2026-12-07} \\
+\ganttbar{Correcciones y entrega del documento}
+{2026-12-08}{2026-12-14} \\
+
+% Fase de diseño y desarrollo
+\ganttgroup{Fase de Diseño y Desarrollo}
+{2026-12-15}{2027-02-28} \\
+\ganttbar{Diseño detallado e integración de subsistemas}
+{2026-12-15}{2027-01-31} \\
+\ganttbar{Revisión y preparación para la implementación}
+{2027-02-01}{2027-02-28} \\
+
+% Fase de implementación y pruebas
+\ganttgroup{Fase de Implementación y Pruebas}
+{2027-03-01}{2027-04-30} \\
+\ganttbar{Construcción e integración del prototipo}
+{2027-03-01}{2027-03-31} \\
+\ganttbar{Pruebas de funcionamiento y dosificación}
+{2027-04-01}{2027-04-30} \\
+
+% Fase de cierre y evaluación final
+\ganttgroup{Fase de Cierre y Evaluación Final}
+{2027-05-01}{2027-06-30} \\
+\ganttbar{Análisis de resultados y redacción final}
+{2027-05-01}{2027-06-05} \\
+\ganttbar{Preparación de la defensa final}
+{2027-06-06}{2027-06-19} \\
+\ganttequalateralmilestone{Defensa final propuesta}
+{2027-06-19} \\
+\ganttbar{Correcciones y entrega definitiva}
+{2027-06-20}{2027-06-30} \\
+
+\end{ganttchart}
