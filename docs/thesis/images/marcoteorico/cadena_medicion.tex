@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    bloque/.style={
+        rectangle,
+        draw,
+        rounded corners=2pt,
+        minimum height=1.1cm,
+        text width=2.5cm,
+        align=center,
+        inner sep=3pt
+    },
+    flecha/.style={-{Latex[width=6pt,length=5pt]}, thick},
+    nota/.style={font=\footnotesize, align=center}
+]
+
+\node[bloque] (celda) at (0,0)    {Celda de carga\\(puente)};
+\node[bloque] (amp)   at (3.8,0)  {Amplificador};
+\node[bloque] (adc)   at (7.6,0)  {Convertidor A/D};
+\node[bloque] (fil)   at (12.0,0) {Promedio móvil};
+\node[bloque] (ctrl)  at (15.9,0) {Controlador};
+
+\draw[flecha] (celda) -- node[nota, above] {mV} (amp);
+\draw[flecha] (amp)   -- node[nota, above] {V} (adc);
+\draw[flecha] (adc)   -- node[nota, above] {cuentas} (fil);
+\draw[flecha] (fil)   -- node[nota, above] {masa} (ctrl);
+
+% Módulo de conversión comercial
+\draw[dashed, rounded corners=3pt] (2.3,-0.85) rectangle (9.1,0.85);
+\node[nota, anchor=north] at (5.7,-0.9) {Módulo de conversión};
+
+\end{tikzpicture}

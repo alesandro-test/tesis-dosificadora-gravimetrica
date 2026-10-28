@@ -99,17 +99,17 @@ Total de la muestra:
 
 Azúcar, sal y levadura en los mismos 7 ciclos (`research/notes/levantamiento_dosificacion_san_miguel.md`):
 
-- objetivo / incorporado: azúcar **1 940 / 1 970 g**, sal **850 / 864 g**,
-  levadura **330 / 340 g**;
-- diferencias por ciclo: azúcar **−9 a +26 g**, sal **−7 a +9 g**,
-  levadura **−4 a +5 g**;
-- tiempo acumulado: **157,5 s**; total con harina: **569,4 s**;
-- cantidades objetivo observadas: **30–500 g/ciclo**;
+- objetivo / incorporado: azúcar **1 590 / 1 615 g**, sal **850 / 864 g**,
+  levadura **200 / 207 g**;
+- diferencias por ciclo: azúcar **−7 a +21 g**, sal **−7 a +9 g**,
+  levadura **−2 a +3 g**;
+- tiempo acumulado: **154,3 s**; total con harina: **566,2 s**;
+- cantidades objetivo observadas: **20–400 g/ciclo**;
 - medición con una balanza propia del investigador, pesando el envase con cada carga.
 
-Proyección mensual (22 jornadas ordinarias + 4 sábados): **2 h 43 min**;
-diferencia positiva de **1,976 kg** de harina, **336 g** de azúcar, **236 g** de sal y
-**76 g** de levadura (balance neto en los tres últimos).
+Proyección mensual (22 jornadas ordinarias + 4 sábados): **2 h 42 min**;
+diferencia positiva de **1,976 kg** de harina, **280 g** de azúcar, **236 g** de sal y
+**64 g** de levadura (balance neto en los tres últimos).
 
 Las preparaciones registradas fueron pan casero, marraqueta, pan francés
 y una masa común del sábado utilizada posteriormente para empanadas y rollos.

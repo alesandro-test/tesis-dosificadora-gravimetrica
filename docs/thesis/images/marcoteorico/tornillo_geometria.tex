@@ -1,0 +1,53 @@
+% Geometría de un alimentador de tornillo horizontal bajo una tolva.
+% Elaboración propia con base en Bates (2000) y Karwat et al. (2021).
+% Variables de la Ecuación (2.1): D, d, s y n.
+\begin{tikzpicture}[
+    >=Latex,
+    font=\small,
+    cota/.style={<->, thin},
+    nota/.style={font=\footnotesize, align=center},
+    flujo/.style={-{Latex[width=5pt,length=4pt]}, thick, gray}
+]
+
+% Tolva sobre la sección de alimentación
+\draw[thick] (0.2,3.6) -- (1.0,1.6) (4.6,1.6) -- (5.4,3.6);
+\node[nota] at (2.8,3.1) {Tolva};
+
+% Artesa (canal) del tornillo
+\draw[thick] (-0.6,1.6) -- (1.0,1.6) (4.6,1.6) -- (7.0,1.6);
+\draw[thick] (-0.6,0.0) -- (7.0,0.0);
+\draw[thick] (7.0,1.6) -- (7.0,1.0) (7.0,0.0) -- (7.0,0.3);
+
+% Eje del tornillo (diámetro d)
+\draw[thick, fill=gray!15] (-2.0,0.65) rectangle (7.4,0.95);
+
+% Álabes (diámetro D), paso s entre álabes consecutivos
+\foreach \x in {0.0,1.4,2.8,4.2,5.6}{
+    \draw[very thick] (\x,0.1) -- (\x+0.7,1.5);
+}
+
+% Motor
+\draw[thick, fill=gray!30] (-3.2,0.3) rectangle (-2.0,1.3);
+\node[nota] at (-2.6,0.8) {Motor};
+\draw[->, thick] (-1.75,1.15) arc[start angle=150, end angle=30, radius=0.3];
+\node[nota] at (-1.5,1.65) {$n$};
+
+% Descarga
+\draw[flujo] (7.0,0.65) -- (7.0,-0.75);
+\node[nota, anchor=west] at (7.1,-0.5) {$\dot{m}$};
+
+% Cota del paso s
+\draw[cota] (1.4,-0.35) -- (2.8,-0.35);
+\node[nota] at (2.1,-0.6) {$s$};
+\draw[thin, gray] (1.4,0.1) -- (1.4,-0.45) (2.8,0.1) -- (2.8,-0.45);
+
+% Cota del diámetro exterior D
+\draw[cota] (7.8,0.1) -- (7.8,1.5);
+\node[nota, anchor=west] at (7.9,0.8) {$D$};
+\draw[thin, gray] (6.3,1.5) -- (7.9,1.5) (6.3,0.1) -- (7.9,0.1);
+
+% Cota del diámetro del eje d
+\draw[cota] (-0.9,0.65) -- (-0.9,0.95);
+\node[nota] at (-0.9,0.4) {$d$};
+
+\end{tikzpicture}

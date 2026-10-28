@@ -178,13 +178,12 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 2.4 Área de medición gravimétrica
 2.5 Área de control
 2.6 Fundamentos teóricos
-    2.6.1 Metodología de diseño
-    2.6.2 Insumos y tolerancias de dosificación
-    2.6.3 Metrología y normativa de pesaje
-    2.6.4 Medición gravimétrica y celdas de carga
-    2.6.5 Almacenamiento y alimentación de sólidos
-    2.6.6 Modelamiento dinámico y control
-2.7 Conclusión del capítulo
+    2.6.1 Propiedades de los insumos
+    2.6.2 Metrología y tolerancias de dosificación
+    2.6.3 Medición gravimétrica y celdas de carga
+    2.6.4 Almacenamiento y alimentación de sólidos
+    2.6.5 Corte de la dosificación
+2.7 Conclusión del capítulo (comentada en el .tex por ahora, 28/10/2026)
 ```
 
 ## 2.1 Estado del arte (introducción)
@@ -223,12 +222,13 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 
 | Subsección | Objetivo | Contenido |
 |---|---|---|
-| 2.6.1 Metodología de diseño | 1 | Lista de requerimientos y selección de alternativas; solo si se aplica |
-| 2.6.2 Insumos y tolerancias de dosificación | 2 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente de harina, azúcar, sal y levadura en polvo (`D-016`) |
-| 2.6.3 Metrología y normativa de pesaje | 2 y 3 | VIM; OIML R 61, R 76 y R 60, ordenadas por jerarquía |
-| 2.6.4 Medición gravimétrica y celdas de carga | 3 | Principio, errores, montaje, acondicionamiento de señal (indicación directa del docente) |
-| 2.6.5 Almacenamiento y alimentación de sólidos | 3 | Solo lo que se calculará: tolva, caudal, torque y potencia del alimentador |
-| 2.6.6 Modelamiento dinámico y control | 4 | Modelo del sistema de alimentación y pesaje (`D-011`) y estrategias candidatas; breve |
+| 2.6.1 Propiedades de los insumos | 2 y 3 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente (`D-016`) |
+| 2.6.2 Metrología y tolerancias de dosificación | 2 | VIM y OIML R 61 |
+| 2.6.3 Medición gravimétrica y celdas de carga | 3 | Celda comercial: selección según OIML R 60, conversión, calibración y promedio móvil |
+| 2.6.4 Almacenamiento y alimentación de sólidos | 3 | Tornillos comerciales para los cuatro insumos (`D-019`): flujo en la tolva y abertura sin bóveda (Jenike), caudal, potencia y torque, diseño higiénico |
+| 2.6.5 Corte de la dosificación | 3 y 4 | Corte en dos etapas y columna en caída; el modelo dinámico y el PID quedan para Taller de Grado II |
+
+Revisión del 28/10/2026: se retiraron la metodología de diseño (el método se cita en el capítulo 3 si se usa), OIML R 76 (balanza de referencia, Taller de Grado II) y Beverloo (sin descarga por gravedad, `D-019`). El orden actual pone la medición antes de la mecánica; está pendiente decidir si se invierte para seguir el orden de cálculo (tolva → tornillo → motor → recipiente → celda).
 
 - **Patrón por concepto:** definición con cita → figura explicativa → ecuación numerada → variables con unidades → uso en el diseño.
 - **Conexión:** cada fundamento corresponde a un cálculo, requisito o decisión del capítulo 3 o del marco práctico.

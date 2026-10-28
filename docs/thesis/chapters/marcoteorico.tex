@@ -79,21 +79,21 @@ la disposición del tornillo y del agitador dentro de la tolva cónica.
     {\footnotesize Fuente: Adaptado de \textcite{budijono2021flour}.}
 \end{figure}
 
-La oferta para panificación industrial también dosifica por peso y separa la
-harina de los insumos menores. En la planta de Harry-Brot, AZO alimenta las
-amasadoras con básculas de vacío para la harina y pesa los insumos menores al
-gramo en balanzas propias, con fondos vibratorios y tornillos de dosificación
-fina~\parencite{azo2026kneader}. El sistema MicDos de Zeppelin dosifica hasta
-20 componentes con tornillo y variador de frecuencia, flujo grueso y fino y
-corrección del sobrepaso, sobre una balanza móvil de
-25~kg~\parencite{zeppelin2026micdos}. En Latinoamérica, INOXPA instaló para un
-fabricante de pan una báscula sobre celdas de carga de 200~kg con exactitud
-declarada del 1~\%, controlada por PLC y SCADA~\parencite{inoxpa2026pastry}.
-Para panaderías de menor tamaño, Daxner ofrece dosificación volumétrica o
-gravimétrica sin especificaciones publicadas~\parencite{daxner2026bakery}. La
-oferta comercial confirma el principio gravimétrico y el corte en dos etapas,
-pero se orienta a plantas industriales. La comparación de costos corresponde
-al análisis económico (Sección~\ref{subsec:justificacion_economica}).
+% La oferta para panificación industrial también dosifica por peso y separa la
+% harina de los insumos menores. En la planta de Harry-Brot, AZO alimenta las
+% amasadoras con básculas de vacío para la harina y pesa los insumos menores al
+% gramo en balanzas propias, con fondos vibratorios y tornillos de dosificación
+% fina~\parencite{azo2026kneader}. El sistema MicDos de Zeppelin dosifica hasta
+% 20 componentes con tornillo y variador de frecuencia, flujo grueso y fino y
+% corrección del sobrepaso, sobre una balanza móvil de
+% 25~kg~\parencite{zeppelin2026micdos}. En Latinoamérica, INOXPA instaló para un
+% fabricante de pan una báscula sobre celdas de carga de 200~kg con exactitud
+% declarada del 1~\%, controlada por PLC y SCADA~\parencite{inoxpa2026pastry}.
+% Para panaderías de menor tamaño, Daxner ofrece dosificación volumétrica o
+% gravimétrica sin especificaciones publicadas~\parencite{daxner2026bakery}. La
+% oferta comercial confirma el principio gravimétrico y el corte en dos etapas,
+% pero se orienta a plantas industriales. La comparación de costos corresponde
+% al análisis económico (Sección~\ref{subsec:justificacion_economica}).
 
 \subsection{Otros materiales en kilogramos}
 \label{subsec:dosificadoras_kilogramos}
@@ -107,7 +107,7 @@ servomotor de la compuerta.
 \begin{figure}[H]
     \centering
     \resizebox{0.95\textwidth}{!}{\input{images/marcoteorico/arquitectura_electronica.tex}}
-    \caption{Arquitectura electrónica de los prototipos de dosificación de bajo costo.}
+    \caption{Arquitectura electrónica de los prototipos de dosificación con microcontrolador.}
     \label{fig:arquitectura_electronica}
     \vspace{0.2em}
     {\footnotesize Fuente: Elaboración propia con base en
@@ -133,7 +133,16 @@ válvula. \textcite{hadi2025weighing} compensaron ese material con un adelanto
 de corte de 120~g y obtuvieron un sobrepaso medio de 0,72~\% entre 1 y 20~kg,
 con un servomotor en lugar de la válvula neumática industrial.
 
-Entre los trabajos de grado latinoamericanos,
+Con azúcar, uno de los insumos de San Miguel,
+\textcite{acuna2024gravimetrico} evaluó en una envasadora de Empresas Iansa,
+en Chile, el reemplazo de un dosificador volumétrico por uno gravimétrico
+comercial con capacidad de 5~g a 25~kg, sincronizado con la envasadora. En
+bolsas de 1~kg, el volumétrico entregó en promedio 1013,07~g y el gravimétrico
+1002,06~g, y con el gravimétrico instalado en una de las líneas el
+sobreconsumo de azúcar del área bajó de 0,86 a 0,82~\%. El trabajo confirma el
+pesaje por lotes con azúcar en kilogramos, aunque en una línea de envasado y
+no en la carga de una amasadora.
+
 \textcite{orozco2024dosificadora} construyó una dosificadora de arroz con canal
 vibratorio, compuerta y celda de carga de 10~kg. Obtuvo exactitudes de
 98,47~\% en 100 pruebas de 1~lb y de 99,73~\% en 30 pruebas de 1~kg, con
@@ -169,8 +178,8 @@ en la Sección~\ref{sec:teoria_control}.
 \label{subsec:dosificadoras_gramos}
 
 Los insumos menores de San Miguel se dosifican en gramos. Por ciclo, la
-receta de referencia indica de 80 a 500~g de azúcar, de 100 a 150~g de sal y
-de 30 a 50~g de levadura en polvo (Tabla~\ref{tab:receta_referencia}). Un
+receta de referencia indica de 80 a 400~g de azúcar, de 100 a 150~g de sal y
+de 20 a 30~g de levadura en polvo (Tabla~\ref{tab:receta_referencia}). Un
 grupo numeroso de prototipos trabaja en esa escala. Con tornillo,
 \textcite{david2024granulated} alcanzaron exactitudes de 99,677 a 99,795~\%
 con 120 a 175~g de azúcar, arroz y café, aunque reconocen poca adaptación a
@@ -203,8 +212,18 @@ Figura~\ref{fig:laime_tolvas}, con dos tolvas de pesaje de 2,5~kg, cada una
 sobre su celda de carga. Un vibrador llena cada tolva y se detiene al alcanzar
 la consigna, y un motor paso a paso abre la tolva hacia una tolva de
 recolección común. Al calibrar con una pesa de 500~g, el error fue de 0,8~g.
-Ningún trabajo compara la balanza común y la balanza por insumo en un mismo
-equipo, por lo que la elección queda abierta.
+
+La balanza por insumo también se aplica por grupos de insumos. En una planta
+de alimento balanceado de Ecuador, los ingredientes mayores se pesaban uno
+tras otro en una sola balanza, con unos cinco minutos por descarga a la
+mezcladora. \textcite{sanchez2024tolvas} trasladó los ingredientes medios a
+cuatro tolvas con balanza propia, parte de ellas obtenidas al dividir en dos
+tolvas existentes. Las dos balanzas se llenan en paralelo, con tornillos que
+pasan de velocidad rápida a lenta en un peso de cambio y se detienen en un
+peso de corte, y descargan en secuencia a la mezcladora, con una tolerancia de
+$\pm$5~\% por ingrediente. El trabajo no cuantifica la reducción del tiempo
+de ciclo. Ningún trabajo compara la balanza común y la balanza por insumo en
+un mismo equipo, por lo que la elección queda abierta.
 
 \begin{figure}[H]
     \centering
@@ -293,7 +312,7 @@ harina o masas del orden del kilogramo, con el insumo, la consigna, el
 alimentador y el error de cada uno. El error se presenta con la métrica de
 cada autor, por lo que las cifras no se comparan directamente entre filas.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Dosificadoras de harina y de escala de kilogramos: consigna y error.}
     \label{tab:dosificadoras_resumen}
@@ -339,17 +358,6 @@ cada autor, por lo que las cifras no se comparan directamente entre filas.
     }
 \end{table}
 
-Con el tiempo reportado, el caudal equivalente de los prototipos, calculado
-como masa dosificada entre tiempo, va de unos 6~kg/h
-\parencite{humaira2024optimalisasi} a unos 100~kg/h
-\parencite{orozco2024dosificadora}. Como referencia, el procedimiento manual
-de San Miguel registró de 5 a 8~kg en ciclos de 53,2 a 66,6~s
-(Apéndice~\ref{ap:tablas_dosificacion}), equivalentes a un intervalo
-aproximado de 270 a 540~kg/h. Este cálculo usa el tiempo total del ciclo, que
-incluye acciones del operario, y no constituye un requisito. Ningún prototipo
-alcanza ese orden de caudal, y el error menor en harina se obtuvo con 6~kg/h
-\parencite{humaira2024optimalisasi}. Esa brecha entre caudal y exactitud da
-relevancia al corte en dos etapas que aplica la industria.
 
 La Tabla~\ref{tab:dosificadoras_enfoques} contrasta las arquitecturas
 identificadas en la revisión, es decir, el principio de medición, la escala
@@ -375,8 +383,8 @@ Secciones~\ref{sec:teoria_mecanica} y~\ref{sec:teoria_control}.
         \textbf{Arquitectura} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
         \midrule[1pt]
         Pesaje por lotes con tolva, alimentador, celda de carga y controlador &
-        Errores de 0,08~\% (Humaira) a 1,83~\% (Rumapea) en harina con equipos
-        de bajo costo & Ensayos de hasta 350~g de harina y caudales de 6 a
+        Errores de 0,08~\% (Humaira) a 1,83~\% (Rumapea) en harina con
+        prototipos de microcontrolador & Ensayos de hasta 350~g de harina y caudales de 6 a
         100~kg/h \\
         Dosificación volumétrica & Sin celda de carga & Masa no medida, con
         evidencia en la Sección~\ref{sec:teoria_medicion} \\
@@ -385,9 +393,11 @@ Secciones~\ref{sec:teoria_mecanica} y~\ref{sec:teoria_control}.
         trifásico, transporte de envases e instalación de planta (AZO) \\
         Balanza común para varios insumos & Una celda para cinco tolvas
         (Farihin) & 70~\% de éxito con harina, azúcar y café (Joni) \\
-        Balanza por insumo & Una celda por cámara (Humaira), tolvas de pesaje
-        con descarga común (Laime) y básculas propias para los insumos menores
-        (AZO) & Una celda y un acondicionador por insumo \\
+        Balanza por insumo o por grupo & Una celda por cámara (Humaira),
+        tolvas de pesaje con descarga común (Laime), básculas propias para los
+        insumos menores (AZO) y llenado en paralelo por grupo de insumos
+        (Sánchez Villacis) & Una celda y un acondicionador por balanza;
+        reducción de tiempo no cuantificada (Sánchez Villacis) \\
         \bottomrule[1pt]
     \end{tabularx}
 
@@ -398,7 +408,8 @@ Secciones~\ref{sec:teoria_mecanica} y~\ref{sec:teoria_control}.
 
 A partir de la tabla, el proyecto adopta el pesaje por lotes con tolva,
 alimentador, celda de carga y controlador como arquitectura de referencia,
-porque reúne los menores errores con equipos de bajo costo. Se descarta la
+porque reúne los menores errores en harina entre los prototipos revisados. Se
+descarta la
 dosificación volumétrica como principio, ya que no mide la masa entregada, y
 se descarta la arquitectura de pesaje de sacos y plantas, aunque se conserva
 su principio gravimétrico. La elección entre balanza común y balanza por
@@ -605,8 +616,9 @@ harina cuando está más comprimida.
 \end{figure}
 
 La industria confirma el efecto. En el envasado de azúcar de 1~kg,
-\textcite{acuna2024gravimetrico} midió una desviación estándar de 4,5~g con el
-dosificador volumétrico y de 0,24~g con el gravimétrico, en 24\,523 envases.
+\textcite{acuna2024gravimetrico} midió una desviación estándar de 4,38~g en
+20\,520 envases con el dosificador volumétrico y de 0,24~g en 24\,523 envases
+con el gravimétrico.
 \textcite{chiliguana2016rediseno} señalan que para pesadas discretas el pesaje
 por lotes es el recomendado, con hasta $\pm$0,1~\% mediante alimentación
 gruesa y fina. La pérdida de peso, en cambio, sirve al flujo continuo, y
@@ -637,7 +649,7 @@ midieron una razón de amortiguamiento de 0,05, y con filtros basados en el
 modelo de la celda la señal se asentó antes que con un filtro pasa bajos.
 \textcite{tiboni2020vibrations} mostraron que las vibraciones de la máquina
 también perturban la lectura en llenadoras por peso. El filtrado de la señal
-se desarrolla en los fundamentos (Sección~\ref{sec:teoria_fundamentos}).
+se desarrolla en los fundamentos (Sección~\ref{subsubsec:fund_conversion}).
 
 La Tabla~\ref{tab:medicion_enfoques} reúne los enfoques de esta sección, con el
 resultado que los favorece y la limitación observada.
@@ -659,8 +671,8 @@ resultado que los favorece y la limitación observada.
         \textbf{Enfoque} & \textbf{Factores a favor} & \textbf{Limitaciones} \\
         \midrule[1pt]
         Volumétrico por vueltas o tiempo & Sin celda de carga & Densidad de la
-        harina variable hasta un 22~\% (Lanzerstorfer) y desviación de 4,5~g
-        en 1~kg (Acuña) \\
+        harina variable hasta un 22~\% (Lanzerstorfer) y desviación de
+        4,38~g en 1~kg (Acuña) \\
         Pesaje por lotes & Desviación de 0,24~g en 1~kg (Acuña) y recomendado
         para pesadas discretas (Chiliguana) & Lectura afectada por impacto y
         vibración (Richiedei, Tiboni) \\
@@ -779,8 +791,13 @@ material cambian de un lote a otro, y junto con la compensación de la columna
 el error quedó en 2,7~\% en simulación. Con datos de planta,
 \textcite{an2020twolevel} aplicaron esta corrección al pesaje de aleaciones, y
 los lotes dentro de $\pm$3~kg pasaron del 34,52 al 99,45~\% frente a los
-parámetros fijos. En la industria, según \textcite{buhler2022dosing}, estos
-parámetros se ajustan con la experiencia del operador.
+parámetros fijos. En la planta de balanceado de
+\textcite{sanchez2024tolvas}, tras unos 5~s de estabilización de la balanza,
+la diferencia entre el peso esperado y el pesado se multiplica por un factor
+del 2~\% y ajusta el valor deseado del lote siguiente, aunque el trabajo no
+reporta el efecto de esa corrección. En la industria, según
+\textcite{buhler2022dosing}, estos parámetros se ajustan con la experiencia
+del operador.
 
 La Tabla~\ref{tab:control_enfoques} reúne los enfoques de esta sección, con el
 resultado que los favorece y la limitación observada.
@@ -836,25 +853,694 @@ sistema.
 \section{Fundamentos teóricos}
 \label{sec:teoria_fundamentos}
 
-\subsection{Metodología de diseño}
+\subsection{Propiedades de los insumos}
+\label{subsec:fund_insumos}
 
-\subsection{Insumos y tolerancias de dosificación}
-Propiedades de la harina, la sal, el azúcar y la levadura, y efecto de su
-variación en la masa.
+\subsubsection{Porcentaje panadero}
+\label{subsubsec:fund_porcentaje}
 
-\subsection{Metrología y normativa de pesaje}
-Vocabulario metrológico (VIM), OIML R~61, R~76 y R~60.
+En panificación, cada ingrediente se expresa como porcentaje de la masa de
+harina, que vale 100~\%~\parencite{cauvain2015technology}. La masa de cada
+ingrediente es
+
+\begin{equation}
+    m_{i} = \frac{P_{i}}{100}\, m_{\mathrm{h}}
+    \label{eq:porcentaje_panadero}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $m_{i}$: masa objetivo del ingrediente $i$, en g;
+    \item $P_{i}$: porcentaje panadero del ingrediente $i$, en \%;
+    \item $m_{\mathrm{h}}$: masa de harina de la preparación, en g.
+\end{itemize}
+
+La receta de San Miguel equivale a 1,0 a 6,2~\% de azúcar, 1,5 a 2,0~\% de
+sal y 0,38 a 0,46~\% de levadura en polvo
+(Tabla~\ref{tab:receta_referencia}). En el capítulo~3, la
+Ecuación~\eqref{eq:porcentaje_panadero} da las consignas de cada insumo y el
+rango de masas de cada dosificador.
+
+\subsubsection{Efecto de la variación de cada insumo}
+\label{subsubsec:fund_variacion}
+
+La sal fortalece el gluten y frena la fermentación; el azúcar alimenta a la
+levadura y da color a la corteza; la levadura produce el gas que leuda la
+masa~\parencite{cauvain2015technology}. Sin sal, la resistencia de la masa
+cayó un 21~\% y su extensibilidad un 26~\%~\parencite{lynch2009salt}. Con
+levadura seca, la producción de gas se duplicó entre 0,25 y 0,75~g por cada
+100~g de harina y se estabilizó por encima~\parencite{verheyen2015gas}: la
+levadura de San Miguel está en la zona donde la dosis todavía cambia el
+leudado.
+
+Estas fuentes muestran qué insumos son sensibles, pero ninguna fija una
+tolerancia en gramos. La tolerancia se define en el capítulo~3 (objetivo~2)
+con la normativa de la Sección~\ref{subsec:fund_metrologia}.
+
+\subsubsection{Propiedades de flujo de los insumos}
+\label{subsubsec:fund_flujo}
+
+La fluidez de un polvo se mide con el índice de
+flujo~\parencite{siliveru2017significance}:
+
+\begin{equation}
+    \mathit{ff}_{\mathrm{c}} = \frac{\sigma_{1}}{\sigma_{\mathrm{c}}}
+    \label{eq:indice_flujo}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $\mathit{ff}_{\mathrm{c}}$: índice de flujo, adimensional;
+    \item $\sigma_{1}$: esfuerzo de consolidación, en kPa;
+    \item $\sigma_{\mathrm{c}}$: resistencia del polvo sin confinar, en kPa.
+\end{itemize}
+
+Un índice bajo indica un polvo cohesivo, que forma bóvedas. La harina de
+trigo va de muy cohesiva (1,04) a flujo fácil (3,50) según su tamaño de
+partícula, y se vuelve muy cohesiva por encima del 12~\% de
+humedad~\parencite{siliveru2017significance}.
+
+La densidad aparente, que convierte masa en volumen, crece con la
+compresión~\parencite{lanzerstorfer2020density}:
+
+\begin{equation}
+    \rho_{\mathrm{b}} = \rho_{\mathrm{b},0} \left( \frac{\sigma}{\sigma_{0}} \right)^{c}
+    \label{eq:densidad_esfuerzo}
+\end{equation}
+
+\noindent donde $\rho_{\mathrm{b}}$ es la densidad aparente, en kg/m$^{3}$;
+$\rho_{\mathrm{b},0}$, la densidad con $\sigma_{0} = 1$~kPa; $\sigma$, el
+esfuerzo de consolidación, en kPa; y $c$, el exponente de compresibilidad,
+adimensional. La sal y el azúcar cristal casi no se comprimen
+($c < 0{,}01$); el azúcar impalpable sí ($c = 0{,}110$), como muestra la
+Figura~\ref{fig:densidad_esfuerzo}.
+
+Sin ensayo de corte, la fluidez se estima con la relación de
+Hausner~\parencite{dossantos2017sugar}:
+
+\begin{equation}
+    HR = \frac{\rho_{\mathrm{tb}}}{\rho_{\mathrm{lb}}}
+    \label{eq:hausner}
+\end{equation}
+
+\noindent donde $HR$ es la relación de Hausner, adimensional;
+$\rho_{\mathrm{tb}}$, la densidad asentada por golpes; y
+$\rho_{\mathrm{lb}}$, la densidad suelta, ambas en kg/m$^{3}$. Un valor
+cercano a 1 indica flujo libre. La Tabla~\ref{tab:propiedades_insumos}
+resume los cuatro insumos.
+
+\begin{table}[H]
+    \centering
+    \caption{Densidad aparente y fluidez de los insumos en la bibliografía.}
+    \label{tab:propiedades_insumos}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.2\textwidth}
+        >{\raggedright\arraybackslash}p{0.2\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}p{0.17\textwidth}}
+        \toprule[1pt]
+        \textbf{Insumo} & \textbf{Densidad suelta (kg/m$^{3}$)} &
+        \textbf{Fluidez} & \textbf{Fuente} \\
+        \midrule[1pt]
+        Harina de trigo & 601 a 630 (8,6 a 14,2~\% de humedad) &
+        Cohesiva; $\mathit{ff}_{\mathrm{c}}$ de 1,04 a 3,50 según humedad y tamaño
+        & Guan; Siliveru \\
+        Azúcar cristal & 824 a 897 & $HR$ de 1,10 a 1,11, flujo excelente &
+        Dos Santos; Lanzerstorfer \\
+        Azúcar impalpable & 535 a 630 & $HR$ de 1,33, pasable & Dos Santos;
+        Lanzerstorfer \\
+        Sal & 1170 a 1220 & Casi incompresible; absorbe humedad del
+        ambiente & Lanzerstorfer; Suhag \\
+        Levadura en polvo & No reportada & No reportada & -- \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en \textcite{guan2009flour},
+    \textcite{siliveru2017significance}, \textcite{dossantos2017sugar},
+    \textcite{lanzerstorfer2020density} y \textcite{suhag2024flowability}.}
+\end{table}
+
+Los valores dependen de la humedad y del tamaño de partícula, por lo que no
+se transfieren directamente a los insumos de San
+Miguel~\parencite{suhag2024flowability}. En el capítulo~3 se mide con una
+probeta la densidad suelta y asentada de los cuatro insumos, lo que completa
+la levadura y da la densidad para el volumen de las tolvas y el caudal de los
+tornillos.
+
+\subsection{Metrología y tolerancias de dosificación}
+\label{subsec:fund_metrologia}
+
+\subsubsection{Vocabulario metrológico}
+\label{subsubsec:fund_vim}
+
+La Tabla~\ref{tab:terminos_vim} reúne los términos del Vocabulario
+Internacional de Metrología (VIM) que usa el proyecto.
+
+\begin{table}[H]
+    \centering
+    \caption{Términos metrológicos empleados en el proyecto.}
+    \label{tab:terminos_vim}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.2\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}p{0.3\textwidth}}
+        \toprule[1pt]
+        \textbf{Término} & \textbf{Definición} & \textbf{Uso en el proyecto} \\
+        \midrule[1pt]
+        Error de medida & Diferencia entre un valor medido y un valor de
+        referencia & Diferencia entre la cantidad dosificada y la cantidad
+        objetivo \\
+        Exactitud & Proximidad entre un valor medido y el valor verdadero; no
+        se expresa con un número & Descripción cualitativa del desempeño \\
+        Repetibilidad & Proximidad entre mediciones repetidas en las mismas
+        condiciones; se expresa con la desviación típica & Dispersión de las
+        dosis sucesivas de un mismo insumo \\
+        Resolución & Menor variación de la magnitud que cambia la indicación &
+        Menor masa que distingue el sistema de pesaje \\
+        Error máximo permitido & Valor extremo del error admitido por una
+        especificación & Límite del instrumento, distinto de la tolerancia de
+        dosificación \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en \textcite{jcgm2012vim}.}
+\end{table}
+
+Como el VIM desaconseja llamar «tolerancia» al error máximo
+permitido~\parencite{jcgm2012vim}, en este documento la tolerancia es el
+límite de aceptación de cada dosis. El error de una indicación
+es~\parencite{oiml2017r61}
+
+\begin{equation}
+    E = I - L
+    \label{eq:error_indicacion}
+\end{equation}
+
+\noindent donde $E$ es el error; $I$, la indicación; y $L$, la masa de
+referencia, todas en g. En el capítulo~3, esta ecuación da el error de cada
+dosis, y su desviación típica, la repetibilidad.
+
+\subsubsection{Instrumentos de llenado gravimétrico: OIML R~61}
+\label{subsubsec:fund_r61}
+
+La OIML~R~61 rige los instrumentos automáticos que llenan recipientes con una
+masa fija tomada a granel~\parencite{oiml2017r61}, que es la función de la
+dosificadora. Limita la desviación máxima permitida de cada carga (mpd)
+respecto del promedio de la serie, y exige que el error promedio no supere
+la cuarta parte de la mpd en servicio. Para una clase $X(x)$,
+
+\begin{equation}
+    \mathrm{mpd}(x) = (x)\, \mathrm{mpd}(1)
+    \label{eq:mpd_clase}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $\mathrm{mpd}(x)$: desviación máxima permitida en la clase $X(x)$, en g o en \% de la carga;
+    \item $(x)$: factor de clase, adimensional, de la forma $1$, $2$ o $5 \times 10^{k}$ y no mayor que 2;
+    \item $\mathrm{mpd}(1)$: desviación de la clase $X(1)$, de la Tabla~\ref{tab:mpd_r61}.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \caption{Desviación máxima permitida de cada carga en la clase $X(1)$.}
+    \label{tab:mpd_r61}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.2}
+
+    \begin{tabular}{lcc}
+        \toprule[1pt]
+        \textbf{Masa de la carga $F$} & \textbf{Verificación inicial} &
+        \textbf{En servicio} \\
+        \midrule[1pt]
+        $F \le 50$~g & 7,2~\% de $F$ & 9~\% de $F$ \\
+        $50 < F \le 100$~g & 3,6~g & 4,5~g \\
+        $100 < F \le 200$~g & 3,6~\% de $F$ & 4,5~\% de $F$ \\
+        $200 < F \le 300$~g & 7,2~g & 9~g \\
+        $300 < F \le 500$~g & 2,4~\% de $F$ & 3~\% de $F$ \\
+        $500 < F \le 1\,000$~g & 12~g & 15~g \\
+        $1 < F \le 10$~kg & 1,2~\% de $F$ & 1,5~\% de $F$ \\
+        $10 < F \le 15$~kg & 120~g & 150~g \\
+        $F > 15$~kg & 0,8~\% de $F$ & 1~\% de $F$ \\
+        \bottomrule[1pt]
+    \end{tabular}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en \textcite{oiml2017r61}.}
+\end{table}
+
+Cuando el error se reparte entre módulos (celda, indicador y conexiones),
+cada uno recibe una fracción $p_{i}$ de 0,3 a 0,8, con la
+condición~\parencite{oiml2017r61}
+
+\begin{equation}
+    p_{1}^{2} + p_{2}^{2} + p_{3}^{2} + \dots \le 1
+    \label{eq:prorrateo}
+\end{equation}
+
+\noindent donde $p_{i}$ es la fracción del error del módulo $i$,
+adimensional.
+
+En el capítulo~3, la Tabla~\ref{tab:mpd_r61} da la desviación de referencia
+para las masas de la Tabla~\ref{tab:receta_referencia}, que se compara con
+las diferencias del procedimiento manual para proponer la tolerancia de cada
+insumo (objetivo~2), y la Ecuación~\eqref{eq:prorrateo} la reparte entre la
+celda y el módulo de conversión.
 
 \subsection{Medición gravimétrica y celdas de carga}
-Galga extensométrica, celda de carga y acondicionamiento de la señal.
+\label{subsec:fund_medicion}
+
+El proyecto usa una celda de carga comercial (Sección~\ref{subsec:medicion_celdas}):
+el diseño no calcula el sensor, lo selecciona. La celda tiene galgas
+extensométricas, cuya resistencia cambia con la deformación, conectadas en un
+puente de Wheatstone; la salida es una tensión pequeña que el módulo de
+conversión amplifica y digitaliza~\parencite{fraden2016handbook}.
+
+\subsubsection{Selección de la celda según OIML R~60}
+\label{subsubsec:fund_seleccion_celda}
+
+La OIML~R~60 clasifica las celdas por el número de intervalos de verificación
+$n_{\mathrm{LC}}$ en que se divide su rango (Tabla~\ref{tab:clases_celda}).
+La celda trabaja entre su carga mínima $E_{\min}$ y su capacidad $E_{\max}$,
+y no debe superar la carga límite $E_{\lim}$, porque se daña de forma
+permanente~\parencite{oiml2017r60}.
+
+\begin{table}[H]
+    \centering
+    \caption{Clases de exactitud de las celdas de carga según el número de intervalos de verificación.}
+    \label{tab:clases_celda}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabular}{ccc}
+        \toprule[1pt]
+        \textbf{Clase} & \textbf{$n_{\mathrm{LC}}$ mínimo} & \textbf{$n_{\mathrm{LC}}$ máximo} \\
+        \midrule[1pt]
+        A & 50\,000 & Sin límite \\
+        B & 5\,000 & 100\,000 \\
+        C & 500 & 10\,000 \\
+        D & 100 & 1\,000 \\
+        \bottomrule[1pt]
+    \end{tabular}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en \textcite{oiml2017r60}.}
+\end{table}
+
+La resolución de la celda se declara con el intervalo mínimo de verificación
+relativo~\parencite{oiml2017r60}:
+
+\begin{equation}
+    Y = \frac{E_{\max} - E_{\min}}{v_{\min}}
+    \label{eq:intervalo_relativo}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $Y$: intervalo mínimo de verificación relativo, adimensional;
+    \item $E_{\max}$: capacidad máxima de la celda, en kg;
+    \item $E_{\min}$: carga muerta mínima de la celda, en kg;
+    \item $v_{\min}$: menor división de masa de la celda, en kg.
+\end{itemize}
+
+Para una misma $Y$, una celda más grande tiene un $v_{\min}$ mayor: sobrar
+capacidad empeora la resolución. La celda aporta una fracción
+$p_{\mathrm{LC}}$ del error del instrumento, de 0,7 por
+defecto~\parencite{oiml2017r60}.
+
+En el capítulo~3, $E_{\max}$ se elige con la harina máxima más la tara del
+recipiente, y la Ecuación~\eqref{eq:intervalo_relativo}, con la $Y$ de la
+hoja de datos, da $v_{\min}$, que debe ser menor que la tolerancia de la
+levadura (20 a 30~g por preparación), el caso más exigente.
+
+\subsubsection{Conversión y filtrado de la lectura}
+\label{subsubsec:fund_conversion}
+
+La Figura~\ref{fig:cadena_medicion} muestra la cadena de medición: la señal
+del puente se amplifica, el convertidor A/D la transforma en cuentas, el
+promedio móvil la suaviza y el controlador la usa para cortar la
+alimentación.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.95\textwidth}{!}{\input{images/marcoteorico/cadena_medicion.tex}}
+    \caption{Cadena de medición de la masa con una celda comercial.}
+    \label{fig:cadena_medicion}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{fraden2016handbook}.}
+\end{figure}
+
+La tensión que corresponde a una cuenta del convertidor
+es~\parencite{fraden2016handbook}
+
+\begin{equation}
+    R_{0} = \frac{E}{2^{n} - 1}
+    \label{eq:resolucion_adc}
+\end{equation}
+
+\noindent donde $R_{0}$ es la resolución, en V por cuenta; $E$, la tensión a
+fondo de escala, en V; y $n$, el número de bits. Si el ruido supera $R_{0}$,
+los últimos bits no aportan información~\parencite{fraden2016handbook}.
+\textcite{zengin2025fir} usaron el módulo HX711, que integra amplificador y
+convertidor de 24~bits; su ruido se toma de la hoja de datos.
+
+% VERIFICAR con la ficha F1 de Fraden (2016): función de transferencia lineal
+% y calibración en dos puntos.
+Como la respuesta de la celda es lineal, dos puntos bastan para calibrarla:
+el recipiente vacío y una masa patrón~\parencite{fraden2016handbook}:
+
+\begin{equation}
+    m = \frac{m_{\mathrm{p}}}{c_{\mathrm{p}} - c_{0}} \left( c - c_{0} \right)
+    \label{eq:calibracion}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $m$: masa indicada, en g;
+    \item $m_{\mathrm{p}}$: masa patrón, en g;
+    \item $c$: lectura del convertidor, en cuentas;
+    \item $c_{0}$: lectura con el recipiente vacío (tara), en cuentas;
+    \item $c_{\mathrm{p}}$: lectura con la masa patrón, en cuentas.
+\end{itemize}
+
+La lectura incluye también la vibración de la máquina y el
+ruido~\parencite{choi2017noise}, y oscila cuando cae el material
+(Figura~\ref{fig:respuesta_celda}). El filtro de respuesta impulsional finita
+(FIR) la suaviza con una suma ponderada de las últimas
+muestras~\parencite{zengin2025fir}:
+
+\begin{equation}
+    y(n) = \sum_{k=0}^{N} b(k)\, x(n-k)
+    \label{eq:filtro_fir}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $y(n)$: lectura filtrada en la muestra $n$, en g;
+    \item $x(n-k)$: lectura de la celda $k$ muestras atrás, en g;
+    \item $b(k)$: coeficiente del filtro, adimensional;
+    \item $N$: orden del filtro, igual al número de muestras de retardo.
+\end{itemize}
+
+Con $b(k) = 1/(N+1)$, el filtro es un promedio móvil. Más muestras suavizan
+más la lectura, pero la retrasan~\parencite{zengin2025fir}, y el retardo
+afecta el corte (Sección~\ref{subsec:fund_control}).
+
+En el capítulo~3, la Ecuación~\eqref{eq:calibracion} define la calibración
+del prototipo; con su factor de escala, la
+Ecuación~\eqref{eq:resolucion_adc} verifica que la resolución en gramos sea
+menor que $v_{\min}$, y la Ecuación~\eqref{eq:filtro_fir} fija el número de
+muestras del promedio según el tiempo disponible antes del corte.
 
 \subsection{Almacenamiento y alimentación de sólidos a granel}
-Flujo en tolvas y caudal en alimentadores de tornillo y vibratorios.
+\label{subsec:fund_alimentacion}
 
-\subsection{Modelamiento dinámico y control}
-Conceptos básicos de modelado y control PID.
+Los cuatro insumos se alimentan con tornillos comerciales: el
+diseño selecciona el tornillo y su motor y diseña las tolvas.
 
-\section{Conclusión del capítulo}
-\label{sec:teoria_conclusion}
+\subsubsection{Flujo en la tolva y abertura de descarga}
+\label{subsubsec:fund_tolva}
 
-Enfoques adoptados y descartados, y aporte diferencial del proyecto.
+Una tolva descarga de dos formas (Figura~\ref{fig:patrones_tolva}): en flujo
+másico todo el material se mueve; en flujo en embudo solo se mueve un canal
+central y el material junto a las paredes queda
+quieto~\parencite{su2017arching,mehos2016hopper}. Con harina, la falla
+típica es la bóveda: un arco de material que tapa la salida,
+como en la Figura~\ref{fig:su_boveda}~\parencite{su2017arching}.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.95\textwidth}{!}{\input{images/marcoteorico/tolva_patrones.tex}}
+    \caption{Patrones de flujo en una tolva y tolva en cuña sobre el tornillo.}
+    \label{fig:patrones_tolva}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{su2017arching}, \textcite{mehos2016hopper} y
+    \textcite{bates2000screw}.}
+\end{figure}
+
+El tipo de flujo depende sobre todo de la fricción entre el insumo y la
+pared~\parencite{sogaard2017jenike}:
+
+\begin{equation}
+    \phi_{\mathrm{w}} = \arctan \mu_{\mathrm{w}}
+    \label{eq:friccion_pared}
+\end{equation}
+
+\noindent donde $\phi_{\mathrm{w}}$ es el ángulo de fricción de pared, en
+grados, y $\mu_{\mathrm{w}}$, el coeficiente de rozamiento insumo--pared,
+adimensional. Se mide inclinando una placa del material de la pared con el
+insumo encima: el ángulo al que el insumo empieza a deslizar es
+$\phi_{\mathrm{w}}$~\parencite{guan2009flour}. Para harina de trigo sobre
+acero pulido se midieron hasta 31°, más que los 11,5 a 29° que da la norma
+EN~1991-4~\parencite{lopesneto2017flow}; por eso conviene medirlo.
+
+Con $\phi_{\mathrm{w}}$, los diagramas de \textcite{jenike1964storage} dan el
+semiángulo máximo $\theta$ de la pared, medido desde la vertical, para tener
+flujo másico. Se diseña al menos 3° por debajo, y una tolva en cuña admite
+paredes de 10 a 12° más inclinadas que una cónica si su ranura es al menos
+tres veces más larga que ancha~\parencite{mehos2016hopper}.
+\textcite{chiliguana2016rediseno} y \textcite{orozco2024dosificadora}
+fijaron así el ángulo de sus tolvas.
+
+El ángulo no evita la bóveda. La abertura mínima para evitarla
+es~\parencite{jenike1964storage,su2017arching}
+
+\begin{equation}
+    B_{\min} = \frac{H(\theta)\, \sigma_{\mathrm{c,crit}}}{\rho_{\mathrm{b,crit}}\, g}
+    \label{eq:abertura_minima}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $B_{\min}$: ancho mínimo de la salida, en m;
+    \item $H(\theta)$: factor de forma de la salida, adimensional (1,3 para una cuña de 45°);
+    \item $\sigma_{\mathrm{c,crit}}$: resistencia del polvo en la condición crítica, en Pa;
+    \item $\rho_{\mathrm{b,crit}}$: densidad aparente en la condición crítica, en kg/m$^{3}$;
+    \item $g$: aceleración de la gravedad, en m/s$^{2}$.
+\end{itemize}
+
+Para harina, \textcite{su2017arching} calculó 74~mm, y
+\textcite{guan2009flour} midieron de 86 a 122~mm según la humedad, ambos en
+tolvas de 45°. En equipos pequeños la ecuación sobrestima la
+abertura~\parencite{sogaard2017jenike}, así que el resultado es seguro.
+
+Sobre un tornillo, el ancho de la ranura es el diámetro del
+tornillo~\parencite{mehos2016hopper}. Si es menor que $B_{\min}$, se agrega
+un agitador o un vibrador~\parencite{bates2000screw}. El azúcar cristal y la
+sal fluyen libres y no forman bóvedas cohesivas: basta una ranura mayor que
+cuatro veces la partícula más grande~\parencite{bates2000screw}.
+
+En el capítulo~3, la Ecuación~\eqref{eq:friccion_pared}, con el ángulo
+medido sobre acero inoxidable, fija el ángulo de cada tolva, y la
+Ecuación~\eqref{eq:abertura_minima} decide si la tolva de harina necesita
+agitador. El volumen de cada tolva sale de su masa y su densidad aparente.
+
+\subsubsection{Caudal del alimentador de tornillo}
+\label{subsubsec:fund_caudal_tornillo}
+
+Cada vuelta del tornillo desplaza el volumen entre dos
+álabes~\parencite{bates2000screw}; la Figura~\ref{fig:tornillo_geometria}
+muestra sus magnitudes.
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{images/marcoteorico/tornillo_geometria.tex}}
+    \caption{Geometría de un alimentador de tornillo horizontal bajo una tolva.}
+    \label{fig:tornillo_geometria}
+    \vspace{0.2em}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{bates2000screw} y \textcite{karwat2021screw}.}
+\end{figure}
+
+El caudal másico de un tornillo horizontal es~\parencite{karwat2021screw}
+
+\begin{equation}
+    \dot{m} = \frac{\pi D^{2}}{4}\, s\, n\, \psi\, \rho_{\mathrm{b}}
+    \label{eq:caudal_tornillo}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $\dot{m}$: caudal másico, en kg/s;
+    \item $D$: diámetro exterior de los álabes, en m;
+    \item $s$: paso del tornillo, en m;
+    \item $n$: velocidad de giro, en s$^{-1}$;
+    \item $\psi$: coeficiente de llenado, adimensional;
+    \item $\rho_{\mathrm{b}}$: densidad aparente del material, en kg/m$^{3}$.
+\end{itemize}
+
+Bajo una tolva llena, $\psi$ se acerca a 0,9~\parencite{karwat2021screw}. La
+relación es lineal entre 15 y 100~r/min y deja de serlo si el paso supera al
+diámetro~\parencite{bates2000screw}. En el capítulo~3, esta ecuación
+relaciona el caudal requerido de cada insumo con el diámetro, el paso y la
+velocidad del tornillo comercial.
+
+\subsubsection{Potencia y torque del accionamiento}
+\label{subsubsec:fund_potencia_tornillo}
+
+La potencia en el eje del tornillo es~\parencite{karwat2021screw}
+
+\begin{equation}
+    P = c_{0}\, \dot{m}\, g\, L
+    \label{eq:potencia_tornillo}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $P$: potencia en el eje, en W;
+    \item $c_{0}$: coeficiente de resistencia del material, adimensional;
+    \item $\dot{m}$: caudal másico de la Ecuación~\eqref{eq:caudal_tornillo}, en kg/s;
+    \item $g$: aceleración de la gravedad, en m/s$^{2}$;
+    \item $L$: longitud del tornillo, en m.
+\end{itemize}
+
+\noindent y el torque, con la velocidad $n$,
+
+\begin{equation}
+    T = \frac{P}{2\pi n}
+    \label{eq:torque_tornillo}
+\end{equation}
+
+\noindent donde $T$ es el torque, en N\,m. El arranque bajo una tolva llena
+exige dos o más veces el torque de marcha~\parencite{bates2000screw}, y el
+torque crece con el cubo del diámetro del tornillo~\parencite{yu1997torque}.
+En el capítulo~3, ambas ecuaciones dan el motor y la reducción de cada
+tornillo, con un margen para el arranque.
+
+\subsubsection{Diseño higiénico y materiales}
+\label{subsubsec:fund_higienico}
+
+Las superficies en contacto con alimentos deben ser lisas, sin zonas muertas
+y fáciles de limpiar; con polvos se prefiere la limpieza en
+seco~\parencite{mager2016hygienic}. La Tabla~\ref{tab:criterios_higienicos}
+resume los criterios.
+
+\begin{table}[H]
+    \centering
+    \caption{Criterios de diseño higiénico para equipos que manipulan polvos alimentarios.}
+    \label{tab:criterios_higienicos}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\textwidth}{
+        >{\raggedright\arraybackslash}p{0.2\textwidth}
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}p{0.3\textwidth}}
+        \toprule[1pt]
+        \textbf{Aspecto} & \textbf{Criterio} & \textbf{Condición} \\
+        \midrule[1pt]
+        Metales & Acero inoxidable 304, 304L, 316 o 316L; el 316 es más
+        resistente a las soluciones con cloruros & Aluminio y acero al carbono, solo con
+        limpieza en seco \\
+        Plásticos y elastómeros & De grado alimentario (FDA, EFSA o
+        equivalente), con mínima superficie de contacto & El polvo abrasivo
+        los desgasta y generan cargas electrostáticas \\
+        Acabado & Rugosidad $R_{\mathrm{a}} \le 0{,}8~\mu$m & Con material
+        húmedo o limpieza húmeda \\
+        Geometría & Sin esquinas internas agudas ($r \le 6$~mm) ni rebajes
+        donde se acumule el material & Superficies accesibles para la
+        limpieza manual \\
+        Juntas & Elastómero no poroso, montado al ras & Espuma de celda abierta
+        no admitida \\
+        \bottomrule[1pt]
+    \end{tabularx}
+
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia con base en
+    \textcite{mager2016hygienic}.}
+\end{table}
+
+En el capítulo~3, la tabla orienta el material de tolvas, tornillos y
+recipiente; la sal, por sus cloruros, favorece el acero 316.
+
+\subsection{Corte de la dosificación}
+\label{subsec:fund_control}
+
+% El modelo del motor y de la celda y el control PID corresponden al
+% objetivo 4 (Taller de Grado II). Aquí solo el corte, que condiciona el
+% diseño mecánico y de medición (D-014).
+
+La dosificación por lotes usa dos señales de parada
+(Figura~\ref{fig:secuencia_llenado}): la primera pasa de flujo grueso a
+flujo fino, cerca del 90~\% de la consigna, y la segunda detiene el
+alimentador un poco antes de la consigna, porque el material en el aire
+sigue cayendo~\parencite{norden1998weighing}:
+
+\begin{equation}
+    m_{\mathrm{D}} = S - D_{\mathrm{f}}
+    \qquad \text{y} \qquad
+    m_{\mathrm{B}} = S - P
+    \label{eq:corte_dos_etapas}
+\end{equation}
+
+\noindent donde:
+
+\begin{itemize}[nosep, label={}, leftmargin=1.5em]
+    \item $m_{\mathrm{D}}$: lectura a la que se pasa a flujo fino, en kg;
+    \item $m_{\mathrm{B}}$: lectura a la que se detiene el alimentador, en kg;
+    \item $S$: consigna de masa, en kg;
+    \item $D_{\mathrm{f}}$: margen del flujo fino antes del corte, en kg;
+    \item $P$: adelanto de corte, en kg.
+\end{itemize}
+
+El adelanto se ajusta en los primeros lotes. Si el tiempo de respuesta del
+alimentador varía, el lote tiene un error~\parencite{norden1998weighing}
+
+\begin{equation}
+    \Theta_{\beta} = \pm\, \beta_{T}\, R
+    \label{eq:error_retardo}
+\end{equation}
+
+\noindent donde $\Theta_{\beta}$ es el error del lote, en kg; $\beta_{T}$,
+la variación del tiempo de respuesta, en s; y $R$, el caudal al cortar, en
+kg/s. Por eso el flujo fino reduce el error.
+
+El material en el aire es una columna entre la salida del tornillo y el
+material pesado (Figura~\ref{fig:columna_caida})~\parencite{bukreev2014accuracy}:
+
+\begin{equation}
+    m_{\mathrm{st}} = \frac{\pi \left(D^{2} - d^{2}\right)}{4}\, h_{\mathrm{st}}\, \rho_{\mathrm{b}}
+    \label{eq:columna_caida}
+\end{equation}
+
+\noindent donde $m_{\mathrm{st}}$ es la masa en caída, en kg; $D$ y $d$, los
+diámetros de la Figura~\ref{fig:tornillo_geometria}, en m;
+$h_{\mathrm{st}}$, la altura de caída, en m; y $\rho_{\mathrm{b}}$, la
+densidad aparente, en kg/m$^{3}$.
+
+En el capítulo~3, las Ecuaciones~\eqref{eq:corte_dos_etapas}
+a~\eqref{eq:columna_caida} fijan la altura de caída y las dos velocidades
+del motor según el error admitido en el corte.
+
+% Conclusión del capítulo: no va por el momento (indicación del 28/10/2026).
+% \section{Conclusión del capítulo}
+% \label{sec:teoria_conclusion}
+%
+% Enfoques adoptados y descartados, y aporte diferencial del proyecto.

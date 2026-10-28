@@ -168,7 +168,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-017 — Formulación del problema
 
 **Estado:** Confirmada  
-**Decisión:** La formulación integra el tiempo del operario y la diferencia positiva respecto de las cantidades objetivo, en proyección mensual (22 jornadas ordinarias y 4 sábados): 2 h 43 min y 1,976 kg de harina, 336 g de azúcar, 236 g de sal y 76 g de levadura.  
+**Decisión:** La formulación integra el tiempo del operario y la diferencia positiva respecto de las cantidades objetivo, en proyección mensual (22 jornadas ordinarias y 4 sábados): 2 h 42 min y 1,976 kg de harina, 280 g de azúcar, 236 g de sal y 64 g de levadura (valores actualizados el 2026-10-28 con el levantamiento corregido; antes 2 h 43 min, 336 g y 76 g).  
 **Motivo:** Revisión requerida en `D-004` y elección del estudiante del 2026-10-26.  
 **Impacto:** Reemplaza `D-004`. Los valores de azúcar, sal y levadura son balances netos de excesos y déficits por ciclo; el texto debe aclararlo y no presentarlos como diferencia de cada preparación. La aprobación docente sigue abierta (`A-002`).
 
@@ -181,6 +181,15 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 **Motivo:** Instrucción del estudiante del 2026-10-26; correspondencia entre título, objetivo general y problema.  
 **Impacto:** Se retira «bajo costo» del título y se conserva «panaderías artesanales», aunque el objetivo general nombra a la Panadería San Miguel; verificar con el docente la correspondencia entre título y objetivo general. La aprobación docente del título y de los objetivos sigue abierta (`A-001`, `A-002`). Siete objetivos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
 
+
+---
+
+### D-019 — Alimentador de los cuatro insumos
+
+**Estado:** Confirmada
+**Decisión:** Los cuatro ingredientes (harina, azúcar, sal y levadura en polvo) se alimentan con tornillo: uno para la harina y tornillos menores para azúcar, sal y levadura. El tornillo (helicoidal y tubo) se selecciona entre productos comerciales; se diseñan las tolvas.
+**Motivo:** Elección del estudiante del 2026-10-28, con base en la literatura revisada: el tornillo permite flujo grueso y fino regulando la velocidad y detiene el flujo al parar el motor; las compuertas fallaron con insumos secos (Bachtiar, Rumapea); los prototipos de varios insumos usaron tornillo (Humaira, Joni, David, Sánchez); la sal absorbe humedad y la levadura en polvo no tiene datos de flujo.
+**Impacto:** Resuelve el mecanismo de alimentación de `A-004`. Beverloo (descarga por gravedad) y el cálculo del eje salen de los fundamentos. Falta verificar la disponibilidad de helicoidales comerciales en Santa Cruz o por importación; si hay que fabricarlo, vuelve el cálculo del eje. Diámetros, pasos, velocidades, accionamiento y la elección entre balanza común o por insumo siguen abiertos.
 
 ## Decisiones abiertas
 
@@ -232,7 +241,7 @@ de una confirmación o decisión explícita.
 
 Continúan abiertos, entre otros:
 
-- mecanismo de alimentación;
+- mecanismo de alimentación (resuelto por `D-019`: tornillo para los cuatro insumos);
 - tipo de accionamiento;
 - capacidad de almacenamiento;
 - rango final de dosificación;
