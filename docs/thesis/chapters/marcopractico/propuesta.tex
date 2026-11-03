@@ -61,6 +61,7 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
             \item Otros materiales en kilogramos
             \item Insumos en gramos
             \item Harina en gramos para panaderías pequeñas
+            \item Productos comerciales de tornillo para polvos
             \item Enfoques adoptados y descartados
         \end{enumerate}
 
@@ -70,10 +71,11 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
             \item Alimentadores para dosificación por lotes
         \end{enumerate}
 
-        \item \textbf{Área de medición: principio y sensores de peso}
+        \item \textbf{Área de medición y electrónica}
         \begin{enumerate}[label*=\arabic*.]
             \item Volumétrico frente a gravimétrico
             \item Celdas de carga en dosificadoras
+            \item Electrónica de los prototipos
         \end{enumerate}
 
         \item \textbf{Área de control: corte y control de la dosificación}
@@ -86,9 +88,8 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
         \begin{enumerate}[label*=\arabic*.]
             \item Propiedades de los insumos
             \begin{enumerate}[label*=\arabic*.]
-                \item Porcentaje panadero
-                \item Efecto de la variación de cada insumo
-                \item Propiedades de flujo de los insumos
+                \item Densidad aparente
+                \item Fluidez y formación de bóvedas
             \end{enumerate}
 
             \item Metrología y tolerancias de dosificación
@@ -97,27 +98,45 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
                 \item Instrumentos de llenado gravimétrico: OIML R~61
             \end{enumerate}
 
+            \item Tolva
+            \begin{enumerate}[label*=\arabic*.]
+                \item Capacidad
+                \item Ángulo de pared
+                \item Abertura de descarga
+            \end{enumerate}
+
+            \item Alimentador de tornillo
+            \begin{enumerate}[label*=\arabic*.]
+                \item Caudal
+                \item Potencia y torque
+                \item Material y diseño higiénico
+            \end{enumerate}
+
+            \item Accionamiento del tornillo
+            \begin{enumerate}[label*=\arabic*.]
+                \item Motor paso a paso
+                \item Motor de corriente continua
+            \end{enumerate}
+
             \item Medición gravimétrica y celdas de carga
             \begin{enumerate}[label*=\arabic*.]
+                \item Celda de carga y conversión de la señal
                 \item Selección de la celda según OIML R~60
-                \item Conversión y filtrado de la lectura
+                \item Calibración
+                \item Promedio móvil
             \end{enumerate}
 
-            \item Almacenamiento y alimentación de sólidos a granel
+            \item Corte y control de la dosificación
             \begin{enumerate}[label*=\arabic*.]
-                \item Flujo en la tolva y abertura de descarga
-                \item Caudal del alimentador de tornillo
-                \item Potencia y torque del accionamiento
-                \item Diseño higiénico y materiales
+                \item Corte en dos etapas
+                \item Material en caída
+                \item Acciones de control
             \end{enumerate}
-
-            \item Corte de la dosificación
 
             \item Modelamiento dinámico y control
             \begin{enumerate}[label*=\arabic*.]
                 \item Modelado de sistemas dinámicos
                 \item Identificación experimental
-                \item Estrategias de control de la dosificación
             \end{enumerate}
 
             \item Evaluación del desempeño de la dosificación
@@ -146,10 +165,11 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
         \item \textbf{Subsistema mecánico}
         \begin{enumerate}[label*=\arabic*.]
             \item Requerimientos
+            \item Selección del mecanismo de alimentación
             \item Cálculos y dimensionamiento
             \begin{enumerate}[label*=\arabic*.]
                 \item Tolvas
-                \item Alimentadores de tornillo
+                \item Alimentadores
                 \item Accionamiento
             \end{enumerate}
             \item Desarrollo
@@ -160,6 +180,7 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
             \item Requerimientos
             \item Cálculos y selección
             \begin{enumerate}[label*=\arabic*.]
+                \item Configuración de balanzas
                 \item Celdas de carga
                 \item Convertidor y acondicionamiento
                 \item Recipiente de pesaje
@@ -170,6 +191,7 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
         \item \textbf{Subsistema de control}
         \begin{enumerate}[label*=\arabic*.]
             \item Requerimientos
+            \item Selección del controlador
             \item Modelo dinámico de la alimentación y el pesaje
             \item Diseño y simulación del controlador
         \end{enumerate}
@@ -235,29 +257,13 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
 \section{Cronograma de actividades}
 \label{sec:cronograma_actividades}
 
-El cronograma de la Tabla \ref{tab:cronograma_proyecto}, complementado
-con el diagrama de Gantt del Apéndice \ref{sec:cronograma}, organiza las
-actividades previstas para el desarrollo del proyecto desde junio de 2026
-hasta junio de 2027. La planificación comprende las etapas de elaboración
-y defensa del perfil, desarrollo del diseño, integración del prototipo,
-evaluación experimental y cierre académico.
+Las Tablas~\ref{tab:cronograma_proyecto} y~\ref{tab:cronograma_proyecto_2},
+junto con el diagrama de Gantt del Apéndice~\ref{sec:cronograma}, organizan el
+proyecto por objetivo específico, de julio de 2026 a abril de 2027. Cada actividad
+indica su inicio, su fin y sus días calendario, e incluye la redacción
+correspondiente.
 
-Las actividades se organizan en función de los objetivos específicos y
-de la secuencia técnica del proyecto. Las fechas posteriores a diciembre
-de 2026 constituyen una planificación preliminar, sujeta a confirmación
-del calendario académico y a los resultados de cada etapa. Se reservan
-periodos para ajustes derivados de la integración y de las pruebas
-experimentales.
+
 
 \input{chapters/marcopractico/tables/cronograma_proyecto.tex}
 
-La planificación comienza con la elaboración y defensa del perfil.
-Continúa con la definición de requerimientos, el diseño mecánico, la
-selección del sistema de medición gravimétrica y el desarrollo del
-control. Las etapas siguientes comprenden la fabricación, integración
-y evaluación del prototipo, así como la elaboración del documento final,
-la preparación de la defensa y la incorporación de correcciones.
-La distribución definitiva de estas actividades queda sujeta a la
-aprobación del calendario académico.
-
-%---------------------------------------------------------------------------------------------
