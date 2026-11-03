@@ -167,7 +167,7 @@
 
 ## Alcance en el perfil
 
-El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos priorizan esos objetivos; 2.6.6 sustenta el objetivo 4 (Taller de Grado II) y se mantiene breve. La evaluación experimental no forma parte del capítulo.
+El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos priorizan esos objetivos; 2.6.6 se limita al corte y se mantiene breve. La evaluación experimental no forma parte del capítulo.
 
 ## Orden del capítulo
 
@@ -175,14 +175,16 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 2.1 Estado del arte
 2.2 Dosificadoras de ingredientes
 2.3 Área mecánica: almacenamiento y alimentación
-2.4 Área de medición gravimétrica
+2.4 Área de medición y electrónica
 2.5 Área de control
 2.6 Fundamentos teóricos
     2.6.1 Propiedades de los insumos
     2.6.2 Metrología y tolerancias de dosificación
-    2.6.3 Medición gravimétrica y celdas de carga
-    2.6.4 Almacenamiento y alimentación de sólidos
-    2.6.5 Corte de la dosificación
+    2.6.3 Tolva
+    2.6.4 Alimentador de tornillo
+    2.6.5 Accionamiento del tornillo
+    2.6.6 Medición gravimétrica y celdas de carga
+    2.6.7 Corte y control de la dosificación
 2.7 Conclusión del capítulo (comentada en el .tex por ahora, 28/10/2026)
 ```
 
@@ -206,9 +208,9 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 - **Contenido:** 2.3.1 almacenamiento (tolvas); 2.3.2 mecanismos de alimentación (tornillo, vibratorio, compuerta, válvula rotativa u otros que aparezcan). Ventajas y desventajas según insumo, escala y limpieza.
 - **Cierre:** mecanismos adoptados o descartados para el objetivo 3. `A-004` se cierra solo con ese análisis.
 
-## 2.4 Área de medición gravimétrica
+## 2.4 Área de medición y electrónica
 
-- **Contenido:** 2.4.1 principio de medición (volumétrico como contraste; gravimétrico por lotes; pérdida de peso), que sustenta `D-005`; 2.4.2 sensores de peso empleados en dosificadoras.
+- **Contenido:** 2.4.1 principio de medición (volumétrico como contraste; gravimétrico por lotes; pérdida de peso), que sustenta `D-005`; 2.4.2 sensores de peso empleados en dosificadoras; 2.4.3 electrónica de los prototipos.
 - **Cierre:** principio y tipo de sensor adoptados para el objetivo 3.
 
 ## 2.5 Área de control
@@ -222,16 +224,17 @@ El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos
 
 | Subsección | Objetivo | Contenido |
 |---|---|---|
-| 2.6.1 Propiedades de los insumos | 2 y 3 | Porcentaje panadero, efecto de la variación de cada insumo, propiedades de flujo y densidad aparente (`D-016`) |
+| 2.6.1 Propiedades de los insumos | 2 y 3 | Densidad aparente, fluidez y bóvedas, sin ecuaciones |
 | 2.6.2 Metrología y tolerancias de dosificación | 2 | VIM y OIML R 61 |
-| 2.6.3 Medición gravimétrica y celdas de carga | 3 | Celda comercial: selección según OIML R 60, conversión, calibración y promedio móvil |
-| 2.6.4 Almacenamiento y alimentación de sólidos | 3 | Tornillos comerciales para los cuatro insumos (`D-019`): flujo en la tolva y abertura sin bóveda (Jenike), caudal, potencia y torque, diseño higiénico |
-| 2.6.5 Corte de la dosificación | 3 y 4 | Corte en dos etapas y columna en caída; el modelo dinámico y el PID quedan para Taller de Grado II |
+| 2.6.3 Tolva | 3 | Capacidad, ángulo de pared y abertura de descarga |
+| 2.6.4 Alimentador de tornillo | 3 | Caudal, potencia y torque, material higiénico |
+| 2.6.5 Accionamiento del tornillo | 3 | Motor paso a paso y motor de corriente continua (el motor sigue abierto, `A-004`) |
+| 2.6.6 Medición gravimétrica y celdas de carga | 3 | Celda y conversión, selección según OIML R 60, calibración y promedio móvil |
+| 2.6.7 Corte y control de la dosificación | 3 y 4 | Corte en dos etapas, material en caída y acciones de control; el modelo dinámico queda para Taller de Grado II |
 
-Revisión del 28/10/2026: se retiraron la metodología de diseño (el método se cita en el capítulo 3 si se usa), OIML R 76 (balanza de referencia, Taller de Grado II) y Beverloo (sin descarga por gravedad, `D-019`). El orden actual pone la medición antes de la mecánica; está pendiente decidir si se invierte para seguir el orden de cálculo (tolva → tornillo → motor → recipiente → celda).
+Regla (estudiante y clases del 09/10 y 21/10/2026, 03/11/2026): 2.6 contiene solo teoría de lo que se usará. Sin datos, cálculos ni resultados de San Miguel y sin frases «en el capítulo 3…»; esos cálculos van en el capítulo 3. Porcentaje panadero y efecto de la dosis retirados.
 
-- **Patrón por concepto:** definición con cita → figura explicativa → ecuación numerada → variables con unidades → uso en el diseño.
-- **Conexión:** cada fundamento corresponde a un cálculo, requisito o decisión del capítulo 3 o del marco práctico.
+- **Patrón por concepto (referencias 01 y 03):** subtítulo → definición con cita → figura si aclara → ecuación numerada → variables con unidades.
 - **Evidencia:** libros de referencia, normas y artículos fundamentales; sin límite de año.
 
 ## 2.7 Conclusión del capítulo
@@ -287,6 +290,6 @@ Revisión del 28/10/2026: se retiraron la metodología de diseño (el método se
 ## 4. Cronograma de actividades
 
 - **Propósito:** planificar y dar seguimiento al desarrollo.
-- **Contenido:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para 6 a 8 meses y holgura para contratiempos.
+- **Contenido:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para 6 a 8 meses y holgura para contratiempos. Vigente: septiembre de 2026 a abril de 2027, con días, inicio y fin por actividad y redacción por objetivo (03/11/2026).
 - **Conexión:** las actividades responden a los objetivos específicos.
 - **Profundidad:** media.
