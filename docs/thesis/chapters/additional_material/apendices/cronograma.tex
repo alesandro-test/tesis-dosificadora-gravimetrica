@@ -1,16 +1,16 @@
 \chapter{Diagrama Gantt del Proyecto}
 \label{sec:cronograma}
 
-La Figura~\ref{fig:gantt_proyecto} presenta las actividades de las Tablas~\ref{tab:cronograma_proyecto} y~\ref{tab:cronograma_proyecto_2}. El verde indica las actividades, el azul la redacción y los rombos las entregas y la defensa.
+La Figura~\ref{fig:gantt_proyecto} presenta las actividades de la Tabla~\ref{tab:cronograma_proyecto}. El verde indica las actividades y el azul la redacción. Los rombos marcan las principales entregas y defensas, en el lugar que les corresponde por fecha; las del perfil se detallan en la Tabla~\ref{tab:cronograma_entregas}.
 
 \newganttchartelement*{equalateralmilestone}{
 equalateralmilestone/.style={
     shape=diamond,
     draw,
     fill=black,
-    inner sep=2pt
+    inner sep=1.3pt
 },
-equalateralmilestone label font=\scriptsize\bfseries,
+equalateralmilestone label font=\scriptsize,
 equalateralmilestone left shift=1.0,
 equalateralmilestone right shift=-1.0,
 }
@@ -19,10 +19,10 @@ equalateralmilestone right shift=-1.0,
 \centering
 \begin{ganttchart}[
     hgrid,
-    vgrid={*{303}{draw=none}},
+    vgrid={*{241}{draw=none}},
     expand chart=\textheight,
-    y unit title=0.34cm,
-    y unit chart=0.315cm,
+    y unit title=0.32cm,
+    y unit chart=0.32cm,
     title height=1,
     title label font=\bfseries\scriptsize,
     bar/.append style={fill=green!60},
@@ -31,57 +31,51 @@ equalateralmilestone right shift=-1.0,
     group label font=\bfseries\scriptsize,
     group height=0.3,
     time slot format=isodate
-    ]{2026-07-01}{2027-04-30}
-\gantttitle{2026}{184} \gantttitle{2027}{120} \\
-\gantttitle{Jul}{31} \gantttitle{Ago}{31} \gantttitle{Sep}{30} \gantttitle{Oct}{31} \gantttitle{Nov}{30} \gantttitle{Dic}{31} \gantttitle{Ene}{31} \gantttitle{Feb}{28} \gantttitle{Mar}{31} \gantttitle{Abr}{30} \\
-\ganttgroup{Objetivo 1: requerimientos}{2026-07-01}{2026-11-12} \\
-\ganttbar{Revisión de literatura y definición del tema}{2026-07-01}{2026-09-01} \\
-\ganttbar{Relevamiento en la Panadería San Miguel}{2026-09-02}{2026-09-05} \\
-\ganttbar{Procesamiento de cantidades y tiempos}{2026-09-06}{2026-09-16} \\
-\ganttbar[bar/.append style={fill=blue!45}]{Redacción del capítulo 1}{2026-09-06}{2026-10-05} \\
-\ganttbar[bar/.append style={fill=blue!45}]{Actualización del capítulo 1 con los ingredientes secos}{2026-10-21}{2026-10-28} \\
-\ganttbar{Trazabilidad y jornada ordinaria pendiente}{2026-11-04}{2026-11-08} \\
-\ganttbar{Lista de requerimientos}{2026-11-07}{2026-11-11} \\
-\ganttbar[bar/.append style={fill=blue!45}]{Redacción del objetivo 1}{2026-11-11}{2026-11-12} \\
+    ]{2026-09-01}{2027-04-30}
+\gantttitle{2026}{122} \gantttitle{2027}{120} \\
+\gantttitle{Sep}{30} \gantttitle{Oct}{31} \gantttitle{Nov}{30} \gantttitle{Dic}{31} \gantttitle{Ene}{31} \gantttitle{Feb}{28} \gantttitle{Mar}{31} \gantttitle{Abr}{30} \\
+\ganttgroup{Marco referencial}{2026-09-02}{2026-10-26} \\
+\ganttbar{Levantamiento de campo de la harina}{2026-09-02}{2026-09-05} \\
+\ganttbar[bar/.append style={fill=blue!45}]{Redacción y defensa del marco referencial}{2026-09-06}{2026-09-28} \\
+\ganttequalateralmilestone{Entrega del marco referencial}{2026-09-14} \\
+\ganttequalateralmilestone{Defensa del marco referencial}{2026-09-28} \\
+\ganttbar[bar/.append style={fill=blue!45}]{Correcciones del marco referencial}{2026-09-29}{2026-10-26} \\
+\ganttgroup{Objetivo 1: requerimientos}{2026-10-27}{2026-11-09} \\
+\ganttbar{Levantamiento de azúcar, sal y levadura}{2026-10-27}{2026-10-27} \\
+\ganttbar[bar/.append style={fill=blue!45}]{Actualización de los antecedentes}{2026-10-27}{2026-10-28} \\
+\ganttbar{Lista de requerimientos}{2026-11-04}{2026-11-08} \\
+\ganttbar[bar/.append style={fill=blue!45}]{Redacción del objetivo 1}{2026-11-08}{2026-11-09} \\
 \ganttgroup{Objetivo 2: tolerancias}{2026-11-09}{2026-11-14} \\
-\ganttbar{Aplicación de OIML R 61 a las masas de la receta}{2026-11-09}{2026-11-11} \\
-\ganttbar{Propuesta de tolerancias por insumo}{2026-11-11}{2026-11-13} \\
+\ganttbar{Propuesta de tolerancias según OIML R 61}{2026-11-09}{2026-11-13} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Redacción del objetivo 2}{2026-11-13}{2026-11-14} \\
 \ganttgroup{Objetivo 3: diseño mecánico y de medición}{2026-10-14}{2027-01-15} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Redacción del marco teórico}{2026-10-14}{2026-11-14} \\
-\ganttbar{Selección del mecanismo y cotización}{2026-11-04}{2026-11-13} \\
-\ganttbar{Medición de propiedades de los insumos}{2026-11-09}{2026-11-12} \\
-\ganttbar{Dimensionamiento y selección de componentes}{2026-11-10}{2026-11-16} \\
-\ganttbar{CAD preliminar}{2026-11-14}{2026-11-18} \\
+\ganttbar{Dimensionamiento, selección de componentes y CAD preliminar}{2026-11-04}{2026-11-18} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Redacción de la propuesta y del análisis económico}{2026-11-16}{2026-11-19} \\
-\ganttequalateralmilestone{Entrega del perfil}{2026-11-20} \\
-\ganttbar{Preparación de la defensa y correcciones}{2026-11-21}{2026-12-14} \\
-\ganttequalateralmilestone{Defensa del perfil}{2026-12-07} \\
 \ganttbar{CAD de detalle y planos}{2026-12-15}{2027-01-15} \\
+\ganttequalateralmilestone[equalateralmilestone label font=\scriptsize\bfseries]{Entrega del perfil completo}{2026-11-20} \\
+\ganttequalateralmilestone[equalateralmilestone label font=\scriptsize\bfseries]{Defensa del perfil completo}{2026-12-07} \\
 \ganttgroup{Objetivo 4: control}{2026-12-15}{2027-02-12} \\
-\ganttbar{Selección del controlador}{2026-12-15}{2026-12-24} \\
-\ganttbar{Modelo dinámico de la alimentación y el pesaje}{2026-12-26}{2027-01-15} \\
+\ganttbar{Selección del controlador y modelo dinámico}{2026-12-15}{2027-01-15} \\
 \ganttbar{Diseño y simulación del controlador}{2027-01-16}{2027-02-05} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Redacción del objetivo 4}{2027-02-06}{2027-02-12} \\
 \ganttgroup{Objetivo 5: implementación}{2026-12-16}{2027-03-14} \\
-\ganttbar{Compra de componentes, con margen de importación}{2026-12-16}{2027-01-31} \\
-\ganttbar{Fabricación de tolvas y estructura}{2027-01-18}{2027-02-14} \\
-\ganttbar{Electrónica, firmware e interfaz}{2027-01-25}{2027-02-21} \\
+\ganttbar{Compra de componentes}{2026-12-16}{2027-01-31} \\
+\ganttbar{Fabricación, electrónica y firmware}{2027-01-18}{2027-02-21} \\
 \ganttbar{Montaje, integración y puesta a punto}{2027-02-15}{2027-03-07} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Redacción del objetivo 5}{2027-03-08}{2027-03-14} \\
 \ganttgroup{Objetivo 6: evaluación}{2027-02-15}{2027-04-14} \\
 \ganttbar{Protocolo de pruebas}{2027-02-15}{2027-02-21} \\
-\ganttbar{Pruebas funcionales y ajustes}{2027-03-08}{2027-03-21} \\
-\ganttbar{Comparación con el procedimiento manual}{2027-03-22}{2027-04-04} \\
+\ganttbar{Pruebas funcionales y comparación con el procedimiento manual}{2027-03-08}{2027-04-04} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Análisis y redacción del marco analítico}{2027-04-05}{2027-04-14} \\
 \ganttgroup{Objetivo 7: costos}{2027-03-22}{2027-04-09} \\
 \ganttbar{Desglose del costo de fabricación}{2027-03-22}{2027-04-04} \\
-\ganttbar{Evaluación del retorno de la inversión}{2027-04-05}{2027-04-09} \\
-\ganttgroup{Documento final}{2027-04-10}{2027-04-30} \\
+\ganttbar[bar/.append style={fill=blue!45}]{Retorno de la inversión y redacción}{2027-04-05}{2027-04-09} \\
+\ganttgroup{Documento final}{2027-04-10}{2027-04-28} \\
 \ganttbar[bar/.append style={fill=blue!45}]{Conclusiones y artículo en formato IEEE}{2027-04-10}{2027-04-18} \\
 \ganttbar{Revisión del tutor y correcciones}{2027-04-12}{2027-04-28} \\
 \ganttequalateralmilestone{Entrega del documento final}{2027-04-30}
 \end{ganttchart}
-\caption{Diagrama de Gantt por objetivo específico, de julio de 2026 a abril de 2027.}
+\caption{Diagrama de Gantt del marco referencial y los objetivos específicos, de septiembre de 2026 a abril de 2027.}
 \label{fig:gantt_proyecto}
 \end{sidewaysfigure}
