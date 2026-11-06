@@ -2,6 +2,121 @@
 \label{sec:propuesta}
 
 %---------------------------------------------------------------------------------------------
+\section{Análisis de requerimientos}
+\label{sec:requerimientos_prototipo}
+
+El análisis de requerimientos parte del procedimiento manual registrado en la
+Panadería San Miguel y del alcance de dosificación de harina, azúcar, sal y
+levadura en polvo. Los requerimientos funcionales describen las operaciones
+del prototipo. Los no funcionales establecen condiciones de desempeño,
+instalación, seguridad y mantenimiento. Esta clasificación organiza las
+necesidades del proceso para especificar los subsistemas.
+
+El relevamiento documentó preparaciones con cantidades objetivo de
+5\,000 a 8\,000~g de harina, 80 a 400~g de azúcar, 100 a 150~g de sal y
+20 a 30~g de levadura en polvo. Las Tablas~\ref{tab:harina_jornada}
+y~\ref{tab:azucar_sal_levadura_jornada} resumen las cantidades objetivo e
+incorporadas por jornada. Estos valores corresponden a las recetas
+registradas. El rango final de operación del equipo se determina durante
+el diseño.
+
+\subsection{Requerimientos funcionales}
+\label{subsec:requerimientos_funcionales}
+
+Los requerimientos funcionales describen las acciones necesarias para
+programar y ejecutar la dosificación. La Tabla~\ref{tab:requerimientos_funcionales_prototipo}
+presenta cada función con su prioridad y la condición del proceso que la
+justifica.
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimientos funcionales propuestos para el prototipo.}
+    \label{tab:requerimientos_funcionales_prototipo}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.09\textwidth}p{0.31\textwidth}p{0.10\textwidth}X}
+        \toprule[1pt]
+        \textbf{Código} & \textbf{Requerimiento} & \textbf{Prioridad} & \textbf{Justificación} \\
+        \midrule[1pt]
+        \textbf{RF-01} & Ingresar la cantidad objetivo de cada ingrediente en gramos. & Alta & Las recetas registradas establecen cantidades distintas según la preparación. \\
+        \addlinespace[5pt]
+        \textbf{RF-02} & Establecer la referencia de cero del sistema de pesaje. & Alta & La lectura inicial del recipiente interviene en la determinación de la cantidad dosificada. \\
+        \addlinespace[5pt]
+        \textbf{RF-03} & Medir la cantidad dosificada de cada ingrediente durante la alimentación. & Alta & La medición gravimétrica constituye la base para controlar la cantidad incorporada. \\
+        \addlinespace[5pt]
+        \textbf{RF-04} & Accionar y detener la alimentación según la cantidad objetivo y la lectura del pesaje. & Alta & El corte de alimentación relaciona la consigna con la cantidad obtenida. \\
+        \addlinespace[5pt]
+        \textbf{RF-05} & Asociar cada lectura de dosificación con el ingrediente correspondiente. & Alta & La harina, el azúcar, la sal y la levadura tienen cantidades objetivo diferentes. \\
+        \addlinespace[5pt]
+        \textbf{RF-06} & Mostrar el ingrediente activo, la cantidad objetivo, la cantidad indicada y el estado del ciclo. & Media & El operario necesita identificar la operación en curso y la finalización de la dosis. \\
+        \addlinespace[5pt]
+        \textbf{RF-07} & Aceptar una orden de interrupción y detener los alimentadores. & Alta & El operario necesita detener la alimentación durante una incidencia o una intervención. \\
+        \bottomrule[1pt]
+    \end{tabularx}
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia.}
+\end{table}
+
+Las funciones de entrada, medición y corte vinculan la consigna con la
+cantidad dosificada. La asociación entre lectura e ingrediente conserva esa
+relación cuando el prototipo atiende las distintas recetas. La forma de
+entregar cada dosis y la interfaz de operación requieren validación con el
+responsable de la panadería.
+
+\subsection{Requerimientos no funcionales}
+\label{subsec:requerimientos_no_funcionales}
+
+Los requerimientos no funcionales establecen condiciones para evaluar el
+desempeño y la integración del prototipo en la panadería. La
+Tabla~\ref{tab:requerimientos_no_funcionales_prototipo} indica las
+restricciones propuestas y el fundamento de cada una. Los umbrales
+numéricos quedan pendientes de sustento técnico, normativo y de mediciones
+del lugar.
+
+\begin{table}[H]
+    \centering
+    \caption{Requerimientos no funcionales propuestos para el prototipo.}
+    \label{tab:requerimientos_no_funcionales_prototipo}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.09\textwidth}p{0.31\textwidth}p{0.10\textwidth}X}
+        \toprule[1pt]
+        \textbf{Código} & \textbf{Requerimiento} & \textbf{Prioridad} & \textbf{Justificación} \\
+        \midrule[1pt]
+        \textbf{RNF-01} & Mantener la diferencia final dentro de un límite de aceptación definido por ingrediente. & Alta & Las cantidades objetivo y las propiedades de los cuatro insumos difieren. El límite requiere sustento técnico y normativo. \\
+        \addlinespace[5pt]
+        \textbf{RNF-02} & Completar la dosificación de los cuatro ingredientes dentro de un tiempo máximo por definir. & Alta & El tiempo del procedimiento manual forma parte de la necesidad documentada y requiere comparación bajo condiciones equivalentes. \\
+        \addlinespace[5pt]
+        \textbf{RNF-03} & Limitar la intervención activa del operario a tareas y tiempos por definir. & Alta & El tiempo de atención del operario forma parte de la necesidad documentada y se distingue de la duración total del ciclo. \\
+        \addlinespace[5pt]
+        \textbf{RNF-04} & Facilitar el acceso a las zonas en contacto con ingredientes para retirar residuos. & Alta & La operación con cuatro insumos exige una forma de limpieza entre usos. \\
+        \addlinespace[5pt]
+        \textbf{RNF-05} & Proteger los elementos móviles y las conexiones eléctricas durante la operación. & Alta & Los alimentadores y el sistema eléctrico introducen puntos de contacto que requieren protección. \\
+        \addlinespace[5pt]
+        \textbf{RNF-06} & Ajustar la instalación al espacio y a la alimentación eléctrica disponibles. & Alta & Las dimensiones del lugar, la tensión y las tomas disponibles condicionan el montaje. \\
+        \addlinespace[5pt]
+        \textbf{RNF-07} & Facilitar el acceso a los componentes para calibración y mantenimiento. & Media & El sistema de pesaje y los alimentadores requieren inspección y ajuste. \\
+        \addlinespace[5pt]
+        \textbf{RNF-08} & Mantener la variación entre dosis repetidas dentro de un límite por definir. & Alta & La repetibilidad caracteriza la variación entre dosis del prototipo bajo condiciones comparables. \\
+        \bottomrule[1pt]
+    \end{tabularx}
+    \vspace{2pt}
+    {\footnotesize Fuente: Elaboración propia.}
+\end{table}
+
+La selección vigente de alimentadores de tornillo para los cuatro
+ingredientes constituye una restricción técnica del diseño. La
+configuración de pesaje, el accionamiento, las dimensiones, los límites
+de aceptación y el criterio de repetibilidad permanecen pendientes de
+definición. Para precisar la
+instalación, la limpieza y la operación, se requiere una consulta
+documentada al responsable de la panadería y la medición del lugar.
+
+%---------------------------------------------------------------------------------------------
 \section{Índice tentativo}
 \label{sec:indice_tentativo}
 
