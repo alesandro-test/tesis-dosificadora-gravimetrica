@@ -1,12 +1,12 @@
-# Matriz: cálculo del capítulo 3 → fundamento (2.6.4 y 2.6.5)
+# Matriz de cálculos del capítulo 3 y fundamentos
 
-Creada el 28/10/2026 a partir de la salida del Prompt 2 de
-`prompt_fundamentos_tesis_similares.md` (NotebookLM, 10 tesis: ESPOL 2016,
+Creada el 28/10/2026 a partir de la comparación de 10 tesis en NotebookLM (ESPOL 2016,
 Moya 2016, EPN 2022, Laime 2022, Challco 2024, Orozco 2024, Murillo 2024,
-UPS repotenciación 2018, UPS Sánchez 2024 y Acuña 2024) y de
-`busqueda_2.6_fundamentos.md`.
+UPS repotenciación 2018, UPS Sánchez 2024 y Acuña 2024) y de la búsqueda bibliográfica de Fundamentos.
 
-Regla: entra a 2.6 solo el fundamento de un cálculo, una selección o una
+La numeración 2.6 de las fichas y de esta matriz corresponde a la estructura anterior. En la tesis vigente, Fundamentos es 2.3.
+
+Regla: entra a Fundamentos solo el fundamento de un cálculo, una selección o una
 verificación del capítulo 3 (`PROFESSOR_NOTES.md`, referencia 03). Los
 mecanismos siguen abiertos (`A-004`): las filas «condicional» dependen de esa
 elección.
@@ -19,7 +19,7 @@ cuántas lo presentan.
 | # | Cálculo del capítulo 3 | Fundamento | Tesis (P+A / P) | Fuente propuesta | En el `.tex` | Acción |
 |---|---|---|---|---|---|---|
 | M1 | Ángulo de pared y abertura mínima de la tolva de harina (sin bóveda) | Función de flujo y método de Jenike | 2/3 (como descarga) | Jenike (1964) vía Su (2017); Mehos y Morgan (2016); Lopes Neto (2017); Guan (2009) | Redactado (2.6.4.1) | Schulze (2021) puede reemplazar a Mehos y Morgan si se consigue |
-| M2 | Capacidad de cada tolva | m = ρ_b·V, con la densidad de 2.6.2 | 7/10 | Sin ecuación propia (geometría) | — | Una frase, sin ecuación numerada (descartado en `busqueda_2.6`) |
+| M2 | Capacidad de cada tolva | m = ρ_b·V, con la densidad de 2.6.2 | 7/10 | Sin ecuación propia (geometría) | — | Una frase, sin ecuación numerada |
 | M3 | Diámetro, paso y velocidad del tornillo de harina | Caudal del tornillo | 2/7 | Karwat (2021); Bates (2000) como complemento | Redactado | Conservar |
 | M4 | Potencia y torque del motor | Potencia por resistencia al avance; torque | 2/2 | Karwat (2021); arranque con Bates (2000) o CEMA 350 | Redactado | Conservar; Yu y Arnold (1997) pasa a complemento |
 | M5 | Diámetro del eje del tornillo | Esfuerzo cortante por torsión (y flexión si aplica) | 1/1 (Moya, con Mott) | Mott o Shigley en edición reciente | Falta | **Agregar**: es el cálculo de esfuerzos que sí se usa |
@@ -127,7 +127,8 @@ Siguen pendientes S1 (tolva) y F1 (calibración).
 
 ## Cierre de 2.6 (28/10/2026, tarde)
 
-- **2.6.4.1 Flujo en la tolva y abertura de descarga:** patrones de flujo y fallas (Su), $\phi_w = \arctan\mu_w$ (Søgaard), diagramas de Jenike con margen de 3° y cuña 10–12° menos empinada con ranura ≥ 3 veces el ancho (Mehos y Morgan 2016), $B_{\min} = H\sigma_{c,crit}/(ho_b g)$ (Jenike 1964, reproducida por Su), datos de harina de Lopes Neto (φw hasta 31°, δ 50–53°) y Guan (86–122 mm), interfaz tolva–tornillo y regla de 4 veces la partícula (Bates). Figura `tolva_patrones.tex`.
+- **2.6.4.1 Flujo en la tolva y abertura de descarga:** patrones de flujo y fallas (Su), $\phi_w = \arctan\mu_w$ (Søgaard), diagramas de Jenike con margen de 3° y cuña 10–12° menos empinada con ranura ≥ 3 veces el ancho (Mehos y Morgan 2016), $B_{\min} = H\sigma_{c,crit}/(
+ho_b g)$ (Jenike 1964, reproducida por Su), datos de harina de Lopes Neto (φw hasta 31°, δ 50–53°) y Guan (86–122 mm), interfaz tolva–tornillo y regla de 4 veces la partícula (Bates). Figura `tolva_patrones.tex`.
 - **Uso en el capítulo 3:** semiángulo de cada tolva con φw medido en mesa inclinable; comparar la boca del tornillo comercial de harina con $B_{\min}$ (si es menor, agitador o vibrador); regla de 4 veces para azúcar y sal; volumen con m/ρ_b.
 - **Tesis latinoamericanas revisadas para la tolva:** Chiliguana y Villavicencio (ESPOL 2016: ángulos medidos y diagrama de Jenike), Orozco (2024: μ de EN 1991-4 y diagrama de flujo másico), Challco (2024) y Moya (2016) solo geometría y espesor (no se adoptan).
 - **Calibración en dos puntos** (Ec. de calibración) redactada en 2.6.3.2 con Fraden; queda el comentario VERIFICAR hasta tener la ficha F1.

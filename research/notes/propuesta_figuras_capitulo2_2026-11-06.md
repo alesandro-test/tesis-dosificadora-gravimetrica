@@ -4,7 +4,7 @@
 
 ## Base y criterio
 
-Se revisaron AGENTS.md, PROJECT_CONTEXT.md, DECISIONS.md (D-019, D-020 y A-004), STATUS.md, PROFESSOR_NOTES.md, THESIS_STRUCTURE.md, redacción.md, la plantilla institucional y los bloques de figuras y sus párrafos en `docs/thesis/chapters/marcoteorico.tex`. La nota `cap2_2.2_auditoria.md` es un registro histórico de octubre y no sustituye el capítulo actual ni acredita sus cifras vigentes.
+Se revisaron AGENTS.md, PROJECT_CONTEXT.md, DECISIONS.md (D-019, D-020 y A-004), STATUS.md, PROFESSOR_NOTES.md, THESIS_STRUCTURE.md, redacción.md, la plantilla institucional y los bloques de figuras y sus párrafos en `docs/thesis/chapters/marcoteorico.tex`.
 
 La aclaración docente aportada por el estudiante distingue 2.1 Estado del Arte narrativo sin figuras, 2.2 Enfoques con análisis técnico y figuras, y 2.3 Fundamentos con principios y ecuaciones aplicables. Esto coincide con los encabezados de la plantilla. La organización activa de THESIS_STRUCTURE.md conserva la estructura adoptada en octubre, con áreas en 2.2 a 2.5 y fundamentos en 2.6; su interpretación de los enfoques como secciones principales consecutivas requiere revisión. No se adopta la nueva jerarquía mediante este inventario.
 
@@ -90,6 +90,6 @@ Tras confirmar el límite entre apartados: preparar la narración de 2.1; reorga
 
 Se aplican 2.1 Estado del Arte, 2.2 Enfoques con cuatro áreas y 2.3 Fundamentos. La síntesis narrativa contiene 27 claves bibliográficas de 2021–2026; no incluye figuras ni tablas. Se conservan todas las claves citadas antes de la reorganización. La diversidad de proveedores y la admisión de fichas y fuentes técnicas antiguas siguen pendientes; el recuento de 27 referencias narrativas no acredita por sí solo el mínimo institucional de 30 referencias de la revisión.
 
-Se mantienen 19 figuras activas: 14 en Enfoques y cinco en Fundamentos. La respuesta de la celda se integra en filtrado y la columna en caída acompaña la ecuación correspondiente. Las fotografías comerciales se conservan como bloque de reserva en `research/notes/figura_comercial_reserva_2026-11-06.md`, sin eliminar las imágenes. El índice tentativo se alinea con la nueva jerarquía.
+Se mantienen 19 figuras activas: 14 en Enfoques y cinco en Fundamentos. La respuesta de la celda se integra en filtrado y la columna en caída acompaña la ecuación correspondiente. La propuesta inicial dejaba las fotografías comerciales en reserva. La figura DF-B/IF-A se reincorporó al capítulo el 06/11/2026. El índice tentativo se alinea con la nueva jerarquía.
 
 Verificación: claves bibliográficas existentes, labels únicos, referencias cruzadas resueltas y conservación de citas anteriores. La compilación se intentó y MiKTeX la detuvo por configuración inicial incompleta; la maquetación queda pendiente. Esta reorganización no certifica de nuevo las cifras de los papers.

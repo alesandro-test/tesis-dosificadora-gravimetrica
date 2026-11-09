@@ -26,23 +26,17 @@ El flujo dentro del equipo también condiciona la alimentación.
 redujeron la fluctuación del caudal con paso variable.
 El estudio de descarga de \textcite{rivera2023flour} mostró que las
 aberturas calculadas para flujo másico por gravedad alcanzaban dimensiones
-de silo. Este resultado orienta la evaluación de extracción mecánica en
-una tolva de panadería. En la alimentación asistida,
-\textcite{naranjo2024agitator} mostraron que la relación de velocidades
-entre agitador y tornillo reduce la variabilidad del caudal en polvos
-farmacéuticos cohesivos. Junto con Xu, el trabajo aporta criterios para
-comparar la geometría del tornillo y la agitación, con la limitación de
-que el material farmacéutico no equivale a los ingredientes del proyecto.
+de silo. Ambos resultados orientan la comparación entre descarga por
+gravedad y extracción con tornillo en una tolva de panadería.
 
 En kilogramos, \textcite{bulatov2021dosing} y
 \textcite{bulatov2021weighing} estudiaron la dosificación con tornillo y la
 compensación del material que sigue cayendo tras el corte. El primer
 trabajo registró formación de bóvedas con virutas, mientras que el segundo
 obtuvo errores de 6,5 a 7,3~\% con sal en lotes de 1~kg.
-\textcite{remache2022dosificador}, con cebada, observó mayor error
-relativo en las consignas menores, y \textcite{hadi2025weighing},
-con arroz, compensaron el material en caída mediante un adelanto de
-corte y obtuvieron un sobrepaso medio de 0,72~\% entre 1 y 20~kg.
+Con arroz, \textcite{hadi2025weighing} compensaron el material en caída
+mediante un adelanto de corte y obtuvieron un sobrepaso medio de 0,72~\%
+entre 1 y 20~kg.
 La comparación aporta criterios para estudiar el corte según el
 material y la cantidad objetivo, sin trasladar los errores reportados
 como tolerancias de los ingredientes de San Miguel.
@@ -62,10 +56,11 @@ desempeño medido para compararlo con San Miguel.
 
 Para cantidades en gramos, \textcite{david2024granulated} dosificaron
 azúcar, arroz y café con tornillo y reconocieron limitaciones frente a
-cambios de densidad y humedad. \textcite{zaenurrohman2023merica},
-con pimienta en polvo, obtuvieron mayor error relativo en las dosis
-menores. Los trabajos orientan el análisis de los ingredientes de menor
-cantidad por preparación, aunque no sustituyen los ensayos con sal y levadura.
+cambios de densidad y humedad. Esto orienta la verificación del alimentador
+con cada ingrediente. \textcite{zaenurrohman2023merica} dosificaron
+pimienta en polvo con tornillo y observaron mayor error relativo a 30~g
+que a 150~g. La diferencia orienta a evaluar el error en las consignas
+menores, entre ellas las de levadura de San Miguel.
 
 La integración de varios ingredientes ofrece alternativas de pesaje.
 \textcite{farihin2021premix} emplearon varias tolvas sobre una celda común
@@ -92,8 +87,8 @@ por lo que la elección requiere análisis de diseño.
 
 En panaderías pequeñas, \textcite{humaira2024optimalisasi} integraron
 cámaras independientes, alimentadores helicoidales y control PID,
-con un error reportado de 0,08~\% en harina, aunque la entrega de
-350~g tomó 197~s. El resultado exige considerar el tiempo junto con el
+con un error medio de 0,08~\% en los ensayos de harina por receta.
+En el ensayo de 350~g, la entrega tomó 197~s. El resultado exige considerar el tiempo junto con el
 error al evaluar un equipo de panadería. En el mecanismo de alimentación,
 \textcite{rumapea2026flour} utilizaron alimentación
 gruesa y fina con compuerta y atribuyeron parte del error a la formación
@@ -103,9 +98,13 @@ de arroz con pesaje manual y reportaron mayor exactitud con el equipo,
 aunque observaron bóvedas y salida de material tras detener el tornillo.
 La comparación aporta una referencia para evaluar el prototipo frente
 al procedimiento manual, con un insumo distinto de la harina de trigo.
-\textcite{bachtiar2026brownies} encontraron dificultades de dosificación
-con compuertas para ingredientes secos. Estos resultados vinculan la
-elección del alimentador con el control del corte y el tiempo de ciclo.
+\textcite{bachtiar2026brownies} integraron compuertas accionadas por
+servomotores en un equipo para brownies. Obtuvieron 95~g de harina
+para una consigna de 100~g y 51~g de azúcar para una de 120~g.
+El ensayo con sal se realizó a 1~g, frente al lote de 1~kg de Bulatov.
+Estas escalas dejan sin respaldo directo las dosis de sal de San Miguel.
+Los resultados orientan la comparación de alimentadores mediante
+ensayos de dosificación por ingrediente.
 
 Las diferencias de tiempo entre equipos también dependen de la estrategia
 de alimentación. En ese aspecto,
@@ -179,34 +178,18 @@ transporte de sacos exceden la carga por lotes de una amasadora.
 \subsubsection{Otros materiales en kilogramos}
 \label{subsec:dosificadoras_kilogramos}
 
-En la escala de kilogramos, la más próxima al caso, los prototipos repiten la
-electrónica de los de gramos (Sección~\ref{subsec:medicion_electronica}) y la
-diferencia está en el material que sigue cayendo tras el cierre.
-\textcite{bulatov2021dosing}
-dosificaron harina de madera, el polvo más próximo a la harina entre estos
-trabajos, con un tornillo cuyo variador reduce la velocidad al final del lote
-y un programa que descuenta de 0,1 a 0,5~kg de material en caída. El error no
-superó el 5~\% en lotes de 1~kg, mientras que las virutas formaron bóvedas y
-no pudieron dosificarse. Con la misma instalación,
-\textcite{bulatov2021weighing} dosificaron sal, tiza, cebada y serrín en lotes
-de 1~kg, con errores de 3,6 a 4~\% con serrín y de 6,5 a 7,3~\% con sal.
-
-Con tornillo y cebada, \textcite{remache2022dosificador} dosificó de 0,1 a
-2~kg. El error relativo bajó al aumentar la masa, con un máximo de 10~\% en
-0,1~kg y una diferencia máxima de 13~g, de modo que la misma diferencia en gramos
-pesa más cuanto menor es la dosis. Con arroz, \textcite{hadi2025weighing}
-compensaron el material en caída con un adelanto de corte de 120~g y obtuvieron
-un sobrepaso medio de 0,72~\% entre 1 y 20~kg, con un servomotor en lugar de la
-válvula neumática industrial.
+En la escala de kilogramos, la Tabla~\ref{tab:dosificadoras_resumen}
+contrasta la alimentación por tornillo, válvula y canal vibratorio.
+Bulatov y Hadi aportan ejemplos de compensación del material en caída
+con distintos alimentadores. El ajuste del corte se compara en la
+Sección~\ref{sec:teoria_control}.
 
 Con azúcar, uno de los insumos de San Miguel,
 \textcite{acuna2024gravimetrico} evaluó en una envasadora de Empresas Iansa,
 en Chile, el reemplazo de un dosificador volumétrico por uno gravimétrico
-comercial con capacidad de 5~g a 25~kg, sincronizado con la envasadora. En
-bolsas de 1~kg, el volumétrico entregó en promedio 1013,07~g y el gravimétrico
-1002,06~g. El trabajo confirma el
-pesaje por lotes con azúcar en kilogramos, aunque en una línea de envasado y
-no en la carga de una amasadora.
+comercial con capacidad declarada de 5~g a 25~kg, sincronizado con la
+envasadora. El ensayo con bolsas de 1~kg permite comparar los principios
+de medición en azúcar (Sección~\ref{subsec:medicion_principio}).
 
 \textcite{orozco2024dosificadora} construyó una dosificadora de arroz con canal
 vibratorio, compuerta y celda de carga de 10~kg. Obtuvo exactitudes de
@@ -215,11 +198,6 @@ vibratorio, compuerta y celda de carga de 10~kg. Obtuvo exactitudes de
 En Bolivia, \textcite{challco2024dosificadora} diseñó para pan molido una
 dosificadora con tolva de 40~kg, canal vibratorio, celda de carga de 10~kg y PLC,
 sin resultados medidos.
-
-De este grupo se toma que, en kilogramos, el material en caída es una fuente
-de error que se compensa con un adelanto de corte o con flujo fino al final del
-lote \parencite{hadi2025weighing,bulatov2021dosing}. Esas estrategias se comparan
-en la Sección~\ref{sec:teoria_control}.
 
 \subsubsection{Insumos en gramos}
 \label{subsec:dosificadoras_gramos}
@@ -232,9 +210,9 @@ grupo numeroso de prototipos trabaja en esa escala. Con tornillo,
 con 120 a 175~g de azúcar, arroz y café, aunque reconocen poca adaptación a
 cambios de densidad o humedad. Con pimienta en polvo,
 \textcite{zaenurrohman2023merica} llenaron de 30 a 150~g con tornillo y Arduino
-Nano. El error medio fue de 4~\% en 30~g y de 1,74~\% en 150~g, con cinco
-pruebas por consigna y 0,97~s/g en promedio, y una dosis de 30~g llegó a 34~g.
-Esa tendencia anticipa el caso más exigente de San Miguel, la levadura.
+Nano. El error relativo fue mayor en la consigna de 30~g que en la de
+150~g. La diferencia orienta a comprobar el desempeño del tornillo en
+las consignas más bajas de cada ingrediente, en particular la levadura.
 
 \subsubsection{Harina en gramos para panaderías pequeñas}
 \label{subsec:dosificadoras_panaderia}
@@ -281,13 +259,6 @@ carga. La harina llegó a 95~g frente a una consigna de 100~g y el azúcar a
 51~g frente a 120~g, y los autores concluyen que la apertura por servomotor
 requiere mejoras con insumos secos.
 
-Fuera de la panadería, \textcite{moya2016dosificador} construyó un dosificador
-volumétrico para un polvo de seis granos, con tolva para 45~kg, eje agitador y
-tornillo vertical, de 4,4~cm en el diseño. En diez pruebas de 450~g entregó en
-promedio 449,8~g, con una desviación estándar reportada de 2,5~g y 20,8~s por
-dosis. Muestra que el tornillo con
-agitador mantiene un polvo de granos en movimiento, aunque sin medir la masa.
-
 De este grupo se toman dos criterios. La bóveda condiciona la tolva y el
 alimentador (Sección~\ref{sec:teoria_mecanica}), y el tiempo por lote es una
 variable de diseño junto con la exactitud.
@@ -295,8 +266,8 @@ variable de diseño junto con la exactitud.
 \subsubsection{Productos comerciales de tornillo para polvos}
 \label{subsec:dosificadoras_comerciales}
 
-Los equipos comerciales más cercanos al caso son dos llenadoras de tornillo para
-polvos de Indurpack (Figura~\ref{fig:productos_comerciales}). Ambas incluyen la
+La comparación comercial examina dos llenadoras de tornillo para polvos
+del fabricante Indurpack (Figura~\ref{fig:productos_comerciales}). Ambas incluyen la
 harina entre sus usos, declaran una precisión de $\pm$1~\% y emplean una balanza
 digital para comprobar el peso y corregir la dosificación. La DF-B tiene una tolva
 de 30~L, balanza incorporada y 700~W, y entrega de 0,5 a 350~g, con hasta 20 dosis
@@ -372,10 +343,6 @@ cada autor, por lo que las cifras no se comparan directamente entre filas.
         EPAM de 1,32 a 1,83~\% (n = 30) \\
         \textcite{afni2026cake} & Harina de arroz & 263~g & Tornillo &
         Exactitud de 97,9~\% (n = 10) \\
-        \textcite{moya2016dosificador} & Polvo de granos & 450~g & Tornillo
-        y agitador & Desviación de 2,5~g (n = 10), sin pesaje \\
-        \textcite{remache2022dosificador} & Cebada & 0,1--2~kg & Tornillo &
-        Hasta 10~\% en 0,1~kg \\
         \textcite{hadi2025weighing} & Arroz & 1--20~kg & Válvula &
         Sobrepaso medio de 0,72~\% \\
         \textcite{bulatov2021dosing} & Harina de madera & 1~kg & Tornillo &
@@ -443,23 +410,13 @@ Secciones~\ref{sec:teoria_mecanica} y~\ref{sec:teoria_control}.
     Sección~\ref{sec:teoria_dosificadoras}.}
 \end{table}
 
-A partir de la tabla, el proyecto adopta el pesaje por lotes con tolva,
-alimentador, celda de carga y controlador como arquitectura de referencia,
-porque reúne los menores errores en harina entre los prototipos revisados. Se
-descarta la
-dosificación volumétrica como principio, ya que no mide la masa entregada, y
-se descarta la arquitectura de pesaje de sacos, aunque se conserva
-su principio gravimétrico. Las llenadoras comerciales tampoco se adoptan como
-solución, porque dosifican un insumo por equipo, aunque se toma de ellas el tornillo
-con agitador. La elección entre balanza común y balanza por
-insumo queda para el diseño, porque ningún trabajo compara ambas en un mismo
-equipo.
-
-Ninguna fuente revisada, académica o comercial, reporta la dosificación gravimétrica de
-harina de trigo en lotes de 5 a 8~kg para una panadería pequeña, ni reúne en
-un mismo equipo la harina en kilogramos y los insumos menores en decenas a
-cientos de gramos (Tabla~\ref{tab:receta_referencia}). Reunir esas condiciones
-define el aporte diferencial del proyecto.
+El pesaje por lotes con tolva, alimentador, celda de carga y controlador
+es la arquitectura de referencia porque permite medir cada entrega. El
+pesaje industrial de sacos requiere equipos de transporte ajenos a la
+carga de la amasadora. Las llenadoras comerciales comparadas dosifican
+un insumo por equipo y su mayor dosis declarada es de 5~kg. La selección del
+alimentador y la configuración de las balanzas se analizan en las
+Secciones~\ref{sec:teoria_mecanica} y~\ref{sec:teoria_medicion}.
 
 \subsection{Almacenamiento y alimentación de ingredientes secos}
 \label{sec:teoria_mecanica}
@@ -550,10 +507,8 @@ de harina compactada.
 Para evitarla, \textcite{xu2021screw} diseñaron un tornillo de paso variable
 de 100~mm para harina con 13,5~\% de humedad. Entregó 0,535~kg/s con una
 fluctuación de $\pm$7,85~\%, frente a $\pm$17,5~\% del tornillo de paso
-constante. El agitador complementa al tornillo. \textcite{naranjo2024agitator} mostraron,
-con polvos farmacéuticos cohesivos, que elegir la relación de velocidades entre tornillo y agitador reduce la
-variabilidad del caudal, y la llenadora de \textcite{budijono2021flour}
-combina ambos elementos para la harina.
+constante. La llenadora de \textcite{budijono2021flour} combina el
+tornillo con un agitador para alimentar harina.
 
 El canal vibratorio aparece sobre todo con granos, como en las dosificadoras
 de arroz y de pan molido de la Sección~\ref{subsec:dosificadoras_kilogramos}.
@@ -593,8 +548,8 @@ con el autor que la reporta.
         Budijono) & Fluctuación de $\pm$17,5~\% por zonas muertas (Xu) y limpieza
         difícil (Rumapea) \\
         Tornillo de paso variable o con agitador & Fluctuación de $\pm$7,85~\%
-        (Xu) y menor variabilidad con la relación de velocidades adecuada
-        (Naranjo Gómez) & Sin método de diseño sistemático (Xu) \\
+        en harina (Xu) y flujo más constante en la simulación con agitador
+        (Budijono) & Sin método de diseño sistemático (Xu) \\
         Canal vibratorio & Exactitud de 99,73~\% con 1~kg de arroz (Orozco
         Villa) & Flujo irregular con harina (Rumapea) \\
         Compuerta & Pocas piezas (Rumapea) & Bóveda en el borde (Rumapea) y
@@ -610,10 +565,12 @@ con el autor que la reporta.
 A partir de la tabla, para la harina se descartan la descarga por gravedad y
 la compuerta, porque la bóveda aparece en ambas, y el canal vibratorio, por su
 flujo irregular con polvos finos. Se adopta el tornillo para los cuatro
-insumos, porque regula el flujo grueso y fino con la velocidad y detiene el flujo
-al parar el motor, y los prototipos de varios insumos lo emplean
+insumos porque la velocidad permite regular el caudal. Este alimentador
+se empleó en equipos para varios insumos
 \parencite{humaira2024optimalisasi,joni2022powder,david2024granulated,sanchez2024tolvas}.
-El tornillo se selecciona entre productos comerciales y se diseñan las tolvas.
+Al detener el tornillo, el material en caída aún puede llegar al recipiente
+(Sección~\ref{sec:teoria_control}). El tornillo se selecciona entre
+productos comerciales y se diseñan las tolvas.
 La necesidad de un agitador y el accionamiento de cada tornillo corresponden al
 diseño, con las propiedades de flujo de los insumos de San Miguel.
 
@@ -656,13 +613,15 @@ sobre su celda de carga. Un vibrador llena cada tolva y se detiene al alcanzar
 la consigna, y un motor paso a paso abre la tolva hacia una tolva de
 recolección común. Al calibrar con una pesa de 500~g, el error fue de 0,8~g.
 
-La balanza por insumo también se aplica por grupos de insumos. En una planta de
+El pesaje independiente también puede organizarse por grupos. En una planta de
 alimento balanceado de Ecuador, \textcite{sanchez2024tolvas} trasladó los
-ingredientes medios a cuatro tolvas con balanza propia, que se llena en paralelo
-con la de los mayores mediante tornillos de velocidad rápida y lenta, con una
+ingredientes medios a cuatro tolvas con balanza propia, que se llenan en paralelo
+con la de los ingredientes mayores mediante tornillos de velocidad rápida y lenta, con una
 tolerancia de $\pm$5~\% por ingrediente, aunque no cuantifica la reducción del
-tiempo de ciclo. Ningún trabajo compara la balanza común y la balanza por insumo
-en un mismo equipo, por lo que la elección queda abierta.
+tiempo de ciclo. Los antecedentes revisados aportan configuraciones de referencia
+para San Miguel. La comparación debe verificar la capacidad con el recipiente
+cargado y el error de dosificación en la consigna menor de levadura. La elección
+entre pesaje común y separado queda abierta.
 
 \begin{figure}[H]
     \centering
@@ -817,15 +776,11 @@ alimentador durante el lote y de un lote a otro.
 \subsubsection{Estrategias de corte}
 \label{subsec:control_corte}
 
-En el pesaje por lotes, el alimentador entrega material hasta que la celda
-registra la masa deseada. La patente de \textcite{buhler2022dosing} indica que,
-según la exactitud requerida, se trabaja con flujo grueso y flujo fino, y que
-los sistemas actuales alcanzan así una exactitud de lote de hasta
-$\pm$0,5~\%. La Figura~\ref{fig:secuencia_llenado} muestra esa secuencia. El
-alimentador pasa de flujo grueso a flujo fino cerca de la consigna y el corte
-se ordena con un adelanto igual a la masa que sigue en caída. La línea
-punteada muestra el caso sin adelanto, que produce un exceso igual a la masa
-que sigue cayendo.
+La Figura~\ref{fig:secuencia_llenado} compara el corte al alcanzar la
+consigna con el corte anticipado. Cuando el alimentador se detiene, el
+material que aún cae se suma a la cantidad registrada. La patente de
+\textcite{buhler2022dosing} describe el uso de flujos grueso y fino y declara
+una exactitud de lote de hasta $\pm$0,5~\%.
 
 \begin{figure}[H]
     \centering
@@ -879,10 +834,9 @@ polipropileno no demuestra el desempeño con los ingredientes de San Miguel.
 \label{subsec:control_realimentado}
 
 Dentro del lote, el controlador fija la velocidad o la apertura del
-alimentador a partir de la masa medida. En panadería, el PI de
-\textcite{farihin2021premix} y el PID de \textcite{humaira2024optimalisasi}
-bajaron el error a 0,2~\% y a menos del 1~\%, aunque el segundo necesitó
-ganancias ajustadas a mano para cada insumo.
+alimentador a partir de la masa medida. En panadería se ha ensayado el PI
+en una premezcla \parencite{farihin2021premix} y el PID con ganancias
+ajustadas para cada insumo \parencite{humaira2024optimalisasi}.
 
 Como la dosificación por lotes se repite, el controlador también puede corregir
 con el lote anterior. En la planta de balanceado de
@@ -921,8 +875,8 @@ resultado que los favorece y la limitación observada.
         Adelanto calculado con la columna en caída & Error de 8,59~\% a
         prácticamente cero en 1~kg (Bukreev 2014) & Requiere la densidad
         aparente del material \\
-        PI o PID sobre el alimentador & Errores de 0,2~\% a menos del
-        1~\% (Farihin, Humaira) & Ganancias ajustadas para cada insumo
+        PI o PID sobre el alimentador & Corrección a partir de la lectura
+        de peso durante el lote & Ganancias ajustadas para cada insumo
         (Humaira) \\
         Corrección entre lotes & Usa el error del lote anterior (Sánchez
         Villacis) & Efecto no reportado (Sánchez Villacis) \\
@@ -934,15 +888,11 @@ resultado que los favorece y la limitación observada.
     Sección~\ref{sec:teoria_control}.}
 \end{table}
 
-A partir de la tabla, se adopta la alimentación en dos etapas, con flujo
-grueso y flujo fino, y el corte con adelanto, porque todos los antecedentes en
-kilogramos compensan el material en caída y la harina sigue saliendo tras
-detener el alimentador \parencite{afni2026cake}. Se descarta el corte sin
-adelanto y, por la variación de la harina con la humedad y la compactación,
-también el adelanto fijo sin corrección. El cálculo del adelanto, el control
-del alimentador durante el lote y la corrección entre lotes quedan como
-candidatos para el diseño, que los elegirá con base en el modelo dinámico del
-sistema.
+La alimentación en dos etapas y el corte anticipado son alternativas para
+evaluar el tiempo de ciclo y el exceso de material. El corte al alcanzar
+la consigna sirve de comparación para medir ese exceso. La selección del
+adelanto, el control durante el lote y la corrección entre lotes queda
+sujeta al modelamiento y a los ensayos por ingrediente.
 
 \section{Fundamentos teóricos}
 \label{sec:teoria_fundamentos}
@@ -958,11 +908,10 @@ dosificación.
 \subsubsection{Densidad aparente}
 \label{subsubsec:fund_densidad}
 
-La densidad aparente es la masa de insumo por unidad de volumen a granel, y
-relaciona la masa con el volumen que ocupa en la tolva y en el tornillo. Crece con la compresión del material, sobre todo en los polvos finos
-como la harina y el azúcar impalpable, mientras que la sal y el azúcar cristal
-casi no se comprimen~\parencite{lanzerstorfer2020density}, como muestra la
-Figura~\ref{fig:densidad_esfuerzo}.
+La densidad aparente relaciona la masa a granel con el volumen que ocupa en la
+tolva y en el tornillo. La compresión puede aumentar ese valor en polvos finos
+como la harina y el azúcar impalpable~\parencite{lanzerstorfer2020density}, como
+muestra la Figura~\ref{fig:densidad_esfuerzo}.
 
 \subsubsection{Fluidez y formación de bóvedas}
 \label{subsubsec:fund_flujo}
@@ -1063,10 +1012,6 @@ Internacional de Metrología (VIM) que usa el proyecto.
     {\footnotesize Fuente: Elaboración propia con base en \textcite{jcgm2012vim}.}
 \end{table}
 
-Como el VIM desaconseja llamar «tolerancia» al error máximo
-permitido~\parencite{jcgm2012vim}, en este documento la tolerancia es el
-límite de aceptación de cada dosis.
-
 \subsubsection{Instrumentos de llenado gravimétrico: OIML R~61}
 \label{subsubsec:fund_r61}
 
@@ -1161,9 +1106,9 @@ El ángulo no evita la bóveda, un arco de material que tapa la salida
 (Figura~\ref{fig:su_boveda}). Evitarla exige una abertura mínima, que depende de
 la resistencia del polvo y de su densidad aparente~\parencite{su2017arching}. Para
 harina, \textcite{su2017arching} calculó 74~mm y \textcite{guan2009flour} midieron
-de 86 a 122~mm según la humedad, ambos en tolvas de 45°. En equipos pequeños el
-cálculo sobrestima la abertura~\parencite{sogaard2017jenike}, así que esos valores
-son seguros.
+de 86 a 122~mm según la humedad, ambos en tolvas de 45°. Son valores de
+referencia para esas condiciones. La abertura de diseño depende de las
+propiedades del insumo y la geometría de la tolva.
 
 Sobre un tornillo, el ancho de la ranura es el diámetro del
 tornillo~\parencite{mehos2016hopper}. Si es menor que la abertura mínima, se agrega
@@ -1313,14 +1258,10 @@ del inducido despreciada.
 \subsubsection{Celda de carga y conversión de la señal}
 \label{subsubsec:fund_conversion}
 
-La celda de carga tiene galgas
-extensométricas, cuya resistencia cambia con la deformación, conectadas en un
-puente de Wheatstone. La salida es una tensión pequeña que el módulo de conversión
-amplifica y digitaliza~\parencite{fraden2016handbook}, como muestra la
-Figura~\ref{fig:cadena_medicion}. \textcite{zengin2025fir} usaron el módulo HX711,
-que integra amplificador y convertidor de 24~bits. Si el ruido supera la resolución
-del convertidor, los últimos bits no aportan
-información~\parencite{fraden2016handbook}.
+Las galgas extensométricas de la celda forman un puente de Wheatstone y producen una
+tensión que el módulo de conversión amplifica y digitaliza
+(Figura~\ref{fig:cadena_medicion}). El ruido puede limitar la resolución
+aprovechable del convertidor~\parencite{fraden2016handbook}.
 
 \begin{figure}[H]
     \centering
@@ -1411,10 +1352,9 @@ El factor $m_{\mathrm{p}}/(c_{\mathrm{p}} - c_{0})$ son los gramos por cuenta.
 \subsubsection{Promedio móvil}
 \label{subsubsec:fund_filtro}
 
-La Figura~\ref{fig:respuesta_celda} representa de forma conceptual la
-respuesta de una celda de carga al impacto del material: un pico, una
-oscilación y el asentamiento de la lectura. No representa una medición del
-prototipo de este proyecto.
+La Figura~\ref{fig:respuesta_celda} muestra la respuesta conceptual de una
+celda al impacto del material, con un pico seguido de oscilaciones y
+asentamiento de la lectura.
 
 \begin{figure}[H]
     \centering
@@ -1426,10 +1366,8 @@ prototipo de este proyecto.
     \textcite{richiedei2018shaper} y \textcite{wang2025batching}.}
 \end{figure}
 
-La lectura incluye también la vibración de la máquina y el
-ruido~\parencite{choi2017noise}, y oscila cuando cae el material
-(Figura~\ref{fig:respuesta_celda}). El promedio móvil la suaviza con la media de
-las últimas muestras~\parencite{zengin2025fir}:
+El promedio móvil suaviza las oscilaciones de la lectura al calcular la
+media de las últimas muestras~\parencite{zengin2025fir}:
 
 \begin{equation}
     y(n) = \frac{1}{N} \sum_{k=0}^{N-1} x(n-k)
@@ -1453,10 +1391,8 @@ retrasan~\parencite{zengin2025fir}, y el retardo afecta el corte
 La dosificación por lotes usa dos pesos de parada
 (Figura~\ref{fig:secuencia_llenado}): en el peso de cambio, el tornillo pasa de
 velocidad rápida a lenta, y en el peso de corte se
-detiene~\parencite{sanchez2024tolvas,bulatov2021dosing}. Los prototipos cambian de
-velocidad cerca del 90~\% de la
-consigna~\parencite{rumapea2026flour,wang2025batching}. Descontada la tara, ambos
-pesos son~\parencite{sanchez2024tolvas}
+detiene~\parencite{sanchez2024tolvas,bulatov2021dosing}. Descontada la tara, los
+dos umbrales se expresan como~\parencite{sanchez2024tolvas}
 
 \begin{equation}
     m_{\mathrm{D}} = S - D_{\mathrm{f}}
