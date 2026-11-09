@@ -141,6 +141,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-014 — Alcance del perfil (Taller de Grado I)
 
 **Estado:** Confirmada  
+**Actualización 2026-11-06:** la numeración de este registro corresponde a la versión anterior. D-020 agrupa requerimientos y tolerancias en el OE1 y sitúa el diseño mecánico y de medición en el OE2. Sigue pendiente precisar con el docente qué nivel de diseño acredita el cumplimiento del perfil; el CAD preliminar no equivale al diseño de detalle completo.
 **Decisión:** El perfil desarrolla los objetivos específicos 1 a 3: requerimientos, tolerancias y diseño de los subsistemas mecánico y de medición gravimétrica. La evaluación experimental no se desarrolla en el perfil.  
 **Motivo:** Declaración del estudiante del 2026-10-14. Es coherente con la división del primer objetivo específico: la indicación docente de demostrar «los objetivos 1 y 2» abarca los objetivos 1 a 3 de la numeración vigente.  
 **Impacto:** El capítulo 3 demuestra los objetivos 1 a 3 y el capítulo 2 prioriza sus fundamentos. No modifica `D-008`: falta confirmar que la evaluación experimental (objetivo 6) se mantiene para Taller de Grado II.
@@ -177,6 +178,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-018 — Objetivos y título vigentes
 
 **Estado:** Confirmada  
+**Actualización 2026-11-06:** D-020 sustituye exclusivamente la estructura de siete objetivos específicos por seis. El objetivo general y el título de esta decisión se conservan; su aprobación académica sigue abierta.
 **Decisión:** Objetivo general: «Desarrollar un prototipo automatizado de dosificación gravimétrica de harina, azúcar, sal y levadura según la cantidad objetivo de cada preparación de la Panadería San Miguel». Se mantienen siete objetivos específicos con la numeración de `D-014`; el objetivo 6 compara tiempo de dosificación, intervención del operario, diferencia respecto de la cantidad objetivo y repetibilidad. Título en `main.tex`: «Diseño de una dosificadora gravimétrica automatizada de ingredientes secos para panaderías artesanales» (elección del estudiante del 2026-10-26; reemplaza «Diseño y construcción … para la Panadería San Miguel»).  
 **Motivo:** Instrucción del estudiante del 2026-10-26; correspondencia entre título, objetivo general y problema.  
 **Impacto:** Se retira «bajo costo» del título y se conserva «panaderías artesanales», aunque el objetivo general nombra a la Panadería San Miguel; verificar con el docente la correspondencia entre título y objetivo general. La aprobación docente del título y de los objetivos sigue abierta (`A-001`, `A-002`). Siete objetivos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
@@ -190,6 +192,24 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 **Decisión:** Los cuatro ingredientes (harina, azúcar, sal y levadura en polvo) se alimentan con tornillo: uno para la harina y tornillos menores para azúcar, sal y levadura. El tornillo (helicoidal y tubo) se selecciona entre productos comerciales; se diseñan las tolvas.
 **Motivo:** Elección del estudiante del 2026-10-28, con base en la literatura revisada: el tornillo permite flujo grueso y fino regulando la velocidad y detiene el flujo al parar el motor; las compuertas fallaron con insumos secos (Bachtiar, Rumapea); los prototipos de varios insumos usaron tornillo (Humaira, Joni, David, Sánchez); la sal absorbe humedad y la levadura en polvo no tiene datos de flujo.
 **Impacto:** Resuelve el mecanismo de alimentación de `A-004`. Beverloo (descarga por gravedad) y el cálculo del eje salen de los fundamentos. Falta verificar la disponibilidad de helicoidales comerciales en Santa Cruz o por importación; si hay que fabricarlo, vuelve el cálculo del eje. Diámetros, pasos, velocidades, accionamiento y la elección entre balanza común o por insumo siguen abiertos.
+
+### D-020 — Agrupación de requerimientos y tolerancias
+
+**Estado:** Confirmada como versión de trabajo; aprobación docente pendiente (`A-002`).
+**Decisión:** Aplicar seis objetivos específicos: (1) requerimientos funcionales y técnicos, incluidas tolerancias para harina, azúcar, sal y levadura en polvo; (2) diseño mecánico y de medición mediante dimensionamiento, selección, CAD y planos; (3) diseño del control mediante modelamiento y simulación; (4) implementación; (5) evaluación frente a requisitos y comparación con el procedimiento manual; (6) costo de fabricación y retorno de inversión. Los enunciados completos se encuentran en `docs/thesis/chapters/marcoref.tex`.
+**Motivo:** Indicación docente de agrupar los anteriores objetivos 1 y 2, confirmada por el estudiante, y solicitud explícita del 06/11/2026 de aplicar los objetivos revisados.
+**Impacto:** Los anteriores OE1 y OE2 se integran en OE1; los anteriores OE3 a OE7 pasan a OE2 a OE6. Se alinean cronograma, Gantt y referencias activas; se conserva la numeración en registros históricos. El perfil aborda OE1 y el desarrollo de OE2, con nivel de diseño exigido pendiente de confirmación. Las fechas, parámetros abiertos y aprobación académica no quedan resueltos por este cambio. Se conservan las cuatro variables de comparación: tiempo de dosificación, intervención del operario, diferencia respecto de la cantidad objetivo y repetibilidad.
+
+---
+
+### D-021 — Organización del capítulo 2 y función de las figuras
+
+**Estado:** Confirmada como versión de trabajo por el estudiante (06/11/2026).
+**Decisión:** Organizar el capítulo en 2.1 Estado del Arte narrativo sin figuras ni tablas, 2.2 Enfoques por áreas y 2.3 Fundamentos. La revisión reciente se concentra en trabajos de 2021–2026. Las fuentes anteriores se mantienen para análisis técnico explícito o bases teóricas; no se presentan como literatura reciente ni se eliminan figuras solo por su año.
+**Motivo:** Aclaración docente y autorización del estudiante de aplicar la propuesta de inventario del 06/11/2026.
+**Impacto:** Arquitecturas, alimentación, medición y control se reúnen bajo Enfoques. Respuesta conceptual de la celda y columna en caída pasan a Fundamentos. Las fotografías comerciales DF-B e IF-A se reincorporan en Productos comerciales por instrucción expresa posterior del estudiante del 06/11/2026; permanecen el análisis y las citas de las fichas, identificadas como declaraciones del fabricante. La conformidad docente del uso de fichas y fuentes antiguas y la diversidad de proveedores siguen pendientes; no se registra una aprobación académica inexistente. Se conservan las selecciones abiertas de A-004.
+
+---
 
 ## Decisiones abiertas
 

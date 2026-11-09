@@ -153,113 +153,55 @@
 
 # CAPÍTULO 2 — MARCO TEÓRICO
 
-> Base: `docs/template/Template - Perfil de Proyecto- Final.md` (capítulo 2 e índice tentativo), clase del 09/10/2026 (transcripciones TG1_09-10 y TG1_09-10_2) y capítulo 2 de `research/referencias_estructurales/`. La plantilla prevalece sobre las referencias.
-> Estructura adoptada por el estudiante el 14/10/2026. Criterios docentes en `PROFESSOR_NOTES.md`.
+> Estructura aplicada el 06/11/2026 por autorización del estudiante (D-021), conforme a la plantilla oficial y la aclaración docente. La plantilla prevalece sobre las referencias estructurales.
 
-## Requisitos de la plantilla
+## Requisitos institucionales y docentes
 
-- **Estado del arte:** perspectiva académica **y** de mercado; al menos dos enfoques, numerados como secciones (2.2, 2.3…) con subtítulos; al menos **30 referencias**, de las cuales al menos **10** son trabajos académicos con revisión por pares; productos de distintos proveedores representativos de la oferta.
-- **Enfoques:** no describir trabajos de forma plana; identificar ventajas, desventajas y factores de interés, y argumentar qué enfoques resultan adecuados y cuáles se descartan.
-- **Fundamentos teóricos:** principios necesarios para desarrollar la solución, presentados de forma resumida y sustancial; documentos fundamentales del área.
-- **Extensión:** mínimo **20 páginas** (la plantilla lo ubica en fundamentos; en la clase del 09/10/2026 se expresó para el marco teórico).
-- **Conclusión del capítulo:** prevista en el índice tentativo.
-- **Formato:** figuras y tablas numeradas por capítulo (Figura 2.1, Tabla 2.1); leyenda de figura de hasta 15 palabras; «Adaptado de» cuando se modifique o traduzca una fuente; ecuaciones centradas, numeradas (2.1) y con variables según ISO 80000; citas ISO 690.
+- Estado del arte narrativo: antecedentes recientes, resultados y aportes al proyecto, sin figuras ni tablas; perspectiva académica y de mercado.
+- Al menos 30 referencias entre ambas perspectivas y al menos 10 trabajos académicos, conforme a los criterios de calidad de la plantilla; oferta de distintos proveedores. La diversidad de proveedores y la admisión docente de fichas de fabricantes permanecen pendientes.
+- Enfoques: al menos dos; comparar ventajas, limitaciones y factores de interés y justificar adopción o descarte.
+- Fundamentos: principios, ecuaciones y conceptos utilizados en el diseño, con libros y documentos fundamentales. Sin resultados de San Miguel ni ciencia básica innecesaria.
+- Figuras: fuente y atribución, leyendas y referencias según la plantilla. Las síntesis propias de antecedentes no representan resultados del prototipo.
+- Mantener la conclusión del capítulo comentada por la indicación previa del estudiante, hasta nueva instrucción.
 
-## Alcance en el perfil
+## Orden aplicado
 
-El perfil desarrolla los objetivos específicos 1 a 3 (`D-014`). Los fundamentos priorizan esos objetivos; 2.6.6 se limita al corte y se mantiene breve. La evaluación experimental no forma parte del capítulo.
+    2.1 Estado del arte
+    2.2 Enfoques
+        2.2.1 Arquitecturas de dosificación y soluciones integrales
+        2.2.2 Almacenamiento y alimentación de ingredientes secos
+        2.2.3 Medición gravimétrica y electrónica
+        2.2.4 Corte y control de la dosificación
+    2.3 Fundamentos teóricos
+        2.3.1 Propiedades de los insumos
+        2.3.2 Metrología y tolerancias de dosificación
+        2.3.3 Tolva
+        2.3.4 Alimentador de tornillo
+        2.3.5 Accionamiento del tornillo
+        2.3.6 Medición gravimétrica y celdas de carga
+        2.3.7 Corte y control de la dosificación
 
-## Orden del capítulo
+## Función y profundidad
 
-```text
-2.1 Estado del arte
-2.2 Dosificadoras de ingredientes
-2.3 Área mecánica: almacenamiento y alimentación
-2.4 Área de medición y electrónica
-2.5 Área de control
-2.6 Fundamentos teóricos
-    2.6.1 Propiedades de los insumos
-    2.6.2 Metrología y tolerancias de dosificación
-    2.6.3 Tolva
-    2.6.4 Alimentador de tornillo
-    2.6.5 Accionamiento del tornillo
-    2.6.6 Medición gravimétrica y celdas de carga
-    2.6.7 Corte y control de la dosificación
-2.7 Conclusión del capítulo (comentada en el .tex por ahora, 28/10/2026)
-```
+- **2.1:** síntesis narrativa por temas de trabajos de 2021–2026: qué se hizo, resultado, aporte y límite para el proyecto. No duplicar la descripción detallada del análisis técnico. El caso comercial actual sigue limitado a Indurpack; su aprobación académica no se presume.
+- **2.2:** desarrollar el detalle que cambia una decisión. Las máquinas completas se presentan en arquitecturas; tolvas y tornillos en mecánica; configuraciones de pesaje en medición; lazos y etapas de corte en control. Las figuras se explican y relacionan con el criterio técnico, sin convertirlas en selecciones nuevas.
+- **2.3:** geometrías, variables, principios y ecuaciones aplicables a OE1 y OE2; el control apoya OE3. La respuesta conceptual de la celda y la geometría de columna en caída se ubican aquí. La aplicación del modelo de caída sigue sujeta al diseño.
+- Un trabajo puede aportar una síntesis en 2.1 y un detalle técnico en 2.2, sin reproducir párrafos completos.
+- Fuentes anteriores a 2021: uso técnico explícito en Enfoques o teórico en Fundamentos; no presentarlas como revisión reciente ni eliminar automáticamente sus figuras. La conformidad docente del uso excepcional sigue pendiente.
+- Se conservan D-019 y A-004: tornillos para los cuatro ingredientes; configuración de balanzas, electrónica y estrategia definitiva de control pendientes.
 
-## 2.1 Estado del arte (introducción)
+## Correspondencia con los objetivos
 
-- **Propósito:** explicar cómo se organiza la revisión.
-- **Contenido:** párrafo con bases consultadas, cadenas, periodo (2016–2026; fuentes anteriores solo si la línea tecnológica no cambió) y organización por enfoques.
-- **Evidencia:** registro de búsquedas.
-- **Profundidad:** baja.
+| Fundamento | Objetivo |
+|---|---|
+| Insumos y tolerancias | OE1 y OE2 |
+| Tolva, tornillo y accionamiento | OE2 |
+| Medición, calibración y filtrado | OE2 |
+| Corte y acciones de control | OE2 y OE3 |
 
-## 2.2 Dosificadoras de ingredientes
+El perfil desarrolla OE1 y el diseño de OE2, con nivel de cumplimiento exigido pendiente según D-020. La evaluación experimental corresponde al desarrollo posterior y no se incorpora como resultado del capítulo teórico.
 
-- **Propósito:** revisar las soluciones integrales más cercanas al caso, académicas y de mercado, e identificar el aporte diferencial.
-- **Contenido:** narración de lo general a lo más cercano a San Miguel. Cada antecedente: qué construyó → dato técnico (escala, exactitud, costo) → limitación frente a San Miguel → criterio de diseño. Productos de mercado de distintos proveedores, descritos de forma narrativa.
-- **Cierre:** arquitecturas que se adoptan o descartan, con su argumento.
-- **Evidencia:** artículos, tesis, patentes y productos comerciales.
-- **Profundidad:** alta.
-
-## 2.3 Área mecánica: almacenamiento y alimentación
-
-- **Contenido:** 2.3.1 almacenamiento (tolvas); 2.3.2 mecanismos de alimentación (tornillo, vibratorio, compuerta, válvula rotativa u otros que aparezcan). Ventajas y desventajas según insumo, escala y limpieza.
-- **Cierre:** mecanismos adoptados o descartados para el objetivo 3. `A-004` se cierra solo con ese análisis.
-
-## 2.4 Área de medición y electrónica
-
-- **Contenido:** 2.4.1 principio de medición (volumétrico como contraste; gravimétrico por lotes; pérdida de peso), que sustenta `D-005`; 2.4.2 sensores de peso empleados en dosificadoras; 2.4.3 electrónica de los prototipos.
-- **Cierre:** principio y tipo de sensor adoptados para el objetivo 3.
-
-## 2.5 Área de control
-
-- **Contenido:** 2.5.1 estrategias de corte (una etapa, dos etapas, compensación del material en caída); 2.5.2 control realimentado (PID, aprendizaje iterativo u otros).
-- **Cierre:** estrategias candidatas para el modelamiento del objetivo 4, sin cerrar `A-004`.
-
-**Regla común de 2.2 a 2.5:** un antecedente se describe completo una sola vez (2.2); en cada área se toma solo lo que aporta a ella.
-
-## 2.6 Fundamentos teóricos
-
-| Subsección | Objetivo | Contenido |
-|---|---|---|
-| 2.6.1 Propiedades de los insumos | 2 y 3 | Densidad aparente, fluidez y bóvedas, sin ecuaciones |
-| 2.6.2 Metrología y tolerancias de dosificación | 2 | VIM y OIML R 61 |
-| 2.6.3 Tolva | 3 | Capacidad, ángulo de pared y abertura de descarga |
-| 2.6.4 Alimentador de tornillo | 3 | Caudal, potencia y torque, material higiénico |
-| 2.6.5 Accionamiento del tornillo | 3 | Motor paso a paso y motor de corriente continua (el motor sigue abierto, `A-004`) |
-| 2.6.6 Medición gravimétrica y celdas de carga | 3 | Celda y conversión, selección según OIML R 60, calibración y promedio móvil |
-| 2.6.7 Corte y control de la dosificación | 3 y 4 | Corte en dos etapas, material en caída y acciones de control; el modelo dinámico queda para Taller de Grado II |
-
-Regla (estudiante y clases del 09/10 y 21/10/2026, 03/11/2026): 2.6 contiene solo teoría de lo que se usará. Sin datos, cálculos ni resultados de San Miguel y sin frases «en el capítulo 3…»; esos cálculos van en el capítulo 3. Porcentaje panadero y efecto de la dosis retirados.
-
-- **Patrón por concepto (referencias 01 y 03):** subtítulo → definición con cita → figura si aclara → ecuación numerada → variables con unidades.
-- **Evidencia:** libros de referencia, normas y artículos fundamentales; sin límite de año.
-
-## 2.7 Conclusión del capítulo
-
-- **Contenido:** enfoques adoptados y descartados, aporte diferencial y fundamentos que se aplicarán.
-- **Evidencia:** solo lo presentado en el capítulo.
-- **Conexión:** introducir la propuesta del capítulo 3.
-
-## Patrones tomados de las referencias
-
-- **01 Órtesis:** estado del arte por proximidad creciente a la solución; primero el sistema que recibe la acción (insumos) y después la tecnología; cierre con el modelo dinámico.
-- **02 SySO:** normativa jerarquizada; método de desarrollo dentro del marco teórico.
-- **03 Máquina de panales:** dos perspectivas; cada antecedente termina en una limitación que se convierte en criterio; fundamentos por subsistema.
-- **No se toma:** el contexto del sector como sección del capítulo 2 (ref. 03, «Apicultura en Bolivia»), porque ya está en la Introducción.
-
-## Errores de las referencias que conviene evitar
-
-- Omitir la conclusión del capítulo (ninguna de las tres la incluye).
-- Revisar solo trabajos académicos sin productos de mercado (01) u omitir el estado del arte (02).
-- Describir antecedentes sin ventajas, desventajas ni criterio de descarte.
-- Apoyar la perspectiva de mercado solo en videos o foros cuando existan fichas técnicas.
-- Incluir fundamentos que no se usarán en el diseño.
-- Cerrar selecciones técnicas abiertas (`A-004`) sin el análisis de enfoques que las respalde.
-
----
+Inventario y justificación: research/notes/propuesta_figuras_capitulo2_2026-11-06.md. La figura comercial DF-B/IF-A está incluida en Productos comerciales por instrucción expresa del estudiante; su bloque de archivo se conserva en research/notes/figura_comercial_reserva_2026-11-06.md.
 
 # CAPÍTULO 3 — PROPUESTA DEL PROYECTO
 
@@ -267,9 +209,9 @@ Regla (estudiante y clases del 09/10 y 21/10/2026, 03/11/2026): 2.6 contiene sol
 
 ## 1. Propuesta
 
-- **Propósito:** describir la solución propuesta con base en el marco teórico y demostrar el cumplimiento de los objetivos específicos 1 a 3 (`D-014`).
+- **Propósito:** describir la solución propuesta con base en el marco teórico y demostrar el cumplimiento de los objetivos específicos 1 y 2 (`D-014`, `D-020`).
 - **Contenido:** esquema general, diseños, circuitos, diagramas, ecuaciones y etapas del desarrollo.
-- **Evidencia:** resultados de los objetivos 1 a 3; fundamentos del capítulo 2.
+- **Evidencia:** resultados de los objetivos 1 y 2; fundamentos del capítulo 2.
 - **Conexión:** cada elemento remite a un objetivo específico.
 - **Profundidad:** alta.
 

@@ -1,11 +1,11 @@
 # STATUS
 
-**Última actualización:** 2026-11-03
+**Última actualización:** 2026-11-06
 
 ## Estado actual
 
 Capítulo 1 **reestructurado a ingredientes secos** (harina, azúcar, sal y levadura) según la clase del 21/10/2026 (`D-015` a `D-018`); sin aprobación docente definitiva (`A-001`, `A-002`). Sin commit.  
-Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y fundamentos) y entregables de la clase del 21/10/2026.
+Trabajo activo: capítulo 2 reorganizado en revisión narrativa, Enfoques y Fundamentos (`D-021`), y desarrollo de requerimientos del capítulo 3. Las observaciones docentes recibidas el 06/11/2026 están registradas en `PROFESSOR_NOTES.md`; los seis objetivos revisados están aplicados en la versión de trabajo (`D-020`), con aprobación docente definitiva pendiente.
 
 ## Entregas de la clase del 21/10/2026
 
@@ -21,6 +21,13 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## Completado
 
+- **Indurpack (06/11/2026):** figura DF-B/IF-A reincorporada en Productos comerciales por instrucción expresa del estudiante, con fuente y referencia en el texto. Quedan 20 figuras activas: 15 en Enfoques y cinco en Fundamentos; 2.1 permanece sin figuras. D-021 actualizado. La diversidad de proveedores y admisión docente de fichas siguen pendientes.
+- **02 — Revisión narrativa de 2.1 (06/11/2026):** reforzados los resultados y aportes de los trabajos y los enlaces entre alimentación, escala, configuraciones de pesaje y control según el modelo explicado en TG1-06-11. Se distingue calibración de dosificación en Laime y se mantienen las condiciones distintas de los resultados de Farihin. La órtesis aporta progresión temática y el proyecto de panales la relación limitación–diseño; SySO no constituye modelo de estado del arte. Esta edición usa los datos ya presentes en el capítulo y no sustituye la auditoría de fuentes originales.
+- **02 — Reorganización aplicada (06/11/2026):** 2.1 redactado como síntesis narrativa de fuentes de 2021–2026, sin figuras ni tablas; 2.2 reúne cuatro enfoques por áreas; Fundamentos pasa a 2.3. Respuesta de celda y columna en caída trasladadas a Fundamentos, con labels conservados. Quedan 19 figuras: 14 en Enfoques y cinco en Fundamentos; la figura comercial se conserva en `research/notes/figura_comercial_reserva_2026-11-06.md` y las imágenes originales permanecen. Índice tentativo y regla estructural actualizados. D-021 registra la versión de trabajo, sin cerrar la diversidad de proveedores ni la admisión docente de fichas o fuentes técnicas antiguas.
+- **02 — Inventario de figuras (06/11/2026):** localizadas 20 figuras activas de `marcoteorico.tex`: ninguna en 2.1, 17 entre 2.2 y 2.5 y tres en Fundamentos. Propuesta documentada en `research/notes/propuesta_figuras_capitulo2_2026-11-06.md`: 15 para Enfoques (una comercial condicionada a utilidad comparativa) y cinco para Fundamentos. El 2.1 actual contiene solo organización, no la síntesis narrativa completa. No se modificaron el capítulo ni las imágenes.
+- **Objetivos aplicados (06/11/2026):** se incorporan seis enunciados en `marcoref.tex`; requerimientos y tolerancias se agrupan en OE1, diseño con CAD y planos en OE2 y control con modelamiento y simulación en OE3. Se alinea la numeración del cronograma, Gantt, referencias estructurales y diapositiva de objetivos. D-020 documenta la versión de trabajo; A-002 sigue abierto. No se modifican fechas ni datos del diagnóstico.
+
+- **01A, 01B y 01C (06/11/2026):** revisión documentada en `research/notes/revision_objetivos_01A_01B_01C_2026-11-06.md`. La agrupación conserva tiempo/intervención del operario y diferencias de los cuatro ingredientes; se proponen seis objetivos y el mapa de renumeración. Justificación y delimitación no contienen referencias numéricas a objetivos que requieran sustitución. El texto vigente de la tesis, los datos y la formulación se conservan. Subsiste la tensión entre el rango declarado en Alcances y el rango final abierto de D-009/A-004.
 - Cronograma y Gantt ajustados (05/11/2026): las actividades de CAD de detalle, selección del controlador y compra de componentes se dividen en tramos hasta el 24/12/2026 y desde el 08/01/2027. La simulación y redacción del control se desplazan hasta el 26/02/2027. La entrega final del 30/04/2027 se conserva como fecha del estudiante pendiente de confirmación; el solapamiento entre diseño, compra, fabricación y firmware deja margen reducido.
 - Levantamiento corregido (28/10/2026): nueva receta y lecturas de azúcar, sal y levadura (casero 400 g de azúcar y 30 g de levadura; marraqueta y francés 30 g; masa común 150 g y 20 g) y tiempos de secos menores (154,3 s). Actualizados `levantamiento_dosificacion_san_miguel.md`, Antecedentes, formulación (2 h 42 min/mes; 1,976 kg, 280 g, 236 g y 64 g), árbol, justificación, alcances (20–400 g), Apéndices A y B, porcentajes de la receta en 2.2 y 2.6.1, `D-017` y `PROJECT_CONTEXT.md`. Las lecturas de levadura del pan casero se redujeron 5 g para conservar las diferencias (+3, +1 y +3 g). La versión entregada llama «escenario estimado» a la parte de secos menores; por indicación del estudiante se mantiene como medición con su balanza (trazabilidad pendiente, `D-013`).
 - Capítulo 1 a ingredientes secos (25–26/10/2026): Introducción con productos y equipos; Antecedentes con diagrama de flujo de harina y de azúcar, sal y levadura, croquis, receta frente a lo incorporado, tablas por jornada, proyección mensual y cierre directo; formulación con 2 h 43 min/mes y diferencias de los cuatro ingredientes (`D-017`); árbol con tres causas (traslados, ajuste final, carga sin lectura); objetivos y título (`D-018`); justificaciones, límites y alcances sin los valores de 5–15 kg, 5 g, ±0,5 % y 50 kg (`D-009`); Figura 1.1 con «Alcance: ingredientes secos»; Apéndices A y B ampliados (receta, lecturas y tiempos de azúcar, sal y levadura, proyecciones, fotografías trasladadas). Compila sin errores.
@@ -68,10 +75,26 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 
 ## Próximos pasos
 
+### Prioridad inmediata — observaciones recibidas el 06/11/2026
+
+- **02 — siguiente paso:** revisar con el docente la versión reorganizada y confirmar admisión de fichas de fabricantes y fuentes técnicas anteriores al período reciente; completar diversidad de proveedores con evidencia verificada. La síntesis de 2.1 cita 27 fuentes de 2021–2026: contrastar el mínimo institucional de 30 referencias de la revisión sin añadir fuentes por cuota. MiKTeX detuvo la compilación por configuración inicial incompleta; la maquetación sigue pendiente. No se incorporan nuevos proveedores ni resultados sin fuentes.
+- **OE1 — revisión específica:** la versión aplicada integra las tolerancias dentro de los requerimientos técnicos y define como entregable una especificación fundamentada y verificable. Las tablas preliminares no acreditan su cierre. El cronograma sitúa el fin de tolerancias el 14/11, un día después del avance de diseño solicitado para el 13/11; identificar decisiones preliminares y revisar esa dependencia con el docente.
+- **Revisión SMART y cronograma (06/11/2026):** matriz incorporada en `research/notes/revision_objetivos_01A_01B_01C_2026-11-06.md`. La versión aplicada distingue el avance CAD preliminar del diseño completo con cálculos, selección y planos. Confirmar si el 13/11 es una revisión de avance y el 18/11 la consolidación preliminar; el diseño de detalle figura hasta el 29/01/2027. La viabilidad y el componente temporal de SMART quedan parcialmente abiertos por las dependencias y la fecha de defensa sin confirmar.
+- Revisar el cierre del retorno de inversión (09/04/2027), programado antes del cierre del análisis experimental (14/04/2027), y la disponibilidad de diseños y componentes para fabricar desde el 18/01. Son desajustes de planificación por resolver; no se alteran fechas mediante el borrador de objetivos.
+- Presentar los objetivos agrupados aplicados y la definición del tutor en el plazo indicado como «lunes». La correspondencia con el 09/11/2026 se infiere de la fecha de recepción y requiere confirmación.
+- Preparar el avance de diseño preliminar para el viernes 13/11/2026. El diseño corresponde al objetivo 2 en la versión de trabajo; confirmar el nivel de detalle exigido.
+- Revisar con el docente la redacción de los seis objetivos y con el tutor el índice tentativo y los requerimientos. Confirmar si se exige aprobación formal del tutor.
+- Presentar la versión aplicada de seis objetivos para revisión docente. D-020 registra la correspondencia de numeración y conserva A-002 abierto hasta aprobación expresa; no renumerar registros históricos.
+- Priorizar el análisis económico pendiente desde el 30/10/2026; aclarar si esta entrega comprende costo de desarrollo, fabricación o ambos, conforme al bloqueo existente D-012/A-006.
+- Precisar el límite entre revisión narrativa sin figuras y Enfoques antes de trasladar las figuras actuales. Confirmar si se mantiene la excepción de fuentes tecnológicas anteriores a cinco años.
+- Confirmar la fecha de defensa pública final y completar el Gantt hasta ese hito. El 30/04/2027 sigue siendo una fecha de entrega documental del estudiante, pendiente de confirmación; no acredita la fecha de defensa.
+
+### Trabajo general pendiente
+
 1. **INV — Investigación:** reunir al menos 30 referencias de los últimos 5 a 10 años (mínimo 10 académicas) y productos comerciales con ficha técnica y precio; registrar para cada una principio, mecanismo, rango, exactitud, control, precio y limitación frente a San Miguel; identificar el aporte diferencial del proyecto; sustentar el criterio de `bajo costo`.
 2. **INV — Enfoques:** redactar 2.2 a 2.5 (dosificadoras de ingredientes; áreas mecánica, de medición gravimétrica y de control) con ventajas, desventajas y qué se adopta o descarta, sin cerrar `A-004` antes del análisis.
 3. **02A — Fundamentos (2.6):** metodología de diseño (si se aplica), insumos y tolerancias, metrología y normativa de pesaje, medición gravimétrica y celdas de carga, almacenamiento y alimentación, modelamiento dinámico y control (breve). Sin ciencias básicas ni evaluación experimental.
-4. **GEN — Capítulo 3:** propuesta que demuestre los objetivos 1 a 3 (`D-014`) para los cuatro ingredientes, índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses, con días, fecha de inicio y fin por actividad e incluidas las actividades de redacción.
+4. **GEN — Capítulo 3:** propuesta que desarrolle OE1 y OE2 (`D-014`, `D-020`), con nivel de diseño exigido pendiente de confirmación para los cuatro ingredientes, índice tentativo, análisis económico en moneda local (pasajes, alimentación, licencias, materiales) y cronograma Gantt por objetivo específico para 6 a 8 meses, con días, fecha de inicio y fin por actividad e incluidas las actividades de redacción.
 5. **GEN — Tutor:** obtener la aceptación del Ing. Mario Borda (por confirmar), enviar el correo con copia a dirección de carrera y reemplazar el marcador «(Nombre), Ing.» de `main.tex`.
 6. **INV — Capítulo 2:** ampliar el estado del arte y los fundamentos (2.6.2) a azúcar, sal y levadura en polvo; revisar la correspondencia entre citas y bibliografía.
 7. **GEN — Presentación:** actualizar `perfil.tex` con título, objetivos, límites y alcances vigentes (aún dice «bajo costo para harina en panaderías artesanales»).
@@ -85,14 +108,14 @@ Trabajo activo: **Capítulo 2 — Marco teórico** (estado del arte, enfoques y 
 - Aclarar el alcance del análisis económico: el del perfil es el costo de desarrollar el proyecto; el acta pide costo de fabricación respecto del retorno de la inversión (`D-012`, `A-006`).
 - Patentes: la clase del 21/10/2026 las incluyó en la revisión de literatura; confirmar si se aceptan fichas de fabricantes.
 - Confirmar dónde va la tabla de precios para «bajo costo»: capítulo 2 o parte económica (la clase ubicó precios e importación en la parte económica).
-- Confirmar si 2.6.6 (modelamiento y control) entra en el perfil, dado que el objetivo 4 corresponde a Taller de Grado II.
-- Confirmar que la evaluación experimental (objetivo 6, `D-008`) se mantiene para Taller de Grado II (`D-014`).
+- Confirmar si 2.6.6 (modelamiento y control) entra en el perfil, dado que el objetivo 3 corresponde a Taller de Grado II.
+- Confirmar que la evaluación experimental (objetivo 5, `D-008`) se mantiene para Taller de Grado II (`D-014`).
 - Confirmar si Zotero es aceptable como gestor de referencias (se mencionaron Mendeley y EndNote).
 - Los precios comerciales de `marcoref.tex` están en USD; evaluar su equivalente en moneda local.
 
 ### Capítulo 1 (diferidos; no bloquean el capítulo 2)
 
-- Siete objetivos específicos superan el rango usual de 3 a 6 de la plantilla; validar con el docente.
+- Seis objetivos específicos aplicados conforme a D-020; aprobación de los enunciados pendiente con el docente.
 - Trazabilidad de azúcar, sal y levadura (`D-016`): confirmar la fecha real del registro (el 05/10 se reportaron otras cantidades con levadura fresca), modelo y resolución de la balanza del investigador, si el pesaje del envase entró en los tiempos, origen de la receta y uso exclusivo del envase (sin cucharas).
 - Tramo sin cronometrar entre la devolución del recipiente de harina y la salida hacia el saco de azúcar.
 - Fotografías provisionales: envase de azúcar, sal y levadura (Figura 1.4 c) y lecturas de esos ingredientes (Apéndice A, opcional; no sustituir con fotos de otro lote).

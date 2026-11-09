@@ -55,6 +55,7 @@
 
 ## Diagramas, objetivos y alcance
 
+- **Agrupación de objetivos (observación recibida el 06/11/2026):** integrar la determinación de requerimientos y tolerancias en un primer objetivo específico; desarrollar sus partes como actividades. La versión de trabajo aplica seis objetivos por solicitud del estudiante (`D-020`): diseño pasa a OE2. La aprobación docente definitiva sigue pendiente (`A-002`).
 - **Proceso:** comprender primero el flujo completo y después detallar únicamente las etapas relevantes para el problema.
 - **Diagramas:** separar el nivel general del detalle operativo cuando combinarlos dificulte la lectura.
 - **Trazabilidad del flujo:** debe identificarse claramente dónde inicia el proceso, qué actividades ocurren y dónde se ubica la etapa estudiada.
@@ -71,6 +72,8 @@
 
 ## Marco teórico y estado del arte
 
+- **Modelo narrativo (clase TG1-06-11, explicación aportada por el estudiante):** enlazar los trabajos mediante una secuencia temática o cronológica; para cada fuente seleccionada explicitar qué hizo el autor, qué resultado o conclusión obtuvo y para qué se utiliza en el proyecto. La narración funciona como resumen de consulta para localizar la fuente pertinente. El ejemplo del documento del docente ilustra esa conexión; no exige repetir literalmente sus conectores.
+- **Revisión narrativa y figuras (observación y aclaración recibidas el 06/11/2026):** 2.1 Estado del Arte sintetiza narrativamente qué hicieron los trabajos seleccionados, sus resultados y aportes al proyecto, sin figuras. 2.2 Enfoques profundiza y compara soluciones con esquemas e imágenes; Fundamentos reúne los principios y ecuaciones aplicables. La plantilla presenta Fundamentos en 2.3. La reorganización fue autorizada y aplicada como versión de trabajo por el estudiante (`D-021`); la conformidad académica de fuentes excepcionales y fichas de fabricantes sigue pendiente. La atribución al docente de Taller I fue confirmada por el estudiante; el extracto inicial de NotebookLM no incluye marcas de tiempo (`research/docente/observaciones_notebooklm_2026-11-06.md`).
 - **Correspondencia de citas (clase del 21/10/2026):** toda referencia citada en el texto debe figurar en la bibliografía y toda entrada de la bibliografía debe estar citada en el texto.
 - **Marco teórico:** incluir solo la teoría, fórmulas, metodologías y conceptos que se aplicarán en el proyecto; toda técnica, ecuación o metodología usada en el marco práctico debe tener su teoría respaldada (reiterado el 21/10/2026: dimensionamiento, área mecánica, medición y sensores de peso, control). Solo teoría: los datos y cálculos del proyecto no van aquí. No incluir conceptos básicos de ciencias exactas. Referenciar cada afirmación con libros del área o documentos académicos consolidados.
 - **Extensión:** mínimo 20 páginas para el marco teórico (clase del 09/10/2026; el fragmento de la transcripción es imperfecto).
@@ -83,10 +86,12 @@
 ## Perfil completo, tutor y evaluación
 
 - **Objetivos 1 y 2 (indicación directa al proyecto):** el perfil debe demostrar el cumplimiento de los dos primeros objetivos específicos; no basta con uno.
-- **Propuesta (capítulo 3):** diseños, circuitos, diagramas y etapas que demuestren de forma explícita el cumplimiento de los objetivos 1 y 2 (con la numeración vigente, objetivos 1 a 3; `D-014`).
+- **Propuesta (capítulo 3):** diseños, circuitos, diagramas y etapas que demuestren requerimientos, tolerancias y diseño mecánico y de medición. La numeración aplicada reúne esos contenidos en OE1 y OE2 (`D-020`); el nivel de diseño requerido para el perfil sigue pendiente de confirmación.
 - **Análisis económico del perfil:** costo total para desarrollar el proyecto, en moneda local y desglosado en tablas; incluir pasajes, alimentación durante la recolección de datos, licencias oficiales de software y materiales.
 - **Cronograma:** diagrama de Gantt organizado por objetivo específico y sus actividades, con tiempos realistas para un horizonte de 6 a 8 meses; sirve de seguimiento para estudiante, tutor y docente. Cada actividad indica número de días, fecha de inicio y fecha de fin, e incluye las actividades de redacción (por ejemplo, marco teórico) (clase del 21/10/2026).
 - **Índice tentativo:** proyección ordenada del documento final de Taller de Grado II.
+- **Revisión con el tutor (observación recibida el 06/11/2026):** presentar el índice tentativo y los requerimientos al tutor especialista para revisión. El fragmento transcrito sobre validación contiene una negación ambigua; confirmar si se exige aprobación formal.
+- **Alcance del Gantt (observación recibida el 06/11/2026):** planificar hasta la defensa pública final del proyecto. La fecha exacta de esa defensa está pendiente de confirmación; no equipararla automáticamente con la entrega del documento del 30/04/2027.
 - **Propuesta para ingredientes secos (sugerencia del docente, 21/10/2026):** evaluar una tolva única dividida o tolvas independientes que descarguen por un mismo embudo, con secuencia de pesaje por ingrediente. Es una sugerencia de diseño, no una decisión (`A-004`).
 - **Documento final (Taller de Grado II):** capítulos de introducción, marco teórico, marco práctico, marco analítico y marco conclusivo. El marco analítico (pruebas reales, gráficas de respuesta y análisis de resultados) representa cerca de la mitad del valor del trabajo. Conclusiones vinculadas a los objetivos; trabajos futuros derivados de los límites; artículo en formato IEEE.
 - **Tutor (indicación directa al proyecto):** debe tener maestría o doctorado y apoyar también el diseño mecánico; formalizar la designación por carta. En la clase del 21/10/2026 se pidió obtener la aceptación del tutor y enviar un correo al docente, con copia a dirección de carrera, para registrarlo e invitarlo formalmente (se mencionó al Ing. Mario Borda; nombre transcrito como «Bordán», por confirmar).
