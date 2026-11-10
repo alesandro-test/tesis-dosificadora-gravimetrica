@@ -10,30 +10,41 @@
 \section{Estado del arte}
 \label{sec:teoria_estado}
 
-En harina a escala industrial, \textcite{gebov2023algorithmic} ajustó el
-instante de corte de embolsadoras mediante el procesamiento de la señal de
-peso y redujo el tiempo de llenado de 15 a 6~s sin cambiar la mecánica.
-Desde la alimentación, \textcite{budijono2021flour} modificaron un tornillo
-y un agitador para regularizar la salida de harina. La simulación mostró
-un flujo más constante, sin cuantificar el error final de dosificación.
-Los trabajos aportan vías
-complementarias para mejorar el proceso: corregir el corte a partir del
-pesaje y regularizar la alimentación desde la tolva. Las condiciones
-industriales de estos ensayos difieren de la carga por preparación de una panadería artesanal.
+El pesaje por lotes de harina ofrece un punto de partida para el diseño
+del prototipo. Durante el llenado, la señal de peso indica cuánta harina
+se ha acumulado en el recipiente y sirve de referencia para decidir
+cuándo detener la alimentación. En embolsadoras industriales de harina,
+\textcite{gebov2023algorithmic} ajustó el instante de corte a partir de
+esa señal y redujo el tiempo de llenado de 15 a 6~s sin modificar la
+mecánica. El estudio aporta un antecedente para definir el corte a partir
+del peso medido.
 
-El flujo dentro del equipo también condiciona la alimentación.
+El corte regula el final de la dosis, mientras que la estabilidad del
+caudal condiciona la entrega de harina durante el llenado.
+\textcite{budijono2021flour} modificaron un tornillo y un
+agitador para regularizar la salida de harina. La simulación mostró un
+flujo más constante, sin cuantificar el error final de dosificación. El
+resultado orienta la comparación de alimentadores por estabilidad de
+caudal para las cantidades de cada preparación de San Miguel.
+
+La estabilidad del caudal depende de la extracción en la salida de la tolva.
 \textcite{xu2021screw} compararon geometrías de tornillo para harina y
-redujeron la fluctuación del caudal con paso variable.
+redujeron la fluctuación del caudal con paso variable. El resultado orienta
+la comparación de tornillos comerciales según la distribución del flujo.
 El estudio de descarga de \textcite{rivera2023flour} mostró que las
 aberturas calculadas para flujo másico por gravedad alcanzaban dimensiones
-de silo. Ambos resultados orientan la comparación entre descarga por
-gravedad y extracción con tornillo en una tolva de panadería.
+de silo. Este cálculo aporta una referencia para examinar las limitaciones
+de la descarga por gravedad en una tolva de panadería.
 
-En kilogramos, \textcite{bulatov2021dosing} y
+La elección del alimentador también condiciona la cantidad que sigue
+cayendo al ordenar el corte. En kilogramos, \textcite{bulatov2021dosing} y
 \textcite{bulatov2021weighing} estudiaron la dosificación con tornillo y la
 compensación del material que sigue cayendo tras el corte. El primer
 trabajo registró formación de bóvedas con virutas, mientras que el segundo
-obtuvo errores de 6,5 a 7,3~\% con sal en lotes de 1~kg.
+obtuvo errores de 6,5 a 7,3~\% con sal en lotes de 1~kg. El ensayo con
+virutas identifica una falla de descarga que conviene examinar en el
+alimentador. Los resultados con sal aportan evidencia para ese insumo
+en una cantidad superior a la de las recetas de San Miguel.
 Con arroz, \textcite{hadi2025weighing} compensaron el material en caída
 mediante un adelanto de corte y obtuvieron un sobrepaso medio de 0,72~\%
 entre 1 y 20~kg.
@@ -44,7 +55,8 @@ como tolerancias de los ingredientes de San Miguel.
 El pesaje de azúcar ofrece una referencia para uno de los ingredientes
 del proyecto. \textcite{acuna2024gravimetrico} comparó dosificación
 volumétrica y gravimétrica en una envasadora y registró cantidades
-promedio más próximas al objetivo con la segunda.
+promedio más próximas al objetivo con la segunda. La comparación respalda
+el pesaje por lotes como criterio para dosificar azúcar en el prototipo.
 Con otro alimentador, \textcite{orozco2024dosificadora} construyó una
 dosificadora de arroz con canal vibratorio y celda de carga, y obtuvo
 menor exactitud en la consigna menor. El resultado aporta una referencia
@@ -54,7 +66,8 @@ sin resultados experimentales de dosificación. Este antecedente aporta
 una configuración mecánica y electrónica de diseño, pero no acredita
 desempeño medido para compararlo con San Miguel.
 
-Para cantidades en gramos, \textcite{david2024granulated} dosificaron
+La variación del error con la consigna adquiere relevancia en las dosis
+en gramos. \textcite{david2024granulated} dosificaron
 azúcar, arroz y café con tornillo y reconocieron limitaciones frente a
 cambios de densidad y humedad. Esto orienta la verificación del alimentador
 con cada ingrediente. \textcite{zaenurrohman2023merica} dosificaron
@@ -62,7 +75,8 @@ pimienta en polvo con tornillo y observaron mayor error relativo a 30~g
 que a 150~g. La diferencia orienta a evaluar el error en las consignas
 menores, entre ellas las de levadura de San Miguel.
 
-La integración de varios ingredientes ofrece alternativas de pesaje.
+La verificación de cada ingrediente también requiere definir cómo se
+organiza el pesaje de varias tolvas.
 \textcite{farihin2021premix} emplearon varias tolvas sobre una celda común
 para una premezcla de pan dulce y reportaron errores de 0,2~\% en materia
 prima con control PI y de 0,8~\% en producción con control todo o nada.
@@ -85,12 +99,13 @@ pero no demuestra un ahorro temporal transferible a San Miguel. Estos
 antecedentes no comparan ambas configuraciones en un mismo equipo,
 por lo que la elección requiere análisis de diseño.
 
-En panaderías pequeñas, \textcite{humaira2024optimalisasi} integraron
+La combinación de pesaje y alimentación se acerca al caso de estudio en
+equipos para panaderías pequeñas. \textcite{humaira2024optimalisasi} integraron
 cámaras independientes, alimentadores helicoidales y control PID,
 con un error medio de 0,08~\% en los ensayos de harina por receta.
-En el ensayo de 350~g, la entrega tomó 197~s. El resultado exige considerar el tiempo junto con el
-error al evaluar un equipo de panadería. En el mecanismo de alimentación,
-\textcite{rumapea2026flour} utilizaron alimentación
+En el ensayo de 350~g, la entrega tomó 197~s. Ambos resultados orientan
+la evaluación conjunta del tiempo y el error por dosis. Con una
+configuración de alimentación distinta, \textcite{rumapea2026flour} utilizaron alimentación
 gruesa y fina con compuerta y atribuyeron parte del error a la formación
 de bóvedas, una limitación de la descarga que orienta la comparación de
 alimentadores. \textcite{afni2026cake} compararon un dosificador de harina
@@ -106,17 +121,19 @@ Estas escalas dejan sin respaldo directo las dosis de sal de San Miguel.
 Los resultados orientan la comparación de alimentadores mediante
 ensayos de dosificación por ingrediente.
 
-Las diferencias de tiempo entre equipos también dependen de la estrategia
-de alimentación. En ese aspecto,
+El tiempo de dosificación vincula el mecanismo de alimentación con el
+control del corte.
 \textcite{wang2025batching} mostró mediante simulación que reducir la
-velocidad de alimentación fina incrementa el tiempo del lote.
+velocidad de alimentación fina incrementa el tiempo del lote. El
+resultado aporta un criterio para evaluar cuánto tiempo destinar al
+ajuste final de la dosis.
 Para tratar la lectura que interviene en el corte,
 \textcite{zengin2025fir} estudiaron el filtrado de la señal de pesaje:
 el promedio de muestras suaviza la lectura e introduce un retardo.
 El resultado orienta la selección del tratamiento de señal junto con
 el tiempo disponible para decidir la parada. La patente de
 \textcite{buhler2022dosing} describe alimentación gruesa y fina y
-correcciones de dosificación; aporta una referencia industrial para
+correcciones de dosificación. El documento aporta una referencia industrial para
 organizar las etapas del lote, con prestaciones declaradas en el documento.
 Los trabajos sustentan el análisis de la
 relación entre tiempo, estabilidad de lectura y cantidad final; la
@@ -127,8 +144,7 @@ alimentación de polvos y la integración de varios ingredientes, con
 límites diferentes de material, escala y control. Dentro de esta
 selección, no se documenta un equipo que reúna harina de trigo en
 lotes de 5 a 8~kg y los ingredientes menores de las recetas registradas
-en San Miguel. Esta condición delimita el aporte buscado y conduce
-a la comparación técnica de la Sección~\ref{sec:teoria_enfoques}.
+en San Miguel.
 
 \section{Enfoques}
 \label{sec:teoria_enfoques}

@@ -66,6 +66,18 @@ No trasladar contenido extenso de `research/` a `context/`.
 
 El documento fuente está en `docs/thesis/`.
 
+En Windows, compilar la tesis desde `docs/thesis/` con el MiKTeX de
+LaTeX Workshop (VS Code):
+
+```powershell
+latexmk -synctex=1 -interaction=nonstopmode -file-line-error -halt-on-error -pdf main.tex
+```
+
+Si Codex restringe el acceso a la configuración de MiKTeX en `AppData`,
+usar el permiso de ejecución para ese comando. La vista previa integrada
+falla al iniciar `latexmk.exe` en ese entorno. El comando genera
+`docs/thesis/main.pdf` y ejecuta Biber cuando corresponde.
+
 Al modificar `.tex`:
 
 - respetar la plantilla y estructura existentes;

@@ -211,6 +211,15 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 
 ---
 
+### D-022 — Límite superior de dosificación de harina
+
+**Estado:** Confirmada como criterio de diseño por el estudiante (09/11/2026).
+**Decisión:** Limitar a 30 g el exceso de harina por lote respecto de la cantidad objetivo. Este valor sustituye el criterio inicial de 40 g.
+**Motivo:** Instrucción del estudiante para la harina, el ingrediente de mayor consumo por lote. El mayor exceso observado en la muestra manual fue de 38 g.
+**Impacto:** Se aplica al RNF-01 como criterio de diseño. La pregunta de seguimiento de la entrevista permite consultar los márgenes por receta. Quedan pendientes la validación con la panadería y las pruebas del prototipo, así como el déficit admisible de harina y las tolerancias de los otros tres ingredientes (A-004).
+
+---
+
 ## Decisiones abiertas
 
 Los siguientes asuntos están **NO DECIDIDOS** y ningún agente debe cerrarlos sin nueva evidencia, decisión del estudiante o indicación docente.

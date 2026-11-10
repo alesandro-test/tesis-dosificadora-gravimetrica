@@ -1,16 +1,24 @@
 \chapter{PROPUESTA DE PROYECTO}
 \label{sec:propuesta}
 
+La propuesta integra cuatro alimentadores de tornillo con un sistema de
+pesaje para dosificar los ingredientes secos de la Panadería San Miguel.
+Las cantidades de las recetas, el procedimiento registrado y las
+condiciones del puesto de trabajo definen los requerimientos del equipo.
+Estos requerimientos orientan la comparación de configuraciones de
+almacenamiento, descarga y pesaje, y fijan las entradas del diseño mecánico
+y gravimétrico.
+
 %---------------------------------------------------------------------------------------------
 \section{Análisis de requerimientos}
 \label{sec:requerimientos_prototipo}
 
 El análisis de requerimientos parte del procedimiento manual registrado en la
-Panadería San Miguel y del alcance de dosificación de harina, azúcar, sal y
-levadura en polvo. Los requerimientos funcionales describen las operaciones
-del prototipo. Los no funcionales establecen condiciones de desempeño,
-instalación, seguridad y mantenimiento. Esta clasificación organiza las
-necesidades del proceso para especificar los subsistemas.
+Panadería San Miguel y de la entrevista a la propietaria del 8 de
+noviembre de 2026 (Apéndice~\ref{ap:entrevista_requerimientos}). El
+procedimiento aporta las cantidades de las recetas y la secuencia de
+dosificación. La entrevista precisa las necesidades de operación,
+recarga, limpieza e instalación que intervienen en el diseño.
 
 El relevamiento documentó preparaciones con cantidades objetivo de
 5\,000 a 8\,000~g de harina, 80 a 400~g de azúcar, 100 a 150~g de sal y
@@ -50,20 +58,15 @@ justifica.
         \addlinespace[5pt]
         \textbf{RF-05} & Asociar cada lectura de dosificación con el ingrediente correspondiente. & Alta & La harina, el azúcar, la sal y la levadura tienen cantidades objetivo diferentes. \\
         \addlinespace[5pt]
-        \textbf{RF-06} & Mostrar el ingrediente activo, la cantidad objetivo, la cantidad indicada y el estado del ciclo. & Media & El operario necesita identificar la operación en curso y la finalización de la dosis. \\
+        \textbf{RF-06} & Mostrar el ingrediente activo, las cantidades objetivo, indicada y restante, y avisar al finalizar el ciclo. & Media & El aviso indica al operario cuándo termina la dosificación y cuándo retirar el balde. \\
         \addlinespace[5pt]
-        \textbf{RF-07} & Aceptar una orden de interrupción y detener los alimentadores. & Alta & El operario necesita detener la alimentación durante una incidencia o una intervención. \\
+        \textbf{RF-07} & Aceptar una orden de interrupción y detener los alimentadores. & Alta & El operario requiere interrumpir la descarga durante el ciclo. \\
         \bottomrule[1pt]
     \end{tabularx}
     \vspace{2pt}
     {\footnotesize Fuente: Elaboración propia.}
 \end{table}
 
-Las funciones de entrada, medición y corte vinculan la consigna con la
-cantidad dosificada. La asociación entre lectura e ingrediente conserva esa
-relación cuando el prototipo atiende las distintas recetas. La forma de
-entregar cada dosis y la interfaz de operación requieren validación con el
-responsable de la panadería.
 
 \subsection{Requerimientos no funcionales}
 \label{subsec:requerimientos_no_funcionales}
@@ -71,9 +74,9 @@ responsable de la panadería.
 Los requerimientos no funcionales establecen condiciones para evaluar el
 desempeño y la integración del prototipo en la panadería. La
 Tabla~\ref{tab:requerimientos_no_funcionales_prototipo} indica las
-restricciones propuestas y el fundamento de cada una. Los umbrales
-numéricos quedan pendientes de sustento técnico, normativo y de mediciones
-del lugar.
+restricciones propuestas y el fundamento de cada una. El límite de exceso
+de harina sirve de criterio de diseño. Los demás umbrales se determinan
+con la evidencia del proceso y las condiciones del puesto.
 
 \begin{table}[H]
     \centering
@@ -87,17 +90,17 @@ del lugar.
         \toprule[1pt]
         \textbf{Código} & \textbf{Requerimiento} & \textbf{Prioridad} & \textbf{Justificación} \\
         \midrule[1pt]
-        \textbf{RNF-01} & Mantener la diferencia final dentro de un límite de aceptación definido por ingrediente. & Alta & Las cantidades objetivo y las propiedades de los cuatro insumos difieren. El límite requiere sustento técnico y normativo. \\
+        \textbf{RNF-01} & Limitar el exceso de harina a 30~g por lote. & Alta & Criterio de diseño para el ingrediente de mayor consumo por lote. Los demás límites están pendientes. \\
         \addlinespace[5pt]
         \textbf{RNF-02} & Completar la dosificación de los cuatro ingredientes dentro de un tiempo máximo por definir. & Alta & El tiempo del procedimiento manual forma parte de la necesidad documentada y requiere comparación bajo condiciones equivalentes. \\
         \addlinespace[5pt]
         \textbf{RNF-03} & Limitar la intervención activa del operario a tareas y tiempos por definir. & Alta & El tiempo de atención del operario forma parte de la necesidad documentada y se distingue de la duración total del ciclo. \\
         \addlinespace[5pt]
-        \textbf{RNF-04} & Facilitar el acceso a las zonas en contacto con ingredientes para retirar residuos. & Alta & La operación con cuatro insumos exige una forma de limpieza entre usos. \\
+        \textbf{RNF-04} & Dar acceso y permitir el desmontaje de las piezas que retienen ingredientes para retirar residuos. & Alta & La limpieza requiere extraer y reinstalar las piezas en contacto con los ingredientes. \\
         \addlinespace[5pt]
         \textbf{RNF-05} & Proteger los elementos móviles y las conexiones eléctricas durante la operación. & Alta & Los alimentadores y el sistema eléctrico introducen puntos de contacto que requieren protección. \\
         \addlinespace[5pt]
-        \textbf{RNF-06} & Ajustar la instalación al espacio y a la alimentación eléctrica disponibles. & Alta & Las dimensiones del lugar, la tensión y las tomas disponibles condicionan el montaje. \\
+        \textbf{RNF-06} & Ajustar el montaje al espacio y a la alimentación eléctrica disponibles, con paso libre y acceso para retirar el balde y recargar. & Alta & La distribución del puesto condiciona la circulación del operario y la recarga entre preparaciones. \\
         \addlinespace[5pt]
         \textbf{RNF-07} & Facilitar el acceso a los componentes para calibración y mantenimiento. & Media & El sistema de pesaje y los alimentadores requieren inspección y ajuste. \\
         \addlinespace[5pt]
@@ -108,13 +111,205 @@ del lugar.
     {\footnotesize Fuente: Elaboración propia.}
 \end{table}
 
-La selección vigente de alimentadores de tornillo para los cuatro
-ingredientes constituye una restricción técnica del diseño. La
-configuración de pesaje, el accionamiento, las dimensiones, los límites
-de aceptación y el criterio de repetibilidad permanecen pendientes de
-definición. Para precisar la
-instalación, la limpieza y la operación, se requiere una consulta
-documentada al responsable de la panadería y la medición del lugar.
+Las necesidades de recarga, extracción del balde y limpieza condicionan
+la distribución de las tolvas y los accesos del equipo. El levantamiento
+del puesto comprende el espacio disponible, la altura de recarga y la
+alimentación eléctrica. La entrevista deja pendientes el tiempo máximo
+de dosificación y los márgenes de variación aceptables para las recetas.
+
+\section{Tolerancias preliminares de dosificación}
+\label{sec:tolerancias_preliminares}
+
+Para el RNF-01, el error de una dosis se calcula como la cantidad final
+medida con un instrumento de referencia menos la cantidad objetivo del
+ingrediente. Para la harina, el criterio de diseño limita el exceso a
+30~g por lote ($e\leq 30$~g). El límite equivale al 0,60~\% para una
+consigna de 5~kg y al 0,375~\% para 8~kg. Un lote de los siete observados
+superó ese límite, con un exceso de 38~g (Tabla~\ref{tab:cantidades_sabado}).
+Para evaluar una mejora frente al procedimiento manual, se comparan
+las diferencias por lote bajo condiciones equivalentes. El déficit
+admisible de harina queda pendiente de validación.
+
+En las cantidades menores, el mismo límite absoluto representaría
+7,5 a 37,5~\% en azúcar, 20 a 30~\% en sal y 100 a 150~\% en levadura.
+La Tabla~\ref{tab:escenarios_tolerancia} presenta dos escenarios de
+sensibilidad para comparar configuraciones de pesaje. Los porcentajes se
+aplican a cada consigna y son hipótesis de dimensionamiento, sujetas a
+validación con la panadería y a pruebas. La entrevista no fija tolerancias.
+
+\begin{table}[H]
+    \centering
+    \caption{Escenarios de error absoluto para el estudio de pesaje.}
+    \label{tab:escenarios_tolerancia}
+    \footnotesize
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Ingrediente} & \textbf{Consigna (g)} &
+        \textbf{Banda al 1 \% (g)} & \textbf{Banda al 2 \% (g)} \\
+        \midrule
+        Azúcar & 80--400 & $\pm(0{,}8\text{--}4)$ & $\pm(1{,}6\text{--}8)$ \\
+        Sal & 100--150 & $\pm(1\text{--}1{,}5)$ & $\pm(2\text{--}3)$ \\
+        Levadura en polvo & 20--30 & $\pm(0{,}2\text{--}0{,}3)$ & $\pm(0{,}4\text{--}0{,}6)$ \\
+        \bottomrule
+    \end{tabular}
+    \par\smallskip
+    Fuente: cálculo a partir de las consignas de la Tabla~\ref{tab:receta_referencia}.
+\end{table}
+
+La pregunta de seguimiento incluida en el
+Apéndice~\ref{ap:entrevista_requerimientos} consulta los márgenes admisibles
+de exceso y déficit por ingrediente y receta.
+La prueba registra por separado el error frente a la consigna y la dispersión entre
+dosis repetidas, con énfasis en la dosis de levadura de 20~g. La OIML R~61
+aporta criterios metrológicos para instrumentos automáticos de llenado
+y distingue la dispersión respecto de la media del error de la media
+frente a la consigna~\parencite{oiml2017r61}. Esos criterios se consideran
+para planificar la comprobación del equipo. Las tolerancias de la receta
+requieren evidencia del proceso de panificación.
+
+\section{Diseño conceptual de los subsistemas}
+\label{sec:diseno_conceptual}
+
+La Figura~\ref{fig:esquema_funcional_dosificadora} presenta el recorrido
+del material. Cada ingrediente pasa del almacenamiento al tornillo
+correspondiente y se dirige al balde mediante la descarga. El sistema de
+medición registra la cantidad incorporada para determinar el corte de
+la alimentación. La ubicación del pesaje depende de la configuración
+evaluada.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        bloque/.style={draw, align=center, minimum height=10mm,
+                       text width=25mm, font=\footnotesize},
+        node distance=5mm,
+        >=Stealth]
+        \node[bloque] (almacenamiento) {Almacenamiento\\de ingredientes};
+        \node[bloque, right=of almacenamiento] (alimentacion)
+            {Alimentadores\\de tornillo};
+        \node[bloque, right=of alimentacion] (descarga)
+            {Guiado de\\la descarga};
+        \node[bloque, right=of descarga] (balde) {Balde\\receptor};
+        \draw[->] (almacenamiento) -- (alimentacion);
+        \draw[->] (alimentacion) -- (descarga);
+        \draw[->] (descarga) -- (balde);
+    \end{tikzpicture}
+    \caption{Recorrido del material en la dosificadora.}
+    \label{fig:esquema_funcional_dosificadora}
+    {\footnotesize Fuente: Elaboración propia.}
+\end{figure}
+
+\subsection{Árbol de objetivos del producto}
+
+El objetivo del producto es dosificar los cuatro ingredientes secos de
+cada preparación en el recipiente receptor. El árbol organiza las
+necesidades en ramas que se relacionan con los requerimientos y con
+decisiones de diseño.
+
+\begin{itemize}
+    \item \textbf{Dosificar según la receta.} Ingresar la
+    consigna, establecer el cero, identificar el insumo y detener la
+    alimentación con base en la medición (RF-01 a RF-05, RNF-01 y RNF-08).
+    \item \textbf{Reducir la atención durante el ciclo.} Indicar el avance,
+    avisar el fin y limitar la intervención activa (RF-06, RNF-02 y RNF-03).
+    \item \textbf{Proteger al operario.} Interrumpir la alimentación por
+    orden del operario y proteger los elementos móviles y las conexiones
+    eléctricas (RF-07 y RNF-05).
+    \item \textbf{Integrar el equipo al puesto.} Recargar, retirar el balde,
+    limpiar y acceder a componentes de pesaje dentro del espacio medido
+    (RNF-04, RNF-06 y RNF-07).
+\end{itemize}
+
+\subsection{Matriz morfológica preliminar}
+
+La matriz de la Tabla~\ref{tab:morfologia_dosificadora} concentra las
+alternativas que modifican la geometría o la medición. Se parte de la
+selección vigente de alimentadores de tornillo para los cuatro insumos.
+Las opciones se comparan por acceso, interferencias, capacidad de pesaje,
+limpieza y comportamiento a la consigna mínima.
+
+\begin{table}[H]
+    \centering
+    \caption{Alternativas para el diseño conceptual de la dosificadora.}
+    \label{tab:morfologia_dosificadora}
+    \footnotesize
+    \setstretch{1}
+    \begin{tabularx}{\textwidth}{p{0.20\textwidth}XX}
+        \toprule
+        \textbf{Función} & \textbf{Alternativa A} & \textbf{Alternativa B} \\
+        \midrule
+        Almacenar y recargar & Cuatro tolvas independientes con acceso
+        superior. & Depósito compartimentado con acceso individual a
+        cada compartimiento. \\
+        Alimentar & Tornillos comerciales independientes con acople
+        directo al accionamiento. & Tornillos comerciales independientes
+        con transmisión reductora si el par y la velocidad lo requieren. \\
+        Medir cada ingrediente & Balanza común con alimentación secuencial
+        y cálculo por incremento de masa. & Pesaje separado de harina e
+        ingredientes menores con descarga al balde común. \\
+        Guiar la descarga & Salidas independientes sobre el balde. &
+        Colector común desmontable con salida al balde. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+\subsection{Comparación de configuraciones de pesaje}
+
+El pesaje secuencial sobre el balde evita una transferencia adicional y
+simplifica la descarga. La balanza soporta la carga acumulada y registra
+el incremento de cada ingrediente. La comparación se concentra en la
+dosis mínima de levadura, de 20~g, y en la capacidad de distinguir
+variaciones alrededor de esa cantidad bajo carga acumulada.
+En la masa común del sábado, la carga nominal previa a la levadura suma
+5\,250~g. La marraqueta suma 8\,230~g en esa etapa
+(Tabla~\ref{tab:receta_referencia}). Esas cargas sirven para comparar la
+respuesta ante un incremento de 20~g, con la masa del balde y de las
+piezas soportadas incluida en el montaje de ensayo.
+
+El pesaje separado reduce la carga sobre la balanza de los ingredientes
+menores. Esta configuración agrega un recipiente y una transferencia al
+balde, por lo que la comparación incluye la masa que queda retenida
+durante la descarga, el espacio disponible y el acceso para limpieza.
+La elección de la configuración requiere contrastar estos criterios con
+las fichas de los componentes y con una comprobación del pesaje.
+
+\subsection{Entradas para el CAD preliminar}
+
+El modelo de distribución parte del balde y del espacio disponible. La
+Tabla~\ref{tab:receta_referencia} da una carga acumulada máxima de
+8\,260~g de ingredientes secos en la receta de marraqueta. La capacidad
+de una balanza común incluye además la masa del balde y de los elementos
+soportados. Si se habilitan combinaciones editadas, la carga máxima
+admisible también condiciona las consignas que acepta la interfaz.
+
+El modelo preliminar representa la envolvente del equipo, la zona de
+extracción del balde, el acceso para recarga y desmontaje, y las interfaces
+de tolvas, tornillos y pesaje. Las dimensiones del puesto, el balde y los
+componentes comerciales se incorporan a partir de mediciones y fichas.
+El dimensionamiento preliminar de las tolvas parte de la cantidad por
+recarga y de la densidad aparente suelta de cada insumo. La
+Tabla~\ref{tab:propiedades_insumos} reúne referencias bibliográficas para
+harina, azúcar y sal. Para aplicar esos datos al diseño se requiere
+identificar la presentación comercial de los cuatro ingredientes y medir
+su densidad aparente suelta y asentada. La granulometría y el comportamiento
+del material durante la descarga orientan la verificación de las salidas
+de las tolvas y la selección de los tornillos.
+
+Como referencia para una recarga equivalente a la mayor dosis registrada
+de harina (8~kg), la ecuación~\eqref{eq:capacidad_tolva} y las densidades
+bibliográficas de 601 a 630~kg/m$^{3}$ dan un volumen de material de
+12,7 a 13,3~L (Tabla~\ref{tab:propiedades_insumos}). La capacidad de diseño
+se determina con la cantidad por recarga, la densidad de la harina de
+San Miguel y el espacio libre requerido para el llenado.
+
+El modelo de conjunto parte de las dimensiones del balde y del puesto.
+Sobre esa referencia se ubican la descarga, el soporte de pesaje, los
+tornillos y las tolvas. Las dimensiones de montaje de los tornillos y
+del sistema de pesaje provienen de los componentes comerciales
+preseleccionados. El CAD de detalle incorpora las dimensiones verificadas,
+las uniones y los planos del conjunto y las piezas.
 
 %---------------------------------------------------------------------------------------------
 \section{Índice tentativo}
@@ -124,9 +319,10 @@ El índice tentativo proyecta la estructura del documento final de Taller de
 Grado II. El capítulo 1 plantea el problema a partir del levantamiento de
 información de la Panadería San Miguel y define los objetivos, la justificación
 y la delimitación. El capítulo 2 reúne el estado del arte, organizado por áreas,
-y los fundamentos aplicables al diseño. El capítulo 3 desarrolla el marco
-práctico en el orden de los objetivos específicos: requerimientos, tolerancias,
-subsistemas mecánico, de medición gravimétrica y de control, e implementación.
+y los fundamentos aplicables al diseño. El capítulo 3 establece los
+requerimientos y las tolerancias, compara configuraciones y desarrolla
+los subsistemas mecánico y gravimétrico hasta el modelo CAD y los planos.
+El control y la implementación continúan el desarrollo del prototipo.
 El capítulo 4 presenta las pruebas del prototipo, su comparación con el
 procedimiento manual y el análisis de costos. El capítulo 5 reúne las
 conclusiones por objetivo, las recomendaciones y los trabajos futuros.
@@ -241,45 +437,45 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
 
     \item \textbf{Marco práctico}
     \begin{enumerate}[label*=\arabic*.]
-        \item \textbf{Esquema general del prototipo}
-
         \item \textbf{Requerimientos del prototipo}
         \begin{enumerate}[label*=\arabic*.]
-            \item Variables del procedimiento manual
+            \item Condiciones de operación y cantidades por receta
             \item Requerimientos funcionales
-            \item Requerimientos técnicos
+            \item Requerimientos no funcionales
         \end{enumerate}
 
         \item \textbf{Tolerancias de dosificación}
         \begin{enumerate}[label*=\arabic*.]
-            \item Error máximo permitido por ingrediente
-            \item Tolerancias de aceptación
+            \item Diferencia respecto de la cantidad objetivo
+            \item Márgenes de aceptación por ingrediente y receta
+        \end{enumerate}
+
+        \item \textbf{Diseño conceptual}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Esquema general del prototipo
+            \item Árbol de objetivos del producto
+            \item Matriz morfológica y evaluación de configuraciones
         \end{enumerate}
 
         \item \textbf{Subsistema mecánico}
         \begin{enumerate}[label*=\arabic*.]
-            \item Requerimientos
-            \item Selección del mecanismo de alimentación
-            \item Cálculos y dimensionamiento
-            \begin{enumerate}[label*=\arabic*.]
-                \item Tolvas
-                \item Alimentadores
-                \item Accionamiento
-            \end{enumerate}
-            \item Desarrollo
+            \item Propiedades de los ingredientes y dimensiones del puesto
+            \item Capacidad, geometría y descarga de las tolvas
+            \item Selección de tornillos comerciales y accionamientos
+            \item Disposición del soporte, la descarga y el balde
         \end{enumerate}
 
         \item \textbf{Subsistema de medición gravimétrica}
         \begin{enumerate}[label*=\arabic*.]
-            \item Requerimientos
-            \item Cálculos y selección
-            \begin{enumerate}[label*=\arabic*.]
-                \item Configuración de balanzas
-                \item Celdas de carga
-                \item Convertidor y acondicionamiento
-                \item Recipiente de pesaje
-            \end{enumerate}
-            \item Desarrollo
+            \item Carga máxima y variación mínima a distinguir
+            \item Selección de celdas de carga y acondicionamiento de señal
+            \item Montaje del recipiente y del sistema de pesaje
+        \end{enumerate}
+
+        \item \textbf{Integración mecánica y de pesaje}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Distribución preliminar y revisión de interferencias
+            \item Modelo CAD de detalle y planos
         \end{enumerate}
 
         \item \textbf{Subsistema de control}
@@ -351,12 +547,18 @@ conclusiones por objetivo, las recomendaciones y los trabajos futuros.
 \section{Cronograma de actividades}
 \label{sec:cronograma_actividades}
 
-La Tabla~\ref{tab:cronograma_proyecto} organiza el proyecto de septiembre de 2026 a
-abril de 2027: primero el marco referencial y, tras su defensa, cada objetivo
-específico. Cada actividad indica su rango de fechas y sus días calendario, e
-incluye la redacción correspondiente. La Tabla~\ref{tab:cronograma_entregas}
-reúne las entregas y defensas del perfil según el calendario de la asignatura.
-El Apéndice~\ref{sec:cronograma} presenta ambas en un diagrama de Gantt.
+La Tabla~\ref{tab:cronograma_proyecto} organiza las actividades del
+proyecto de septiembre de 2026 a abril de 2027 e indica los intervalos y
+las duraciones en días calendario. El Apéndice~\ref{sec:cronograma}
+presenta las mismas actividades y señala las entregas y defensas del
+perfil en el diagrama de Gantt.
+
+Para el avance del 13 de noviembre se prevén la comparación conceptual,
+las entradas de dimensionamiento disponibles y una distribución
+preliminar. La consolidación del 18 de noviembre incorpora la
+preselección de componentes y la revisión de las interfaces del CAD.
+Los cálculos de detalle y los planos integran el cierre del diseño
+mecánico y gravimétrico previsto para el 29 de enero.
 
 
 
