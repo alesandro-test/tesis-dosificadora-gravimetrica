@@ -87,6 +87,7 @@ Al modificar `.tex`:
 - usar `docs/thesis/bibliography/referencias.bib` como base bibliográfica;
 - no añadir paquetes ni reorganizar archivos sin necesidad;
 - comprobar referencias cruzadas y consistencia con figuras/tablas relacionadas;
+- al crear o modificar figuras y diagramas, revisar visualmente las páginas del PDF compilado y corregir solapamientos, cortes y problemas de legibilidad;
 - compilar cuando el entorno lo permita;
 - corregir únicamente errores derivados del cambio realizado.
 

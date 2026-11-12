@@ -1,0 +1,25 @@
+\begin{tikzpicture}[>=Stealth,
+    bloque/.style={draw,align=center,text width=23mm,minimum height=12mm,font=\footnotesize}]
+    \node[bloque] (harina) at (0,0) {Tolva\\de harina};
+    \node[bloque] (azucar) at (3.4,0) {Tolva\\de azúcar};
+    \node[bloque] (sal) at (6.8,0) {Tolva\\de sal};
+    \node[bloque] (levadura) at (10.2,0) {Tolva\\de levadura};
+    \foreach \nombre/\x in {harina/0,azucar/3.4,sal/6.8,levadura/10.2} {
+        \node[bloque] (t-\nombre) at (\x,-1.8) {Tornillo\\y motor};
+        \draw[->,thick] (\nombre) -- (t-\nombre);
+    }
+    \node[bloque,text width=35mm] (auxiliar) at (6.8,-4.0)
+        {Receptor de menores\\sobre pesaje auxiliar};
+    \coordinate (colector) at (6.8,-2.9);
+    \draw[->,thick] (t-sal.south) -- (auxiliar.north);
+    \draw[thick] (t-azucar.south) -- (3.4,-2.9) -- (colector);
+    \draw[thick] (t-levadura.south) -- (10.2,-2.9) -- (colector);
+    \node[bloque,text width=35mm] (balde) at (3.4,-6.4)
+        {Balde receptor\\sobre pesaje principal};
+    \draw[->,thick] (t-harina.south) -- (0,-6.4) -- (balde.west);
+    \draw[->,thick] (auxiliar.south) -- (6.8,-6.4) -- (balde.east);
+    \node[align=center,font=\footnotesize,text width=29mm] at (9.9,-5.5)
+        {Vaciado basculante\\y revisión de retención};
+    \node[align=center,font=\footnotesize,text width=35mm] at (1.7,-4.0)
+        {Descarga de harina\\directa al balde};
+\end{tikzpicture}

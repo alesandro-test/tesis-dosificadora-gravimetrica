@@ -180,6 +180,7 @@
         2.3.5 Accionamiento del tornillo
         2.3.6 Medición gravimétrica y celdas de carga
         2.3.7 Corte y control de la dosificación
+        2.3.8 Herramientas de diseño conceptual
 
 ## Función y profundidad
 
@@ -214,6 +215,8 @@ Inventario y justificación: research/notes/propuesta_figuras_capitulo2_2026-11-
 - **Evidencia:** resultados de los objetivos 1 y 2; fundamentos del capítulo 2.
 - **Conexión:** cada elemento remite a un objetivo específico.
 - **Profundidad:** alta.
+
+**Desarrollo conceptual solicitado por el estudiante (12/11/2026, D-023):** requerimientos y tolerancias → árbol → caja negra y descomposición → subfunciones → casa de calidad → morfología → cribado de opciones → combinaciones y evaluación → bosquejo y entradas del CAD. Esta secuencia organiza el contenido de la propuesta; no sustituye el orden institucional de sus apartados. Las relaciones de la casa son preliminares; las ponderaciones requieren respaldo. Se distingue base confirmada de hipótesis de configuración.
 
 ## 2. Índice tentativo
 

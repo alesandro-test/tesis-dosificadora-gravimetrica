@@ -105,7 +105,8 @@ Azúcar, sal y levadura en los mismos 7 ciclos (`research/notes/levantamiento_do
   levadura **−2 a +3 g**;
 - tiempo acumulado: **154,3 s**; total con harina: **566,2 s**;
 - cantidades objetivo observadas: **20–400 g/ciclo**;
-- medición con una balanza propia del investigador, pesando el envase con cada carga.
+- medición con una balanza propia del investigador, pesando el envase con cada carga;
+- instrumento identificado por el estudiante el 11/11/2026: SF-400, capacidad indicada 10 kg y división de lectura 1 g; exactitud y calibración no acreditadas.
 
 Proyección mensual (22 jornadas ordinarias + 4 sábados): **2 h 42 min**;
 diferencia positiva de **1,976 kg** de harina, **280 g** de azúcar, **236 g** de sal y

@@ -7,6 +7,10 @@
 
 ## Diseño y capítulo 2
 
+- [Propuesta de María Julia y adaptación](revision_propuesta_maria_julia_2026-11-12.md) — revisión textual y visual, plantilla de Diseño Superior, redacción de SySO y secuencia aplicada desde funciones hasta combinaciones y bosquejo.
+
+- [Alternativas para el diseño de San Miguel](alternativas_diseno_san_miguel_2026-11-11.md) — referencias estructurales y defensas, tres/cuatro ingredientes, tolerancias de estudio, alimentadores, pesaje y datos para el CAD.
+
 - Fuentes utilizadas — documentos citados por sección en OneDrive UCB, dentro de `DH_gravimetrica_fuentes/Estado del arte/Fuentes utilizadas`.
 - [Antecedentes de dosificación en panificación](antecedentes_tecnologicos_dosificacion.md) — comparación de prototipos y localización de resultados en fuentes originales.
 - [Matriz de cálculos](matriz_calculos_cap3_fundamentos.md) — relaciona cada cálculo, selección o comprobación del capítulo 3 con su respaldo.

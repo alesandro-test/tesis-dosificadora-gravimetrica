@@ -207,6 +207,8 @@ Valores obtenidos a partir de la Tabla 3 como diferencia entre lecturas acumulad
 
 # Parte II. Dosificación manual de ingredientes secos menores (azúcar, sal y levadura)
 
+> **Identificación del instrumento, 2026-11-11:** el estudiante identifica la balanza usada para azúcar, sal y levadura como **SF-400**, con inscripción **10000 g × 1 g / 353 oz × 0.1 oz**. Capacidad declarada: 10 kg; división de lectura: 1 g. Esta información no acredita exactitud ni calibración. Se conservan las lecturas originales. La fecha real del registro y la discrepancia entre el pesaje del envase descrito en la nota y el TARE del balde descrito bajo la Tabla 9 siguen pendientes de aclaración.
+
 > **Nota del 2026-10-26:** según el estudiante, el azúcar, la sal y la levadura se pesaron con una balanza propia del investigador, pesando el envase con cada carga (con la tara del envase vacío). Esto corrige la fila «Registro de la masa» de esta sección. La fecha real de este registro, el modelo y la resolución de esa balanza están pendientes de confirmar.
 
 ## 8. Datos generales y procedimiento

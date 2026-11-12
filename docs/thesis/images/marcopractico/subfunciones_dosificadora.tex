@@ -1,0 +1,24 @@
+\begin{tikzpicture}[>=Stealth,
+    bloque/.style={draw,align=center,text width=26mm,minimum height=14mm,font=\footnotesize}]
+    \node[bloque] (consigna) at (0,0) {Seleccionar\\ingrediente y\\consigna $S_i$};
+    \node[bloque] (comparar) at (3.5,0) {Comparar $S_i$\\con la cantidad\\incorporada};
+    \node[bloque] (decidir) at (7,0) {Determinar\\alimentación\\o corte};
+    \node[bloque] (potencia) at (10.5,0) {Generar el mando\\y accionar\\el motor};
+    \node[bloque] (material) at (10.5,-2.1) {Alimentar y\\recibir material\\sobre el pesaje};
+    \node[bloque] (convertir) at (7,-2.1) {Obtener y\\convertir la\\señal de peso};
+    \node[bloque] (validar) at (3.5,-2.1) {Acondicionar y\\comprobar\\la lectura};
+    \node[bloque] (incremento) at (0,-2.1) {Determinar\\incremento\\$m_i=R-R_i$};
+    \draw[->,dashed] (consigna) -- (comparar);
+    \draw[->,dashed] (comparar) -- (decidir);
+    \draw[->,dashed] (decidir) -- (potencia);
+    \draw[->] (potencia) -- (material);
+    \draw[->,dashed] (material) -- (convertir);
+    \draw[->,dashed] (convertir) -- (validar);
+    \draw[->,dashed] (validar) -- (incremento);
+    \draw[->,dashed] (incremento.north) -- (0,-1.05) -| (comparar.south);
+    \node[align=center,font=\footnotesize] (referencia) at (0,-3.6)
+        {Referencia $R_i$\\al iniciar el ingrediente};
+    \draw[->,dashed] (referencia) -- (incremento);
+    \node[align=center,font=\footnotesize] at (7,-3.6)
+        {El cierre estable del ingrediente habilita\\la siguiente etapa o el aviso de fin.};
+\end{tikzpicture}

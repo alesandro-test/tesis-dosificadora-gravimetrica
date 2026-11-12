@@ -1,0 +1,67 @@
+\begin{table}[H]
+    \centering
+    \caption{Matriz morfológica: alimentación, pesaje y mando.}
+    \label{tab:morfologia_dosificadora}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F01 & Almacenar por ingrediente & Tolvas independientes. & Depósito compartimentado. & --- \\
+        \addlinespace[4pt]
+        F02 & Disponer la alimentación & Tornillos horizontales. & Tornillos verticales descendentes. & Tornillos inclinados ascendentes. \\
+        \addlinespace[4pt]
+        F03 & Generar el giro & Paso a paso y etapa de potencia. & Motorreductor CC con encoder y etapa de potencia. & Servomotor industrial y accionamiento. \\
+        \addlinespace[4pt]
+        F04 & Transmitir el giro & Acople directo. & Reducción por engranajes. & Correa dentada y poleas. \\
+        \addlinespace[4pt]
+        F05 & Distribuir el pesaje & Una balanza común. & Una balanza de harina y otra de menores. & Pesaje por ingrediente. \\
+        \addlinespace[4pt]
+        F06 & Soportar el receptor pesado & Plataforma con celda de punto único. & Plataforma sobre varias celdas. & --- \\
+        \addlinespace[4pt]
+        F07 & Adquirir el peso & Convertidor dedicado conectado al controlador. & Transmisor industrial de pesaje. & Balanza con interfaz de datos. \\
+        \addlinespace[4pt]
+        F08 & Ejecutar la secuencia & Microcontrolador. & PLC con interfaces de pesaje. & Computador de placa única con adquisición externa. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia. Alternativas de estudio; modelos y capacidades por comprobar.
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Matriz morfológica: operación, descarga e integración.}
+    \label{tab:morfologia_integracion}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F09 & Ingresar consignas y órdenes & Teclado y pantalla. & Mando giratorio y pantalla. & Panel HMI. \\
+        \addlinespace[4pt]
+        F10 & Comunicar estado y fin & Aviso visual. & Aviso visual y sonoro. & --- \\
+        \addlinespace[4pt]
+        F11 & Acondicionar la energía & Fuente AC/DC y regulación de tensiones. & Fuentes AC/DC separadas por circuito. & --- \\
+        \addlinespace[4pt]
+        F12 & Guiar el material & Salidas independientes. & Colector desmontable de recorrido corto. & --- \\
+        \addlinespace[4pt]
+        F13 & Vaciar el receptor auxiliar & Recipiente basculante. & Apertura inferior accionada. & Sin receptor auxiliar en pesaje común. \\
+        \addlinespace[4pt]
+        F14 & Formar superficies de contacto & AISI 304. & AISI 316. & Polímero con documentación para contacto alimentario. \\
+        \addlinespace[4pt]
+        F15 & Acceder para limpieza & Extracción del tornillo y desmontaje del tubo. & Retiro del módulo tolva--alimentador. & --- \\
+        \addlinespace[4pt]
+        F16 & Interrumpir la alimentación & Orden al controlador. & Corte de habilitación del accionamiento. & Orden al controlador y corte de habilitación. \\
+        \addlinespace[4pt]
+        F17 & Sostener e instalar & Bastidor independiente. & Soporte fijado a una mesa verificada. & --- \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia. Los guiones indican ausencia de una tercera opción, no una función omitida.
+\end{table}

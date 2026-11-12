@@ -160,9 +160,10 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-016 — Ingredientes secos y fuente de cantidades
 
 **Estado:** Confirmada  
+**Actualización 2026-11-11:** el estudiante identifica el instrumento de los ingredientes menores como SF-400, capacidad indicada 10 kg y división de lectura 1 g. Quedan por documentar la comprobación del instrumento, la fecha real y la discrepancia de descripción de tara/envase del registro; la división no acredita exactitud.
 **Decisión:** Los ingredientes dosificados son harina, azúcar, sal y levadura en polvo. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador. Las cantidades objetivo provienen de la receta de referencia por preparación, y las cantidades incorporadas, del levantamiento del 02/09/2026 y 05/09/2026 (`research/notes/levantamiento_dosificacion_san_miguel.md`).  
 **Motivo:** Levantamiento aportado por el estudiante el 2026-10-25. El azúcar, la sal y la levadura se registraron con una balanza propia del investigador, pesando el envase con cada carga.  
-**Impacto:** Reemplaza `D-013` y las cantidades de `research/notes/insumos_secos_recetas.md` (levadura fresca, 2026-10-05). Trazabilidad pendiente: fecha real del registro de azúcar, sal y levadura, modelo y resolución de la balanza del investigador, origen de la receta y respaldo fotográfico.
+**Impacto:** Reemplaza `D-013` y las cantidades de `research/notes/insumos_secos_recetas.md` (levadura fresca, 2026-10-05). Trazabilidad pendiente: fecha real del registro de azúcar, sal y levadura, comprobación del instrumento identificado en la actualización, procedimiento de pesaje, origen de la receta y respaldo fotográfico.
 
 ---
 
@@ -211,16 +212,38 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 
 ---
 
-### D-022 — Límite superior de dosificación de harina
+### D-022 — Margen de dosificación de harina
 
-**Estado:** Confirmada como criterio de diseño por el estudiante (09/11/2026).
-**Decisión:** Limitar a 30 g el exceso de harina por lote respecto de la cantidad objetivo. Este valor sustituye el criterio inicial de 40 g.
-**Motivo:** Instrucción del estudiante para la harina, el ingrediente de mayor consumo por lote. El mayor exceso observado en la muestra manual fue de 38 g.
-**Impacto:** Se aplica al RNF-01 como criterio de diseño. La pregunta de seguimiento de la entrevista permite consultar los márgenes por receta. Quedan pendientes la validación con la panadería y las pruebas del prototipo, así como el déficit admisible de harina y las tolerancias de los otros tres ingredientes (A-004).
+**Estado:** Confirmada como criterio preliminar de diseño por el estudiante.
+**Decisión:** Adoptar un margen de ±30 g de harina por lote respecto de la cantidad objetivo. El margen bilateral amplía el criterio previo de +30 g.
+**Motivo:** La respuesta de seguimiento de la propietaria registra un margen inicial de 30 g tanto de exceso como de déficit para la harina.
+**Impacto:** Se aplica al RNF-01. Quedan pendientes las pruebas de desempeño del prototipo y las tolerancias de los otros tres ingredientes (A-004).
+
+---
+
+### D-023 — Desarrollo conceptual de la propuesta
+
+**Estado:** Confirmada como enfoque de trabajo solicitado por el estudiante (12/11/2026).
+**Decisión:** Desarrollar requerimientos y tolerancias → árbol del producto → caja negra y descomposición → subfunciones → casa de calidad → morfología → cribado → combinaciones → evaluación → bosquejo y entradas del CAD. María Julia y la plantilla de Diseño Superior orientan el método; SySO orienta la progresión de la redacción, con precedencia de la plantilla oficial y redacción.md.
+**Motivo:** Solicitud expresa de revisar texto y figuras de esas referencias y aplicar el mismo enfoque a la dosificadora.
+**Impacto:** Sustituye la sugerencia previa de omitir una casa de calidad completa por una casa preliminar con relaciones declaradas y pesos del cliente pendientes. No confirma tolerancias de menores, modelos comerciales, reducción a tres ingredientes ni una combinación definitiva. B es una propuesta para predimensionamiento, sujeta a comprobaciones; el estudiante elabora el CAD.
+
+---
+
+### D-024 — Metas de error para la casa de calidad
+
+**Estado:** Confirmada como criterio de diseño por el estudiante (12/11/2026).
+**Decisión:** Conservar ±30 g por lote de harina (D-022) y añadir una meta de media de error absoluto ≤10 g. Adoptar ±3 g para azúcar, ±2 g para sal y ±1 g para levadura por lote como metas de ingeniería para la casa de calidad. Evaluar cada ingrediente por lote, agrupar por receta y utilizar el resumen diario como información complementaria, sin compensar excesos y déficits al evaluar el error absoluto.
+**Motivo:** El estudiante acepta expresamente el análisis de `research/notes/propuesta_evaluacion_tolerancias_2026-11-12.md` y solicita aplicarlo a la casa de calidad. Una banda común de ±1 % admitiría diferencias mayores que las manuales observadas en harina y exigiría fracciones de gramo para levadura.
+**Impacto:** Se actualiza el Excel de diseño. La aceptación de los márgenes de receta con la propietaria, la viabilidad técnica, la caracterización de la referencia y los ensayos permanecen pendientes. No constituye aprobación docente ni demuestra una mejora experimental. La tesis y su figura de la casa de calidad quedan pendientes de alineación en su siguiente revisión; esta autorización se aplica al Excel.
 
 ---
 
 ## Decisiones abiertas
+
+### Registro de continuidad de la casa de calidad (12/11/2026)
+
+La solicitud de completar una propuesta autoriza utilizar una valoración inicial del diseñador, identificada como tal y respaldada por entrevista y registros. La versión revisada está en `docs/design/Casa_de_calidad_San_Miguel_revision.xlsx`; sus pesos, dificultad, notas documentales y metas operativas nuevas son propuestas por contrastar, no valoraciones atribuidas a la propietaria. La comparación distingue el perfil objetivo del proyecto de resultados experimentales y conserva ND cuando falta evidencia. «Equipo compacto» expresa la necesidad de espacio; paso libre, extracción y accesos siguen siendo restricciones. D-024 conserva las metas de error adoptadas. El desarrollo no selecciona definitivamente A/B/C ni cierra los parámetros técnicos de A-004. Detalles y fundamentos: `research/notes/casa_calidad_propuesta_completa_2026-11-12.md`.
 
 Los siguientes asuntos están **NO DECIDIDOS** y ningún agente debe cerrarlos sin nueva evidencia, decisión del estudiante o indicación docente.
 
@@ -278,13 +301,13 @@ Continúan abiertos, entre otros:
 - controlador;
 - actuadores;
 - estrategia de control;
-- tolerancia de aceptación;
+- aceptación de las tolerancias de receta (metas de diseño adoptadas en D-022 y D-024);
 - tiempo objetivo;
 - arquitectura mecánica;
 - arquitectura electrónica;
 - dimensiones finales.
 - tipo de modelo dinámico;
-- tolerancias por insumo;
+- comprobación experimental de las metas de error por insumo (D-024);
 
 Una propuesta, ejemplo bibliográfico, valor observado o valor utilizado en un
 borrador no convierte automáticamente ninguno de estos elementos en requisito.
