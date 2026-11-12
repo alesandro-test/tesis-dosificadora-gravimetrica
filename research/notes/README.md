@@ -7,6 +7,10 @@
 
 ## Diseño y capítulo 2
 
+- [Capítulo 2 explicado en sencillo](estado_arte_explicado_sencillo_2026-11-12.md) — lectura de los once párrafos de Estado del arte y catálogo de las 50 referencias de Estado del arte, Enfoques y Fundamentos: de qué trata cada documento, qué usamos y dónde lo citamos. Notas 07–14 del cuaderno de estudio; original de Cross pendiente.
+
+- [Fichas de estudio del capítulo 2](fichas_estudio_capitulo2_2026-11-12.md) — 23 fichas del Estado del arte, cuatro de Enfoques, ocho de Fundamentos y diez preguntas de repaso; ubicaciones en el PDF y enlace al cuaderno de NotebookLM.
+
 - [Propuesta de María Julia y adaptación](revision_propuesta_maria_julia_2026-11-12.md) — revisión textual y visual, plantilla de Diseño Superior, redacción de SySO y secuencia aplicada desde funciones hasta combinaciones y bosquejo.
 
 - [Alternativas para el diseño de San Miguel](alternativas_diseno_san_miguel_2026-11-11.md) — referencias estructurales y defensas, tres/cuatro ingredientes, tolerancias de estudio, alimentadores, pesaje y datos para el CAD.
