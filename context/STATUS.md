@@ -1,11 +1,16 @@
 # STATUS
 
-**Última actualización:** 2026-11-12
+**Última actualización:** 2026-11-13
 
 ## Estado actual
 
 Capítulo 1 **reestructurado a ingredientes secos** (harina, azúcar, sal y levadura) según la clase del 21/10/2026 (`D-015` a `D-018`); sin aprobación docente definitiva (`A-001`, `A-002`). Sin commit.  
 Trabajo activo: capítulo 2 reorganizado en revisión narrativa, Enfoques y Fundamentos (`D-021`), y desarrollo de requerimientos del capítulo 3. Las observaciones docentes recibidas el 06/11/2026 están registradas en `PROFESSOR_NOTES.md`; los seis objetivos revisados están aplicados en la versión de trabajo (`D-020`), con aprobación docente definitiva pendiente.
+
+## Panel de seguimiento en Sites (15/11/2026)
+
+- Sitio en español preparado en `sites/san-miguel/`, con recetas, requisitos, alternativas A/B/C, componentes, entrevistas reales, decisiones abiertas, fuentes y exportación. Guardado persistente y adjuntos implementados; pruebas locales de API y edición/filtros superadas. No modifica los originales de la tesis.
+- Site registrado, todavía sin publicar: autorización expresa de commit/push del repositorio independiente del Site pendiente según AGENTS.md. Siguiente paso: obtener esa autorización y completar la publicación privada. No se ejecutaron commit ni push del proyecto.
 
 ## Entregas de la clase del 21/10/2026
 
@@ -20,6 +25,14 @@ Trabajo activo: capítulo 2 reorganizado en revisión narrativa, Enfoques y Fund
 - La nota final la otorga un relator externo.
 
 ## Completado
+
+- **Formato original de Excel restituido (13/11/2026, aclaración posterior):** las seis características se aplican en `Casa_de_calidad_San_Miguel_revision.xlsx`, conservando el formato de casa de calidad y sus símbolos, con techo triangular ajustado y prioridades que suman 100 %. Se oculta el bloque competitivo ordinal anterior y se incorpora la comparación documental ya propuesta en su propia hoja. Sustituidas las cuatro imágenes anteriores por capturas vectoriales exportadas por Microsoft Excel; contenidos y valores conservados. Revisadas las páginas físicas 66–69 del PDF compilado (111 páginas). El libro `_simplificada.xlsx` queda como antecedente. Persiste el aviso previo Hfootnote.1; sin bloqueo actual.
+
+- **Simplificación de QFD (13/11/2026, revisión posterior):** nueva versión `docs/design/Casa_de_calidad_San_Miguel_simplificada.xlsx`, seis necesidades y seis características; errores agrupados sin compensar ingredientes ni modificar D-024. Se retiran columnas ponderadas de programación, altura, seguridad, mantenimiento y dispersión; siguen sus requisitos y comprobaciones. Propuesta y cuatro capturas actualizadas. Comparación comercial de DF-B/IF-A/IND-AX4 con mecanismo, rango, volumen y aporte documentados; retirado del texto el gráfico ordinal con abundantes ND y la puntuación del prototipo no ensayado. Referencias María Julia y V9 revisadas visualmente; no se adopta una escala sin rúbrica verificable. Las prioridades anteriores dejan de ser vigentes para esta versión. Ver `research/notes/simplificacion_qfd_2026-11-13.md`.
+
+- **Casa de calidad por capturas de Excel y revisión de tolerancias (13/11/2026, continuación):** reemplazada la síntesis TikZ por ocho capturas vectoriales de Excel: necesidades, dos bloques de relaciones, techo, dos bloques de metas/prioridades, notas comerciales y gráfico. Cada bloque tiene explicación en `propuesta.tex`; se conservan las valoraciones del diseñador y las validaciones pendientes. Tolerancias reescritas con inicio físico, exceso/déficit, referencia manual y límites de diseño; RNF-01 se mantiene para trazabilidad, sin atribuir esa codificación a SySO. Durante la captura nativa se corrigieron la apertura y las series del gráfico del libro `Casa_de_calidad_San_Miguel_revision.xlsx`: notas numéricas tipadas, auxiliares para omitir ND y perfil objetivo discontinuo; no cambian pesos, notas ni metas. Apertura y valores comprobados con Excel; respaldo previo temporal. Detalles y revisión final en `research/notes/capturas_casa_calidad_tolerancias_2026-11-13.md`.
+
+- **Auditoría e integración de la propuesta previa al CAD (13/11/2026):** revisión con tres agentes de María Julia hasta la posición física 50, imágenes originales de V9 y redacción/figuras de SySO. Corregidos árbol, caja negra y subfunciones; RNF-01, tolerancias y casa de calidad alineados con D-024 y el Excel `Casa_de_calidad_San_Miguel_revision.xlsx` (nueve necesidades, catorce características, pesos del diseñador, techo y prioridades). Se incorporan contraste documental IF-A/HZF-A/IND-AX4 y fotografía original AX2, distinguiendo familia/modelo, declaraciones de catálogo y ND. Revisados 18 PDF comerciales y contrastadas cinco fuentes originales con NotebookLM. Corregidas F05, F12, F13 y F16 y la comparación A/B/C, conservando abiertas la arquitectura final y la selección de componentes. Nuevo esquema de convergencia al recipiente fijo. El estudiante identifica el receptor como canoa ovalada de 20 L, con exteriores aproximados 515 × 353 × 182 mm; incorporado a propuesta y contexto, sin inferir abertura interior ni tara. Excel conservado sin modificaciones en esta sesión. Compilación MiKTeX/Biber y comprobación visual registradas en `research/notes/integracion_propuesta_preCAD_2026-11-13.md`.
 
 - **Capítulo 2 en palabras sencillas (12/11/2026):** lectura de los once párrafos de 2.1 y sus 23 referencias con «qué estamos diciendo» y «por qué lo pusimos». Ampliada mediante siete consultas al MCP de NotebookLM sobre los 49 originales disponibles: catálogo de las 50 referencias de 2.1, 2.2 y 2.3 con tema del documento, aporte utilizado y ubicación, contrastada con las citas del LaTeX. Cross conserva la falta del original, sin resumen completo inventado. Copia en `research/notes/estado_arte_explicado_sencillo_2026-11-12.md`; notas 07–14 del mismo cuaderno de estudio, complementarias de las fichas previas. Sin cambios en la tesis ni en las decisiones.
 
@@ -111,7 +124,7 @@ Trabajo activo: capítulo 2 reorganizado en revisión narrativa, Enfoques y Fund
 ### Prioridad inmediata — observaciones recibidas el 06/11/2026
 
 - **02 — siguiente paso:** revisar con el docente la versión reorganizada y confirmar admisión de fichas de fabricantes y fuentes técnicas anteriores al período reciente; completar diversidad de proveedores con evidencia verificada. La síntesis de 2.1 cita 27 fuentes de 2021–2026: contrastar el mínimo institucional de 30 referencias de la revisión sin añadir fuentes por cuota. Compilación completa verificada con MiKTeX y Biber el 09/11/2026 (91 páginas). Queda pendiente revisar la maquetación y el enlace a una nota al pie señalado en el registro. No se incorporan nuevos proveedores ni resultados sin fuentes.
-- **OE1 y OE2 — siguiente paso:** obtener las tolerancias de azúcar, sal y levadura en polvo por receta y medir el balde, el puesto y la densidad aparente de los ingredientes de San Miguel. Reunir fichas de tornillos, accionamientos y celdas de carga para contrastar las alternativas y completar el CAD. El avance del 13/11 se apoya en datos disponibles y el cierre del 14/11 en el cronograma corresponde a la redacción de tolerancias.
+- **OE1 y OE2 — siguiente paso:** contrastar con propietaria/tutor las bandas de receta de los menores y las valoraciones del diseñador en QFD; D-024 ya establece las metas de ingeniería. Medir abertura interior, base de apoyo y tara de la canoa ovalada, espacio del puesto y altura de recarga; sus dimensiones exteriores ya fueron comunicadas. Medir densidad aparente y reunir fichas/cotizaciones de tornillos, accionamientos y celdas. Comprobar pesaje bajo carga, descarga residual y transferencia antes de cerrar la combinación y completar el CAD del estudiante. El cierre del 14/11 en el cronograma corresponde a la redacción de tolerancias, no a una validación experimental.
 - **Revisión SMART y cronograma (06/11/2026):** matriz incorporada en `research/notes/revision_objetivos_01A_01B_01C_2026-11-06.md`. La versión aplicada distingue el avance CAD preliminar del diseño completo con cálculos, selección y planos. Confirmar si el 13/11 es una revisión de avance y el 18/11 la consolidación preliminar; el diseño de detalle figura hasta el 29/01/2027. La viabilidad y el componente temporal de SMART quedan parcialmente abiertos por las dependencias y la fecha de defensa sin confirmar.
 - Revisar el cierre del retorno de inversión (09/04/2027), programado antes del cierre del análisis experimental (14/04/2027), y la disponibilidad de diseños y componentes para fabricar desde el 18/01. Son desajustes de planificación por resolver; no se alteran fechas mediante el borrador de objetivos.
 - Presentar los objetivos agrupados aplicados y la definición del tutor en el plazo indicado como «lunes». La correspondencia con el 09/11/2026 se infiere de la fecha de recepción y requiere confirmación.
@@ -136,11 +149,11 @@ Trabajo activo: capítulo 2 reorganizado en revisión narrativa, Enfoques y Fund
 
 ### Diseño conceptual y CAD
 
-- Revisar las relaciones propuestas de la casa de calidad y documentar la importancia de las necesidades con la propietaria. Completar criterios de desempeño y costos antes de puntuar combinaciones. Verificar B con carga, retención, espacio, montaje y fichas; el esquema de referencia no es un CAD dimensionado.
+- La casa de calidad está desarrollada como propuesta del diseñador y presentada mediante capturas explicadas del Excel; falta contrastarla con la propietaria/tutor y comprobar sus metas. El gráfico del Excel está corregido para representar las notas vigentes y omitir ND. La comparación documental comercial complementa esas notas ordinales; no acredita una clasificación experimental ni se trasladó automáticamente a ellas. Completar costos y pruebas equivalentes antes de puntuar combinaciones. Verificar B con carga, retención, espacio, montaje y fichas; el esquema de referencia no es un CAD dimensionado. Compilación y revisión visual de esta continuación: 117 páginas, sin referencias nuevas indefinidas; persiste el aviso anterior Hfootnote.1.
 
 - Evaluar con el estudiante y el docente la alternativa de harina, azúcar y sal con levadura manual. D-015/D-019 conservan cuatro ingredientes hasta decisión explícita; revisar coherencia de alcance y evaluación si se aprueba el cambio.
 - Confirmar bandas de receta para los menores y caracterizar el instrumento de referencia. La división de 1 g de la SF-400 no acredita la verificación de una banda de ±1 g.
-- Medir balde/puesto, definir cantidad por recarga y obtener fichas de tornillos, motores y pesaje; comparar común/separado y horizontal/vertical descendente. El presupuesto tiene cantidades conceptuales; faltan modelos, precios y costos de fabricación.
+- Medir abertura útil, base de apoyo y tara de la canoa ovalada y dimensiones del puesto; definir cantidad por recarga y obtener fichas de tornillos, motores y pesaje. Comparar común/separado y horizontal/vertical descendente. El presupuesto tiene cantidades conceptuales; faltan modelos, precios y costos de fabricación.
 
 ### Capítulo 2 y perfil completo
 

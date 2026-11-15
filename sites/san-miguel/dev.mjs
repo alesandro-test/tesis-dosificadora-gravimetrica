@@ -1,0 +1,7 @@
+import {createServer} from 'node:http';
+import {DatabaseSync} from 'node:sqlite';
+import {mkdirSync,readFileSync,writeFileSync,existsSync} from 'node:fs';
+import worker from './dist/server/index.js';
+mkdirSync('.local/files',{recursive:true});const db=new DatabaseSync('.local/state.sqlite');db.exec(readFileSync('drizzle/0000_project_state.sql','utf8').replace('CREATE TABLE','CREATE TABLE IF NOT EXISTS'));
+const env={DB:{prepare(sql){return {bind(...args){return {async first(){return db.prepare(sql).get(...args)||null}}},async first(){return db.prepare(sql).get()||null}}}},BUCKET:{async put(key,body,options){writeFileSync('.local/files/'+key,Buffer.from(body));writeFileSync('.local/files/'+key+'.json',JSON.stringify(options.customMetadata))},async get(key){if(!existsSync('.local/files/'+key))return null;return {body:readFileSync('.local/files/'+key),customMetadata:JSON.parse(readFileSync('.local/files/'+key+'.json','utf8'))}}}};
+createServer(async(req,res)=>{try{const body=[];for await(const b of req)body.push(b);const r=await worker.fetch(new Request('http://127.0.0.1:4387'+req.url,{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(body)})}),env);res.writeHead(r.status,Object.fromEntries(r.headers));res.end(Buffer.from(await r.arrayBuffer()))}catch{res.writeHead(500);res.end('Error local')}}).listen(4387,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4387'));

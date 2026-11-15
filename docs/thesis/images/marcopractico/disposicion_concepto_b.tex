@@ -14,12 +14,12 @@
     \draw[->,thick] (t-sal.south) -- (auxiliar.north);
     \draw[thick] (t-azucar.south) -- (3.4,-2.9) -- (colector);
     \draw[thick] (t-levadura.south) -- (10.2,-2.9) -- (colector);
-    \node[bloque,text width=35mm] (balde) at (3.4,-6.4)
-        {Balde receptor\\sobre pesaje principal};
-    \draw[->,thick] (t-harina.south) -- (0,-6.4) -- (balde.west);
-    \draw[->,thick] (auxiliar.south) -- (6.8,-6.4) -- (balde.east);
+    \node[bloque,text width=35mm] (recipiente) at (3.4,-6.4)
+        {Recipiente receptor\\sobre pesaje principal};
+    \draw[->,thick] (t-harina.south) -- (0,-6.4) -- (recipiente.west);
+    \draw[->,thick] (auxiliar.south) -- (6.8,-6.4) -- (recipiente.east);
     \node[align=center,font=\footnotesize,text width=29mm] at (9.9,-5.5)
         {Vaciado basculante\\y revisión de retención};
     \node[align=center,font=\footnotesize,text width=35mm] at (1.7,-4.0)
-        {Descarga de harina\\directa al balde};
+        {Descarga de harina\\directa al recipiente};
 \end{tikzpicture}

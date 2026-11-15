@@ -153,6 +153,8 @@ siempre como escenarios o proyecciones, nunca como mediciones mensuales.
 
 ## 6. Concepto del prototipo
 
+**Recipiente receptor identificado por el estudiante (13/11/2026):** canoa ovalada de 20 L, «Canoa Mediana» de La Papelera Plásticos; no es un balde circular. Dimensiones exteriores aproximadas comunicadas: 515 × 353 × 182 mm (largo × ancho × alto). No constituyen dimensiones interiores de descarga. Faltan abertura útil, base de apoyo, tara y comprobación en la pieza; no inferir compatibilidad alimentaria ni capacidad útil de receta solo por el volumen nominal.
+
 Conceptualmente, la solución considera:
 
 `almacenamiento → dosificación → pesaje gravimétrico → control → descarga`
