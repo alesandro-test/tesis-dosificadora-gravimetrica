@@ -1,25 +1,69 @@
-\begin{tikzpicture}[>=Stealth,
-    bloque/.style={draw,align=center,text width=23mm,minimum height=12mm,font=\footnotesize}]
-    \node[bloque] (harina) at (0,0) {Tolva\\de harina};
-    \node[bloque] (azucar) at (3.4,0) {Tolva\\de azúcar};
-    \node[bloque] (sal) at (6.8,0) {Tolva\\de sal};
-    \node[bloque] (levadura) at (10.2,0) {Tolva\\de levadura};
-    \foreach \nombre/\x in {harina/0,azucar/3.4,sal/6.8,levadura/10.2} {
-        \node[bloque] (t-\nombre) at (\x,-1.8) {Tornillo\\y motor};
-        \draw[->,thick] (\nombre) -- (t-\nombre);
+% Bosquejo en elevación de la combinación B, sin escala ni cotas.
+\begin{tikzpicture}[>=Stealth, line width=0.6pt,
+    tolva/.style={draw, fill=gray!12},
+    tubo/.style={draw, fill=white, minimum height=4.5mm, inner sep=0pt},
+    motor/.style={draw, fill=gray!35, minimum size=5mm, inner sep=0pt, font=\scriptsize\bfseries},
+    rotulo/.style={font=\scriptsize, align=left},
+    guia/.style={line width=0.3pt, gray},
+    caida/.style={->, line width=0.9pt}]
+    % Bastidor independiente.
+    \draw[line width=1.4pt, gray!70] (-0.4,-0.6) -- (13.6,-0.6);
+    \draw[line width=1.4pt, gray!70] (-0.4,-0.6) -- (-0.4,7.9) -- (13.6,7.9) -- (13.6,-0.6);
+
+    % Harina: tolva, tornillo horizontal y descarga directa.
+    \draw[tolva] (0.2,7.5) -- (3.2,7.5) -- (2.2,5.5) -- (1.2,5.5) -- cycle;
+    \node[font=\scriptsize\bfseries] at (1.7,6.8) {HARINA};
+    \draw (1.2,5.5) -- (1.2,5.15); \draw (2.2,5.5) -- (2.2,5.15);
+    \draw[fill=white] (0.9,4.65) rectangle (5.9,5.15);
+    \foreach \x in {1.0,1.4,...,5.6} \draw[line width=0.4pt] (\x,4.68) -- (\x+0.2,5.12);
+    \node[motor] at (0.55,4.9) {M};
+    \draw[fill=white] (5.4,4.65) rectangle (5.9,4.25);
+    \draw[caida] (5.65,4.2) -- (5.65,1.75);
+
+    % Recipiente sobre el pesaje principal.
+    \draw[fill=white] (3.8,1.7) -- (7.6,1.7) -- (7.1,0.35) -- (4.3,0.35) -- cycle;
+    \node[font=\scriptsize\bfseries, align=center] at (5.7,1.0) {RECIPIENTE};
+    \draw[fill=gray!35] (3.6,0.15) rectangle (7.8,0.35);
+    \draw[fill=gray!60] (5.45,-0.15) rectangle (5.95,0.15);
+    \draw (5.2,-0.6) -- (5.45,-0.15); \draw (6.2,-0.6) -- (5.95,-0.15);
+
+    % Ingredientes menores: tres tolvas y tornillos hacia el receptor auxiliar.
+    \foreach \x/\nombre in {8.2/AZÚCAR, 10.2/SAL, 12.2/LEVADURA} {
+        \draw[tolva] (\x-0.9,7.5) -- (\x+0.9,7.5) -- (\x+0.25,6.4) -- (\x-0.25,6.4) -- cycle;
+        \node[font=\tiny] at (\x,7.22) {\nombre};
     }
-    \node[bloque,text width=35mm] (auxiliar) at (6.8,-4.0)
-        {Receptor de menores\\sobre pesaje auxiliar};
-    \coordinate (colector) at (6.8,-2.9);
-    \draw[->,thick] (t-sal.south) -- (auxiliar.north);
-    \draw[thick] (t-azucar.south) -- (3.4,-2.9) -- (colector);
-    \draw[thick] (t-levadura.south) -- (10.2,-2.9) -- (colector);
-    \node[bloque,text width=35mm] (recipiente) at (3.4,-6.4)
-        {Recipiente receptor\\sobre pesaje principal};
-    \draw[->,thick] (t-harina.south) -- (0,-6.4) -- (recipiente.west);
-    \draw[->,thick] (auxiliar.south) -- (6.8,-6.4) -- (recipiente.east);
-    \node[align=center,font=\footnotesize,text width=29mm] at (9.9,-5.5)
-        {Vaciado basculante\\y revisión de retención};
-    \node[align=center,font=\footnotesize,text width=35mm] at (1.7,-4.0)
-        {Descarga de harina\\directa al recipiente};
+    % Azúcar: tornillo hacia la derecha.
+    \draw[fill=white] (7.9,5.85) rectangle (9.5,6.3);
+    \foreach \x in {8.0,8.3,...,9.2} \draw[line width=0.4pt] (\x,5.88) -- (\x+0.15,6.27);
+    \node[motor] at (7.6,6.08) {M};
+    \draw[caida] (9.35,5.8) -- (9.35,4.55);
+    % Sal: eje hacia el fondo, sobre el receptor.
+    \draw (10.2,6.4) -- (10.2,6.25);
+    \draw[fill=white] (10.2,6.0) circle (0.24);
+    \draw[fill=gray!35] (10.2,6.0) circle (0.08);
+    \draw[caida] (10.2,5.72) -- (10.2,4.55);
+    % Levadura: tornillo hacia la izquierda.
+    \draw[fill=white] (10.9,5.85) rectangle (12.5,6.3);
+    \foreach \x in {11.0,11.3,...,12.2} \draw[line width=0.4pt] (\x,5.88) -- (\x+0.15,6.27);
+    \node[motor] at (12.8,6.08) {M};
+    \draw[caida] (11.05,5.8) -- (11.05,4.55);
+
+    % Receptor auxiliar basculante sobre su pesaje.
+    \draw[fill=white] (8.9,4.5) -- (11.5,4.5) -- (10.75,3.4) -- (9.65,3.4) -- cycle;
+    \node[font=\tiny\bfseries] at (10.2,4.0) {AUXILIAR};
+    \fill (11.5,4.0) circle (1.6pt);
+    \draw (11.5,4.0) -- (12.3,4.0);
+    \draw[fill=gray!60] (12.3,3.8) rectangle (12.8,4.2);
+    \draw (12.8,4.0) -- (13.6,4.0);
+    \draw[caida, dashed] (9.7,3.35) .. controls (9.0,2.6) and (7.8,2.2) .. (7.2,1.8);
+
+    % Rótulos.
+    \node[rotulo] (r1) at (2.6,3.2) {Tornillo de harina\\y descarga directa};
+    \draw[guia] (r1.north) -- (3.2,4.65);
+    \node[rotulo] (r2) at (1.9,0.9) {Pesaje principal:\\plataforma y celda};
+    \draw[guia] (r2.east) -- (3.6,0.25);
+    \node[rotulo] (r3) at (9.6,2.0) {Vaciado basculante\\al recipiente};
+    \node[rotulo] (r4) at (12.0,2.9) {Pesaje auxiliar\\y eje de giro};
+    \draw[guia] (r4.north) -- (12.55,3.8);
+    \node[rotulo] at (11.9,0.6) {M: motor\\Sin escala ni cotas};
 \end{tikzpicture}

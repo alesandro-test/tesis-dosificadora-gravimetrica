@@ -133,7 +133,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 
 **Estado:** Reemplazada por `D-016` (2026-10-26)  
 **Decisión:** Además de la harina, el diseño considera la dosificación de azúcar, sal y levadura. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador (no utilizado en la panadería).  
-**Motivo:** Declaración del estudiante del 2026-10-05 sobre los insumos utilizados en San Miguel; cantidades medidas reportadas en `research/notes/insumos_secos_recetas.md`.  
+**Motivo:** Declaración del estudiante del 2026-10-05 sobre los insumos utilizados en San Miguel; cantidades medidas reportadas en `archive/research/notes/insumos_secos_recetas.md`.
 **Impacto:** Las cantidades por preparación son mediciones reportadas por el estudiante, con trazabilidad pendiente (fecha, instrumento, procedimiento y repeticiones). La levadura utilizada es fresca; su dosificación desde tolva y el nivel de demostración permanecen abiertos (`A-005`).
 
 ---
@@ -163,7 +163,7 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 **Actualización 2026-11-11:** el estudiante identifica el instrumento de los ingredientes menores como SF-400, capacidad indicada 10 kg y división de lectura 1 g. Quedan por documentar la comprobación del instrumento, la fecha real y la discrepancia de descripción de tara/envase del registro; la división no acredita exactitud.
 **Decisión:** Los ingredientes dosificados son harina, azúcar, sal y levadura en polvo. Se excluyen manteca (semisólida), agua (líquida), harina de malta y mejorador. Las cantidades objetivo provienen de la receta de referencia por preparación, y las cantidades incorporadas, del levantamiento del 02/09/2026 y 05/09/2026 (`research/notes/levantamiento_dosificacion_san_miguel.md`).  
 **Motivo:** Levantamiento aportado por el estudiante el 2026-10-25. El azúcar, la sal y la levadura se registraron con una balanza propia del investigador, pesando el envase con cada carga.  
-**Impacto:** Reemplaza `D-013` y las cantidades de `research/notes/insumos_secos_recetas.md` (levadura fresca, 2026-10-05). Trazabilidad pendiente: fecha real del registro de azúcar, sal y levadura, comprobación del instrumento identificado en la actualización, procedimiento de pesaje, origen de la receta y respaldo fotográfico.
+**Impacto:** Reemplaza `D-013` y las cantidades de `archive/research/notes/insumos_secos_recetas.md` (levadura fresca, 2026-10-05). Trazabilidad pendiente: fecha real del registro de azúcar, sal y levadura, comprobación del instrumento identificado en la actualización, procedimiento de pesaje, origen de la receta y respaldo fotográfico.
 
 ---
 
@@ -215,8 +215,9 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-022 — Margen de dosificación de harina
 
 **Estado:** Confirmada como criterio preliminar de diseño por el estudiante.
-**Decisión:** Adoptar un margen de ±30 g de harina por lote respecto de la cantidad objetivo. El margen bilateral amplía el criterio previo de +30 g.
-**Motivo:** La respuesta de seguimiento de la propietaria registra un margen inicial de 30 g tanto de exceso como de déficit para la harina.
+**Corrección 2026-11-16:** el estudiante confirma que la respuesta de entrevista es 20 g por exceso o déficit; el valor de 30 g fue un error de transcripción. Se corrigen únicamente las dos menciones del valor en la respuesta 14.
+**Decisión:** Adoptar un margen de ±20 g de harina por lote respecto de la cantidad objetivo. Este valor bilateral sustituye el margen de ±30 g registrado por error.
+**Motivo:** La respuesta de seguimiento de la propietaria registra un margen inicial de 20 g tanto de exceso como de déficit para la harina.
 **Impacto:** Se aplica al RNF-01. Quedan pendientes las pruebas de desempeño del prototipo y las tolerancias de los otros tres ingredientes (A-004).
 
 ---
@@ -233,9 +234,18 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 ### D-024 — Metas de error para la casa de calidad
 
 **Estado:** Confirmada como criterio de diseño por el estudiante (12/11/2026).
-**Decisión:** Conservar ±30 g por lote de harina (D-022) y añadir una meta de media de error absoluto ≤10 g. Adoptar ±3 g para azúcar, ±2 g para sal y ±1 g para levadura por lote como metas de ingeniería para la casa de calidad. Evaluar cada ingrediente por lote, agrupar por receta y utilizar el resumen diario como información complementaria, sin compensar excesos y déficits al evaluar el error absoluto.
+**Actualización 2026-11-16:** por encargo del estudiante se adopta una meta preliminar de media de error absoluto ≤15 g de harina, en sustitución de ≤10 g. Frente a los 20,43 g de la muestra manual, representa una reducción objetivo aproximada del 26,6 %. La elección modera la exigencia previa sin atribuir viabilidad demostrada; fichas, referencia de pesaje y ensayos siguen pendientes.
+**Decisión:** Conservar ±20 g por lote de harina (D-022) y añadir una meta de media de error absoluto ≤15 g. Adoptar ±3 g para azúcar, ±2 g para sal y ±1 g para levadura por lote como metas de ingeniería para la casa de calidad. Evaluar cada ingrediente por lote, agrupar por receta y utilizar el resumen diario como información complementaria, sin compensar excesos y déficits al evaluar el error absoluto.
 **Motivo:** El estudiante acepta expresamente el análisis de `research/notes/propuesta_evaluacion_tolerancias_2026-11-12.md` y solicita aplicarlo a la casa de calidad. Una banda común de ±1 % admitiría diferencias mayores que las manuales observadas en harina y exigiría fracciones de gramo para levadura.
-**Impacto:** Se actualiza el Excel de diseño. La aceptación de los márgenes de receta con la propietaria, la viabilidad técnica, la caracterización de la referencia y los ensayos permanecen pendientes. No constituye aprobación docente ni demuestra una mejora experimental. La tesis y su figura de la casa de calidad quedan pendientes de alineación en su siguiente revisión; esta autorización se aplica al Excel.
+**Impacto:** Se actualiza el Excel de diseño. La aceptación de los márgenes de receta con la propietaria, la viabilidad técnica, la caracterización de la referencia y los ensayos permanecen pendientes. No constituye aprobación docente ni demuestra una mejora experimental. La revisión del 16/11/2026 alinea RNF-01, el apartado 3.2, el texto de la casa de calidad, el Excel vigente y la figura de metas con ±20 g por lote y media absoluta ≤15 g de harina.
+
+---
+
+### D-025 — Archivo general y retiro de Sites
+
+**Estado:** Confirmada por encargo de organización del estudiante (15/11/2026).
+**Decisión:** Conservar versiones sustituidas y recursos sin uso activo en `archive/`, manteniendo subcarpetas según su ruta de origen e inventario. Retirar del repositorio el panel de Sites solicitado por el estudiante; preservar únicamente una copia de sus datos locales. Separar los auxiliares regenerables de LaTeX en `docs/thesis/build/` sin cambiar la ubicación de `main.pdf` ni el comando habitual de compilación.
+**Impacto:** Las fuentes vigentes permanecen en sus carpetas de trabajo. `archive/` es histórico y no se utiliza como fuente actual ni se lee completo por defecto. La bibliografía de reserva pasa a `archive/docs/thesis/bibliography/referencias_reserva.bib`; la tesis sigue cargando `docs/thesis/bibliography/referencias.bib`. No cambia ningún objetivo, dato ni selección técnica.
 
 ---
 
@@ -245,11 +255,13 @@ Las referencias históricas de **5–15 kg**, **40–50 kg** y **+20 g** son ún
 
 **Aclaración de formato y aplicación posterior:** el estudiante conserva las seis características y solicita aplicar la reducción en el formato original de la casa de calidad de Excel, no en tablas nuevas. Versión activa: `docs/design/Casa_de_calidad_San_Miguel_revision.xlsx`, hoja `House of Quality 1`, con techo triangular de seis características y comparación documental en hoja propia. La tesis utiliza capturas exportadas por Excel de esa versión. El libro `_simplificada.xlsx` queda como antecedente de la revisión de contenido, no como formato activo. No se cambian pesos, relaciones, metas ni el criterio comercial de la simplificación.
 
-**Simplificación solicitada y aplicada (13/11/2026, revisión posterior):** seis características de diseño sustituyen las catorce columnas anteriores: error por ingrediente (con cuatro límites separados de D-024), tiempo de ciclo, intervención activa, limpieza, área ocupada y capacidad útil de harina. Seguridad, manejo, altura, mantenimiento y repetibilidad conservan sus RF/RNF y verificaciones, sin columna ponderada propia. Se reemplaza la clasificación comercial 0–5 por prestaciones documentadas, porque la evidencia disponible no permite puntuar todas las necesidades. Versión de trabajo: `docs/design/Casa_de_calidad_San_Miguel_simplificada.xlsx`. Las versiones anteriores son antecedentes; no se mezclan sus prioridades con las nuevas. Se conservan metas y decisiones técnicas abiertas.
+**Simplificación solicitada y aplicada (13/11/2026, revisión posterior):** seis características de diseño sustituyen las catorce columnas anteriores: error por ingrediente (con cuatro límites separados de D-024), tiempo de ciclo, intervención activa, limpieza, área ocupada y capacidad útil de harina. Seguridad, manejo, altura, mantenimiento y repetibilidad conservan sus RF/RNF y verificaciones, sin columna ponderada propia. Se reemplaza la clasificación comercial 0–5 por prestaciones documentadas, porque la evidencia disponible no permite puntuar todas las necesidades. Versión de trabajo: `archive/docs/design/Casa_de_calidad_San_Miguel_simplificada.xlsx`. Las versiones anteriores son antecedentes; no se mezclan sus prioridades con las nuevas. Se conservan metas y decisiones técnicas abiertas.
+
+**Comparación competitiva reincorporada (17/11/2026):** por instrucción del estudiante, la casa de calidad recupera el análisis competitivo 0–5, siguiendo a María Julia y V9, dentro de la hoja `House of Quality 1` (columnas CT–CX y gráfico de perfil a la derecha de la matriz). Referentes: DF-B, IF-A, HZF-A, IND-AX4 y WL-P1H200. El estudiante pide puntuar las seis necesidades con criterio de ingeniería; las notas son valoraciones del diseñador a partir de fichas y fotografías, con el criterio de cada necesidad en la sección 11 de `Base y criterios`. Supuesto declarado: densidad aparente de la harina de 0,5 kg/L para comparar tolvas, pendiente de medición; la nota de tolva de HZF-A es estimación visual. El prototipo no se puntúa. Reemplaza el criterio del 13/11 de no puntuar; la tabla de prestaciones documentadas se conserva.
 
 **Presentación solicitada el 13/11/2026:** la casa de calidad del capítulo 3 se presenta mediante capturas por bloques del Excel vigente, con explicación de necesidades, relaciones, techo, metas, prioridades y comparación, siguiendo el enfoque visual de María Julia. Los encabezados de las capturas se traducen al español y se repiten etiquetas donde la división facilita la lectura. Esto reemplaza la figura sintética de la tesis; no cambia las metas de D-024 ni selecciona una combinación. RNF-01 conserva el formato de identificación vigente; tres dígitos no constituyen una exigencia de SySO.
 
-La solicitud de completar una propuesta autoriza utilizar una valoración inicial del diseñador, identificada como tal y respaldada por entrevista y registros. La versión revisada está en `docs/design/Casa_de_calidad_San_Miguel_revision.xlsx`; sus pesos, dificultad, notas documentales y metas operativas nuevas son propuestas por contrastar, no valoraciones atribuidas a la propietaria. La comparación distingue el perfil objetivo del proyecto de resultados experimentales y conserva ND cuando falta evidencia. «Equipo compacto» expresa la necesidad de espacio; paso libre, extracción y accesos siguen siendo restricciones. D-024 conserva las metas de error adoptadas. El desarrollo no selecciona definitivamente A/B/C ni cierra los parámetros técnicos de A-004. Detalles y fundamentos: `research/notes/casa_calidad_propuesta_completa_2026-11-12.md`.
+La solicitud de completar una propuesta autoriza utilizar una valoración inicial del diseñador, identificada como tal y respaldada por entrevista y registros. La versión revisada está en `docs/design/Casa_de_calidad_San_Miguel_revision.xlsx`; sus pesos, dificultad, notas documentales y metas operativas nuevas son propuestas por contrastar, no valoraciones atribuidas a la propietaria. La comparación distingue el perfil objetivo del proyecto de resultados experimentales y conserva ND cuando falta evidencia. «Equipo compacto» expresa la necesidad de espacio; paso libre, extracción y accesos siguen siendo restricciones. D-024 conserva las metas de error adoptadas. El desarrollo no selecciona definitivamente A/B/C ni cierra los parámetros técnicos de A-004. Detalles y fundamentos: `archive/research/notes/casa_calidad_propuesta_completa_2026-11-12.md`.
 
 Los siguientes asuntos están **NO DECIDIDOS** y ningún agente debe cerrarlos sin nueva evidencia, decisión del estudiante o indicación docente.
 

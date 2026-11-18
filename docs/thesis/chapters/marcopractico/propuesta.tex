@@ -1,3 +1,4 @@
+% !TeX root = ../../main.tex
 \chapter{PROPUESTA DE PROYECTO}
 \label{sec:propuesta}
 
@@ -90,7 +91,7 @@ y las condiciones del puesto.
         \toprule[1pt]
         \textbf{Código} & \textbf{Requerimiento} & \textbf{Prioridad} & \textbf{Justificación} \\
         \midrule[1pt]
-        \textbf{RNF-01} & Mantener el error individual dentro de $\pm30$~g de harina, $\pm3$~g de azúcar, $\pm2$~g de sal y $\pm1$~g de levadura; media absoluta de harina $\leq10$~g. & Alta & Margen de harina indicado por la propietaria; metas de ingeniería de menores y media absoluta adoptadas para contrastar el prototipo con el registro manual. Aceptación de receta y ensayos pendientes. \\
+        \textbf{RNF-01} & Mantener el error individual dentro de $\pm20$~g de harina, $\pm3$~g de azúcar, $\pm2$~g de sal y $\pm1$~g de levadura. Media absoluta de harina $\leq15$~g. & Alta & Margen de harina indicado por la propietaria, metas de ingeniería de menores y media absoluta adoptadas para contrastar el prototipo con el registro manual. Aceptación de receta para menores y ensayos pendientes. \\
         \addlinespace[5pt]
         \textbf{RNF-02} & Completar la dosificación de los cuatro ingredientes dentro de un tiempo máximo por definir. & Alta & El tiempo del procedimiento manual forma parte de la necesidad documentada y requiere comparación bajo condiciones equivalentes. \\
         \addlinespace[5pt]
@@ -115,43 +116,47 @@ Las necesidades de recarga, extracción del recipiente y limpieza condicionan
 la distribución de las tolvas y los accesos del equipo. El levantamiento
 del puesto comprende el espacio disponible, la altura de recarga y la
 alimentación eléctrica. La entrevista deja pendientes el tiempo máximo
-de dosificación y los márgenes de variación aceptables para las recetas.
+de dosificación y los márgenes de variación de azúcar, sal y levadura
+aceptables para las recetas.
 
 \section{Tolerancias preliminares de dosificación}
 \label{sec:tolerancias_preliminares}
 
-La dosificación se evalúa mediante la diferencia entre la cantidad final
-medida con un instrumento de referencia y la consigna de cada ingrediente.
-Un valor positivo indica exceso y uno negativo indica déficit. La
-propietaria indicó un margen inicial de 30~g por encima o por debajo de
-la consigna de harina (Apéndice~\ref{ap:entrevista_requerimientos}).
-Ese margen integra el requerimiento RNF-01 como límite individual
-de diseño: $|e|\leq30$~g por lote.
+Las tolerancias preliminares establecen el margen de exceso o déficit
+respecto de la cantidad objetivo de cada ingrediente. Estos márgenes
+orientan el diseño de la alimentación y del pesaje y constituyen
+criterios para evaluar las dosis del prototipo. El error de dosificación
+se calcula mediante la diferencia
+\(e=q_{\mathrm{final}}-q_{\mathrm{objetivo}}\), en gramos. La cantidad
+\(q_{\mathrm{final}}\) corresponde al ingrediente dosificado y
+\(q_{\mathrm{objetivo}}\), a la cantidad establecida para el lote.
+Un error positivo indica exceso y uno negativo indica déficit.
 
-El límite de harina equivale al 0,60~\% de una consigna de 5~kg y al
-0,375~\% de una de 8~kg. Un lote de los siete observados superó ese
-margen, con un exceso de 38~g (Tabla~\ref{tab:cantidades_sabado}).
-La meta complementaria de media absoluta es de 10~g o menos, frente a
-los 20,43~g calculados en el registro manual. La evaluación comprueba
-tanto el límite de cada dosis como el promedio de los errores absolutos,
-con recetas y condiciones equivalentes.
+La propietaria indicó un margen inicial de 20~g de exceso o déficit
+para la harina en cualquiera de las recetas registradas, de acuerdo con
+la entrevista del Apéndice~\ref{ap:entrevista_requerimientos}. Este
+criterio se incorpora al requerimiento RNF-01 de la
+Tabla~\ref{tab:requerimientos_no_funcionales_prototipo} como límite
+individual de $\pm20$~g por lote. Para una cantidad objetivo de
+6\,500~g de harina, el intervalo correspondiente comprende de
+6\,480 a 6\,520~g. Los márgenes de azúcar, sal y levadura corresponden
+a metas de ingeniería cuya aceptación en las recetas permanece pendiente.
 
 \subsection{Referencia del procedimiento manual}
 
-Las diferencias registradas en el procedimiento manual constituyen una
-referencia para comparar el prototipo. La Tabla~\ref{tab:errores_referencia_diseno}
-distingue la diferencia media con signo del promedio de las diferencias
-absolutas. El primero describe la tendencia al exceso o al déficit; el
-segundo evita que las diferencias de signo contrario se compensen.
-Los valores se calculan por ingrediente sobre los siete ciclos registrados.
+Los siete ciclos registrados aportan la referencia para comparar las
+diferencias de dosificación del procedimiento manual con las del
+prototipo. A partir de las cantidades objetivo e incorporadas del
+Apéndice~\ref{ap:registros_campo}, se calcularon tres indicadores:
+media con signo, media absoluta y máxima absoluta. Cada indicador
+describe un aspecto de las diferencias observadas por ingrediente.
 
-El registro de azúcar, sal y levadura se realizó con una balanza SF-400,
-identificada por el investigador con capacidad de 10\,000~g y división
-de lectura de 1~g. La división describe el incremento mostrado y no
-equivale al error del instrumento. La comprobación de una banda de
-$\pm1$~g requiere una referencia caracterizada y una incertidumbre
-compatible con ese margen; los decimales de los promedios calculados
-no añaden resolución a las lecturas originales.
+La media con signo conserva los valores positivos y negativos e
+identifica la tendencia al exceso o al déficit. La media absoluta
+considera el tamaño de cada diferencia sin distinguir el signo, por
+lo que los excesos y déficits no se compensan. La máxima absoluta
+identifica la mayor diferencia registrada. La
+Tabla~\ref{tab:errores_referencia_diseno} presenta los resultados.
 
 \begin{table}[H]
     \centering
@@ -171,130 +176,137 @@ no añaden resolución a las lecturas originales.
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: cálculo a partir del levantamiento de dosificación del Apéndice~\ref{ap:registros_campo}.
+    Fuente: Elaboración propia.
 \end{table}
 
-Los registros orientan las metas de ingeniería de los ingredientes
-menores: $\pm3$~g para azúcar, $\pm2$~g para sal y $\pm1$~g para
-levadura. Estos límites individuales son inferiores a las medias
-absolutas observadas y forman parte del RNF-01. La aceptación de esos
-márgenes en las recetas y la comprobación técnica del equipo permanecen
-pendientes; los registros manuales no establecen la variación admisible
-del producto de panificación.
+En harina, la media con signo coincide con la media absoluta porque los
+siete ciclos registraron excesos. Dos lotes superaron el margen de
+$\pm20$~g, con diferencias de 38 y 27~g
+(Tabla~\ref{tab:cantidades_sabado}). Estos resultados describen la
+muestra registrada y no caracterizan toda la producción de la panadería.
 
-La banda de azúcar representa entre 0,75 y 3,75~\% de las consignas
-registradas; la de sal, entre 1,33 y 2~\%; y la de levadura, entre 3,33 y
-5~\%. La validación considera el criterio de la propietaria, las
-características del instrumento de referencia y las pruebas de
-alimentación y pesaje de cada ingrediente.
+En azúcar, sal y levadura se observaron excesos y déficits. La media
+con signo del azúcar fue de $+3{,}57$~g, mientras que la media absoluta
+alcanzó 9,00~g. El primer indicador resume el balance de las diferencias.
+El segundo expresa cuánto se apartaron las dosis de la cantidad objetivo,
+en promedio. La comparación del tamaño de las diferencias utiliza la
+media absoluta junto con los errores individuales.
 
-\subsection{Escenarios porcentuales y comprobación de las metas}
+\subsection{Metas de dosificación y comprobación}
 
-Aplicar el margen de harina de $\pm30$~g a los ingredientes menores representaría
-7,5 a 37,5~\% en azúcar, 20 a 30~\% en sal y 100 a 150~\% en levadura.
-La Tabla~\ref{tab:escenarios_tolerancia} presenta dos escenarios de
-sensibilidad para comparar configuraciones de pesaje. Los porcentajes se
-aplican a cada consigna y son hipótesis de dimensionamiento, sujetas a
-validación con la panadería y a pruebas.
+El proyecto adopta una meta complementaria de error absoluto promedio
+$\leq15$~g para harina. Esta meta corresponde a una elección preliminar
+de ingeniería frente a los 20,43~g calculados en la muestra manual.
+La reducción objetivo es de aproximadamente 26,6~\%.
 
-\begin{table}[H]
-    \centering
-    \caption{Escenarios de error absoluto para el estudio de pesaje.}
-    \label{tab:escenarios_tolerancia}
-    \footnotesize
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Ingrediente} & \textbf{Consigna (g)} &
-        \textbf{Banda al 1 \% (g)} & \textbf{Banda al 2 \% (g)} \\
-        \midrule
-        Azúcar & 80--400 & $\pm(0{,}8\text{--}4)$ & $\pm(1{,}6\text{--}8)$ \\
-        Sal & 100--150 & $\pm(1\text{--}1{,}5)$ & $\pm(2\text{--}3)$ \\
-        Levadura en polvo & 20--30 & $\pm(0{,}2\text{--}0{,}3)$ & $\pm(0{,}4\text{--}0{,}6)$ \\
-        \bottomrule
-    \end{tabular}
-    \par\smallskip
-    Fuente: cálculo a partir de las consignas de la Tabla~\ref{tab:receta_referencia}.
-\end{table}
+El margen individual de $\pm20$~g verifica cada lote y el promedio
+absoluto resume el tamaño de las diferencias del conjunto evaluado.
+Por ejemplo, una serie con errores de $+18$~g en todas las dosis
+cumple el margen individual, pero registra un promedio absoluto de
+18~g y no cumple la meta de 15~g. El ejemplo ilustra los dos criterios
+sin representar una medición del prototipo. La evaluación informa ambos
+resultados por separado, con agrupación por receta y condiciones comparables.
 
-La comprobación de las metas registra por separado el error frente a
-la consigna y la dispersión entre dosis repetidas, con énfasis en la
-dosis de levadura de 20~g. La OIML R~61
-aporta criterios metrológicos para instrumentos automáticos de llenado
-y distingue la dispersión respecto de la media del error de la media
-frente a la consigna~\parencite{oiml2017r61}. Esos criterios se consideran
-para planificar las pruebas del equipo. La confirmación de cuántos
-gramos de más o de menos admite cada receta queda sujeta al criterio
-de la propietaria y a la evidencia del proceso de panificación.
+Para los ingredientes menores se adoptan límites individuales de
+$\pm3$~g de azúcar, $\pm2$~g de sal y $\pm1$~g de levadura.
+Estos valores constituyen metas de ingeniería para diseñar y comprobar
+la dosificación. La aceptación de los márgenes en las recetas permanece
+pendiente de contraste con la propietaria. Los cuatro ingredientes
+se evalúan por separado, sin compensar diferencias entre ingredientes.
+
+La comprobación registra, para cada ingrediente y lote, la cantidad
+objetivo, la cantidad final medida con un instrumento de referencia y
+la diferencia entre ambas. Los resultados se comparan con el margen
+correspondiente y las dosis fuera de ese margen se identifican de forma
+individual. La evaluación incluye la dispersión entre dosis repetidas.
+La OIML R~61 aporta criterios metrológicos para la planificación de
+estas pruebas~\parencite{oiml2017r61}.
 
 \section{Diseño conceptual de los subsistemas}
 \label{sec:diseno_conceptual}
 
-Con las herramientas descritas en la Sección~\ref{subsec:fund_diseno_conceptual},
-el diseño conceptual relaciona los requerimientos con las funciones de
-almacenamiento, alimentación, medición y entrega. La caja negra delimita
-los intercambios con el operario y el entorno; el diagrama de bloques
-descompone las funciones internas. Las alternativas de la matriz
-morfológica se combinan en configuraciones que se contrastan mediante
-criterios de pesaje, montaje, limpieza y costo.
+El diseño conceptual relaciona los requerimientos de la dosificadora
+con las funciones necesarias para dosificar harina, azúcar, sal y
+levadura en polvo. El árbol de objetivos organiza las características
+buscadas en el producto. La caja negra delimita las entradas y salidas
+del sistema, y la descomposición funcional identifica las operaciones
+internas que relacionan ambas.
 
 \subsection{Árbol de objetivos del producto}
 
-La Figura~\ref{fig:arbol_objetivos_dosificadora} organiza las condiciones
-del producto en dosificación, operación e integración al puesto. La
-primera rama reúne la diferencia respecto de la receta y la repetibilidad;
-la segunda distingue la intervención activa de la duración del ciclo.
-La tercera comprende los accesos, el espacio y la protección del operario.
-Las ramas describen resultados esperados; los mecanismos y componentes
-se comparan en la matriz morfológica.
+El árbol de la Figura~\ref{fig:arbol_objetivos_dosificadora} organiza los
+objetivos del producto en tres ramas: ajustar la dosis a la receta,
+facilitar la operación e integrar el equipo al puesto. Estas ramas
+reúnen las condiciones de dosificación, interacción con el operario e
+instalación que se desprenden de los requerimientos.
+
+La primera rama comprende el cumplimiento del margen de dosificación
+de cada ingrediente y la repetibilidad entre lotes. El margen relaciona
+la cantidad dosificada con la cantidad objetivo. La repetibilidad
+considera la variación entre dosis realizadas bajo condiciones
+comparables. Ambos aspectos intervienen en la evaluación del sistema
+de alimentación y pesaje.
+
+La segunda rama reúne la reducción de la intervención manual, la
+facilidad de programación y consulta de estado, y la duración de la
+dosificación. La intervención activa y el tiempo total del ciclo se
+consideran por separado, porque describen aspectos distintos del
+funcionamiento. Los límites de tiempo y las tareas del operario
+permanecen sujetos a definición y comprobación.
+
+La tercera rama comprende el espacio de paso, los accesos para recarga
+y retiro del recipiente, la limpieza, el mantenimiento y la protección
+del operario. Estas condiciones orientan la disposición de los
+conjuntos y la revisión de accesos durante el diseño mecánico.
 
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[
-        bloque/.style={draw, align=center, font=\footnotesize, inner sep=4pt},
-        rama/.style={bloque, fill=gray!12, text width=37mm, minimum height=12mm},
-        meta/.style={bloque, text width=37mm, minimum height=10mm}]
-        \node[bloque, fill=gray!20, text width=77mm] (raiz) at (0,0)
+    \begin{tikzpicture}[line width=0.5pt,
+        bloque/.style={draw, line width=0.6pt, align=center, font=\footnotesize, inner sep=3pt},
+        rama/.style={bloque, fill=gray!12, text width=40mm, minimum height=11mm},
+        meta/.style={bloque, text width=36mm, minimum height=12.5mm}]
+        \node[bloque, fill=gray!20, text width=90mm, minimum height=11mm] (raiz) at (0,0)
             {\textbf{Dosificar los cuatro ingredientes secos\\según las recetas de la Panadería San Miguel}};
-        \node[rama] (dosis) at (-4.5,-1.65) {\textbf{Ajustar la dosis\\a la receta}};
-        \node[rama] (operacion) at (0,-1.65) {\textbf{Limitar el trabajo\\y el tiempo de operación}};
-        \node[rama] (puesto) at (4.5,-1.65) {\textbf{Integrar el equipo\\al puesto}};
-        \coordinate (union) at (0,-0.88);
-        \draw (raiz.south) -- (union) -- (operacion.north);
+        \node[rama] (dosis) at (-4.9,-2) {\textbf{Ajustar la dosis\\a la receta}};
+        \node[rama] (operacion) at (0,-2) {\textbf{Facilitar\\la operación}};
+        \node[rama] (puesto) at (4.9,-2) {\textbf{Integrar el equipo\\al puesto}};
+        \draw (raiz.south) -- ++(0,-0.45) coordinate (union);
         \draw (dosis.north) |- (union) -| (puesto.north);
-        \node[meta, below=5mm of dosis] (tolerancia) {Cumplir el margen\\de cada ingrediente};
-        \node[meta, below=3mm of tolerancia] (repetir) {Mantener la\\repetibilidad entre lotes};
-        \node[meta, below=5mm of operacion] (atencion) {Reducir la intervención\\manual por ciclo};
-        \node[meta, below=3mm of atencion] (manejo) {Simplificar la programación\\y la consulta de estado};
-        \node[meta, below=3mm of manejo] (tiempo) {Limitar la duración\\de la dosificación};
-        \node[meta, below=5mm of puesto] (acceso) {Conservar espacio de paso,\\recarga y retiro del recipiente};
-        \node[meta, below=3mm of acceso] (limpieza) {Facilitar limpieza\\y mantenimiento};
-        \node[meta, below=3mm of limpieza] (seguridad) {Proteger al operario\\durante el uso};
-        \draw (dosis) -- (tolerancia);
-        \draw (operacion) -- (atencion);
-        \draw (puesto) -- (acceso);
-        \draw (dosis.west) -- ++(-2mm,0) |- (repetir.west);
-        \draw (operacion.west) -- ++(-2mm,0) |- (manejo.west);
-        \draw (operacion.west) -- ++(-2mm,0) |- (tiempo.west);
-        \draw (puesto.west) -- ++(-2mm,0) |- (limpieza.west);
-        \draw (puesto.west) -- ++(-2mm,0) |- (seguridad.west);
+        \draw (union) -- (operacion.north);
+        % Cada rama desciende por su borde izquierdo hacia sus metas.
+        \foreach \rama/\x/\metas in {
+            dosis/-4.9/{Cumplir el margen\\de cada ingrediente, Mantener la\\repetibilidad\\entre lotes},
+            operacion/0/{Reducir la intervención\\manual por ciclo, Simplificar la\\programación y la\\consulta de estado, Limitar la duración\\de la dosificación},
+            puesto/4.9/{Conservar espacio\\de paso{,} recarga y\\retiro del recipiente, Facilitar limpieza\\y mantenimiento, Proteger al operario\\durante el uso}} {
+            \foreach \meta [count=\i] in \metas {
+                \node[meta, anchor=west] (\rama-\i) at (\x-1.75,-2.15-1.55*\i) {\meta};
+                \draw (\x-2.0,-2.55) |- (\rama-\i.west);
+            }
+        }
     \end{tikzpicture}
     \caption{Árbol de objetivos de la dosificadora.}
     \label{fig:arbol_objetivos_dosificadora}
-    {\footnotesize Fuente: Elaboración propia a partir de los requerimientos del prototipo.}
+    {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
-El ajuste de la dosis se relaciona con RF-01 a RF-05, RNF-01 y RNF-08.
-La operación se relaciona con RF-01, RF-06, RNF-02 y RNF-03.
-La integración al puesto se relaciona con RF-07 y RNF-04 a RNF-07.
+El árbol expresa las condiciones buscadas en el producto. La selección
+de una configuración requiere contrastar esas condiciones con los
+requerimientos, las características de los componentes y las
+comprobaciones del equipo. La representación no acredita reducciones
+de tiempo ni cumplimiento experimental de las metas.
 
 \subsection{Diagrama de caja negra}
 
-La Figura~\ref{fig:caja_negra_dosificadora} representa la dosificadora
-mediante las entradas y salidas de material, energía e información.
-El límite comprende el almacenamiento en la máquina, la alimentación,
-el pesaje y la entrega de los ingredientes al recipiente. El operario recarga
-los depósitos y coloca y retira el recipiente. El mezclado y el amasado
-quedan fuera de la transformación representada.
+La Figura~\ref{fig:caja_negra_dosificadora} representa la dosificación
+de harina, azúcar, sal y levadura según las cantidades objetivo de cada
+preparación. El sistema recibe los ingredientes separados, el recipiente
+vacío, la energía eléctrica y las órdenes del operario, y entrega los
+ingredientes dosificados en el recipiente junto con la indicación de
+cantidad, estado y avisos. El calor y el sonido representan la energía
+disipada. Las flechas continuas gruesas identifican el material, las
+continuas finas representan energía y las discontinuas, información.
+El operario recarga los depósitos y coloca y retira el recipiente.
+El mezclado y el amasado quedan fuera del sistema representado.
 
 \begin{figure}[H]
     \centering
@@ -324,60 +336,90 @@ quedan fuera de la transformación representada.
 
 \subsection{Descomposición funcional de la caja negra}
 
-La Figura~\ref{fig:esquema_funcional_dosificadora} descompone la
-transformación de la caja negra en recorrido del material, energía e
-información. El mando relaciona la consigna del ingrediente activo con
-la lectura de pesaje y ordena la alimentación o el corte. La recepción
-pesada representa el pesaje en el recipiente o en un recipiente intermedio;
-la reunión de las dosis en el recipiente constituye la salida común de las
-configuraciones estudiadas.
+La Figura~\ref{fig:esquema_funcional_dosificadora} presenta el recorrido
+de los ingredientes desde el almacenamiento hasta la alimentación, el
+pesaje y la entrega al recipiente. La lectura de peso se compara con la
+cantidad objetivo del ingrediente activo para ordenar la alimentación
+o el corte, y la interfaz recibe las órdenes del operario y muestra el
+estado del proceso. La energía eléctrica abastece el accionamiento,
+la medición, el mando y la interfaz. Las flechas continuas gruesas
+representan material, las continuas finas representan energía y las
+discontinuas, información. La línea de puntos identifica la colocación
+del recipiente. El recuadro exterior delimita la dosificadora, de modo
+que las entradas y salidas quedan fuera de él. El punto marca la
+derivación eléctrica y el recuadro discontinuo agrupa las funciones de mando
+e interfaz. La energía se representa por ambos lados para evitar cruces de
+líneas. El pesaje se realiza en el recipiente final o en un
+receptor auxiliar según la configuración. En las configuraciones con
+receptor auxiliar, la transferencia y la retención de material requieren
+comprobación. Estas funciones organizan
+la comparación de alternativas sin fijar componentes ni el número de
+recipientes o sensores.
 
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[
-        bloque/.style={draw, align=center, minimum height=11mm,
-                       text width=25mm, font=\footnotesize},
-        >=Stealth]
-        \node[bloque] (almacenamiento) at (0,0) {Almacenar\\ingredientes};
-        \node[bloque] (alimentacion) at (3.3,0) {Regular la\\alimentación};
-        \node[bloque] (recepcion) at (6.6,0) {Recibir sobre\\el pesaje};
-        \node[bloque] (entrega) at (9.9,0) {Reunir las dosis\\en el recipiente};
-        \node[bloque] (accionamiento) at (3.3,-1.6) {Accionar\\el alimentador};
-        \node[bloque] (control) at (3.3,-3.2) {Secuenciar y\\ordenar el corte};
-        \node[bloque] (medicion) at (6.6,-3.2) {Medir y\\acondicionar};
-        \node[bloque] (interfaz) at (0,-3.2) {Ingresar consignas\\e interrupción};
-        \node[bloque] (aviso) at (9.9,-3.2) {Mostrar lectura\\y estado};
-        \node[align=center, font=\footnotesize] (energia) at (0,-1.6)
-            {Energía eléctrica\\acondicionada};
-        \draw[->, thick] (almacenamiento) -- (alimentacion);
-        \draw[->, thick] (alimentacion) -- (recepcion);
-        \draw[->, thick] (recepcion) -- (entrega);
-        \draw[->] (energia) -- (accionamiento);
-        \draw[->] (accionamiento) -- (alimentacion);
-        \draw[->, dashed] (interfaz) -- (control);
-        \draw[->, dashed] (control) -- (accionamiento);
-        \draw[->, dashed] (recepcion) -- (medicion);
-        \draw[->, dashed] (medicion) -- (control);
-        \draw[->, dashed] (control.south) -- ++(0,-0.55) -| (aviso.south);
-    \end{tikzpicture}
+    \resizebox{\textwidth}{!}{%
+    \begin{tikzpicture}[>=Stealth,
+        bloque/.style={draw, line width=0.6pt, rounded corners=2pt, align=center,
+                       minimum height=14mm, text width=22mm,
+                       inner sep=3pt, font=\footnotesize},
+        material/.style={bloque, fill=gray!12},
+        externo/.style={align=center, text width=22mm, font=\footnotesize},
+        flujo/.style={->, line width=1.1pt},
+        energia/.style={->, line width=0.5pt},
+        senal/.style={->, dashed, line width=0.5pt}]
+        % Límite del sistema: las entradas y salidas quedan fuera.
+        \draw[line width=0.8pt] (-1.75,-1.0) rectangle (10.75,6.55);
+        % Agrupación funcional, sin seleccionar un controlador físico.
+        \draw[draw=black!60, dashed, line width=0.5pt, rounded corners=3pt]
+            (-1.45,3.85) rectangle (7.65,6.25);
+        \node[font=\footnotesize, anchor=north] at (3.1,6.25) {Mando e interfaz};
+        \node[bloque] (interfaz) at (0,5) {Ingresar consignas\\e interrupción};
+        \node[bloque] (control) at (3.1,5) {Secuenciar y\\ordenar el corte};
+        \node[bloque] (aviso) at (6.2,5) {Mostrar lectura\\y estado};
+        \node[externo] (ordenes) at (-3.2,5) {Cantidades objetivo\\y órdenes\\del operario};
+        \node[externo] (informacion) at (12.3,5) {Cantidad indicada,\\estado y avisos};
+        % Fila intermedia: accionamiento sobre la alimentación y medición junto a la entrega.
+        \node[bloque] (accionamiento) at (3.1,2.5) {Accionar\\el alimentador};
+        \node[bloque] (medicion) at (9.3,2.5) {Medir y\\acondicionar la\\señal de peso};
+        \node[externo] (fuente) at (-3.2,2.5) {Energía eléctrica\\acondicionada};
+        \node[externo] (fuente2) at (12.3,2.5) {Energía eléctrica\\acondicionada};
+        % Fila inferior: recorrido del material.
+        \node[externo] (entrada) at (-3.2,0) {Ingredientes\\separados};
+        \node[material] (almacenamiento) at (0,0) {Almacenar\\ingredientes};
+        \node[material] (alimentacion) at (3.1,0) {Regular la\\alimentación};
+        \node[material] (recepcion) at (6.2,0) {Recibir y pesar\\el ingrediente};
+        \node[material] (entrega) at (9.3,0) {Reunir las\\dosis en el\\recipiente};
+        \node[externo] (salida) at (12.3,0) {Ingredientes\\dosificados en\\el recipiente};
+        \node[externo, text width=34mm] (recipiente) at (9.3,-1.6) {Recipiente colocado por el operario};
+        % Material: recorrido horizontal.
+        \draw[flujo] (entrada) -- (almacenamiento);
+        \draw[flujo] (almacenamiento) -- (alimentacion);
+        \draw[flujo] (alimentacion) -- (recepcion);
+        \draw[flujo] (recepcion) -- (entrega);
+        \draw[flujo] (entrega) -- (salida);
+        \draw[densely dotted, line width=0.6pt] (recipiente.north) -- (entrega.south);
+        % Energía: el mando y el accionamiento por la izquierda; la medición por la derecha.
+        \draw[line width=0.5pt] (fuente.east) -- (-1.05,2.5);
+        \fill (-1.05,2.5) circle (1.8pt);
+        \draw[energia] (-1.05,2.5) -- (-1.05,3.85);
+        \draw[energia] (-1.05,2.5) -- (accionamiento.west);
+        \draw[energia] (fuente2) -- (medicion);
+        \draw[energia] (accionamiento) -- (alimentacion);
+        % Información: consigna, orden de alimentación y retorno de la medición.
+        \draw[senal] (ordenes) -- (interfaz);
+        \draw[senal] (interfaz) -- (control);
+        \draw[senal] (control) -- (aviso);
+        \draw[senal] (aviso) -- (informacion);
+        \draw[senal] ([xshift=-4mm]control.south) -- ([xshift=-4mm]accionamiento.north);
+        \draw[senal] (recepcion.north) -- ++(0,0.55) -| (medicion.south);
+        \draw[senal] (medicion.north) -- ++(0,0.4) -| ([xshift=4mm]control.south);
+    \end{tikzpicture}%
+    }
     \caption{Funciones de alimentación, medición y mando de la dosificadora.}
     \label{fig:esquema_funcional_dosificadora}
-    {\footnotesize Línea gruesa: material; continua: energía; discontinua: información.\\
-    Fuente: Elaboración propia.}
+    {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
-
-La alimentación eléctrica abastece el accionamiento, la medición, el
-control y la interfaz; la figura destaca la rama de potencia del
-alimentador. La orden de interrupción del operario detiene la
-alimentación, conforme al RF-07. La señal de peso cierra el lazo de
-dosificación; los pasos o vueltas del motor describen el movimiento
-del alimentador y no sustituyen la medición gravimétrica.
-
-La descarga directa reúne los ingredientes en el recipiente sin una
-transferencia intermedia. El receptor auxiliar añade una operación de
-vaciado cuya cantidad entregada y retención requieren comprobación.
-Esta distinción se conserva al comparar las configuraciones de pesaje;
-el diagrama funcional no fija su número de recipientes ni de sensores.
 
 \subsection{Subfunciones de medición y corte}
 
@@ -386,15 +428,17 @@ aumento de peso de las configuraciones con recepción pesada. El ciclo
 establece el cero o la tara con el recipiente colocado. Para cada
 ingrediente, la secuencia selecciona la consigna $S_i$ y registra una
 lectura estable $R_i$ como referencia. La diferencia $q_i=R-R_i$
-representa la cantidad recibida desde el inicio de esa etapa; su
+representa la cantidad recibida desde el inicio de esa etapa. Su
 comparación con la consigna interviene en la orden de alimentación o corte.
+En la Figura~\ref{fig:subfunciones_dosificadora}, las líneas discontinuas
+representan el intercambio de información.
 
 \begin{figure}[H]
     \centering
     \input{images/marcopractico/subfunciones_dosificadora.tex}
     \caption{Subfunciones de adquisición, comparación y corte por ingrediente.}
     \label{fig:subfunciones_dosificadora}
-    {\footnotesize Fuente: Elaboración propia. La línea discontinua representa información.}
+    {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
 En el pesaje acumulativo, la lectura estable al finalizar un ingrediente
@@ -428,20 +472,23 @@ contraste con la propietaria.
 
 \begin{figure}[H]
 \centering
+\makebox[\textwidth][r]{\includegraphics[width=0.405\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_interacciones_native.pdf}}\par
+\vspace{-1mm}
 \includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_matriz_native.pdf}
 \caption{Relaciones de la casa de calidad con seis características.}
 \label{fig:casa_calidad_dosificadora}
-{\footnotesize Fuente: Elaboración propia. Captura del Excel de diseño actualizado.}
+\label{fig:qfd_interacciones_simplificadas}
+{\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
 El error de dosificación se agrupa en una característica, conservando
 la evaluación separada de harina, azúcar, sal y levadura. Esta agrupación
-evita asignar cuatro columnas ponderadas a una misma necesidad; no
+evita asignar cuatro columnas ponderadas a una misma necesidad. No
 permite compensar el error de un ingrediente con el de otro. La duración
 del ciclo y la intervención activa permanecen separadas porque el equipo
 puede alimentar mientras el operario realiza otra tarea.
 
-Las relaciones fuertes reciben 9 y las medias 3; una celda vacía indica
+Las relaciones fuertes reciben 9 y las medias 3. Una celda vacía indica
 que no se asignó relación. La limpieza y la recarga también se vinculan
 con el espacio de instalación. La importancia técnica se calcula como
 \(W_j=\sum_i w_i r_{ij}\) y su prioridad como
@@ -450,78 +497,174 @@ la intervención activa el 20,32~\% y el error por ingrediente el
 16,04~\%. Estos resultados dependen del juicio de diseño y no autorizan
 incumplir una condición obligatoria.
 
+El techo de la Figura~\ref{fig:casa_calidad_dosificadora} conserva la numeración de las seis columnas. El signo negativo identifica un posible conflicto entre sus direcciones de mejora: reducir el error puede prolongar el ciclo (1 y 2), facilitar la limpieza puede exigir más espacio (4 y 5), y aumentar la capacidad puede ampliar la envolvente (5 y 6). Las celdas vacías no tienen una interacción asignada. Estas relaciones son hipótesis de diseño para contrastar los conceptos, no correlaciones estadísticas medidas.
+
 La seguridad, la altura de recarga, el manejo comprensible y el acceso
 para mantenimiento se conservan en RF/RNF como condiciones de
 cumplimiento. La repetibilidad se comprueba en los ensayos. Estos
-aspectos no necesitan otra columna ponderada para conservar vigencia;
-se verifican al revisar cada concepto y el CAD.
+aspectos no necesitan otra columna ponderada para conservar vigencia.
+Se verifican al revisar cada concepto y el CAD.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_metas_native.pdf}
 \caption{Metas de las seis características técnicas seleccionadas.}
 \label{fig:qfd_metas_simplificadas}
-{\footnotesize Fuente: Elaboración propia. Captura del Excel de diseño actualizado.}
+{\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
 La Figura~\ref{fig:qfd_metas_simplificadas} conserva los límites
-adoptados: harina dentro de $\pm30$~g y media absoluta no mayor que
-10~g; azúcar, sal y levadura dentro de $\pm3$, $\pm2$ y $\pm1$~g,
+adoptados: harina dentro de $\pm20$~g y media absoluta no mayor que
+15~g. Azúcar, sal y levadura dentro de $\pm3$, $\pm2$ y $\pm1$~g,
 respectivamente. Las metas operativas de tiempo, intervención y limpieza
 siguen propuestas para comprobar. El área admisible requiere medir el
-puesto; la capacidad útil de harina considera una consigna de 8~kg y
+puesto. La capacidad útil de harina considera una consigna de 8~kg y
 excluye material que quede retenido sin poder dosificarse.
 
-Las interacciones de la Figura~\ref{fig:qfd_interacciones_simplificadas}
-explicitan tres compromisos: reducir el error puede prolongar el ciclo;
-facilitar la limpieza puede exigir más espacio; y aumentar la capacidad
-puede ampliar la envolvente. Se registran como hipótesis para contrastar
-las configuraciones, sin atribuirles resultados experimentales.
+\subsection{Comparación con referentes comerciales}
+\label{subsec:comparacion_comercial}
+
+La comparación competitiva completa la casa de calidad con equipos
+comerciales que dosifican polvos o productos secos. Se seleccionaron
+cinco referentes por su proximidad con la dosificadora: DF-B e IF-A,
+con alimentación por tornillo; HZF-A, con pesaje declarado por celdas
+de carga; IND-AX4, con cuatro balanzas y descarga común, y WL-P1H200,
+con una balanza para lotes de 1 a 10~kg
+\parencite{indurpack2026dfb,indurpack2026ifa,drafpack2026hzfa,indurpack2026indax,indurpack2026wlp1h200}.
+La Tabla~\ref{tab:comparacion_comercial_precad} resume las prestaciones
+publicadas.
+
+\begin{table}[H]
+    \centering
+    \caption{Prestaciones documentadas de los referentes comerciales.}
+    \label{tab:comparacion_comercial_precad}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}*{5}{>{\raggedright\arraybackslash}X}}
+        \toprule[1pt]
+        \textbf{Aspecto} & \textbf{DF-B} & \textbf{IF-A} & \textbf{HZF-A} & \textbf{IND-AX4} & \textbf{WL-P1H200} \\
+        \midrule[1pt]
+        Alimentación & Tornillo & Tornillo & No indicada & Vibración & Gravedad y vibración \\
+        \addlinespace[4pt]
+        Rango declarado & 0,5--350~g & 5--5000~g & 5--5000~g & 50--2000~g & 1--10~kg \\
+        \addlinespace[4pt]
+        Precisión declarada & $\pm1$~\% & $\pm1$~\% & $\pm0,1$~\% & Del orden del 1~\% & 1--15~g \\
+        \addlinespace[4pt]
+        Tolva publicada & 30~L & 35~L & ND & 3~L por balanza & 50~L de entrada \\
+        \addlinespace[4pt]
+        Huella (m²) & 0,22 & 1,34 & 0,81 & 1,11 & 1,05 \\
+        \addlinespace[4pt]
+        Productos por ciclo & Uno & Uno & Uno & Hasta cuatro & Uno \\
+        \bottomrule[1pt]
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+La huella corresponde al producto del largo por el ancho publicados.
+Los porcentajes de precisión no se convierten en gramos porque las
+fichas no indican su base de cálculo ni las condiciones de ensayo.
+
+La Figura~\ref{fig:qfd_competitiva} presenta el análisis competitivo
+de la casa de calidad, en una escala de 0 a 5, donde 0 indica el menor
+cumplimiento y 5 el mayor. Las notas son una valoración de ingeniería
+del diseñador a partir de las fichas y las fotografías publicadas.
+Cada necesidad aplica un mismo criterio a los cinco referentes:
+
+\begin{itemize}
+    \item Dosificar según receta: número de ingredientes cuyas
+    cantidades registradas quedan dentro del rango declarado (harina
+    de 5000 a 8000~g, azúcar de 80 a 400~g, sal de 100 a 150~g y
+    levadura de 20 a 30~g).
+    \item Reducir la intervención manual: 1 para la descarga automática
+    de un ingrediente y 5 para cuatro ingredientes con un único inicio.
+    \item Facilitar la limpieza: acero inoxidable, desarme sin
+    herramientas declarado y cantidad de piezas en contacto con el
+    producto observadas en las fotografías.
+    \item Evitar recargas durante el lote: volumen de tolva respecto de
+    los 16~L que ocuparían 8~kg de harina con una densidad aparente
+    supuesta de 0,5~kg/L, pendiente de medición.
+    \item Ocupar poco espacio: tramos de huella, desde 5 para 0,30~m²
+    o menos hasta 0 para más de 2~m².
+    \item Completar la receta a tiempo: productos entregados por ciclo
+    y dosis por minuto declaradas.
+\end{itemize}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.46\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_interacciones_native.pdf}
-\caption{Interacciones relevantes para comparar los conceptos de dosificación.}
-\label{fig:qfd_interacciones_simplificadas}
-{\footnotesize Fuente: Elaboración propia. Captura del Excel de diseño actualizado.}
+\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/competitiva_native.pdf}
+\caption{Análisis competitivo de los referentes comerciales.}
+\label{fig:qfd_competitiva}
+{\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
-\subsection{Comparación documental de los referentes comerciales}
-
-La comparación utiliza prestaciones documentadas de DF-B, IF-A e
-IND-AX4 (Figura~\ref{fig:qfd_comerciales_simplificados}). DF-B e IF-A
-aportan referencias de alimentación por tornillo en distintas escalas;
-IND-AX4 aporta la disposición de cuatro canales con descarga común.
-Los volúmenes de tolva y de recipiente de pesaje cumplen funciones
-distintas y no se interpretan como capacidades equivalentes.
+La Figura~\ref{fig:comercial_referentes} muestra dos de los
+referentes. DF-B e IF-A se presentan en la
+Figura~\ref{fig:productos_comerciales} y la familia IND-AX, en la
+Figura~\ref{fig:comercial_convergencia_indax2}.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_comerciales_native.pdf}
-\caption{Prestaciones documentadas de los referentes comerciales seleccionados.}
-\label{fig:qfd_comerciales_simplificados}
-{\footnotesize Fuente: Elaboración propia. Captura del Excel de diseño actualizado.}
+    \centering
+    \begin{minipage}[b]{0.36\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/marcopractico/drafpack_hzfa.jpg}\\
+        {\footnotesize (a)}
+    \end{minipage}
+    \hspace{0.04\textwidth}
+    \begin{minipage}[b]{0.46\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/marcopractico/indurpack_wlp1h200.jpg}\\
+        {\footnotesize (b)}
+    \end{minipage}
+    \caption{Referentes de pesaje: (a) HZF-A, (b) WL-P1H200.}
+    \label{fig:comercial_referentes}
+    {\footnotesize Fuente: \textcite{drafpack2026hzfa} y \textcite{indurpack2026wlp1h200}.}
 \end{figure}
 
-Los rangos publicados de DF-B, IF-A e IND-AX4 son 0,5--350,
-5--5000 y 50--2000~g, respectivamente
-\parencite{indurpack2026dfb,indurpack2026ifa,indurpack2026indax}.
-DF-B no cubre los 400~g de azúcar ni la harina; IF-A no alcanza los
-8~kg de harina por dosis; e IND-AX4 no cubre la levadura de 20--30~g
-ni los lotes de harina. Estos límites orientan la adaptación del
-concepto y no demuestran que una alternativa sea imposible.
+El primer referente corresponde al DF-B. Su rango de 0,5 a 350~g
+incluye la sal y la levadura, pero no los 400~g de azúcar del pan
+casero ni la harina. Su único canal, de tolva pequeña con visor,
+facilita la limpieza, y su huella de 0,22~m² obtiene la mayor
+puntuación de espacio. Constituye la referencia del módulo para los
+ingredientes menores.
 
-Un dato no documentado puede registrarse como ND, pero no equivale a
-cero ni a desempeño deficiente. La falta de información sobre limpieza,
-intervención y seguridad impide construir una clasificación completa de
-0 a 5 con condiciones equivalentes. Por ello se utiliza el contraste
-documental y se retira la puntuación del prototipo todavía no ensayado.
-Las declaraciones porcentuales de precisión tampoco se convierten en
-garantías en gramos sin conocer su base y condiciones de prueba.
+El segundo referente corresponde al IF-A. Alcanza 5000~g y cubre el
+azúcar, la sal y la levadura, pero no los lotes de 6500 a 8000~g de
+harina. Su tolva de 35~L supera el volumen de un lote de harina. El
+tornillo inclinado de carga y el agitador aumentan las piezas por
+limpiar, y el cambio de tornillo entre intervalos de dosis prolonga
+la preparación de una receta.
 
-La ficha de la familia IND-AX permite estudiar la convergencia hacia
-un receptor fijo. La fotografía publicada como AX2 ilustra ese recorrido,
-sin atribuirle las cuatro balanzas del AX4 ni adoptarlo como solución.
+El tercer referente corresponde al HZF-A. Comparte el rango de 5 a
+5000~g y declara pesaje por celdas de carga. Su ficha no publica el
+volumen de tolva, por lo que esa nota proviene de la fotografía.
+Ocupa 0,81~m², menos que IF-A.
+
+El cuarto referente corresponde al IND-AX4. Pesa hasta cuatro productos
+en balanzas independientes y los entrega en una misma descarga. Por
+ello obtiene la mayor puntuación en la reducción de la intervención y
+en el tiempo de la receta. Su rango de 50 a 2000~g excluye la levadura
+y la harina, y sus recipientes de 3~L obligan a recargar durante un
+lote de harina. Las cuatro bandejas vibratorias y los recipientes de
+pesaje aumentan las piezas por limpiar.
+
+El quinto referente corresponde al WL-P1H200. Su rango de 1 a 10~kg
+cubre los lotes de harina, con una precisión declarada de 1 a 15~g,
+pero no los ingredientes menores. Su tolva de 50~L evita recargas
+durante el lote y la ficha declara desarme sin herramientas. La ficha
+señala aplicación a productos de granulometría gruesa, por lo que no
+acredita su uso con harina fina.
+
+Ningún referente cubre los cuatro ingredientes con las cantidades de
+San Miguel. Los equipos de tornillo resuelven los menores; la harina
+requiere el intervalo de un equipo de lotes, y la entrega conjunta
+proviene de la configuración con varias balanzas. La dosificadora
+reúne esas tres funciones en un mismo equipo. Las notas no
+corresponden a ensayos con los ingredientes de San Miguel, y el
+prototipo no se puntúa porque su desempeño aún no se ha comprobado.
+
 \input{chapters/marcopractico/tables/figura_comercial_convergencia.tex}
 
 \subsection{Matriz morfológica preliminar}
@@ -530,10 +673,22 @@ Las Tablas~\ref{tab:morfologia_dosificadora}
 y~\ref{tab:morfologia_integracion} reúnen diecisiete funciones de
 alimentación, pesaje, mando e integración. Las letras identifican
 medios de solución por fila. Cada combinación toma una opción
-compatible para cada función; las columnas no representan máquinas
-completas. La selección vigente de tornillos para los cuatro
-ingredientes fija el principio de alimentación, mientras que
-disposición, dimensiones y accionamiento permanecen en comparación.
+compatible para cada función. Las columnas no representan máquinas
+completas. La matriz conserva las opciones que el cribado descarta o
+deja en reserva, en gris y con su marca, para mostrar de dónde parte
+la selección. Los guiones indican que la fila no incluye esa opción.
+La selección vigente de tornillos para los cuatro ingredientes fija el
+principio de alimentación, mientras que disposición, dimensiones y
+accionamiento permanecen en comparación. Los modelos y las capacidades
+de cada familia requieren comprobación.
+
+Las funciones F02--F07 relacionan la alimentación y el pesaje con las
+metas de error y duración. F12--F13 incorporan el recorrido y la
+transferencia del ingrediente. F15 desarrolla el acceso para limpieza.
+El almacenamiento de F01 y el soporte de F17 se contrastan con la
+capacidad útil y el área ocupada. Esta relación mantiene las seis
+características de la casa de calidad como criterios de comparación,
+sin convertir sus prioridades en una selección de componentes.
 
 \input{chapters/marcopractico/tables/morfologia_dosificadora.tex}
 
@@ -541,12 +696,12 @@ Las alternativas eléctricas y de control definen interfaces y espacio
 de montaje para el diseño preliminar. La elección del controlador no
 determina por sí sola el error de dosificación. El diámetro, el paso y
 la velocidad del tornillo se contrastan con el caudal requerido mediante
-la Ecuación~\eqref{eq:caudal_tornillo}; la adquisición y el corte se
+la Ecuación~\eqref{eq:caudal_tornillo}. La adquisición y el corte se
 contrastan con la respuesta del conjunto de pesaje.
 
 La opción F05-C comprende receptores individuales que miden la cantidad
-recibida por ganancia de peso. No implica pesar la pérdida de cada tolva;
-esa arquitectura requiere otro montaje y no se incluye en los caminos
+recibida por ganancia de peso. No implica pesar la pérdida de cada tolva.
+Esa arquitectura requiere otro montaje y no se incluye en los caminos
 desarrollados. Las opciones de F06 soportan los receptores de ganancia.
 F16 interrumpe el accionamiento, mientras que la detención del flujo
 de ingrediente se comprueba mediante la descarga residual. Si esta
@@ -572,23 +727,23 @@ de alternativas que requieren información adicional.
         \toprule
         \textbf{Opción examinada} & \textbf{Estado} & \textbf{Fundamento o comprobación} \\
         \midrule
-        Compuerta como alimentador principal. & Fuera de la base vigente. & El principio adoptado es tornillo. Las aperturas auxiliares de F13 mantienen una función distinta. \\
+        F02-C. Tornillos inclinados ascendentes. & En reserva. & Requiere una necesidad de elevación, espacio y verificación de caudal y par. Sin esas entradas no se integra en los primeros conceptos. \\
         \addlinespace[4pt]
-        Vueltas o tiempo del motor como única medida de dosis. & Excluida. & RF-03 y RF-04 requieren lectura gravimétrica durante la alimentación. \\
+        F02-D. Compuerta o bandeja vibratoria. & Descartada. & El principio adoptado es tornillo. Con compuertas, \textcite{rumapea2026flour} atribuyeron parte del error a bóvedas y \textcite{bachtiar2026brownies} obtuvieron 51~g de azúcar para 120~g. Las aperturas auxiliares de F13 mantienen una función distinta. \\
         \addlinespace[4pt]
-        Receptor y vaciado auxiliar en el concepto A. & Omitidos en ese concepto. & La descarga directa evita una transferencia y su retención. Un colector de convergencia puede cumplir F12-B sin incorporar otro pesaje. \\
+        F05-D. Dosis por vueltas o tiempo del motor. & Descartada. & RF-03 y RF-04 requieren lectura gravimétrica durante la alimentación. \\
         \addlinespace[4pt]
-        Tornillo ascendente, F02-C. & En reserva. & Requiere una necesidad de elevación, espacio y verificación de caudal y par. Sin esas entradas no se integra en los primeros conceptos. \\
+        F13-A y F13-B en el concepto A. & Omitidas en ese concepto. & La descarga directa evita una transferencia y su retención. Un colector de convergencia puede cumplir F12-B sin incorporar otro pesaje. \\
         \addlinespace[4pt]
-        Polímero sin identificación ni documentación de contacto. & Excluido como pieza seleccionada. & F14-C permanece como familia candidata con documentación y condiciones de uso verificables. \\
+        F14-D. Polímero sin identificación ni documentación de contacto. & Descartada. & F14-C permanece como familia candidata con documentación y condiciones de uso verificables. \\
         \addlinespace[4pt]
-        Limpieza por acceso sin desmontar piezas que retienen ingredientes. & Excluida. & RNF-04 requiere acceso y desmontaje. Se conservan F15-A y F15-B. \\
+        F15-C. Acceso sin desmontar las piezas que retienen ingrediente. & Descartada. & RNF-04 requiere acceso y desmontaje. Se conservan F15-A y F15-B. \\
         \addlinespace[4pt]
-        Motor sin comprobación de par o pesaje sin respuesta bajo carga. & Selección pendiente. & La falta de una ficha o prueba no demuestra que toda la familia sea inadecuada. \\
+        F03 y F06 sin comprobación de par o de respuesta bajo carga. & Selección pendiente. & La falta de una ficha o prueba no demuestra que toda la familia sea inadecuada. \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia a partir de RF-03, RF-04, RNF-04 y las decisiones de diseño.
+    Fuente: Elaboración propia.
 \end{table}
 
 La regulación de tensión, la adquisición del peso y el accionamiento
@@ -602,7 +757,7 @@ de corriente de cada interfaz.
 
 La Tabla~\ref{tab:base_comun_conceptos} identifica la base compartida
 por los conceptos. Esa base expresa decisiones vigentes y funciones
-requeridas; no fija modelos comerciales. La
+requeridas. No fija modelos comerciales. La
 Tabla~\ref{tab:variables_conceptos} resume las opciones que intervienen
 en la comparación y mantiene la referencia a la matriz inicial.
 
@@ -617,11 +772,11 @@ en la comparación y mantiene la referencia a la matriz inicial.
         \toprule
         \textbf{Elemento común} & \textbf{Condición conservada} \\
         \midrule
-        Ingredientes y alimentación. & Harina, azúcar, sal y levadura en polvo; un tornillo por ingrediente. \\
+        Ingredientes y alimentación. & Harina, azúcar, sal y levadura en polvo, un tornillo por ingrediente. \\
         Medición y corte. & Realimentación gravimétrica y asociación entre lectura e ingrediente. \\
         Operación. & Ingreso de consignas, referencia de pesaje, aviso de fin e interrupción. \\
         Integración. & Protección de partes móviles y eléctricas, limpieza, recarga y retiro del recipiente. \\
-        Verificación. & Márgenes de receta y respuesta del equipo por comprobar; sin mejora anticipada. \\
+        Verificación. & Márgenes de receta y respuesta del equipo por comprobar, sin mejora anticipada. \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
@@ -639,9 +794,9 @@ en la comparación y mantiene la referencia a la matriz inicial.
         \toprule
         \textbf{Funciones} & \textbf{Opciones y condición de conservación} \\
         \midrule
-        F01--F02 & Tolvas independientes o compartimentadas; tornillos horizontales o verticales descendentes. La elevación permanece en reserva. \\
-        F03--F04 & Paso a paso, CC con encoder o servo; acople, reducción o correa según el par y la velocidad. \\
-        F05--F07 & Pesaje común, por grupo o por ingrediente; soporte y adquisición compatibles con capacidad, carga previa e interfaces. \\
+        F01--F02 & Tolvas independientes o compartimentadas, tornillos horizontales o verticales descendentes. La elevación permanece en reserva. \\
+        F03--F04 & Paso a paso, CC con encoder o servo, acople, reducción o correa según el par y la velocidad. \\
+        F05--F07 & Pesaje común, por grupo o por ingrediente, soporte y adquisición compatibles con capacidad, carga previa e interfaces. \\
         F08--F11 & Controlador, interfaz, aviso y alimentación eléctrica compatibles. Sin funciones adicionales ajenas a RF/RNF. \\
         F12--F13 & Salidas orientadas al receptor o colector. Vaciado basculante o inferior si existe receptor auxiliar. \\
         F14--F15 & Material documentado para las condiciones de contacto y acceso por extracción o retiro del módulo. \\
@@ -649,7 +804,7 @@ en la comparación y mantiene la referencia a la matriz inicial.
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. No se considera seleccionada una familia por ausencia de comparación comercial.
+    Fuente: Elaboración propia.
 \end{table}
 
 \subsection{Disposición de los alimentadores}
@@ -673,8 +828,8 @@ residual con el motor detenido.
 Cuatro tolvas independientes no requieren trasladar el recipiente entre
 boquillas. La disposición radial de la Figura~\ref{fig:convergencia_receptor}
 orienta las salidas hacia la misma abertura. Cuando las salidas no
-alcanzan esa zona, la opción F12-B incorpora un colector desmontable;
-la evaluación considera el material retenido y la caída posterior al
+alcanzan esa zona, la opción F12-B incorpora un colector desmontable.
+La evaluación considera el material retenido y la caída posterior al
 corte. La convergencia del recorrido y la distribución del pesaje son
 decisiones distintas: el recipiente común conserva la comprobación de
 incrementos pequeños con tara y carga acumulada.
@@ -698,7 +853,7 @@ incrementos pequeños con tara y carga acumulada.
     \end{tikzpicture}
     \caption{Convergencia conceptual de cuatro alimentadores hacia un receptor fijo.}
     \label{fig:convergencia_receptor}
-    {\footnotesize Fuente: Elaboración propia. Esquema de distribución, no CAD dimensionado.}
+    {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
 \subsection{Generación de combinaciones del conjunto}
@@ -710,6 +865,11 @@ menores y mantiene tolvas independientes. La C reúne alimentación
 vertical descendente, almacenamiento compartimentado y mando
 mediante PLC. Cada camino comprende almacenamiento, accionamiento,
 medición, operación y descarga, con interfaces por verificar.
+Las letras de la tabla remiten a las opciones de cada fila de la matriz.
+Los caminos son configuraciones de estudio sujetas a cálculos, fichas
+y revisión del puesto. En la combinación B, la reducción de harina
+corresponde al motorreductor de F03-B y se comprueba como transmisión
+F04-B. No se presupone otra etapa reductora adicional.
 
 \input{chapters/marcopractico/tables/combinaciones_dosificadora.tex}
 
@@ -718,7 +878,7 @@ tornillos. La A dirige los ingredientes al recipiente sobre una balanza
 común. La B conserva el pesaje de harina en el recipiente e incorpora
 un recipiente de pesaje para azúcar, sal y levadura en polvo, con
 descarga al mismo recipiente. Los caminos reúnen varias opciones de la
-matriz; sus diferencias no se atribuyen únicamente al pesaje. Para
+matriz. Sus diferencias no se atribuyen únicamente al pesaje. Para
 comparar ese efecto se conservan alimentación y condiciones de ensayo
 equivalentes, con accionamientos dimensionados para cada ingrediente.
 
@@ -744,14 +904,14 @@ La combinación C mantiene la separación de pesaje y cambia la
 disposición de los alimentadores y la integración del mando. El
 depósito compartimentado requiere acceso individual a los sectores y
 extracción de las piezas de alimentación. El PLC y el panel HMI
-constituyen candidatos compatibles con transmisores industriales; la
+constituyen candidatos compatibles con transmisores industriales. La
 comunicación, las salidas hacia los motores y el costo del conjunto
 requieren fichas y cotizaciones. La opción vertical conserva la
 comprobación de la descarga residual.
 
 La orientación del tornillo no exige por sí misma un PLC ni una HMI.
 La comparación del mando se realiza con las mismas funciones de
-adquisición, secuencia e interrupción; esas alternativas permanecen
+adquisición, secuencia e interrupción. Esas alternativas permanecen
 en F07--F11 y no constituyen una ventaja atribuida al almacenamiento
 compartimentado. Del mismo modo, los pasos y diámetros se revisan
 por ingrediente y no se fijan cuatro tornillos idénticos por disponer
@@ -763,7 +923,7 @@ Como alternativa de alcance se estudia la alimentación automática de
 harina, azúcar y sal, con incorporación manual de levadura. Esta
 configuración elimina un conjunto de tolva, tornillo y accionamiento,
 y retira de la dosificación automática la consigna de 20~g. El alcance
-vigente conserva los cuatro ingredientes; la alternativa de tres se
+vigente conserva los cuatro ingredientes. La alternativa de tres se
 presenta para evaluación y no sustituye los objetivos ni los
 requerimientos aplicados.
 
@@ -772,8 +932,8 @@ de la elección del sistema de pesaje. Para una máquina de tres
 ingredientes, la consigna automática menor pasa a 80~g de azúcar.
 La comprobación de pesaje continúa siendo necesaria, puesto que la
 hipótesis de $\pm3$~g también exige distinguir incrementos en gramos.
-El pesaje común también constituye una opción para tres ingredientes;
-la reducción de alcance no determina por sí sola el número de balanzas.
+El pesaje común también constituye una opción para tres ingredientes.
+La reducción de alcance no determina por sí sola el número de balanzas.
 
 \begin{table}[H]
     \centering
@@ -787,11 +947,11 @@ la reducción de alcance no determina por sí sola el número de balanzas.
         \textbf{Criterio} & \textbf{Cuatro, pesaje común} &
         \textbf{Cuatro, pesaje separado} & \textbf{Tres, pesaje separado} \\
         \midrule
-        Alimentación & Cuatro tornillos. & Cuatro tornillos. & Tres tornillos; levadura manual. \\
-        Pesaje & Recipiente sobre una plataforma. & Harina en el recipiente; menores en un recipiente auxiliar. & Harina en el recipiente; azúcar y sal en un recipiente auxiliar. \\
+        Alimentación & Cuatro tornillos. & Cuatro tornillos. & Tres tornillos, levadura manual. \\
+        Pesaje & Recipiente sobre una plataforma. & Harina en el recipiente, menores en un recipiente auxiliar. & Harina en el recipiente, azúcar y sal en un recipiente auxiliar. \\
         Consigna menor & 20~g de levadura. & 20~g de levadura. & 80~g de azúcar. \\
         Comprobación decisiva & Incrementos pequeños con tara y carga acumulada. & Dosis pequeña y retención en la transferencia. & Dosis de azúcar y retención en la transferencia. \\
-        Estado & Alcance vigente; por comprobar. & Alcance vigente; por comprobar. & Alternativa de alcance; por decidir. \\
+        Estado & Alcance vigente, por comprobar. & Alcance vigente, por comprobar. & Alternativa de alcance, por decidir. \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
@@ -811,10 +971,14 @@ imposibilidad de dosificar 20~g.
 
 La Tabla~\ref{tab:evaluacion_combinaciones} compara cantidades y
 transferencias que se deducen de los caminos definidos. Esos datos
-describen la arquitectura. El error, la repetibilidad, el tiempo y el
-costo requieren pruebas o cotizaciones y permanecen sin calificación.
-Una evaluación ponderada exige pesos acordados con la propietaria y
-calificaciones sustentadas en la misma escala para cada concepto.
+describen la arquitectura y sustentan la evaluación ponderada de la
+Tabla~\ref{tab:seleccion_combinaciones}. El error, la repetibilidad,
+el tiempo y el costo medidos requieren pruebas o cotizaciones.
+
+Las cargas previas a la levadura de la tabla corresponden a una
+secuencia que dosifica ese ingrediente al final: harina, azúcar y sal
+en A, y azúcar y sal en el receptor auxiliar de B y C. Cambiar la secuencia
+modifica la carga previa, sin reducir la capacidad total requerida.
 
 \begin{table}[H]
     \centering
@@ -832,7 +996,7 @@ calificaciones sustentadas en la misma escala para cada concepto.
         Conjuntos de pesaje. & 1. & 2. & 2. \\
         Mecanismos de vaciado auxiliar. & 0. & 1 basculante. & 1 de apertura inferior. \\
         Mayor carga previa a levadura, sin tara. & 8\,230~g. & 500~g en auxiliar. & 500~g en auxiliar. \\
-        Transferencia auxiliar al recipiente. & No incorpora. & Incorpora; retención por medir. & Incorpora; retención por medir. \\
+        Transferencia auxiliar al recipiente. & No incorpora. & Incorpora, retención por medir. & Incorpora, retención por medir. \\
         Acceso que revisar en el CAD. & Extracción lateral y retiro del recipiente. & Extracción lateral, basculamiento y retiro. & Extracción vertical, compartimientos y apertura. \\
         Error y repetibilidad. & Por comprobar. & Por comprobar. & Por comprobar. \\
         Tiempo e intervención. & Por medir. & Por medir. & Por medir. \\
@@ -840,15 +1004,78 @@ calificaciones sustentadas en la misma escala para cada concepto.
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. Cargas calculadas a partir de las recetas registradas.
+    Fuente: Elaboración propia.
 \end{table}
+
+La Tabla~\ref{tab:seleccion_combinaciones} pondera las seis necesidades
+de la casa de calidad con su importancia relativa y califica cada
+combinación de 0 a 10. Las notas son una valoración de ingeniería del
+diseñador, previa a las pruebas, con los siguientes criterios:
+
+\begin{itemize}
+    \item Dosificar según receta: resolución disponible para la dosis de
+    20~g de levadura. A la mide sobre 8\,230~g de carga previa; B y C,
+    con 500~g de carga previa en el receptor auxiliar, con la retención
+    de la transferencia por medir. La alimentación vertical de C aumenta la
+    cantidad que continúa cayendo tras el corte.
+    \item Reducir la intervención manual: las tres combinaciones
+    dosifican los cuatro ingredientes con un único inicio y vacían el
+    receptor auxiliar sin acción del operario.
+    \item Facilitar la limpieza: A tiene menos piezas en contacto; B
+    agrega el receptor basculante, y C, los compartimientos y la apertura
+    inferior, con extracción vertical de los tornillos.
+    \item Evitar recargas durante el lote: las tolvas independientes de A
+    y B se dimensionan por ingrediente; el depósito compartimentado de C
+    reparte un mismo volumen.
+    \item Ocupar poco espacio: la alimentación vertical de C concentra los
+    tornillos sobre el receptor; B agrega el receptor auxiliar a la
+    disposición horizontal de A.
+    \item Completar la receta a tiempo: en A, cada ingrediente espera la
+    lectura estable del anterior sobre la misma balanza; en B y C, la
+    harina y los menores se pesan en paralelo.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \caption{Evaluación ponderada de las combinaciones.}
+    \label{tab:seleccion_combinaciones}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lcccc}
+        \toprule[1pt]
+        \textbf{Necesidad del usuario} & \textbf{Importancia (\%)} & \textbf{A} & \textbf{B} & \textbf{C} \\
+        \midrule[1pt]
+        Dosificar según receta & 18,5 & 6 & 8 & 7 \\
+        Reducir intervención manual & 18,5 & 9 & 9 & 9 \\
+        Facilitar limpieza & 16,7 & 8 & 7 & 5 \\
+        Evitar recargas durante el lote & 14,8 & 8 & 8 & 6 \\
+        Ocupar poco espacio & 14,8 & 7 & 6 & 8 \\
+        Completar la receta a tiempo & 16,7 & 6 & 8 & 8 \\
+        \midrule
+        \textbf{Total ponderado} & \textbf{100} & \textbf{7,33} & \textbf{7,72} & \textbf{7,20} \\
+        \bottomrule[1pt]
+    \end{tabular}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+El total corresponde a \(T_k=\sum_i w_i c_{ik}/100\), donde \(w_i\) es
+la importancia relativa de la necesidad y \(c_{ik}\) la nota de la
+combinación. La combinación B obtiene el mayor total porque mejora la
+resolución de la levadura y pesa en paralelo, aunque agrega un receptor
+y su limpieza. A queda a 0,39 puntos y C a 0,52. Las diferencias
+totales son menores que un punto, por lo que la selección definitiva
+depende de comprobar el pesaje bajo carga y la retención de la
+transferencia.
 
 La Tabla~\ref{tab:trazabilidad_conceptos} vincula los requerimientos con
 las comprobaciones que distinguen las configuraciones. La evaluación
 separa el cumplimiento obligatorio de la comparación entre opciones
 viables. Una reducción de costo no compensa una dosificación fuera del
 margen acordado o un montaje incompatible con la carga prevista.
-Los datos pendientes no reciben una puntuación de cumplimiento.
+Las notas de la Tabla~\ref{tab:seleccion_combinaciones} comparan
+opciones y no sustituyen esas comprobaciones de cumplimiento.
 
 \begin{table}[H]
     \centering
@@ -861,7 +1088,7 @@ Los datos pendientes no reciben una puntuación de cumplimiento.
         \toprule
         \textbf{Requerimiento} & \textbf{Decisión de diseño} & \textbf{Evidencia necesaria} \\
         \midrule
-        RF-03 a RF-05; RNF-01 y RNF-08 & Pesaje común o separado y corte de cada alimentador. & Capacidad con tara, lecturas repetidas y diferencia entre cantidad pesada y entregada. \\
+        RF-03 a RF-05, RNF-01 y RNF-08 & Pesaje común o separado y corte de cada alimentador. & Capacidad con tara, lecturas repetidas y diferencia entre cantidad pesada y entregada. \\
         RNF-02 y RNF-03 & Secuencia de alimentación y tareas del operario. & Duración del ciclo y tiempo de intervención medidos por separado. \\
         RNF-04 y RNF-07 & Desmontaje y accesos. & Recorrido de extracción y zonas de retención identificados en el CAD. \\
         RNF-05 y RNF-06 & Guardas, envolvente y ubicación de recarga. & Dimensiones del puesto, puntos de contacto y separación del sistema eléctrico. \\
@@ -875,12 +1102,12 @@ Los datos pendientes no reciben una puntuación de cumplimiento.
 \subsection{Combinación de referencia y comprobaciones pendientes}
 
 La combinación B se propone como referencia para el predimensionamiento
-porque separa las cargas de harina y de ingredientes menores y conserva
-el acceso individual a las tolvas. La disposición horizontal se
-contrasta con la extracción lateral de tornillos y módulos. La
-propuesta no cuenta con una puntuación final ni acredita el
-cumplimiento de las tolerancias: faltan fichas, medidas del puesto y
-pruebas de pesaje, alimentación y transferencia.
+porque obtiene el mayor total ponderado, separa las cargas de harina y
+de ingredientes menores y conserva el acceso individual a las tolvas.
+La disposición horizontal se contrasta con la extracción lateral de
+tornillos y módulos. La puntuación no acredita el cumplimiento de las
+tolerancias: faltan fichas, medidas del puesto y pruebas de pesaje,
+alimentación y transferencia.
 
 La combinación A permanece como alternativa que evita el receptor
 auxiliar. Su continuidad depende de que la plataforma admita la carga
@@ -902,7 +1129,7 @@ El recipiente receptor es una canoa ovalada de 20~L, identificada por
 el estudiante como Canoa Mediana de La Papelera Plásticos. Las
 dimensiones exteriores comunicadas son aproximadamente
 515~mm de largo, 353~mm de ancho y 182~mm de alto. Estas dimensiones
-orientan la envolvente y el retiro; no equivalen a la abertura interior
+orientan la envolvente y el retiro. No equivalen a la abertura interior
 disponible para las boquillas. La medición de esa abertura, la base de
 apoyo y la tara del recipiente permanece pendiente. El volumen nominal
 no acredita por sí solo la capacidad de recibir la receta sin derrames.
@@ -988,25 +1215,50 @@ las zonas de retención.
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. Modelos comerciales pendientes de comparación.
+    Fuente: Elaboración propia.
 \end{table}
 
 \subsection{Bosquejo de referencia y entradas del CAD}
 
-La Figura~\ref{fig:disposicion_concepto_b} presenta la disposición
-funcional de la combinación B. La harina llega al recipiente sobre el
-pesaje principal; azúcar, sal y levadura se incorporan de forma
-secuencial al receptor auxiliar. El vaciado transfiere ese contenido
-al recipiente. El esquema identifica conexiones entre conjuntos sin fijar
-dimensiones, alturas ni posiciones definitivas.
+El primer trazado correspondió a la disposición radial de la
+Figura~\ref{fig:convergencia_receptor}, con los cuatro tornillos
+orientados hacia el recipiente sobre una balanza común. En esa
+disposición, la levadura se pesa sobre la carga acumulada de los demás
+ingredientes, y las cuatro salidas deben alcanzar la misma abertura del
+recipiente. Por ello, el bosquejo se desarrolla con la combinación B,
+que obtuvo el mayor total ponderado.
+
+La Figura~\ref{fig:disposicion_concepto_b} presenta el bosquejo en
+elevación de la combinación B. El tornillo de harina descarga
+directamente en el recipiente, apoyado sobre el pesaje principal.
+Azúcar, sal y levadura se incorporan de forma secuencial al receptor
+auxiliar, que se vacía al recipiente por basculamiento. El tornillo de
+sal se representa con su eje hacia el fondo para no superponerlo con
+los otros dos. El bastidor sostiene las tolvas y los motores sin
+apoyarse en los conjuntos pesados.
 
 \begin{figure}[H]
     \centering
-    \input{images/marcopractico/disposicion_concepto_b.tex}
-    \caption{Disposición funcional de la combinación B para orientar el bosquejo.}
+    \resizebox{\textwidth}{!}{\input{images/marcopractico/disposicion_concepto_b.tex}}
+    \caption{Bosquejo en elevación de la combinación B.}
     \label{fig:disposicion_concepto_b}
-    {\footnotesize Fuente: Elaboración propia. Esquema sin escala; no representa un CAD dimensionado.}
+    {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
+
+El bosquejo reúne cinco conjuntos:
+
+\begin{itemize}
+    \item Alimentación de harina: tolva, tornillo horizontal y motor, con
+    descarga vertical sobre la abertura del recipiente.
+    \item Alimentación de menores: tres tolvas pequeñas con tornillos
+    orientados hacia el receptor auxiliar.
+    \item Pesaje principal: plataforma con celda bajo el recipiente, que
+    registra el incremento de harina y la transferencia de los menores.
+    \item Pesaje auxiliar: receptor basculante suspendido de su celda,
+    con el eje de giro en el mismo soporte.
+    \item Bastidor independiente: soporta tolvas, tornillos y motores, y
+    deja libre el retiro del recipiente.
+\end{itemize}
 
 La revisión del bosquejo comprende el retiro del recipiente, el recorrido
 del receptor basculante y el acceso a las tolvas y a los tornillos.
@@ -1304,7 +1556,7 @@ no se contabilizan como costo cero.
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. Cantidades para comparación; sin cotizaciones confirmadas.
+    Fuente: Elaboración propia.
 \end{table}
 
 El presupuesto incluye los gastos documentados de recolección de datos
@@ -1312,7 +1564,7 @@ y el acceso legal al software. Cuando un recurso institucional cubre una
 licencia o un instrumento, se registra esa condición con respaldo, sin
 atribuir una compra inexistente al prototipo. El retorno de inversión
 corresponde al análisis económico posterior y requiere beneficios
-sustentados; las diferencias de ingredientes no se contabilizan
+sustentados. Las diferencias de ingredientes no se contabilizan
 automáticamente como desperdicio evitado.
 
 \section{Cronograma de actividades}

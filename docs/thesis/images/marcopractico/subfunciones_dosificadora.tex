@@ -1,24 +1,30 @@
 \begin{tikzpicture}[>=Stealth,
-    bloque/.style={draw,align=center,text width=26mm,minimum height=14mm,font=\footnotesize}]
+    bloque/.style={draw,line width=0.6pt,align=center,text width=27mm,minimum height=13mm,inner sep=3pt,font=\footnotesize},
+    material/.style={bloque,fill=gray!12},
+    senal/.style={->,dashed,line width=0.5pt}]
+    % Fila superior: consigna, comparación y orden de alimentación.
     \node[bloque] (consigna) at (0,0) {Seleccionar\\ingrediente y\\consigna $S_i$};
-    \node[bloque] (comparar) at (3.5,0) {Comparar $S_i$\\con la cantidad\\recibida};
-    \node[bloque] (decidir) at (7,0) {Determinar\\alimentación\\o corte};
-    \node[bloque] (potencia) at (10.5,0) {Generar el mando\\y accionar\\el motor};
-    \node[bloque] (material) at (10.5,-2.1) {Alimentar y\\recibir material\\sobre el pesaje};
-    \node[bloque] (convertir) at (7,-2.1) {Obtener y\\convertir la\\señal de peso};
-    \node[bloque] (validar) at (3.5,-2.1) {Acondicionar y\\comprobar\\la lectura};
-    \node[bloque] (incremento) at (0,-2.1) {Determinar\\incremento\\$q_i=R-R_i$};
-    \draw[->,dashed] (consigna) -- (comparar);
-    \draw[->,dashed] (comparar) -- (decidir);
-    \draw[->,dashed] (decidir) -- (potencia);
-    \draw[->] (potencia) -- (material);
-    \draw[->,dashed] (material) -- (convertir);
-    \draw[->,dashed] (convertir) -- (validar);
-    \draw[->,dashed] (validar) -- (incremento);
-    \draw[->,dashed] (incremento.north) -- (0,-1.05) -| (comparar.south);
-    \node[align=center,font=\footnotesize] (referencia) at (0,-3.6)
-        {Registrar referencia $R_i$\\con lectura estable};
-    \draw[->,dashed] (referencia) -- (incremento);
-    \node[align=center,font=\footnotesize] at (7,-3.6)
-        {El cierre estable del ingrediente habilita\\la siguiente etapa o el aviso de fin.};
+    \node[bloque] (comparar) at (3.75,0) {Comparar $S_i$\\con la cantidad\\recibida};
+    \node[bloque] (decidir) at (7.5,0) {Determinar\\alimentación\\o corte};
+    \node[bloque] (potencia) at (11.25,0) {Generar el mando\\y accionar\\el motor};
+    % Columna derecha: material sobre el pesaje.
+    \node[material] (material) at (11.25,-2.0) {Alimentar y\\recibir material\\sobre el pesaje};
+    % Fila inferior: lectura de regreso hacia la comparación.
+    \node[bloque] (convertir) at (11.25,-4.0) {Obtener y\\convertir la\\señal de peso};
+    \node[bloque] (validar) at (7.5,-4.0) {Acondicionar y\\comprobar\\la lectura};
+    \node[bloque] (incremento) at (3.75,-4.0) {Determinar\\incremento\\$q_i=R-R_i$};
+    \node[bloque] (referencia) at (0,-4.0) {Registrar la\\referencia $R_i$\\con lectura\\estable};
+    \draw[senal] (consigna) -- (comparar);
+    \draw[senal] (comparar) -- (decidir);
+    \draw[senal] (decidir) -- (potencia);
+    \draw[->,line width=0.5pt] (potencia) -- (material);
+    \draw[senal] (material) -- (convertir);
+    \draw[senal] (convertir) -- (validar);
+    \draw[senal] (validar) -- (incremento);
+    \draw[senal] (referencia) -- (incremento);
+    \draw[senal] (incremento) -- (comparar);
+    % Salida del ciclo de cada ingrediente.
+    \node[align=center,font=\footnotesize] (fin) at (7.5,-2.0)
+        {Cierre estable: siguiente\\etapa o aviso de fin};
+    \draw[senal] (decidir) -- (fin);
 \end{tikzpicture}
