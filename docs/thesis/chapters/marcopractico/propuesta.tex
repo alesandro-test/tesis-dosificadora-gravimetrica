@@ -514,9 +514,6 @@ publicadas.
     Fuente: Elaboración propia.
 \end{table}
 
-La huella corresponde al producto del largo por el ancho publicados.
-Los porcentajes de precisión no se convierten en gramos porque las
-fichas no indican su base de cálculo ni las condiciones de ensayo.
 
 La Figura~\ref{fig:qfd_competitiva} presenta el análisis competitivo
 de la casa de calidad, en una escala de 0 a 5, donde 0 indica el menor
@@ -608,155 +605,170 @@ durante el lote y la ficha declara desarme sin herramientas. La ficha
 señala aplicación a productos de granulometría gruesa, por lo que no
 acredita su uso con harina fina.
 
-Ningún referente cubre los cuatro ingredientes con las cantidades de
-San Miguel. Los equipos de tornillo resuelven los menores; la harina
-requiere el intervalo de un equipo de lotes, y la entrega conjunta
-proviene de la configuración con varias balanzas. La dosificadora
-reúne esas tres funciones en un mismo equipo. Las notas no
-corresponden a ensayos con los ingredientes de San Miguel, y el
-prototipo no se puntúa porque su desempeño aún no se ha comprobado.
-
 \input{chapters/marcopractico/tables/figura_comercial_convergencia.tex}
 
 \subsection{Matriz morfológica}
 
 Las Tablas~\ref{tab:morfologia_dosificadora}
-y~\ref{tab:morfologia_integracion} reúnen diecisiete funciones de
-alimentación, pesaje, mando e integración. Las letras identifican
-medios de solución por fila. Cada combinación toma una opción
-compatible para cada función. Las columnas no representan máquinas
-completas. La matriz conserva las opciones que el cribado descarta o
-deja en reserva, en gris y con su marca, para mostrar de dónde parte
-la selección. Los guiones indican que la fila no incluye esa opción.
-La selección vigente de tornillos para los cuatro ingredientes fija el
-principio de alimentación, mientras que disposición, dimensiones y
-accionamiento permanecen en comparación. Los modelos y las capacidades
-de cada familia requieren comprobación.
-
-Las funciones F02--F07 relacionan la alimentación y el pesaje con las
-metas de error y duración. F12--F13 incorporan el recorrido y la
-transferencia del ingrediente. F15 desarrolla el acceso para limpieza.
-El almacenamiento de F01 y el soporte de F17 se contrastan con la
-capacidad útil y el área ocupada. Esta relación mantiene las seis
-características de la casa de calidad como criterios de comparación,
-sin convertir sus prioridades en una selección de componentes.
+y~\ref{tab:morfologia_integracion} presentan la matriz morfológica de
+la dosificadora, construida con el procedimiento de
+\textcite{cross2021design}. Cada fila corresponde a una función de la
+Figura~\ref{fig:esquema_funcional_dosificadora} y reúne medios de
+solución concretos, con modelos comerciales como ejemplo y no como
+selección. La matriz incluye medios poco convencionales para ampliar la
+búsqueda, y los que no superan el cribado se muestran en gris como
+descartados (\textdagger) o en reserva (\textdaggerdbl). Las columnas no
+representan máquinas completas, y una combinación toma un medio por
+fila. Las diecisiete funciones superan las cuatro a ocho que recomienda
+el método, porque el diseño preliminar debe resolver también el mando,
+la descarga y la integración. Sin descartes ni reservas, la matriz
+admite 7\,558\,272 combinaciones, por lo que la selección parte del
+cribado y de la separación entre funciones comunes y variables.
 
 \input{chapters/marcopractico/tables/morfologia_dosificadora.tex}
 
-Las alternativas eléctricas y de control definen interfaces y espacio
-de montaje para el diseño preliminar. La elección del controlador no
-determina por sí sola el error de dosificación. El diámetro, el paso y
-la velocidad del tornillo se contrastan con el caudal requerido mediante
-la Ecuación~\eqref{eq:caudal_tornillo}. La adquisición y el corte se
-contrastan con la respuesta del conjunto de pesaje.
+Algunas filas requieren una lectura técnica. F05-C mide por ganancia de
+peso en receptores individuales, no por pérdida en cada tolva, y exige
+otro montaje, por lo que no se desarrolla en las combinaciones. El
+diámetro, el paso y la velocidad de F02 se contrastan con el caudal
+requerido mediante la Ecuación~\eqref{eq:caudal_tornillo}, mientras que
+el controlador de F08 no determina por sí solo el error de dosificación.
+F16 interrumpe el accionamiento, y la detención del flujo se comprueba
+con la descarga residual. Si esta excede la meta, se revisan el corte
+anticipado y un cierre de salida.
 
-La opción F05-C comprende receptores individuales que miden la cantidad
-recibida por ganancia de peso. No implica pesar la pérdida de cada tolva.
-Esa arquitectura requiere otro montaje y no se incluye en los caminos
-desarrollados. Las opciones de F06 soportan los receptores de ganancia.
-F16 interrumpe el accionamiento, mientras que la detención del flujo
-de ingrediente se comprueba mediante la descarga residual. Si esta
-excede la meta, se revisan el corte anticipado y la necesidad de un
-cierre de salida antes de seleccionar su mecanismo.
+\subsection{Cribado de la matriz}
 
-\subsection{Opciones por descartar y condiciones de conservación}
-
-El descarte se aplica a medios de solución incompatibles con los
-requerimientos o con otra opción del conjunto. Las funciones de
-medición, alimentación e interrupción conservan vigencia. La
-Tabla~\ref{tab:descarte_morfologia} distingue exclusiones justificadas
-de alternativas que requieren información adicional.
+La Tabla~\ref{tab:descarte_morfologia} presenta, por función, los
+motivos del cribado. Se descartan los medios que contradicen el tornillo
+adoptado, la dosificación por lotes, la lectura gravimétrica de RF-03 y
+RF-04, el desmontaje de RNF-04 o la alimentación de red del puesto, y
+los que agregan retención entre la salida y el recipiente. El agitador
+y los tornillos ascendentes quedan en reserva hasta que una prueba o el
+puesto los exijan. F03 y F06 se mantienen abiertos, porque la falta de
+una ficha o una prueba no descarta toda la familia.
 
 \begin{table}[H]
     \centering
-    \caption{Cribado de alternativas y condiciones de compatibilidad.}
+    \caption{Cribado de la matriz morfológica por función.}
     \label{tab:descarte_morfologia}
     \footnotesize
     \setstretch{1}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}X}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}X}
         \toprule
         \textbf{Opción examinada} & \textbf{Estado} & \textbf{Fundamento o comprobación} \\
         \midrule
-        F02-C. Tornillos inclinados ascendentes. & En reserva. & Requiere una necesidad de elevación, espacio y verificación de caudal y par. Sin esas entradas no se integra en los primeros conceptos. \\
-        \addlinespace[4pt]
-        F02-D. Compuerta o bandeja vibratoria. & Descartada. & El principio adoptado es tornillo. Con compuertas, \textcite{rumapea2026flour} atribuyeron parte del error a bóvedas y \textcite{bachtiar2026brownies} obtuvieron 51~g de azúcar para 120~g. Las aperturas auxiliares de F13 mantienen una función distinta. \\
-        \addlinespace[4pt]
+        F01-C. Tolva con agitador. & En reserva. & La harina formó una bóveda sobre una salida abierta (Figura~\ref{fig:su_boveda}). Se incorpora si la prueba de descarga con la harina de San Miguel la reproduce. \\
+        \addlinespace[3pt]
+        F02-C. Tornillos inclinados ascendentes. & En reserva. & Requiere una necesidad de elevación, espacio y verificación de caudal y par. \\
+        \addlinespace[3pt]
+        F02-D. Compuerta o bandeja vibratoria. & Descartada. & Con compuertas, \textcite{rumapea2026flour} atribuyeron parte del error a bóvedas y \textcite{bachtiar2026brownies} obtuvieron 51~g de azúcar para 120~g. \\
+        \addlinespace[3pt]
+        F02-E. Válvula rotativa alveolar. & Descartada. & El tornillo se adoptó para los cuatro ingredientes. \\
+        \addlinespace[3pt]
+        F04-D. Cadena y piñones. & Descartada. & La lubricación y las holguras junto a las superficies de producto dificultan la limpieza que exige RNF-04. \\
+        \addlinespace[3pt]
         F05-D. Dosis por vueltas o tiempo del motor. & Descartada. & RF-03 y RF-04 requieren lectura gravimétrica durante la alimentación. \\
-        \addlinespace[4pt]
-        F13-A y F13-B en el concepto A. & Omitidas en ese concepto. & La descarga directa evita una transferencia y su retención. Un colector de convergencia puede cumplir F12-B sin incorporar otro pesaje. \\
-        \addlinespace[4pt]
-        F14-D. Polímero sin identificación ni documentación de contacto. & Descartada. & F14-C permanece como familia candidata con documentación y condiciones de uso verificables. \\
-        \addlinespace[4pt]
-        F15-C. Acceso sin desmontar las piezas que retienen ingrediente. & Descartada. & RNF-04 requiere acceso y desmontaje. Se conservan F15-A y F15-B. \\
-        \addlinespace[4pt]
-        F03 y F06 sin comprobación de par o de respuesta bajo carga. & Selección pendiente. & La falta de una ficha o prueba no demuestra que toda la familia sea inadecuada. \\
+        \addlinespace[3pt]
+        F05-E. Pérdida de peso en cada tolva. & Descartada. & Sirve al flujo continuo y queda ciega durante la recarga \parencite{chiliguana2016rediseno,blackshields2018continuous}. San Miguel dosifica por lotes. \\
+        \addlinespace[3pt]
+        F09-D. Aplicación móvil inalámbrica. & Descartada. & Agrega un dispositivo externo y su enlace. RF-06 y RF-07 se resuelven con la interfaz del equipo. \\
+        \addlinespace[3pt]
+        F11-C. Batería recargable. & Descartada. & El equipo es fijo y RNF-06 lo ajusta a la alimentación eléctrica disponible. \\
+        \addlinespace[3pt]
+        F12-C. Canaleta vibratoria. & Descartada. & Agrega un accionamiento y una superficie de retención entre la salida y el recipiente. \\
+        \addlinespace[3pt]
+        F13-A y F13-B en la combinación A. & Omitidas en esa combinación. & La descarga directa evita una transferencia y su retención. \\
+        \addlinespace[3pt]
+        F14-D. Polímero sin identificación ni documentación de contacto. & Descartada. & F14-C permanece con documentación y condiciones de uso verificables. \\
+        \addlinespace[3pt]
+        F15-C. Acceso sin desmontar las piezas que retienen ingrediente. & Descartada. & RNF-04 requiere acceso y desmontaje. \\
+        \addlinespace[3pt]
+        F15-D. Lavado en sitio con agua. & Descartada. & El agua sobre residuos de harina forma masa adherida y obliga a secar antes de dosificar. \\
+        \addlinespace[3pt]
+        F03 y F06 sin comprobación de par o de respuesta bajo carga. & Selección pendiente. & La falta de una ficha o una prueba no demuestra que toda la familia sea inadecuada. \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
     Fuente: Elaboración propia.
 \end{table}
 
-La regulación de tensión, la adquisición del peso y el accionamiento
-del motor cumplen funciones distintas. Un divisor de tensión, un
-convertidor de pesaje y un controlador de potencia no constituyen
-alternativas equivalentes de un mismo bloque. La matriz conserva
-estas funciones separadas para comprobar tensión, señal y capacidad
-de corriente de cada interfaz.
-
-\subsection{Base común y variables de combinación}
-
-La Tabla~\ref{tab:base_comun_conceptos} identifica la base compartida
-por los conceptos. Esa base expresa decisiones vigentes y funciones
-requeridas. No fija modelos comerciales. La
-Tabla~\ref{tab:variables_conceptos} resume las opciones que intervienen
-en la comparación y mantiene la referencia a la matriz inicial.
+La Tabla~\ref{tab:precios_f03_f08} contrasta la oferta local publicada
+para el accionamiento y el controlador. El paso a paso, su driver, el
+ESP32 y el Arduino Mega se ofrecen en tiendas bolivianas por menos de
+250~Bs. El motorreductor CC con encoder y el servomotor no tienen precio
+local publicado, y el PLC y el computador de placa única requieren
+cotización o importación. Estos precios no descartan opciones, pero
+condicionan la compra de F03-B en la combinación B y el costo de la C.
 
 \begin{table}[H]
     \centering
-    \caption{Base común de las configuraciones de cuatro ingredientes.}
-    \label{tab:base_comun_conceptos}
-    \footnotesize
-    \setstretch{1}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{p{0.32\textwidth}X}
-        \toprule
-        \textbf{Elemento común} & \textbf{Condición conservada} \\
-        \midrule
-        Ingredientes y alimentación. & Harina, azúcar, sal y levadura en polvo, un tornillo por ingrediente. \\
-        Medición y corte. & Realimentación gravimétrica y asociación entre lectura e ingrediente. \\
-        Operación. & Ingreso de consignas, referencia de pesaje, aviso de fin e interrupción. \\
-        Integración. & Protección de partes móviles y eléctricas, limpieza, recarga y retiro del recipiente. \\
-        Verificación. & Márgenes de receta y respuesta del equipo por comprobar, sin mejora anticipada. \\
-        \bottomrule
-    \end{tabularx}
-    \par\smallskip
-    Fuente: Elaboración propia.
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{Variables conservadas para generar las combinaciones.}
-    \label{tab:variables_conceptos}
+    \caption{Precios publicados de opciones de F03 y F08 en Bolivia.}
+    \label{tab:precios_f03_f08}
     \footnotesize
     \setstretch{1}
     \renewcommand{\arraystretch}{1.15}
-    \begin{tabularx}{\textwidth}{p{0.16\textwidth}X}
+    \begin{tabularx}{\textwidth}{p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.3\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}X}
         \toprule
-        \textbf{Funciones} & \textbf{Opciones y condición de conservación} \\
+        \textbf{Opción} & \textbf{Componente de ejemplo} & \textbf{Tienda} & \textbf{Precio publicado} \\
         \midrule
-        F01--F02 & Tolvas independientes o compartimentadas, tornillos horizontales o verticales descendentes. La elevación permanece en reserva. \\
-        F03--F04 & Paso a paso, CC con encoder o servo, acople, reducción o correa según el par y la velocidad. \\
-        F05--F07 & Pesaje común, por grupo o por ingrediente, soporte y adquisición compatibles con capacidad, carga previa e interfaces. \\
-        F08--F11 & Controlador, interfaz, aviso y alimentación eléctrica compatibles. Sin funciones adicionales ajenas a RF/RNF. \\
-        F12--F13 & Salidas orientadas al receptor o colector. Vaciado basculante o inferior si existe receptor auxiliar. \\
-        F14--F15 & Material documentado para las condiciones de contacto y acceso por extracción o retiro del módulo. \\
-        F16--F17 & Interrupción y soporte verificados con las protecciones, las cargas y el puesto. \\
+        F03-A & Paso a paso NEMA~17 de 1,5 a 1,7~A. & AMB Electrónica, Ardunel. & 130~Bs; 155 a 185~Bs. \\
+        F03-A & Driver TB6600 para NEMA~17 y~23. & EPY Electrónica. & 150~Bs. \\
+        F03-B & Motorreductor CC de 12~V con encoder. & --- & Sin precio local publicado. \\
+        F03-C & Servomotor industrial con accionamiento. & --- & Sin precio local publicado. \\
+        F08-A & ESP32 de 38 pines. & Ardunel, EC Robotics. & 92~Bs; 95~Bs. \\
+        F08-A & Arduino Mega 2560. & EC Robotics, Ardunel. & 195~Bs; 238~Bs. \\
+        F08-B & PLC Siemens S7-1200, CPU 1212C. & Lista de precios de Siemens. & 665~USD, sin precio local en Bs. \\
+        F08-C & Raspberry Pi~4 de 8~GB. & Ubuy Bolivia (importación). & 1551~Bs. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia con precios publicados en los sitios de cada tienda, consulta del 18/11/2026.
+\end{table}
+
+\subsection{Funciones comunes y variables}
+
+Tras el cribado, cinco funciones reciben la misma solución en las tres
+combinaciones (Tabla~\ref{tab:funciones_comunes}), y las doce restantes
+forman la matriz de funciones variables sobre la que se construyen las
+alternativas. AISI~304 figura como candidato, porque su comparación con
+AISI~316 frente a la sal permanece abierta.
+
+\begin{table}[H]
+    \centering
+    \caption{Funciones con solución común en las tres combinaciones.}
+    \label{tab:funciones_comunes}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}p{0.3\textwidth}X}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Solución común} \\
+        \midrule
+        F06 & Soportar el receptor pesado & A. Plataforma con celda de punto único. \\
+        F10 & Comunicar estado y fin & B. Aviso visual y sonoro. \\
+        F14 & Formar superficies de contacto & A. AISI 304, candidato frente a AISI 316. \\
+        F16 & Interrumpir el accionamiento & C. Orden al controlador y corte de habilitación. \\
+        F17 & Sostener e instalar & A. Bastidor independiente. \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
     Fuente: Elaboración propia.
 \end{table}
+
+Las Tablas~\ref{tab:opcion_a} a~\ref{tab:opcion_c} marcan sobre las
+funciones variables las tres combinaciones. La A dirige los cuatro
+tornillos horizontales a una balanza común, sin receptor auxiliar. La B
+conserva las tolvas independientes y separa el pesaje de harina del de
+menores, con motorreductor CC para la harina y paso a paso para los
+menores. La reducción de harina corresponde a F03-B y F04-B, sin otra
+etapa. La C combina tornillos verticales descendentes, depósito
+compartimentado, transmisores, PLC y HMI. Dos celdas marcadas en una
+fila de la B o la C indican soluciones distintas para harina (H) y
+menores (M), no dos medios para la misma carga.
+
+\input{chapters/marcopractico/tables/combinaciones_dosificadora.tex}
 
 \subsection{Disposición de los alimentadores}
 
@@ -808,21 +820,6 @@ incrementos pequeños con tara y carga acumulada.
 \end{figure}
 
 \subsection{Generación de combinaciones del conjunto}
-
-La Tabla~\ref{tab:caminos_morfologia} define tres caminos de solución
-con el alcance vigente de cuatro ingredientes. La combinación A
-reúne tornillos horizontales y pesaje común. La B separa el pesaje de
-menores y mantiene tolvas independientes. La C reúne alimentación
-vertical descendente, almacenamiento compartimentado y mando
-mediante PLC. Cada camino comprende almacenamiento, accionamiento,
-medición, operación y descarga, con interfaces por verificar.
-Las letras de la tabla remiten a las opciones de cada fila de la matriz.
-Los caminos son configuraciones de estudio sujetas a cálculos, fichas
-y revisión del puesto. En la combinación B, la reducción de harina
-corresponde al motorreductor de F03-B y se comprueba como transmisión
-F04-B. No se presupone otra etapa reductora adicional.
-
-\input{chapters/marcopractico/tables/combinaciones_dosificadora.tex}
 
 Las combinaciones A y B utilizan cuatro tolvas y cuatro
 tornillos. La A dirige los ingredientes al recipiente sobre una balanza

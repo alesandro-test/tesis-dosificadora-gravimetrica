@@ -1,34 +1,125 @@
+% Combinaciones A, B y C marcadas sobre las funciones variables de la matriz morfológica.
+% H: solución para harina. M: solución para azúcar, sal y levadura.
+
 \begin{table}[H]
     \centering
-    \caption{Combinaciones completas a partir de la matriz morfológica.}
-    \label{tab:caminos_morfologia}
+    \caption{Combinación A sobre las funciones variables.}
+    \label{tab:opcion_a}
     \footnotesize
     \setstretch{1}
     \setlength{\tabcolsep}{3pt}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
         \toprule
-        \textbf{Funciones} & \textbf{Combinación A} & \textbf{Combinación B} & \textbf{Combinación C} \\
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
         \midrule
-        F01 / F02 & A / A: tolvas independientes y tornillos horizontales. & A / A: tolvas independientes y tornillos horizontales. & B / B: depósito compartimentado y tornillos verticales descendentes. \\
-        \addlinespace[4pt]
-        F03 / F04 & A / A: paso a paso y acople directo. & B / B en harina: CC y reducción, A / A en menores: paso a paso y acople. & A / A: paso a paso y acople directo. \\
-        \addlinespace[4pt]
-        F05 / F06 & A / A: pesaje común y celda de punto único. & B / A: dos pesajes con celdas de punto único. & B / A: dos pesajes con celdas de punto único. \\
-        \addlinespace[4pt]
-        F07 / F08 & A / A: conversión dedicada y microcontrolador. & A / A: adquisición de ambos pesajes y microcontrolador. & B / B: transmisores de pesaje y PLC compatible. \\
-        \addlinespace[4pt]
-        F09 / F10 & A / B: teclado, pantalla y aviso visual/sonoro. & A / B: teclado, pantalla y aviso visual/sonoro. & C / B: HMI y aviso visual/sonoro. \\
-        \addlinespace[4pt]
-        F11 & A: fuente y regulación compatibles con las cargas. & A: fuente y regulación compatibles con las cargas. & B: fuentes separadas por circuito. \\
-        \addlinespace[4pt]
-        F12 / F13 & A / C: descargas al recipiente, sin receptor auxiliar. & A en harina y B en menores, A en vaciado auxiliar: basculante. & A en harina y B en menores, B en vaciado auxiliar: apertura inferior. \\
-        \addlinespace[4pt]
-        F14 / F15 & A / A: AISI 304 candidato, extracción de tornillos. & A / B: AISI 304 candidato, módulos desmontables. & A / B: AISI 304 candidato, módulos desmontables. \\
-        \addlinespace[4pt]
-        F16 / F17 & C / A: interrupción combinada y bastidor independiente. & C / A: interrupción combinada y bastidor independiente. & C / A: interrupción combinada y bastidor independiente. \\
+        F01 & Almacenar por ingrediente & \cellcolor{green!22}Tolvas independientes. & Depósito compartimentado. & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & \cellcolor{green!22}Tornillos horizontales. & Tornillos verticales descendentes. & --- \\
+        \addlinespace[2pt]
+        F03 & Generar el giro & \cellcolor{green!22}Paso a paso y driver. & Motorreductor CC con encoder. & Servomotor industrial. \\
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & \cellcolor{green!22}Acople directo. & Reducción por engranajes. & Correa dentada y poleas. \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & \cellcolor{green!22}Una balanza común. & Balanza de harina y balanza de menores. & Receptores individuales. \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & \cellcolor{green!22}Convertidor dedicado. & Transmisor industrial. & Balanza con interfaz de datos. \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & \cellcolor{green!22}Microcontrolador. & PLC. & Computador de placa única. \\
+        \addlinespace[2pt]
+        F09 & Ingresar consignas & \cellcolor{green!22}Teclado y pantalla. & Mando giratorio y pantalla. & Panel HMI. \\
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & \cellcolor{green!22}Fuente AC/DC y regulación. & Fuentes separadas por circuito. & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & \cellcolor{green!22}Salidas orientadas al receptor. & Colector desmontable. & --- \\
+        \addlinespace[2pt]
+        F13 & Vaciar el receptor auxiliar & Recipiente basculante. & Apertura inferior accionada. & \cellcolor{green!22}Descarga directa. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & \cellcolor{green!22}Extracción del tornillo. & Retiro del módulo. & --- \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
     Fuente: Elaboración propia.
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Combinación B sobre las funciones variables.}
+    \label{tab:opcion_b}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F01 & Almacenar por ingrediente & \cellcolor{yellow!40}Tolvas independientes. & Depósito compartimentado. & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & \cellcolor{yellow!40}Tornillos horizontales. & Tornillos verticales descendentes. & --- \\
+        \addlinespace[2pt]
+        F03 & Generar el giro & \cellcolor{yellow!40}Paso a paso y driver. (M) & \cellcolor{yellow!40}Motorreductor CC con encoder. (H) & Servomotor industrial. \\
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & \cellcolor{yellow!40}Acople directo. (M) & \cellcolor{yellow!40}Reducción por engranajes. (H) & Correa dentada y poleas. \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & Una balanza común. & \cellcolor{yellow!40}Balanza de harina y balanza de menores. & Receptores individuales. \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & \cellcolor{yellow!40}Convertidor dedicado. & Transmisor industrial. & Balanza con interfaz de datos. \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & \cellcolor{yellow!40}Microcontrolador. & PLC. & Computador de placa única. \\
+        \addlinespace[2pt]
+        F09 & Ingresar consignas & \cellcolor{yellow!40}Teclado y pantalla. & Mando giratorio y pantalla. & Panel HMI. \\
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & \cellcolor{yellow!40}Fuente AC/DC y regulación. & Fuentes separadas por circuito. & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & \cellcolor{yellow!40}Salidas orientadas al receptor. (H) & \cellcolor{yellow!40}Colector desmontable. (M) & --- \\
+        \addlinespace[2pt]
+        F13 & Vaciar el receptor auxiliar & \cellcolor{yellow!40}Recipiente basculante. & Apertura inferior accionada. & Descarga directa. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & Extracción del tornillo. & \cellcolor{yellow!40}Retiro del módulo. & --- \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia. H: harina. M: azúcar, sal y levadura.
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Combinación C sobre las funciones variables.}
+    \label{tab:opcion_c}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F01 & Almacenar por ingrediente & Tolvas independientes. & \cellcolor{orange!28}Depósito compartimentado. & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & Tornillos horizontales. & \cellcolor{orange!28}Tornillos verticales descendentes. & --- \\
+        \addlinespace[2pt]
+        F03 & Generar el giro & \cellcolor{orange!28}Paso a paso y driver. & Motorreductor CC con encoder. & Servomotor industrial. \\
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & \cellcolor{orange!28}Acople directo. & Reducción por engranajes. & Correa dentada y poleas. \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & Una balanza común. & \cellcolor{orange!28}Balanza de harina y balanza de menores. & Receptores individuales. \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & Convertidor dedicado. & \cellcolor{orange!28}Transmisor industrial. & Balanza con interfaz de datos. \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & Microcontrolador. & \cellcolor{orange!28}PLC. & Computador de placa única. \\
+        \addlinespace[2pt]
+        F09 & Ingresar consignas & Teclado y pantalla. & Mando giratorio y pantalla. & \cellcolor{orange!28}Panel HMI. \\
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & Fuente AC/DC y regulación. & \cellcolor{orange!28}Fuentes separadas por circuito. & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & \cellcolor{orange!28}Salidas orientadas al receptor. (H) & \cellcolor{orange!28}Colector desmontable. (M) & --- \\
+        \addlinespace[2pt]
+        F13 & Vaciar el receptor auxiliar & Recipiente basculante. & \cellcolor{orange!28}Apertura inferior accionada. & Descarga directa. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & Extracción del tornillo. & \cellcolor{orange!28}Retiro del módulo. & --- \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia. H: harina. M: azúcar, sal y levadura.
 \end{table}
