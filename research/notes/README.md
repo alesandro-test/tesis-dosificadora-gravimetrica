@@ -7,6 +7,8 @@
 
 ## Diseño y capítulo 2
 
+- [Referencia estructural de María Julia](../referencias_estructurales/04_Referencia_Maria_Julia.md) — objetivos, propuesta, casa de calidad por bloques y transición a la matriz morfológica; revisión del PDF original hasta la página física 50.
+
 - [Capítulo 2 explicado en sencillo](estado_arte_explicado_sencillo_2026-11-12.md) — lectura de los once párrafos de Estado del arte y catálogo de las 50 referencias de Estado del arte, Enfoques y Fundamentos: de qué trata cada documento, qué usamos y dónde lo citamos. Notas 07–14 del cuaderno de estudio; original de Cross pendiente.
 
 - [Fichas de estudio del capítulo 2](fichas_estudio_capitulo2_2026-11-12.md) — 23 fichas del Estado del arte, cuatro de Enfoques, ocho de Fundamentos y diez preguntas de repaso; ubicaciones en el PDF y enlace al cuaderno de NotebookLM.
@@ -22,8 +24,8 @@
 
 ## Trazabilidad
 
-- [Recetas y mediciones anteriores](insumos_secos_recetas.md) — registro reemplazado que conserva las cantidades informadas el 05/10/2026 para rastrear la discrepancia de levadura.
-- [Inventario de figuras](propuesta_figuras_capitulo2_2026-11-06.md) — justificación de la reorganización del capítulo 2.
-- [Revisión de objetivos](revision_objetivos_01A_01B_01C_2026-11-06.md) — correspondencia de los objetivos y revisión del cronograma.
+- [Recetas y mediciones anteriores](../../archive/research/notes/insumos_secos_recetas.md) — registro reemplazado que conserva las cantidades informadas el 05/10/2026 para rastrear la discrepancia de levadura.
+- [Inventario de figuras](../../archive/research/notes/propuesta_figuras_capitulo2_2026-11-06.md) — justificación de la reorganización del capítulo 2.
+- [Revisión de objetivos](../../archive/research/notes/revision_objetivos_01A_01B_01C_2026-11-06.md) — correspondencia de los objetivos y revisión del cronograma.
 
 Las decisiones vigentes están en [DECISIONS.md](../../context/DECISIONS.md). El avance y los pendientes están en [STATUS.md](../../context/STATUS.md).

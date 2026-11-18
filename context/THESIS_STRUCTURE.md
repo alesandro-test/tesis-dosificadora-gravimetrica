@@ -202,7 +202,7 @@
 
 El perfil desarrolla OE1 y el diseño de OE2, con nivel de cumplimiento exigido pendiente según D-020. La evaluación experimental corresponde al desarrollo posterior y no se incorpora como resultado del capítulo teórico.
 
-Inventario y justificación: research/notes/propuesta_figuras_capitulo2_2026-11-06.md. La figura comercial DF-B/IF-A está incluida en Productos comerciales por instrucción expresa del estudiante.
+Inventario y justificación: archive/research/notes/propuesta_figuras_capitulo2_2026-11-06.md. La figura comercial DF-B/IF-A está incluida en Productos comerciales por instrucción expresa del estudiante.
 
 # CAPÍTULO 3 — PROPUESTA DEL PROYECTO
 

@@ -44,7 +44,7 @@ La revisión modifica el Excel y sus fundamentos. Las mediciones del puesto/reci
 
 ---
 
-Fecha: 12/11/2026. El estudiante solicita aplicar el análisis de María Julia y completar una propuesta coherente con los datos disponibles. Archivo de trabajo actualizado: `docs/design/Casa_de_calidad_San_Miguel_propuesta.xlsx`. El archivo anterior estaba bloqueado para escritura; se conserva sin cambios.
+Fecha: 12/11/2026. El estudiante solicita aplicar el análisis de María Julia y completar una propuesta coherente con los datos disponibles. Archivo de trabajo actualizado: `archive/docs/design/Casa_de_calidad_San_Miguel_propuesta.xlsx`. El archivo anterior estaba bloqueado para escritura; se conserva sin cambios.
 
 ## Alcance de la valoración
 

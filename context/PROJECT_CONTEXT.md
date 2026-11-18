@@ -181,13 +181,15 @@ Todavía no se consideran definidos definitivamente:
 - actuadores;
 - estrategia de control;
 - arquitectura mecánica y electrónica;
-- tolerancia de aceptación;
+- aceptación de receta de los márgenes de ingredientes menores y comprobación técnica de las metas;
 - tiempo objetivo;
 - dimensiones finales.
 
 Las referencias conceptuales previas de **5–15 kg por lote**,
 **40–50 kg de almacenamiento** y **+20 g** no constituyen requisitos definitivos y
 se retiraron de los Alcances (`D-009`).
+
+Para harina, el estudiante confirma ±20 g por lote en la corrección de la entrevista del 16/11/2026 (D-022). La meta preliminar de media de error absoluto es ≤15 g (D-024). Ambos criterios requieren comprobación del prototipo; las referencias históricas de +20 g citadas arriba no son el origen de esta decisión bilateral.
 
 Los requerimientos deberán derivarse del relevamiento, la bibliografía,
 las decisiones de diseño y la validación experimental.

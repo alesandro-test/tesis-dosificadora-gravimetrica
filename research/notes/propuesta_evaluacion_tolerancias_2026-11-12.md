@@ -1,8 +1,10 @@
 # Propuesta de tolerancias y comparación con el procedimiento manual
 
+> **Actualización vigente — 16/11/2026:** el estudiante corrige y confirma el margen de harina de la entrevista en ±20 g por lote. Por encargo del estudiante se elige una meta preliminar de media absoluta ≤15 g, en sustitución de ≤10 g (D-022 y D-024). Frente a 143/7 = 20,4286 g de la muestra manual, las metas de 15 y 10 g representan reducciones objetivo del 26,6 % y 51,0 %, respectivamente. Se adopta 15 g como exigencia preliminar moderada, sin afirmar viabilidad antes de fichas y ensayos. En la muestra, dos lotes exceden ±20 g: +38 y +27 g. Los márgenes de menores y sus pendientes se conservan. La propuesta, RNF-01, entrevista y casa de calidad se alinean con estos criterios. Las tablas y explicaciones siguientes conservan el análisis histórico del 12/11, incluidas las bandas de ±30 g y ≤10 g, y no representan los requisitos vigentes.
+
 Fecha: 12/11/2026. Solicitud del estudiante: proponer límites y forma de evaluación a partir de los registros, comparando el criterio de ±1 %. Este análisis no aprueba tolerancias de receta ni acredita desempeño del prototipo. D-022 conserva ±30 g de harina; las tolerancias de los ingredientes menores siguen abiertas.
 
-Actualización posterior del 12/11/2026: el estudiante aprobó estas metas de ingeniería y pidió aplicarlas a la casa de calidad. D-024 registra la aprobación y `docs/design/Casa_de_calidad_San_Miguel.xlsx` incorpora los límites y la meta de media absoluta de harina. Continúan pendientes la aceptación de receta y la comprobación técnica; las formulaciones de propuesta siguientes documentan el análisis que dio origen a esa decisión.
+Actualización posterior del 12/11/2026: el estudiante aprobó estas metas de ingeniería y pidió aplicarlas a la casa de calidad. D-024 registra la aprobación y `archive/docs/design/Casa_de_calidad_San_Miguel.xlsx` incorpora los límites y la meta de media absoluta de harina. Continúan pendientes la aceptación de receta y la comprobación técnica; las formulaciones de propuesta siguientes documentan el análisis que dio origen a esa decisión.
 
 ## Fuente y cálculo
 

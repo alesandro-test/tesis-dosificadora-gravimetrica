@@ -1,6 +1,6 @@
 # Guía de redacción y revisión de la tesis
 
-**Aplicación actual:** Marco Referencial / Capítulo 1.  
+**Aplicación actual:** Marco Referencial / Capítulo 1 y propuesta del Capítulo 3 (sección 9).  
 **Uso posterior:** adaptar la ficha de revisión a cada capítulo sin imponerle la función del Marco Referencial.  
 **Estado:** guía operativa de redacción; no sustituye decisiones del proyecto ni una aprobación docente.
 
@@ -37,6 +37,7 @@ Estas reglas se aplican a la **prosa redactada de la tesis**. Una búsqueda auto
 
 | Aspecto | Revisión y acción |
 |---|---|
+| Puntuación | No utilizar punto y coma en la redacción. Separar oraciones con punto o utilizar coma cuando corresponda a la estructura gramatical. Esta regla se aplica al texto visible, no a los terminadores de comandos de TikZ. |
 | Adverbios y expresiones de cantidad | Señalar `absolutamente`, `apenas`, `mucho`, `bastante`, `casi`, `demasiado`, `extremadamente`, `justo`, `mitad`, `muy`, `nada`, `poco`, `tan`, `tanto`, `gran`, `altamente`, `suficiente`, `carece`, `no hay`, `no tiene`, `no existe`. Sustituir una valoración vaga por magnitud, criterio o descripción verificable. `Mitad` y otros vocablos de la lista pueden cumplir funciones gramaticales distintas; revisar el contexto. |
 | Tiempo | Señalar `antes`, `después`, `luego`, `pronto`, `tarde`, `temprano`, `todavía`, `aún`, `aun`, `ya`, `ayer`, `hoy`, `mañana`, `anteayer`, `siempre`, `nunca`, `jamás`, `próximamente`, `prontamente`, `anoche`, `enseguida`, `ahora`, `anteriormente`. Cuando el orden del proceso importe, expresarlo con el nombre de las etapas o mediante una secuencia inequívoca. |
 | Modo y duda | Señalar `así`, `bien`, `deprisa`, `de repente`, `súbitamente`, `despacio`, `difícilmente`, `especialmente`, `estupendamente`, `fácilmente`, `mal`, `mejor`, `peor`, `rápidamente`, `regular`, `sinceramente`, `solamente`, `probablemente`, `quizá`, `quizás`, `posiblemente`, `tal vez`, `acaso`, `a lo mejor`, `ojalá`, `creo`; revisar también `alto` y `bajo` cuando sean calificaciones vagas. Expresar alcance e incertidumbre mediante la evidencia y sus límites. |
@@ -125,3 +126,16 @@ Para otros capítulos, reemplazar `THESIS_STRUCTURE.md` por la función aprobada
 Las estrellas indican popularidad, pero no verifican fidelidad científica. Evaluar instrucciones legibles, historial de correcciones, ejemplos pertinentes, respeto por evidencia y formato, y compatibilidad con el español y los criterios docentes. Los repositorios consultados no aportan, en las páginas revisadas, una comparación que establezca cuál produce mejores tesis de ingeniería en español.
 
 La prueba útil para este proyecto consiste en revisar un mismo fragmento con la guía vigente y con la adaptación propuesta. Comparar exactitud, trazabilidad, claridad, coherencia y adecuación al docente. Rechazar cambios que inventen respaldo, borren límites de la muestra, confundan tiempo total con intervención o conviertan proyecciones en resultados medidos. La cantidad de palabras eliminadas y una puntuación de detector de IA no son criterios de aceptación del capítulo.
+
+## 9. Redacción del capítulo 3: explicación directa de figuras y tablas
+
+**Criterio confirmado por el estudiante (16/11/2026):** concentrar la explicación en la idea técnica que aporta cada figura o tabla al diseño. Como referencia de exposición se consultó el apartado 3.1.4 de `C:/Users/Soam/Desktop/Template_UCB_SySo-main/docs/thesis/main.pdf` (página física 64, numerada 63), donde cada párrafo identifica una figura y explica el funcionamiento representado. Esta referencia orienta la redacción, no sustituye la plantilla institucional ni impone sus decisiones técnicas.
+
+- Utilizar como pauta un párrafo explicativo por figura o tabla, próximo al elemento y preferentemente antes. Nombrar la referencia, explicar el contenido indispensable para entenderla y conectar ese contenido con una función, requisito, comparación o decisión del proyecto.
+- Mantener juntas las oraciones que desarrollan una misma explicación. No crear párrafos separados para anunciar la figura, repetir sus etiquetas y cerrar con una frase genérica sobre su utilidad. Añadir otro párrafo únicamente cuando desarrolle un cálculo, una interpretación o una justificación necesaria que no quede resuelta en el primero.
+- Explicar el recorrido principal, las relaciones o el resultado relevante. Aclarar símbolos, tipos de línea, variables y unidades cuando sean necesarios para leer el elemento. En las tablas, identificar qué se compara y qué conclusión sustentan los datos, sin transcribir todas las filas.
+- Eliminar definiciones generales de la herramienta, beneficios sin respaldo, frases de transición vacías y repeticiones de información ya explicada. Conservar cifras, fuentes, condiciones de operación y asuntos abiertos cuando afecten la interpretación o una decisión. La brevedad no autoriza omitir una limitación relevante ni presentar una meta como resultado.
+- Separar las oraciones con punto o utilizar coma según la estructura gramatical, sin punto y coma. No imponer cuotas de palabras ni alargar el párrafo para alcanzar una extensión. Si la explicación acumula ideas distintas, revisar primero qué información corresponde a otro apartado.
+- Seguir la plantilla: citar `Figura` y `Tabla` con inicial mayúscula y referencia cruzada. Conservar la leyenda y la fuente de cada elemento. La leyenda de la figura se ubica debajo y no excede quince palabras, salvo subfiguras. La leyenda de la tabla precede al contenido y la fuente se coloca después. La leyenda no sustituye el párrafo explicativo. Mantener las reglas institucionales de numeración, tipografía y atribución de fuentes.
+
+**Patrón de revisión:** «La Figura/Tabla X presenta [contenido concreto]. [Relación, funcionamiento o comparación indispensable]. [Consecuencia sustentada para el diseño, si corresponde]». El patrón organiza la explicación y no exige repetir literalmente esas frases ni agregar un cierre cuando no aporte información.
