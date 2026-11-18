@@ -139,3 +139,14 @@ La prueba útil para este proyecto consiste en revisar un mismo fragmento con la
 - Seguir la plantilla: citar `Figura` y `Tabla` con inicial mayúscula y referencia cruzada. Conservar la leyenda y la fuente de cada elemento. La leyenda de la figura se ubica debajo y no excede quince palabras, salvo subfiguras. La leyenda de la tabla precede al contenido y la fuente se coloca después. La leyenda no sustituye el párrafo explicativo. Mantener las reglas institucionales de numeración, tipografía y atribución de fuentes.
 
 **Patrón de revisión:** «La Figura/Tabla X presenta [contenido concreto]. [Relación, funcionamiento o comparación indispensable]. [Consecuencia sustentada para el diseño, si corresponde]». El patrón organiza la explicación y no exige repetir literalmente esas frases ni agregar un cierre cuando no aporte información.
+
+### Densidad del capítulo 3: solo lo que aporta el proyecto
+
+**Criterio confirmado por el estudiante (18/11/2026):** cada subsección del capítulo 3 se reduce a lo que el proyecto aporta. Referencia de exposición: capítulo 3 de SySO (`Template_UCB_SySo-main/docs/thesis/main.pdf`, páginas físicas 58–65). Allí cada tabla o figura recibe un párrafo que la nombra, explica sus elementos por grupos y los vincula con el sistema, sin listas que repitan lo que el elemento ya muestra.
+
+- Una subsección con una figura o tabla se resuelve, por defecto, con un párrafo de presentación y lectura. Un segundo párrafo solo procede para un resultado o una interpretación que la figura no muestra por sí misma, por ejemplo un cálculo, una prioridad o un conflicto de diseño.
+- No enumerar en el texto los elementos que la figura o la tabla ya rotulan (necesidades, columnas, filas, metas). Se nombran solo los que sustentan una conclusión.
+- No repetir información de otro apartado: requerimientos, metas de D-024 y límites ya explicados se citan con su referencia cruzada, no se reescriben.
+- Omitir explicaciones genéricas del método (qué es una casa de calidad, para qué sirve una matriz morfológica). Basta con la cita del autor y la fórmula que se aplica.
+- Las advertencias de alcance (valoración preliminar, pendiente de contraste, hipótesis no medidas) se declaran una vez por subsección, en la oración donde afectan la interpretación.
+- Prueba de cada oración: si al quitarla el lector pierde un dato, una relación o una decisión del proyecto, se conserva. Si no, se elimina.

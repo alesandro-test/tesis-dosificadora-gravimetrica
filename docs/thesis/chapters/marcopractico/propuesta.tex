@@ -192,7 +192,7 @@ El segundo expresa cuánto se apartaron las dosis de la cantidad objetivo,
 en promedio. La comparación del tamaño de las diferencias utiliza la
 media absoluta junto con los errores individuales.
 
-\subsection{Metas de dosificación y comprobación}
+\subsection{Metas de dosificación}
 
 El proyecto adopta una meta complementaria de error absoluto promedio
 $\leq15$~g para harina. Esta meta corresponde a una elección preliminar
@@ -214,13 +214,6 @@ la dosificación. La aceptación de los márgenes en las recetas permanece
 pendiente de contraste con la propietaria. Los cuatro ingredientes
 se evalúan por separado, sin compensar diferencias entre ingredientes.
 
-La comprobación registra, para cada ingrediente y lote, la cantidad
-objetivo, la cantidad final medida con un instrumento de referencia y
-la diferencia entre ambas. Los resultados se comparan con el margen
-correspondiente y las dosis fuera de ese margen se identifican de forma
-individual. La evaluación incluye la dispersión entre dosis repetidas.
-La OIML R~61 aporta criterios metrológicos para la planificación de
-estas pruebas~\parencite{oiml2017r61}.
 
 \section{Diseño conceptual de los subsistemas}
 \label{sec:diseno_conceptual}
@@ -458,68 +451,45 @@ componentes. Esta separación organiza las alternativas sin tratar el
 sensor, el convertidor y la etapa de potencia como componentes
 intercambiables.
 
-\subsection{Casa de calidad preliminar}
+\subsection{Casa de calidad}
 \label{subsec:casa_calidad}
 
-La casa de calidad concentra la comparación en seis características que
-intervienen en el diseño de la dosificadora: error por ingrediente,
-tiempo de ciclo, intervención activa, limpieza, área ocupada y capacidad
-útil de harina. La Figura~\ref{fig:casa_calidad_dosificadora} relaciona
-estas características con las necesidades del puesto, mediante el
-esquema de \textcite{cross2021design}. Los pesos y las relaciones
-corresponden a una valoración preliminar del diseñador, pendiente de
-contraste con la propietaria.
+La Figura~\ref{fig:casa_calidad_dosificadora} presenta la casa de
+calidad de la dosificadora, elaborada en la plantilla de QFD Online con
+el esquema de \textcite{cross2021design}. Las filas contienen seis
+necesidades del puesto con su importancia de 1 a 10, y las columnas,
+seis características técnicas con su dirección de mejora, meta y
+dificultad. Las metas de error corresponden a la
+Tabla~\ref{tab:requerimientos_no_funcionales_prototipo}. El error se
+agrupa en una sola columna, pero se evalúa por ingrediente y sin
+compensar el de uno con el de otro. Cada relación vale 9, 3 o 1, y la
+importancia técnica se calcula como \(W_j=\sum_i d_i r_{ij}\), donde
+\(d_i\) es la importancia relativa de la necesidad y \(r_{ij}\) la
+relación asignada. La intervención activa obtiene la mayor prioridad
+(21,2~\%), seguida del error por ingrediente (19,4~\%) y del área
+ocupada (18,5~\%). Los pesos, las relaciones y la dificultad son una
+valoración preliminar del diseñador, pendiente de contraste con la
+propietaria.
 
-\begin{figure}[H]
+\begin{sidewaysfigure}
 \centering
-\makebox[\textwidth][r]{\includegraphics[width=0.405\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_interacciones_native.pdf}}\par
-\vspace{-1mm}
-\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_matriz_native.pdf}
-\caption{Relaciones de la casa de calidad con seis características.}
+\includegraphics[width=\textheight,height=0.88\textwidth,keepaspectratio]{images/marcopractico/casa_calidad_v01/casa_calidad_completa.pdf}
+\caption{Casa de calidad de la dosificadora.}
 \label{fig:casa_calidad_dosificadora}
-\label{fig:qfd_interacciones_simplificadas}
-{\footnotesize Fuente: Elaboración propia.}
-\end{figure}
+{\footnotesize Fuente: Elaboración propia con la plantilla de QFD Online.}
+\end{sidewaysfigure}
 
-El error de dosificación se agrupa en una característica, conservando
-la evaluación separada de harina, azúcar, sal y levadura. Esta agrupación
-evita asignar cuatro columnas ponderadas a una misma necesidad. No
-permite compensar el error de un ingrediente con el de otro. La duración
-del ciclo y la intervención activa permanecen separadas porque el equipo
-puede alimentar mientras el operario realiza otra tarea.
-
-Las relaciones fuertes reciben 9 y las medias 3. Una celda vacía indica
-que no se asignó relación. La limpieza y la recarga también se vinculan
-con el espacio de instalación. La importancia técnica se calcula como
-\(W_j=\sum_i w_i r_{ij}\) y su prioridad como
-\(p_j=100W_j/\sum_k W_k\). El área ocupada obtiene el 21,93~\%,
-la intervención activa el 20,32~\% y el error por ingrediente el
-16,04~\%. Estos resultados dependen del juicio de diseño y no autorizan
-incumplir una condición obligatoria.
-
-El techo de la Figura~\ref{fig:casa_calidad_dosificadora} conserva la numeración de las seis columnas. El signo negativo identifica un posible conflicto entre sus direcciones de mejora: reducir el error puede prolongar el ciclo (1 y 2), facilitar la limpieza puede exigir más espacio (4 y 5), y aumentar la capacidad puede ampliar la envolvente (5 y 6). Las celdas vacías no tienen una interacción asignada. Estas relaciones son hipótesis de diseño para contrastar los conceptos, no correlaciones estadísticas medidas.
-
-La seguridad, la altura de recarga, el manejo comprensible y el acceso
-para mantenimiento se conservan en RF/RNF como condiciones de
-cumplimiento. La repetibilidad se comprueba en los ensayos. Estos
-aspectos no necesitan otra columna ponderada para conservar vigencia.
-Se verifican al revisar cada concepto y el CAD.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/simplificada_metas_native.pdf}
-\caption{Metas de las seis características técnicas seleccionadas.}
-\label{fig:qfd_metas_simplificadas}
-{\footnotesize Fuente: Elaboración propia.}
-\end{figure}
-
-La Figura~\ref{fig:qfd_metas_simplificadas} conserva los límites
-adoptados: harina dentro de $\pm20$~g y media absoluta no mayor que
-15~g. Azúcar, sal y levadura dentro de $\pm3$, $\pm2$ y $\pm1$~g,
-respectivamente. Las metas operativas de tiempo, intervención y limpieza
-siguen propuestas para comprobar. El área admisible requiere medir el
-puesto. La capacidad útil de harina considera una consigna de 8~kg y
-excluye material que quede retenido sin poder dosificarse.
+La prioridad de la intervención proviene de sus vínculos con tres
+necesidades: una dosis fuera de margen exige una corrección manual, una
+recarga durante el lote es una acción del operario y ambas prolongan la
+receta. El techo señala tres conflictos que el concepto debe resolver,
+porque reducir el error puede prolongar el ciclo, facilitar la limpieza
+puede exigir más espacio y aumentar la capacidad amplía la envolvente.
+También muestra dos refuerzos, ya que menos error reduce las
+correcciones y una tolva con harina para todo el lote evita recargas.
+Estas interacciones son hipótesis de diseño, no correlaciones medidas.
+La seguridad, la altura de recarga y el acceso para mantenimiento no se
+ponderan porque son condiciones obligatorias de los RF y RNF.
 
 \subsection{Comparación con referentes comerciales}
 \label{subsec:comparacion_comercial}
@@ -594,7 +564,7 @@ Cada necesidad aplica un mismo criterio a los cinco referentes:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_excel/competitiva_native.pdf}
+\includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_v01/analisis_competitivo.pdf}
 \caption{Análisis competitivo de los referentes comerciales.}
 \label{fig:qfd_competitiva}
 {\footnotesize Fuente: Elaboración propia.}
@@ -667,7 +637,7 @@ prototipo no se puntúa porque su desempeño aún no se ha comprobado.
 
 \input{chapters/marcopractico/tables/figura_comercial_convergencia.tex}
 
-\subsection{Matriz morfológica preliminar}
+\subsection{Matriz morfológica}
 
 Las Tablas~\ref{tab:morfologia_dosificadora}
 y~\ref{tab:morfologia_integracion} reúnen diecisiete funciones de
