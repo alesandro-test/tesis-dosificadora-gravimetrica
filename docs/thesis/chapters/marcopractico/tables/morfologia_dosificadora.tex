@@ -1,7 +1,7 @@
-% Opciones en gris: descartadas (daga) o en reserva (doble daga), según la Tabla tab:descarte_morfologia.
-% Las letras A--D vigentes se conservan; las opciones agregadas el 18/11/2026 ocupan las últimas letras de cada fila.
+% Generado para la matriz morfológica con el enfoque de María Julia (19/11/2026).
 \providecommand{\descartada}[1]{\textcolor{gray}{#1~\textdagger}}
 \providecommand{\reserva}[1]{\textcolor{gray}{#1~\textdaggerdbl}}
+\providecommand{\sel}[1]{{\setlength{\fboxsep}{1.5pt}\fbox{\parbox[t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\raggedright\textbf{#1}}}}}
 
 \begin{table}[H]
     \centering
@@ -9,31 +9,31 @@
     \label{tab:morfologia_dosificadora}
     \footnotesize
     \setstretch{1}
-    \setlength{\tabcolsep}{2pt}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{p{0.045\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}*{5}{>{\raggedright\arraybackslash}X}}
+    \setlength{\tabcolsep}{2.5pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}*{5}{>{\raggedright\arraybackslash}X}}
         \toprule
         \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} & \textbf{Opción D} & \textbf{Opción E} \\
         \midrule
-        F01 & Almacenar por ingrediente & Tolvas independientes. & Depósito compartimentado. & \reserva{Tolva con agitador.} & --- & --- \\
-        \addlinespace[3pt]
-        F02 & Conducir y dosificar el ingrediente & Tornillos horizontales. & Tornillos verticales descendentes. & \reserva{Tornillos inclinados ascendentes.} & \descartada{Compuerta o bandeja vibratoria.} & \descartada{Válvula rotativa alveolar.} \\
-        \addlinespace[3pt]
+        F01 & Almacenar por ingrediente & Tolvas independientes. & Depósito compartimentado. & Tolva con agitador. & --- & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & Tornillos horizontales. & Tornillos verticales descendentes. & Tornillos inclinados ascendentes. & Compuerta o bandeja vibratoria. & Válvula rotativa alveolar. \\
+        \addlinespace[2pt]
         F03 & Generar el giro & Paso a paso (p.~ej., NEMA~17 o~23) y driver. & Motorreductor CC con encoder y driver. & Servomotor industrial y accionamiento. & --- & --- \\
-        \addlinespace[3pt]
-        F04 & Transmitir el giro & Acople directo. & Reducción por engranajes. & Correa dentada y poleas. & \descartada{Cadena y piñones.} & --- \\
-        \addlinespace[3pt]
-        F05 & Distribuir el pesaje & Una balanza común. & Una balanza de harina y otra de menores. & Receptores de pesaje individuales por ingrediente. & \descartada{Sin pesaje: dosis por vueltas o tiempo del motor.} & \reserva{Pérdida de peso en cada tolva.} \\
-        \addlinespace[3pt]
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & Acople directo. & Reducción por engranajes. & Correa dentada y poleas. & Cadena y piñones. & --- \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & Una balanza común. & Balanza de harina y balanza de menores. & Receptores individuales por ingrediente. & Dosis por vueltas o tiempo del motor. & Pérdida de peso en cada tolva. \\
+        \addlinespace[2pt]
         F06 & Soportar el receptor pesado & Plataforma con celda de punto único. & Plataforma sobre varias celdas. & Receptor suspendido de una celda tipo~S. & --- & --- \\
-        \addlinespace[3pt]
-        F07 & Adquirir el peso & Convertidor dedicado (p.~ej., HX711) conectado al controlador. & Transmisor industrial de pesaje. & Balanza con interfaz de datos. & --- & --- \\
-        \addlinespace[3pt]
-        F08 & Ejecutar la secuencia & Microcontrolador (p.~ej., ESP32 o Arduino Mega). & PLC con interfaces de pesaje. & Computador de placa única con adquisición externa. & --- & --- \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & Convertidor dedicado (p.~ej., HX711). & Transmisor industrial de pesaje. & Balanza con interfaz de datos. & --- & --- \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & Microcontrolador (p.~ej., ESP32). & PLC con interfaces de pesaje. & Computador de placa única. & --- & --- \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. \textdagger~Opción descartada. \textdaggerdbl~Opción en reserva.
+    Fuente: Elaboración propia.
 \end{table}
 
 \begin{table}[H]
@@ -42,31 +42,31 @@
     \label{tab:morfologia_integracion}
     \footnotesize
     \setstretch{1}
-    \setlength{\tabcolsep}{2pt}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{p{0.045\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}*{4}{>{\raggedright\arraybackslash}X}}
+    \setlength{\tabcolsep}{2.5pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}*{4}{>{\raggedright\arraybackslash}X}}
         \toprule
         \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} & \textbf{Opción D} \\
         \midrule
-        F09 & Ingresar consignas y órdenes & Teclado y pantalla. & Mando giratorio y pantalla. & Panel HMI. & \descartada{Aplicación móvil inalámbrica.} \\
-        \addlinespace[3pt]
+        F09 & Ingresar consignas & Teclado y pantalla. & Mando giratorio y pantalla. & Panel HMI. & Aplicación móvil inalámbrica. \\
+        \addlinespace[2pt]
         F10 & Comunicar estado y fin & Aviso visual. & Aviso visual y sonoro. & --- & --- \\
-        \addlinespace[3pt]
-        F11 & Acondicionar la energía & Fuente AC/DC y regulación de tensiones. & Fuentes AC/DC separadas por circuito. & \descartada{Batería recargable.} & --- \\
-        \addlinespace[3pt]
-        F12 & Guiar el material & Salidas orientadas a la abertura del receptor. & Colector desmontable de recorrido corto. & \descartada{Canaleta vibratoria.} & --- \\
-        \addlinespace[3pt]
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & Fuente AC/DC y regulación. & Fuentes separadas por circuito. & Batería recargable. & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & Salidas orientadas al receptor. & Colector desmontable. & Canaleta vibratoria. & --- \\
+        \addlinespace[2pt]
         F13 & Vaciar el receptor auxiliar & Recipiente basculante. & Apertura inferior accionada. & Descarga directa, sin receptor auxiliar. & --- \\
-        \addlinespace[3pt]
-        F14 & Formar superficies de contacto & AISI 304. & AISI 316. & Polímero con documentación para contacto alimentario. & \descartada{Polímero sin identificación ni documentación de contacto.} \\
-        \addlinespace[3pt]
-        F15 & Acceder para limpieza & Extracción del tornillo y desmontaje del tubo. & Retiro del módulo tolva--alimentador. & \descartada{Acceso sin desmontar las piezas que retienen ingrediente.} & \descartada{Lavado en sitio con agua.} \\
-        \addlinespace[3pt]
-        F16 & Interrumpir el accionamiento & Orden al controlador. & Corte de habilitación del accionamiento. & Orden al controlador y corte de habilitación. & --- \\
-        \addlinespace[3pt]
+        \addlinespace[2pt]
+        F14 & Formar superficies de contacto & AISI 304. & AISI 316. & Polímero documentado para contacto alimentario. & Polímero sin documentación de contacto. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & Extracción del tornillo y del tubo. & Retiro del módulo tolva--alimentador. & Acceso sin desmontar las piezas. & Lavado en sitio con agua. \\
+        \addlinespace[2pt]
+        F16 & Interrumpir el accionamiento & Orden al controlador. & Corte de habilitación. & Orden al controlador y corte de habilitación. & --- \\
+        \addlinespace[2pt]
         F17 & Sostener e instalar & Bastidor independiente. & Soporte fijado a una mesa verificada. & --- & --- \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
-    Fuente: Elaboración propia. \textdagger~Opción descartada. \textdaggerdbl~Opción en reserva.
+    Fuente: Elaboración propia.
 \end{table}

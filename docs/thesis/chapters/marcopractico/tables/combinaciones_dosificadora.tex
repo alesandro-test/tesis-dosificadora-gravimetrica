@@ -1,40 +1,122 @@
-% Combinaciones A, B y C sobre las funciones variables de la matriz morfológica.
-% Sin sombreado, según la plantilla institucional. H: harina. M: azúcar, sal y levadura.
+% Combinaciones marcadas en negrita y recuadro; la plantilla no admite sombreado.
+
 \begin{table}[H]
     \centering
-    \caption{Combinaciones de las funciones variables y su justificación.}
-    \label{tab:combinaciones_dosificadora}
+    \caption{Matriz morfológica, combinación A.}
+    \label{tab:opcion_a}
     \footnotesize
     \setstretch{1}
-    \setlength{\tabcolsep}{3pt}
+    \setlength{\tabcolsep}{2.5pt}
     \renewcommand{\arraystretch}{1.15}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
         \toprule
-        \textbf{Función} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{Justificación} \\
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
         \midrule
-        F01. Almacenar & A. Tolvas independientes. & A. Tolvas independientes. & B. Depósito compartimentado. & Las tolvas se dimensionan por ingrediente. El depósito reparte un mismo volumen y exige acceso a cada sector. \\
+        F01 & Almacenar por ingrediente & \sel{Tolvas independientes.} & Depósito compartimentado. & --- \\
         \addlinespace[2pt]
-        F02. Dosificar & A. Horizontales. & A. Horizontales. & B. Verticales descendentes. & La horizontal da acceso lateral y retiro de los tornillos. La vertical concentra la alimentación sobre el receptor, con altura de recarga y descarga residual por revisar. \\
+        F02 & Conducir y dosificar & \sel{Tornillos horizontales.} & Tornillos verticales descendentes. & --- \\
         \addlinespace[2pt]
-        F03. Generar el giro & A. Paso a paso. & B (H). Motorreductor CC. A (M). Paso a paso. & A. Paso a paso. & El paso a paso tiene oferta local (Tabla~\ref{tab:precios_f03_f08}). El motorreductor de B es candidato para el par del tornillo de harina, sujeto a cálculo. \\
+        F03 & Generar el giro & \sel{Paso a paso (p.~ej., NEMA~17 o~23) y driver.} & Motorreductor CC con encoder y driver. & Servomotor industrial y accionamiento. \\
         \addlinespace[2pt]
-        F04. Transmitir & A. Directo. & B (H). Engranajes. A (M). Directo. & A. Directo. & La reducción de B corresponde a F03-B y F04-B, sin otra etapa. \\
+        F04 & Transmitir el giro & \sel{Acople directo.} & Reducción por engranajes. & Correa dentada y poleas. \\
         \addlinespace[2pt]
-        F05. Distribuir el pesaje & A. Balanza común. & B. Harina y menores. & B. Harina y menores. & El pesaje común evita una transferencia. El separado reduce la carga previa a la levadura. \\
+        F05 & Distribuir el pesaje & \sel{Una balanza común.} & Balanza de harina y balanza de menores. & Receptores individuales por ingrediente. \\
         \addlinespace[2pt]
-        F07. Adquirir & A. Convertidor. & A. Convertidor. & B. Transmisor. & El transmisor es compatible con el PLC de C. \\
+        F07 & Adquirir el peso & \sel{Convertidor dedicado (p.~ej., HX711).} & Transmisor industrial de pesaje. & Balanza con interfaz de datos. \\
         \addlinespace[2pt]
-        F08. Secuenciar & A. Microcontrolador. & A. Microcontrolador. & B. PLC. & El microcontrolador tiene oferta local. El PLC requiere cotización. \\
+        F08 & Ejecutar la secuencia & \sel{Microcontrolador (p.~ej., ESP32).} & PLC con interfaces de pesaje. & Computador de placa única. \\
         \addlinespace[2pt]
-        F09. Ingresar consignas & A. Teclado y pantalla. & A. Teclado y pantalla. & C. Panel HMI. & La interfaz local resuelve RF-06 y RF-07. La HMI acompaña al PLC. \\
+        F09 & Ingresar consignas & \sel{Teclado y pantalla.} & Mando giratorio y pantalla. & Panel HMI. \\
         \addlinespace[2pt]
-        F11. Acondicionar energía & A. Fuente y regulación. & A. Fuente y regulación. & B. Fuentes separadas. & C separa la alimentación del mando industrial y de la potencia. \\
+        F11 & Acondicionar la energía & \sel{Fuente AC/DC y regulación.} & Fuentes separadas por circuito. & --- \\
         \addlinespace[2pt]
-        F12. Guiar & A. Salidas orientadas. & A (H). Salidas. B (M). Colector. & A (H). Salidas. B (M). Colector. & Las salidas convergen en el receptor. El colector se incorpora cuando una salida no alcanza el receptor auxiliar. \\
+        F12 & Guiar el material & \sel{Salidas orientadas al receptor.} & Colector desmontable. & --- \\
         \addlinespace[2pt]
-        F13. Vaciar el auxiliar & C. Descarga directa. & A. Basculante. & B. Apertura inferior. & A no tiene receptor auxiliar. B y C comparan los dos vaciados, con retención por medir. \\
+        F13 & Vaciar el receptor auxiliar & Recipiente basculante. & Apertura inferior accionada. & \sel{Descarga directa, sin receptor auxiliar.} \\
         \addlinespace[2pt]
-        F15. Acceder para limpieza & A. Extracción del tornillo. & B. Retiro del módulo. & B. Retiro del módulo. & B y C retiran el módulo tolva--alimentador. El tiempo de limpieza se mide con el mismo procedimiento. \\
+        F15 & Acceder para limpieza & \sel{Extracción del tornillo y del tubo.} & Retiro del módulo tolva--alimentador. & --- \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Matriz morfológica, combinación B.}
+    \label{tab:opcion_b}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{2.5pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F01 & Almacenar por ingrediente & \sel{Tolvas independientes.} & Depósito compartimentado. & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & \sel{Tornillos horizontales.} & Tornillos verticales descendentes. & --- \\
+        \addlinespace[2pt]
+        F03 & Generar el giro & \sel{Paso a paso (p.~ej., NEMA~17 o~23) y driver. (M)} & \sel{Motorreductor CC con encoder y driver. (H)} & Servomotor industrial y accionamiento. \\
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & \sel{Acople directo. (M)} & \sel{Reducción por engranajes. (H)} & Correa dentada y poleas. \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & Una balanza común. & \sel{Balanza de harina y balanza de menores.} & Receptores individuales por ingrediente. \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & \sel{Convertidor dedicado (p.~ej., HX711).} & Transmisor industrial de pesaje. & Balanza con interfaz de datos. \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & \sel{Microcontrolador (p.~ej., ESP32).} & PLC con interfaces de pesaje. & Computador de placa única. \\
+        \addlinespace[2pt]
+        F09 & Ingresar consignas & \sel{Teclado y pantalla.} & Mando giratorio y pantalla. & Panel HMI. \\
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & \sel{Fuente AC/DC y regulación.} & Fuentes separadas por circuito. & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & \sel{Salidas orientadas al receptor. (H)} & \sel{Colector desmontable. (M)} & --- \\
+        \addlinespace[2pt]
+        F13 & Vaciar el receptor auxiliar & \sel{Recipiente basculante.} & Apertura inferior accionada. & Descarga directa, sin receptor auxiliar. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & Extracción del tornillo y del tubo. & \sel{Retiro del módulo tolva--alimentador.} & --- \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia. H: harina. M: azúcar, sal y levadura.
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Matriz morfológica, combinación C.}
+    \label{tab:opcion_c}
+    \footnotesize
+    \setstretch{1}
+    \setlength{\tabcolsep}{2.5pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{ID} & \textbf{Función} & \textbf{Opción A} & \textbf{Opción B} & \textbf{Opción C} \\
+        \midrule
+        F01 & Almacenar por ingrediente & Tolvas independientes. & \sel{Depósito compartimentado.} & --- \\
+        \addlinespace[2pt]
+        F02 & Conducir y dosificar & Tornillos horizontales. & \sel{Tornillos verticales descendentes.} & --- \\
+        \addlinespace[2pt]
+        F03 & Generar el giro & \sel{Paso a paso (p.~ej., NEMA~17 o~23) y driver.} & Motorreductor CC con encoder y driver. & Servomotor industrial y accionamiento. \\
+        \addlinespace[2pt]
+        F04 & Transmitir el giro & \sel{Acople directo.} & Reducción por engranajes. & Correa dentada y poleas. \\
+        \addlinespace[2pt]
+        F05 & Distribuir el pesaje & Una balanza común. & \sel{Balanza de harina y balanza de menores.} & Receptores individuales por ingrediente. \\
+        \addlinespace[2pt]
+        F07 & Adquirir el peso & Convertidor dedicado (p.~ej., HX711). & \sel{Transmisor industrial de pesaje.} & Balanza con interfaz de datos. \\
+        \addlinespace[2pt]
+        F08 & Ejecutar la secuencia & Microcontrolador (p.~ej., ESP32). & \sel{PLC con interfaces de pesaje.} & Computador de placa única. \\
+        \addlinespace[2pt]
+        F09 & Ingresar consignas & Teclado y pantalla. & Mando giratorio y pantalla. & \sel{Panel HMI.} \\
+        \addlinespace[2pt]
+        F11 & Acondicionar la energía & Fuente AC/DC y regulación. & \sel{Fuentes separadas por circuito.} & --- \\
+        \addlinespace[2pt]
+        F12 & Guiar el material & \sel{Salidas orientadas al receptor. (H)} & \sel{Colector desmontable. (M)} & --- \\
+        \addlinespace[2pt]
+        F13 & Vaciar el receptor auxiliar & Recipiente basculante. & \sel{Apertura inferior accionada.} & Descarga directa, sin receptor auxiliar. \\
+        \addlinespace[2pt]
+        F15 & Acceder para limpieza & Extracción del tornillo y del tubo. & \sel{Retiro del módulo tolva--alimentador.} & --- \\
         \bottomrule
     \end{tabularx}
     \par\smallskip
