@@ -650,31 +650,35 @@ descartados (\textdagger) o en reserva (\textdaggerdbl). Las columnas no
 representan máquinas completas, y una combinación toma un medio por
 fila. Las diecisiete funciones superan las cuatro a ocho que recomienda
 el método, porque el diseño preliminar debe resolver también el mando,
-la descarga y la integración. Sin descartes ni reservas, la matriz
-admite 7\,558\,272 combinaciones, por lo que la selección parte del
-cribado y de la separación entre funciones comunes y variables.
+la descarga y la integración. Excluidas las opciones descartadas y en
+reserva, la matriz admite 7\,558\,272 combinaciones teóricas, incluidas
+algunas incompatibles, por lo que la selección parte del cribado, de las
+reglas de compatibilidad y de las funciones comunes.
 
 \input{chapters/marcopractico/tables/morfologia_dosificadora.tex}
 
-Algunas filas requieren una lectura técnica. F05-C mide por ganancia de
-peso en receptores individuales, no por pérdida en cada tolva, y exige
-otro montaje, por lo que no se desarrolla en las combinaciones. El
-diámetro, el paso y la velocidad de F02 se contrastan con el caudal
-requerido mediante la Ecuación~\eqref{eq:caudal_tornillo}, mientras que
-el controlador de F08 no determina por sí solo el error de dosificación.
-F16 interrumpe el accionamiento, y la detención del flujo se comprueba
-con la descarga residual. Si esta excede la meta, se revisan el corte
-anticipado y un cierre de salida.
+Tres filas condicionan el predimensionamiento y dos reglas de
+compatibilidad limitan las combinaciones. El diámetro, el paso y la
+velocidad de F02 se contrastan, por ingrediente, con el caudal requerido
+mediante la Ecuación~\eqref{eq:caudal_tornillo}, sin fijar cuatro
+tornillos idénticos. El controlador de F08 no determina por sí solo el
+error de dosificación. F16 interrumpe el accionamiento, y la detención
+del flujo se comprueba con la descarga residual. Si esta excede la meta,
+se revisan el corte anticipado y un cierre de salida. El pesaje común de
+F05-A solo admite la descarga directa de F13-C, y el pesaje separado de
+F05-B exige F13-A o F13-B con un soporte auxiliar compatible con F06.
 
 \subsection{Cribado de la matriz}
 
 La Tabla~\ref{tab:descarte_morfologia} presenta, por función, los
 motivos del cribado. Se descartan los medios que contradicen el tornillo
-adoptado, la dosificación por lotes, la lectura gravimétrica de RF-03 y
-RF-04, el desmontaje de RNF-04 o la alimentación de red del puesto, y
-los que agregan retención entre la salida y el recipiente. El agitador
-y los tornillos ascendentes quedan en reserva hasta que una prueba o el
-puesto los exijan. F03 y F06 se mantienen abiertos, porque la falta de
+adoptado, la lectura gravimétrica de RF-03 y RF-04, el desmontaje de
+RNF-04 o la alimentación de red del puesto, y los que agregan retención
+entre la salida y el recipiente. El agitador, los tornillos ascendentes
+y la pérdida de peso quedan en reserva hasta que una prueba o el puesto
+los exijan. F05-C mide por ganancia de peso en receptores individuales y
+exige otro montaje, por lo que permanece en la matriz sin incorporarse a
+las combinaciones. F03 y F06 se mantienen abiertos, porque la falta de
 una ficha o una prueba no descarta toda la familia.
 
 \begin{table}[H]
@@ -692,7 +696,7 @@ una ficha o una prueba no descarta toda la familia.
         \addlinespace[3pt]
         F02-C. Tornillos inclinados ascendentes. & En reserva. & Requiere una necesidad de elevación, espacio y verificación de caudal y par. \\
         \addlinespace[3pt]
-        F02-D. Compuerta o bandeja vibratoria. & Descartada. & Con compuertas, \textcite{rumapea2026flour} atribuyeron parte del error a bóvedas y \textcite{bachtiar2026brownies} obtuvieron 51~g de azúcar para 120~g. \\
+        F02-D. Compuerta o bandeja vibratoria. & Descartada. & Queda fuera por el tornillo adoptado para los cuatro ingredientes. Con compuertas, \textcite{rumapea2026flour} atribuyeron parte del error a bóvedas y \textcite{bachtiar2026brownies} obtuvieron 51~g de azúcar para 120~g. \\
         \addlinespace[3pt]
         F02-E. Válvula rotativa alveolar. & Descartada. & El tornillo se adoptó para los cuatro ingredientes. \\
         \addlinespace[3pt]
@@ -700,7 +704,7 @@ una ficha o una prueba no descarta toda la familia.
         \addlinespace[3pt]
         F05-D. Dosis por vueltas o tiempo del motor. & Descartada. & RF-03 y RF-04 requieren lectura gravimétrica durante la alimentación. \\
         \addlinespace[3pt]
-        F05-E. Pérdida de peso en cada tolva. & Descartada. & Sirve al flujo continuo y queda ciega durante la recarga \parencite{chiliguana2016rediseno,blackshields2018continuous}. San Miguel dosifica por lotes. \\
+        F05-E. Pérdida de peso en cada tolva. & En reserva. & Exige pesar cada conjunto tolva--alimentador. Para pesadas discretas se recomienda el pesaje por lotes, y la pérdida de peso queda ciega durante la recarga \parencite{chiliguana2016rediseno,blackshields2018continuous}. \\
         \addlinespace[3pt]
         F09-D. Aplicación móvil inalámbrica. & Descartada. & Agrega un dispositivo externo y su enlace. RF-06 y RF-07 se resuelven con la interfaz del equipo. \\
         \addlinespace[3pt]
@@ -722,6 +726,13 @@ una ficha o una prueba no descarta toda la familia.
     \par\smallskip
     Fuente: Elaboración propia.
 \end{table}
+
+El tornillo vertical descendente de F02-B se distingue del transportador
+que eleva material. La guía de \textcite{kwsScrewFeeders} describe el
+aumento de demanda de accionamiento en alimentadores ascendentes y la
+influencia de la carga de la tolva en el arranque. Esas condiciones no
+descartan F02-B, que conserva la comprobación de la descarga residual
+con el motor detenido.
 
 La Tabla~\ref{tab:precios_f03_f08} contrasta la oferta local publicada
 para el accionamiento y el controlador. El paso a paso, su driver, el
@@ -756,13 +767,14 @@ condicionan la compra de F03-B en la combinación B y el costo de la C.
     Fuente: Elaboración propia con precios publicados en los sitios de cada tienda, consulta del 18/11/2026.
 \end{table}
 
-\subsection{Funciones comunes y variables}
+\subsection{Funciones comunes y combinaciones}
 
 Tras el cribado, cinco funciones reciben la misma solución en las tres
 combinaciones (Tabla~\ref{tab:funciones_comunes}), y las doce restantes
-forman la matriz de funciones variables sobre la que se construyen las
-alternativas. AISI~304 figura como candidato, porque su comparación con
-AISI~316 frente a la sal permanece abierta.
+forman las funciones variables. AISI~304 figura como candidato, porque
+su comparación con AISI~316 frente a la sal permanece abierta. La celda
+de punto único es común como principio, pero el soporte del recipiente
+y el del receptor auxiliar se seleccionan por separado.
 
 \begin{table}[H]
     \centering
@@ -775,7 +787,7 @@ AISI~316 frente a la sal permanece abierta.
         \toprule
         \textbf{ID} & \textbf{Función} & \textbf{Solución común} \\
         \midrule
-        F06 & Soportar el receptor pesado & A. Plataforma con celda de punto único. \\
+        F06 & Soportar el receptor pesado & A. Plataforma con celda de punto único, candidata y seleccionada por separado para cada receptor. \\
         F10 & Comunicar estado y fin & B. Aviso visual y sonoro. \\
         F14 & Formar superficies de contacto & A. AISI 304, candidato frente a AISI 316. \\
         F16 & Interrumpir el accionamiento & C. Orden al controlador y corte de habilitación. \\
@@ -786,45 +798,26 @@ AISI~316 frente a la sal permanece abierta.
     Fuente: Elaboración propia.
 \end{table}
 
-Las Tablas~\ref{tab:opcion_a} a~\ref{tab:opcion_c} marcan sobre las
-funciones variables las tres combinaciones. La A dirige los cuatro
-tornillos horizontales a una balanza común, sin receptor auxiliar. La B
-conserva las tolvas independientes y separa el pesaje de harina del de
-menores, con motorreductor CC para la harina y paso a paso para los
-menores. La reducción de harina corresponde a F03-B y F04-B, sin otra
-etapa. La C combina tornillos verticales descendentes, depósito
-compartimentado, transmisores, PLC y HMI. Dos celdas marcadas en una
-fila de la B o la C indican soluciones distintas para harina (H) y
-menores (M), no dos medios para la misma carga.
+La Tabla~\ref{tab:combinaciones_dosificadora} presenta el medio que
+cada combinación toma en las funciones variables y el motivo de cada
+fila. La A dirige los cuatro tornillos horizontales a una balanza común,
+sin receptor auxiliar. La B conserva las tolvas independientes y separa
+el pesaje de harina del de menores. La C combina tornillos verticales
+descendentes, depósito compartimentado, transmisores, PLC y HMI. Dos
+medios en una fila de B o C corresponden a harina (H) y menores (M), no
+a dos medios para la misma carga. La orientación del tornillo no exige
+por sí misma un PLC ni una HMI, por lo que la nota de C no atribuye su
+mando a la disposición vertical ni al depósito compartimentado.
 
 \input{chapters/marcopractico/tables/combinaciones_dosificadora.tex}
 
-\subsection{Disposición de los alimentadores}
-
-La disposición horizontal se propone como primera alternativa de
-distribución para estudiar el acceso lateral a los accionamientos y el
-retiro de los tornillos. El espacio en planta y la distancia entre cada
-salida y el recipiente condicionan este trazado. La opción vertical
-descendente concentra la alimentación sobre el receptor, con revisión
-de la altura de recarga, el acceso al eje y la cantidad que continúa
-cayendo tras el corte.
-
-La comparación distingue el dosificador vertical descendente del
-transportador que eleva material. La guía de \textcite{kwsScrewFeeders}
-describe el aumento de demanda de accionamiento en alimentadores
-ascendentes y la influencia de la carga de la tolva en el arranque.
-Esas condiciones no constituyen un descarte del dosificador vertical
-descendente. En ambas disposiciones se requiere comprobar la descarga
-residual con el motor detenido.
-
-Cuatro tolvas independientes no requieren trasladar el recipiente entre
-boquillas. La disposición radial de la Figura~\ref{fig:convergencia_receptor}
-orienta las salidas hacia la misma abertura. Cuando las salidas no
-alcanzan esa zona, la opción F12-B incorpora un colector desmontable.
-La evaluación considera el material retenido y la caída posterior al
-corte. La convergencia del recorrido y la distribución del pesaje son
-decisiones distintas: el recipiente común conserva la comprobación de
-incrementos pequeños con tara y carga acumulada.
+Las tolvas independientes no requieren trasladar el recipiente entre
+boquillas. La disposición radial de la
+Figura~\ref{fig:convergencia_receptor} orienta las salidas hacia la
+misma abertura, y el colector de F12-B se incorpora cuando una salida no
+alcanza esa zona. La convergencia del recorrido y la distribución del
+pesaje son decisiones distintas, porque el recipiente común conserva la
+comprobación de incrementos pequeños con tara y carga acumulada.
 
 \begin{figure}[H]
     \centering
@@ -848,114 +841,19 @@ incrementos pequeños con tara y carga acumulada.
     {\footnotesize Fuente: Elaboración propia.}
 \end{figure}
 
-\subsection{Generación de combinaciones del conjunto}
-
-Las combinaciones A y B utilizan cuatro tolvas y cuatro
-tornillos. La A dirige los ingredientes al recipiente sobre una balanza
-común. La B conserva el pesaje de harina en el recipiente e incorpora
-un recipiente de pesaje para azúcar, sal y levadura en polvo, con
-descarga al mismo recipiente. Los caminos reúnen varias opciones de la
-matriz. Sus diferencias no se atribuyen únicamente al pesaje. Para
-comparar ese efecto se conservan alimentación y condiciones de ensayo
-equivalentes, con accionamientos dimensionados para cada ingrediente.
-
-El pesaje secuencial sobre el recipiente evita una transferencia adicional y
-simplifica la descarga. La balanza soporta la carga acumulada y registra
-el incremento de cada ingrediente. La comparación se concentra en la
-dosis mínima de levadura, de 20~g, y en la capacidad de distinguir
-variaciones alrededor de esa cantidad bajo carga acumulada.
-En la masa común del sábado, la carga nominal previa a la levadura suma
-5\,250~g. La marraqueta suma 8\,230~g en esa etapa
-(Tabla~\ref{tab:receta_referencia}). Esas cargas sirven para comparar la
-respuesta ante un incremento de 20~g, con la masa del recipiente y de las
-piezas soportadas incluida en el montaje de ensayo.
-
-El pesaje separado reduce la carga sobre la balanza de los ingredientes
-menores. Esta configuración agrega un receptor auxiliar y una transferencia a la
-canoa, por lo que la comparación incluye la masa que queda retenida
-durante la descarga, el espacio disponible y el acceso para limpieza.
-La elección de la configuración requiere contrastar estos criterios con
-las fichas de los componentes y con una comprobación del pesaje.
-
-La combinación C mantiene la separación de pesaje y cambia la
-disposición de los alimentadores y la integración del mando. El
-depósito compartimentado requiere acceso individual a los sectores y
-extracción de las piezas de alimentación. El PLC y el panel HMI
-constituyen candidatos compatibles con transmisores industriales. La
-comunicación, las salidas hacia los motores y el costo del conjunto
-requieren fichas y cotizaciones. La opción vertical conserva la
-comprobación de la descarga residual.
-
-La orientación del tornillo no exige por sí misma un PLC ni una HMI.
-La comparación del mando se realiza con las mismas funciones de
-adquisición, secuencia e interrupción. Esas alternativas permanecen
-en F07--F11 y no constituyen una ventaja atribuida al almacenamiento
-compartimentado. Del mismo modo, los pasos y diámetros se revisan
-por ingrediente y no se fijan cuatro tornillos idénticos por disponer
-de cuatro salidas.
-
-\subsection{Alternativa de tres ingredientes}
-
-Como alternativa de alcance se estudia la alimentación automática de
-harina, azúcar y sal, con incorporación manual de levadura. Esta
-configuración elimina un conjunto de tolva, tornillo y accionamiento,
-y retira de la dosificación automática la consigna de 20~g. El alcance
-vigente conserva los cuatro ingredientes. La alternativa de tres se
-presenta para evaluación y no sustituye los objetivos ni los
-requerimientos aplicados.
-
-La Tabla~\ref{tab:conceptos_dosificadora} separa la reducción de alcance
-de la elección del sistema de pesaje. Para una máquina de tres
-ingredientes, la consigna automática menor pasa a 80~g de azúcar.
-La comprobación de pesaje continúa siendo necesaria, puesto que la
-hipótesis de $\pm3$~g también exige distinguir incrementos en gramos.
-El pesaje común también constituye una opción para tres ingredientes.
-La reducción de alcance no determina por sí sola el número de balanzas.
-
-\begin{table}[H]
-    \centering
-    \caption{Configuraciones para comparar el alcance y el pesaje.}
-    \label{tab:conceptos_dosificadora}
-    \footnotesize
-    \setstretch{1}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{p{0.16\textwidth}XXX}
-        \toprule
-        \textbf{Criterio} & \textbf{Cuatro, pesaje común} &
-        \textbf{Cuatro, pesaje separado} & \textbf{Tres, pesaje separado} \\
-        \midrule
-        Alimentación & Cuatro tornillos. & Cuatro tornillos. & Tres tornillos, levadura manual. \\
-        Pesaje & Recipiente sobre una plataforma. & Harina en el recipiente, menores en un recipiente auxiliar. & Harina en el recipiente, azúcar y sal en un recipiente auxiliar. \\
-        Consigna menor & 20~g de levadura. & 20~g de levadura. & 80~g de azúcar. \\
-        Comprobación decisiva & Incrementos pequeños con tara y carga acumulada. & Dosis pequeña y retención en la transferencia. & Dosis de azúcar y retención en la transferencia. \\
-        Estado & Alcance vigente, por comprobar. & Alcance vigente, por comprobar. & Alternativa de alcance, por decidir. \\
-        \bottomrule
-    \end{tabularx}
-    \par\smallskip
-    Fuente: Elaboración propia.
-\end{table}
-
-La dosis de 20~g cuenta con un antecedente en
-\textcite{humaira2024optimalisasi}: la tabla de recetas incluye una
-prueba personalizada de 20~g de harina, azúcar y leche en polvo.
-El resultado aporta evidencia de operación en esa escala, sin
-demostrar el comportamiento de la levadura ni la repetibilidad de
-San Miguel. La exclusión de levadura se evalúa por complejidad de
-implementación, tolerancia requerida y alcance, no por una presunta
-imposibilidad de dosificar 20~g.
-
-\subsection{Criterios de evaluación de las configuraciones}
+\subsection{Evaluación de las combinaciones}
 
 La Tabla~\ref{tab:evaluacion_combinaciones} compara cantidades y
-transferencias que se deducen de los caminos definidos. Esos datos
-describen la arquitectura y sustentan la evaluación ponderada de la
-Tabla~\ref{tab:seleccion_combinaciones}. El error, la repetibilidad,
-el tiempo y el costo medidos requieren pruebas o cotizaciones.
-
-Las cargas previas a la levadura de la tabla corresponden a una
-secuencia que dosifica ese ingrediente al final: harina, azúcar y sal
-en A, y azúcar y sal en el receptor auxiliar de B y C. Cambiar la secuencia
-modifica la carga previa, sin reducir la capacidad total requerida.
+transferencias que se deducen de las combinaciones. Las cargas previas a
+la levadura corresponden a una secuencia que dosifica ese ingrediente al
+final: harina, azúcar y sal en A, y azúcar y sal en el receptor auxiliar
+de B y C. En A, la carga nominal previa suma 5\,250~g en la masa común
+del sábado y 8\,230~g en la marraqueta
+(Tabla~\ref{tab:receta_referencia}), con la masa del recipiente y de las
+piezas soportadas incluida en el montaje de ensayo. Cambiar la secuencia
+modifica la carga previa, sin reducir la capacidad total requerida. El
+error, la repetibilidad, el tiempo y el costo requieren pruebas o
+cotizaciones con alimentación y condiciones de ensayo equivalentes.
 
 \begin{table}[H]
     \centering
@@ -991,24 +889,25 @@ diseñador, previa a las pruebas, con los siguientes criterios:
 
 \begin{itemize}
     \item Dosificar según receta: resolución disponible para la dosis de
-    20~g de levadura. A la mide sobre 8\,230~g de carga previa; B y C,
-    con 500~g de carga previa en el receptor auxiliar, con la retención
-    de la transferencia por medir. La alimentación vertical de C aumenta la
-    cantidad que continúa cayendo tras el corte.
+    20~g de levadura. A la mide sobre 8\,230~g de carga previa, y B y C,
+    sobre 500~g en el receptor auxiliar, con la retención de la
+    transferencia por medir. Para la alimentación vertical de C se supone
+    una mayor caída tras el corte, por comprobar.
     \item Reducir la intervención manual: las tres combinaciones
     dosifican los cuatro ingredientes con un único inicio y vacían el
-    receptor auxiliar sin acción del operario.
-    \item Facilitar la limpieza: A tiene menos piezas en contacto; B
+    receptor auxiliar sin acción del operario. Por eso esta necesidad no
+    distingue entre ellas.
+    \item Facilitar la limpieza: A tiene menos piezas en contacto, B
     agrega el receptor basculante, y C, los compartimientos y la apertura
     inferior, con extracción vertical de los tornillos.
     \item Evitar recargas durante el lote: las tolvas independientes de A
-    y B se dimensionan por ingrediente; el depósito compartimentado de C
-    reparte un mismo volumen.
+    y B se dimensionan por ingrediente, y el depósito compartimentado de
+    C reparte un mismo volumen.
     \item Ocupar poco espacio: la alimentación vertical de C concentra los
-    tornillos sobre el receptor; B agrega el receptor auxiliar a la
+    tornillos sobre el receptor, y B agrega el receptor auxiliar a la
     disposición horizontal de A.
     \item Completar la receta a tiempo: en A, cada ingrediente espera la
-    lectura estable del anterior sobre la misma balanza; en B y C, la
+    lectura estable del anterior sobre la misma balanza, y en B y C, la
     harina y los menores se pesan en paralelo.
 \end{itemize}
 
@@ -1075,6 +974,56 @@ opciones y no sustituyen esas comprobaciones de cumplimiento.
     \par\smallskip
     Fuente: Elaboración propia.
 \end{table}
+
+\subsection{Alternativa de tres ingredientes}
+
+Como alternativa de alcance se estudia la alimentación automática de
+harina, azúcar y sal, con incorporación manual de levadura. Esta
+configuración elimina un conjunto de tolva, tornillo y accionamiento,
+y retira de la dosificación automática la consigna de 20~g. El alcance
+vigente conserva los cuatro ingredientes. La alternativa de tres se
+presenta para evaluación y no sustituye los objetivos ni los
+requerimientos aplicados.
+
+La Tabla~\ref{tab:conceptos_dosificadora} separa la reducción de alcance
+de la elección del sistema de pesaje. Para una máquina de tres
+ingredientes, la consigna automática menor pasa a 80~g de azúcar.
+La comprobación de pesaje continúa siendo necesaria, puesto que la
+hipótesis de $\pm3$~g también exige distinguir incrementos en gramos.
+El pesaje común también constituye una opción para tres ingredientes.
+La reducción de alcance no determina por sí sola el número de balanzas.
+
+\begin{table}[H]
+    \centering
+    \caption{Configuraciones para comparar el alcance y el pesaje.}
+    \label{tab:conceptos_dosificadora}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{p{0.16\textwidth}XXX}
+        \toprule
+        \textbf{Criterio} & \textbf{Cuatro, pesaje común} &
+        \textbf{Cuatro, pesaje separado} & \textbf{Tres, pesaje separado} \\
+        \midrule
+        Alimentación & Cuatro tornillos. & Cuatro tornillos. & Tres tornillos, levadura manual. \\
+        Pesaje & Recipiente sobre una plataforma. & Harina en el recipiente, menores en un recipiente auxiliar. & Harina en el recipiente, azúcar y sal en un recipiente auxiliar. \\
+        Consigna menor & 20~g de levadura. & 20~g de levadura. & 80~g de azúcar. \\
+        Comprobación decisiva & Incrementos pequeños con tara y carga acumulada. & Dosis pequeña y retención en la transferencia. & Dosis de azúcar y retención en la transferencia. \\
+        Estado & Alcance vigente, por comprobar. & Alcance vigente, por comprobar. & Alternativa de alcance, por decidir. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+La dosis de 20~g cuenta con un antecedente en
+\textcite{humaira2024optimalisasi}: la tabla de recetas incluye una
+prueba personalizada de 20~g de harina, azúcar y leche en polvo.
+El resultado aporta evidencia de operación en esa escala, sin
+demostrar el comportamiento de la levadura ni la repetibilidad de
+San Miguel. La exclusión de levadura se evalúa por complejidad de
+implementación, tolerancia requerida y alcance, no por una presunta
+imposibilidad de dosificar 20~g.
 
 \subsection{Combinación de referencia y comprobaciones pendientes}
 
