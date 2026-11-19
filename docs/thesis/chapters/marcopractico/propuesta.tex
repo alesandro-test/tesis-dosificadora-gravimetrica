@@ -75,9 +75,9 @@ Los requerimientos no funcionales establecen condiciones para evaluar el
 desempeño y la integración del prototipo en la panadería. La
 Tabla~\ref{tab:requerimientos_no_funcionales_prototipo} indica las
 restricciones propuestas y el fundamento de cada una. Los márgenes
-de dosificación sirven como metas de diseño. La casa de calidad
-propone umbrales de operación para contrastarlos con el procedimiento
-y las condiciones del puesto.
+de dosificación sirven como metas de diseño. Los límites de tiempo,
+intervención y espacio se fijarán con mediciones del procedimiento
+y del puesto.
 
 \begin{table}[H]
     \centering
@@ -455,19 +455,48 @@ intercambiables.
 \label{subsec:casa_calidad}
 
 La Figura~\ref{fig:casa_calidad_dosificadora} presenta la casa de
-calidad de la dosificadora. Las filas contienen seis
+calidad de la dosificadora, elaborada en la plantilla de QFD Online con
+el esquema de \textcite{cross2021design}. Las filas contienen seis
 necesidades del puesto con su importancia de 1 a 10, y las columnas,
 seis características técnicas con su dirección de mejora, meta y
 dificultad. Las metas de error corresponden a la
 Tabla~\ref{tab:requerimientos_no_funcionales_prototipo}. El error se
 agrupa en una sola columna, pero se evalúa por ingrediente y sin
-compensar el de uno con el de otro. Cada relación vale 9, 3 o 1.
+compensar el de uno con el de otro. Los límites de tiempo, intervención,
+limpieza y área quedan por definir, como en RNF-02 a RNF-04 y RNF-06, y
+la harina útil se fija como mínimo de 8~kg por recarga para cubrir la
+mayor dosis registrada. Los pesos, las relaciones y la dificultad son una
+valoración preliminar del diseñador, pendiente de contraste con la
+propietaria.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/marcopractico/casa_calidad_v01/casa_calidad_completa.pdf}
 \caption{Casa de calidad de la dosificadora.}
 \label{fig:casa_calidad_dosificadora}
+{\footnotesize Fuente: Elaboración propia con la plantilla de QFD Online.}
+\end{figure}
+
+La Figura~\ref{fig:casa_calidad_nucleo} amplía el techo y la matriz de
+relaciones. Cada necesidad tiene una relación fuerte (9) con la
+característica que la mide, y solo la intervención activa recibe dos
+relaciones medias (3), porque una recarga durante el lote y las tareas
+que bloquean el ciclo son acciones del operario. Con
+\(W_j=\sum_i d_i r_{ij}\), donde \(d_i\) es la importancia relativa de
+la necesidad y \(r_{ij}\) la relación, la intervención activa obtiene la
+mayor prioridad (26,3~\%), seguida del error por ingrediente (16,8~\%).
+El tiempo de ciclo y la limpieza suman 15,1~\% cada uno, y el área y la
+harina útil, 13,4~\%. El techo registra tres conflictos como hipótesis
+no medidas: reducir el error puede prolongar el ciclo, facilitar la
+limpieza puede exigir más espacio y la capacidad de la tolva amplía la
+envolvente. Esta prioridad orienta la atención del diseño y no reemplaza
+las condiciones obligatorias de los RF y RNF.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{images/marcopractico/casa_calidad_v01/casa_calidad_nucleo.pdf}
+\caption{Techo y matriz de relaciones de la casa de calidad.}
+\label{fig:casa_calidad_nucleo}
 {\footnotesize Fuente: Elaboración propia con la plantilla de QFD Online.}
 \end{figure}
 
