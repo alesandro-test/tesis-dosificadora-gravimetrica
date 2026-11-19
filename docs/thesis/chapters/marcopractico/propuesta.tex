@@ -1177,18 +1177,294 @@ componentes comerciales se incorporan a partir de mediciones y fichas.
 El dimensionamiento preliminar de las tolvas parte de la cantidad por
 recarga y de la densidad aparente suelta de cada insumo. La
 Tabla~\ref{tab:propiedades_insumos} reúne referencias bibliográficas para
-harina, azúcar y sal. Para aplicar esos datos al diseño se requiere
-identificar la presentación comercial de los cuatro ingredientes y medir
-su densidad aparente suelta y asentada. La granulometría y el comportamiento
+harina, azúcar y sal. La granulometría y el comportamiento
 del material durante la descarga orientan la verificación de las salidas
 de las tolvas y la selección de los tornillos.
 
-Como referencia para una recarga equivalente a la mayor dosis registrada
-de harina (8~kg), la ecuación~\eqref{eq:capacidad_tolva} y las densidades
-bibliográficas de 601 a 630~kg/m$^{3}$ dan un volumen de material de
-12,7 a 13,3~L (Tabla~\ref{tab:propiedades_insumos}). La capacidad de diseño
-se determina con la cantidad por recarga, la densidad de la harina de
-San Miguel y el espacio libre requerido para el llenado.
+La Tabla~\ref{tab:presentaciones_insumos} identifica las presentaciones
+comerciales que utiliza la panadería. La presentación fija la cantidad que
+el operario vierte en cada recarga y la forma de las partículas. La
+levadura seca activa se comercializa en gránulos, por lo que la densidad
+aparente y la fluidez de la levadura se miden con el producto empleado.
+Los fabricantes no publican la densidad aparente de estas presentaciones.
+Como contraste, las masas por taza y por cucharada de la base del
+USDA~\parencite{usda2019fdc} equivalen a 1234~kg/m$^{3}$ para la sal, 845~kg/m$^{3}$
+para el azúcar granulado y 528~kg/m$^{3}$ para la harina de trigo, valores
+próximos a los de la Tabla~\ref{tab:propiedades_insumos}. La harina medida
+con cuchara corresponde a un estado aireado, por debajo de la densidad
+suelta. Con el mismo procedimiento, la levadura seca activa da unos
+811~kg/m$^{3}$, que se adopta como valor orientativo. Las densidades de la
+Tabla~\ref{tab:presentaciones_insumos} se utilizan como valores de cálculo
+hasta medir la densidad aparente suelta y asentada de cada presentación.
+
+\begin{table}[H]
+    \centering
+    \caption{Presentaciones comerciales de los ingredientes utilizados en San Miguel.}
+    \label{tab:presentaciones_insumos}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.3\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{Ingrediente} & \textbf{Producto} & \textbf{Envase} & \textbf{Densidad de cálculo} \\
+        \midrule
+        Harina & Harina de trigo tipo 000, Brüning. & Bolsa de 25~kg. & 601 a 630~kg/m$^{3}$. \\
+        Azúcar & Azúcar extra fino, Ingenio Azucarero Guabirá. & Saco de 50~kg. & 824 a 897~kg/m$^{3}$ (azúcar cristal). \\
+        Sal & Sal yodada fina de mesa (Purasal, Neco-Sal). & Bolsa de 1~kg. & 1170 a 1220~kg/m$^{3}$. \\
+        Levadura & Levadura seca activa, Fleischmann. & Paquete de 1~kg. & 811~kg/m$^{3}$ (orientativo, medidas caseras). \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia con información del establecimiento, densidades de la Tabla~\ref{tab:propiedades_insumos} y \textcite{usda2019fdc}.
+\end{table}
+
+\subsection{Cálculo preliminar del alimentador de harina}
+\label{subsec:calculo_alimentador_harina}
+
+El alimentador de harina concentra la mayor masa y el mayor caudal del
+equipo. El cálculo del alimentador define la tolva, el tornillo y el par
+requerido al accionamiento, y proporciona las primeras cotas del modelo
+CAD. El cálculo aplica las ecuaciones de la sección de fundamentos con
+los datos de campo y declara como supuestos los valores sin medición.
+
+\subsubsection{Datos de partida}
+
+La Tabla~\ref{tab:datos_alimentador} reúne los datos del cálculo. La masa
+por recarga corresponde a la mayor dosis registrada de harina, de modo que
+una recarga cubre una receta completa. La bolsa de 25~kg requeriría unos
+42~L de tolva, por lo que se recarga por receta. El tiempo de 60~s es un
+valor de cálculo tomado de la dosificación manual, cuya duración total
+fue de 53 a 67~s por lote (Tabla~\ref{tab:tiempos_desagregados}). Este
+valor no fija el tiempo máximo de RNF-02, que sigue por definir. Se usa
+la menor densidad de la Tabla~\ref{tab:propiedades_insumos} porque exige el
+mayor volumen de tolva y la mayor velocidad del tornillo.
+
+\begin{table}[H]
+    \centering
+    \caption{Datos para el cálculo del alimentador de harina.}
+    \label{tab:datos_alimentador}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.36\textwidth}p{0.16\textwidth}>{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{Magnitud} & \textbf{Valor} & \textbf{Origen} \\
+        \midrule
+        Masa por recarga, $m_{\max}$ & 8~kg & Mayor dosis registrada (medición). \\
+        Tiempo de cálculo de la harina, $t$ & 60~s & Referencia del procedimiento manual (supuesto de cálculo). \\
+        Caudal requerido, $\dot{m} = m_{\max}/t$ & 0,133~kg/s & Cálculo derivado. \\
+        Densidad aparente, $\rho_{\mathrm{b}}$ & 601~kg/m$^{3}$ & Bibliografía, pendiente de medición. \\
+        Coeficiente de llenado, $\psi$ & 0,45 a 0,9 & Intervalo teórico y valor bajo tolva~\parencite{karwat2021screw}. \\
+        Coeficiente de resistencia, $c_{0}$ & 4,0 & Valor usado para cemento~\parencite{karwat2021screw} (supuesto). \\
+        Abertura mínima sin bóveda & 74 a 122~mm & Harina en tolvas de 45°~\parencite{su2017arching,guan2009flour}. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+\subsubsection{Tolva}
+
+Con la Ecuación~\eqref{eq:capacidad_tolva}, la recarga de 8~kg ocupa
+$V = 8/601 = 13{,}3$~L. El diseñador adopta un volumen geométrico de
+16,6~L, que deja un 20~\% libre para verter la recarga sin derrames. Con
+la harina aireada de 528~kg/m$^{3}$, ese volumen contiene 8,8~kg y conserva
+la recarga de 8~kg.
+
+La tolva se plantea en cuña sobre el tornillo, con la ranura de descarga
+de ancho igual al diámetro del tornillo y una longitud de 300~mm. Esa
+longitud es cuatro veces el ancho de la ranura y cumple la proporción
+mínima de tres que admite paredes más inclinadas~\parencite{mehos2016hopper}.
+Para el modelo preliminar, las paredes inclinadas forman 45° con la
+vertical, como en los ensayos de \textcite{su2017arching} y
+\textcite{guan2009flour}. Este ángulo es provisional. Para harina, la FAO
+reporta un ángulo de reposo de 35 a 45° y un coeficiente de fricción con
+la pared de 0,577 a 0,840~\parencite{delucia1993granos}, que equivale a un
+ángulo de fricción de pared de 30 a 40°. El semiángulo definitivo se
+obtiene con ese ángulo medido sobre el acero de la tolva. Con una boca superior de $300 \times 300$~mm, la
+cuña mide 112~mm de alto y contiene 6,3~L, y el tramo recto superior mide
+115~mm, con una altura total de unos 230~mm.
+
+\subsubsection{Diámetro, paso y velocidad del tornillo}
+
+El diámetro del tornillo resulta de dos condiciones opuestas. Un diámetro
+mayor entrega el caudal de la etapa gruesa con menor velocidad, pero aumenta
+la masa descargada en cada vuelta y dificulta el ajuste fino. Un diámetro
+menor favorece el ajuste fino, pero exige velocidades superiores al intervalo
+lineal de 15 a 100~r/min~\parencite{bates2000screw}. La
+Tabla~\ref{tab:diametro_tornillo} aplica la Ecuación~\eqref{eq:caudal_tornillo}
+con paso igual al diámetro, que es el límite de la relación lineal.
+
+\begin{table}[H]
+    \centering
+    \caption{Velocidad del tornillo para entregar 8~kg en 60~s y descarga en la etapa fina.}
+    \label{tab:diametro_tornillo}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{p{0.12\textwidth}p{0.08\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+        \toprule
+        \textbf{$D = s$} & \textbf{$\psi$} & \textbf{Masa por vuelta} & \textbf{Velocidad gruesa} & \textbf{Tiempo de 20~g a 15~r/min} \\
+        \midrule
+        50~mm & 0,45 & 27~g & 301~r/min & 3,0~s \\
+              & 0,9  & 53~g & 151~r/min & 1,5~s \\
+        75~mm & 0,45 & 90~g & 89~r/min & 0,89~s \\
+              & 0,9  & 179~g & 45~r/min & 0,45~s \\
+        100~mm & 0,45 & 212~g & 38~r/min & 0,38~s \\
+               & 0,9  & 425~g & 19~r/min & 0,19~s \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia con la Ecuación~\eqref{eq:caudal_tornillo}.
+\end{table}
+
+El tornillo de 50~mm supera los 100~r/min en la etapa gruesa. El de
+100~mm descarga los 20~g del margen de la harina en menos de 0,4~s a la
+velocidad lineal más baja. Se adopta, como valor preliminar, un tornillo
+de 75~mm de diámetro y 75~mm de paso. En la etapa gruesa, este tornillo
+gira entre 45 y 89~r/min, dentro del intervalo lineal. En la etapa fina, a 15~r/min,
+tarda de 0,45 a 0,89~s en descargar 20~g. Este tiempo justifica la
+alimentación en dos etapas y el corte con adelanto de la
+Ecuación~\eqref{eq:corte_dos_etapas}, porque a velocidad gruesa los 20~g
+pasan en unos 0,15~s.
+
+La ranura de 75~mm está en el límite inferior de las aberturas mínimas
+de la Tabla~\ref{tab:datos_alimentador}, de 74 a 122~mm. La tolva de harina
+incorpora, por ello, un agitador o un vibrador~\parencite{bates2000screw}.
+El tornillo mide unos 0,4~m: 300~mm bajo la ranura y unos 100~mm hasta la
+boca de descarga sobre el recipiente.
+
+\subsubsection{Potencia, par y accionamiento}
+
+Con la Ecuación~\eqref{eq:potencia_tornillo}, la potencia en el eje es
+
+\begin{equation*}
+    P = 4{,}0 \times 0{,}133~\text{kg/s} \times 9{,}81~\text{m/s}^{2}
+    \times 0{,}4~\text{m} = 2{,}1~\text{W}
+\end{equation*}
+
+\noindent y, con la Ecuación~\eqref{eq:torque_tornillo}, el par de marcha
+es de 0,22~N\,m a 89~r/min y de 0,45~N\,m a 45~r/min. El arranque con la
+tolva llena exige dos o más veces el par de marcha~\parencite{bates2000screw},
+por lo que el requisito de cálculo es de 0,9~N\,m. El valor proviene de
+una ecuación de transporte con un coeficiente medido para cemento. No
+incluye el par del agitador ni la fricción de los rodamientos, y requiere
+contraste con el par medido en el tornillo comercial.
+
+Con un motor paso a paso de 200 pasos por vuelta, la
+Ecuación~\eqref{eq:velocidad_paso} da de 149 a 298~pulsos/s en pasos
+completos para la etapa gruesa. El motor se selecciona con la curva de
+arranque, que en esa frecuencia supera 0,9~N\,m~\parencite{nidec2026stepping}.
+La comparación se realiza con esa curva y no con el par de retención~\parencite{orientalStepperSpec}.
+Con ese requisito se preselecciona un motor NEMA~23 de 1,9~N\,m de par de
+retención, el doble del par de arranque calculado
+(Tabla~\ref{tab:seleccion_componentes}). La hoja de datos del fabricante
+confirma o descarta la selección con la curva de arranque. El motorreductor
+de corriente continua con encoder de la combinación B se verifica con el
+mismo par y la velocidad de la etapa gruesa.
+
+\subsubsection{Resultados para el CAD}
+
+La Tabla~\ref{tab:resultados_alimentador} resume las cotas preliminares
+que se trasladan al modelo CAD. La densidad medida de la harina, el
+ángulo de fricción de pared y la ficha del tornillo comercial modifican
+estos valores si difieren de los supuestos.
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados preliminares del alimentador de harina.}
+    \label{tab:resultados_alimentador}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.42\textwidth}X}
+        \toprule
+        \textbf{Elemento} & \textbf{Valor preliminar} \\
+        \midrule
+        Volumen geométrico de la tolva & 16,6~L (13,3~L de harina). \\
+        Boca superior y altura de la tolva & $300 \times 300$~mm; unos 230~mm. \\
+        Ranura de descarga & $75 \times 300$~mm, con agitador o vibrador. \\
+        Paredes de la cuña & 45° desde la vertical (provisional). \\
+        Tornillo & $D = s = 75$~mm; longitud de unos 0,4~m. \\
+        Velocidad gruesa y fina & 45 a 89~r/min; 15~r/min. \\
+        Par de arranque requerido & 0,9~N\,m. \\
+        Accionamiento & Paso a paso NEMA~23 de 1,9~N\,m o motorreductor CC con encoder. \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia.
+\end{table}
+
+\subsection{Cálculo preliminar de los alimentadores de ingredientes menores}
+\label{subsec:calculo_alimentadores_menores}
+
+Los alimentadores de azúcar, sal y levadura se dimensionan con las mismas
+ecuaciones del alimentador de harina. En la combinación B, estos tres
+ingredientes se pesan en el receptor auxiliar mientras el tornillo de
+harina descarga en el recipiente, de modo que la etapa gruesa de los
+tres se ajusta a los 60~s de cálculo de la harina. El diseñador asigna 15~s al azúcar y
+10~s a la sal y a la levadura. Las masas de cálculo son las mayores dosis
+de la Tabla~\ref{tab:receta_referencia}: 400~g de azúcar, 150~g de sal y
+30~g de levadura. La recarga de cada tolva corresponde a una presentación
+comercial: la bolsa de 5~kg de azúcar Guabirá~\parencite{guabira2026extrafina}
+y los envases de 1~kg de sal y de levadura
+(Tabla~\ref{tab:presentaciones_insumos}).
+
+La Tabla~\ref{tab:alimentadores_menores} resume el cálculo. El diámetro de
+cada tornillo se eligió con dos condiciones. La velocidad gruesa queda
+dentro del intervalo lineal de 15 a 100~r/min~\parencite{bates2000screw}
+para coeficientes de llenado de 0,45 a 0,9~\parencite{karwat2021screw}. A
+15~r/min, el tornillo tarda al menos 0,3~s en descargar la tolerancia de
+cada ingrediente. Con 32~mm, la sal gira entre 33 y 66~r/min. Con 25~mm,
+la sal supera los 100~r/min. Para el azúcar, el tornillo de 40~mm gira
+entre 43 y 86~r/min y el de 50~mm descarga los 3~g de tolerancia en
+0,16~s. El tornillo de levadura de 20~mm descarga 1~g en 0,87 a 1,74~s.
+Las tolvas se plantean en cuña con ranura de ancho igual al diámetro del
+tornillo y el mismo 20~\% libre del alimentador de harina. Las ranuras
+superan cuatro veces el tamaño de los cristales y gránulos, condición que
+evita bóvedas en materiales de flujo libre~\parencite{bates2000screw} y que
+se comprueba con la granulometría medida.
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados preliminares de los alimentadores de ingredientes menores.}
+    \label{tab:alimentadores_menores}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X*{3}{>{\raggedright\arraybackslash}p{0.17\textwidth}}}
+        \toprule
+        \textbf{Magnitud} & \textbf{Azúcar} & \textbf{Sal} & \textbf{Levadura} \\
+        \midrule
+        Masa por lote y tolerancia & 400~g; $\pm3$~g & 150~g; $\pm2$~g & 30~g; $\pm1$~g \\
+        Tiempo grueso y caudal & 15~s; 26,7~g/s & 10~s; 15~g/s & 10~s; 3~g/s \\
+        Densidad de cálculo & 824~kg/m$^{3}$ & 1170~kg/m$^{3}$ & 811~kg/m$^{3}$ \\
+        Recarga y volumen de tolva & 5~kg; 7,6~L & 1~kg; 1,1~L & 1~kg; 1,5~L \\
+        Ranura, boca y altura de tolva & $40 \times 200$~mm; $200 \times 200$~mm; 221~mm & $32 \times 128$~mm; $120 \times 128$~mm; 86~mm & $20 \times 80$~mm; $100 \times 80$~mm; 209~mm \\
+        Tornillo, $D = s$ & 40~mm & 32~mm & 20~mm \\
+        Masa por vuelta & 18,6 a 37,3~g & 13,5 a 27,1~g & 2,3 a 4,6~g \\
+        Velocidad gruesa & 43 a 86~r/min & 33 a 66~r/min & 39 a 78~r/min \\
+        Tolerancia a 15~r/min & 0,32 a 0,64~s & 0,30 a 0,59~s & 0,87 a 1,74~s \\
+        Par de arranque requerido & 0,093~N\,m & 0,068~N\,m & 0,011~N\,m \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia con las Ecuaciones~\eqref{eq:capacidad_tolva}, \eqref{eq:caudal_tornillo}, \eqref{eq:potencia_tornillo} y \eqref{eq:torque_tornillo}.
+\end{table}
+
+Con $c_{0} = 4{,}0$, una longitud de 0,2~m y el doble del par de marcha
+para el arranque, el mayor requisito es de 0,093~N\,m en el tornillo de
+azúcar. A esta escala, la ecuación de potencia da valores de décimas de
+watt, por lo que el par real depende de la fricción del tornillo y de la
+compactación del material, que se miden en el ensayo del alimentador. Por
+ese motivo se preselecciona el mismo motor para los tres alimentadores,
+con margen sobre el valor calculado. El motor NEMA~17 JK42HS48 de 1,7~A
+tiene un par de retención de 4,4~kg\,cm (0,43~N\,m), según el
+fabricante~\parencite{jkongmotor2026nema17}, unas cuatro veces el
+requisito. La serie de 34~mm declara de 1,6 a 2,2~kg\,cm, menos del doble
+del requisito en el caso inferior, y se descarta. El controlador A4988
+entrega hasta 2~A por fase~\parencite{allegro2014a4988} y cubre la corriente
+de ese motor.
 
 \subsection{Preselección de componentes para el CAD}
 
@@ -1242,6 +1518,50 @@ cotizaciones antes de incorporarse al CAD.
     \end{tabularx}
     \par\smallskip
     Fuente: Elaboración propia con precios publicados en los sitios de cada tienda, consulta del 18/11/2026.
+\end{table}
+
+La Tabla~\ref{tab:seleccion_componentes} reúne los componentes
+preseleccionados con los resultados de los alimentadores y las cargas de
+pesaje. Para cada componente se tomó el menor precio publicado con
+existencia entre AMB Electrónica, EPY Electrónica, Sawers, Electrónica
+Cyber y Ardunel, tiendas bolivianas con envío nacional. El motor de 1,9~N\,m duplica el par de arranque requerido de
+0,9~N\,m. El controlador TB6600 admite la corriente de 2,8~A por fase de
+ese motor. La celda de 20~kg recibe la receta de 8,26~kg y deja 11,7~kg
+para la tara del recipiente y de la plataforma, que permanece sin medir.
+La celda auxiliar de 5~kg corresponde a la menor capacidad publicada en
+esas tiendas para la carga de 530~g más la tara del receptor. Estas
+celdas no publican clase de exactitud, por lo que la distinción de
+$\pm1$~g de levadura se comprueba con ensayo. La fuente de 10~A cubre la
+suma de las corrientes nominales por fase del motor NEMA~23 y de los tres
+NEMA~17 (7,9~A), sin incluir el actuador del receptor auxiliar ni el
+agitador. El subtotal de estos componentes es de 1\,375,5~Bs.
+
+\begin{table}[H]
+    \centering
+    \caption{Componentes preseleccionados para los alimentadores, el pesaje y el control.}
+    \label{tab:seleccion_componentes}
+    \footnotesize
+    \setstretch{1}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.19\textwidth}p{0.05\textwidth}r}
+        \toprule
+        \textbf{Componente} & \textbf{Criterio de selección} & \textbf{Tienda} & \textbf{Cant.} & \textbf{Bs} \\
+        \midrule
+        Motor NEMA~23 23HD76014-20B, 1,9~N\,m & Par de arranque de harina de 0,9~N\,m. & AMB Electrónica & 1 & 340 \\
+        Controlador TB6600 & Corriente de 2,8~A por fase. & EPY Electrónica & 1 & 142 \\
+        Motor NEMA~17 JK42HS48-1704, 1,7~A & Par de arranque de menores de 0,093~N\,m. & AMB Electrónica & 3 & 465 \\
+        Controlador A4988 & Corriente de 1,7~A por fase. & AMB Electrónica & 3 & 51 \\
+        Celda de carga YZC-131 de 20~kg & Receta de 8,26~kg más tara. & Ardunel & 1 & 44 \\
+        Convertidor HX711 & Canal de la celda de 20~kg. & Ardunel & 1 & 14 \\
+        Celda de carga de 5~kg con HX711 & Carga de 530~g más tara del receptor. & AMB Electrónica & 1 & 40,5 \\
+        Fuente conmutada de 24~V y 10~A & Suma de corrientes de 7,9~A. & AMB Electrónica & 1 & 195 \\
+        ESP32-WROOM de 38 pines & Candidato F08-A de la matriz. & AMB Electrónica & 1 & 84 \\
+        \midrule
+        \multicolumn{4}{r}{\textbf{Subtotal}} & \textbf{1\,375,5} \\
+        \bottomrule
+    \end{tabularx}
+    \par\smallskip
+    Fuente: Elaboración propia con precios publicados en los sitios de cada tienda, consulta del 19/11/2026.
 \end{table}
 
 Para las superficies en contacto con ingredientes se comparan AISI 304
